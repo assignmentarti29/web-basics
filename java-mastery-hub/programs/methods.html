@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Methods - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>Methods</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Hands-On Java Programs</h2>
+            <p>Welcome to the practical section! These 15+ programs demonstrate every method type and concept. Each
+                program is heavily commented to explain not just WHAT the code does, but WHY and HOW each method works.
+            </p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Try running these programs yourself! Modify the methods, change parameters, and observe how the
+                    behavior changes. Understanding methods is essential for writing modular, reusable code!</p>
+            </div>
+        </div>
+
+        <!-- Program 1 -->
+        <div class="content-section">
+            <h2>Program 1: Basic Method Definition and Call</h2>
+            <p>Demonstrates the simplest method - no parameters, no return value.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * BasicMethodDemo - Understanding basic method structure
+ * Baby-level: "Like teaching a robot a simple task"
+ */
+public class BasicMethodDemo {
+    
+    // Method definition - no parameters, no return (void)
+    void greet() {
+        System.out.println("Hello, World!");
+        System.out.println("Welcome to Java Methods!");
+    }
+    
+    void displayMenu() {
+        System.out.println("=== Main Menu ===");
+        System.out.println("1. Start");
+        System.out.println("2. Settings");
+        System.out.println("3. Exit");
+    }
+    
+    public static void main(String[] args) {
+        // Create object to call instance methods
+        BasicMethodDemo demo = new BasicMethodDemo();
+        
+        // Method call - just use the method name with ()
+        demo.greet();
+        
+        System.out.println();
+        
+        demo.displayMenu();
+        
+        // Real-world analogy:
+        // - Method is like a button on a remote
+        // - Calling the method is like pressing the button
+        // - The action happens automatically
+    }
+}
+
+/* Output:
+Hello, World!
+Welcome to Java Methods!
+
+=== Main Menu ===
+1. Start
+2. Settings
+3. Exit
+*/
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This demonstrates the simplest method type - void methods with no
+                parameters. They perform actions but don't return values or need input. Perfect for displaying messages,
+                printing menus, or performing simple tasks.
+            </div>
+        </div>
+
+        <!-- Program 2 -->
+        <div class="content-section">
+            <h2>Program 2: Method with Return Type and Input</h2>
+            <p>Demonstrates methods that accept parameters and return values.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * ReturnMethodDemo - Methods with return values
+ * Baby-level: "Give the machine ingredients, get back a product"
+ */
+public class ReturnMethodDemo {
+    
+    // Method with return type and parameters
+    int add(int a, int b) {
+        int sum = a + b;
+        return sum;  // Returns the result
+    }
+    
+    double calculateCircleArea(double radius) {
+        double area = 3.14159 * radius * radius;
+        return area;
+    }
+    
+    String getFullName(String firstName, String lastName) {
+        return firstName + " " + lastName;
+    }
+    
+    boolean isEven(int number) {
+        return number % 2 == 0;
+    }
+    
+    public static void main(String[] args) {
+        ReturnMethodDemo demo = new ReturnMethodDemo();
+        
+        // Capture return values
+        int sum = demo.add(15, 25);
+        System.out.println("Sum: " + sum);  // 40
+        
+        double area = demo.calculateCircleArea(7.0);
+        System.out.println("Circle Area: " + area);  // 153.938
+        
+        String fullName = demo.getFullName("John", "Doe");
+        System.out.println("Full Name: " + fullName);  // John Doe
+        
+        boolean evenCheck = demo.isEven(10);
+        System.out.println("Is 10 even? " + evenCheck);  // true
+        
+        // Real-world: Like a vending machine
+        // - Input: money + button press (parameters)
+        // - Output: snack (return value)
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Methods with return types provide results back to the caller. The return
+                type must match what's declared. Use these for calculations, transformations, and data retrieval.
+            </div>
+        </div>
+
+        <!-- Program 3 -->
+        <div class="content-section">
+            <h2>Program 3: Method without Return but with Input</h2>
+            <p>Demonstrates void methods that accept parameters.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * VoidWithParamsDemo - void methods with parameters
+ * Baby-level: "Tell the robot what to do, it does it but doesn't tell you back"
+ */
+public class VoidWithParamsDemo {
+    
+    void displayMessage(String message) {
+        System.out.println("Message: " + message);
+    }
+    
+    void printMultiplicationTable(int number) {
+        System.out.println("Multiplication table of " + number + ":");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(number + " x " + i + " = " + (number * i));
+        }
+    }
+    
+    void greetPerson(String name, int age) {
+        System.out.println("Hello, " + name + "!");
+        System.out.println("You are " + age + " years old.");
+    }
+    
+    public static void main(String[] args) {
+        VoidWithParamsDemo demo = new VoidWithParamsDemo();
+        
+        demo.displayMessage("Welcome to Java!");
+        
+        System.out.println();
+        demo.printMultiplicationTable(5);
+        
+        System.out.println();
+        demo.greetPerson("Alice", 25);
+        
+        // Use case: Display operations, printing, logging
+        // No need to return anything, just perform the action
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Void methods with parameters perform actions based on input but don't
+                return values. Perfect for display operations, logging, updating state, or sending notifications.
+            </div>
+        </div>
+
+        <!-- Program 4 -->
+        <div class="content-section">
+            <h2>Program 4: Method with Return but without Input</h2>
+            <p>Demonstrates methods that return values without needing parameters.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * ReturnNoParamsDemo - Methods returning values without input
+ * Baby-level: "Ask a question, get an answer - no extra info needed"
+ */
+public class ReturnNoParamsDemo {
+    
+    double getPi() {
+        return 3.14159;
+    }
+    
+    int getRandomNumber() {
+        return (int)(Math.random() * 100);
+    }
+    
+    String getCurrentDay() {
+        String[] days = {"Sunday", "Monday", "Tuesday", "Wednesday", 
+                        "Thursday", "Friday", "Saturday"};
+        int dayIndex = java.time.LocalDate.now().getDayOfWeek().getValue() % 7;
+        return days[dayIndex];
+    }
+    
+    boolean isWeekend() {
+        int day = java.time.LocalDate.now().getDayOfWeek().getValue();
+        return day == 6 || day == 7;
+    }
+    
+    public static void main(String[] args) {
+        ReturnNoParamsDemo demo = new ReturnNoParamsDemo();
+        
+        System.out.println("Value of Pi: " + demo.getPi());
+        System.out.println("Random Number: " + demo.getRandomNumber());
+        System.out.println("Current Day: " + demo.getCurrentDay());
+        System.out.println("Is Weekend? " + demo.isWeekend());
+        
+        // Use case: Constants, getters, computed properties, random values
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> These methods return values without needing input. Perfect for getters,
+                constants, random values, current state, or computed properties that don't depend on parameters.
+            </div>
+        </div>
+
+        <!-- Program 5 -->
+        <div class="content-section">
+            <h2>Program 5: Static Methods</h2>
+            <p>Demonstrates static methods that belong to the class, not objects.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * StaticMethodDemo - Understanding static methods
+ * Baby-level: "Shared tools everyone can use without owning them"
+ */
+public class StaticMethodDemo {
+    
+    // Static methods - belong to class, not object
+    static int add(int a, int b) {
+        return a + b;
+    }
+    
+    static double celsiusToFahrenheit(double celsius) {
+        return (celsius * 9/5) + 32;
+    }
+    
+    static boolean isPrime(int number) {
+        if (number <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i == 0) return false;
+        }
+        return true;
+    }
+    
+    static void printArray(int[] arr) {
+        System.out.print("[");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]);
+            if (i < arr.length - 1) System.out.print(", ");
+        }
+        System.out.println("]");
+    }
+    
+    public static void main(String[] args) {
+        // Call static methods without creating object
+        int sum = StaticMethodDemo.add(10, 20);
+        System.out.println("Sum: " + sum);
+        
+        // Or directly (same class)
+        double fahrenheit = celsiusToFahrenheit(25);
+        System.out.println("25°C = " + fahrenheit + "°F");
+        
+        System.out.println("Is 17 prime? " + isPrime(17));
+        
+        int[] numbers = {1, 2, 3, 4, 5};
+        printArray(numbers);
+        
+        // Real-world: Like Math.sqrt(), Arrays.sort() - utility functions
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Static methods belong to the class itself, not to any object. Call them
+                using ClassName.methodName(). Perfect for utility functions that don't need object state.
+            </div>
+        </div>
+
+        <!-- Program 6 -->
+        <div class="content-section">
+            <h2>Program 6: Instance Methods</h2>
+            <p>Demonstrates instance methods that work with object-specific data.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * InstanceMethodDemo - Methods that work with object data
+ * Baby-level: "Each toy has its own actions"
+ */
+class BankAccount {
+    private double balance;
+    private String accountNumber;
+    
+    BankAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+    }
+    
+    // Instance methods - work with object's data
+    void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount);
+        }
+    }
+    
+    void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: $" + amount);
+        } else {
+            System.out.println("Insufficient funds!");
+        }
+    }
+    
+    double getBalance() {
+        return balance;
+    }
+    
+    void displayAccountInfo() {
+        System.out.println("Account: " + accountNumber);
+        System.out.println("Balance: $" + balance);
+    }
+}
+
+public class InstanceMethodDemo {
+    public static void main(String[] args) {
+        // Each object has its own data and methods
+        BankAccount account1 = new BankAccount("ACC001", 1000);
+        BankAccount account2 = new BankAccount("ACC002", 500);
+        
+        account1.deposit(500);
+        account1.withdraw(200);
+        account1.displayAccountInfo();
+        
+        System.out.println();
+        
+        account2.deposit(300);
+        account2.displayAccountInfo();
+        
+        // Each account maintains its own balance independently
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Instance methods operate on object-specific data. Each object has its own
+                copy of instance variables, and instance methods work with that data.
+            </div>
+        </div>
+
+        <!-- Program 7 -->
+        <div class="content-section">
+            <h2>Program 7: Recursive Method - Factorial</h2>
+            <p>Demonstrates recursion with factorial calculation.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * RecursiveFactorial - Understanding recursion
+ * Baby-level: "A method that calls itself until it reaches a stopping point"
+ */
+public class RecursiveFactorial {
+    
+    // Recursive method - calls itself
+    int factorial(int n) {
+        // Base case - stops recursion
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        // Recursive case - calls itself with smaller value
+        return n * factorial(n - 1);
+    }
+    
+    // For comparison: iterative version
+    int factorialIterative(int n) {
+        int result = 1;
+        for (int i = 2; i <= n; i++) {
+            result *= i;
+        }
+        return result;
+    }
+    
+    public static void main(String[] args) {
+        RecursiveFactorial demo = new RecursiveFactorial();
+        
+        System.out.println("Factorial of 5 (recursive): " + demo.factorial(5));
+        System.out.println("Factorial of 5 (iterative): " + demo.factorialIterative(5));
+        
+        // How recursion works for factorial(5):
+        // factorial(5) = 5 * factorial(4)
+        //              = 5 * 4 * factorial(3)
+        //              = 5 * 4 * 3 * factorial(2)
+        //              = 5 * 4 * 3 * 2 * factorial(1)
+        //              = 5 * 4 * 3 * 2 * 1
+        //              = 120
+        
+        System.out.println("\nFactorials 1-10:");
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i + "! = " + demo.factorial(i));
+        }
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Recursive methods call themselves to solve problems by breaking them into
+                smaller sub-problems. Must have a base case to prevent infinite recursion.
+            </div>
+        </div>
+
+        <!-- Program 8 -->
+        <div class="content-section">
+            <h2>Program 8: Recursive Method - Fibonacci</h2>
+            <p>Demonstrates recursion with Fibonacci sequence.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * RecursiveFibonacci - Fibonacci using recursion
+ * Baby-level: "Each number is sum of previous two"
+ */
+public class RecursiveFibonacci {
+    
+    int fibonacci(int n) {
+        // Base cases
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+        
+        // Recursive case
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+    
+    void printFibonacciSeries(int count) {
+        System.out.print("Fibonacci Series: ");
+        for (int i = 0; i < count; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+        System.out.println();
+    }
+    
+    public static void main(String[] args) {
+        RecursiveFibonacci demo = new RecursiveFibonacci();
+        
+        System.out.println("10th Fibonacci number: " + demo.fibonacci(10));
+        
+        demo.printFibonacciSeries(15);
+        
+        // How it works for fibonacci(5):
+        // fib(5) = fib(4) + fib(3)
+        //        = (fib(3) + fib(2)) + (fib(2) + fib(1))
+        //        = ((fib(2) + fib(1)) + (fib(1) + fib(0))) + ...
+        // Eventually reaches base cases and calculates back up
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Fibonacci demonstrates recursion with multiple recursive calls. Each call
+                branches into two more calls until base cases are reached.
+            </div>
+        </div>
+
+        <!-- Program 9 -->
+        <div class="content-section">
+            <h2>Program 9: Method Overloading</h2>
+            <p>Demonstrates method overloading with different parameter combinations.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * MethodOverloadingDemo - Same name, different parameters
+ * Baby-level: "Different sized spoons, all called 'spoon'"
+ */
+public class MethodOverloadingDemo {
+    
+    // Overloaded add methods - different parameter count
+    int add(int a, int b) {
+        System.out.println("Adding two integers");
+        return a + b;
+    }
+    
+    int add(int a, int b, int c) {
+        System.out.println("Adding three integers");
+        return a + b + c;
+    }
+    
+    // Overloaded add methods - different parameter types
+    double add(double a, double b) {
+        System.out.println("Adding two doubles");
+        return a + b;
+    }
+    
+    String add(String a, String b) {
+        System.out.println("Concatenating two strings");
+        return a + b;
+    }
+    
+    // Overloaded display methods
+    void display(int num) {
+        System.out.println("Integer: " + num);
+    }
+    
+    void display(String text) {
+        System.out.println("String: " + text);
+    }
+    
+    void display(int num, String text) {
+        System.out.println("Number: " + num + ", Text: " + text);
+    }
+    
+    public static void main(String[] args) {
+        MethodOverloadingDemo demo = new MethodOverloadingDemo();
+        
+        // Java automatically chooses the right method based on arguments
+        System.out.println("Result: " + demo.add(5, 10));
+        System.out.println("Result: " + demo.add(5, 10, 15));
+        System.out.println("Result: " + demo.add(5.5, 10.5));
+        System.out.println("Result: " + demo.add("Hello", "World"));
+        
+        System.out.println();
+        
+        demo.display(42);
+        demo.display("Java");
+        demo.display(100, "Points");
+        
+        // Real-world: Like System.out.println() - works with any type!
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Method overloading allows multiple methods with the same name but
+                different parameters. Java chooses the correct method based on the arguments at compile-time.
+            </div>
+        </div>
+
+        <!-- Program 10 -->
+        <div class="content-section">
+            <h2>Program 10: Getter and Setter Methods</h2>
+            <p>Demonstrates encapsulation with getter and setter methods.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * GetterSetterDemo - Controlled access to private fields
+ * Baby-level: "Ask to see (getter) or give (setter) with permission"
+ */
+class Student {
+    private String name;
+    private int age;
+    private double gpa;
+    
+    // Getter for name
+    public String getName() {
+        return name;
+    }
+    
+    // Setter for name with validation
+    public void setName(String name) {
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name;
+        } else {
+            System.out.println("Invalid name!");
+        }
+    }
+    
+    // Getter for age
+    public int getAge() {
+        return age;
+    }
+    
+    // Setter for age with validation
+    public void setAge(int age) {
+        if (age > 0 && age < 150) {
+            this.age = age;
+        } else {
+            System.out.println("Invalid age!");
+        }
+    }
+    
+    // Getter for GPA
+    public double getGpa() {
+        return gpa;
+    }
+    
+    // Setter for GPA with validation
+    public void setGpa(double gpa) {
+        if (gpa >= 0.0 && gpa <= 4.0) {
+            this.gpa = gpa;
+        } else {
+            System.out.println("Invalid GPA! Must be 0.0-4.0");
+        }
+    }
+    
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("GPA: " + gpa);
+    }
+}
+
+public class GetterSetterDemo {
+    public static void main(String[] args) {
+        Student student = new Student();
+        
+        // Using setters
+        student.setName("Alice Johnson");
+        student.setAge(20);
+        student.setGpa(3.8);
+        
+        student.displayInfo();
+        
+        System.out.println();
+        
+        // Validation in action
+        student.setAge(-5);      // Invalid age!
+        student.setGpa(5.0);     // Invalid GPA!
+        
+        // Using getters
+        System.out.println("Student name: " + student.getName());
+        System.out.println("Student GPA: " + student.getGpa());
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Getters and setters provide controlled access to private fields. Setters
+                can validate data before updating, preventing invalid states. This is encapsulation in action.
+            </div>
+        </div>
+
+        <!-- Program 11 -->
+        <div class="content-section">
+            <h2>Program 11: Method Calling Another Method</h2>
+            <p>Demonstrates methods calling other methods within the same class.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * MethodCallingMethod - Methods working together
+ * Baby-level: "One helper calls another helper to complete a task"
+ */
+public class MethodCallingMethod {
+    
+    // Helper method 1
+    boolean isPositive(int num) {
+        return num > 0;
+    }
+    
+    // Helper method 2
+    boolean isEven(int num) {
+        return num % 2 == 0;
+    }
+    
+    // Main method calls helper methods
+    void checkNumber(int num) {
+        System.out.println("Checking number: " + num);
+        
+        if (isPositive(num)) {
+            System.out.println("✓ Positive");
+        } else {
+            System.out.println("✗ Not positive");
+        }
+        
+        if (isEven(num)) {
+            System.out.println("✓ Even");
+        } else {
+            System.out.println("✗ Odd");
+        }
+        
+        System.out.println();
+    }
+    
+    // Complex method using multiple helpers
+    String analyzeNumber(int num) {
+        String result = "Number " + num + " is ";
+        
+        if (isPositive(num)) {
+            result += "positive and ";
+        } else {
+            result += "negative/zero and ";
+        }
+        
+        if (isEven(num)) {
+            result += "even";
+        } else {
+            result += "odd";
+        }
+        
+        return result;
+    }
+    
+    public static void main(String[] args) {
+        MethodCallingMethod demo = new MethodCallingMethod();
+        
+        demo.checkNumber(10);
+        demo.checkNumber(-5);
+        demo.checkNumber(7);
+        
+        System.out.println(demo.analyzeNumber(12));
+        System.out.println(demo.analyzeNumber(-8));
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Methods can call other methods to break down complex logic. This improves
+                code organization and reusability.
+            </div>
+        </div>
+
+        <!-- Program 12 -->
+        <div class="content-section">
+            <h2>Program 12: Multiple Methods in a Class</h2>
+            <p>Demonstrates a complete class with various method types working together.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * CompleteClassDemo - Multiple methods working together
+ * Baby-level: "A complete toolbox with different tools"
+ */
+class Calculator {
+    private String name;
+    
+    // Constructor
+    Calculator(String name) {
+        this.name = name;
+    }
+    
+    // Basic operations
+    int add(int a, int b) {
+        return a + b;
+    }
+    
+    int subtract(int a, int b) {
+        return a - b;
+    }
+    
+    int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    double divide(int a, int b) {
+        if (b == 0) {
+            System.out.println("Error: Division by zero!");
+            return 0;
+        }
+        return (double) a / b;
+    }
+    
+    // Advanced operations
+    int power(int base, int exponent) {
+        int result = 1;
+        for (int i = 0; i < exponent; i++) {
+            result *= base;
+        }
+        return result;
+    }
+    
+    int factorial(int n) {
+        if (n == 0 || n == 1) return 1;
+        return n * factorial(n - 1);
+    }
+    
+    // Utility methods
+    void displayName() {
+        System.out.println("Calculator: " + name);
+    }
+    
+    void performAllOperations(int a, int b) {
+        System.out.println("Operations on " + a + " and " + b + ":");
+        System.out.println("Add: " + add(a, b));
+        System.out.println("Subtract: " + subtract(a, b));
+        System.out.println("Multiply: " + multiply(a, b));
+        System.out.println("Divide: " + divide(a, b));
+    }
+}
+
+public class CompleteClassDemo {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator("Scientific Calculator");
+        
+        calc.displayName();
+        System.out.println();
+        
+        calc.performAllOperations(20, 5);
+        
+        System.out.println();
+        System.out.println("2^8 = " + calc.power(2, 8));
+        System.out.println("5! = " + calc.factorial(5));
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> A complete class with multiple methods of different types working
+                together. Shows how to organize related functionality in a single class.
+            </div>
+        </div>
+
+        <!-- Program 13 -->
+        <div class="content-section">
+            <h2>Program 13: Grade Calculator with Methods</h2>
+            <p>Real-world example: Student grade calculation system.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * GradeCalculator - Real-world method usage
+ * Baby-level: "Different methods to calculate and display grades"
+ */
+class GradeCalculator {
+    
+    double calculateAverage(int[] scores) {
+        int sum = 0;
+        for (int score : scores) {
+            sum += score;
+        }
+        return (double) sum / scores.length;
+    }
+    
+    char getLetterGrade(double average) {
+        if (average >= 90) return 'A';
+        else if (average >= 80) return 'B';
+        else if (average >= 70) return 'C';
+        else if (average >= 60) return 'D';
+        else return 'F';
+    }
+    
+    String getGradeDescription(char grade) {
+        switch (grade) {
+            case 'A': return "Excellent";
+            case 'B': return "Good";
+            case 'C': return "Average";
+            case 'D': return "Below Average";
+            case 'F': return "Fail";
+            default: return "Invalid";
+        }
+    }
+    
+    boolean isPassing(char grade) {
+        return grade != 'F';
+    }
+    
+    void displayCompleteReport(String studentName, int[] scores) {
+        System.out.println("=== Grade Report ===");
+        System.out.println("Student: " + studentName);
+        
+        System.out.print("Scores: ");
+        for (int score : scores) {
+            System.out.print(score + " ");
+        }
+        System.out.println();
+        
+        double average = calculateAverage(scores);
+        System.out.println("Average: " + average);
+        
+        char grade = getLetterGrade(average);
+        System.out.println("Letter Grade: " + grade);
+        System.out.println("Description: " + getGradeDescription(grade));
+        
+        if (isPassing(grade)) {
+            System.out.println("Status: PASS ✓");
+        } else {
+            System.out.println("Status: FAIL ✗");
+        }
+        System.out.println("==================");
+    }
+    
+    public static void main(String[] args) {
+        GradeCalculator gc = new GradeCalculator();
+        
+        int[] student1Scores = {85, 90, 88, 92, 87};
+        gc.displayCompleteReport("Alice Johnson", student1Scores);
+        
+        System.out.println();
+        
+        int[] student2Scores = {55, 60, 58, 52, 50};
+        gc.displayCompleteReport("Bob Smith", student2Scores);
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Real-world example showing how multiple methods work together to create a
+                complete grade calculation system. Each method has a single, clear responsibility.
+            </div>
+        </div>
+
+        <!-- Program 14 -->
+        <div class="content-section">
+            <h2>Program 14: Method Returning Object</h2>
+            <p>Demonstrates methods that create and return objects.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * MethodReturningObject - Methods can return objects
+ * Baby-level: "Method creates and gives back a complete package"
+ */
+class Rectangle {
+    int width;
+    int height;
+    
+    Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+    
+    int getArea() {
+        return width * height;
+    }
+    
+    void display() {
+        System.out.println("Rectangle: " + width + "x" + height + 
+                         " (Area: " + getArea() + ")");
+    }
+}
+
+class RectangleFactory {
+    
+    // Method returns a new Rectangle object
+    Rectangle createSquare(int side) {
+        return new Rectangle(side, side);
+    }
+    
+    Rectangle createRectangle(int width, int height) {
+        return new Rectangle(width, height);
+    }
+    
+    // Method returns larger of two rectangles
+    Rectangle getLarger(Rectangle r1, Rectangle r2) {
+        if (r1.getArea() > r2.getArea()) {
+            return r1;
+        } else {
+            return r2;
+        }
+    }
+}
+
+public class MethodReturningObject {
+    public static void main(String[] args) {
+        RectangleFactory factory = new RectangleFactory();
+        
+        // Methods return Rectangle objects
+        Rectangle square = factory.createSquare(5);
+        square.display();
+        
+        Rectangle rect = factory.createRectangle(10, 3);
+        rect.display();
+        
+        Rectangle larger = factory.getLarger(square, rect);
+        System.out.print("Larger: ");
+        larger.display();
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Methods can return objects, not just primitive types. This is useful for
+                factory patterns, builders, and creating complex objects.
+            </div>
+        </div>
+
+        <!-- Program 15 -->
+        <div class="content-section">
+            <h2>Program 15: EMI Calculator - Real-World Application</h2>
+            <p>Complete real-world example: Loan EMI calculation system.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * EMICalculator - Real-world loan EMI calculator
+ * Baby-level: "Calculate monthly payment for a loan"
+ */
+class EMICalculator {
+    
+    // Calculate monthly EMI
+    double calculateEMI(double principal, double annualRate, int years) {
+        double monthlyRate = annualRate / 12 / 100;
+        int months = years * 12;
+        
+        double emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) /
+                     (Math.pow(1 + monthlyRate, months) - 1);
+        
+        return Math.round(emi * 100.0) / 100.0;  // Round to 2 decimals
+    }
+    
+    // Calculate total amount payable
+    double calculateTotalAmount(double emi, int years) {
+        return emi * years * 12;
+    }
+    
+    // Calculate total interest
+    double calculateTotalInterest(double totalAmount, double principal) {
+        return totalAmount - principal;
+    }
+    
+    // Validate loan parameters
+    boolean validateLoan(double principal, double rate, int years) {
+        return principal > 0 && rate >= 0 && years > 0;
+    }
+    
+    // Display complete loan details
+    void displayLoanDetails(double principal, double annualRate, int years) {
+        if (!validateLoan(principal, annualRate, years)) {
+            System.out.println("Invalid loan parameters!");
+            return;
+        }
+        
+        System.out.println("=== Loan EMI Calculator ===");
+        System.out.println("Principal Amount: $" + principal);
+        System.out.println("Annual Interest Rate: " + annualRate + "%");
+        System.out.println("Loan Tenure: " + years + " years");
+        System.out.println();
+        
+        double emi = calculateEMI(principal, annualRate, years);
+        System.out.println("Monthly EMI: $" + emi);
+        
+        double totalAmount = calculateTotalAmount(emi, years);
+        System.out.println("Total Amount Payable: $" + totalAmount);
+        
+        double totalInterest = calculateTotalInterest(totalAmount, principal);
+        System.out.println("Total Interest: $" + totalInterest);
+        System.out.println("==========================");
+    }
+    
+    public static void main(String[] args) {
+        EMICalculator calculator = new EMICalculator();
+        
+        // Home loan example
+        calculator.displayLoanDetails(500000, 7.5, 20);
+        
+        System.out.println();
+        
+        // Car loan example
+        calculator.displayLoanDetails(30000, 9.0, 5);
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Complete real-world application showing how methods work together to
+                create a loan EMI calculator. Demonstrates validation, calculation, and display methods working in
+                harmony.
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/methods.html" class="btn btn-primary">
+                    📚 Back to Theory
+                </a>
+                <a href="../mcq/methods.html" class="btn btn-success">
+                    ✅ Take Quiz
+                </a>
+                <a href="../index.html" class="btn btn-secondary">
+                    🏠 Back to Home
+                </a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">📚 Next Topic</div>
+                <p>
+                    <strong>Coming Soon:</strong> OOPs Concepts in Depth
+                    <br>Deep dive into inheritance, polymorphism, encapsulation, abstraction, and interfaces.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

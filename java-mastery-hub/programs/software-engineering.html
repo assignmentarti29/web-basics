@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Header -->
+        <div class="content-header">
+            <h1>Software Engineering - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>Software Engineering</span>
+            </div>
+        </div>
+
+        <!-- Program 1: SDLC Phase Demonstration -->
+        <div class="content-section">
+            <h2>Program 1: SDLC Phase Tracker</h2>
+            <p>This program demonstrates the different phases of the Software Development Life Cycle.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * SDLC Phase Tracker
+ * Demonstrates the sequential phases of Software Development Life Cycle
+ */
+public class SDLCPhaseTracker {
+    
+    // Enum to represent different SDLC phases
+    enum SDLCPhase {
+        PLANNING("Planning & Requirement Analysis"),
+        DESIGN("System Design"),
+        IMPLEMENTATION("Implementation/Coding"),
+        TESTING("Testing"),
+        DEPLOYMENT("Deployment"),
+        MAINTENANCE("Maintenance");
+        
+        private String description;
+        
+        SDLCPhase(String description) {
+            this.description = description;
+        }
+        
+        public String getDescription() {
+            return description;
+        }
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("=== Software Development Life Cycle Phases ===\n");
+        
+        // Iterate through all SDLC phases
+        for (SDLCPhase phase : SDLCPhase.values()) {
+            System.out.println("Phase " + (phase.ordinal() + 1) + ": " + phase.getDescription());
+            executePhase(phase);
+            System.out.println();
+        }
+    }
+    
+    // Simulate execution of each phase
+    private static void executePhase(SDLCPhase phase) {
+        switch (phase) {
+            case PLANNING:
+                System.out.println("  → Gathering requirements from stakeholders");
+                System.out.println("  → Creating SRS document");
+                break;
+            case DESIGN:
+                System.out.println("  → Creating system architecture");
+                System.out.println("  → Designing database schema");
+                break;
+            case IMPLEMENTATION:
+                System.out.println("  → Writing code in Java");
+                System.out.println("  → Following coding standards");
+                break;
+            case TESTING:
+                System.out.println("  → Running unit tests");
+                System.out.println("  → Performing integration testing");
+                break;
+            case DEPLOYMENT:
+                System.out.println("  → Deploying to production server");
+                System.out.println("  → Training end users");
+                break;
+            case MAINTENANCE:
+                System.out.println("  → Fixing bugs reported by users");
+                System.out.println("  → Adding new features");
+                break;
+        }
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program uses an enum to represent SDLC phases, demonstrating how
+                software engineering concepts can be modeled in code. Each phase has a description and associated
+                activities. This shows the systematic, organized approach of software engineering versus ad-hoc
+                programming.
+            </div>
+        </div>
+
+        <!-- Program 2: Software Project Class -->
+        <div class="content-section">
+            <h2>Program 2: Software Project Management System</h2>
+            <p>Demonstrates object-oriented modeling of a software project with SDLC tracking.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * Software Project Management System
+ * Models a real-world software project with phases, team, and status tracking
+ */
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+public class SoftwareProject {
+    private String projectName;
+    private String currentPhase;
+    private List<String> teamMembers;
+    private LocalDate startDate;
+    private LocalDate deadline;
+    private int completionPercentage;
+    
+    // Constructor
+    public SoftwareProject(String projectName, LocalDate startDate, LocalDate deadline) {
+        this.projectName = projectName;
+        this.currentPhase = "Planning";
+        this.teamMembers = new ArrayList<>();
+        this.startDate = startDate;
+        this.deadline = deadline;
+        this.completionPercentage = 0;
+    }
+    
+    // Add team member
+    public void addTeamMember(String memberName) {
+        teamMembers.add(memberName);
+        System.out.println("✓ Added team member: " + memberName);
+    }
+    
+    // Move to next phase
+    public void moveToNextPhase(String nextPhase, int completion) {
+        this.currentPhase = nextPhase;
+        this.completionPercentage = completion;
+        System.out.println("✓ Project moved to: " + nextPhase + " (" + completion + "% complete)");
+    }
+    
+    // Display project status
+    public void displayProjectStatus() {
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║     PROJECT STATUS DASHBOARD          ║");
+        System.out.println("╚════════════════════════════════════════╝");
+        System.out.println("Project Name: " + projectName);
+        System.out.println("Current Phase: " + currentPhase);
+        System.out.println("Team Size: " + teamMembers.size() + " members");
+        System.out.println("Start Date: " + startDate);
+        System.out.println("Deadline: " + deadline);
+        System.out.println("Completion: " + completionPercentage + "%");
+        System.out.println("Team Members: " + teamMembers);
+        System.out.println("════════════════════════════════════════\n");
+    }
+    
+    public static void main(String[] args) {
+        // Create a new software project
+        SoftwareProject project = new SoftwareProject(
+            "E-Commerce Platform",
+            LocalDate.of(2024, 1, 1),
+            LocalDate.of(2024, 12, 31)
+        );
+        
+        // Build the team
+        project.addTeamMember("Alice (Project Manager)");
+        project.addTeamMember("Bob (Backend Developer)");
+        project.addTeamMember("Charlie (Frontend Developer)");
+        project.addTeamMember("Diana (QA Engineer)");
+        
+        // Simulate project progression through SDLC phases
+        project.displayProjectStatus();
+        
+        project.moveToNextPhase("Design", 20);
+        project.moveToNextPhase("Implementation", 50);
+        project.moveToNextPhase("Testing", 80);
+        project.moveToNextPhase("Deployment", 100);
+        
+        project.displayProjectStatus();
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program demonstrates how software engineering principles are applied
+                in real projects. It models a project with team management, phase tracking, and deadline monitoring -
+                all essential aspects of professional software development that go beyond just writing code.
+            </div>
+        </div>
+
+        <!-- Program 3: Waterfall Model Simulation -->
+        <div class="content-section">
+            <h2>Program 3: Waterfall Model Simulation</h2>
+            <p>Simulates the sequential, linear nature of the Waterfall SDLC model.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * Waterfall Model Simulation
+ * Demonstrates the sequential, non-overlapping phases of Waterfall methodology
+ */
+public class WaterfallModel {
+    
+    private String projectName;
+    private boolean[] phaseCompleted;
+    private String[] phaseNames = {
+        "Requirements Analysis",
+        "System Design",
+        "Implementation",
+        "Testing",
+        "Deployment",
+        "Maintenance"
+    };
+    
+    public WaterfallModel(String projectName) {
+        this.projectName = projectName;
+        this.phaseCompleted = new boolean[phaseNames.length];
+    }
+    
+    // Execute a phase (can only execute if previous phase is complete)
+    public void executePhase(int phaseIndex) {
+        // Waterfall rule: Can't skip phases
+        if (phaseIndex > 0 && !phaseCompleted[phaseIndex - 1]) {
+            System.out.println("❌ ERROR: Cannot execute " + phaseNames[phaseIndex]);
+            System.out.println("   Reason: Previous phase '" + phaseNames[phaseIndex - 1] + "' not completed!");
+            System.out.println("   Waterfall Model Rule: Phases must be sequential!\n");
+            return;
+        }
+        
+        System.out.println("⚙️  Executing: " + phaseNames[phaseIndex]);
+        System.out.println("   Status: In Progress...");
+        
+        // Simulate phase execution
+        try {
+            Thread.sleep(1000); // Simulate work
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        phaseCompleted[phaseIndex] = true;
+        System.out.println("   Status: ✓ Completed\n");
+    }
+    
+    // Try to go back to a previous phase (not allowed in Waterfall)
+    public void goBackToPhase(int phaseIndex) {
+        System.out.println("⚠️  WARNING: Attempting to go back to " + phaseNames[phaseIndex]);
+        System.out.println("   Waterfall Model Limitation: Cannot go back to previous phases!");
+        System.out.println("   This is why Waterfall is rigid and not suitable for changing requirements.\n");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("=== WATERFALL MODEL DEMONSTRATION ===\n");
+        
+        WaterfallModel project = new WaterfallModel("Banking System");
+        
+        // Correct sequence - works fine
+        System.out.println("--- Scenario 1: Following Waterfall Sequence ---");
+        project.executePhase(0); // Requirements
+        project.executePhase(1); // Design
+        project.executePhase(2); // Implementation
+        
+        // Try to skip a phase - will fail
+        System.out.println("--- Scenario 2: Trying to Skip Testing ---");
+        project.executePhase(4); // Try to jump to Deployment (will fail)
+        
+        // Complete remaining phases in order
+        project.executePhase(3); // Testing
+        project.executePhase(4); // Deployment
+        
+        // Try to go back - demonstrates Waterfall limitation
+        System.out.println("--- Scenario 3: Requirement Change After Implementation ---");
+        project.goBackToPhase(0); // Try to go back to Requirements
+        
+        System.out.println("=== CONCLUSION ===");
+        System.out.println("Waterfall works well when requirements are fixed and well-understood.");
+        System.out.println("For projects with changing requirements, Agile is better!\n");
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program illustrates the key characteristic of Waterfall model - its
+                sequential, rigid nature. It enforces that phases must be completed in order and demonstrates why going
+                back to previous phases is problematic. This helps understand when Waterfall is appropriate and when
+                it's not.
+            </div>
+        </div>
+
+        <!-- Program 4: Agile Sprint Simulation -->
+        <div class="content-section">
+            <h2>Program 4: Agile Sprint Simulation</h2>
+            <p>Demonstrates the iterative, flexible nature of Agile methodology with sprints.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * Agile Sprint Simulation
+ * Demonstrates iterative development with user stories and sprint cycles
+ */
+import java.util.ArrayList;
+import java.util.List;
+
+class UserStory {
+    String description;
+    int storyPoints;
+    boolean completed;
+    
+    public UserStory(String description, int storyPoints) {
+        this.description = description;
+        this.storyPoints = storyPoints;
+        this.completed = false;
+    }
+}
+
+public class AgileSprint {
+    private int sprintNumber;
+    private List<UserStory> backlog;
+    private List<UserStory> currentSprint;
+    private int teamVelocity; // Story points team can complete per sprint
+    
+    public AgileSprint(int teamVelocity) {
+        this.sprintNumber = 0;
+        this.backlog = new ArrayList<>();
+        this.currentSprint = new ArrayList<>();
+        this.teamVelocity = teamVelocity;
+    }
+    
+    // Add user story to backlog
+    public void addUserStory(String description, int storyPoints) {
+        backlog.add(new UserStory(description, storyPoints));
+        System.out.println("✓ Added to backlog: " + description + " (" + storyPoints + " points)");
+    }
+    
+    // Plan a sprint by selecting stories from backlog
+    public void planSprint() {
+        sprintNumber++;
+        currentSprint.clear();
+        int totalPoints = 0;
+        
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║     SPRINT " + sprintNumber + " PLANNING                  ║");
+        System.out.println("╚════════════════════════════════════════╝");
+        System.out.println("Team Velocity: " + teamVelocity + " story points\n");
+        
+        // Select stories that fit within team velocity
+        for (UserStory story : backlog) {
+            if (!story.completed && totalPoints + story.storyPoints <= teamVelocity) {
+                currentSprint.add(story);
+                totalPoints += story.storyPoints;
+                System.out.println("✓ Added to sprint: " + story.description + " (" + story.storyPoints + " pts)");
+            }
+        }
+        
+        System.out.println("\nTotal sprint points: " + totalPoints);
+    }
+    
+    // Execute the sprint
+    public void executeSprint() {
+        System.out.println("\n⚙️  Executing Sprint " + sprintNumber + "...\n");
+        
+        for (UserStory story : currentSprint) {
+            System.out.println("  → Working on: " + story.description);
+            story.completed = true;
+            System.out.println("    ✓ Completed!");
+        }
+        
+        System.out.println("\n✅ Sprint " + sprintNumber + " completed!");
+    }
+    
+    // Sprint retrospective
+    public void retrospective() {
+        System.out.println("\n📊 Sprint " + sprintNumber + " Retrospective:");
+        System.out.println("  • What went well: Team collaboration was excellent");
+        System.out.println("  • What to improve: Need better estimation");
+        System.out.println("  • Action items: Conduct estimation workshop\n");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("=== AGILE DEVELOPMENT SIMULATION ===\n");
+        
+        AgileSprint agile = new AgileSprint(13); // Team can handle 13 story points per sprint
+        
+        // Product backlog
+        System.out.println("--- Building Product Backlog ---");
+        agile.addUserStory("User login functionality", 5);
+        agile.addUserStory("Product search feature", 8);
+        agile.addUserStory("Shopping cart", 8);
+        agile.addUserStory("Payment integration", 13);
+        agile.addUserStory("Order tracking", 5);
+        
+        // Sprint 1
+        agile.planSprint();
+        agile.executeSprint();
+        agile.retrospective();
+        
+        // Sprint 2
+        agile.planSprint();
+        agile.executeSprint();
+        agile.retrospective();
+        
+        System.out.println("=== AGILE BENEFITS ===");
+        System.out.println("✓ Iterative delivery - working software every 2 weeks");
+        System.out.println("✓ Flexibility - can reprioritize backlog anytime");
+        System.out.println("✓ Customer feedback - incorporated after each sprint");
+        System.out.println("✓ Continuous improvement - retrospectives drive learning\n");
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program models Agile's iterative approach with sprints, user stories,
+                and story points. It demonstrates how Agile allows flexibility and continuous delivery, contrasting with
+                Waterfall's rigidity. The retrospective feature shows Agile's emphasis on continuous improvement.
+            </div>
+        </div>
+
+        <!-- Program 5: Monolithic vs Microservices Architecture -->
+        <div class="content-section">
+            <h2>Program 5: Architecture Comparison - Monolithic vs Microservices</h2>
+            <p>Demonstrates the structural differences between monolithic and microservices architectures.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * Architecture Comparison
+ * Demonstrates Monolithic vs Microservices architecture patterns
+ */
+
+// ========== MONOLITHIC ARCHITECTURE ==========
+class MonolithicECommerce {
+    // All functionality in one class (tightly coupled)
+    
+    public void handleUserLogin(String username, String password) {
+        System.out.println("[MONOLITH] Processing login for: " + username);
+        // Authentication logic here
+    }
+    
+    public void searchProducts(String query) {
+        System.out.println("[MONOLITH] Searching products: " + query);
+        // Search logic here
+    }
+    
+    public void processPayment(double amount) {
+        System.out.println("[MONOLITH] Processing payment: $" + amount);
+        // Payment logic here
+    }
+    
+    public void trackOrder(String orderId) {
+        System.out.println("[MONOLITH] Tracking order: " + orderId);
+        // Order tracking logic here
+    }
+    
+    // Problem: If payment processing fails, entire application might crash!
+    // Problem: Can't scale just the payment service independently
+    // Problem: Must deploy entire application for small changes
+}
+
+// ========== MICROSERVICES ARCHITECTURE ==========
+class UserService {
+    public void login(String username, String password) {
+        System.out.println("[USER-SERVICE] Processing login for: " + username);
+        // Runs independently on its own server/container
+    }
+}
+
+class ProductService {
+    public void searchProducts(String query) {
+        System.out.println("[PRODUCT-SERVICE] Searching products: " + query);
+        // Runs independently, can be scaled separately
+    }
+}
+
+class PaymentService {
+    public void processPayment(double amount) {
+        System.out.println("[PAYMENT-SERVICE] Processing payment: $" + amount);
+        // Isolated - if this fails, other services continue working
+    }
+}
+
+class OrderService {
+    public void trackOrder(String orderId) {
+        System.out.println("[ORDER-SERVICE] Tracking order: " + orderId);
+        // Can be deployed independently
+    }
+}
+
+public class ArchitectureComparison {
+    
+    public static void demonstrateMonolithic() {
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║   MONOLITHIC ARCHITECTURE              ║");
+        System.out.println("╚════════════════════════════════════════╝\n");
+        
+        MonolithicECommerce app = new MonolithicECommerce();
+        app.handleUserLogin("john@email.com", "pass123");
+        app.searchProducts("laptop");
+        app.processPayment(999.99);
+        app.trackOrder("ORD-12345");
+        
+        System.out.println("\n✓ Simple to develop and deploy");
+        System.out.println("✗ Difficult to scale specific features");
+        System.out.println("✗ One failure can crash entire system");
+    }
+    
+    public static void demonstrateMicroservices() {
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║   MICROSERVICES ARCHITECTURE           ║");
+        System.out.println("╚════════════════════════════════════════╝\n");
+        
+        // Each service is independent
+        UserService userService = new UserService();
+        ProductService productService = new ProductService();
+        PaymentService paymentService = new PaymentService();
+        OrderService orderService = new OrderService();
+        
+        userService.login("john@email.com", "pass123");
+        productService.searchProducts("laptop");
+        paymentService.processPayment(999.99);
+        orderService.trackOrder("ORD-12345");
+        
+        System.out.println("\n✓ Each service can be scaled independently");
+        System.out.println("✓ Fault isolation - one service failure doesn't crash others");
+        System.out.println("✓ Technology flexibility - each service can use different tech");
+        System.out.println("✗ More complex to manage and deploy");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("=== SOFTWARE ARCHITECTURE PATTERNS ===");
+        
+        demonstrateMonolithic();
+        demonstrateMicroservices();
+        
+        System.out.println("\n=== WHEN TO USE WHAT? ===");
+        System.out.println("Monolithic: Small apps, startups, MVPs, simple requirements");
+        System.out.println("Microservices: Large-scale apps, Netflix, Amazon, Uber\n");
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program contrasts monolithic and microservices architectures through
+                code structure. The monolithic version has all functionality in one class (tightly coupled), while
+                microservices version separates concerns into independent services. This demonstrates why architecture
+                matters in software engineering.
+            </div>
+        </div>
+
+        <!-- Program 6: Layered Architecture Demo -->
+        <div class="content-section">
+            <h2>Program 6: Layered (3-Tier) Architecture</h2>
+            <p>Demonstrates separation of concerns using Presentation, Business Logic, and Data Access layers.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * Layered Architecture (3-Tier)
+ * Demonstrates separation of concerns: Presentation, Business Logic, Data Access
+ */
+
+// ========== DATA ACCESS LAYER (DAL) ==========
+class UserRepository {
+    // Handles database operations
+    public String getUserFromDatabase(String userId) {
+        // Simulate database query
+        System.out.println("  [DAL] Querying database for user: " + userId);
+        return "John Doe"; // Simulated data
+    }
+    
+    public void saveUserToDatabase(String userId, String name) {
+        System.out.println("  [DAL] Saving user to database: " + name);
+        // Database save logic
+    }
+}
+
+// ========== BUSINESS LOGIC LAYER (BLL) ==========
+class UserService {
+    private UserRepository userRepository;
+    
+    public UserService() {
+        this.userRepository = new UserRepository();
+    }
+    
+    // Business logic: Validate and process
+    public String getUserDetails(String userId) {
+        System.out.println("  [BLL] Processing business logic for user: " + userId);
+        
+        // Business rule: User ID must be numeric
+        if (!userId.matches("\\d+")) {
+            return "ERROR: Invalid user ID format";
+        }
+        
+        // Call data layer
+        String userName = userRepository.getUserFromDatabase(userId);
+        
+        // Business logic: Format the response
+        return "User: " + userName + " (ID: " + userId + ")";
+    }
+    
+    public void registerUser(String userId, String name, String email) {
+        System.out.println("  [BLL] Validating user registration");
+        
+        // Business rules
+        if (name.length() < 3) {
+            System.out.println("  [BLL] ERROR: Name too short");
+            return;
+        }
+        
+        if (!email.contains("@")) {
+            System.out.println("  [BLL] ERROR: Invalid email");
+            return;
+        }
+        
+        // If validation passes, save to database
+        userRepository.saveUserToDatabase(userId, name);
+        System.out.println("  [BLL] User registered successfully!");
+    }
+}
+
+// ========== PRESENTATION LAYER (UI) ==========
+class UserInterface {
+    private UserService userService;
+    
+    public UserInterface() {
+        this.userService = new UserService();
+    }
+    
+    // UI handles user interaction
+    public void displayUserProfile(String userId) {
+        System.out.println("[UI] User requested profile view");
+        String userDetails = userService.getUserDetails(userId);
+        System.out.println("[UI] Displaying: " + userDetails);
+    }
+    
+    public void showRegistrationForm(String userId, String name, String email) {
+        System.out.println("[UI] User submitted registration form");
+        userService.registerUser(userId, name, email);
+    }
+}
+
+public class LayeredArchitecture {
+    
+    public static void main(String[] args) {
+        System.out.println("=== LAYERED (3-TIER) ARCHITECTURE ===\n");
+        
+        UserInterface ui = new UserInterface();
+        
+        System.out.println("--- Scenario 1: View User Profile ---");
+        ui.displayUserProfile("12345");
+        
+        System.out.println("\n--- Scenario 2: Register New User ---");
+        ui.showRegistrationForm("67890", "Alice Smith", "alice@email.com");
+        
+        System.out.println("\n--- Scenario 3: Invalid Registration ---");
+        ui.showRegistrationForm("99999", "Al", "invalid-email");
+        
+        System.out.println("\n=== BENEFITS OF LAYERED ARCHITECTURE ===");
+        System.out.println("✓ Separation of Concerns: Each layer has one responsibility");
+        System.out.println("✓ Maintainability: Can change UI without touching database code");
+        System.out.println("✓ Testability: Can test business logic independently");
+        System.out.println("✓ Reusability: Business logic can be used by multiple UIs\n");
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program demonstrates the 3-tier layered architecture pattern. The
+                Presentation layer handles UI, Business Logic layer contains validation and rules, and Data Access layer
+                manages database operations. This separation makes the code maintainable, testable, and follows software
+                engineering best practices.
+            </div>
+        </div>
+
+        <!-- Program 7: Software Logging System -->
+        <div class="content-section">
+            <h2>Program 7: Professional Logging System</h2>
+            <p>Demonstrates proper logging practices essential in software engineering for debugging and monitoring.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * Professional Logging System
+ * Demonstrates importance of logging in software engineering for debugging and monitoring
+ */
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+enum LogLevel {
+    DEBUG, INFO, WARNING, ERROR, CRITICAL
+}
+
+class Logger {
+    private String componentName;
+    private DateTimeFormatter formatter;
+    
+    public Logger(String componentName) {
+        this.componentName = componentName;
+        this.formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+    }
+    
+    public void log(LogLevel level, String message) {
+        String timestamp = LocalDateTime.now().format(formatter);
+        String logEntry = String.format("[%s] [%s] [%s] %s", 
+            timestamp, level, componentName, message);
+        
+        // In real applications, this would write to files or monitoring systems
+        System.out.println(logEntry);
+    }
+    
+    public void debug(String message) { log(LogLevel.DEBUG, message); }
+    public void info(String message) { log(LogLevel.INFO, message); }
+    public void warning(String message) { log(LogLevel.WARNING, message); }
+    public void error(String message) { log(LogLevel.ERROR, message); }
+    public void critical(String message) { log(LogLevel.CRITICAL, message); }
+}
+
+public class LoggingSystem {
+    
+    public static void simulateApplicationFlow() {
+        Logger logger = new Logger("ECommerceApp");
+        
+        logger.info("Application started successfully");
+        logger.debug("Loading configuration files");
+        logger.info("Database connection established");
+        
+        // Simulate user actions
+        logger.info("User 'john@email.com' logged in");
+        logger.debug("Session ID: SES-12345 created");
+        
+        logger.info("User searching for products: 'laptop'");
+        logger.debug("Query executed in 45ms, returned 127 results");
+        
+        logger.info("User added item to cart: Product ID 9876");
+        
+        // Simulate a warning
+        logger.warning("Payment gateway response time: 3.5s (threshold: 2s)");
+        
+        // Simulate an error
+        logger.error("Payment processing failed: Insufficient funds");
+        logger.info("User notified about payment failure");
+        
+        // Simulate critical error
+        logger.critical("Database connection lost! Attempting reconnection...");
+        logger.info("Database reconnection successful");
+        
+        logger.info("Application shutdown initiated");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("=== PROFESSIONAL LOGGING DEMONSTRATION ===\n");
+        
+        simulateApplicationFlow();
+        
+        System.out.println("\n=== WHY LOGGING MATTERS IN SOFTWARE ENGINEERING ===");
+        System.out.println("✓ Debugging: Helps identify where errors occur");
+        System.out.println("✓ Monitoring: Track application health in production");
+        System.out.println("✓ Audit Trail: Know who did what and when");
+        System.out.println("✓ Performance: Identify bottlenecks and slow operations");
+        System.out.println("✓ Compliance: Required for regulated industries (banking, healthcare)");
+        
+        System.out.println("\n=== LOG LEVELS EXPLAINED ===");
+        System.out.println("DEBUG: Detailed info for developers (disabled in production)");
+        System.out.println("INFO: General informational messages");
+        System.out.println("WARNING: Something unexpected but not critical");
+        System.out.println("ERROR: Error occurred but application continues");
+        System.out.println("CRITICAL: Severe error, application might crash\n");
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Professional software engineering requires proper logging for debugging,
+                monitoring, and auditing. This program demonstrates different log levels and when to use them. In
+                production systems, logs are essential for troubleshooting issues, monitoring performance, and
+                maintaining system health.
+            </div>
+        </div>
+
+        <!-- Program 8: Code Documentation Example -->
+        <div class="content-section">
+            <h2>Program 8: Importance of Documentation</h2>
+            <p>Demonstrates proper code documentation using Javadoc - a key software engineering practice.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * Customer Management System
+ * 
+ * This class demonstrates proper documentation practices in software engineering.
+ * Documentation is NOT optional - it's a critical part of professional development.
+ * 
+ * @author Software Engineering Team
+ * @version 1.0
+ * @since 2024-01-01
+ */
+public class Customer {
+    
+    /**
+     * Unique identifier for the customer
+     */
+    private String customerId;
+    
+    /**
+     * Customer's full name
+     */
+    private String name;
+    
+    /**
+     * Customer's email address (must be unique)
+     */
+    private String email;
+    
+    /**
+     * Customer's loyalty points (earned through purchases)
+     */
+    private int loyaltyPoints;
+    
+    /**
+     * Creates a new Customer with the specified details.
+     * 
+     * @param customerId Unique identifier (format: CUST-XXXXX)
+     * @param name Full name of the customer
+     * @param email Email address (must contain @)
+     * @throws IllegalArgumentException if email format is invalid
+     */
+    public Customer(String customerId, String name, String email) {
+        if (!email.contains("@")) {
+            throw new IllegalArgumentException("Invalid email format");
+        }
+        
+        this.customerId = customerId;
+        this.name = name;
+        this.email = email;
+        this.loyaltyPoints = 0;
+    }
+    
+    /**
+     * Adds loyalty points to the customer's account.
+     * Points are earned based on purchase amount: $1 = 1 point
+     * 
+     * @param purchaseAmount The amount spent by customer in dollars
+     * @return The new total loyalty points after addition
+     * @throws IllegalArgumentException if purchaseAmount is negative
+     */
+    public int addLoyaltyPoints(double purchaseAmount) {
+        if (purchaseAmount < 0) {
+            throw new IllegalArgumentException("Purchase amount cannot be negative");
+        }
+        
+        int pointsToAdd = (int) purchaseAmount;
+        this.loyaltyPoints += pointsToAdd;
+        
+        System.out.println("Added " + pointsToAdd + " points to " + name);
+        return this.loyaltyPoints;
+    }
+    
+    /**
+     * Redeems loyalty points for a discount.
+     * Conversion rate: 100 points = $10 discount
+     * 
+     * @param pointsToRedeem Number of points to redeem
+     * @return The discount amount in dollars
+     * @throws IllegalArgumentException if insufficient points
+     */
+    public double redeemPoints(int pointsToRedeem) {
+        if (pointsToRedeem > this.loyaltyPoints) {
+            throw new IllegalArgumentException(
+                "Insufficient points. Available: " + this.loyaltyPoints
+            );
+        }
+        
+        this.loyaltyPoints -= pointsToRedeem;
+        double discount = pointsToRedeem / 10.0;
+        
+        System.out.println(name + " redeemed " + pointsToRedeem + " points for $" + discount);
+        return discount;
+    }
+    
+    /**
+     * Gets the customer's current loyalty tier based on points.
+     * 
+     * Tiers:
+     * - Bronze: 0-999 points
+     * - Silver: 1000-4999 points
+     * - Gold: 5000-9999 points
+     * - Platinum: 10000+ points
+     * 
+     * @return The loyalty tier name
+     */
+    public String getLoyaltyTier() {
+        if (loyaltyPoints >= 10000) return "Platinum";
+        if (loyaltyPoints >= 5000) return "Gold";
+        if (loyaltyPoints >= 1000) return "Silver";
+        return "Bronze";
+    }
+    
+    /**
+     * Displays customer information in a formatted manner.
+     */
+    public void displayInfo() {
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║     CUSTOMER INFORMATION               ║");
+        System.out.println("╚════════════════════════════════════════╝");
+        System.out.println("ID: " + customerId);
+        System.out.println("Name: " + name);
+        System.out.println("Email: " + email);
+        System.out.println("Loyalty Points: " + loyaltyPoints);
+        System.out.println("Tier: " + getLoyaltyTier());
+        System.out.println("════════════════════════════════════════\n");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("=== DOCUMENTATION DEMONSTRATION ===\n");
+        
+        // Create customer
+        Customer customer = new Customer("CUST-00123", "Alice Johnson", "alice@email.com");
+        customer.displayInfo();
+        
+        // Add points through purchases
+        customer.addLoyaltyPoints(2500.00);
+        customer.addLoyaltyPoints(3000.00);
+        customer.displayInfo();
+        
+        // Redeem points
+        double discount = customer.redeemPoints(500);
+        System.out.println("Discount applied: $" + discount);
+        customer.displayInfo();
+        
+        System.out.println("=== WHY DOCUMENTATION MATTERS ===");
+        System.out.println("✓ Team Collaboration: Others understand your code");
+        System.out.println("✓ Maintenance: Future developers (including you!) know what code does");
+        System.out.println("✓ API Generation: Tools like Javadoc create professional documentation");
+        System.out.println("✓ Onboarding: New team members learn faster");
+        System.out.println("✓ Professionalism: Shows you're a serious software engineer\n");
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program demonstrates professional code documentation using Javadoc
+                comments. Every class, method, and parameter is documented with its purpose, parameters, return values,
+                and exceptions. This is a fundamental software engineering practice that distinguishes professional code
+                from amateur code.
+            </div>
+        </div>
+
+        <!-- Program 9: Version Control Simulation -->
+        <div class="content-section">
+            <h2>Program 9: Version Control Concept</h2>
+            <p>Simulates version control (like Git) - an essential tool in software engineering for tracking changes.
+            </p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * Version Control System Simulation
+ * Demonstrates the concept of version control (Git-like) in software engineering
+ */
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+class Commit {
+    String commitId;
+    String author;
+    String message;
+    String codeSnapshot;
+    LocalDateTime timestamp;
+    
+    public Commit(String commitId, String author, String message, String codeSnapshot) {
+        this.commitId = commitId;
+        this.author = author;
+        this.message = message;
+        this.codeSnapshot = codeSnapshot;
+        this.timestamp = LocalDateTime.now();
+    }
+    
+    public void display() {
+        System.out.println("  Commit: " + commitId);
+        System.out.println("  Author: " + author);
+        System.out.println("  Date: " + timestamp);
+        System.out.println("  Message: " + message);
+        System.out.println("  Code: " + codeSnapshot);
+        System.out.println();
+    }
+}
+
+public class VersionControlSystem {
+    private List<Commit> commitHistory;
+    private String currentCode;
+    
+    public VersionControlSystem() {
+        this.commitHistory = new ArrayList<>();
+        this.currentCode = "";
+    }
+    
+    // Make a commit (save current state)
+    public void commit(String author, String message, String newCode) {
+        String commitId = "COMMIT-" + (commitHistory.size() + 1);
+        Commit commit = new Commit(commitId, author, message, newCode);
+        commitHistory.add(commit);
+        currentCode = newCode;
+        
+        System.out.println("✓ Committed: " + commitId + " - " + message);
+    }
+    
+    // View commit history
+    public void showHistory() {
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║     COMMIT HISTORY                     ║");
+        System.out.println("╚════════════════════════════════════════╝\n");
+        
+        for (Commit commit : commitHistory) {
+            commit.display();
+        }
+    }
+    
+    // Rollback to a previous version
+    public void rollback(int commitNumber) {
+        if (commitNumber < 1 || commitNumber > commitHistory.size()) {
+            System.out.println("❌ Invalid commit number!");
+            return;
+        }
+        
+        Commit targetCommit = commitHistory.get(commitNumber - 1);
+        currentCode = targetCommit.codeSnapshot;
+        
+        System.out.println("✓ Rolled back to: " + targetCommit.commitId);
+        System.out.println("  Code restored to: " + targetCommit.message);
+    }
+    
+    public void showCurrentCode() {
+        System.out.println("\n--- Current Code ---");
+        System.out.println(currentCode);
+        System.out.println("--------------------\n");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("=== VERSION CONTROL SIMULATION ===\n");
+        
+        VersionControlSystem vcs = new VersionControlSystem();
+        
+        // Simulate development process
+        System.out.println("--- Development Timeline ---\n");
+        
+        vcs.commit("Alice", "Initial commit: Created Calculator class", 
+                   "class Calculator { }");
+        
+        vcs.commit("Bob", "Added addition method", 
+                   "class Calculator { int add(int a, int b) { return a + b; } }");
+        
+        vcs.commit("Alice", "Added subtraction method", 
+                   "class Calculator { int add(...) {...} int subtract(int a, int b) { return a - b; } }");
+        
+        vcs.commit("Bob", "Bug fix: Fixed subtraction logic", 
+                   "class Calculator { /* corrected subtract method */ }");
+        
+        // View history
+        vcs.showHistory();
+        
+        // Show current code
+        System.out.println("--- Current State ---");
+        vcs.showCurrentCode();
+        
+        // Rollback to previous version
+        System.out.println("--- Oops! Bug in latest version. Rolling back... ---");
+        vcs.rollback(3);
+        vcs.showCurrentCode();
+        
+        System.out.println("=== WHY VERSION CONTROL IS ESSENTIAL ===");
+        System.out.println("✓ Track Changes: Know who changed what and when");
+        System.out.println("✓ Collaboration: Multiple developers work on same codebase");
+        System.out.println("✓ Rollback: Undo mistakes by reverting to previous versions");
+        System.out.println("✓ Branching: Work on features independently");
+        System.out.println("✓ Backup: Code is never lost");
+        System.out.println("\n✓ Tools: Git, GitHub, GitLab, Bitbucket");
+        System.out.println("✓ Industry Standard: Every software company uses version control!\n");
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program simulates a version control system like Git. It demonstrates
+                committing changes, viewing history, and rolling back to previous versions. Version control is
+                absolutely essential in software engineering for team collaboration, tracking changes, and managing code
+                evolution.
+            </div>
+        </div>
+
+        <!-- Program 10: Code Review Process -->
+        <div class="content-section">
+            <h2>Program 10: Code Review Process</h2>
+            <p>Demonstrates the code review process - a critical quality assurance practice in software engineering.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * Code Review System
+ * Demonstrates the code review process used in professional software engineering
+ */
+import java.util.ArrayList;
+import java.util.List;
+
+class CodeChange {
+    String fileName;
+    String author;
+    String description;
+    List<String> codeLines;
+    
+    public CodeChange(String fileName, String author, String description) {
+        this.fileName = fileName;
+        this.author = author;
+        this.description = description;
+        this.codeLines = new ArrayList<>();
+    }
+    
+    public void addCodeLine(String line) {
+        codeLines.add(line);
+    }
+}
+
+class ReviewComment {
+    String reviewer;
+    String comment;
+    String severity; // "CRITICAL", "MAJOR", "MINOR", "SUGGESTION"
+    
+    public ReviewComment(String reviewer, String comment, String severity) {
+        this.reviewer = reviewer;
+        this.comment = comment;
+        this.severity = severity;
+    }
+}
+
+class CodeReview {
+    CodeChange codeChange;
+    List<ReviewComment> comments;
+    String status; // "PENDING", "APPROVED", "CHANGES_REQUESTED"
+    
+    public CodeReview(CodeChange codeChange) {
+        this.codeChange = codeChange;
+        this.comments = new ArrayList<>();
+        this.status = "PENDING";
+    }
+    
+    public void addComment(String reviewer, String comment, String severity) {
+        comments.add(new ReviewComment(reviewer, comment, severity));
+        System.out.println("  [" + severity + "] " + reviewer + ": " + comment);
+    }
+    
+    public void approve(String reviewer) {
+        System.out.println("  ✓ " + reviewer + " APPROVED the changes");
+        
+        // Check if there are critical issues
+        boolean hasCritical = comments.stream()
+            .anyMatch(c -> c.severity.equals("CRITICAL"));
+        
+        if (!hasCritical) {
+            status = "APPROVED";
+        }
+    }
+    
+    public void requestChanges(String reviewer) {
+        System.out.println("  ✗ " + reviewer + " REQUESTED CHANGES");
+        status = "CHANGES_REQUESTED";
+    }
+    
+    public void displayReviewSummary() {
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║     CODE REVIEW SUMMARY                ║");
+        System.out.println("╚════════════════════════════════════════╝");
+        System.out.println("File: " + codeChange.fileName);
+        System.out.println("Author: " + codeChange.author);
+        System.out.println("Description: " + codeChange.description);
+        System.out.println("Status: " + status);
+        System.out.println("Comments: " + comments.size());
+        System.out.println("════════════════════════════════════════\n");
+    }
+}
+
+public class CodeReviewProcess {
+    
+    public static void main(String[] args) {
+        System.out.println("=== CODE REVIEW PROCESS DEMONSTRATION ===\n");
+        
+        // Developer creates a code change
+        System.out.println("--- Step 1: Developer Submits Code for Review ---\n");
+        CodeChange change = new CodeChange(
+            "UserService.java",
+            "Alice (Junior Developer)",
+            "Added user authentication feature"
+        );
+        
+        change.addCodeLine("public boolean authenticateUser(String username, String password) {");
+        change.addCodeLine("    if (username == password) { // BUG: Using == instead of .equals()");
+        change.addCodeLine("        return true;");
+        change.addCodeLine("    }");
+        change.addCodeLine("    return false;");
+        change.addCodeLine("}");
+        
+        System.out.println("✓ Alice submitted code for review\n");
+        
+        // Create code review
+        CodeReview review = new CodeReview(change);
+        
+        // Senior developer reviews
+        System.out.println("--- Step 2: Senior Developer Reviews Code ---\n");
+        
+        review.addComment(
+            "Bob (Senior Dev)",
+            "Using == for string comparison is incorrect. Use .equals() method.",
+            "CRITICAL"
+        );
+        
+        review.addComment(
+            "Bob (Senior Dev)",
+            "Missing null checks for username and password parameters",
+            "MAJOR"
+        );
+        
+        review.addComment(
+            "Bob (Senior Dev)",
+            "Consider adding logging for failed authentication attempts",
+            "SUGGESTION"
+        );
+        
+        review.addComment(
+            "Bob (Senior Dev)",
+            "Add Javadoc comments to explain method purpose",
+            "MINOR"
+        );
+        
+        review.requestChanges("Bob (Senior Dev)");
+        review.displayReviewSummary();
+        
+        // Developer fixes issues
+        System.out.println("--- Step 3: Developer Addresses Feedback ---\n");
+        System.out.println("Alice fixed the issues:");
+        System.out.println("  ✓ Changed == to .equals()");
+        System.out.println("  ✓ Added null checks");
+        System.out.println("  ✓ Added logging");
+        System.out.println("  ✓ Added documentation\n");
+        
+        // Re-review
+        System.out.println("--- Step 4: Re-Review ---\n");
+        CodeReview reReview = new CodeReview(change);
+        reReview.addComment(
+            "Bob (Senior Dev)",
+            "All issues addressed. Code looks good!",
+            "SUGGESTION"
+        );
+        reReview.approve("Bob (Senior Dev)");
+        
+        System.out.println("\n--- Step 5: Code Merged to Main Branch ---\n");
+        System.out.println("✓ Code review passed!");
+        System.out.println("✓ Changes merged to main branch");
+        System.out.println("✓ Feature deployed to production\n");
+        
+        System.out.println("=== WHY CODE REVIEW MATTERS ===");
+        System.out.println("✓ Quality Assurance: Catches bugs before production");
+        System.out.println("✓ Knowledge Sharing: Team learns from each other");
+        System.out.println("✓ Consistency: Ensures coding standards are followed");
+        System.out.println("✓ Mentorship: Senior devs guide junior devs");
+        System.out.println("✓ Collective Ownership: Team owns the code, not individuals");
+        
+        System.out.println("\n=== CODE REVIEW BEST PRACTICES ===");
+        System.out.println("• Review small changes (< 400 lines)");
+        System.out.println("• Be constructive, not critical");
+        System.out.println("• Explain WHY, not just WHAT to change");
+        System.out.println("• Use automated tools (linters, static analysis)");
+        System.out.println("• Review within 24 hours\n");
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program simulates the code review process used in professional
+                software development. Code reviews are essential for maintaining quality, catching bugs early, sharing
+                knowledge, and ensuring coding standards. This demonstrates that software engineering is a
+                collaborative, quality-focused discipline.
+            </div>
+        </div>
+
+        <!-- Program 11: Testing Pyramid -->
+        <div class="content-section">
+            <h2>Program 11: Software Testing Levels</h2>
+            <p>Demonstrates different levels of testing in software engineering: Unit, Integration, and System testing.
+            </p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * Testing Levels Demonstration
+ * Shows Unit Testing, Integration Testing, and System Testing
+ */
+
+// ========== THE CODE TO BE TESTED ==========
+class Calculator {
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    public int multiply(int a, int b) {
+        return a * b;
+    }
+}
+
+class Database {
+    public void saveResult(int result) {
+        System.out.println("  [DB] Saved result: " + result);
+    }
+}
+
+class CalculatorService {
+    private Calculator calculator;
+    private Database database;
+    
+    public CalculatorService() {
+        this.calculator = new Calculator();
+        this.database = new Database();
+    }
+    
+    public int calculateAndSave(int a, int b, String operation) {
+        int result = 0;
+        
+        if (operation.equals("add")) {
+            result = calculator.add(a, b);
+        } else if (operation.equals("multiply")) {
+            result = calculator.multiply(a, b);
+        }
+        
+        database.saveResult(result);
+        return result;
+    }
+}
+
+// ========== TESTING ==========
+public class TestingLevels {
+    
+    // UNIT TESTING: Test individual components in isolation
+    public static void runUnitTests() {
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║     UNIT TESTING                       ║");
+        System.out.println("╚════════════════════════════════════════╝\n");
+        System.out.println("Testing individual methods in isolation...\n");
+        
+        Calculator calc = new Calculator();
+        
+        // Test 1: Addition
+        int result1 = calc.add(5, 3);
+        if (result1 == 8) {
+            System.out.println("✓ Test PASSED: add(5, 3) = 8");
+        } else {
+            System.out.println("✗ Test FAILED: add(5, 3) expected 8, got " + result1);
+        }
+        
+        // Test 2: Multiplication
+        int result2 = calc.multiply(4, 5);
+        if (result2 == 20) {
+            System.out.println("✓ Test PASSED: multiply(4, 5) = 20");
+        } else {
+            System.out.println("✗ Test FAILED: multiply(4, 5) expected 20, got " + result2);
+        }
+        
+        // Test 3: Edge case - zero
+        int result3 = calc.add(0, 0);
+        if (result3 == 0) {
+            System.out.println("✓ Test PASSED: add(0, 0) = 0 (edge case)");
+        } else {
+            System.out.println("✗ Test FAILED: add(0, 0) expected 0, got " + result3);
+        }
+        
+        System.out.println("\nUnit Tests: 3/3 passed ✓");
+    }
+    
+    // INTEGRATION TESTING: Test how components work together
+    public static void runIntegrationTests() {
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║     INTEGRATION TESTING                ║");
+        System.out.println("╚════════════════════════════════════════╝\n");
+        System.out.println("Testing interaction between Calculator and Database...\n");
+        
+        CalculatorService service = new CalculatorService();
+        
+        // Test 1: Calculate and save
+        System.out.println("Test 1: Calculate and save addition");
+        int result1 = service.calculateAndSave(10, 5, "add");
+        if (result1 == 15) {
+            System.out.println("✓ Integration Test PASSED: Result calculated and saved\n");
+        } else {
+            System.out.println("✗ Integration Test FAILED\n");
+        }
+        
+        // Test 2: Calculate and save multiplication
+        System.out.println("Test 2: Calculate and save multiplication");
+        int result2 = service.calculateAndSave(6, 7, "multiply");
+        if (result2 == 42) {
+            System.out.println("✓ Integration Test PASSED: Result calculated and saved\n");
+        } else {
+            System.out.println("✗ Integration Test FAILED\n");
+        }
+        
+        System.out.println("Integration Tests: 2/2 passed ✓");
+    }
+    
+    // SYSTEM TESTING: Test the entire system end-to-end
+    public static void runSystemTests() {
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║     SYSTEM TESTING                     ║");
+        System.out.println("╚════════════════════════════════════════╝\n");
+        System.out.println("Testing complete user workflow...\n");
+        
+        CalculatorService service = new CalculatorService();
+        
+        System.out.println("Scenario: User performs multiple calculations");
+        System.out.println("  Step 1: User adds 100 + 50");
+        service.calculateAndSave(100, 50, "add");
+        
+        System.out.println("  Step 2: User multiplies 12 * 8");
+        service.calculateAndSave(12, 8, "multiply");
+        
+        System.out.println("  Step 3: User adds 0 + 0 (edge case)");
+        service.calculateAndSave(0, 0, "add");
+        
+        System.out.println("\n✓ System Test PASSED: All user workflows completed successfully");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("=== SOFTWARE TESTING DEMONSTRATION ===");
+        
+        // Run all test levels
+        runUnitTests();
+        runIntegrationTests();
+        runSystemTests();
+        
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║     TESTING PYRAMID                    ║");
+        System.out.println("╚════════════════════════════════════════╝");
+        System.out.println("\n         /\\");
+        System.out.println("        /  \\      ← System Tests (Few)");
+        System.out.println("       /────\\");
+        System.out.println("      /      \\    ← Integration Tests (Some)");
+        System.out.println("     /────────\\");
+        System.out.println("    /          \\  ← Unit Tests (Many)");
+        System.out.println("   /────────────\\");
+        
+        System.out.println("\n=== WHY TESTING MATTERS ===");
+        System.out.println("✓ Quality Assurance: Catch bugs before users do");
+        System.out.println("✓ Confidence: Make changes without fear of breaking things");
+        System.out.println("✓ Documentation: Tests show how code should work");
+        System.out.println("✓ Regression Prevention: Ensure old bugs don't come back");
+        System.out.println("✓ Cost Savings: Fixing bugs in production is 100x more expensive");
+        
+        System.out.println("\n=== TESTING BEST PRACTICES ===");
+        System.out.println("• Write tests BEFORE or ALONGSIDE code (TDD)");
+        System.out.println("• Aim for 70-80% code coverage");
+        System.out.println("• Automate tests (run on every commit)");
+        System.out.println("• Test edge cases and error conditions");
+        System.out.println("• Keep tests fast and independent\n");
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program demonstrates the three main levels of software testing: Unit
+                Testing (testing individual methods), Integration Testing (testing how components work together), and
+                System Testing (testing the entire application). Testing is a fundamental part of software engineering
+                that ensures quality and prevents bugs from reaching production.
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/software-engineering.html" class="btn btn-primary">
+                    📚 Back to Theory
+                </a>
+                <a href="../mcq/software-engineering.html" class="btn btn-success">
+                    ✅ Test Your Knowledge
+                </a>
+                <a href="../index.html" class="btn btn-secondary">
+                    🏠 Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

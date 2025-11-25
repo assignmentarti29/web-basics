@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables and Data Types - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Header -->
+        <div class="content-header">
+            <h1>Variables and Data Types - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>Variables and Data Types</span>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="content-section">
+            <h2>Hands-On Java Programs</h2>
+            <p>
+                Welcome to the practical section! These 12 programs demonstrate every aspect of variables and data types
+                in Java.
+                Each program is heavily commented to explain not just WHAT the code does, but WHY it works that way.
+            </p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>
+                    Try running these programs yourself! Modify values, experiment with different data types, and
+                    observe the results.
+                    Hands-on practice is the best way to master these concepts.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program 1: Variable Declaration -->
+        <div class="content-section">
+            <h2>Program 1: Variable Declaration and Initialization</h2>
+            <p>This program demonstrates the basics of declaring and initializing variables in Java.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * VariableBasicsDemo - Understanding Variable Declaration and Initialization
+ */
+public class VariableBasicsDemo {
+    
+    public static void main(String[] args) {
+        // Declaration only
+        int age;
+        
+        // Initialization
+        age = 25;
+        System.out.println("Age: " + age);
+        
+        // Declaration + Initialization (most common)
+        int score = 100;
+        System.out.println("Score: " + score);
+        
+        // Multiple variables
+        int x = 10, y = 20, z = 30;
+        System.out.println("x=" + x + ", y=" + y + ", z=" + z);
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program covers variable fundamentals including declaration,
+                initialization, and naming rules.
+            </div>
+        </div>
+
+        <!-- Program 2: Primitive Types -->
+        <div class="content-section">
+            <h2>Program 2: All Primitive Data Types</h2>
+            <p>Demonstrates all 8 primitive types with ranges and default values.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * PrimitiveTypesDemo - All 8 Primitive Types
+ */
+public class PrimitiveTypesDemo {
+    
+    public static void main(String[] args) {
+        // Integer types
+        byte b = 127;           // 8 bits: -128 to 127
+        short s = 32000;        // 16 bits: -32,768 to 32,767
+        int i = 2000000;        // 32 bits: -2 billion to 2 billion
+        long l = 9000000000L;   // 64 bits: very large numbers
+        
+        // Floating-point types
+        float f = 3.14f;        // 32 bits: ~6-7 decimal digits
+        double d = 3.14159265;  // 64 bits: ~15-16 decimal digits
+        
+        // Character and boolean
+        char c = 'A';           // 16 bits: Unicode character
+        boolean bool = true;    // true or false
+        
+        System.out.println("byte: " + b);
+        System.out.println("short: " + s);
+        System.out.println("int: " + i);
+        System.out.println("long: " + l);
+        System.out.println("float: " + f);
+        System.out.println("double: " + d);
+        System.out.println("char: " + c);
+        System.out.println("boolean: " + bool);
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Shows all 8 primitive types with their ranges, sizes, and use cases.
+            </div>
+        </div>
+
+        <!-- Program 3: Type Casting -->
+        <div class="content-section">
+            <h2>Program 3: Type Casting (Widening and Narrowing)</h2>
+            <p>Demonstrates implicit and explicit type casting.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * TypeCastingDemo - Widening and Narrowing Conversions
+ */
+public class TypeCastingDemo {
+    
+    public static void main(String[] args) {
+        // WIDENING (Implicit - Automatic)
+        byte byteVal = 10;
+        int intVal = byteVal;  // Automatic conversion
+        double doubleVal = intVal;  // Automatic conversion
+        
+        System.out.println("Widening: byte " + byteVal + " → int " + intVal + " → double " + doubleVal);
+        
+        // NARROWING (Explicit - Manual)
+        double price = 19.99;
+        int dollars = (int) price;  // Explicit cast required
+        System.out.println("Narrowing: double " + price + " → int " + dollars);
+        System.out.println("Lost decimal part: " + (price - dollars));
+        
+        // Overflow example
+        int largeInt = 130;
+        byte smallByte = (byte) largeInt;
+        System.out.println("Overflow: int " + largeInt + " → byte " + smallByte);
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Widening is automatic (safe), narrowing requires explicit cast (may lose
+                data).
+            </div>
+        </div>
+
+        <!-- Program 4: Default Values -->
+        <div class="content-section">
+            <h2>Program 4: Default Values</h2>
+            <p>Shows default values for instance variables.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * DefaultValuesDemo - Instance vs Local Variables
+ */
+public class DefaultValuesDemo {
+    
+    // Instance variables - have default values
+    static int instanceInt;
+    static double instanceDouble;
+    static boolean instanceBoolean;
+    static String instanceString;
+    
+    public static void main(String[] args) {
+        System.out.println("Instance variable defaults:");
+        System.out.println("int: " + instanceInt);           // 0
+        System.out.println("double: " + instanceDouble);     // 0.0
+        System.out.println("boolean: " + instanceBoolean);   // false
+        System.out.println("String: " + instanceString);     // null
+        
+        // Local variables - NO default values
+        int localInt = 0;  // Must initialize!
+        System.out.println("\nLocal variable: " + localInt);
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Instance variables have defaults (0, false, null). Local variables must be
+                initialized.
+            </div>
+        </div>
+
+        <!-- Program 5: Wrapper Classes -->
+        <div class="content-section">
+            <h2>Program 5: Wrapper Classes and Autoboxing</h2>
+            <p>Demonstrates wrapper classes and autoboxing/unboxing.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * WrapperClassesDemo - Autoboxing and Unboxing
+ */
+import java.util.ArrayList;
+
+public class WrapperClassesDemo {
+    
+    public static void main(String[] args) {
+        // Autoboxing: primitive → wrapper
+        int primitive = 42;
+        Integer wrapper = primitive;  // Automatic
+        System.out.println("Autoboxing: int " + primitive + " → Integer " + wrapper);
+        
+        // Unboxing: wrapper → primitive
+        Integer wrapperNum = 100;
+        int primitiveNum = wrapperNum;  // Automatic
+        System.out.println("Unboxing: Integer " + wrapperNum + " → int " + primitiveNum);
+        
+        // Collections require wrappers
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(10);  // Autoboxing
+        numbers.add(20);
+        System.out.println("\nArrayList: " + numbers);
+        
+        // Utility methods
+        int parsed = Integer.parseInt("123");
+        String str = Integer.toString(456);
+        System.out.println("Parsed: " + parsed);
+        System.out.println("To String: " + str);
+        
+        // Constants
+        System.out.println("\nInteger.MAX_VALUE: " + Integer.MAX_VALUE);
+        System.out.println("Integer.MIN_VALUE: " + Integer.MIN_VALUE);
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Wrappers enable primitives in collections, provide utility methods, and
+                can be null.
+            </div>
+        </div>
+
+        <!-- Program 6: Overflow -->
+        <div class="content-section">
+            <h2>Program 6: Integer Overflow</h2>
+            <p>Demonstrates what happens when numbers exceed type limits.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * OverflowDemo - Integer Overflow and Underflow
+ */
+public class OverflowDemo {
+    
+    public static void main(String[] args) {
+        // Byte overflow
+        byte maxByte = 127;
+        System.out.println("Max byte: " + maxByte);
+        maxByte++;
+        System.out.println("After increment: " + maxByte);  // Wraps to -128
+        
+        // Int overflow
+        int maxInt = Integer.MAX_VALUE;
+        System.out.println("\nMax int: " + maxInt);
+        int overflow = maxInt + 1;
+        System.out.println("Max + 1: " + overflow);  // Wraps to MIN_VALUE
+        
+        // Multiplication overflow
+        int large1 = 1000000;
+        int large2 = 1000000;
+        int product = large1 * large2;
+        System.out.println("\n" + large1 + " × " + large2 + " = " + product);  // Overflow!
+        
+        // Correct way: use long
+        long correctProduct = (long) large1 * large2;
+        System.out.println("Using long: " + correctProduct);  // Correct!
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Overflow wraps around to minimum value. Use appropriate types and validate
+                ranges.
+            </div>
+        </div>
+
+        <!-- Program 7: Precision Loss -->
+        <div class="content-section">
+            <h2>Program 7: Floating-Point Precision</h2>
+            <p>Demonstrates precision differences between float and double.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * PrecisionDemo - Float vs Double Precision
+ */
+public class PrecisionDemo {
+    
+    public static void main(String[] args) {
+        // Float precision (~6-7 digits)
+        float floatNum = 123456.789f;
+        System.out.println("Float: " + floatNum);  // Loses precision
+        
+        // Double precision (~15-16 digits)
+        double doubleNum = 123456.789123456;
+        System.out.println("Double: " + doubleNum);  // More precise
+        
+        // Floating-point arithmetic issues
+        double a = 0.1;
+        double b = 0.2;
+        double sum = a + b;
+        System.out.println("\n0.1 + 0.2 = " + sum);  // Not exactly 0.3!
+        
+        // Integer division vs floating division
+        int x = 7;
+        int y = 2;
+        System.out.println("\nInteger division: " + x + " / " + y + " = " + (x / y));  // 3
+        System.out.println("Floating division: " + x + " / " + y + " = " + ((double) x / y));  // 3.5
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Double is more precise than float. Never use float/double for currency
+                (use BigDecimal).
+            </div>
+        </div>
+
+        <!-- Program 8: Character Demo -->
+        <div class="content-section">
+            <h2>Program 8: Character and ASCII</h2>
+            <p>Demonstrates char type and ASCII values.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * CharDemo - Character and ASCII Demonstration
+ */
+public class CharDemo {
+    
+    public static void main(String[] args) {
+        // Character literals
+        char letter = 'A';
+        char digit = '5';
+        char symbol = '$';
+        
+        System.out.println("Character: " + letter);
+        System.out.println("Digit char: " + digit);
+        System.out.println("Symbol: " + symbol);
+        
+        // ASCII values
+        System.out.println("\nASCII value of 'A': " + (int) letter);  // 65
+        System.out.println("ASCII value of '5': " + (int) digit);     // 53
+        
+        // Creating char from ASCII
+        char fromASCII = 65;
+        System.out.println("\nChar from ASCII 65: " + fromASCII);  // 'A'
+        
+        // Unicode support
+        char unicodeChar = '\u0041';  // Unicode for 'A'
+        char emoji = '☕';
+        System.out.println("Unicode \\u0041: " + unicodeChar);
+        System.out.println("Emoji: " + emoji);
+        
+        // Character arithmetic
+        char c = 'A';
+        c++;
+        System.out.println("\n'A' + 1 = " + c);  // 'B'
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> char stores Unicode characters. Can convert between char and int (ASCII
+                values).
+            </div>
+        </div>
+
+        <!-- Program 9: Boolean Demo -->
+        <div class="content-section">
+            <h2>Program 9: Boolean Operations</h2>
+            <p>Demonstrates boolean type and logical operations.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * BooleanDemo - Boolean Type and Logical Operations
+ */
+public class BooleanDemo {
+    
+    public static void main(String[] args) {
+        // Boolean literals
+        boolean isJavaFun = true;
+        boolean isPythonBetter = false;
+        
+        System.out.println("Is Java fun? " + isJavaFun);
+        System.out.println("Is Python better? " + isPythonBetter);
+        
+        // Comparison operators
+        int age = 25;
+        boolean isAdult = age >= 18;
+        boolean isTeenager = age >= 13 && age <= 19;
+        
+        System.out.println("\nAge: " + age);
+        System.out.println("Is adult? " + isAdult);
+        System.out.println("Is teenager? " + isTeenager);
+        
+        // Logical operators
+        boolean a = true;
+        boolean b = false;
+        
+        System.out.println("\nLogical Operations:");
+        System.out.println("a AND b: " + (a && b));   // false
+        System.out.println("a OR b: " + (a || b));    // true
+        System.out.println("NOT a: " + (!a));         // false
+        
+        // Practical example
+        int score = 85;
+        boolean passed = score >= 60;
+        boolean excellentScore = score >= 90;
+        
+        System.out.println("\nScore: " + score);
+        System.out.println("Passed? " + passed);
+        System.out.println("Excellent? " + excellentScore);
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Boolean stores true/false. Used in conditions, flags, and logical
+                operations.
+            </div>
+        </div>
+
+        <!-- Program 10: Final Variables -->
+        <div class="content-section">
+            <h2>Program 10: Final Variables (Constants)</h2>
+            <p>Demonstrates final keyword for constants.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * FinalVariablesDemo - Constants using final keyword
+ */
+public class FinalVariablesDemo {
+    
+    // Class-level constants
+    public static final double PI = 3.14159265359;
+    public static final int MAX_USERS = 100;
+    public static final String COMPANY_NAME = "TechCorp";
+    
+    public static void main(String[] args) {
+        // Using constants
+        double radius = 5.0;
+        double circumference = 2 * PI * radius;
+        
+        System.out.println("PI: " + PI);
+        System.out.println("Radius: " + radius);
+        System.out.println("Circumference: " + circumference);
+        
+        System.out.println("\nMAX_USERS: " + MAX_USERS);
+        System.out.println("COMPANY_NAME: " + COMPANY_NAME);
+        
+        // Local final variable
+        final int MAX_ATTEMPTS = 3;
+        System.out.println("\nMax login attempts: " + MAX_ATTEMPTS);
+        
+        // Attempting to change final variable causes compile error
+        // PI = 3.14;  // ❌ Error: cannot assign a value to final variable
+        // MAX_ATTEMPTS = 5;  // ❌ Error
+        
+        System.out.println("\n✅ Final variables cannot be changed after initialization");
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> final makes variables immutable. Use UPPER_SNAKE_CASE for constants.
+            </div>
+        </div>
+
+        <!-- Program 11: Memory Demo -->
+        <div class="content-section">
+            <h2>Program 11: Stack vs Heap Memory</h2>
+            <p>Demonstrates memory allocation for primitives and objects.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * MemoryDemo - Stack vs Heap Memory Allocation
+ */
+public class MemoryDemo {
+    
+    public static void main(String[] args) {
+        // STACK: Primitives and references
+        int age = 25;              // Stored on stack (value)
+        double salary = 50000.0;   // Stored on stack (value)
+        
+        // HEAP: Objects
+        String name = "Alice";     // Reference on stack, object on heap
+        int[] numbers = {1, 2, 3}; // Reference on stack, array on heap
+        
+        System.out.println("=== STACK (Primitives) ===");
+        System.out.println("age (value): " + age);
+        System.out.println("salary (value): " + salary);
+        
+        System.out.println("\n=== HEAP (Objects) ===");
+        System.out.println("name (reference → \"" + name + "\")");
+        System.out.println("numbers (reference → array)");
+        
+        // Demonstrating reference behavior
+        String s1 = "Hello";
+        String s2 = s1;  // Both reference same object
+        
+        System.out.println("\n=== Reference Behavior ===");
+        System.out.println("s1: " + s1);
+        System.out.println("s2: " + s2);
+        System.out.println("s1 == s2: " + (s1 == s2));  // true (same reference)
+        
+        // Creating new object
+        String s3 = new String("Hello");
+        System.out.println("s1 == s3: " + (s1 == s3));  // false (different reference)
+        System.out.println("s1.equals(s3): " + s1.equals(s3));  // true (same content)
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Primitives store values on stack. Objects store data on heap with
+                references on stack.
+            </div>
+        </div>
+
+        <!-- Program 12: Practical Example -->
+        <div class="content-section">
+            <h2>Program 12: Practical Example - Temperature Converter</h2>
+            <p>A practical program using variables and data types.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * TemperatureConverter - Practical Application
+ * Demonstrates variables, casting, and arithmetic
+ */
+public class TemperatureConverter {
+    
+    // Constants
+    public static final double FREEZING_POINT_F = 32.0;
+    public static final double CONVERSION_FACTOR = 5.0 / 9.0;
+    
+    public static void main(String[] args) {
+        System.out.println("=== Temperature Converter ===\n");
+        
+        // Fahrenheit to Celsius
+        double fahrenheit = 98.6;  // Normal body temperature
+        double celsius = (fahrenheit - FREEZING_POINT_F) * CONVERSION_FACTOR;
+        
+        System.out.println("Fahrenheit: " + fahrenheit + "°F");
+        System.out.println("Celsius: " + celsius + "°C");
+        
+        // Celsius to Fahrenheit
+        double celsiusTemp = 37.0;
+        double fahrenheitTemp = (celsiusTemp / CONVERSION_FACTOR) + FREEZING_POINT_F;
+        
+        System.out.println("\nCelsius: " + celsiusTemp + "°C");
+        System.out.println("Fahrenheit: " + fahrenheitTemp + "°F");
+        
+        // Temperature ranges
+        final int FREEZING_C = 0;
+        final int BOILING_C = 100;
+        
+        System.out.println("\n=== Water Properties ===");
+        System.out.println("Freezing point: " + FREEZING_C + "°C");
+        System.out.println("Boiling point: " + BOILING_C + "°C");
+        
+        // Check temperature status
+        double currentTemp = 25.0;
+        boolean isFreezing = currentTemp <= FREEZING_C;
+        boolean isBoiling = currentTemp >= BOILING_C;
+        boolean isComfortable = currentTemp >= 18 && currentTemp <= 25;
+        
+        System.out.println("\nCurrent temperature: " + currentTemp + "°C");
+        System.out.println("Is freezing? " + isFreezing);
+        System.out.println("Is boiling? " + isBoiling);
+        System.out.println("Is comfortable? " + isComfortable);
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Practical application using double for precision, final for constants,
+                boolean for conditions, and proper variable naming.
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/variables-and-data-types.html" class="btn btn-primary">
+                    📚 Back to Theory
+                </a>
+                <a href="../mcq/variables-and-data-types.html" class="btn btn-success">
+                    ✅ Test Your Knowledge
+                </a>
+                <a href="../index.html" class="btn btn-secondary">
+                    🏠 Back to Home
+                </a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">📚 Next Topic</div>
+                <p>
+                    <strong>Coming Soon:</strong> Java Keywords
+                    <br>Learn all reserved keywords in Java and their specific purposes in program structure and
+                    control.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

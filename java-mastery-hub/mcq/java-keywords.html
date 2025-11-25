@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Keywords - Quiz - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Header -->
+        <div class="content-header">
+            <h1>Java Keywords - Quiz</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Quiz</span>
+                <span>/</span>
+                <span>Java Keywords</span>
+            </div>
+        </div>
+
+        <!-- Quiz Introduction -->
+        <div class="content-section">
+            <h2>Test Your Knowledge</h2>
+            <p>
+                This quiz contains 27 questions covering all aspects of Java keywords including access modifiers,
+                non-access modifiers, control flow, class/object keywords, exception handling, and best practices.
+            </p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>
+                    Take your time and read each question carefully. After answering, you'll receive detailed
+                    explanations to reinforce your understanding. Aim for at least 80% to demonstrate mastery!
+                </p>
+            </div>
+        </div>
+
+        <!-- Quiz Progress -->
+        <div class="quiz-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-text">
+                <span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
+            </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quizContainer" class="content-section">
+            <!-- Questions will be dynamically loaded here -->
+        </div>
+
+        <!-- Quiz Results -->
+        <div id="quizResults" class="content-section" style="display: none;">
+            <h2>Quiz Complete! 🎉</h2>
+            <div class="results-summary">
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="scorePercentage">0%</span>
+                    </div>
+                    <p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
+                </div>
+                <div id="performanceMessage" class="performance-message"></div>
+            </div>
+
+            <div class="results-actions">
+                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
+                <a href="../theory/java-keywords.html" class="btn btn-secondary">📚 Review Theory</a>
+                <a href="../programs/java-keywords.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/java-keywords.html" class="btn btn-primary">
+                    📚 Back to Theory
+                </a>
+                <a href="../programs/java-keywords.html" class="btn btn-secondary">
+                    💻 View Programs
+                </a>
+                <a href="../index.html" class="btn btn-success">
+                    🏠 Back to Home
+                </a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">📚 Next Topic</div>
+                <p>
+                    <strong>Coming Soon:</strong> Control Flow Statements & Loops
+                    <br>Master if-else, switch, for, while, do-while loops, and control flow mechanisms.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+    <script>
+        // Quiz questions for Java Keywords
+        const quizQuestions = [
+            // Section 1: Introduction to Keywords (Questions 1-3)
+            {
+                id: 1,
+                question: "What are Java keywords?",
+                options: [
+                    "User-defined identifiers for variables",
+                    "Reserved words with predefined meanings in Java",
+                    "Comments that explain code",
+                    "Special characters used in Java"
+                ],
+                answerIndex: 1,
+                explanation: "Keywords are reserved words that have predefined, special meanings in Java. They cannot be used as identifiers (variable names, method names, etc.) and form the fundamental syntax of the language."
+            },
+            {
+                id: 2,
+                question: "Can you use a keyword as a variable name?",
+                options: [
+                    "Yes, if you use camelCase",
+                    "Yes, if you capitalize it",
+                    "No, it will cause a compilation error",
+                    "Yes, but only in methods"
+                ],
+                answerIndex: 2,
+                explanation: "Keywords are reserved and cannot be used as identifiers. Attempting to use a keyword as a variable name (e.g., int class = 5;) will result in a compilation error."
+            },
+            {
+                id: 3,
+                question: "Which of the following is NOT a valid Java keyword?",
+                options: [
+                    "static",
+                    "final",
+                    "String",
+                    "abstract"
+                ],
+                answerIndex: 2,
+                explanation: "String is a class name, not a keyword. Keywords include static, final, abstract, etc. String starts with uppercase because it's a class, while keywords are always lowercase."
+            },
+
+            // Section 2: Access Modifiers (Questions 4-7)
+            {
+                id: 4,
+                question: "Which access modifier provides the widest accessibility?",
+                options: [
+                    "private",
+                    "protected",
+                    "default (no modifier)",
+                    "public"
+                ],
+                answerIndex: 3,
+                explanation: "public provides the widest accessibility - members can be accessed from anywhere (any class, any package). The order from most to least restrictive is: private → default → protected → public."
+            },
+            {
+                id: 5,
+                question: "What is the accessibility of a private member?",
+                options: [
+                    "Only within the same class",
+                    "Within the same package",
+                    "Within subclasses only",
+                    "Everywhere"
+                ],
+                answerIndex: 0,
+                explanation: "private members are only accessible within the same class. This is the most restrictive access level and is used for encapsulation to hide internal implementation details."
+            },
+            {
+                id: 6,
+                question: "Which access modifier allows access in the same package and subclasses?",
+                options: [
+                    "public",
+                    "private",
+                    "protected",
+                    "default"
+                ],
+                answerIndex: 2,
+                explanation: "protected allows access within the same package AND in subclasses (even if they're in different packages). It's commonly used for members that should be accessible to child classes."
+            },
+            {
+                id: 7,
+                question: "What is the default access modifier if none is specified?",
+                options: [
+                    "public",
+                    "private",
+                    "protected",
+                    "package-private (default)"
+                ],
+                answerIndex: 3,
+                explanation: "If no access modifier is specified, the default is package-private (also called default access). Members are accessible only within the same package, not from other packages."
+            },
+
+            // Section 3: Non-Access Modifiers (Questions 8-13)
+            {
+                id: 8,
+                question: "What does the static keyword indicate?",
+                options: [
+                    "Variable cannot be changed",
+                    "Member belongs to the class, not instances",
+                    "Method cannot be overridden",
+                    "Class cannot be instantiated"
+                ],
+                answerIndex: 1,
+                explanation: "static means the member belongs to the class itself, not to individual objects. Static members are shared across all instances and can be accessed without creating an object."
+            },
+            {
+                id: 9,
+                question: "What does the final keyword do when applied to a variable?",
+                options: [
+                    "Makes it accessible everywhere",
+                    "Makes it a constant (cannot be reassigned)",
+                    "Makes it thread-safe",
+                    "Makes it private"
+                ],
+                answerIndex: 1,
+                explanation: "final makes a variable a constant - once assigned, it cannot be reassigned. For reference types, the reference cannot change, but the object itself can still be modified."
+            },
+            {
+                id: 10,
+                question: "Can you create an instance of an abstract class?",
+                options: [
+                    "Yes, using the new keyword",
+                    "Yes, but only in the same package",
+                    "No, abstract classes cannot be instantiated",
+                    "Yes, if it has a constructor"
+                ],
+                answerIndex: 2,
+                explanation: "Abstract classes cannot be instantiated directly. They serve as templates for concrete subclasses. You must create an instance of a concrete subclass that implements all abstract methods."
+            },
+            {
+                id: 11,
+                question: "What is the purpose of the synchronized keyword?",
+                options: [
+                    "To make code run faster",
+                    "To ensure thread safety by allowing only one thread at a time",
+                    "To synchronize with database",
+                    "To make methods static"
+                ],
+                answerIndex: 1,
+                explanation: "synchronized ensures thread safety by allowing only one thread to execute a method/block at a time. This prevents race conditions when multiple threads access shared resources."
+            },
+            {
+                id: 12,
+                question: "What does the volatile keyword ensure?",
+                options: [
+                    "Variable cannot be changed",
+                    "Variable is thread-safe for all operations",
+                    "Variable changes are visible to all threads immediately",
+                    "Variable is stored on heap"
+                ],
+                answerIndex: 2,
+                explanation: "volatile ensures that variable reads/writes go directly to main memory, making changes visible to all threads immediately. However, it doesn't guarantee atomicity for compound operations."
+            },
+            {
+                id: 13,
+                question: "Which combination of modifiers is INVALID?",
+                options: [
+                    "public static final",
+                    "private final",
+                    "abstract final",
+                    "public static"
+                ],
+                answerIndex: 2,
+                explanation: "abstract final is invalid because they contradict each other. abstract requires subclasses to override, while final prevents overriding. This combination makes no logical sense."
+            },
+
+            // Section 4: Control Flow (Questions 14-17)
+            {
+                id: 14,
+                question: "What is the difference between break and continue?",
+                options: [
+                    "break exits the loop, continue skips current iteration",
+                    "break skips iteration, continue exits loop",
+                    "They are the same",
+                    "break is for loops, continue is for switch"
+                ],
+                answerIndex: 0,
+                explanation: "break exits the entire loop immediately. continue skips the rest of the current iteration and moves to the next iteration. break stops the loop, continue just skips one iteration."
+            },
+            {
+                id: 15,
+                question: "Can you use break outside of a loop or switch statement?",
+                options: [
+                    "Yes, anywhere in a method",
+                    "Yes, but only in if statements",
+                    "No, it will cause a compilation error",
+                    "Yes, but only in static methods"
+                ],
+                answerIndex: 2,
+                explanation: "break can only be used inside loops (for, while, do-while) or switch statements. Using it elsewhere causes a compilation error: 'break outside switch or loop'."
+            },
+            {
+                id: 16,
+                question: "What does the return keyword do?",
+                options: [
+                    "Exits the current loop",
+                    "Skips to next iteration",
+                    "Exits the method and optionally returns a value",
+                    "Restarts the method"
+                ],
+                answerIndex: 2,
+                explanation: "return exits the entire method immediately and optionally returns a value to the caller. For void methods, use 'return;' without a value. For non-void methods, return the appropriate type."
+            },
+            {
+                id: 17,
+                question: "In a switch statement, what happens if you omit the break keyword?",
+                options: [
+                    "Compilation error",
+                    "Fall-through occurs (executes next cases)",
+                    "Switch exits automatically",
+                    "Runtime exception"
+                ],
+                answerIndex: 1,
+                explanation: "Without break, fall-through occurs - execution continues to the next case even if it doesn't match. This is sometimes intentional but often a bug. Always use break unless you specifically want fall-through."
+            },
+
+            // Section 5: Class and Object Keywords (Questions 18-22)
+            {
+                id: 18,
+                question: "What does the 'this' keyword refer to?",
+                options: [
+                    "The parent class",
+                    "The current object instance",
+                    "A static variable",
+                    "The main method"
+                ],
+                answerIndex: 1,
+                explanation: "this refers to the current object instance. It's used to distinguish instance variables from parameters, call other constructors, enable method chaining, and pass the current object as a parameter."
+            },
+            {
+                id: 19,
+                question: "What does the 'super' keyword refer to?",
+                options: [
+                    "The current class",
+                    "The child class",
+                    "The parent class",
+                    "A static method"
+                ],
+                answerIndex: 2,
+                explanation: "super refers to the parent (superclass). It's used to call parent constructors, access parent methods (especially when overridden), and access parent variables (when shadowed)."
+            },
+            {
+                id: 20,
+                question: "What does the 'new' keyword do?",
+                options: [
+                    "Creates a new method",
+                    "Creates a new object in heap memory",
+                    "Creates a new class",
+                    "Creates a new variable"
+                ],
+                answerIndex: 1,
+                explanation: "new creates a new object instance in heap memory and returns a reference to it. It allocates memory, calls the constructor, and initializes the object."
+            },
+            {
+                id: 21,
+                question: "What does 'instanceof' check?",
+                options: [
+                    "If two objects are equal",
+                    "If an object is an instance of a specific class or interface",
+                    "If a class has instances",
+                    "If a variable is static"
+                ],
+                answerIndex: 1,
+                explanation: "instanceof checks if an object is an instance of a specific class or implements a specific interface. Returns true if the object is of that type or a subtype, false otherwise."
+            },
+            {
+                id: 22,
+                question: "Can a class extend multiple classes in Java?",
+                options: [
+                    "Yes, using extends keyword",
+                    "Yes, using implements keyword",
+                    "No, Java supports single inheritance only",
+                    "Yes, but only abstract classes"
+                ],
+                answerIndex: 2,
+                explanation: "Java supports single inheritance - a class can extend only ONE parent class. However, a class can implement multiple interfaces. This prevents the diamond problem of multiple inheritance."
+            },
+
+            // Section 6: Exception Handling (Questions 23-26)
+            {
+                id: 23,
+                question: "What is the difference between 'throw' and 'throws'?",
+                options: [
+                    "They are the same",
+                    "throw is used in method body, throws is used in method signature",
+                    "throw is for checked exceptions, throws is for unchecked",
+                    "throws is deprecated"
+                ],
+                answerIndex: 1,
+                explanation: "throw is used inside a method body to actually throw an exception. throws is used in the method signature to declare that the method might throw specific exceptions. Example: void method() throws IOException { throw new IOException(); }"
+            },
+            {
+                id: 24,
+                question: "Does the finally block always execute?",
+                options: [
+                    "Yes, always",
+                    "No, only if exception occurs",
+                    "No, only if no exception occurs",
+                    "Yes, except if JVM exits or thread is killed"
+                ],
+                answerIndex: 3,
+                explanation: "finally almost always executes, even if there's a return statement in try/catch. The only exceptions are: JVM exits (System.exit()), thread is killed, or infinite loop in try/catch."
+            },
+            {
+                id: 25,
+                question: "Can you have a try block without a catch block?",
+                options: [
+                    "No, catch is mandatory",
+                    "Yes, if you have a finally block",
+                    "Yes, but only for unchecked exceptions",
+                    "No, you need both catch and finally"
+                ],
+                answerIndex: 1,
+                explanation: "You can have try-finally without catch. This is useful when you want cleanup code (finally) but don't want to handle the exception - you let it propagate to the caller."
+            },
+            {
+                id: 26,
+                question: "What type of exceptions must be declared with 'throws'?",
+                options: [
+                    "All exceptions",
+                    "Only RuntimeException",
+                    "Checked exceptions (except RuntimeException and Error)",
+                    "Only custom exceptions"
+                ],
+                answerIndex: 2,
+                explanation: "Checked exceptions (those extending Exception but not RuntimeException) must be either caught or declared with throws. Unchecked exceptions (RuntimeException and Error) don't require declaration."
+            },
+
+            // Section 7: Best Practices and Code Analysis (Question 27)
+            {
+                id: 27,
+                question: "Which is the best practice for access modifiers?",
+                options: [
+                    "Make everything public for easy access",
+                    "Use private by default, only make public what's necessary",
+                    "Use protected for all variables",
+                    "Never use private"
+                ],
+                answerIndex: 1,
+                explanation: "Best practice: Use the most restrictive access level that makes sense (principle of least privilege). Start with private and only make more accessible if needed. This ensures encapsulation and reduces coupling."
+            }
+        ];
+
+        // Initialize the quiz when page loads
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
+            quizManager.startQuiz();
+
+            // Make quizManager globally accessible for retake button
+            window.quizManager = quizManager;
+        });
+    </script>
+</body>
+
+</html>

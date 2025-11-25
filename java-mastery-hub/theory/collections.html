@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Collection Framework in Depth - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Header -->
+        <div class="content-header">
+            <h1>Java Collection Framework in Depth</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Theory</span>
+                <span>/</span>
+                <span>Collections</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Introduction -->
+        <div class="content-section">
+            <h2>📦 Introduction to Collection Framework</h2>
+
+            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+            <p>
+                Imagine you have many toys. If you throw them all over the floor, it's messy! But if you have
+                <strong>special boxes</strong>—one for cars, one for dolls, one for blocks—it's easy to find them.
+            </p>
+            <p>
+                The <strong>Collection Framework</strong> is like a set of smart storage boxes for your data. Some boxes
+                keep things in order, some don't let you put the same toy twice, and some let you find a toy instantly
+                by its name tag!
+            </p>
+
+            <h3>Level 2: Real-World Analogy</h3>
+            <p>
+                Think of a <strong>kitchen cupboard</strong>:
+            </p>
+            <ul>
+                <li><strong>Plate Rack (List):</strong> Plates are stacked one after another. You know which is first,
+                    second, etc.</li>
+                <li><strong>Spice Jar Set (Map):</strong> Each jar has a label (Salt, Pepper). You find the spice by
+                    looking at the label.</li>
+                <li><strong>Fruit Basket (Set):</strong> You just throw fruits in. Order doesn't matter, and you don't
+                    put two identical apples in the same spot.</li>
+            </ul>
+
+            <h3>Level 3: Technical Deep-Dive</h3>
+            <p>
+                The <strong>Collection Framework</strong> (in <code>java.util</code> package) provides a unified
+                architecture for storing and manipulating groups of objects. It reduces programming effort by providing
+                useful data structures and algorithms (searching, sorting, shuffling, etc.) out of the box.
+            </p>
+            <p>
+                Key benefits:
+            </p>
+            <ul>
+                <li><strong>Reduces programming effort:</strong> No need to write your own linked lists or hash tables.
+                </li>
+                <li><strong>Increases performance:</strong> High-performance implementations of data structures.</li>
+                <li><strong>Interoperability:</strong> Standard interfaces allow different APIs to pass collections back
+                    and forth.</li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Arrays vs Collections -->
+        <div class="content-section">
+            <h2>⚖️ Difference between Arrays and Collections</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Arrays</th>
+                        <th>Collections</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Size</strong></td>
+                        <td>Fixed size (once created, cannot grow/shrink)</td>
+                        <td>Dynamic size (grows/shrinks automatically)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Performance</strong></td>
+                        <td>Faster (direct memory access)</td>
+                        <td>Slightly slower (overhead of dynamic resizing)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Data Types</strong></td>
+                        <td>Primitives (int, char) and Objects</td>
+                        <td>Objects only (primitives must be wrapped, e.g., Integer)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Functionality</strong></td>
+                        <td>Basic storage, no built-in methods</td>
+                        <td>Rich methods (add, remove, contains, sort, etc.)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 3: Core Interfaces -->
+        <div class="content-section">
+            <h2>🔑 Core Interfaces</h2>
+
+            <h3>1. List Interface</h3>
+            <p>
+                An <strong>ordered collection</strong> (also known as a sequence). The user of this interface has
+                precise control over where in the list each element is inserted. You can access elements by their
+                integer index (position in the list). <strong>Allows duplicates.</strong>
+            </p>
+
+            <h3>2. Set Interface</h3>
+            <p>
+                A collection that contains <strong>no duplicate elements</strong>. It models the mathematical set
+                abstraction. It does not guarantee insertion order (except for specific implementations like
+                LinkedHashSet).
+            </p>
+
+            <h3>3. Queue Interface</h3>
+            <p>
+                A collection used to hold multiple elements prior to processing. Typically orders elements in a
+                <strong>FIFO (First-In-First-Out)</strong> manner.
+            </p>
+
+            <h3>4. Map Interface</h3>
+            <p>
+                An object that maps <strong>keys to values</strong>. A map cannot contain duplicate keys; each key can
+                map to at most one value. <strong>Note:</strong> Map is NOT a child of the Collection interface, but is
+                part of the framework.
+            </p>
+        </div>
+
+        <!-- Section 4: Hierarchy Tree -->
+        <div class="content-section">
+            <h2>🌳 Collection Hierarchy Tree</h2>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+Iterable
+└── Collection
+    ├── List
+    │   ├── ArrayList
+    │   ├── LinkedList
+    │   ├── Vector
+    │   └── Stack
+    ├── Set
+    │   ├── HashSet
+    │   ├── LinkedHashSet
+    │   └── TreeSet (SortedSet)
+    └── Queue
+        ├── PriorityQueue
+        └── ArrayDeque (Deque)
+
+Map (Separate Interface)
+├── HashMap
+├── LinkedHashMap
+├── TreeMap (SortedMap)
+└── Hashtable
+            </pre>
+        </div>
+
+        <!-- Section 5: Detailed Implementations -->
+        <div class="content-section">
+            <h2>📚 Detailed Explanation of Major Implementations</h2>
+
+            <h3>A. List Implementations</h3>
+
+            <h4>1. ArrayList</h4>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A magical expanding box.</p>
+                <p><strong>Real-world:</strong> A shopping list where you can add items to the bottom.</p>
+                <p><strong>Technical:</strong> Resizable-array implementation of the List interface. Fast random access
+                    (get by index) but slow insertion/deletion in the middle (requires shifting).</p>
+                <p><strong>Complexity:</strong> Access: O(1), Search: O(n), Insert/Delete: O(n)</p>
+            </div>
+
+            <h4>2. LinkedList</h4>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A train where each car holds a toy and holds hands with the next car.</p>
+                <p><strong>Real-world:</strong> A treasure hunt chain (clue 1 leads to clue 2...).</p>
+                <p><strong>Technical:</strong> Doubly-linked list implementation. Fast insertion/deletion (just change
+                    pointers) but slow random access (must traverse from start).</p>
+                <p><strong>Complexity:</strong> Access: O(n), Insert/Delete: O(1) (if at ends or iterator)</p>
+            </div>
+
+            <h3>B. Set Implementations</h3>
+
+            <h4>1. HashSet</h4>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A bag where you can't put the same toy twice.</p>
+                <p><strong>Real-world:</strong> A bag of unique marbles.</p>
+                <p><strong>Technical:</strong> Backed by a HashMap. No guarantee of iteration order. Allows null.</p>
+                <p><strong>Complexity:</strong> Add/Remove/Contains: O(1) amortized.</p>
+            </div>
+
+            <h4>2. TreeSet</h4>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A shelf where toys arrange themselves by size automatically.</p>
+                <p><strong>Real-world:</strong> A dictionary (words are always sorted).</p>
+                <p><strong>Technical:</strong> NavigableSet implementation based on a TreeMap. Elements are ordered
+                    using their natural ordering or a Comparator.</p>
+                <p><strong>Complexity:</strong> Add/Remove/Contains: O(log n).</p>
+            </div>
+
+            <h3>C. Map Implementations</h3>
+
+            <h4>1. HashMap</h4>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Lockers with name tags. You find your locker by your name.</p>
+                <p><strong>Real-world:</strong> Phone book (Name -> Number).</p>
+                <p><strong>Technical:</strong> Hash table based implementation of the Map interface. Allows null values
+                    and one null key. No order guarantee.</p>
+                <p><strong>Complexity:</strong> Get/Put: O(1) amortized.</p>
+            </div>
+
+            <h4>2. TreeMap</h4>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like the lockers, but the lockers are always sorted by name.</p>
+                <p><strong>Real-world:</strong> An index at the back of a book.</p>
+                <p><strong>Technical:</strong> Red-Black tree based implementation. Keys are sorted.</p>
+                <p><strong>Complexity:</strong> Get/Put: O(log n).</p>
+            </div>
+        </div>
+
+        <!-- Section 6: Iterators -->
+        <div class="content-section">
+            <h2>🔄 Iterators</h2>
+
+            <h3>1. Iterator</h3>
+            <p>Universal cursor for all collections. Allows traversing forward and removing elements safely.</p>
+            <pre><code class="language-java">Iterator<String> it = list.iterator();
+while(it.hasNext()) {
+    String s = it.next();
+    if(s.equals("DeleteMe")) it.remove(); // Safe removal
+}</code></pre>
+
+            <h3>2. ListIterator</h3>
+            <p>Only for Lists. Can traverse <strong>both forward and backward</strong>. Can add/set elements.</p>
+
+            <h3>3. For-Each Loop</h3>
+            <p>Syntactic sugar for Iterator. Cleanest syntax but cannot modify the collection structure while iterating.
+            </p>
+        </div>
+
+        <!-- Section 7: Comparable vs Comparator -->
+        <div class="content-section">
+            <h2>🆚 Comparable vs Comparator</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Comparable</th>
+                        <th>Comparator</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>java.lang.Comparable</code></td>
+                        <td><code>java.util.Comparator</code></td>
+                    </tr>
+                    <tr>
+                        <td>Defines <strong>natural ordering</strong> for a class.</td>
+                        <td>Defines <strong>custom ordering</strong> logic.</td>
+                    </tr>
+                    <tr>
+                        <td>Modify the class itself (implement <code>compareTo</code>).</td>
+                        <td>Create a separate class/lambda (implement <code>compare</code>).</td>
+                    </tr>
+                    <tr>
+                        <td>Single sorting logic (e.g., Student by ID).</td>
+                        <td>Multiple sorting logics (e.g., Student by Name, by Grade).</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Section 8: Synchronization -->
+        <div class="content-section">
+            <h2>🔒 Synchronization in Collections</h2>
+            <p>Most standard collections (ArrayList, HashMap) are <strong>not thread-safe</strong>.</p>
+
+            <h3>Options for Thread Safety:</h3>
+            <ol>
+                <li><strong>Collections.synchronizedList(new ArrayList<>())</strong>: Wraps the list. Locks the whole
+                    collection for every operation. Slower.</li>
+                <li><strong>ConcurrentHashMap</strong>: Highly efficient thread-safe map. Uses bucket-level locking
+                    (segment locking) instead of locking the whole map. Faster for concurrent access.</li>
+                <li><strong>CopyOnWriteArrayList</strong>: Good for read-heavy scenarios. Creates a fresh copy of the
+                    array on every write.</li>
+            </ol>
+        </div>
+
+        <!-- Section 9: Common Mistakes -->
+        <div class="content-section">
+            <h2>❌ Common Mistakes</h2>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ ConcurrentModificationException</div>
+                <p>Trying to modify a collection (add/remove) while iterating over it using a for-each loop will cause
+                    this error. Use <code>Iterator.remove()</code> instead.</p>
+            </div>
+
+            <ul>
+                <li><strong>Null Keys in TreeMap:</strong> TreeMap throws NullPointerException if you try to insert a
+                    null key (as it needs to compare). HashMap allows one null key.</li>
+                <li><strong>Using Wrong Collection:</strong> Using ArrayList for frequent insertions in the middle
+                    (slow) instead of LinkedList.</li>
+                <li><strong>Not Overriding equals() and hashCode():</strong> When using custom objects as keys in
+                    HashMap or elements in HashSet, you MUST override these methods, otherwise duplicates won't be
+                    detected correctly.</li>
+            </ul>
+        </div>
+
+        <!-- Section 10: Best Practices -->
+        <div class="content-section">
+            <h2>✅ Best Practices</h2>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 Program to Interface</div>
+                <p>Always use the interface as the reference type.</p>
+                <p><code>List&lt;String&gt; list = new ArrayList&lt;&gt;();</code> (Good)</p>
+                <p><code>ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();</code> (Bad - limits flexibility)</p>
+            </div>
+
+            <ul>
+                <li><strong>Set Initial Capacity:</strong> If you know the size (e.g., 1000 items), initialize
+                    <code>new ArrayList<>(1000)</code> to avoid resizing overhead.</li>
+                <li><strong>Use Generics:</strong> Always specify type <code>List&lt;String&gt;</code> to avoid runtime
+                    ClassCastException.</li>
+                <li><strong>Prefer isEmpty() over size() == 0:</strong> It's more readable and sometimes more efficient.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Next Topic -->
+        <div class="next-topic">
+            <a href="#" class="btn btn-primary" style="opacity: 0.5; cursor: not-allowed;">Next Topic Coming Soon: Java
+                Exception Handling in Depth</a>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes & Objects - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content-header">
+            <h1>Classes & Objects - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>Classes & Objects</span>
+            </div>
+        </div>
+        <div class="content-section">
+            <h2>Hands-On Java Programs</h2>
+            <p>Welcome to the practical section! These 12+ programs demonstrate classes, objects, constructors, and the 'this' keyword.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Try running these programs yourself! Experiment with creating different objects.</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 1: Basic Class and Object Creation</h2>
+            <p>Demonstrates the simplest form of class and object creation.</p>
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * BasicClassDemo - Understanding basic class and object creation
+ * 
+ * Baby-level: Like creating a recipe (class) and then making actual cookies (objects)!
+ */
+class Dog {
+    // Fields - what a dog has
+    String name;
+    String breed;
+    int age;
+    
+    // Method - what a dog can do
+    void bark() {
+        System.out.println(name + " says: Woof! Woof!");
+    }
+    
+    void displayInfo() {
+        System.out.println("Name: " + name + ", Breed: " + breed + ", Age: " + age);
+    }
+}
+
+public class BasicClassDemo {
+    public static void main(String[] args) {
+        // Creating first dog object
+        Dog dog1 = new Dog();
+        dog1.name = "Buddy";
+        dog1.breed = "Golden Retriever";
+        dog1.age = 3;
+        
+        // Creating second dog object
+        Dog dog2 = new Dog();
+        dog2.name = "Max";
+        dog2.breed = "German Shepherd";
+        dog2.age = 5;
+        
+        // Using the objects
+        dog1.displayInfo();
+        dog1.bark();
+        
+        dog2.displayInfo();
+        dog2.bark();
+        
+        // Real-world analogy: Each dog is a separate pet with its own name and breed
+        // Industry usage: Objects represent real entities in your application
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This demonstrates the fundamental concept: a class is a blueprint, objects are instances. Each object has its own copy of fields but shares the same methods.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 2: Using Fields and Methods</h2>
+            <p>Shows how to work with object fields and call methods.</p>
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * FieldsMethodsDemo - Working with fields and methods
+ * 
+ * Baby-level: Fields are like characteristics (name, color), methods are like actions (run, jump)
+ */
+class Car {
+    // Fields
+    String brand;
+    String model;
+    int year;
+    String color;
+    int speed;
+    
+    // Method to accelerate
+    void accelerate(int increment) {
+        speed += increment;
+        System.out.println(brand + " accelerating... Current speed: " + speed + " km/h");
+    }
+    
+    // Method to brake
+    void brake(int decrement) {
+        speed -= decrement;
+        if (speed < 0) speed = 0;
+        System.out.println(brand + " braking... Current speed: " + speed + " km/h");
+    }
+    
+    // Method to display car info
+    void displayInfo() {
+        System.out.println("\n=== Car Information ===");
+        System.out.println("Brand: " + brand);
+        System.out.println("Model: " + model);
+        System.out.println("Year: " + year);
+        System.out.println("Color: " + color);
+        System.out.println("Current Speed: " + speed + " km/h");
+    }
+}
+
+public class FieldsMethodsDemo {
+    public static void main(String[] args) {
+        // Create car object
+        Car myCar = new Car();
+        
+        // Set fields
+        myCar.brand = "Honda";
+        myCar.model = "Civic";
+        myCar.year = 2022;
+        myCar.color = "Red";
+        myCar.speed = 0;
+        
+        // Display initial info
+        myCar.displayInfo();
+        
+        // Call methods
+        myCar.accelerate(30);
+        myCar.accelerate(20);
+        myCar.brake(10);
+        
+        // Display final info
+        myCar.displayInfo();
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Fields store object state, methods define behavior. Methods can access and modify the object's fields to perform operations.
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 3: Default Constructor</h2>
+            <p>Demonstrates default constructor usage.</p>
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * DefaultConstructorDemo - Understanding default constructors
+ * 
+ * Baby-level: Constructor is like a setup wizard that prepares your object when it's created
+ */
+class Book {
+    String title;
+    String author;
+    int pages;
+    
+    // Default constructor - no parameters
+    Book() {
+        title = "Unknown Title";
+        author = "Unknown Author";
+        pages = 0;
+        System.out.println("Book created with default values");
+    }
+    
+    void displayInfo() {
+        System.out.println("Title: " + title + ", Author: " + author + ", Pages: " + pages);
+    }
+}
+
+public class DefaultConstructorDemo {
+    public static void main(String[] args) {
+        // Creating objects using default constructor
+        Book book1 = new Book();  // Constructor is called automatically
+        book1.displayInfo();
+        
+        // We can still modify fields after creation
+        book1.title = "Java Programming";
+        book1.author = "John Doe";
+        book1.pages = 500;
+        
+        System.out.println("\nAfter modification:");
+        book1.displayInfo();
+        
+        // Create another book
+        Book book2 = new Book();
+        book2.displayInfo();
+        
+        // Real-world: Default constructor provides initial values
+        // Like a new phone with factory settings
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Default constructors initialize objects with default values. If you don't write any constructor, Java provides one automatically.
+            </div>
+        </div>
+
+
+        <div class="content-section">
+            <h2>Program 4: Parameterized Constructor</h2>
+            <p>Shows how to initialize objects with specific values using parameterized constructors.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * ParameterizedConstructorDemo
+ * Baby-level: Like ordering a custom pizza - you specify exactly what you want!
+ */
+class Student {
+    String name;
+    int rollNumber;
+    double gpa;
+    
+    // Parameterized constructor
+    Student(String name, int rollNumber, double gpa) {
+        this.name = name;           // 'this' refers to current object
+        this.rollNumber = rollNumber;
+        this.gpa = gpa;
+        System.out.println("Student created: " + name);
+    }
+    
+    void displayInfo() {
+        System.out.println("Name: " + name + ", Roll: " + rollNumber + ", GPA: " + gpa);
+    }
+}
+
+public class ParameterizedConstructorDemo {
+    public static void main(String[] args) {
+        // Creating students with specific values
+        Student s1 = new Student("Alice", 101, 3.8);
+        Student s2 = new Student("Bob", 102, 3.5);
+        Student s3 = new Student("Charlie", 103, 3.9);
+        
+        s1.displayInfo();
+        s2.displayInfo();
+        s3.displayInfo();
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> Parameterized constructors allow you to create objects with specific initial values in one step, making code cleaner and ensuring objects are properly initialized.</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 5: Constructor Overloading</h2>
+            <p>Demonstrates multiple constructors with different parameters.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * ConstructorOverloadingDemo
+ * Baby-level: Like ordering food - you can order just a burger, burger with fries, or full meal!
+ */
+class Product {
+    String name;
+    double price;
+    int quantity;
+    
+    // Constructor 1: No parameters
+    Product() {
+        this.name = "Unknown";
+        this.price = 0.0;
+        this.quantity = 0;
+    }
+    
+    // Constructor 2: Name and price
+    Product(String name, double price) {
+        this.name = name;
+        this.price = price;
+        this.quantity = 1;  // Default quantity
+    }
+    
+    // Constructor 3: All parameters
+    Product(String name, double price, int quantity) {
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+    
+    void displayInfo() {
+        System.out.println(name + " - $" + price + " x " + quantity + " = $" + (price * quantity));
+    }
+}
+
+public class ConstructorOverloadingDemo {
+    public static void main(String[] args) {
+        Product p1 = new Product();
+        Product p2 = new Product("Laptop", 999.99);
+        Product p3 = new Product("Mouse", 25.50, 3);
+        
+        p1.displayInfo();
+        p2.displayInfo();
+        p3.displayInfo();
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> Constructor overloading provides flexibility - users can create objects with different amounts of information. Java chooses the right constructor based on the arguments provided.</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 6: Using 'this' Keyword</h2>
+            <p>Demonstrates all uses of the 'this' keyword.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * ThisKeywordDemo
+ * Baby-level: 'this' is like pointing to yourself saying "ME!" or "MY OWN!"
+ */
+class Employee {
+    String name;
+    int id;
+    double salary;
+    
+    // Use 1: Distinguish instance variables from parameters
+    Employee(String name, int id, double salary) {
+        this.name = name;      // this.name = instance variable
+        this.id = id;          // name = parameter
+        this.salary = salary;
+    }
+    
+    // Use 2: Return current object for method chaining
+    Employee setSalary(double salary) {
+        this.salary = salary;
+        return this;  // Returns current object
+    }
+    
+    Employee setName(String name) {
+        this.name = name;
+        return this;
+    }
+    
+    void displayInfo() {
+        System.out.println("ID: " + this.id + ", Name: " + this.name + ", Salary: $" + this.salary);
+    }
+}
+
+public class ThisKeywordDemo {
+    public static void main(String[] args) {
+        Employee emp = new Employee("John", 1001, 50000);
+        emp.displayInfo();
+        
+        // Method chaining using 'this'
+        emp.setName("John Doe").setSalary(55000);
+        emp.displayInfo();
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> 'this' refers to the current object. It's essential for distinguishing instance variables from parameters and enables method chaining for fluent APIs.</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 7: Multiple Objects Demo</h2>
+            <p>Creating and managing multiple independent objects.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * MultipleObjectsDemo
+ * Baby-level: Like having multiple toy cars - each is separate and independent!
+ */
+class BankAccount {
+    String accountNumber;
+    String holderName;
+    double balance;
+    
+    BankAccount(String accountNumber, String holderName, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.holderName = holderName;
+        this.balance = initialBalance;
+    }
+    
+    void deposit(double amount) {
+        balance += amount;
+        System.out.println(holderName + " deposited $" + amount + ". New balance: $" + balance);
+    }
+    
+    void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+            System.out.println(holderName + " withdrew $" + amount + ". New balance: $" + balance);
+        } else {
+            System.out.println("Insufficient funds for " + holderName);
+        }
+    }
+}
+
+public class MultipleObjectsDemo {
+    public static void main(String[] args) {
+        // Create multiple independent bank accounts
+        BankAccount acc1 = new BankAccount("ACC001", "Alice", 1000);
+        BankAccount acc2 = new BankAccount("ACC002", "Bob", 500);
+        BankAccount acc3 = new BankAccount("ACC003", "Charlie", 2000);
+        
+        // Each account operates independently
+        acc1.deposit(500);
+        acc2.withdraw(200);
+        acc3.deposit(1000);
+        
+        acc1.withdraw(300);
+        acc2.deposit(100);
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> Each object is completely independent with its own memory space. Modifying one object doesn't affect others, even though they're from the same class.</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 8: Real-World Example - Car Management</h2>
+            <p>Practical example of a Car class with complete functionality.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * CarManagementDemo
+ * Real-world: Car dealership management system
+ */
+class Car {
+    private String brand;
+    private String model;
+    private int year;
+    private double price;
+    private boolean sold;
+    
+    Car(String brand, String model, int year, double price) {
+        this.brand = brand;
+        this.model = model;
+        this.year = year;
+        this.price = price;
+        this.sold = false;
+    }
+    
+    void displayDetails() {
+        System.out.println("\n" + year + " " + brand + " " + model);
+        System.out.println("Price: $" + price);
+        System.out.println("Status: " + (sold ? "SOLD" : "AVAILABLE"));
+    }
+    
+    void sellCar() {
+        if (!sold) {
+            sold = true;
+            System.out.println(brand + " " + model + " has been sold!");
+        } else {
+            System.out.println("This car is already sold.");
+        }
+    }
+    
+    void applyDiscount(double percentage) {
+        if (!sold) {
+            double discount = price * (percentage / 100);
+            price -= discount;
+            System.out.println("Discount applied! New price: $" + price);
+        }
+    }
+}
+
+public class CarManagementDemo {
+    public static void main(String[] args) {
+        Car car1 = new Car("Honda", "Civic", 2022, 25000);
+        Car car2 = new Car("Toyota", "Camry", 2023, 28000);
+        Car car3 = new Car("Ford", "Mustang", 2021, 35000);
+        
+        car1.displayDetails();
+        car1.applyDiscount(10);
+        car1.sellCar();
+        car1.displayDetails();
+        
+        car2.displayDetails();
+        car3.displayDetails();
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> This real-world example shows how classes model actual business entities. Private fields ensure data protection, and methods provide controlled access to object state.</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 9: Calling Methods on Objects</h2>
+            <p>Demonstrates various ways to call and use object methods.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * MethodCallingDemo
+ * Baby-level: Methods are like commands you give to objects - "sit!", "fetch!", "roll over!"
+ */
+class Calculator {
+    int result;
+    
+    void add(int a, int b) {
+        result = a + b;
+        System.out.println(a + " + " + b + " = " + result);
+    }
+    
+    void subtract(int a, int b) {
+        result = a - b;
+        System.out.println(a + " - " + b + " = " + result);
+    }
+    
+    void multiply(int a, int b) {
+        result = a * b;
+        System.out.println(a + " × " + b + " = " + result);
+    }
+    
+    int getResult() {
+        return result;
+    }
+    
+    void reset() {
+        result = 0;
+        System.out.println("Calculator reset");
+    }
+}
+
+public class MethodCallingDemo {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        
+        // Calling methods on the object
+        calc.add(10, 5);
+        calc.multiply(4, 3);
+        calc.subtract(20, 8);
+        
+        // Getting return value
+        int finalResult = calc.getResult();
+        System.out.println("Final result: " + finalResult);
+        
+        calc.reset();
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> Methods are called using the dot operator (object.method()). Methods can perform actions, modify object state, and return values to the caller.</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 10: Memory Reference Demo</h2>
+            <p>Understanding object references and memory behavior.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * MemoryReferenceDemo
+ * Baby-level: References are like TV remotes - multiple remotes can control the same TV!
+ */
+class Box {
+    int value;
+    
+    Box(int value) {
+        this.value = value;
+    }
+    
+    void display() {
+        System.out.println("Box value: " + value);
+    }
+}
+
+public class MemoryReferenceDemo {
+    public static void main(String[] args) {
+        // Create one object
+        Box box1 = new Box(10);
+        box1.display();
+        
+        // box2 references the SAME object as box1
+        Box box2 = box1;
+        box2.display();
+        
+        // Modify through box2
+        box2.value = 20;
+        
+        // Both show the change (same object!)
+        System.out.println("\nAfter modifying through box2:");
+        box1.display();  // Shows 20!
+        box2.display();  // Shows 20!
+        
+        // Create a NEW object
+        Box box3 = new Box(30);
+        box3.display();
+        
+        // Now box1 and box3 are different objects
+        box1.value = 100;
+        System.out.println("\nAfter modifying box1:");
+        box1.display();  // 100
+        box3.display();  // Still 30 (different object)
+        
+        // Real-world: Understanding references prevents bugs!
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> Reference variables store memory addresses, not actual objects. Multiple references can point to the same object, so changes through one reference affect all others pointing to that object.</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 11: Null Object Reference</h2>
+            <p>Understanding null references and NullPointerException.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * NullReferenceDemo
+ * Baby-level: null is like having a TV remote with no batteries - it exists but doesn't work!
+ */
+class Person {
+    String name;
+    int age;
+    
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    void greet() {
+        System.out.println("Hello, I'm " + name);
+    }
+}
+
+public class NullReferenceDemo {
+    public static void main(String[] args) {
+        // Valid object
+        Person person1 = new Person("Alice", 25);
+        person1.greet();  // Works fine
+        
+        // Null reference
+        Person person2 = null;
+        System.out.println("person2 is: " + person2);
+        
+        // Attempting to use null reference causes NullPointerException
+        // person2.greet();  // ❌ This would crash!
+        
+        // Safe way: Check for null before using
+        if (person2 != null) {
+            person2.greet();
+        } else {
+            System.out.println("person2 is null, cannot call methods!");
+        }
+        
+        // Assigning null makes object eligible for garbage collection
+        person1 = null;
+        System.out.println("person1 is now null");
+        
+        // Real-world: Always check for null to prevent crashes!
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> null means "no object". Attempting to call methods on null references causes NullPointerException. Always check for null before using references, especially when receiving objects from other methods.</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 12: Garbage Collection Concept</h2>
+            <p>Understanding when objects become eligible for garbage collection.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * GarbageCollectionDemo
+ * Baby-level: GC is like a cleanup crew that removes abandoned toys (objects) from the playground (memory)
+ */
+class Resource {
+    String name;
+    
+    Resource(String name) {
+        this.name = name;
+        System.out.println("Resource created: " + name);
+    }
+    
+    // Called before garbage collection (deprecated but shown for concept)
+    protected void finalize() {
+        System.out.println("Resource being garbage collected: " + name);
+    }
+}
+
+public class GarbageCollectionDemo {
+    public static void main(String[] args) {
+        // Scenario 1: Object becomes unreachable when reference is set to null
+        Resource r1 = new Resource("R1");
+        r1 = null;  // R1 object is now eligible for GC
+        
+        // Scenario 2: Object becomes unreachable when reference is reassigned
+        Resource r2 = new Resource("R2");
+        r2 = new Resource("R3");  // R2 object is now eligible for GC
+        
+        // Scenario 3: Anonymous object (no reference)
+        new Resource("R4");  // Immediately eligible for GC
+        
+        // Scenario 4: Reference goes out of scope
+        {
+            Resource r5 = new Resource("R5");
+        }  // r5 goes out of scope, R5 object eligible for GC
+        
+        // Suggest garbage collection (not guaranteed to run immediately)
+        System.out.println("\nSuggesting garbage collection...");
+        System.gc();
+        
+        // Give GC time to run
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("\nProgram ending...");
+        
+        // Real-world: Java automatically manages memory, but understanding GC helps write efficient code
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> Objects become eligible for garbage collection when no references point to them. Java's GC automatically frees memory, preventing memory leaks. You can suggest GC with System.gc() but cannot force it.</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 13: Student Management System</h2>
+            <p>Complete real-world example combining all concepts.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * StudentManagementSystem
+ * Real-world: School student management with multiple features
+ */
+class Student {
+    private String name;
+    private int rollNumber;
+    private double gpa;
+    private String email;
+    
+    // Constructor with all fields
+    Student(String name, int rollNumber, double gpa, String email) {
+        this.name = name;
+        this.rollNumber = rollNumber;
+        this.gpa = gpa;
+        this.email = email;
+    }
+    
+    // Constructor with basic fields
+    Student(String name, int rollNumber) {
+        this(name, rollNumber, 0.0, "not-provided@school.edu");
+    }
+    
+    // Update GPA
+    void updateGPA(double newGPA) {
+        if (newGPA >= 0.0 && newGPA <= 4.0) {
+            this.gpa = newGPA;
+            System.out.println(name + "'s GPA updated to " + gpa);
+        } else {
+            System.out.println("Invalid GPA value!");
+        }
+    }
+    
+    // Check if student is on honor roll
+    boolean isHonorRoll() {
+        return gpa >= 3.5;
+    }
+    
+    // Display complete information
+    void displayFullInfo() {
+        System.out.println("\n=== Student Information ===");
+        System.out.println("Name: " + name);
+        System.out.println("Roll Number: " + rollNumber);
+        System.out.println("GPA: " + gpa);
+        System.out.println("Email: " + email);
+        System.out.println("Honor Roll: " + (isHonorRoll() ? "Yes" : "No"));
+    }
+}
+
+public class StudentManagementSystem {
+    public static void main(String[] args) {
+        // Create students
+        Student s1 = new Student("Alice Johnson", 101, 3.8, "alice@school.edu");
+        Student s2 = new Student("Bob Smith", 102, 3.2, "bob@school.edu");
+        Student s3 = new Student("Charlie Brown", 103);
+        
+        // Display initial information
+        s1.displayFullInfo();
+        s2.displayFullInfo();
+        s3.displayFullInfo();
+        
+        // Update student data
+        System.out.println("\n--- Updating Student Data ---");
+        s2.updateGPA(3.6);
+        s3.updateGPA(3.9);
+        
+        // Display updated information
+        s2.displayFullInfo();
+        s3.displayFullInfo();
+        
+        // Check honor roll status
+        System.out.println("\n--- Honor Roll Check ---");
+        System.out.println(s1.isHonorRoll() ? "Alice is on honor roll!" : "Alice needs improvement");
+        System.out.println(s2.isHonorRoll() ? "Bob is on honor roll!" : "Bob needs improvement");
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> This comprehensive example demonstrates constructor overloading, private fields, public methods, validation logic, and real-world business rules. It shows how classes model complex real-world entities.</div>
+        </div>
+
+        <div class="content-section">
+            <h2>Program 14: Rectangle Class - Complete OOP Example</h2>
+            <p>Demonstrates encapsulation, validation, and computed properties.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * RectangleDemo
+ * Real-world: Geometric calculations with proper encapsulation
+ */
+class Rectangle {
+    private double length;
+    private double width;
+    
+    // Constructor with validation
+    Rectangle(double length, double width) {
+        if (length > 0 && width > 0) {
+            this.length = length;
+            this.width = width;
+        } else {
+            System.out.println("Invalid dimensions! Using default 1x1");
+            this.length = 1.0;
+            this.width = 1.0;
+        }
+    }
+    
+    // Getters
+    double getLength() {
+        return length;
+    }
+    
+    double getWidth() {
+        return width;
+    }
+    
+    // Setters with validation
+    void setLength(double length) {
+        if (length > 0) {
+            this.length = length;
+        } else {
+            System.out.println("Length must be positive!");
+        }
+    }
+    
+    void setWidth(double width) {
+        if (width > 0) {
+            this.width = width;
+        } else {
+            System.out.println("Width must be positive!");
+        }
+    }
+    
+    // Computed properties
+    double calculateArea() {
+        return length * width;
+    }
+    
+    double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+    
+    boolean isSquare() {
+        return length == width;
+    }
+    
+    void displayInfo() {
+        System.out.println("\nRectangle: " + length + " x " + width);
+        System.out.println("Area: " + calculateArea());
+        System.out.println("Perimeter: " + calculatePerimeter());
+        System.out.println("Is Square: " + (isSquare() ? "Yes" : "No"));
+    }
+}
+
+public class RectangleDemo {
+    public static void main(String[] args) {
+        Rectangle rect1 = new Rectangle(5, 3);
+        Rectangle rect2 = new Rectangle(4, 4);
+        Rectangle rect3 = new Rectangle(-2, 5);  // Invalid, will use default
+        
+        rect1.displayInfo();
+        rect2.displayInfo();
+        rect3.displayInfo();
+        
+        // Modify rectangle
+        System.out.println("\n--- Modifying rect1 ---");
+        rect1.setLength(10);
+        rect1.setWidth(6);
+        rect1.displayInfo();
+        
+        // Try invalid modification
+        rect1.setLength(-5);  // Will be rejected
+    }
+}</code></pre>
+            <div class="code-explanation"><strong>Explanation:</strong> This example demonstrates encapsulation (private fields with getters/setters), validation (preventing invalid data), and computed properties (area, perimeter calculated on demand). This is how professional Java code is structured.</div>
+        </div>
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/classes-and-objects.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../mcq/classes-and-objects.html" class="btn btn-secondary">✅ Take Quiz</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">📚 Next Topic</div>
+                <p><strong>Coming Soon:</strong> Methods - their types and usage</p>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/mcq.js"></script>
+</body>
+</html>
