@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vijay Chopade - Software Developer Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gradient-neon: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-cyber: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+            --gradient-sunset: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%);
+            --gradient-aurora: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Dark mode styles */
+        .dark {
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        
+        .dark .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .light .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Neon text effect */
+        .neon-text {
+            background: var(--gradient-neon);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(102, 126, 234, 0.5);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Pulse animation */
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.7); }
+            50% { box-shadow: 0 0 40px rgba(102, 126, 234, 0.9); }
+            100% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.7); }
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        /* Typing animation */
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        
+        .typing-effect {
+            overflow: hidden;
+            border-right: 3px solid;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
+        }
+        
+        /* Code background pattern */
+        .code-bg {
+            background-image: linear-gradient(to right, rgba(102, 126, 234, 0.1) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(102, 126, 234, 0.1) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        /* Skill badge styles */
+        .skill-badge {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+            border-color: rgba(102, 126, 234, 0.6);
+        }
+        
+        /* Timeline styles */
+        .timeline-dot {
+            position: relative;
+        }
+        
+        .timeline-dot::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--gradient-neon);
+            left: -10px;
+            top: 5px;
+            z-index: 1;
+        }
+        
+        .timeline-line {
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+            left: 0;
+            top: 30px;
+            bottom: 0;
+        }
+        
+        /* Project card styles */
+        .project-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-neon);
+            border-radius: 4px;
+        }
+        
+        /* Loading animation */
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(102, 126, 234, 0.3);
+            border-top: 5px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Gradient text for headings */
+        .gradient-text {
+            background: var(--gradient-cyber);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        /* Contact form styles */
+        .form-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+            outline: none;
+        }
+        
+        /* Tech cloud styles */
+        .tech-cloud {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        
+        .tech-item {
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 14px;
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-item:hover {
+            transform: scale(1.1);
+            background: rgba(102, 126, 234, 0.2);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        /* Navigation styles */
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--gradient-neon);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Dark mode toggle styles */
+        .toggle-switch {
+            position: relative;
+            width: 60px;
+            height: 30px;
+            background: rgba(102, 126, 234, 0.3);
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: white;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s ease;
+        }
+        
+        .dark .toggle-switch {
+            background: rgba(102, 126, 234, 0.6);
+        }
+        
+        .dark .toggle-switch::after {
+            transform: translateX(30px);
+        }
+        
+        /* Fade in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        /* Stagger animation for sections */
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .stagger-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Section separator */
+        .section-separator {
+            height: 2px;
+            background: linear-gradient(to right, transparent, rgba(102, 126, 234, 0.5), transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body class="dark">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass px-6 py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-xl font-bold neon-text">VC</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="toggle-switch" id="theme-toggle"></div>
+                <button class="md:hidden" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
+            <div class="flex flex-col space-y-3">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden code-bg pb-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20"></div>
+        
+        <!-- Animated code elements -->
+        <div class="absolute top-20 left-10 code-font text-xs opacity-20 floating">
+            <div>const developer = {</div>
+            <div>  name: "Vijay Chopade",</div>
+            <div>  role: "Software Developer",</div>
+            <div>  passion: "Building scalable systems"</div>
+            <div>};</div>
+        </div>
+        
+        <div class="absolute bottom-20 right-10 code-font text-xs opacity-20 floating" style="animation-delay: 2s;">
+            <div>function createSolution() {</div>
+            <div>  return {</div>
+            <div>    cleanCode: true,</div>
+            <div>    scalable: true,</div>
+            <div>    efficient: true</div>
+            <div>  };</div>
+            <div>}</div>
+        </div>
+        
+        <div class="container mx-auto px-6 z-10 text-center">
+            <div class="fade-in">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4">
+                    <span class="neon-text">Vijay Chopade</span>
+                </h1>
+                <div class="text-xl md:text-2xl mb-8 code-font typing-effect">
+                    Software Developer
+                </div>
+                <p class="max-w-2xl mx-auto mb-8 text-lg opacity-90">
+                    Building scalable and robust systems with Java, Spring Boot, REST API, Hibernate and modern web technologies.
+                    Passionate about clean code, microservices, and AI-enhanced development.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#contact" class="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                        Get In Touch
+                    </a>
+                    <a href="https://drive.google.com/file/d/1u5ViPmboYXpJ2vYvAdQnI3fM67iHaSdv/view?usp=sharing" class="px-6 py-3 rounded-full glass font-medium hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                        Download Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl opacity-70"></i>
+        </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">About Me</h2>
+            <div class="max-w-4xl mx-auto glass rounded-2xl p-8 md:p-12 stagger-item">
+                <div class="flex flex-col md:flex-row gap-8 items-center">
+                    <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-purple-500/30 pulse-glow">
+<!--                        <img src="./Vijay.jpeg" alt="Vijay Chopade" class="w-full h-full object-cover">-->
+                        <img src="/vijaychopade/Vijay.jpeg"
+                             alt="Vijay Chopade"
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-lg mb-4">
+                            I am a passionate Software Developer with ~2 years of experience building scalable and robust systems. 
+                            I specialize in Java, Spring Boot, Microservices, REST APIs, and React.js.
+                        </p>
+                        <p class="text-lg mb-4">
+                            I am experienced in Agile environments and skilled at debugging, logging, and using AI-assisted tools 
+                            (ChatGPT, GitHub Copilot, Gemini, Spring AI). I focus on delivering clean, maintainable, and efficient 
+                            backend systems while contributing to innovation and cross-team collaboration.
+                        </p>
+                        <div class="flex flex-wrap gap-3 mt-6">
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-map-marker-alt text-purple-500"></i>
+                                <span>Pune, India</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-envelope text-purple-500"></i>
+                                <span>vijaychopade9211@gmail.com</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fas fa-phone text-purple-500"></i>
+                                <span>9922747546</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Skills & Expertise</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <!-- Languages -->
+                <div class="glass rounded-xl p-6 stagger-item">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-code text-purple-500 mr-3"></i>
+                        Languages
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Java</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">J2EE</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">SQL</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">JavaScript</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">React.js</span>
+                    </div>
+                </div>
+                
+                <!-- Frameworks -->
+                <div class="glass rounded-xl p-6 stagger-item">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-layer-group text-purple-500 mr-3"></i>
+                        Frameworks
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Spring Boot</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Spring Security</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Spring AI</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">JPA</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">React.js</span>
+                    </div>
+                </div>
+                
+                <!-- Architecture -->
+                <div class="glass rounded-xl p-6 stagger-item">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-sitemap text-purple-500 mr-3"></i>
+                        Architecture
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Microservices</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">REST APIs</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">OOP</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">OAuth2</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Problem Solving</span>
+                    </div>
+                </div>
+                
+                <!-- Databases -->
+                <div class="glass rounded-xl p-6 stagger-item">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-database text-purple-500 mr-3"></i>
+                        Databases
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Azure Cosmos DB</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Oracle DB</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">MySQL</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Redis</span>
+                    </div>
+                </div>
+                
+                <!-- DevOps & Tools -->
+                <div class="glass rounded-xl p-6 stagger-item">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-tools text-purple-500 mr-3"></i>
+                        DevOps & Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Git</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">GitHub</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Jenkins</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Tomcat</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Splunk</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Dynatrace</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">JIRA</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Maven</span>
+                    </div>
+                </div>
+                
+                <!-- AI Tools -->
+                <div class="glass rounded-xl p-6 stagger-item">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-robot text-purple-500 mr-3"></i>
+                        AI Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Spring AI</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">ChatGPT</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Gemini</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Copilot</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Ollama</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Grok</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Gamma</span>
+                    </div>
+                </div>
+                
+                <!-- Testing -->
+                <div class="glass rounded-xl p-6 stagger-item">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-vial text-purple-500 mr-3"></i>
+                        Testing
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">JUnit</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Mockito</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Cucumber</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Unit Testing</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Integration Testing</span>
+                    </div>
+                </div>
+                
+                <!-- Cloud -->
+                <div class="glass rounded-xl p-6 stagger-item">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-cloud text-purple-500 mr-3"></i>
+                        Cloud
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">AWS</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Azure</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">OneOps</span>
+                    </div>
+                </div>
+                
+                <!-- Others -->
+                <div class="glass rounded-xl p-6 stagger-item">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-cogs text-purple-500 mr-3"></i>
+                        Others
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Debugging</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Job Monitoring</span>
+                        <span class="skill-badge px-3 py-1 rounded-full text-sm">Shell Scripting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Experience</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Experience 1 -->
+                <div class="relative pl-10 pb-12 stagger-item">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-dot"></div>
+                    <div class="glass rounded-xl p-6">
+                        <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                            <h3 class="text-xl font-semibold">Java Developer</h3>
+                            <span class="text-purple-500">June 2023 – October 2024</span>
+                        </div>
+                        <div class="mb-4 text-purple-400">Indexial Solutions (Client: Walmart)</div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Java(8, 11 & 17)</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">REST API</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">ATG</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Spring Boot</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Microservices</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Cosmos DB</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Oracle-SQL DB</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Kubernetes</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Jenkins</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Splunk</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Dynatrace</span>
+                            </div>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Migrated a legacy ATG e-commerce platform to a scalable Spring Boot microservices architecture.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Designed and developed RESTful APIs for user management, authentication, and multi-threaded operations, improving performance and concurrency handling.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Implemented automated unit, integration, and behavior-driven tests using JUnit, Mockito, and Cucumber.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Perform stability and performance checks for production systems using Splunk and Dynatrace, and generate corresponding reports.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Diagnosed and resolved real-time production issues using proactive logging, alerting, and observability best practices.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="relative pl-10 pb-12 stagger-item">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-dot"></div>
+                    <div class="glass rounded-xl p-6">
+                        <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                            <h3 class="text-xl font-semibold">Java Developer</h3>
+                            <span class="text-purple-500">November 2024 – April 2025</span>
+                        </div>
+                        <div class="mb-4 text-purple-400">Indexial Solutions (School Website Project)</div>
+                        <div class="mb-4">
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Java</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Spring Boot</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">REST API</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">React.js</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">HTML/CSS</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Azure Blob Storage</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Azure Cosmos DB</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Redis</span>
+                                <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">MySQL</span>
+                            </div>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Developed the complete end-to-end application, including the frontend (React.js) and backend (Spring Boot)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Integrated Redis and Azure Cosmos DB to enable fast, scalable, and highly available data processing.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Built a fully responsive, modern UI following industry-standard design principles and best practices.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Implemented Azure Blob Storage for secure and efficient file management.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-purple-500 mt-1 mr-3"></i>
+                                    <span>Performed comprehensive end-to-end testing, improving overall stability and performance by identifying and resolving critical issues.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Featured Projects</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Project 1 -->
+                <div class="project-card glass rounded-xl overflow-hidden stagger-item">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-blue-600 relative overflow-hidden">
+                        <img src="/vijaychopade/1701202677122.jpg" alt="Walmart E-commerce Platform" class="w-full h-full object-cover opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-2xl font-bold text-white">Walmart E-commerce Platform</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="mb-4">
+                            Migrated legacy ATG e-commerce platform to modern Spring Boot microservices, supporting thousands of users across Walmart, Sam's Club & Bodega.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Java</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Spring Boot</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Microservices</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Cosmos DB</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-purple-500 hover:text-purple-400 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                            <a href="#" class="text-purple-500 hover:text-purple-400 transition-colors">
+                                <i class="fab fa-github mr-2"></i>Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card glass rounded-xl overflow-hidden stagger-item">
+                    <div class="h-48 bg-gradient-to-br from-purple-600 to-blue-600 relative overflow-hidden">
+                        <img src="/vijaychopade/1632550351831.png" alt="School Management System" class="w-full h-full object-cover opacity-70">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <h3 class="text-2xl font-bold text-white">Education Portal</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="mb-4">
+                            Full-stack application with React.js frontend and Spring Boot backend, featuring secure file management with Azure Blob and scalable data handling.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">React.js</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Spring Boot</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Azure</span>
+                            <span class="text-xs px-2 py-1 rounded-full bg-purple-500/20">Redis</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <a href="#" class="text-purple-500 hover:text-purple-400 transition-colors">
+                                <i class="fas fa-external-link-alt mr-2"></i>Live Demo
+                            </a>
+                            <a href="#" class="text-purple-500 hover:text-purple-400 transition-colors">
+                                <i class="fab fa-github mr-2"></i>Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Education</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="glass rounded-xl p-8 mb-6 stagger-item">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold">Bachelor's Of Science(Computer Applications)</h3>
+                        <span class="text-purple-500">2025</span>
+                    </div>
+                    <div class="mb-2">SGB Amravati University</div>
+                    <div class="mb-2">Percentage : 74%</div>
+                </div>
+                
+                <div class="glass rounded-xl p-8 mb-6 stagger-item">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold">Certificate: Summer Research in Programming</h3>
+                        <span class="text-purple-500">2022</span>
+                    </div>
+                    <div class="mb-2">Amravati</div>
+                    <div class="mb-2">Grade : A</div>
+                </div>
+                
+                <div class="glass rounded-xl p-8 stagger-item">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-4">
+                        <h3 class="text-xl font-semibold">Certificate: Java Full Stack Development</h3>
+                        <span class="text-purple-500">2023</span>
+                    </div>
+                    <div class="mb-2">Pune</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Tech Cloud Section -->
+    <section class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Tech Stack</h2>
+            
+            <div class="tech-cloud glass rounded-2xl max-w-6xl mx-auto">
+                <div class="tech-item">Java</div>
+                <div class="tech-item">Spring Boot</div>
+                <div class="tech-item">Microservices</div>
+                <div class="tech-item">React.js</div>
+                <div class="tech-item">JavaScript</div>
+                <div class="tech-item">REST APIs</div>
+                <div class="tech-item">Spring Security</div>
+                <div class="tech-item">Spring AI</div>
+                <div class="tech-item">Azure</div>
+                <div class="tech-item">AWS</div>
+                <div class="tech-item">Cosmos DB</div>
+                <div class="tech-item">MySQL</div>
+                <div class="tech-item">Redis</div>
+                <div class="tech-item">Git</div>
+                <div class="tech-item">GitHub</div>
+                <div class="tech-item">Jenkins</div>
+                <div class="tech-item">JUnit</div>
+                <div class="tech-item">Mockito</div>
+                <div class="tech-item">Cucumber</div>
+                <div class="tech-item">ChatGPT</div>
+                <div class="tech-item">Copilot</div>
+                <div class="tech-item">Gemini</div>
+                <div class="tech-item">Kubernetes</div>
+                <div class="tech-item">Docker</div>
+                <div class="tech-item">Splunk</div>
+                <div class="tech-item">Dynatrace</div>
+                <div class="tech-item">JIRA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Separator -->
+    <div class="section-separator"></div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 gradient-text">Get In Touch</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6">Let's Connect</h3>
+                        <p class="mb-6">
+                            I'm always interested in hearing about new opportunities and exciting projects. 
+                            Feel free to reach out if you'd like to collaborate or just have a chat!
+                        </p>
+                        
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-center">
+                                <i class="fas fa-envelope text-purple-500 mr-4 text-xl"></i>
+                                <span>vijaychopade9211@gmail.com</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-phone text-purple-500 mr-4 text-xl"></i>
+                                <span>9922747546</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-map-marker-alt text-purple-500 mr-4 text-xl"></i>
+                                <span>Pune, India</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <a href="https://linkedin.com/in/vijaychopade" class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://github.com/vijay-chopade" class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center hover:bg-purple-500/30 transition-colors">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="glass rounded-xl p-8">
+                        <h3 class="text-2xl font-semibold mb-6">Send Me a Message</h3>
+                        <form id="contact-form">
+                            <div class="mb-4">
+                                <input type="text" placeholder="Your Name" class="form-input w-full px-4 py-3 rounded-lg">
+                            </div>
+                            <div class="mb-4">
+                                <input type="email" placeholder="Your Email" class="form-input w-full px-4 py-3 rounded-lg">
+                            </div>
+                            <div class="mb-4">
+                                <input type="text" placeholder="Subject" class="form-input w-full px-4 py-3 rounded-lg">
+                            </div>
+                            <div class="mb-6">
+                                <textarea placeholder="Your Message" rows="4" class="form-input w-full px-4 py-3 rounded-lg resize-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 glass">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p>&copy; 2025 Vijay Chopade. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://linkedin.com/in/vijaychopade" class="hover:text-purple-500 transition-colors">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/vijay-chopade" class="hover:text-purple-500 transition-colors">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            body.classList.toggle('light');
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Stagger animation for sections
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('active');
+                    }, index * 100);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.stagger-item').forEach(item => {
+            observer.observe(item);
+        });
+        
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Here you would normally send the form data to a server
+            // For this demo, we'll just show a success message
+            const form = e.target;
+            const button = form.querySelector('button[type="submit"]');
+            const originalText = button.textContent;
+
+            button.textContent = 'Message Sent!';
+            console.log("email sent.");
+            button.classList.add('bg-green-500');
+
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('bg-green-500');
+                form.reset();
+            }, 3000);
+        });
+        
+        // Add some interactive elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Random floating animation duration for code elements
+            const floatingElements = document.querySelectorAll('.floating');
+            floatingElements.forEach(el => {
+                el.style.animationDuration = `${Math.random() * 3 + 4}s`;
+            });
+            
+            // Add parallax effect to hero section
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const parallax = document.querySelector('.code-bg');
+                if (parallax) {
+                    parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
