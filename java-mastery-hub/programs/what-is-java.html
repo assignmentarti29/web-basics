@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What is Java - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Header -->
+        <div class="content-header">
+            <h1>What is Java - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>What is Java</span>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="content-section">
+            <h2>First Steps with Java Programs</h2>
+            <p>
+                Welcome to your first Java programs! These examples will help you understand the fundamentals of Java
+                programming,
+                from the classic "Hello World" to understanding how the JVM works. Each program is carefully commented
+                to explain
+                what's happening and why.
+            </p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>
+                    Read the code comments carefully! They explain not just WHAT the code does, but WHY it works that
+                    way.
+                    Understanding the "why" is key to mastering Java.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program 1: Hello World -->
+        <div class="content-section">
+            <h2>Program 1: Hello World - The Starting Point</h2>
+            <p>Every Java journey begins with "Hello World". This simple program demonstrates the basic structure of a
+                Java application.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * HelloWorld - Your First Java Program
+ * This demonstrates the minimum structure required for a Java application
+ */
+public class HelloWorld {
+    
+    // This is the main method - the entry point of every Java application
+    // The JVM looks for this exact method signature to start execution
+    public static void main(String[] args) {
+        
+        // Print a message to the console
+        System.out.println("Hello, Java World!");
+        
+        // Let's print a few more things to understand output
+        System.out.println("Welcome to Java programming!");
+        System.out.println("Java runs on " + System.getProperty("os.name"));
+    }
+}
+
+/* 
+ * COMPILATION AND EXECUTION:
+ * 
+ * Step 1: Save this file as HelloWorld.java
+ * Step 2: Compile it using: javac HelloWorld.java
+ *         This creates HelloWorld.class (bytecode)
+ * Step 3: Run it using: java HelloWorld
+ *         The JVM executes the bytecode
+ * 
+ * OUTPUT:
+ * Hello, Java World!
+ * Welcome to Java programming!
+ * Java runs on [Your Operating System]
+ */
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program demonstrates several key Java concepts:
+                <ul>
+                    <li><strong>Class Declaration:</strong> Every Java program must have at least one class. The class
+                        name must match the filename.</li>
+                    <li><strong>main() Method:</strong> This is the entry point. The JVM looks for
+                        <code>public static void main(String[] args)</code> to start execution.</li>
+                    <li><strong>System.out.println():</strong> Prints text to the console. "System" is a class, "out" is
+                        a static field, "println" is a method.</li>
+                    <li><strong>Comments:</strong> // for single-line, /* */ for multi-line, /** */ for documentation
+                        comments.</li>
+                </ul>
+                <strong>Why this matters:</strong> Understanding the basic structure is crucial. Every Java application,
+                no matter how complex, starts with this foundation.
+            </div>
+        </div>
+
+        <!-- Program 2: Variables and Data Types -->
+        <div class="content-section">
+            <h2>Program 2: Variables and Data Types Demo</h2>
+            <p>Java is a strongly-typed language. This program demonstrates different data types and how to use
+                variables.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * VariablesDemo - Understanding Java Data Types
+ * Demonstrates primitive types and basic variable usage
+ */
+public class VariablesDemo {
+    
+    public static void main(String[] args) {
+        
+        // INTEGER TYPES
+        byte smallNumber = 127;           // 8-bit: -128 to 127
+        short mediumNumber = 32000;       // 16-bit: -32,768 to 32,767
+        int regularNumber = 2147483647;   // 32-bit: most commonly used
+        long bigNumber = 9223372036854775807L; // 64-bit: note the 'L' suffix
+        
+        // FLOATING-POINT TYPES
+        float decimalNumber = 3.14f;      // 32-bit: note the 'f' suffix
+        double preciseDecimal = 3.14159265359; // 64-bit: more precision
+        
+        // CHARACTER TYPE
+        char letter = 'A';                // 16-bit Unicode character
+        char symbol = '☕';                // Java supports Unicode!
+        
+        // BOOLEAN TYPE
+        boolean isJavaFun = true;         // Only two values: true or false
+        boolean isPythonBetter = false;   // Obviously false! 😄
+        
+        // STRING (Reference Type, not primitive)
+        String message = "Java is platform-independent!";
+        
+        // PRINTING ALL VARIABLES
+        System.out.println("=== Java Data Types Demo ===\n");
+        
+        System.out.println("Integer Types:");
+        System.out.println("byte: " + smallNumber);
+        System.out.println("short: " + mediumNumber);
+        System.out.println("int: " + regularNumber);
+        System.out.println("long: " + bigNumber);
+        
+        System.out.println("\nFloating-Point Types:");
+        System.out.println("float: " + decimalNumber);
+        System.out.println("double: " + preciseDecimal);
+        
+        System.out.println("\nCharacter Type:");
+        System.out.println("char: " + letter);
+        System.out.println("symbol: " + symbol);
+        
+        System.out.println("\nBoolean Type:");
+        System.out.println("Is Java fun? " + isJavaFun);
+        System.out.println("Is Python better? " + isPythonBetter);
+        
+        System.out.println("\nString Type:");
+        System.out.println(message);
+        
+        // VARIABLE OPERATIONS
+        int sum = regularNumber + mediumNumber;
+        double product = decimalNumber * preciseDecimal;
+        String fullMessage = message + " That's why we love it!";
+        
+        System.out.println("\nOperations:");
+        System.out.println("Sum: " + sum);
+        System.out.println("Product: " + product);
+        System.out.println("Concatenation: " + fullMessage);
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program introduces Java's type system:
+                <ul>
+                    <li><strong>Primitive Types:</strong> byte, short, int, long, float, double, char, boolean - stored
+                        directly in memory</li>
+                    <li><strong>Reference Types:</strong> String and objects - stored as references to memory locations
+                    </li>
+                    <li><strong>Type Suffixes:</strong> 'L' for long, 'f' for float - tells compiler the exact type</li>
+                    <li><strong>Strong Typing:</strong> You must declare the type of every variable</li>
+                </ul>
+                <strong>Why this matters:</strong> Understanding data types is fundamental. Choosing the right type
+                affects memory usage, precision, and program behavior.
+            </div>
+        </div>
+
+        <!-- Program 3: Simple Input/Output -->
+        <div class="content-section">
+            <h2>Program 3: User Input and Output</h2>
+            <p>This program demonstrates how to get input from users and display output.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * UserInputDemo - Interactive Java Program
+ * Demonstrates reading user input using Scanner class
+ */
+import java.util.Scanner;  // Import Scanner class from java.util package
+
+public class UserInputDemo {
+    
+    public static void main(String[] args) {
+        
+        // Create a Scanner object to read input from console
+        // System.in represents standard input (keyboard)
+        Scanner scanner = new Scanner(System.in);
+        
+        // Display welcome message
+        System.out.println("╔════════════════════════════════════════╗");
+        System.out.println("║   Welcome to Java Input Demo!         ║");
+        System.out.println("╚════════════════════════════════════════╝\n");
+        
+        // Get user's name
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();  // Read entire line
+        
+        // Get user's age
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();  // Read integer
+        
+        // Get user's favorite programming language
+        System.out.print("Enter your favorite programming language: ");
+        scanner.nextLine();  // Consume leftover newline
+        String language = scanner.nextLine();
+        
+        // Process and display information
+        System.out.println("\n╔════════════════════════════════════════╗");
+        System.out.println("║   Your Information                     ║");
+        System.out.println("╚════════════════════════════════════════╝");
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Favorite Language: " + language);
+        
+        // Calculate birth year (approximate)
+        int currentYear = 2024;
+        int birthYear = currentYear - age;
+        System.out.println("Approximate Birth Year: " + birthYear);
+        
+        // Personalized message
+        if (language.equalsIgnoreCase("Java")) {
+            System.out.println("\n🎉 Excellent choice! Java is amazing!");
+        } else {
+            System.out.println("\n" + language + " is good, but have you tried Java? 😊");
+        }
+        
+        // IMPORTANT: Close the scanner to prevent resource leak
+        scanner.close();
+        
+        System.out.println("\nThank you for using this program!");
+    }
+}
+
+/*
+ * IMPORTANT NOTES:
+ * 
+ * 1. Scanner Methods:
+ *    - nextLine() : Reads entire line (including spaces)
+ *    - nextInt()  : Reads integer
+ *    - nextDouble(): Reads decimal number
+ *    - next()     : Reads single word (stops at space)
+ * 
+ * 2. Common Gotcha:
+ *    After nextInt(), you need scanner.nextLine() to consume
+ *    the leftover newline character!
+ * 
+ * 3. Always close Scanner:
+ *    scanner.close() prevents resource leaks
+ */
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program demonstrates input/output operations:
+                <ul>
+                    <li><strong>Scanner Class:</strong> Used to read input from various sources (keyboard, files, etc.)
+                    </li>
+                    <li><strong>Import Statement:</strong> <code>import java.util.Scanner;</code> brings Scanner class
+                        into scope</li>
+                    <li><strong>Reading Different Types:</strong> nextLine() for strings, nextInt() for integers, etc.
+                    </li>
+                    <li><strong>Resource Management:</strong> Always close Scanner to free system resources</li>
+                </ul>
+                <strong>Why this matters:</strong> Interactive programs are more engaging. Understanding I/O is
+                essential for building real applications.
+            </div>
+        </div>
+
+        <!-- Program 4: Understanding the main Method -->
+        <div class="content-section">
+            <h2>Program 4: Dissecting the main() Method</h2>
+            <p>Let's understand every part of the main method signature and why it's written that way.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * MainMethodExplained - Understanding the Entry Point
+ * This program explains every keyword in the main method signature
+ */
+public class MainMethodExplained {
+    
+    /*
+     * Let's break down: public static void main(String[] args)
+     * 
+     * public:
+     *   - Access modifier
+     *   - Makes the method accessible from anywhere
+     *   - JVM needs to call this method from outside the class
+     * 
+     * static:
+     *   - Means this method belongs to the class, not to instances
+     *   - JVM can call it without creating an object
+     *   - No need to do: MainMethodExplained obj = new MainMethodExplained();
+     * 
+     * void:
+     *   - Return type
+     *   - This method doesn't return any value
+     *   - It just executes and finishes
+     * 
+     * main:
+     *   - Method name
+     *   - JVM specifically looks for a method named "main"
+     *   - This is the entry point of the application
+     * 
+     * String[] args:
+     *   - Parameter (array of strings)
+     *   - Allows passing command-line arguments
+     *   - "args" is just a variable name (can be anything, but "args" is convention)
+     */
+    
+    public static void main(String[] args) {
+        
+        System.out.println("=== Understanding the main() Method ===\n");
+        
+        // Demonstrating command-line arguments
+        System.out.println("Number of arguments passed: " + args.length);
+        
+        if (args.length > 0) {
+            System.out.println("\nArguments received:");
+            for (int i = 0; i < args.length; i++) {
+                System.out.println("  Argument " + i + ": " + args[i]);
+            }
+        } else {
+            System.out.println("\nNo arguments passed.");
+            System.out.println("Try running: java MainMethodExplained Hello World 123");
+        }
+        
+        // Calling other methods from main
+        System.out.println("\nCalling other methods from main:");
+        greetUser();
+        displayJavaVersion();
+        
+        System.out.println("\nProgram execution complete!");
+    }
+    
+    // Another static method (can be called from main without creating object)
+    public static void greetUser() {
+        System.out.println("  → Hello from greetUser() method!");
+    }
+    
+    // Method to display Java version
+    public static void displayJavaVersion() {
+        String javaVersion = System.getProperty("java.version");
+        System.out.println("  → You are running Java version: " + javaVersion);
+    }
+}
+
+/*
+ * HOW TO RUN WITH ARGUMENTS:
+ * 
+ * javac MainMethodExplained.java
+ * java MainMethodExplained Hello World 123
+ * 
+ * This will pass three arguments: "Hello", "World", "123"
+ * 
+ * WHY MAIN IS STATIC:
+ * When JVM starts your program, no objects exist yet!
+ * JVM needs to call a method without creating an object first.
+ * That's why main() must be static.
+ */
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program demystifies the main method:
+                <ul>
+                    <li><strong>public:</strong> JVM must access it from outside the class</li>
+                    <li><strong>static:</strong> JVM calls it without creating an object instance</li>
+                    <li><strong>void:</strong> Doesn't return a value (execution just ends)</li>
+                    <li><strong>String[] args:</strong> Accepts command-line arguments as an array</li>
+                </ul>
+                <strong>Why this matters:</strong> Understanding why main() is written this way helps you understand
+                Java's execution model and the role of the JVM.
+            </div>
+        </div>
+
+        <!-- Program 5: JVM Demonstration -->
+        <div class="content-section">
+            <h2>Program 5: Exploring JVM Properties</h2>
+            <p>This program demonstrates how to access JVM and system properties, showing Java's platform independence.
+            </p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * JVMPropertiesDemo - Exploring the Java Virtual Machine
+ * This program displays information about the JVM and system it's running on
+ */
+public class JVMPropertiesDemo {
+    
+    public static void main(String[] args) {
+        
+        System.out.println("╔════════════════════════════════════════════════════════╗");
+        System.out.println("║   JVM & System Properties                              ║");
+        System.out.println("╚════════════════════════════════════════════════════════╝\n");
+        
+        // JAVA VERSION INFORMATION
+        System.out.println("=== Java Environment ===");
+        System.out.println("Java Version: " + System.getProperty("java.version"));
+        System.out.println("Java Vendor: " + System.getProperty("java.vendor"));
+        System.out.println("Java Home: " + System.getProperty("java.home"));
+        System.out.println("JVM Name: " + System.getProperty("java.vm.name"));
+        System.out.println("JVM Version: " + System.getProperty("java.vm.version"));
+        
+        // OPERATING SYSTEM INFORMATION
+        System.out.println("\n=== Operating System ===");
+        System.out.println("OS Name: " + System.getProperty("os.name"));
+        System.out.println("OS Version: " + System.getProperty("os.version"));
+        System.out.println("OS Architecture: " + System.getProperty("os.arch"));
+        
+        // USER INFORMATION
+        System.out.println("\n=== User Information ===");
+        System.out.println("User Name: " + System.getProperty("user.name"));
+        System.out.println("User Home: " + System.getProperty("user.home"));
+        System.out.println("User Directory: " + System.getProperty("user.dir"));
+        
+        // FILE SYSTEM INFORMATION
+        System.out.println("\n=== File System ===");
+        System.out.println("File Separator: '" + System.getProperty("file.separator") + "'");
+        System.out.println("Path Separator: '" + System.getProperty("path.separator") + "'");
+        System.out.println("Line Separator: (hidden, but exists!)");
+        
+        // MEMORY INFORMATION
+        System.out.println("\n=== JVM Memory ===");
+        Runtime runtime = Runtime.getRuntime();
+        
+        long maxMemory = runtime.maxMemory();
+        long totalMemory = runtime.totalMemory();
+        long freeMemory = runtime.freeMemory();
+        long usedMemory = totalMemory - freeMemory;
+        
+        System.out.println("Max Memory: " + (maxMemory / 1024 / 1024) + " MB");
+        System.out.println("Total Memory: " + (totalMemory / 1024 / 1024) + " MB");
+        System.out.println("Free Memory: " + (freeMemory / 1024 / 1024) + " MB");
+        System.out.println("Used Memory: " + (usedMemory / 1024 / 1024) + " MB");
+        
+        // NUMBER OF PROCESSORS
+        System.out.println("\n=== System Resources ===");
+        System.out.println("Available Processors: " + runtime.availableProcessors());
+        
+        // PLATFORM INDEPENDENCE DEMONSTRATION
+        System.out.println("\n=== Platform Independence ===");
+        System.out.println("This SAME bytecode runs on:");
+        System.out.println("  • Windows (with Windows JVM)");
+        System.out.println("  • macOS (with macOS JVM)");
+        System.out.println("  • Linux (with Linux JVM)");
+        System.out.println("  • Android (with Android Runtime)");
+        System.out.println("\nCurrently running on: " + System.getProperty("os.name"));
+        System.out.println("This is the power of 'Write Once, Run Anywhere'! ☕");
+    }
+}
+
+/*
+ * WHAT THIS DEMONSTRATES:
+ * 
+ * 1. System.getProperty():
+ *    - Accesses JVM and system properties
+ *    - Shows information about the environment
+ * 
+ * 2. Runtime class:
+ *    - Provides interface to the JVM
+ *    - Can get memory info, processor count, etc.
+ * 
+ * 3. Platform Independence:
+ *    - Same code shows different OS info depending on where it runs
+ *    - Bytecode is identical, JVM adapts to the platform
+ * 
+ * TRY THIS:
+ * Run this program on different computers (Windows, Mac, Linux)
+ * The bytecode (.class file) is the same, but output shows different OS!
+ */
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program demonstrates Java's platform independence:
+                <ul>
+                    <li><strong>System.getProperty():</strong> Accesses JVM and system properties</li>
+                    <li><strong>Runtime class:</strong> Provides interface to the JVM for memory and processor
+                        information</li>
+                    <li><strong>Platform Independence:</strong> Same bytecode runs on any OS with appropriate JVM</li>
+                    <li><strong>Write Once, Run Anywhere:</strong> Compile once, run on Windows, Mac, Linux, Android
+                    </li>
+                </ul>
+                <strong>Why this matters:</strong> This is the core advantage of Java! You write code once, and it runs
+                everywhere without modification.
+            </div>
+        </div>
+
+        <!-- Program 6: Class and Object Basics -->
+        <div class="content-section">
+            <h2>Program 6: Introduction to Classes and Objects</h2>
+            <p>Java is object-oriented. This program introduces the concept of classes and objects.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * ClassAndObjectDemo - Understanding OOP Basics
+ * Demonstrates classes, objects, and the "new" keyword
+ */
+
+// Define a simple class representing a Book
+class Book {
+    // Instance variables (properties/attributes)
+    String title;
+    String author;
+    int pages;
+    double price;
+    
+    // Method to display book information
+    void displayInfo() {
+        System.out.println("╔════════════════════════════════════════╗");
+        System.out.println("║   Book Information                     ║");
+        System.out.println("╚════════════════════════════════════════╝");
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Pages: " + pages);
+        System.out.println("Price: $" + price);
+        System.out.println();
+    }
+    
+    // Method to check if book is lengthy
+    boolean isLengthy() {
+        return pages > 500;
+    }
+}
+
+public class ClassAndObjectDemo {
+    
+    public static void main(String[] args) {
+        
+        System.out.println("=== Classes and Objects in Java ===\n");
+        
+        // Creating objects using the "new" keyword
+        // "new" allocates memory in the heap for the object
+        Book book1 = new Book();
+        Book book2 = new Book();
+        
+        // Setting properties for book1
+        book1.title = "Effective Java";
+        book1.author = "Joshua Bloch";
+        book1.pages = 416;
+        book1.price = 45.99;
+        
+        // Setting properties for book2
+        book2.title = "Clean Code";
+        book2.author = "Robert C. Martin";
+        book2.pages = 464;
+        book2.price = 42.99;
+        
+        // Calling methods on objects
+        book1.displayInfo();
+        book2.displayInfo();
+        
+        // Using methods that return values
+        System.out.println("Is '" + book1.title + "' lengthy? " + book1.isLengthy());
+        System.out.println("Is '" + book2.title + "' lengthy? " + book2.isLengthy());
+        
+        // Demonstrating multiple objects
+        System.out.println("\n=== Understanding Objects ===");
+        System.out.println("book1 and book2 are TWO DIFFERENT objects");
+        System.out.println("They are created from the SAME class (Book)");
+        System.out.println("Each has its own copy of instance variables");
+        System.out.println("\nThink of:");
+        System.out.println("  Class = Blueprint/Template");
+        System.out.println("  Object = Actual instance created from blueprint");
+    }
+}
+
+/*
+ * KEY CONCEPTS:
+ * 
+ * 1. Class:
+ *    - Blueprint or template for creating objects
+ *    - Defines properties (variables) and behaviors (methods)
+ * 
+ * 2. Object:
+ *    - Instance of a class
+ *    - Created using "new" keyword
+ *    - Has its own copy of instance variables
+ * 
+ * 3. "new" Keyword:
+ *    - Allocates memory in the heap
+ *    - Creates a new object instance
+ *    - Returns reference to the object
+ * 
+ * 4. Instance Variables:
+ *    - Variables declared inside class but outside methods
+ *    - Each object has its own copy
+ * 
+ * 5. Methods:
+ *    - Functions defined inside a class
+ *    - Define the behavior of objects
+ * 
+ * ANALOGY:
+ * Class = Cookie cutter (template)
+ * Object = Actual cookies made from the cutter
+ * You can make many cookies (objects) from one cutter (class)!
+ */
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program introduces Object-Oriented Programming:
+                <ul>
+                    <li><strong>Class:</strong> Blueprint defining properties and behaviors</li>
+                    <li><strong>Object:</strong> Instance created from a class using "new" keyword</li>
+                    <li><strong>Instance Variables:</strong> Each object has its own copy</li>
+                    <li><strong>Methods:</strong> Define what objects can do</li>
+                </ul>
+                <strong>Why this matters:</strong> Java is object-oriented. Understanding classes and objects is
+                fundamental to writing Java programs.
+            </div>
+        </div>
+
+        <!-- Program 7: Compilation Process Demo -->
+        <div class="content-section">
+            <h2>Program 7: Understanding Compilation and Bytecode</h2>
+            <p>This program helps visualize the compilation process and what bytecode means.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * CompilationDemo - Understanding Java Compilation
+ * This program explains the compilation process conceptually
+ */
+public class CompilationDemo {
+    
+    public static void main(String[] args) {
+        
+        System.out.println("╔════════════════════════════════════════════════════════╗");
+        System.out.println("║   Java Compilation Process                             ║");
+        System.out.println("╚════════════════════════════════════════════════════════╝\n");
+        
+        // This program itself demonstrates the compilation process!
+        
+        System.out.println("=== Step 1: Source Code (.java file) ===");
+        System.out.println("You write: CompilationDemo.java");
+        System.out.println("Contains: Human-readable Java code");
+        System.out.println("Example: System.out.println(\"Hello\");");
+        
+        System.out.println("\n=== Step 2: Compilation (javac) ===");
+        System.out.println("Command: javac CompilationDemo.java");
+        System.out.println("Compiler: Checks syntax, type safety");
+        System.out.println("Output: CompilationDemo.class (bytecode)");
+        
+        System.out.println("\n=== Step 3: Bytecode (.class file) ===");
+        System.out.println("Format: Binary file (not human-readable)");
+        System.out.println("Content: JVM instructions (platform-independent)");
+        System.out.println("Size: Usually smaller than source code");
+        System.out.println("\nBytecode Example (conceptual):");
+        System.out.println("  getstatic java/lang/System.out");
+        System.out.println("  ldc \"Hello\"");
+        System.out.println("  invokevirtual java/io/PrintStream.println");
+        
+        System.out.println("\n=== Step 4: JVM Execution ===");
+        System.out.println("Command: java CompilationDemo");
+        System.out.println("JVM: Loads .class file");
+        System.out.println("JVM: Verifies bytecode for security");
+        System.out.println("JVM: Executes bytecode");
+        
+        System.out.println("\n=== Platform Independence ===");
+        demonstratePlatformIndependence();
+        
+        System.out.println("\n=== Compilation vs Interpretation ===");
+        explainHybridApproach();
+    }
+    
+    static void demonstratePlatformIndependence() {
+        System.out.println("\nSame CompilationDemo.class runs on:");
+        System.out.println("  ┌─────────────────────────────────────┐");
+        System.out.println("  │  Windows PC                         │");
+        System.out.println("  │    ↓                                │");
+        System.out.println("  │  Windows JVM interprets bytecode   │");
+        System.out.println("  └─────────────────────────────────────┘");
+        System.out.println();
+        System.out.println("  ┌─────────────────────────────────────┐");
+        System.out.println("  │  Mac Computer                       │");
+        System.out.println("  │    ↓                                │");
+        System.out.println("  │  macOS JVM interprets bytecode      │");
+        System.out.println("  └─────────────────────────────────────┘");
+        System.out.println();
+        System.out.println("  ┌─────────────────────────────────────┐");
+        System.out.println("  │  Linux Server                       │");
+        System.out.println("  │    ↓                                │");
+        System.out.println("  │  Linux JVM interprets bytecode      │");
+        System.out.println("  └─────────────────────────────────────┘");
+        System.out.println("\nBytecode is IDENTICAL on all platforms!");
+        System.out.println("Only the JVM is platform-specific.");
+    }
+    
+    static void explainHybridApproach() {
+        System.out.println("\nJava uses BOTH compilation and interpretation:");
+        System.out.println();
+        System.out.println("1. COMPILATION (javac):");
+        System.out.println("   .java → .class (bytecode)");
+        System.out.println("   Done once, before execution");
+        System.out.println();
+        System.out.println("2. INTERPRETATION (JVM):");
+        System.out.println("   Bytecode → Machine code");
+        System.out.println("   Done at runtime");
+        System.out.println();
+        System.out.println("3. JIT COMPILATION (optimization):");
+        System.out.println("   Frequently used bytecode → Native machine code");
+        System.out.println("   Improves performance during execution");
+        System.out.println();
+        System.out.println("This hybrid approach gives:");
+        System.out.println("  ✓ Platform independence (bytecode)");
+        System.out.println("  ✓ Security (bytecode verification)");
+        System.out.println("  ✓ Performance (JIT compilation)");
+    }
+}
+
+/*
+ * TO EXPERIMENT:
+ * 
+ * 1. Compile this program:
+ *    javac CompilationDemo.java
+ * 
+ * 2. Check the files created:
+ *    You'll see CompilationDemo.class
+ * 
+ * 3. Try to open .class file in text editor:
+ *    You'll see gibberish - it's binary bytecode!
+ * 
+ * 4. Run the program:
+ *    java CompilationDemo
+ * 
+ * 5. Copy .class file to a different OS:
+ *    It will run there too (if JVM is installed)!
+ * 
+ * IMPORTANT INSIGHT:
+ * The .class file is the "magic" that makes Java portable.
+ * It's not Windows code, not Mac code, not Linux code.
+ * It's JVM code - and JVM exists for all platforms!
+ */
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program demystifies Java's compilation process:
+                <ul>
+                    <li><strong>Source Code (.java):</strong> Human-readable Java code</li>
+                    <li><strong>Compilation (javac):</strong> Converts source to bytecode (.class)</li>
+                    <li><strong>Bytecode:</strong> Platform-independent intermediate code</li>
+                    <li><strong>JVM Execution:</strong> Interprets/compiles bytecode to machine code</li>
+                    <li><strong>Hybrid Approach:</strong> Compilation + Interpretation + JIT = Best of both worlds</li>
+                </ul>
+                <strong>Why this matters:</strong> Understanding compilation is key to understanding why Java is "Write
+                Once, Run Anywhere."
+            </div>
+        </div>
+
+        <!-- Program 8: String Operations -->
+        <div class="content-section">
+            <h2>Program 8: Working with Strings</h2>
+            <p>Strings are one of the most commonly used types in Java. Let's explore string operations.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * StringOperationsDemo - Understanding Java Strings
+ * Demonstrates common string operations and methods
+ */
+public class StringOperationsDemo {
+    
+    public static void main(String[] args) {
+        
+        System.out.println("=== Java String Operations ===\n");
+        
+        // STRING CREATION
+        String language = "Java";
+        String version = "17";
+        String fullName = "Java Programming Language";
+        
+        // STRING CONCATENATION
+        System.out.println("=== Concatenation ===");
+        String message = language + " " + version;  // Using + operator
+        System.out.println("Message: " + message);
+        
+        String description = language.concat(" is awesome!");  // Using concat()
+        System.out.println("Description: " + description);
+        
+        // STRING LENGTH
+        System.out.println("\n=== Length ===");
+        System.out.println("Length of '" + fullName + "': " + fullName.length());
+        
+        // STRING CASE CONVERSION
+        System.out.println("\n=== Case Conversion ===");
+        System.out.println("Uppercase: " + language.toUpperCase());
+        System.out.println("Lowercase: " + language.toLowerCase());
+        
+        // STRING COMPARISON
+        System.out.println("\n=== Comparison ===");
+        String str1 = "Java";
+        String str2 = "java";
+        String str3 = "Java";
+        
+        System.out.println("str1.equals(str2): " + str1.equals(str2));  // false (case-sensitive)
+        System.out.println("str1.equals(str3): " + str1.equals(str3));  // true
+        System.out.println("str1.equalsIgnoreCase(str2): " + str1.equalsIgnoreCase(str2));  // true
+        
+        // STRING SEARCHING
+        System.out.println("\n=== Searching ===");
+        System.out.println("Contains 'Program': " + fullName.contains("Program"));
+        System.out.println("Starts with 'Java': " + fullName.startsWith("Java"));
+        System.out.println("Ends with 'Language': " + fullName.endsWith("Language"));
+        System.out.println("Index of 'Programming': " + fullName.indexOf("Programming"));
+        
+        // STRING EXTRACTION
+        System.out.println("\n=== Extraction ===");
+        System.out.println("Character at index 0: " + language.charAt(0));
+        System.out.println("Substring (0, 4): " + fullName.substring(0, 4));
+        System.out.println("Substring from 5: " + fullName.substring(5));
+        
+        // STRING REPLACEMENT
+        System.out.println("\n=== Replacement ===");
+        String replaced = fullName.replace("Java", "Python");
+        System.out.println("Original: " + fullName);
+        System.out.println("Replaced: " + replaced);
+        System.out.println("Note: Original string unchanged (Strings are immutable!)");
+        
+        // STRING SPLITTING
+        System.out.println("\n=== Splitting ===");
+        String sentence = "Write Once, Run Anywhere";
+        String[] words = sentence.split(", ");
+        System.out.println("Split result:");
+        for (int i = 0; i < words.length; i++) {
+            System.out.println("  Word " + i + ": " + words[i]);
+        }
+        
+        // STRING TRIMMING
+        System.out.println("\n=== Trimming ===");
+        String messy = "   Java   ";
+        System.out.println("Before trim: '" + messy + "' (length: " + messy.length() + ")");
+        System.out.println("After trim: '" + messy.trim() + "' (length: " + messy.trim().length() + ")");
+        
+        // STRING FORMATTING
+        System.out.println("\n=== Formatting ===");
+        String name = "Alice";
+        int age = 25;
+        String formatted = String.format("Name: %s, Age: %d", name, age);
+        System.out.println(formatted);
+        
+        // IMPORTANT: STRING IMMUTABILITY
+        System.out.println("\n=== String Immutability ===");
+        String original = "Hello";
+        System.out.println("Original: " + original);
+        original.concat(" World");  // This doesn't change original!
+        System.out.println("After concat (not assigned): " + original);
+        original = original.concat(" World");  // Must assign to new variable
+        System.out.println("After concat (assigned): " + original);
+        System.out.println("\nStrings are IMMUTABLE - they cannot be changed!");
+        System.out.println("Methods return NEW strings, original remains unchanged.");
+    }
+}
+
+/*
+ * KEY STRING CONCEPTS:
+ * 
+ * 1. String is a CLASS (not a primitive type)
+ *    But it has special support in Java (can use "" syntax)
+ * 
+ * 2. Strings are IMMUTABLE
+ *    Once created, cannot be changed
+ *    Methods return new strings
+ * 
+ * 3. String Pool
+ *    Java optimizes memory by reusing identical string literals
+ * 
+ * 4. Common Methods:
+ *    - length()          : Get string length
+ *    - charAt(index)     : Get character at position
+ *    - substring()       : Extract part of string
+ *    - equals()          : Compare content
+ *    - contains()        : Check if contains substring
+ *    - replace()         : Replace characters
+ *    - split()           : Split into array
+ *    - trim()            : Remove whitespace
+ *    - toUpperCase()     : Convert to uppercase
+ *    - toLowerCase()     : Convert to lowercase
+ * 
+ * 5. String vs StringBuilder
+ *    - String: Immutable (use for fixed text)
+ *    - StringBuilder: Mutable (use for frequent modifications)
+ */
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program covers essential string operations:
+                <ul>
+                    <li><strong>String Creation:</strong> Using literals and constructors</li>
+                    <li><strong>Immutability:</strong> Strings cannot be changed; methods return new strings</li>
+                    <li><strong>Common Methods:</strong> length(), charAt(), substring(), equals(), contains(), etc.
+                    </li>
+                    <li><strong>String Pool:</strong> Java optimizes memory by reusing identical string literals</li>
+                </ul>
+                <strong>Why this matters:</strong> Strings are used everywhere in Java. Understanding string operations
+                and immutability is crucial for writing efficient code.
+            </div>
+        </div>
+
+        <!-- Program 9: Basic Arithmetic Operations -->
+        <div class="content-section">
+            <h2>Program 9: Arithmetic Operations and Operators</h2>
+            <p>This program demonstrates basic arithmetic operations and operator precedence in Java.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * ArithmeticDemo - Understanding Java Operators
+ * Demonstrates arithmetic operations, operator precedence, and type casting
+ */
+public class ArithmeticDemo {
+    
+    public static void main(String[] args) {
+        
+        System.out.println("=== Java Arithmetic Operations ===\n");
+        
+        // BASIC ARITHMETIC OPERATORS
+        int a = 20;
+        int b = 6;
+        
+        System.out.println("=== Basic Operators ===");
+        System.out.println("a = " + a + ", b = " + b);
+        System.out.println("Addition (a + b): " + (a + b));
+        System.out.println("Subtraction (a - b): " + (a - b));
+        System.out.println("Multiplication (a * b): " + (a * b));
+        System.out.println("Division (a / b): " + (a / b));  // Integer division!
+        System.out.println("Modulus (a % b): " + (a % b));   // Remainder
+        
+        // INTEGER VS FLOATING-POINT DIVISION
+        System.out.println("\n=== Integer vs Floating-Point Division ===");
+        System.out.println("20 / 6 (int): " + (20 / 6));           // 3 (truncated)
+        System.out.println("20.0 / 6 (double): " + (20.0 / 6));    // 3.333...
+        System.out.println("20 / 6.0 (mixed): " + (20 / 6.0));     // 3.333...
+        
+        // TYPE CASTING
+        System.out.println("\n=== Type Casting ===");
+        int num1 = 20;
+        int num2 = 6;
+        double result = (double) num1 / num2;  // Cast to double
+        System.out.println("(double)20 / 6: " + result);
+        
+        // INCREMENT AND DECREMENT
+        System.out.println("\n=== Increment/Decrement ===");
+        int counter = 10;
+        System.out.println("Initial counter: " + counter);
+        System.out.println("counter++: " + counter++);  // Post-increment (use then increment)
+        System.out.println("After post-increment: " + counter);
+        System.out.println("++counter: " + ++counter);  // Pre-increment (increment then use)
+        System.out.println("After pre-increment: " + counter);
+        
+        // COMPOUND ASSIGNMENT OPERATORS
+        System.out.println("\n=== Compound Assignment ===");
+        int value = 100;
+        System.out.println("Initial value: " + value);
+        value += 50;  // Same as: value = value + 50
+        System.out.println("After value += 50: " + value);
+        value -= 30;  // Same as: value = value - 30
+        System.out.println("After value -= 30: " + value);
+        value *= 2;   // Same as: value = value * 2
+        System.out.println("After value *= 2: " + value);
+        value /= 4;   // Same as: value = value / 4
+        System.out.println("After value /= 4: " + value);
+        
+        // OPERATOR PRECEDENCE
+        System.out.println("\n=== Operator Precedence ===");
+        int result1 = 10 + 5 * 2;           // Multiplication first
+        int result2 = (10 + 5) * 2;         // Parentheses first
+        System.out.println("10 + 5 * 2 = " + result1);
+        System.out.println("(10 + 5) * 2 = " + result2);
+        
+        // PRACTICAL EXAMPLE: CALCULATOR
+        System.out.println("\n=== Simple Calculator ===");
+        double num1Double = 25.5;
+        double num2Double = 4.2;
+        
+        System.out.println("Number 1: " + num1Double);
+        System.out.println("Number 2: " + num2Double);
+        System.out.println("Sum: " + (num1Double + num2Double));
+        System.out.println("Difference: " + (num1Double - num2Double));
+        System.out.println("Product: " + (num1Double * num2Double));
+        System.out.println("Quotient: " + (num1Double / num2Double));
+        
+        // MATH CLASS METHODS
+        System.out.println("\n=== Math Class Methods ===");
+        System.out.println("Math.pow(2, 3): " + Math.pow(2, 3));        // 2^3 = 8
+        System.out.println("Math.sqrt(16): " + Math.sqrt(16));          // Square root
+        System.out.println("Math.abs(-10): " + Math.abs(-10));          // Absolute value
+        System.out.println("Math.max(10, 20): " + Math.max(10, 20));    // Maximum
+        System.out.println("Math.min(10, 20): " + Math.min(10, 20));    // Minimum
+        System.out.println("Math.round(3.7): " + Math.round(3.7));      // Round
+        System.out.println("Math.ceil(3.2): " + Math.ceil(3.2));        // Ceiling
+        System.out.println("Math.floor(3.8): " + Math.floor(3.8));      // Floor
+    }
+}
+
+/*
+ * OPERATOR PRECEDENCE (High to Low):
+ * 
+ * 1. Parentheses: ()
+ * 2. Unary: ++, --, +, -, !
+ * 3. Multiplicative: *, /, %
+ * 4. Additive: +, -
+ * 5. Relational: <, >, <=, >=
+ * 6. Equality: ==, !=
+ * 7. Logical AND: &&
+ * 8. Logical OR: ||
+ * 9. Assignment: =, +=, -=, *=, /=, %=
+ * 
+ * TIP: When in doubt, use parentheses for clarity!
+ * 
+ * COMMON PITFALLS:
+ * 
+ * 1. Integer Division:
+ *    5 / 2 = 2 (not 2.5!)
+ *    Use 5.0 / 2 or (double)5 / 2 for decimal result
+ * 
+ * 2. Division by Zero:
+ *    int: Throws ArithmeticException
+ *    double: Results in Infinity or NaN
+ * 
+ * 3. Overflow:
+ *    Integer.MAX_VALUE + 1 wraps around to Integer.MIN_VALUE
+ */
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program covers arithmetic operations:
+                <ul>
+                    <li><strong>Basic Operators:</strong> +, -, *, /, % (modulus)</li>
+                    <li><strong>Integer Division:</strong> Truncates decimal part (20/6 = 3, not 3.33)</li>
+                    <li><strong>Type Casting:</strong> Convert between types for accurate results</li>
+                    <li><strong>Increment/Decrement:</strong> ++ and -- operators (pre and post)</li>
+                    <li><strong>Operator Precedence:</strong> Order of operations (PEMDAS)</li>
+                    <li><strong>Math Class:</strong> Built-in mathematical functions</li>
+                </ul>
+                <strong>Why this matters:</strong> Arithmetic operations are fundamental. Understanding integer division
+                and type casting prevents common bugs.
+            </div>
+        </div>
+
+        <!-- Program 10: Comments and Documentation -->
+        <div class="content-section">
+            <h2>Program 10: Proper Code Documentation</h2>
+            <p>Good code is well-documented. This program demonstrates different types of comments and documentation
+                practices.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * DocumentationDemo - The Importance of Code Documentation
+ * 
+ * This class demonstrates different types of comments in Java
+ * and best practices for code documentation.
+ * 
+ * @author Java Mastery Hub
+ * @version 1.0
+ * @since 2024
+ */
+public class DocumentationDemo {
+    
+    // SINGLE-LINE COMMENT
+    // This is a single-line comment
+    // Use for brief explanations
+    
+    /*
+     * MULTI-LINE COMMENT
+     * This is a multi-line comment
+     * Use for longer explanations
+     * that span multiple lines
+     */
+    
+    /**
+     * JAVADOC COMMENT
+     * This is a Javadoc comment
+     * Used to generate API documentation
+     * 
+     * @param args Command-line arguments
+     */
+    public static void main(String[] args) {
+        
+        System.out.println("=== Java Documentation Best Practices ===\n");
+        
+        // Example 1: Explaining WHY, not WHAT
+        // BAD COMMENT:
+        // int age = 25;  // Declare age variable
+        
+        // GOOD COMMENT:
+        int age = 25;  // Minimum age requirement for account creation
+        
+        // Example 2: Explaining complex logic
+        calculateDiscount(1500);
+        
+        // Example 3: TODO comments
+        // TODO: Add input validation
+        // TODO: Implement error handling
+        
+        // Example 4: FIXME comments
+        // FIXME: This calculation is incorrect for leap years
+        
+        System.out.println("\n=== Documentation Guidelines ===");
+        displayGuidelines();
+    }
+    
+    /**
+     * Calculates discount based on purchase amount.
+     * 
+     * Discount tiers:
+     * - $0-$999: No discount
+     * - $1000-$4999: 10% discount
+     * - $5000+: 20% discount
+     * 
+     * @param amount The purchase amount in dollars
+     * @return The discount percentage
+     */
+    public static double calculateDiscount(double amount) {
+        double discount = 0;
+        
+        // Apply tiered discount based on amount
+        // This encourages larger purchases
+        if (amount >= 5000) {
+            discount = 0.20;  // 20% for premium customers
+        } else if (amount >= 1000) {
+            discount = 0.10;  // 10% for regular customers
+        }
+        // No discount for amounts below $1000
+        
+        System.out.println("Purchase amount: $" + amount);
+        System.out.println("Discount: " + (discount * 100) + "%");
+        System.out.println("Savings: $" + (amount * discount));
+        
+        return discount;
+    }
+    
+    /**
+     * Displays documentation best practices.
+     * 
+     * This method demonstrates how to write clear,
+     * helpful comments that improve code maintainability.
+     */
+    public static void displayGuidelines() {
+        System.out.println("\n1. Comment WHY, not WHAT");
+        System.out.println("   Bad:  i++;  // Increment i");
+        System.out.println("   Good: i++;  // Move to next customer in queue");
+        
+        System.out.println("\n2. Keep comments up-to-date");
+        System.out.println("   Outdated comments are worse than no comments!");
+        
+        System.out.println("\n3. Use Javadoc for public APIs");
+        System.out.println("   Helps generate professional documentation");
+        
+        System.out.println("\n4. Avoid obvious comments");
+        System.out.println("   Bad: int count = 0;  // Initialize count to zero");
+        System.out.println("   Code should be self-explanatory when possible");
+        
+        System.out.println("\n5. Use TODO and FIXME markers");
+        System.out.println("   Helps track incomplete or problematic code");
+        
+        System.out.println("\n6. Comment complex algorithms");
+        System.out.println("   Explain the logic and reasoning");
+        
+        System.out.println("\n7. Document assumptions");
+        System.out.println("   Example: // Assumes input is already validated");
+    }
+}
+
+/*
+ * TYPES OF COMMENTS IN JAVA:
+ * 
+ * 1. Single-Line Comments: //
+ *    - Quick explanations
+ *    - Temporary code disabling
+ * 
+ * 2. Multi-Line Comments: /* ... *\/
+ *    - Longer explanations
+ *    - Block of code documentation
+ * 
+ * 3. Javadoc Comments: /** ... *\/
+ *    - API documentation
+ *    - Generates HTML documentation
+ *    - Uses tags: @param, @return, @throws, @author, etc.
+ * 
+ * JAVADOC TAGS:
+ * 
+ * @author       : Author of the code
+ * @version      : Version number
+ * @since        : When feature was added
+ * @param        : Parameter description
+ * @return       : Return value description
+ * @throws       : Exception description
+ * @deprecated   : Marks deprecated code
+ * @see          : Reference to related code
+ * 
+ * GENERATING JAVADOC:
+ * 
+ * Command: javadoc DocumentationDemo.java
+ * Output: HTML documentation files
+ * 
+ * BEST PRACTICES:
+ * 
+ * ✓ Write comments for complex logic
+ * ✓ Explain WHY, not WHAT
+ * ✓ Keep comments concise
+ * ✓ Update comments when code changes
+ * ✓ Use meaningful variable names (reduces need for comments)
+ * ✗ Don't state the obvious
+ * ✗ Don't leave commented-out code in production
+ * ✗ Don't write misleading comments
+ */
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> This program demonstrates documentation best practices:
+                <ul>
+                    <li><strong>Single-Line Comments (//)</strong>: For brief explanations</li>
+                    <li><strong>Multi-Line Comments (/* */)</strong>: For longer explanations</li>
+                    <li><strong>Javadoc Comments (/** */)</strong>: For API documentation with tags</li>
+                    <li><strong>Best Practices:</strong> Comment WHY not WHAT, keep updated, avoid obvious comments</li>
+                </ul>
+                <strong>Why this matters:</strong> Well-documented code is maintainable code. Comments help you and
+                others understand the code months or years later.
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/what-is-java.html" class="btn btn-primary">
+                    📚 Back to Theory
+                </a>
+                <a href="../mcq/what-is-java.html" class="btn btn-success">
+                    ✅ Test Your Knowledge
+                </a>
+                <a href="../index.html" class="btn btn-secondary">
+                    🏠 Back to Home
+                </a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">📚 Next Topic</div>
+                <p>
+                    <strong>Coming Soon:</strong> Variables & Data Types
+                    <br>Deep dive into primitive types, reference types, type casting, and variable scope.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

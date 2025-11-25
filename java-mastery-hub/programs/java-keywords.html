@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Keywords - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Header -->
+        <div class="content-header">
+            <h1>Java Keywords - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>Java Keywords</span>
+            </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="content-section">
+            <h2>Hands-On Java Programs</h2>
+            <p>
+                Welcome to the practical section! These 12+ programs demonstrate every major Java keyword category.
+                Each program is heavily commented to explain not just WHAT the code does, but WHY and HOW each keyword
+                works.
+            </p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>
+                    Try running these programs yourself! Experiment with different keywords, observe compilation errors,
+                    and understand how keywords control program behavior. Hands-on practice is essential!
+                </p>
+            </div>
+        </div>
+
+        <!-- Program 1: Access Modifiers -->
+        <div class="content-section">
+            <h2>Program 1: Access Modifiers (public, private, protected)</h2>
+            <p>Demonstrates how access modifiers control visibility of class members.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * AccessModifiersDemo - Understanding public, private, protected
+ * 
+ * Baby-level: Like different types of rooms - some anyone can enter,
+ * some only family, some only you!
+ */
+public class AccessModifiersDemo {
+    
+    // PUBLIC: Accessible from anywhere
+    public String publicName = "Everyone can see me!";
+    
+    // PRIVATE: Only accessible within this class
+    private String privateSecret = "Only I can see this!";
+    
+    // PROTECTED: Accessible in same package and subclasses
+    protected String protectedData = "Family can see me!";
+    
+    // DEFAULT (no modifier): Accessible only in same package
+    String defaultValue = "Package friends can see me!";
+    
+    // PUBLIC method - anyone can call
+    public void publicMethod() {
+        System.out.println("Public method called!");
+        // Can access all members inside the class
+        System.out.println("Private secret: " + privateSecret);
+    }
+    
+    // PRIVATE method - only this class can call
+    private void privateMethod() {
+        System.out.println("Private method - only internal use!");
+    }
+    
+    // PROTECTED method - same package + subclasses
+    protected void protectedMethod() {
+        System.out.println("Protected method - for family!");
+    }
+    
+    public static void main(String[] args) {
+        AccessModifiersDemo demo = new AccessModifiersDemo();
+        
+        // ✅ Can access public
+        System.out.println(demo.publicName);
+        
+        // ✅ Can access private (we're inside the class)
+        System.out.println(demo.privateSecret);
+        
+        // ✅ Can call private method (we're inside the class)
+        demo.privateMethod();
+        
+        // Real-world analogy: Access modifiers are like security clearances
+        // - public: Public information (anyone)
+        // - protected: Internal company (employees + partners)
+        // - default: Department level (same department)
+        // - private: Top secret (specific person only)
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Access modifiers control who can access class members. Use
+                <code>private</code>
+                for encapsulation (hiding internal details), <code>public</code> for the class's API, and
+                <code>protected</code>
+                for inheritance hierarchies. Best practice: Start with <code>private</code> and only make more
+                accessible if needed.
+            </div>
+        </div>
+
+        <!-- Program 2: static Keyword -->
+        <div class="content-section">
+            <h2>Program 2: static Keyword</h2>
+            <p>Demonstrates static variables and methods that belong to the class, not instances.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * StaticKeywordDemo - Understanding static members
+ * 
+ * Baby-level: static is like a shared toy that all kids use together,
+ * not a personal toy that each kid has their own copy of!
+ */
+public class StaticKeywordDemo {
+    
+    // STATIC variable - shared by all instances
+    static int studentCount = 0;
+    
+    // INSTANCE variable - each object has its own copy
+    String studentName;
+    
+    // STATIC constant - shared, unchangeable value
+    public static final String SCHOOL_NAME = "Java Academy";
+    
+    // Constructor
+    public StaticKeywordDemo(String name) {
+        this.studentName = name;
+        studentCount++;  // Increment shared counter
+    }
+    
+    // STATIC method - belongs to class, not object
+    public static void displaySchoolInfo() {
+        System.out.println("School: " + SCHOOL_NAME);
+        System.out.println("Total students: " + studentCount);
+        // ❌ Cannot access instance variables from static method
+        // System.out.println(studentName);  // Compilation error!
+    }
+    
+    // INSTANCE method - belongs to object
+    public void displayStudentInfo() {
+        System.out.println("Student: " + studentName);
+        System.out.println("School: " + SCHOOL_NAME);  // ✅ Can access static
+        System.out.println("Total students: " + studentCount);  // ✅ Can access static
+    }
+    
+    public static void main(String[] args) {
+        // Call static method without creating object
+        StaticKeywordDemo.displaySchoolInfo();
+        
+        // Create objects
+        StaticKeywordDemo student1 = new StaticKeywordDemo("Alice");
+        StaticKeywordDemo student2 = new StaticKeywordDemo("Bob");
+        StaticKeywordDemo student3 = new StaticKeywordDemo("Charlie");
+        
+        // Static variable is shared - all see same value
+        System.out.println("\nAfter creating 3 students:");
+        StaticKeywordDemo.displaySchoolInfo();
+        
+        student1.displayStudentInfo();
+        
+        // Real-world analogy:
+        // - static: Community swimming pool (shared by all)
+        // - instance: Personal backyard pool (each house has own)
+        
+        // Industry usage:
+        // - Utility methods: Math.sqrt(), Arrays.sort()
+        // - Constants: Math.PI, Integer.MAX_VALUE
+        // - Factory methods: LocalDate.now()
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>static</code> members belong to the class itself, not to individual
+                objects.
+                They're shared across all instances. Use for utility methods, constants, and counters. Static methods
+                cannot
+                access instance variables because they don't belong to any specific object.
+            </div>
+        </div>
+
+        <!-- Program 3: final Keyword -->
+        <div class="content-section">
+            <h2>Program 3: final Keyword (Variable, Method, Class)</h2>
+            <p>Demonstrates final for constants, preventing method override, and preventing inheritance.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * FinalKeywordDemo - Understanding final variables, methods, and classes
+ * 
+ * Baby-level: final is like writing in permanent marker - once written,
+ * you cannot erase or change it!
+ */
+
+// FINAL CLASS - cannot be extended
+final class ImmutableClass {
+    // No class can inherit from this
+}
+
+class Parent {
+    // FINAL METHOD - cannot be overridden
+    public final void criticalMethod() {
+        System.out.println("This method cannot be changed by children!");
+    }
+    
+    public void normalMethod() {
+        System.out.println("This can be overridden");
+    }
+}
+
+class Child extends Parent {
+    // ❌ Cannot override final method
+    // public void criticalMethod() { }  // Compilation error!
+    
+    // ✅ Can override normal method
+    @Override
+    public void normalMethod() {
+        System.out.println("Child's version");
+    }
+}
+
+public class FinalKeywordDemo {
+    
+    // FINAL VARIABLE - constant (cannot be reassigned)
+    public static final double PI = 3.14159265359;
+    public static final int MAX_USERS = 100;
+    
+    // Final instance variable - must be initialized
+    private final String id;
+    
+    public FinalKeywordDemo(String id) {
+        this.id = id;  // ✅ Can assign once in constructor
+    }
+    
+    public void demonstrateFinal() {
+        // Final local variable
+        final int MAX_ATTEMPTS = 3;
+        
+        System.out.println("Max attempts: " + MAX_ATTEMPTS);
+        
+        // ❌ Cannot reassign final variable
+        // MAX_ATTEMPTS = 5;  // Compilation error!
+        // PI = 3.14;  // Compilation error!
+        
+        // Final reference - reference cannot change, but object can
+        final StringBuilder sb = new StringBuilder("Hello");
+        sb.append(" World");  // ✅ Can modify object
+        System.out.println(sb);
+        
+        // ❌ Cannot reassign reference
+        // sb = new StringBuilder("New");  // Compilation error!
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("PI: " + PI);
+        System.out.println("MAX_USERS: " + MAX_USERS);
+        
+        FinalKeywordDemo demo = new FinalKeywordDemo("USER123");
+        demo.demonstrateFinal();
+        
+        // Real-world analogy:
+        // - final variable: Permanent tattoo (cannot change)
+        // - final method: Company policy (cannot be altered)
+        // - final class: Sealed vault (cannot be extended)
+        
+        // Best practices:
+        // - Use final for constants: public static final
+        // - Use final for parameters that shouldn't change
+        // - Use final for security-critical classes (String, Integer)
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>final</code> prevents modification. For variables, it creates
+                constants.
+                For methods, it prevents overriding (useful for security). For classes, it prevents inheritance. Note:
+                final
+                reference means the reference cannot change, but the object it points to can still be modified.
+            </div>
+        </div>
+
+        <!-- Program 4: abstract Keyword -->
+        <div class="content-section">
+            <h2>Program 4: abstract Keyword (Class and Method)</h2>
+            <p>Demonstrates abstract classes and methods for creating templates.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * AbstractKeywordDemo - Understanding abstract classes and methods
+ * 
+ * Baby-level: abstract is like a coloring book outline - it shows the
+ * shape but you need to fill in the colors yourself!
+ */
+
+// ABSTRACT CLASS - cannot be instantiated directly
+abstract class Animal {
+    
+    String name;
+    
+    // Constructor in abstract class
+    public Animal(String name) {
+        this.name = name;
+    }
+    
+    // ABSTRACT METHOD - no implementation (must be overridden)
+    public abstract void makeSound();
+    
+    // ABSTRACT METHOD
+    public abstract void move();
+    
+    // CONCRETE METHOD - has implementation
+    public void sleep() {
+        System.out.println(name + " is sleeping... Zzz");
+    }
+    
+    public void eat() {
+        System.out.println(name + " is eating");
+    }
+}
+
+// Concrete class - must implement all abstract methods
+class Dog extends Animal {
+    
+    public Dog(String name) {
+        super(name);
+    }
+    
+    // ✅ Must implement abstract method
+    @Override
+    public void makeSound() {
+        System.out.println(name + " says: Woof! Woof!");
+    }
+    
+    @Override
+    public void move() {
+        System.out.println(name + " runs on four legs");
+    }
+}
+
+class Bird extends Animal {
+    
+    public Bird(String name) {
+        super(name);
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println(name + " says: Tweet! Tweet!");
+    }
+    
+    @Override
+    public void move() {
+        System.out.println(name + " flies in the sky");
+    }
+}
+
+public class AbstractKeywordDemo {
+    
+    public static void main(String[] args) {
+        // ❌ Cannot instantiate abstract class
+        // Animal animal = new Animal("Generic");  // Compilation error!
+        
+        // ✅ Can create concrete subclass instances
+        Animal dog = new Dog("Buddy");
+        Animal bird = new Bird("Tweety");
+        
+        // Call methods
+        dog.makeSound();   // Woof! Woof!
+        dog.move();        // runs on four legs
+        dog.sleep();       // is sleeping...
+        
+        System.out.println();
+        
+        bird.makeSound();  // Tweet! Tweet!
+        bird.move();       // flies in the sky
+        bird.eat();        // is eating
+        
+        // Real-world analogy:
+        // - abstract class: Car blueprint (shows structure, not actual car)
+        // - abstract method: "Add engine" instruction (what to do, not how)
+        // - concrete class: Actual car model (fully implemented)
+        
+        // Use cases:
+        // - Template pattern: Define skeleton, let subclasses fill details
+        // - Common behavior: Share code among related classes
+        // - Enforce contract: Force subclasses to implement specific methods
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>abstract</code> classes provide templates. They can have both
+                abstract
+                methods (no implementation) and concrete methods (with implementation). Subclasses must implement all
+                abstract
+                methods. Use abstract classes when you want to share code and enforce a contract for subclasses.
+            </div>
+        </div>
+
+        <!-- Program 5: synchronized Keyword -->
+        <div class="content-section">
+            <h2>Program 5: synchronized Keyword (Thread Safety)</h2>
+            <p>Demonstrates synchronized methods for thread-safe operations.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * SynchronizedKeywordDemo - Understanding thread synchronization
+ * 
+ * Baby-level: synchronized is like a bathroom - only ONE person can
+ * use it at a time. Others must wait in line!
+ */
+
+class BankAccount {
+    private int balance = 1000;
+    
+    // SYNCHRONIZED METHOD - thread-safe
+    // Only one thread can execute this at a time
+    public synchronized void withdraw(int amount) {
+        System.out.println(Thread.currentThread().getName() + 
+                          " attempting to withdraw: $" + amount);
+        
+        if (balance >= amount) {
+            System.out.println(Thread.currentThread().getName() + 
+                              " checking balance: $" + balance);
+            
+            // Simulate processing time
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            
+            balance -= amount;
+            System.out.println(Thread.currentThread().getName() + 
+                              " completed withdrawal. New balance: $" + balance);
+        } else {
+            System.out.println(Thread.currentThread().getName() + 
+                              " insufficient funds!");
+        }
+    }
+    
+    // Non-synchronized method for comparison
+    public void deposit(int amount) {
+        balance += amount;
+        System.out.println("Deposited: $" + amount + 
+                          ". Balance: $" + balance);
+    }
+    
+    public synchronized int getBalance() {
+        return balance;
+    }
+}
+
+public class SynchronizedKeywordDemo {
+    
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount();
+        
+        // Create multiple threads trying to withdraw simultaneously
+        Thread thread1 = new Thread(() -> {
+            account.withdraw(600);
+        }, "Thread-1");
+        
+        Thread thread2 = new Thread(() -> {
+            account.withdraw(600);
+        }, "Thread-2");
+        
+        // Start both threads
+        thread1.start();
+        thread2.start();
+        
+        // Wait for threads to complete
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("\nFinal balance: $" + account.getBalance());
+        
+        // Real-world analogy:
+        // - synchronized: Single-occupancy restroom (one at a time)
+        // - non-synchronized: Open park (everyone at once)
+        
+        // Without synchronized:
+        // - Both threads might see balance = 1000
+        // - Both withdraw 600
+        // - Balance becomes -200 (incorrect!)
+        
+        // With synchronized:
+        // - Thread-1 locks method, withdraws 600 (balance = 400)
+        // - Thread-2 waits, then sees balance = 400
+        // - Thread-2 cannot withdraw (insufficient funds)
+        // - Final balance = 400 (correct!)
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>synchronized</code> ensures thread safety by allowing only one
+                thread
+                to execute a method at a time. Critical for shared resources like bank accounts, counters, or any data
+                accessed by multiple threads. Without synchronization, race conditions can cause data corruption.
+            </div>
+        </div>
+
+        <!-- Program 6: volatile Keyword -->
+        <div class="content-section">
+            <h2>Program 6: volatile Keyword (Thread Visibility)</h2>
+            <p>Demonstrates volatile for ensuring variable visibility across threads.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * VolatileKeywordDemo - Understanding volatile for thread visibility
+ * 
+ * Baby-level: volatile is like a public announcement board - when you
+ * write something, EVERYONE sees it immediately, not just your notes!
+ */
+
+class TaskRunner {
+    
+    // VOLATILE - ensures all threads see the latest value
+    // Without volatile, threads might cache the value
+    private volatile boolean running = true;
+    
+    private int counter = 0;
+    
+    public void start() {
+        new Thread(() -> {
+            System.out.println("Task started...");
+            
+            while (running) {
+                counter++;
+                // Simulate work
+                if (counter % 100000000 == 0) {
+                    System.out.println("Still running... counter: " + counter);
+                }
+            }
+            
+            System.out.println("Task stopped! Final counter: " + counter);
+        }, "Worker-Thread").start();
+    }
+    
+    public void stop() {
+        System.out.println("Stopping task...");
+        running = false;  // All threads see this change immediately
+    }
+}
+
+public class VolatileKeywordDemo {
+    
+    public static void main(String[] args) throws InterruptedException {
+        TaskRunner task = new TaskRunner();
+        
+        // Start the task
+        task.start();
+        
+        // Let it run for 2 seconds
+        Thread.sleep(2000);
+        
+        // Stop the task
+        task.stop();
+        
+        // Wait a bit to see the result
+        Thread.sleep(500);
+        
+        System.out.println("\nMain thread finished");
+        
+        // Real-world analogy:
+        // - volatile: Live TV broadcast (everyone sees same thing)
+        // - non-volatile: Recorded video (might be outdated)
+        
+        // Technical explanation:
+        // - Without volatile: Thread might cache 'running' value
+        // - Thread keeps seeing running = true (cached value)
+        // - Loop never stops even after stop() is called!
+        
+        // - With volatile: Thread always reads from main memory
+        // - Thread sees running = false immediately
+        // - Loop stops as expected
+        
+        // Use volatile when:
+        // - Variable is accessed by multiple threads
+        // - One thread writes, others read
+        // - No compound operations (like counter++)
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>volatile</code> ensures that variable reads/writes go directly to
+                main
+                memory, not thread-local cache. This guarantees visibility across threads. Use for flags and state
+                variables
+                accessed by multiple threads. Note: volatile doesn't guarantee atomicity for compound operations like
+                counter++.
+            </div>
+        </div>
+
+        <!-- Program 7: this Keyword -->
+        <div class="content-section">
+            <h2>Program 7: this Keyword</h2>
+            <p>Demonstrates various uses of the this keyword.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * ThisKeywordDemo - Understanding 'this' reference
+ * 
+ * Baby-level: 'this' is like pointing to yourself and saying "ME!"
+ * when someone asks "who wants ice cream?"
+ */
+
+class Person {
+    private String name;
+    private int age;
+    
+    // USE 1: Distinguish instance variable from parameter
+    public Person(String name, int age) {
+        this.name = name;  // this.name = instance variable
+        this.age = age;    // name = parameter
+    }
+    
+    // USE 2: Call another constructor (constructor chaining)
+    public Person(String name) {
+        this(name, 0);  // Calls Person(String, int) constructor
+        System.out.println("Single-parameter constructor called");
+    }
+    
+    // USE 3: Return current object (method chaining)
+    public Person setName(String name) {
+        this.name = name;
+        return this;  // Returns current object
+    }
+    
+    public Person setAge(int age) {
+        this.age = age;
+        return this;  // Returns current object
+    }
+    
+    // USE 4: Pass current object as parameter
+    public void display() {
+        System.out.println("Name: " + this.name + ", Age: " + this.age);
+        this.printDetails(this);  // Passing current object
+    }
+    
+    private void printDetails(Person person) {
+        System.out.println("Printing details for: " + person.name);
+    }
+    
+    // USE 5: Explicit reference to instance members
+    public void compareWith(Person other) {
+        if (this.age > other.age) {
+            System.out.println(this.name + " is older than " + other.name);
+        } else {
+            System.out.println(other.name + " is older than " + this.name);
+        }
+    }
+}
+
+public class ThisKeywordDemo {
+    
+    public static void main(String[] args) {
+        // Constructor chaining
+        Person person1 = new Person("Alice");
+        person1.display();
+        
+        System.out.println();
+        
+        // Method chaining (fluent interface)
+        Person person2 = new Person("Bob", 25)
+                            .setName("Robert")
+                            .setAge(30);
+        person2.display();
+        
+        System.out.println();
+        
+        // Comparing objects
+        Person person3 = new Person("Charlie", 35);
+        person2.compareWith(person3);
+        
+        // Real-world analogy:
+        // - this: Your name tag at a conference (identifies YOU)
+        // - this.name: Your specific name (not someone else's)
+        
+        // Industry usage:
+        // - Builder pattern: return this for chaining
+        // - Distinguishing parameters from fields
+        // - Passing current object to other methods
+        // - Constructor chaining for code reuse
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>this</code> refers to the current object. Use it to distinguish
+                instance
+                variables from parameters, call other constructors, enable method chaining, and pass the current object
+                as a
+                parameter. Essential for clean, readable code and design patterns like Builder.
+            </div>
+        </div>
+
+        <!-- Program 8: super Keyword -->
+        <div class="content-section">
+            <h2>Program 8: super Keyword</h2>
+            <p>Demonstrates super for accessing parent class members.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * SuperKeywordDemo - Understanding 'super' reference
+ * 
+ * Baby-level: 'super' is like saying "my parent" or "my mom/dad"
+ * when you want to refer to your parent's stuff!
+ */
+
+class Vehicle {
+    String type = "Vehicle";
+    int maxSpeed = 100;
+    
+    public Vehicle() {
+        System.out.println("Vehicle constructor called");
+    }
+    
+    public Vehicle(int maxSpeed) {
+        this.maxSpeed = maxSpeed;
+        System.out.println("Vehicle constructor with speed: " + maxSpeed);
+    }
+    
+    public void start() {
+        System.out.println("Vehicle is starting...");
+    }
+    
+    public void displayInfo() {
+        System.out.println("Type: " + type + ", Max Speed: " + maxSpeed);
+    }
+}
+
+class Car extends Vehicle {
+    String type = "Car";  // Shadows parent's type
+    String brand;
+    
+    // USE 1: Call parent constructor
+    public Car(String brand, int maxSpeed) {
+        super(maxSpeed);  // Must be first line! Calls Vehicle(int)
+        this.brand = brand;
+        System.out.println("Car constructor called");
+    }
+    
+    // USE 2: Access parent's variable (when shadowed)
+    public void showTypes() {
+        System.out.println("Child type: " + this.type);    // "Car"
+        System.out.println("Parent type: " + super.type);  // "Vehicle"
+    }
+    
+    // USE 3: Call parent's method (when overridden)
+    @Override
+    public void start() {
+        super.start();  // Call parent's start() first
+        System.out.println("Car engine starting with key...");
+        System.out.println(brand + " is ready to drive!");
+    }
+    
+    // USE 4: Access parent's method
+    public void displayFullInfo() {
+        super.displayInfo();  // Call parent's method
+        System.out.println("Brand: " + brand);
+    }
+}
+
+class SportsCar extends Car {
+    boolean turboMode;
+    
+    public SportsCar(String brand, int maxSpeed, boolean turboMode) {
+        super(brand, maxSpeed);  // Call Car constructor
+        this.turboMode = turboMode;
+        System.out.println("SportsCar constructor called");
+    }
+    
+    @Override
+    public void start() {
+        super.start();  // Call Car's start (which calls Vehicle's start)
+        if (turboMode) {
+            System.out.println("TURBO MODE ACTIVATED! 🚀");
+        }
+    }
+}
+
+public class SuperKeywordDemo {
+    
+    public static void main(String[] args) {
+        System.out.println("=== Creating Car ===");
+        Car car = new Car("Toyota", 180);
+        car.showTypes();
+        
+        System.out.println("\n=== Starting Car ===");
+        car.start();
+        
+        System.out.println("\n=== Car Info ===");
+        car.displayFullInfo();
+        
+        System.out.println("\n=== Creating SportsCar ===");
+        SportsCar sportsCar = new SportsCar("Ferrari", 320, true);
+        
+        System.out.println("\n=== Starting SportsCar ===");
+        sportsCar.start();
+        
+        // Real-world analogy:
+        // - super: Calling your parent for help
+        // - super(): "Mom, Dad, I need you!" (constructor)
+        // - super.method(): "How did you do this, Mom?" (method)
+        
+        // Key rules:
+        // - super() must be first line in constructor
+        // - Cannot use both this() and super() in same constructor
+        // - Use super to access parent's overridden methods
+        // - Use super to access parent's shadowed variables
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>super</code> refers to the parent class. Use it to call parent
+                constructors,
+                access parent methods (especially when overridden), and access parent variables (when shadowed).
+                Essential for
+                inheritance and code reuse. Remember: super() must be the first line in a constructor.
+            </div>
+        </div>
+
+        <!-- Program 9: interface and implements -->
+        <div class="content-section">
+            <h2>Program 9: interface and implements Keywords</h2>
+            <p>Demonstrates interfaces and implementation.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * InterfaceImplementsDemo - Understanding interfaces
+ * 
+ * Baby-level: interface is like a list of chores you MUST do.
+ * implements means "I promise to do all these chores!"
+ */
+
+// INTERFACE - contract defining what must be done
+interface Flyable {
+    // Abstract methods (public abstract by default)
+    void fly();
+    void land();
+    
+    // Default method (Java 8+) - has implementation
+    default void checkWeather() {
+        System.out.println("Weather is clear for flying");
+    }
+    
+    // Static method (Java 8+)
+    static void displayInfo() {
+        System.out.println("Flyable interface - for flying objects");
+    }
+    
+    // Constant (public static final by default)
+    int MAX_ALTITUDE = 40000;
+}
+
+interface Swimmable {
+    void swim();
+    void dive();
+}
+
+// Class implementing single interface
+class Airplane implements Flyable {
+    
+    // MUST implement all abstract methods
+    @Override
+    public void fly() {
+        System.out.println("Airplane flying with engines");
+    }
+    
+    @Override
+    public void land() {
+        System.out.println("Airplane landing on runway");
+    }
+}
+
+// Class implementing multiple interfaces
+class Duck implements Flyable, Swimmable {
+    
+    // Implement Flyable methods
+    @Override
+    public void fly() {
+        System.out.println("Duck flying with wings");
+    }
+    
+    @Override
+    public void land() {
+        System.out.println("Duck landing on water");
+    }
+    
+    // Implement Swimmable methods
+    @Override
+    public void swim() {
+        System.out.println("Duck swimming on water");
+    }
+    
+    @Override
+    public void dive() {
+        System.out.println("Duck diving for food");
+    }
+    
+    // Can override default method
+    @Override
+    public void checkWeather() {
+        System.out.println("Duck checking weather with instinct");
+    }
+}
+
+public class InterfaceImplementsDemo {
+    
+    public static void main(String[] args) {
+        // Using interface reference
+        Flyable airplane = new Airplane();
+        airplane.fly();
+        airplane.land();
+        airplane.checkWeather();  // Default method
+        
+        System.out.println("Max altitude: " + Flyable.MAX_ALTITUDE);
+        Flyable.displayInfo();  // Static method
+        
+        System.out.println("\n=== Duck Demo ===");
+        Duck duck = new Duck();
+        
+        // Duck can do everything
+        duck.fly();
+        duck.land();
+        duck.swim();
+        duck.dive();
+        duck.checkWeather();
+        
+        // Polymorphism with interfaces
+        System.out.println("\n=== Polymorphism ===");
+        Flyable flyingDuck = duck;
+        flyingDuck.fly();
+        
+        Swimmable swimmingDuck = duck;
+        swimmingDuck.swim();
+        
+        // Real-world analogy:
+        // - interface: Job description (what you must do)
+        // - implements: Accepting the job (promising to do it)
+        
+        // Key points:
+        // - Interface = 100% abstraction (before Java 8)
+        // - Class can implement multiple interfaces
+        // - Interface methods are public abstract by default
+        // - Interface variables are public static final by default
+        // - Use interfaces for "CAN-DO" relationships (Duck CAN fly, CAN swim)
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>interface</code> defines a contract that classes must follow.
+                <code>implements</code> means the class promises to provide implementations for all abstract methods.
+                Interfaces enable multiple inheritance and define capabilities (CAN-DO relationships). Modern interfaces
+                can have default and static methods.
+            </div>
+        </div>
+
+        <!-- Program 10: class and extends -->
+        <div class="content-section">
+            <h2>Program 10: class and extends Keywords</h2>
+            <p>Demonstrates class definition and inheritance using extends.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * ClassExtendsDemo - Understanding class and extends
+ * 
+ * Baby-level: class is like a recipe, extends is like saying
+ * "I'll use mom's recipe but add my own special ingredient!"
+ */
+
+// BASE CLASS (Parent/Superclass)
+class Animal {
+    protected String name;
+    protected int age;
+    
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+        System.out.println("Animal constructor: " + name);
+    }
+    
+    public void eat() {
+        System.out.println(name + " is eating");
+    }
+    
+    public void sleep() {
+        System.out.println(name + " is sleeping");
+    }
+    
+    public void makeSound() {
+        System.out.println(name + " makes a sound");
+    }
+}
+
+// DERIVED CLASS (Child/Subclass) - EXTENDS Animal
+class Dog extends Animal {
+    private String breed;
+    
+    public Dog(String name, int age, String breed) {
+        super(name, age);  // Call parent constructor
+        this.breed = breed;
+        System.out.println("Dog constructor: " + breed);
+    }
+    
+    // OVERRIDE parent method
+    @Override
+    public void makeSound() {
+        System.out.println(name + " barks: Woof! Woof!");
+    }
+    
+    // NEW method (specific to Dog)
+    public void fetch() {
+        System.out.println(name + " is fetching the ball");
+    }
+    
+    public void displayInfo() {
+        System.out.println("Name: " + name + ", Age: " + age + 
+                          ", Breed: " + breed);
+    }
+}
+
+// MULTI-LEVEL INHERITANCE
+class Puppy extends Dog {
+    private boolean isVaccinated;
+    
+    public Puppy(String name, int age, String breed, boolean isVaccinated) {
+        super(name, age, breed);
+        this.isVaccinated = isVaccinated;
+        System.out.println("Puppy constructor");
+    }
+    
+    @Override
+    public void makeSound() {
+        System.out.println(name + " makes puppy sounds: Yip! Yip!");
+    }
+    
+    public void play() {
+        System.out.println(name + " is playing with toys");
+    }
+}
+
+public class ClassExtendsDemo {
+    
+    public static void main(String[] args) {
+        System.out.println("=== Creating Dog ===");
+        Dog dog = new Dog("Buddy", 5, "Golden Retriever");
+        dog.displayInfo();
+        
+        // Inherited methods from Animal
+        dog.eat();
+        dog.sleep();
+        
+        // Overridden method
+        dog.makeSound();
+        
+        // Dog-specific method
+        dog.fetch();
+        
+        System.out.println("\n=== Creating Puppy ===");
+        Puppy puppy = new Puppy("Max", 1, "Labrador", true);
+        
+        // Inherited from Animal
+        puppy.eat();
+        
+        // Inherited from Dog
+        puppy.fetch();
+        
+        // Overridden in Puppy
+        puppy.makeSound();
+        
+        // Puppy-specific
+        puppy.play();
+        
+        // Polymorphism
+        System.out.println("\n=== Polymorphism ===");
+        Animal animal1 = new Dog("Charlie", 3, "Beagle");
+        Animal animal2 = new Puppy("Lucy", 1, "Poodle", true);
+        
+        animal1.makeSound();  // Dog's version
+        animal2.makeSound();  // Puppy's version
+        
+        // Real-world analogy:
+        // - class: Blueprint for building something
+        // - extends: "Based on existing blueprint, with modifications"
+        
+        // IS-A relationship:
+        // - Dog IS-A Animal ✅
+        // - Puppy IS-A Dog ✅
+        // - Puppy IS-A Animal ✅
+        
+        // Inheritance benefits:
+        // - Code reuse (don't repeat eat(), sleep())
+        // - Polymorphism (treat Dog as Animal)
+        // - Extensibility (add new animal types easily)
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>class</code> defines a blueprint for objects. <code>extends</code>
+                creates
+                an inheritance relationship (IS-A). Child class inherits all non-private members from parent. Use
+                inheritance
+                for code reuse and polymorphism. Java supports single inheritance (one parent) but multi-level
+                inheritance
+                (grandparent → parent → child).
+            </div>
+        </div>
+
+        <!-- Program 11: try-catch-finally -->
+        <div class="content-section">
+            <h2>Program 11: try-catch-finally (Exception Handling)</h2>
+            <p>Demonstrates exception handling with try, catch, and finally.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * TryCatchFinallyDemo - Understanding exception handling
+ * 
+ * Baby-level: try is like "I'll try to do this", catch is like
+ * "If something goes wrong, I'll handle it", finally is like
+ * "No matter what, I'll do this at the end"
+ */
+
+import java.io.*;
+
+public class TryCatchFinallyDemo {
+    
+    // Example 1: Basic try-catch
+    public static void example1() {
+        System.out.println("=== Example 1: Basic try-catch ===");
+        
+        try {
+            int result = 10 / 0;  // ArithmeticException!
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero!");
+            System.out.println("Exception: " + e.getMessage());
+        }
+        
+        System.out.println("Program continues...\n");
+    }
+    
+    // Example 2: Multiple catch blocks
+    public static void example2() {
+        System.out.println("=== Example 2: Multiple catch blocks ===");
+        
+        try {
+            String str = null;
+            System.out.println(str.length());  // NullPointerException!
+        } catch (NullPointerException e) {
+            System.out.println("Error: String is null!");
+        } catch (Exception e) {
+            System.out.println("Error: Something else went wrong!");
+        }
+        
+        System.out.println("Program continues...\n");
+    }
+    
+    // Example 3: try-catch-finally
+    public static void example3() {
+        System.out.println("=== Example 3: try-catch-finally ===");
+        
+        FileReader reader = null;
+        
+        try {
+            reader = new FileReader("nonexistent.txt");
+            System.out.println("File opened");
+        } catch (FileNotFoundException e) {
+            System.out.println("Error: File not found!");
+        } finally {
+            // ALWAYS executes, even if exception occurs
+            System.out.println("Finally block: Cleanup code");
+            
+            if (reader != null) {
+                try {
+                    reader.close();
+                } catch (IOException e) {
+                    System.out.println("Error closing file");
+                }
+            }
+        }
+        
+        System.out.println("Program continues...\n");
+    }
+    
+    // Example 4: finally executes even with return
+    public static int example4() {
+        System.out.println("=== Example 4: finally with return ===");
+        
+        try {
+            System.out.println("In try block");
+            return 1;
+        } catch (Exception e) {
+            System.out.println("In catch block");
+            return 2;
+        } finally {
+            // Executes BEFORE return!
+            System.out.println("In finally block - executes before return!");
+        }
+    }
+    
+    // Example 5: Nested try-catch
+    public static void example5() {
+        System.out.println("=== Example 5: Nested try-catch ===");
+        
+        try {
+            System.out.println("Outer try");
+            
+            try {
+                int[] arr = new int[5];
+                arr[10] = 50;  // ArrayIndexOutOfBoundsException!
+            } catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println("Inner catch: Array index out of bounds!");
+            }
+            
+            // This will still throw exception
+            int result = 10 / 0;
+            
+        } catch (ArithmeticException e) {
+            System.out.println("Outer catch: Arithmetic error!");
+        }
+        
+        System.out.println("Program continues...\n");
+    }
+    
+    public static void main(String[] args) {
+        example1();
+        example2();
+        example3();
+        
+        int returnValue = example4();
+        System.out.println("Returned value: " + returnValue + "\n");
+        
+        example5();
+        
+        // Real-world analogy:
+        // - try: Attempting to cross a bridge
+        // - catch: Safety net if bridge breaks
+        // - finally: Checking your equipment after crossing
+        
+        // Key points:
+        // - try: Code that might throw exception
+        // - catch: Handles specific exceptions
+        // - finally: Always executes (cleanup code)
+        // - Multiple catch blocks: Most specific first
+        // - finally executes even with return statement
+        
+        // Best practices:
+        // - Catch specific exceptions, not generic Exception
+        // - Use finally for cleanup (close files, connections)
+        // - Don't swallow exceptions - at least log them
+        // - Don't use exceptions for flow control
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>try</code> contains code that might throw exceptions.
+                <code>catch</code>
+                handles specific exceptions. <code>finally</code> always executes, even if exception occurs or return is
+                called.
+                Use finally for cleanup (closing files, connections). Catch specific exceptions for better error
+                handling.
+            </div>
+        </div>
+
+        <!-- Program 12: throw and throws -->
+        <div class="content-section">
+            <h2>Program 12: throw and throws Keywords</h2>
+            <p>Demonstrates throwing exceptions explicitly and declaring exceptions.</p>
+
+            <div class="code-header">
+                <span class="code-language">☕ Java</span>
+            </div>
+            <pre><code class="language-java">/**
+ * ThrowThrowsDemo - Understanding throw and throws
+ * 
+ * Baby-level: throw is like actually throwing a ball,
+ * throws is like warning "I might throw a ball, watch out!"
+ */
+
+import java.io.*;
+
+class BankAccount {
+    private double balance;
+    
+    public BankAccount(double initialBalance) {
+        this.balance = initialBalance;
+    }
+    
+    // THROWS - declares that method might throw exception
+    public void withdraw(double amount) throws InsufficientFundsException {
+        if (amount > balance) {
+            // THROW - actually throws the exception
+            throw new InsufficientFundsException(
+                "Insufficient funds! Balance: $" + balance + 
+                ", Requested: $" + amount
+            );
+        }
+        
+        balance -= amount;
+        System.out.println("Withdrew: $" + amount + 
+                          ". New balance: $" + balance);
+    }
+    
+    public void deposit(double amount) {
+        if (amount <= 0) {
+            // Throw unchecked exception (no throws needed)
+            throw new IllegalArgumentException(
+                "Deposit amount must be positive!"
+            );
+        }
+        
+        balance += amount;
+        System.out.println("Deposited: $" + amount + 
+                          ". New balance: $" + balance);
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+}
+
+// Custom checked exception
+class InsufficientFundsException extends Exception {
+    public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+
+class AgeValidator {
+    
+    // Method that throws multiple exceptions
+    public static void validateAge(int age) 
+            throws IllegalArgumentException, InvalidAgeException {
+        
+        if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be negative!");
+        }
+        
+        if (age > 150) {
+            throw new InvalidAgeException("Age seems invalid: " + age);
+        }
+        
+        System.out.println("Age " + age + " is valid");
+    }
+}
+
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+
+public class ThrowThrowsDemo {
+    
+    public static void main(String[] args) {
+        // Example 1: Using throw and throws
+        System.out.println("=== Example 1: Bank Account ===");
+        BankAccount account = new BankAccount(1000);
+        
+        try {
+            account.deposit(500);
+            account.withdraw(800);
+            account.withdraw(1000);  // Will throw exception
+        } catch (InsufficientFundsException e) {
+            System.out.println("Caught: " + e.getMessage());
+        }
+        
+        // Example 2: Unchecked exception (no try-catch required)
+        System.out.println("\n=== Example 2: Invalid Deposit ===");
+        try {
+            account.deposit(-100);  // Will throw IllegalArgumentException
+        } catch (IllegalArgumentException e) {
+            System.out.println("Caught: " + e.getMessage());
+        }
+        
+        // Example 3: Multiple exceptions
+        System.out.println("\n=== Example 3: Age Validation ===");
+        try {
+            AgeValidator.validateAge(25);
+            AgeValidator.validateAge(-5);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Caught IllegalArgument: " + e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.out.println("Caught InvalidAge: " + e.getMessage());
+        }
+        
+        try {
+            AgeValidator.validateAge(200);
+        } catch (Exception e) {
+            System.out.println("Caught: " + e.getMessage());
+        }
+        
+        // Real-world analogy:
+        // - throw: Fire alarm going off (actual alert)
+        // - throws: "Warning: Fire alarm may sound" (declaration)
+        
+        // Key differences:
+        // THROW:
+        // - Used inside method body
+        // - Actually throws an exception
+        // - Followed by exception object
+        // - Example: throw new Exception();
+        
+        // THROWS:
+        // - Used in method signature
+        // - Declares potential exceptions
+        // - Followed by exception class names
+        // - Example: void method() throws IOException
+        
+        // Checked vs Unchecked:
+        // - Checked (extends Exception): Must declare with throws
+        // - Unchecked (extends RuntimeException): Optional to declare
+        
+        // Best practices:
+        // - Use custom exceptions for domain-specific errors
+        // - Provide meaningful error messages
+        // - Document exceptions in JavaDoc
+        // - Don't catch exceptions you can't handle
+    }
+}
+</code></pre>
+
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>throw</code> actually throws an exception (used inside method).
+                <code>throws</code> declares that a method might throw exceptions (used in method signature). Checked
+                exceptions must be declared with throws. Use custom exceptions for domain-specific errors with
+                meaningful
+                messages.
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/java-keywords.html" class="btn btn-primary">
+                    📚 Back to Theory
+                </a>
+                <a href="../mcq/java-keywords.html" class="btn btn-success">
+                    ✅ Test Your Knowledge
+                </a>
+                <a href="../index.html" class="btn btn-secondary">
+                    🏠 Back to Home
+                </a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">📚 Next Topic</div>
+                <p>
+                    <strong>Coming Soon:</strong> Control Flow Statements & Loops
+                    <br>Master if-else, switch, for, while, do-while loops, and control flow mechanisms.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

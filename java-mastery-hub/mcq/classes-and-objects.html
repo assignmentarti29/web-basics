@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes & Objects - Quiz - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="content-header">
+            <h1>Classes & Objects - Quiz</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Quiz</span>
+                <span>/</span>
+                <span>Classes & Objects</span>
+            </div>
+        </div>
+        <div class="content-section">
+            <h2>Test Your Knowledge</h2>
+            <p>This quiz contains 27 questions covering all aspects of classes and objects including class structure, object creation, constructors, the 'this' keyword, memory management, and best practices.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Take your time and read each question carefully. After answering, you'll receive detailed explanations to reinforce your understanding. Aim for at least 80% to demonstrate mastery!</p>
+            </div>
+        </div>
+        <div class="quiz-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-text">
+                <span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
+            </div>
+        </div>
+        <div id="quizContainer" class="content-section"></div>
+        <div id="quizResults" class="content-section" style="display: none;">
+            <h2>Quiz Complete! 🎉</h2>
+            <div class="results-summary">
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="scorePercentage">0%</span>
+                    </div>
+                    <p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
+                </div>
+                <div id="performanceMessage" class="performance-message"></div>
+            </div>
+            <div class="results-actions">
+                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
+                <a href="../theory/classes-and-objects.html" class="btn btn-secondary">📚 Review Theory</a>
+                <a href="../programs/classes-and-objects.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+        </div>
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/classes-and-objects.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../programs/classes-and-objects.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">📚 Next Topic</div>
+                <p><strong>Coming Soon:</strong> Methods - Declaration, Parameters, Return Types, and Overloading<br>Master method creation and advanced method concepts.</p>
+            </div>
+        </div>
+    </div>
+    <script src="../assets/js/mcq.js"></script>
+    <script>
+        const quizQuestions = [
+            {
+                id: 1,
+                question: "What is a class in Java?",
+                options: [
+                    "A physical object in memory",
+                    "A blueprint or template for creating objects",
+                    "A method that creates objects",
+                    "A variable that stores data"
+                ],
+                answerIndex: 1,
+                explanation: "A class is a blueprint or template that defines the structure and behavior of objects. It specifies what fields (data) and methods (behavior) objects of that class will have."
+            },
+            {
+                id: 2,
+                question: "What is an object in Java?",
+                options: [
+                    "A blueprint for creating classes",
+                    "A method inside a class",
+                    "An instance of a class",
+                    "A variable declaration"
+                ],
+                answerIndex: 2,
+                explanation: "An object is an instance of a class. It's a concrete entity created from the class blueprint, with actual values for the fields defined in the class."
+            },
+            {
+                id: 3,
+                question: "Which keyword is used to create an object?",
+                options: [
+                    "create",
+                    "new",
+                    "object",
+                    "instance"
+                ],
+                answerIndex: 1,
+                explanation: "The 'new' keyword is used to create objects in Java. It allocates memory in the heap, calls the constructor, and returns a reference to the object."
+            },
+            {
+                id: 4,
+                question: "What is a constructor?",
+                options: [
+                    "A method that destroys objects",
+                    "A special method used to initialize objects",
+                    "A variable that stores object data",
+                    "A class that creates other classes"
+                ],
+                answerIndex: 1,
+                explanation: "A constructor is a special method that has the same name as the class and no return type. It's automatically called when an object is created and is used to initialize the object's fields."
+            },
+            {
+                id: 5,
+                question: "What is the difference between a class and an object?",
+                options: [
+                    "There is no difference",
+                    "Class is a blueprint, object is an instance",
+                    "Object is a blueprint, class is an instance",
+                    "Class is for data, object is for methods"
+                ],
+                answerIndex: 1,
+                explanation: "A class is a blueprint or template that defines structure and behavior. An object is an actual instance created from that blueprint with real values in memory."
+            },
+            {
+                id: 6,
+                question: "Can a class have multiple constructors?",
+                options: [
+                    "No, only one constructor is allowed",
+                    "Yes, through constructor overloading",
+                    "Yes, but they must have the same parameters",
+                    "No, Java provides only a default constructor"
+                ],
+                answerIndex: 1,
+                explanation: "Yes, a class can have multiple constructors with different parameters. This is called constructor overloading and provides flexibility in object creation."
+            },
+            {
+                id: 7,
+                question: "What does the 'this' keyword refer to?",
+                options: [
+                    "The parent class",
+                    "The current object",
+                    "A static variable",
+                    "The next object to be created"
+                ],
+                answerIndex: 1,
+                explanation: "'this' is a reference variable that refers to the current object. It's used to distinguish instance variables from parameters and to pass the current object as a parameter."
+            },
+            {
+                id: 8,
+                question: "What happens if you don't write any constructor in a class?",
+                options: [
+                    "Compilation error",
+                    "Java provides a default no-argument constructor",
+                    "Objects cannot be created",
+                    "Runtime error"
+                ],
+                answerIndex: 1,
+                explanation: "If you don't write any constructor, Java automatically provides a default no-argument constructor that initializes fields to default values (0, null, false, etc.)."
+            },
+            {
+                id: 9,
+                question: "What is the correct syntax for a constructor?",
+                options: [
+                    "void ClassName() { }",
+                    "ClassName() { }",
+                    "constructor ClassName() { }",
+                    "public void ClassName() { }"
+                ],
+                answerIndex: 1,
+                explanation: "A constructor has the same name as the class and NO return type (not even void). It can have access modifiers like public or private."
+            },
+            {
+                id: 10,
+                question: "Can you create an object without using the 'new' keyword?",
+                options: [
+                    "Yes, always",
+                    "No, never",
+                    "Yes, for String literals and some special cases",
+                    "Only for primitive types"
+                ],
+                answerIndex: 2,
+                explanation: "Generally, objects require 'new'. However, String literals ("hello") and some special cases like autoboxing don't explicitly use 'new', but objects are still created internally."
+            },
+            {
+                id: 11,
+                question: "What is stored in a reference variable?",
+                options: [
+                    "The actual object",
+                    "The memory address (reference) of the object",
+                    "The class definition",
+                    "The constructor"
+                ],
+                answerIndex: 1,
+                explanation: "A reference variable stores the memory address (reference) of the object in heap memory, not the actual object itself. It's like a remote control that points to the TV."
+            },
+            {
+                id: 12,
+                question: "What happens when you assign one object reference to another?",
+                options: [
+                    "A new object is created",
+                    "Both references point to the same object",
+                    "The first object is deleted",
+                    "Compilation error"
+                ],
+                answerIndex: 1,
+                explanation: "When you assign one reference to another (obj2 = obj1), both references point to the SAME object in memory. Changes through one reference affect the other."
+            },
+            {
+                id: 13,
+                question: "What is null in Java?",
+                options: [
+                    "A special object",
+                    "A keyword indicating no object reference",
+                    "A default value for integers",
+                    "A method"
+                ],
+                answerIndex: 1,
+                explanation: "null is a special literal that indicates a reference variable doesn't point to any object. Attempting to use a null reference causes NullPointerException."
+            },
+            {
+                id: 14,
+                question: "When does an object become eligible for garbage collection?",
+                options: [
+                    "Immediately after creation",
+                    "When there are no references pointing to it",
+                    "When you call delete()",
+                    "Never, you must manually delete it"
+                ],
+                answerIndex: 1,
+                explanation: "An object becomes eligible for garbage collection when there are no references pointing to it. Java's garbage collector automatically frees this memory."
+            },
+            {
+                id: 15,
+                question: "What is the purpose of the 'this' keyword in a constructor?",
+                options: [
+                    "To call another constructor",
+                    "To distinguish instance variables from parameters",
+                    "To return the current object",
+                    "All of the above"
+                ],
+                answerIndex: 3,
+                explanation: "'this' in constructors can: 1) distinguish instance variables from parameters with same names, 2) call another constructor (this(...)), and 3) return the current object for method chaining."
+            },
+            {
+                id: 16,
+                question: "Can instance variables have the same name as constructor parameters?",
+                options: [
+                    "No, it causes a compilation error",
+                    "Yes, but you must use 'this' to distinguish them",
+                    "Yes, and they automatically refer to instance variables",
+                    "Only if they have different types"
+                ],
+                answerIndex: 1,
+                explanation: "Yes, they can have the same name, but you must use 'this.variableName' to refer to the instance variable, otherwise the parameter shadows the instance variable."
+            },
+            {
+                id: 17,
+                question: "What is constructor chaining?",
+                options: [
+                    "Creating multiple objects in a chain",
+                    "Calling one constructor from another using this()",
+                    "Linking multiple classes together",
+                    "A method calling pattern"
+                ],
+                answerIndex: 1,
+                explanation: "Constructor chaining is calling one constructor from another constructor of the same class using this(). It helps reduce code duplication."
+            },
+            {
+                id: 18,
+                question: "What is the output of: Car c; c.start();",
+                options: [
+                    "The car starts",
+                    "Compilation error",
+                    "NullPointerException",
+                    "No output"
+                ],
+                answerIndex: 2,
+                explanation: "This causes NullPointerException because 'c' is declared but not initialized (it's null). You must use 'new Car()' to create an object before calling methods."
+            },
+            {
+                id: 19,
+                question: "How many objects are created: Car c1 = new Car(); Car c2 = c1;",
+                options: [
+                    "0 objects",
+                    "1 object",
+                    "2 objects",
+                    "3 objects"
+                ],
+                answerIndex: 1,
+                explanation: "Only 1 object is created. 'new Car()' creates one object, and both c1 and c2 are references pointing to the SAME object."
+            },
+            {
+                id: 20,
+                question: "What is encapsulation in the context of classes?",
+                options: [
+                    "Creating multiple objects",
+                    "Hiding internal details and providing controlled access",
+                    "Inheriting from parent classes",
+                    "Overloading methods"
+                ],
+                answerIndex: 1,
+                explanation: "Encapsulation is hiding internal implementation details (making fields private) and providing controlled access through public methods (getters/setters)."
+            },
+            {
+                id: 21,
+                question: "What is the best practice for class field visibility?",
+                options: [
+                    "Make all fields public for easy access",
+                    "Make fields private and provide public methods",
+                    "Make all fields protected",
+                    "Never use access modifiers"
+                ],
+                answerIndex: 1,
+                explanation: "Best practice is to make fields private and provide public getter/setter methods. This ensures encapsulation and allows validation and controlled access."
+            },
+            {
+                id: 22,
+                question: "Can a constructor return a value?",
+                options: [
+                    "Yes, it returns the object",
+                    "No, constructors cannot have return types",
+                    "Yes, but only primitive types",
+                    "Yes, if you specify a return type"
+                ],
+                answerIndex: 1,
+                explanation: "Constructors cannot have return types, not even void. They implicitly return the newly created object reference, but you don't specify a return type."
+            },
+            {
+                id: 23,
+                question: "What happens if you write: this.name = name; where both are the same type?",
+                options: [
+                    "Compilation error",
+                    "this.name refers to instance variable, name refers to parameter",
+                    "Both refer to the parameter",
+                    "Both refer to the instance variable"
+                ],
+                answerIndex: 1,
+                explanation: "this.name refers to the instance variable (field), while name (without this) refers to the parameter. This is the correct way to assign parameter values to instance variables."
+            },
+            {
+                id: 24,
+                question: "Can you call a non-static method from a constructor?",
+                options: [
+                    "No, only static methods can be called",
+                    "Yes, instance methods can be called from constructors",
+                    "Only if the method is private",
+                    "Only if the method is final"
+                ],
+                answerIndex: 1,
+                explanation: "Yes, you can call instance (non-static) methods from constructors. The object is being constructed, so instance methods are available."
+            },
+            {
+                id: 25,
+                question: "What is the purpose of System.gc()?",
+                options: [
+                    "To force garbage collection immediately",
+                    "To suggest garbage collection (not guaranteed)",
+                    "To delete all objects",
+                    "To clear system memory"
+                ],
+                answerIndex: 1,
+                explanation: "System.gc() suggests that the JVM run garbage collection, but it's not guaranteed to run immediately. The JVM decides when to actually perform garbage collection."
+            },
+            {
+                id: 26,
+                question: "Which is true about object creation?",
+                options: [
+                    "Objects are created in stack memory",
+                    "Objects are created in heap memory",
+                    "Objects are created in method area",
+                    "Objects are created in cache memory"
+                ],
+                answerIndex: 1,
+                explanation: "Objects are created in heap memory. The reference variable (pointing to the object) is stored in stack memory, but the actual object resides in heap."
+            },
+            {
+                id: 27,
+                question: "What is the correct way to compare two objects for equality?",
+                options: [
+                    "Using == operator",
+                    "Using equals() method",
+                    "Using compareTo() method",
+                    "Using = operator"
+                ],
+                answerIndex: 1,
+                explanation: "Use equals() method to compare object content. The == operator compares references (memory addresses), not the actual content of objects."
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
+            quizManager.startQuiz();
+            window.quizManager = quizManager;
+        });
+    </script>
+</body>
+</html>

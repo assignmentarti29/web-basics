@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections - Quiz - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Collections - Quiz</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Quiz</span>
+                <span>/</span>
+                <span>Collections</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Test Your Knowledge</h2>
+            <p>This quiz contains 30 questions covering all aspects of the Java Collection Framework including Lists,
+                Sets, Maps, Queues, and best practices.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Take your time and read each question carefully. Pay attention to code output questions and trace
+                    through the logic step by step. Aim for at least 80% to demonstrate mastery!</p>
+            </div>
+        </div>
+
+        <div class="quiz-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-text">
+                <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
+            </div>
+        </div>
+
+        <div id="quizContainer" class="content-section"></div>
+
+        <div id="quizResults" class="content-section" style="display: none;">
+            <h2>Quiz Complete! 🎉</h2>
+            <div class="results-summary">
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="scorePercentage">0%</span>
+                    </div>
+                    <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+                </div>
+                <div id="performanceMessage" class="performance-message"></div>
+            </div>
+
+            <div class="results-actions">
+                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
+                <a href="../theory/collections.html" class="btn btn-secondary">📚 Review Theory</a>
+                <a href="../programs/collections.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+        </div>
+
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/collections.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../programs/collections.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">📚 Next Topic</div>
+                <p><strong>Coming Soon:</strong> Java Exception Handling in Depth</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+    <script>
+        const quizQuestions = [
+            {
+                id: 1,
+                question: "Which collection allows duplicates and maintains insertion order?",
+                options: ["HashSet", "TreeSet", "ArrayList", "PriorityQueue"],
+                answerIndex: 2,
+                explanation: "ArrayList allows duplicates and maintains insertion order. HashSet and TreeSet do not allow duplicates. PriorityQueue does not maintain insertion order."
+            },
+            {
+                id: 2,
+                question: "Which interface does NOT extend the Collection interface?",
+                options: ["List", "Set", "Map", "Queue"],
+                answerIndex: 2,
+                explanation: "Map does not extend Collection. It is part of the Collection Framework but has its own hierarchy starting with the Map interface."
+            },
+            {
+                id: 3,
+                question: "Which collection stores elements in key-value pairs?",
+                options: ["ArrayList", "HashSet", "HashMap", "Vector"],
+                answerIndex: 2,
+                explanation: "HashMap stores elements as key-value pairs. ArrayList and Vector store ordered lists. HashSet stores unique elements."
+            },
+            {
+                id: 4,
+                question: "Which collection does not allow duplicate elements?",
+                options: ["List", "Set", "Queue", "Map"],
+                answerIndex: 1,
+                explanation: "The Set interface represents a collection that contains no duplicate elements."
+            },
+            {
+                id: 5,
+                question: "What is the time complexity of getting an element by index in an ArrayList?",
+                options: ["O(1)", "O(n)", "O(log n)", "O(n log n)"],
+                answerIndex: 0,
+                explanation: "ArrayList provides O(1) constant time access for getting elements by index because it is backed by an array."
+            },
+            {
+                id: 6,
+                question: "Which class provides a thread-safe implementation of List?",
+                options: ["ArrayList", "LinkedList", "Vector", "HashSet"],
+                answerIndex: 2,
+                explanation: "Vector is synchronized and thread-safe. ArrayList and LinkedList are not thread-safe by default."
+            },
+            {
+                id: 7,
+                question: "Which Map implementation maintains insertion order?",
+                options: ["HashMap", "TreeMap", "LinkedHashMap", "Hashtable"],
+                answerIndex: 2,
+                explanation: "LinkedHashMap maintains the insertion order of keys. HashMap does not guarantee order. TreeMap sorts keys."
+            },
+            {
+                id: 8,
+                question: "What happens if you try to add a duplicate element to a HashSet?",
+                options: ["It throws an exception", "It replaces the existing element", "It returns false and doesn't add it", "It adds it anyway"],
+                answerIndex: 2,
+                explanation: "The add() method in HashSet returns false if the element is already present, and the element is not added."
+            },
+            {
+                id: 9,
+                question: "Which collection should be used for frequent insertion and deletion in the middle?",
+                options: ["ArrayList", "LinkedList", "Vector", "Stack"],
+                answerIndex: 1,
+                explanation: "LinkedList is better for frequent insertions/deletions in the middle as it only requires changing pointers (O(1) if iterator is there), whereas ArrayList requires shifting elements (O(n))."
+            },
+            {
+                id: 10,
+                question: "What is the underlying data structure of a TreeMap?",
+                options: ["Hash Table", "Dynamic Array", "Red-Black Tree", "Linked List"],
+                answerIndex: 2,
+                explanation: "TreeMap is implemented using a Red-Black Tree, which is a self-balancing binary search tree."
+            },
+            {
+                id: 11,
+                question: "Which method is used to obtain an Iterator?",
+                options: ["getIterator()", "iterator()", "listIterator()", "createIterator()"],
+                answerIndex: 1,
+                explanation: "The iterator() method, defined in the Iterable interface, returns an Iterator for the collection."
+            },
+            {
+                id: 12,
+                question: "What exception is thrown if you modify a collection while iterating over it with a for-each loop?",
+                options: ["NullPointerException", "IndexOutOfBoundsException", "ConcurrentModificationException", "IllegalStateException"],
+                answerIndex: 2,
+                explanation: "ConcurrentModificationException is thrown to fail-fast when a collection is modified structurally during iteration, except through the iterator's own remove method."
+            },
+            {
+                id: 13,
+                question: "Which interface allows traversing a list in both directions?",
+                options: ["Iterator", "ListIterator", "Enumeration", "Spliterator"],
+                answerIndex: 1,
+                explanation: "ListIterator extends Iterator and allows bidirectional traversal (next() and previous()) and element modification."
+            },
+            {
+                id: 14,
+                question: "Does HashMap allow null keys?",
+                options: ["Yes, one null key", "Yes, multiple null keys", "No", "Only if specified"],
+                answerIndex: 0,
+                explanation: "HashMap allows exactly one null key and multiple null values."
+            },
+            {
+                id: 15,
+                question: "Does TreeMap allow null keys?",
+                options: ["Yes", "No", "Depends on Comparator", "Only one"],
+                answerIndex: 1,
+                explanation: "TreeMap does NOT allow null keys (in standard implementations) because it needs to compare keys for sorting, and comparing null throws NullPointerException."
+            },
+            {
+                id: 16,
+                question: "Which method is used to sort a List?",
+                options: ["List.sort()", "Collections.sort()", "Arrays.sort()", "Collection.sort()"],
+                answerIndex: 1,
+                explanation: "Collections.sort() is the standard utility method to sort a List. (List.sort() was added in Java 8 as an instance method too, but Collections.sort is the classic answer)."
+            },
+            {
+                id: 17,
+                question: "What is the difference between Comparable and Comparator?",
+                options: ["Comparable is external, Comparator is internal", "Comparable uses compare(), Comparator uses compareTo()", "Comparable defines natural ordering, Comparator defines custom ordering", "There is no difference"],
+                answerIndex: 2,
+                explanation: "Comparable is implemented by the class itself (natural ordering) using compareTo(). Comparator is a separate class/interface for custom ordering using compare()."
+            },
+            {
+                id: 18,
+                question: "Which Queue implementation orders elements according to their natural ordering or a Comparator?",
+                options: ["ArrayDeque", "LinkedList", "PriorityQueue", "BlockingQueue"],
+                answerIndex: 2,
+                explanation: "PriorityQueue orders elements based on their priority, determined by natural ordering or a provided Comparator."
+            },
+            {
+                id: 19,
+                question: "What is the initial capacity of an ArrayList if not specified?",
+                options: ["0", "10", "16", "100"],
+                answerIndex: 1,
+                explanation: "The default initial capacity of an ArrayList in Java is 10."
+            },
+            {
+                id: 20,
+                question: "What is the load factor of a HashMap by default?",
+                options: ["0.5", "0.75", "0.9", "1.0"],
+                answerIndex: 1,
+                explanation: "The default load factor is 0.75, meaning the map resizes when it is 75% full."
+            },
+            {
+                id: 21,
+                question: "Which collection is best for a LIFO (Last-In-First-Out) stack?",
+                options: ["Queue", "Stack", "ArrayList", "TreeSet"],
+                answerIndex: 1,
+                explanation: "Stack is the classic LIFO data structure. (Though ArrayDeque is often recommended as a modern replacement)."
+            },
+            {
+                id: 22,
+                question: "Which collection is best for a FIFO (First-In-First-Out) queue?",
+                options: ["Stack", "Queue (LinkedList/ArrayDeque)", "ArrayList", "HashSet"],
+                answerIndex: 1,
+                explanation: "Queue implementations like LinkedList or ArrayDeque are designed for FIFO operations."
+            },
+            {
+                id: 23,
+                question: "How do you make an ArrayList thread-safe?",
+                options: ["Use Vector", "Use Collections.synchronizedList()", "Use CopyOnWriteArrayList", "All of the above"],
+                answerIndex: 3,
+                explanation: "All options are valid. Vector is legacy synchronized. Collections.synchronizedList() wraps it. CopyOnWriteArrayList is a concurrent alternative."
+            },
+            {
+                id: 24,
+                question: "What will `list.add(1, 'A')` do if list is `['B', 'C']`?",
+                options: ["['B', 'A', 'C']", "['A', 'B', 'C']", "['B', 'C', 'A']", "Throws Exception"],
+                answerIndex: 0,
+                explanation: "It inserts 'A' at index 1. 'B' is at 0. So 'A' goes between 'B' and 'C'. Result: ['B', 'A', 'C']."
+            },
+            {
+                id: 25,
+                question: "Which method removes all elements from a collection?",
+                options: ["delete()", "remove()", "clear()", "empty()"],
+                answerIndex: 2,
+                explanation: "The clear() method removes all elements from the collection."
+            },
+            {
+                id: 26,
+                question: "What is the return type of `map.put(key, value)`?",
+                options: ["void", "boolean", "The previous value associated with key", "The new value"],
+                answerIndex: 2,
+                explanation: "map.put() returns the previous value associated with the key, or null if there was no mapping for the key."
+            },
+            {
+                id: 27,
+                question: "Which set implementation preserves the insertion order?",
+                options: ["HashSet", "TreeSet", "LinkedHashSet", "SortedSet"],
+                answerIndex: 2,
+                explanation: "LinkedHashSet maintains a doubly-linked list across all elements to preserve insertion order."
+            },
+            {
+                id: 28,
+                question: "Can you put null in a PriorityQueue?",
+                options: ["Yes", "No", "Only one", "Depends on Comparator"],
+                answerIndex: 1,
+                explanation: "No, PriorityQueue does not permit null elements. Attempting to add null throws NullPointerException."
+            },
+            {
+                id: 29,
+                question: "What is the complexity of `contains()` in a HashSet?",
+                options: ["O(1)", "O(n)", "O(log n)", "O(n log n)"],
+                answerIndex: 0,
+                explanation: "HashSet offers constant time O(1) performance for basic operations like add, remove, and contains, assuming the hash function disperses elements properly."
+            },
+            {
+                id: 30,
+                question: "Which class is used to create an unmodifiable list?",
+                options: ["Collections.unmodifiableList()", "List.of()", "Both", "None"],
+                answerIndex: 2,
+                explanation: "Both create unmodifiable lists. Collections.unmodifiableList() wraps an existing list. List.of() (Java 9+) creates an immutable list from elements."
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
+            quizManager.startQuiz();
+            window.quizManager = quizManager;
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPs Concepts - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>OOPs Concepts - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>OOPs Concepts</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Hands-On OOP Programs</h2>
+            <p>Welcome to the practical section! These 15+ programs demonstrate the power of Object-Oriented
+                Programming.
+                From basic encapsulation to complex polymorphism, these examples will help you master OOP design.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Don't just read the code - type it out! Try modifying the classes, extending them, and see what
+                    happens.
+                    OOP is best learned by doing.</p>
+            </div>
+        </div>
+
+        <!-- Program 1: Encapsulation -->
+        <div class="content-section">
+            <h2>Program 1: Encapsulation (Getters & Setters)</h2>
+            <p>Demonstrates data hiding and controlled access using private fields and public methods.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * EncapsulationDemo - Protecting data
+ * Baby-level: "Treasure chest with a key"
+ */
+class BankAccount {
+    // Private fields - hidden from outside
+    private String accountNumber;
+    private double balance;
+    
+    public BankAccount(String accNum, double initialBalance) {
+        this.accountNumber = accNum;
+        if (initialBalance >= 0) {
+            this.balance = initialBalance;
+        }
+    }
+    
+    // Public getter - read access
+    public double getBalance() {
+        return balance;
+    }
+    
+    // Public setter with validation - write access
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: $" + amount);
+        } else {
+            System.out.println("Invalid amount!");
+        }
+    }
+    
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: $" + amount);
+        } else {
+            System.out.println("Transaction failed: Invalid amount or insufficient funds");
+        }
+    }
+}
+
+public class EncapsulationDemo {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount("ACC123", 1000);
+        
+        // account.balance = 5000; // ERROR! Private access
+        
+        account.deposit(500);
+        account.withdraw(200);
+        account.withdraw(2000); // Should fail
+        
+        System.out.println("Final Balance: $" + account.getBalance());
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> The <code>balance</code> field is private, so it cannot be modified
+                directly.
+                The <code>deposit</code> and <code>withdraw</code> methods ensure that only valid transactions occur.
+                This protects the data integrity.
+            </div>
+        </div>
+
+        <!-- Program 2: Single Inheritance -->
+        <div class="content-section">
+            <h2>Program 2: Single Inheritance</h2>
+            <p>Demonstrates basic parent-child relationship.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * InheritanceDemo - Parent and Child
+ * Baby-level: "Child inherits traits from parent"
+ */
+// Parent Class
+class Vehicle {
+    String brand = "Generic Vehicle";
+    
+    void honk() {
+        System.out.println("Tuut, tuut!");
+    }
+}
+
+// Child Class - inherits from Vehicle
+class Car extends Vehicle {
+    String modelName = "Mustang";
+    
+    void turboBoost() {
+        System.out.println("Turbo Boost activated!");
+    }
+}
+
+public class InheritanceDemo {
+    public static void main(String[] args) {
+        Car myCar = new Car();
+        
+        // Accessing parent properties
+        System.out.println("Brand: " + myCar.brand);
+        myCar.honk();
+        
+        // Accessing child properties
+        System.out.println("Model: " + myCar.modelName);
+        myCar.turboBoost();
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>Car</code> extends <code>Vehicle</code>, meaning it automatically
+                gets the <code>brand</code> field and <code>honk()</code> method. It also adds its own features like
+                <code>modelName</code> and <code>turboBoost()</code>.
+            </div>
+        </div>
+
+        <!-- Program 3: Multilevel Inheritance -->
+        <div class="content-section">
+            <h2>Program 3: Multilevel Inheritance</h2>
+            <p>Demonstrates a chain of inheritance.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * MultilevelInheritance - Chain of classes
+ * Baby-level: "Grandparent -> Parent -> Child"
+ */
+class Animal {
+    void eat() { System.out.println("Eating..."); }
+}
+
+class Dog extends Animal {
+    void bark() { System.out.println("Barking..."); }
+}
+
+class BabyDog extends Dog {
+    void weep() { System.out.println("Weeping..."); }
+}
+
+public class MultilevelInheritance {
+    public static void main(String[] args) {
+        BabyDog puppy = new BabyDog();
+        
+        puppy.eat();  // From Animal (Grandparent)
+        puppy.bark(); // From Dog (Parent)
+        puppy.weep(); // From BabyDog (Self)
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>BabyDog</code> inherits from <code>Dog</code>, which inherits from
+                <code>Animal</code>. So <code>BabyDog</code> has access to methods from all levels of the hierarchy.
+            </div>
+        </div>
+
+        <!-- Program 4: Hierarchical Inheritance -->
+        <div class="content-section">
+            <h2>Program 4: Hierarchical Inheritance</h2>
+            <p>Demonstrates multiple children from one parent.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * HierarchicalInheritance - One parent, many children
+ * Baby-level: "Siblings sharing same parent"
+ */
+class Shape {
+    void draw() { System.out.println("Drawing a shape..."); }
+}
+
+class Circle extends Shape {
+    void roll() { System.out.println("Rolling circle..."); }
+}
+
+class Square extends Shape {
+    void stack() { System.out.println("Stacking square..."); }
+}
+
+public class HierarchicalInheritance {
+    public static void main(String[] args) {
+        Circle c = new Circle();
+        c.draw(); // Inherited
+        c.roll(); // Specific
+        
+        Square s = new Square();
+        s.draw(); // Inherited
+        s.stack(); // Specific
+        
+        // s.roll(); // Error! Square doesn't have roll()
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Both <code>Circle</code> and <code>Square</code> inherit from
+                <code>Shape</code>. They share common code but are independent of each other.
+            </div>
+        </div>
+
+        <!-- Program 5: Method Overriding (Runtime Polymorphism) -->
+        <div class="content-section">
+            <h2>Program 5: Method Overriding</h2>
+            <p>Demonstrates changing parent behavior in child class.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * OverridingDemo - Changing inherited behavior
+ * Baby-level: "Doing the same thing, but differently"
+ */
+class Bank {
+    int getInterestRate() { return 0; }
+}
+
+class SBI extends Bank {
+    @Override
+    int getInterestRate() { return 5; }
+}
+
+class ICICI extends Bank {
+    @Override
+    int getInterestRate() { return 6; }
+}
+
+class AXIS extends Bank {
+    @Override
+    int getInterestRate() { return 7; }
+}
+
+public class OverridingDemo {
+    public static void main(String[] args) {
+        Bank sbi = new SBI();
+        Bank icici = new ICICI();
+        Bank axis = new AXIS();
+        
+        System.out.println("SBI Rate: " + sbi.getInterestRate() + "%");
+        System.out.println("ICICI Rate: " + icici.getInterestRate() + "%");
+        System.out.println("AXIS Rate: " + axis.getInterestRate() + "%");
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Each bank has a <code>getInterestRate()</code> method, but they implement
+                it differently. The <code>@Override</code> annotation ensures we are correctly overriding the parent
+                method.
+            </div>
+        </div>
+
+        <!-- Program 6: Method Overloading (Compile-time Polymorphism) -->
+        <div class="content-section">
+            <h2>Program 6: Method Overloading</h2>
+            <p>Demonstrates same method name with different parameters.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * OverloadingDemo - Same name, different inputs
+ * Baby-level: "Different tools for different jobs"
+ */
+class Calculator {
+    // Add two integers
+    int add(int a, int b) {
+        return a + b;
+    }
+    
+    // Add three integers
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+    
+    // Add two doubles
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class OverloadingDemo {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        
+        System.out.println("2 params: " + calc.add(10, 20));
+        System.out.println("3 params: " + calc.add(10, 20, 30));
+        System.out.println("Doubles: " + calc.add(10.5, 20.5));
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> The <code>add</code> method is overloaded to handle different numbers and
+                types of arguments. Java decides which one to call at compile time.
+            </div>
+        </div>
+
+        <!-- Program 7: Abstraction (Abstract Class) -->
+        <div class="content-section">
+            <h2>Program 7: Abstract Class</h2>
+            <p>Demonstrates partial abstraction where some details are hidden.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * AbstractClassDemo - Partial blueprint
+ * Baby-level: "Template with some blanks to fill"
+ */
+abstract class Bike {
+    Bike() {
+        System.out.println("Bike is created");
+    }
+    
+    // Abstract method - must be implemented by child
+    abstract void run();
+    
+    // Concrete method - ready to use
+    void changeGear() {
+        System.out.println("Gear changed");
+    }
+}
+
+class Honda extends Bike {
+    @Override
+    void run() {
+        System.out.println("Honda running safely...");
+    }
+}
+
+public class AbstractClassDemo {
+    public static void main(String[] args) {
+        Bike obj = new Honda();
+        obj.run();
+        obj.changeGear();
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>Bike</code> is abstract and cannot be instantiated. It defines a
+                contract (<code>run()</code>) that <code>Honda</code> must implement. It also provides common
+                functionality (<code>changeGear()</code>).
+            </div>
+        </div>
+
+        <!-- Program 8: Interface (Full Abstraction) -->
+        <div class="content-section">
+            <h2>Program 8: Interface</h2>
+            <p>Demonstrates full abstraction and multiple inheritance.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * InterfaceDemo - Pure contract
+ * Baby-level: "Rules you must follow"
+ */
+interface Printable {
+    void print();
+}
+
+interface Showable {
+    void show();
+}
+
+// Implementing multiple interfaces
+class Document implements Printable, Showable {
+    public void print() {
+        System.out.println("Printing document...");
+    }
+    
+    public void show() {
+        System.out.println("Showing document...");
+    }
+}
+
+public class InterfaceDemo {
+    public static void main(String[] args) {
+        Document doc = new Document();
+        doc.print();
+        doc.show();
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>Document</code> implements two interfaces, achieving multiple
+                inheritance of type. It must provide implementations for all methods defined in the interfaces.
+            </div>
+        </div>
+
+        <!-- Program 9: Constructor Chaining (super) -->
+        <div class="content-section">
+            <h2>Program 9: Constructor Chaining</h2>
+            <p>Demonstrates how constructors work in inheritance.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * SuperConstructorDemo - Parent first
+ * Baby-level: "Building foundation before the house"
+ */
+class Person {
+    Person() {
+        System.out.println("Person created");
+    }
+}
+
+class Employee extends Person {
+    Employee() {
+        super(); // Implicitly called if not written
+        System.out.println("Employee created");
+    }
+}
+
+public class SuperConstructorDemo {
+    public static void main(String[] args) {
+        new Employee();
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> When creating an <code>Employee</code>, the <code>Person</code>
+                constructor runs first. This ensures the parent part of the object is initialized before the child part.
+            </div>
+        </div>
+
+        <!-- Program 10: 'this' Keyword -->
+        <div class="content-section">
+            <h2>Program 10: 'this' Keyword</h2>
+            <p>Demonstrates referring to the current object instance.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * ThisKeywordDemo - Me, myself, and I
+ * Baby-level: "Pointing to yourself"
+ */
+class Student {
+    int rollno;
+    String name;
+    
+    Student(int rollno, String name) {
+        // Distinguish field from parameter
+        this.rollno = rollno;
+        this.name = name;
+    }
+    
+    void display() {
+        System.out.println(rollno + " " + name);
+    }
+}
+
+public class ThisKeywordDemo {
+    public static void main(String[] args) {
+        Student s1 = new Student(111, "Ankit");
+        Student s2 = new Student(112, "Sumit");
+        s1.display();
+        s2.display();
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>this.rollno</code> refers to the class field, while
+                <code>rollno</code> refers to the constructor parameter. It resolves naming conflicts.
+            </div>
+        </div>
+
+        <!-- Program 11: 'super' Keyword -->
+        <div class="content-section">
+            <h2>Program 11: 'super' Keyword</h2>
+            <p>Demonstrates accessing parent class members.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * SuperKeywordDemo - Accessing parent
+ * Baby-level: "Asking mom/dad for something"
+ */
+class Animal {
+    String color = "white";
+    
+    void eat() {
+        System.out.println("eating...");
+    }
+}
+
+class Dog extends Animal {
+    String color = "black";
+    
+    void printColor() {
+        System.out.println(color); // prints black (current class)
+        System.out.println(super.color); // prints white (parent class)
+    }
+    
+    void eat() {
+        System.out.println("eating bread...");
+    }
+    
+    void work() {
+        super.eat(); // calls parent's eat()
+        eat();       // calls current class's eat()
+    }
+}
+
+public class SuperKeywordDemo {
+    public static void main(String[] args) {
+        Dog d = new Dog();
+        d.printColor();
+        d.work();
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>super</code> allows access to the parent class's fields and methods,
+                even if they are hidden or overridden in the child class.
+            </div>
+        </div>
+
+        <!-- Program 12: Final Keyword -->
+        <div class="content-section">
+            <h2>Program 12: Final Keyword</h2>
+            <p>Demonstrates constants and preventing inheritance/overriding.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * FinalDemo - The unchangeable
+ * Baby-level: "Written in stone"
+ */
+class Bike {
+    final int speedLimit = 90; // final variable
+    
+    final void run() { // final method
+        System.out.println("running");
+    }
+}
+
+class Honda extends Bike {
+    // void run() { System.out.println("running safely"); } // Compile Error!
+}
+
+public class FinalDemo {
+    public static void main(String[] args) {
+        Bike obj = new Bike();
+        // obj.speedLimit = 400; // Compile Error!
+        System.out.println("Speed limit: " + obj.speedLimit);
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> <code>final</code> variable cannot be changed. <code>final</code> method
+                cannot be overridden. <code>final</code> class cannot be extended.
+            </div>
+        </div>
+
+        <!-- Program 13: Static Block vs Instance Block -->
+        <div class="content-section">
+            <h2>Program 13: Static vs Instance Blocks</h2>
+            <p>Demonstrates initialization order.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * BlockDemo - Initialization order
+ * Baby-level: "Setting up the stage"
+ */
+public class BlockDemo {
+    // Static block - runs once when class loads
+    static {
+        System.out.println("Static block invoked");
+    }
+    
+    // Instance block - runs before every constructor
+    {
+        System.out.println("Instance initializer block invoked");
+    }
+    
+    BlockDemo() {
+        System.out.println("Constructor invoked");
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("Main method started");
+        new BlockDemo();
+        new BlockDemo();
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> Static blocks run once. Instance blocks run for every object creation,
+                before the constructor.
+            </div>
+        </div>
+
+        <!-- Program 14: Dynamic Binding (Real-world) -->
+        <div class="content-section">
+            <h2>Program 14: Real-world Polymorphism</h2>
+            <p>A practical example of polymorphism in a payment system.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * PaymentSystem - Polymorphism in action
+ * Baby-level: "Paying with different cards"
+ */
+interface PaymentStrategy {
+    void pay(int amount);
+}
+
+class CreditCard implements PaymentStrategy {
+    public void pay(int amount) {
+        System.out.println("Paid " + amount + " using Credit Card");
+    }
+}
+
+class PayPal implements PaymentStrategy {
+    public void pay(int amount) {
+        System.out.println("Paid " + amount + " using PayPal");
+    }
+}
+
+class ShoppingCart {
+    void checkout(int amount, PaymentStrategy paymentMethod) {
+        paymentMethod.pay(amount);
+    }
+}
+
+public class PaymentDemo {
+    public static void main(String[] args) {
+        ShoppingCart cart = new ShoppingCart();
+        
+        // Pay using Credit Card
+        cart.checkout(100, new CreditCard());
+        
+        // Pay using PayPal
+        cart.checkout(200, new PayPal());
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> The <code>ShoppingCart</code> doesn't care how the payment is made. It
+                just calls <code>pay()</code> on whatever <code>PaymentStrategy</code> is passed. This is the power of
+                loose coupling!
+            </div>
+        </div>
+
+        <!-- Program 15: Composition (HAS-A) -->
+        <div class="content-section">
+            <h2>Program 15: Composition (HAS-A)</h2>
+            <p>Demonstrates object ownership.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">/**
+ * CompositionDemo - Building complex objects
+ * Baby-level: "Car HAS-A Engine"
+ */
+class Engine {
+    void start() {
+        System.out.println("Engine started");
+    }
+}
+
+class Car {
+    private Engine engine; // Car HAS-A Engine
+    
+    Car() {
+        engine = new Engine();
+    }
+    
+    void startCar() {
+        engine.start();
+        System.out.println("Car is moving");
+    }
+}
+
+public class CompositionDemo {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.startCar();
+    }
+}
+</code></pre>
+            <div class="code-explanation">
+                <strong>Explanation:</strong> The <code>Car</code> class contains an <code>Engine</code> object. This is
+                composition. The car delegates the starting logic to the engine.
+            </div>
+        </div>
+
+        <div class="content-section text-center">
+            <h3>Ready to Test Your Knowledge?</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/oops.html" class="btn btn-secondary">📚 Review Theory</a>
+                <a href="../mcq/oops.html" class="btn btn-success">✅ Take Quiz</a>
+                <a href="../index.html" class="btn btn-primary">🏠 Back to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

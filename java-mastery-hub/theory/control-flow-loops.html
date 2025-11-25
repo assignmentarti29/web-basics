@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Flow Statements & Loops - Theory - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Header -->
+        <div class="content-header">
+            <h1>Control Flow Statements & Loops</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Theory</span>
+                <span>/</span>
+                <span>Control Flow & Loops</span>
+            </div>
+        </div>
+
+        <!-- Section 1: What are Control Flow Statements? -->
+        <div class="content-section">
+            <h2>🎯 What are Control Flow Statements?</h2>
+
+            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+            <p>
+                Imagine you're playing a video game. You don't just walk straight forward forever, right? Sometimes you
+                need to:
+            </p>
+            <ul>
+                <li><strong>Make decisions:</strong> "If I see a monster, run away. Otherwise, keep walking."</li>
+                <li><strong>Repeat actions:</strong> "Jump 5 times to reach the platform."</li>
+                <li><strong>Skip things:</strong> "If I already have this item, don't pick it up again."</li>
+            </ul>
+            <p>
+                <strong>Control flow statements</strong> are like the rules that tell your program what to do next. They
+                help your code make decisions, repeat tasks, and skip unnecessary steps - just like you do in real life!
+            </p>
+
+            <div class="callout note">
+                <div class="callout-title">📝 NOTE</div>
+                <p>
+                    Without control flow, programs would just execute line by line from top to bottom, like reading a
+                    book. Control flow lets programs be SMART and make choices!
+                </p>
+            </div>
+
+            <h3>Level 2: Real-World Analogy</h3>
+            <p>
+                Think of control flow like <strong>traffic signals and road signs</strong>:
+            </p>
+            <ul>
+                <li><strong>Traffic Light (if-else):</strong> If light is green, GO. If light is red, STOP.</li>
+                <li><strong>Roundabout (loop):</strong> Keep going around until you find your exit.</li>
+                <li><strong>Detour Sign (break):</strong> Stop your current route and take a different path.</li>
+                <li><strong>Speed Bump (continue):</strong> Slow down for this one, then keep going.</li>
+            </ul>
+            <p>
+                Just like traffic rules control how cars move, control flow statements control how your program
+                executes!
+            </p>
+
+            <h3>Level 3: Technical Deep-Dive</h3>
+            <p>
+                Control flow statements alter the sequential execution of a program. By default, Java executes
+                statements from top to bottom, one after another. Control flow mechanisms allow:
+            </p>
+            <ul>
+                <li><strong>Conditional Execution:</strong> Execute code only if certain conditions are met</li>
+                <li><strong>Iterative Execution:</strong> Repeat code blocks multiple times</li>
+                <li><strong>Branching:</strong> Jump to different parts of code or exit loops early</li>
+            </ul>
+
+            <div class="callout example">
+                <div class="callout-title">💡 EXAMPLE - Real-World Usage</div>
+                <p>
+                    <strong>Login System:</strong> "If password is correct, grant access. Else, show error and allow 3
+                    attempts (loop). If 3 failed attempts, lock account (break)."
+                </p>
+            </div>
+
+            <h4>Why Are They Essential?</h4>
+            <ul>
+                <li><strong>Decision Making:</strong> Programs need to respond differently based on input</li>
+                <li><strong>Automation:</strong> Repeat tasks without writing duplicate code</li>
+                <li><strong>Efficiency:</strong> Skip unnecessary operations</li>
+                <li><strong>User Interaction:</strong> Respond to user choices dynamically</li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Decision Making Statements -->
+        <div class="content-section">
+            <h2>🔀 Decision Making Statements</h2>
+
+            <h3>Level 1: Beginner-Friendly Explanation</h3>
+            <p>
+                Decision making is like choosing what to wear based on the weather:
+            </p>
+            <ul>
+                <li>"If it's raining, take an umbrella."</li>
+                <li>"If it's sunny, wear sunglasses. Otherwise, wear a jacket."</li>
+                <li>"If it's freezing, wear a heavy coat. If it's cold, wear a sweater. If it's warm, wear a t-shirt."
+                </li>
+            </ul>
+            <p>
+                In Java, we use <code>if</code>, <code>else</code>, and <code>switch</code> to make these kinds of
+                decisions!
+            </p>
+
+            <h3>Level 2: Real-World Analogy</h3>
+            <p>
+                Think of decision statements like a <strong>restaurant menu</strong>:
+            </p>
+            <ul>
+                <li><strong>if:</strong> "If you're vegetarian, here are your options."</li>
+                <li><strong>if-else:</strong> "If you want spicy, order this. Otherwise, order that."</li>
+                <li><strong>if-else-if ladder:</strong> "If you want breakfast, see page 1. If lunch, see page 2. If
+                    dinner, see page 3."</li>
+                <li><strong>switch-case:</strong> "Pick a number from 1-5, and I'll tell you what meal that is."</li>
+            </ul>
+
+            <h3>Level 3: Technical Breakdown</h3>
+
+            <h4>1. if Statement</h4>
+            <p>
+                Executes a block of code ONLY if the condition is true.
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>if (condition) {
+    // Code executes only if condition is true
+}
+
+// Example:
+int age = 18;
+if (age >= 18) {
+    System.out.println("You can vote!");
+}
+</code></pre>
+
+            <h4>2. if-else Statement</h4>
+            <p>
+                Provides an alternative path when the condition is false.
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>if (condition) {
+    // Executes if condition is true
+} else {
+    // Executes if condition is false
+}
+
+// Example:
+int marks = 65;
+if (marks >= 60) {
+    System.out.println("Pass");
+} else {
+    System.out.println("Fail");
+}
+</code></pre>
+
+            <h4>3. if-else-if Ladder</h4>
+            <p>
+                Tests multiple conditions in sequence. First true condition executes.
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>if (condition1) {
+    // Executes if condition1 is true
+} else if (condition2) {
+    // Executes if condition2 is true
+} else if (condition3) {
+    // Executes if condition3 is true
+} else {
+    // Executes if all conditions are false
+}
+
+// Example: Grade Calculator
+int score = 85;
+if (score >= 90) {
+    System.out.println("Grade: A");
+} else if (score >= 80) {
+    System.out.println("Grade: B");
+} else if (score >= 70) {
+    System.out.println("Grade: C");
+} else if (score >= 60) {
+    System.out.println("Grade: D");
+} else {
+    System.out.println("Grade: F");
+}
+</code></pre>
+
+            <h4>4. switch-case Statement</h4>
+            <p>
+                Efficient for checking a variable against multiple constant values.
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>switch (variable) {
+    case value1:
+        // Code for value1
+        break;
+    case value2:
+        // Code for value2
+        break;
+    default:
+        // Code if no case matches
+}
+
+// Example: Day of Week
+int day = 3;
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;
+    case 2:
+        System.out.println("Tuesday");
+        break;
+    case 3:
+        System.out.println("Wednesday");
+        break;
+    default:
+        System.out.println("Invalid day");
+}
+</code></pre>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING - Missing break</div>
+                <p>
+                    Without <code>break</code>, execution "falls through" to the next case! This is usually a bug.
+                    <br><br>
+                    Example: If day = 1 and you forget break, it will print "Monday", "Tuesday", "Wednesday", etc.
+                </p>
+            </div>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP - When to Use What</div>
+                <p>
+                    <strong>Use if-else:</strong> For boolean conditions or range checks (age > 18, score >= 60)
+                    <br><strong>Use switch-case:</strong> For checking exact constant values (day of week, menu options,
+                    status codes)
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 3: Looping Statements -->
+        <div class="content-section">
+            <h2>🔁 Looping Statements</h2>
+
+            <h3>Level 1: Beginner-Friendly Explanation</h3>
+            <p>
+                Loops are like doing homework problems:
+            </p>
+            <ul>
+                <li><strong>for loop:</strong> "Solve problems 1 through 10" (you know exactly how many)</li>
+                <li><strong>while loop:</strong> "Keep solving problems until you understand" (you don't know how many)
+                </li>
+                <li><strong>do-while loop:</strong> "Solve at least one problem, then keep going if needed" (guaranteed
+                    to do it once)</li>
+            </ul>
+            <p>
+                Loops save you from writing the same code over and over. Instead of writing "print 1, print 2, print
+                3..." 100 times, you write ONE loop!
+            </p>
+
+            <h3>Level 2: Real-World Analogy</h3>
+            <p>
+                Think of loops like <strong>climbing stairs</strong>:
+            </p>
+            <ul>
+                <li><strong>for loop:</strong> "Climb 10 stairs" - You know the exact number</li>
+                <li><strong>while loop:</strong> "Climb until you reach the top" - You check before each step</li>
+                <li><strong>do-while loop:</strong> "Take one step, then check if you need more" - You act first, check
+                    later</li>
+            </ul>
+
+            <h3>Level 3: Technical Breakdown</h3>
+
+            <h4>1. for Loop</h4>
+            <p>
+                Best when you know EXACTLY how many times to repeat. Has three parts: initialization, condition, update.
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>for (initialization; condition; update) {
+    // Code to repeat
+}
+
+// Example: Print 1 to 5
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+
+// Breakdown:
+// 1. int i = 1     → Start at 1
+// 2. i <= 5        → Continue while i is 5 or less
+// 3. i++           → Increase i by 1 after each iteration
+</code></pre>
+
+            <div class="callout example">
+                <div class="callout-title">💡 EXAMPLE - for Loop Execution</div>
+                <p>
+                    Iteration 1: i=1, check 1<=5 (true), print 1, i becomes 2 <br>Iteration 2: i=2, check 2<=5 (true),
+                            print 2, i becomes 3 <br>...
+                            <br>Iteration 5: i=5, check 5<=5 (true), print 5, i becomes 6 <br>Iteration 6: i=6, check 6
+                                <=5 (false), STOP </p>
+            </div>
+
+            <h4>2. while Loop</h4>
+            <p>
+                Best when you DON'T know how many times to repeat. Checks condition BEFORE each iteration.
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>while (condition) {
+    // Code to repeat
+    // Don't forget to update the condition variable!
+}
+
+// Example: Print 1 to 5
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    i++;  // CRITICAL: Must update i, or infinite loop!
+}
+</code></pre>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING - Infinite Loop</div>
+                <p>
+                    If you forget to update the loop variable, the condition will ALWAYS be true, creating an infinite
+                    loop!
+                    <br><br>
+                    <code>while (i <= 5) { System.out.println(i); }</code> ❌ Infinite loop! i never changes!
+                </p>
+            </div>
+
+            <h4>3. do-while Loop</h4>
+            <p>
+                Guarantees AT LEAST ONE execution. Checks condition AFTER each iteration.
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>do {
+    // Code to repeat (executes at least once)
+} while (condition);
+
+// Example: Menu system
+int choice;
+do {
+    System.out.println("1. Play");
+    System.out.println("2. Settings");
+    System.out.println("3. Exit");
+    choice = scanner.nextInt();
+} while (choice != 3);  // Repeat until user chooses Exit
+</code></pre>
+
+            <div class="callout note">
+                <div class="callout-title">📝 NOTE - while vs do-while</div>
+                <p>
+                    <strong>while:</strong> Checks condition FIRST. May execute 0 times.
+                    <br><strong>do-while:</strong> Checks condition LAST. Always executes at least 1 time.
+                </p>
+            </div>
+
+            <h4>4. Enhanced for Loop (for-each)</h4>
+            <p>
+                Simplified loop for iterating through arrays and collections. No index needed!
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>for (dataType variable : array/collection) {
+    // Use variable (each element)
+}
+
+// Example: Print all elements
+int[] numbers = {10, 20, 30, 40, 50};
+for (int num : numbers) {
+    System.out.println(num);
+}
+
+// Equivalent to:
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP - When to Use Enhanced for Loop</div>
+                <p>
+                    Use enhanced for loop when:
+                    <br>✅ You need to access every element
+                    <br>✅ You don't need the index
+                    <br>✅ You're not modifying the array
+                    <br><br>
+                    Use regular for loop when:
+                    <br>✅ You need the index
+                    <br>✅ You're modifying array elements
+                    <br>✅ You need to iterate in reverse or skip elements
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 4: Branching Statements -->
+        <div class="content-section">
+            <h2>🚀 Branching Statements</h2>
+
+            <h3>Level 1: Beginner-Friendly Explanation</h3>
+            <p>
+                Branching statements are like shortcuts or emergency exits:
+            </p>
+            <ul>
+                <li><strong>break:</strong> "Stop everything and get out NOW!" (exit the loop)</li>
+                <li><strong>continue:</strong> "Skip this one and move to the next" (skip current iteration)</li>
+                <li><strong>return:</strong> "I'm done here, going back!" (exit the method)</li>
+            </ul>
+
+            <h3>Level 2: Real-World Analogy</h3>
+            <p>
+                Think of branching like <strong>watching TV episodes</strong>:
+            </p>
+            <ul>
+                <li><strong>break:</strong> "This show is boring, I'm turning off the TV" (stop watching entirely)</li>
+                <li><strong>continue:</strong> "I'll skip this episode and watch the next one" (skip one, keep watching)
+                </li>
+                <li><strong>return:</strong> "I found what I was looking for, no need to watch more" (exit with result)
+                </li>
+            </ul>
+
+            <h3>Level 3: Technical Breakdown</h3>
+
+            <h4>1. break Statement</h4>
+            <p>
+                Immediately exits the current loop or switch statement. Execution continues after the loop.
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--error);"><code>// Example: Find first even number
+for (int i = 1; i <= 10; i++) {
+    if (i % 2 == 0) {
+        System.out.println("First even number: " + i);
+        break;  // Exit loop immediately
+    }
+}
+// Output: First even number: 2
+// Loop stops, doesn't check 3, 4, 5, etc.
+</code></pre>
+
+            <h4>2. continue Statement</h4>
+            <p>
+                Skips the rest of the current iteration and moves to the next iteration.
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// Example: Print only odd numbers
+for (int i = 1; i <= 5; i++) {
+    if (i % 2 == 0) {
+        continue;  // Skip even numbers
+    }
+    System.out.println(i);
+}
+// Output: 1, 3, 5
+// When i=2 or i=4, continue skips the print statement
+</code></pre>
+
+            <h4>3. return Statement</h4>
+            <p>
+                Exits the entire method immediately. Can optionally return a value.
+            </p>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// Example: Search for a value
+public static int findIndex(int[] arr, int target) {
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] == target) {
+            return i;  // Found it! Exit method with index
+        }
+    }
+    return -1;  // Not found
+}
+
+// Usage:
+int[] numbers = {10, 20, 30, 40};
+int index = findIndex(numbers, 30);
+System.out.println("Index: " + index);  // Output: Index: 2
+</code></pre>
+
+            <div class="callout example">
+                <div class="callout-title">💡 EXAMPLE - break vs continue vs return</div>
+                <p>
+                    <strong>break:</strong> Exits the loop, continues with code after loop
+                    <br><strong>continue:</strong> Skips to next iteration of the same loop
+                    <br><strong>return:</strong> Exits the entire method immediately
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 5: Comparison Table and Flowcharts -->
+        <div class="content-section">
+            <h2>📊 Comparison Table: Loops</h2>
+
+            <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
+                <thead style="background: var(--bg-hover);">
+                    <tr>
+                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Feature</th>
+                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">for Loop</th>
+                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">while Loop</th>
+                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">do-while Loop</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>When to
+                                Use</strong></td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Known iteration count
+                        </td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Unknown iteration count
+                        </td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">At least one execution
+                            needed</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Condition
+                                Check</strong></td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Before each iteration
+                        </td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Before each iteration
+                        </td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">After each iteration
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Minimum
+                                Executions</strong></td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0 times</td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0 times</td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">1 time (guaranteed)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Syntax
+                                Complexity</strong></td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Compact (all in one
+                            line)</td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Simple</td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Simple</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Best
+                                For</strong></td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Arrays, counting, fixed
+                            iterations</td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">User input, file
+                            reading, conditions</td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Menus, validation,
+                            retry logic</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Example Use
+                                Case</strong></td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Print 1-100</td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Read until EOF</td>
+                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Show menu at least once
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Execution Flow Diagrams</h3>
+
+            <h4>if-else Flow:</h4>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>START
+  ↓
+Check Condition
+  ↓
+  ├─ TRUE  → Execute if block → CONTINUE
+  └─ FALSE → Execute else block → CONTINUE
+  ↓
+END
+</code></pre>
+
+            <h4>for Loop Flow:</h4>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>START
+  ↓
+Initialize (i = 1)
+  ↓
+Check Condition (i <= 5)
+  ↓
+  ├─ TRUE  → Execute Body → Update (i++) → Check Condition (loop back)
+  └─ FALSE → EXIT LOOP
+  ↓
+END
+</code></pre>
+
+            <h4>while Loop Flow:</h4>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>START
+  ↓
+Check Condition
+  ↓
+  ├─ TRUE  → Execute Body → Check Condition (loop back)
+  └─ FALSE → EXIT LOOP
+  ↓
+END
+</code></pre>
+
+            <h4>do-while Loop Flow:</h4>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>START
+  ↓
+Execute Body (ALWAYS runs once)
+  ↓
+Check Condition
+  ↓
+  ├─ TRUE  → Execute Body (loop back)
+  └─ FALSE → EXIT LOOP
+  ↓
+END
+</code></pre>
+        </div>
+
+        <!-- Section 6: Common Mistakes -->
+        <div class="content-section">
+            <h2>⚠️ Common Mistakes with Control Flow</h2>
+
+            <h3>1. Using = Instead of == in Conditions</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Assignment, not comparison
+if (x = 5) {  // This assigns 5 to x, not comparing!
+    System.out.println("x is 5");
+}
+
+// ✅ CORRECT - Comparison
+if (x == 5) {
+    System.out.println("x is 5");
+}
+</code></pre>
+
+            <h3>2. Infinite Loops (Forgetting to Update Loop Variable)</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Infinite loop
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    // Forgot i++! i is always 1, condition always true!
+}
+
+// ✅ CORRECT
+int i = 1;
+while (i <= 5) {
+    System.out.println(i);
+    i++;  // Update the variable!
+}
+</code></pre>
+
+            <h3>3. Missing break in switch-case</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Fall-through (usually unintended)
+int day = 1;
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        // Missing break! Falls through to Tuesday!
+    case 2:
+        System.out.println("Tuesday");
+        break;
+}
+// Output: Monday\nTuesday (both print!)
+
+// ✅ CORRECT
+switch (day) {
+    case 1:
+        System.out.println("Monday");
+        break;  // Exit switch
+    case 2:
+        System.out.println("Tuesday");
+        break;
+}
+</code></pre>
+
+            <h3>4. Off-by-One Errors</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Prints 0 to 9 (10 numbers, but not 1-10)
+for (int i = 0; i < 10; i++) {
+    System.out.println(i);
+}
+
+// ✅ CORRECT - Prints 1 to 10
+for (int i = 1; i <= 10; i++) {
+    System.out.println(i);
+}
+
+// Or if you want 0-9 for array indexing:
+for (int i = 0; i < array.length; i++) {
+    System.out.println(array[i]);
+}
+</code></pre>
+
+            <h3>5. Semicolon After Loop Header</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Semicolon creates empty loop body
+for (int i = 0; i < 5; i++);  // ← Semicolon here!
+{
+    System.out.println(i);  // This is NOT part of the loop!
+}
+
+// ✅ CORRECT
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+</code></pre>
+
+            <h3>6. Logical Operator Confusion (&& vs ||)</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Using OR when you mean AND
+int age = 25;
+if (age > 18 || age < 65) {  // This is ALWAYS true!
+    System.out.println("Working age");
+}
+// age > 18 OR age < 65 means: if age is either above 18 OR below 65
+// Every number satisfies at least one condition!
+
+// ✅ CORRECT - Using AND
+if (age > 18 && age < 65) {
+    System.out.println("Working age");
+}
+</code></pre>
+
+            <h3>7. Modifying Collection While Iterating</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - ConcurrentModificationException
+List<Integer> numbers = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5));
+for (int num : numbers) {
+    if (num % 2 == 0) {
+        numbers.remove(num);  // Modifying while iterating!
+    }
+}
+
+// ✅ CORRECT - Use Iterator
+Iterator<Integer> it = numbers.iterator();
+while (it.hasNext()) {
+    if (it.next() % 2 == 0) {
+        it.remove();  // Safe removal
+    }
+}
+</code></pre>
+        </div>
+
+        <!-- Section 7: Best Practices -->
+        <div class="content-section">
+            <h2>✨ Best Practices for Control Flow</h2>
+
+            <h3>1. Always Use Braces (Even for Single Statements)</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ❌ Avoid - Easy to make mistakes
+if (x > 0)
+    System.out.println("Positive");
+    System.out.println("This always prints!");  // Not part of if!
+
+// ✅ Recommended - Clear and safe
+if (x > 0) {
+    System.out.println("Positive");
+}
+</code></pre>
+
+            <h3>2. Prefer switch-case for Multiple Constant Checks</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ❌ Less efficient and harder to read
+if (status == 200) {
+    handleSuccess();
+} else if (status == 404) {
+    handleNotFound();
+} else if (status == 500) {
+    handleServerError();
+}
+
+// ✅ Better - More efficient and readable
+switch (status) {
+    case 200:
+        handleSuccess();
+        break;
+    case 404:
+        handleNotFound();
+        break;
+    case 500:
+        handleServerError();
+        break;
+    default:
+        handleUnknownError();
+}
+</code></pre>
+
+            <h3>3. Avoid Deeply Nested Loops</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ❌ Hard to read and maintain
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < m; j++) {
+        for (int k = 0; k < p; k++) {
+            // Too deep!
+        }
+    }
+}
+
+// ✅ Better - Extract to methods
+for (int i = 0; i < n; i++) {
+    processRow(i);
+}
+
+private void processRow(int row) {
+    for (int j = 0; j < m; j++) {
+        processCell(row, j);
+    }
+}
+</code></pre>
+
+            <h3>4. Use Enhanced for Loop When Possible</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ❌ Verbose
+int[] numbers = {1, 2, 3, 4, 5};
+for (int i = 0; i < numbers.length; i++) {
+    System.out.println(numbers[i]);
+}
+
+// ✅ Cleaner and less error-prone
+for (int num : numbers) {
+    System.out.println(num);
+}
+</code></pre>
+
+            <h3>5. Initialize Loop Variables Close to Usage</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ❌ Variable declared far from usage
+int i;
+// ... 50 lines of code ...
+for (i = 0; i < 10; i++) {
+    // Use i
+}
+
+// ✅ Declare where used
+for (int i = 0; i < 10; i++) {
+    // Use i
+}
+</code></pre>
+
+            <h3>6. Use Meaningful Variable Names</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ❌ Unclear
+for (int i = 0; i < students.length; i++) {
+    for (int j = 0; j < subjects.length; j++) {
+        // What are i and j?
+    }
+}
+
+// ✅ Clear and self-documenting
+for (int studentIndex = 0; studentIndex < students.length; studentIndex++) {
+    for (int subjectIndex = 0; subjectIndex < subjects.length; subjectIndex++) {
+        // Clear what each index represents
+    }
+}
+</code></pre>
+
+            <h3>7. Validate Input in Loops</h3>
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ✅ Good practice - Validate user input
+Scanner scanner = new Scanner(System.in);
+int age;
+do {
+    System.out.print("Enter age (1-120): ");
+    while (!scanner.hasNextInt()) {
+        System.out.print("Invalid input! Enter a number: ");
+        scanner.next();
+    }
+    age = scanner.nextInt();
+} while (age < 1 || age > 120);
+</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP - Performance Consideration</div>
+                <p>
+                    <strong>Cache array length:</strong> If using a regular for loop with arrays, cache the length to
+                    avoid repeated lookups:
+                    <br><br>
+                    <code>for (int i = 0, len = array.length; i < len; i++)</code>
+                    <br><br>
+                    However, modern JVMs optimize this automatically, so prioritize readability over
+                    micro-optimizations.
+                </p>
+            </div>
+
+            <div class="callout note">
+                <div class="callout-title">📝 NOTE - Industry Standards</div>
+                <p>
+                    <strong>Google Java Style Guide:</strong> Always use braces, even for single-line blocks
+                    <br><strong>Effective Java:</strong> Prefer for-each loops over traditional for loops
+                    <br><strong>Clean Code:</strong> Keep loops simple and extract complex logic to methods
+                </p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../programs/control-flow-loops.html" class="btn btn-secondary">
+                    💻 View Programs
+                </a>
+                <a href="../mcq/control-flow-loops.html" class="btn btn-success">
+                    ✅ Test Your Knowledge
+                </a>
+                <a href="../index.html" class="btn btn-primary">
+                    🏠 Back to Home
+                </a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">📚 Next Topic</div>
+                <p>
+                    <strong>Coming Soon:</strong> Classes and Objects
+                    <br>Learn object-oriented programming fundamentals, creating classes, objects, constructors, and
+                    methods.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>
