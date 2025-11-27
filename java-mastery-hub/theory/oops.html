@@ -1,150 +1,559 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>OOPs Concepts in Depth - Theory - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>OOPs Concepts in Depth</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Theory</span>
-                <span>/</span>
-                <span>OOPs Concepts</span>
-            </div>
-        </div>
-
-        <!-- Section 1: What is OOP? -->
-        <div class="content-section">
-            <h2>🎯 What is Object-Oriented Programming (OOP)?</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
-            <p>
-                Imagine you have a <strong>toy box</strong> full of different toys. Each toy is an
-                <strong>object</strong> - like a car, a doll, or a robot. Each toy has:
-            </p>
-            <ul>
-                <li><strong>Properties:</strong> Color, size, name (like a red car or blue robot)</li>
-                <li><strong>Actions:</strong> What it can do (car can drive, robot can walk)</li>
-            </ul>
-            <p>
-                OOP is like organizing your toys in different boxes based on what they are and what they can do. Instead
-                of having everything mixed up, you group similar things together!
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of a <strong>company organization</strong>:
-            </p>
-            <ul>
-                <li><strong>Departments (Classes):</strong> HR, Sales, Engineering - each has a specific purpose</li>
-                <li><strong>Employees (Objects):</strong> Each person in a department is an individual with their own
-                    data (name, salary) and actions (work, attend meetings)</li>
-                <li><strong>Hierarchy (Inheritance):</strong> Manager inherits all employee properties but has
-                    additional responsibilities</li>
-                <li><strong>Privacy (Encapsulation):</strong> Salary information is private, only accessible through HR
-                </li>
-                <li><strong>Flexibility (Polymorphism):</strong> "Work" means different things - engineers code,
-                    salespeople sell</li>
-            </ul>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                <strong>Object-Oriented Programming (OOP)</strong> is a programming paradigm based on the concept of
-                "objects" that contain data (fields/attributes) and code (methods/behaviors). OOP organizes software
-                design around data and objects rather than functions and logic.
-            </p>
-
-            <h4>Why OOP?</h4>
-            <ul>
-                <li><strong>Modularity:</strong> Code is organized into self-contained objects</li>
-                <li><strong>Reusability:</strong> Objects can be reused across programs</li>
-                <li><strong>Maintainability:</strong> Changes in one object don't affect others</li>
-                <li><strong>Scalability:</strong> Easy to add new features without breaking existing code</li>
-                <li><strong>Real-world modeling:</strong> Maps naturally to real-world entities</li>
-            </ul>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE</div>
-                <p>
-                    Java is a pure object-oriented language (almost everything is an object). This makes it ideal for
-                    learning OOP concepts. Even the main method must be inside a class!
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 2: The Four Pillars of OOP -->
-        <div class="content-section">
-            <h2>🏛️ The Four Pillars of OOP</h2>
-            <p>
-                OOP is built on four fundamental principles. Understanding these pillars is crucial for mastering
-                object-oriented design.
-            </p>
-        </div>
-
-        <!-- Pillar 1: Encapsulation -->
-        <div class="content-section">
-            <h2>🔒 Pillar 1: Encapsulation</h2>
-
-            <h3>Level 1: Baby Explanation</h3>
-            <p>
-                Encapsulation is like a <strong>treasure chest with a lock</strong>. Your toys (data) are inside the
-                chest, and only you have the key. Others can't just grab your toys - they have to ask you nicely (use
-                methods) to get them!
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of an <strong>ATM machine</strong>:
-            </p>
-            <ul>
-                <li><strong>Hidden internals:</strong> You can't see the cash storage or internal mechanisms</li>
-                <li><strong>Controlled access:</strong> You interact through a screen and keypad (public interface)</li>
-                <li><strong>Validation:</strong> ATM checks your PIN before allowing withdrawal</li>
-                <li><strong>Protection:</strong> You can't directly access the cash - must use proper methods</li>
-            </ul>
-
-            <h3>Level 3: Technical Explanation</h3>
-            <p>
-                <strong>Encapsulation</strong> is the bundling of data (variables) and methods that operate on that data
-                into a single unit (class), while restricting direct access to some of the object's components. This is
-                achieved using access modifiers.
-            </p>
-
-            <h4>Key Components:</h4>
-            <ul>
-                <li><strong>Private fields:</strong> Data hidden from outside access</li>
-                <li><strong>Public methods:</strong> Controlled interface (getters/setters)</li>
-                <li><strong>Data validation:</strong> Methods can validate before modifying data</li>
-                <li><strong>Information hiding:</strong> Implementation details are hidden</li>
-            </ul>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Encapsulation Example
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>OOPs Concepts in Depth</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Theory</a></li>
+                        <li>OOPs Concepts in Depth</li>
+                    </ul>
+                </div>
+                <!-- Section 1: What is OOP? -->
+                <div class="content-section">
+                    <h2>🎯 What is Object-Oriented Programming (OOP)?</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+                    <p>
+                        Imagine you have a <strong>toy box</strong> full of different toys. Each toy is an
+                        <strong>object</strong> - like a car, a doll, or a robot. Each toy has:
+                    </p>
+                    <ul>
+                        <li><strong>Properties:</strong> Color, size, name (like a red car or blue robot)</li>
+                        <li><strong>Actions:</strong> What it can do (car can drive, robot can walk)</li>
+                    </ul>
+                    <p>
+                        OOP is like organizing your toys in different boxes based on what they are and what they can do.
+                        Instead
+                        of having everything mixed up, you group similar things together!
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of a <strong>company organization</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Departments (Classes):</strong> HR, Sales, Engineering - each has a specific purpose
+                        </li>
+                        <li><strong>Employees (Objects):</strong> Each person in a department is an individual with
+                            their own
+                            data (name, salary) and actions (work, attend meetings)</li>
+                        <li><strong>Hierarchy (Inheritance):</strong> Manager inherits all employee properties but has
+                            additional responsibilities</li>
+                        <li><strong>Privacy (Encapsulation):</strong> Salary information is private, only accessible
+                            through HR
+                        </li>
+                        <li><strong>Flexibility (Polymorphism):</strong> "Work" means different things - engineers code,
+                            salespeople sell</li>
+                    </ul>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        <strong>Object-Oriented Programming (OOP)</strong> is a programming paradigm based on the
+                        concept of
+                        "objects" that contain data (fields/attributes) and code (methods/behaviors). OOP organizes
+                        software
+                        design around data and objects rather than functions and logic.
+                    </p>
+                    <h4>Why OOP?</h4>
+                    <ul>
+                        <li><strong>Modularity:</strong> Code is organized into self-contained objects</li>
+                        <li><strong>Reusability:</strong> Objects can be reused across programs</li>
+                        <li><strong>Maintainability:</strong> Changes in one object don't affect others</li>
+                        <li><strong>Scalability:</strong> Easy to add new features without breaking existing code</li>
+                        <li><strong>Real-world modeling:</strong> Maps naturally to real-world entities</li>
+                    </ul>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE</div>
+                        <div class="admonition-content">
+                            <p>
+                                Java is a pure object-oriented language (almost everything is an object). This makes it
+                                ideal for
+                                learning OOP concepts. Even the main method must be inside a class!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2: The Four Pillars of OOP -->
+                <div class="content-section">
+                    <h2>🏛️ The Four Pillars of OOP</h2>
+                    <p>
+                        OOP is built on four fundamental principles. Understanding these pillars is crucial for
+                        mastering
+                        object-oriented design.
+                    </p>
+                </div>
+                <!-- Pillar 1: Encapsulation -->
+                <div class="content-section">
+                    <h2>🔒 Pillar 1: Encapsulation</h2>
+                    <h3>Level 1: Baby Explanation</h3>
+                    <p>
+                        Encapsulation is like a <strong>treasure chest with a lock</strong>. Your toys (data) are inside
+                        the
+                        chest, and only you have the key. Others can't just grab your toys - they have to ask you nicely
+                        (use
+                        methods) to get them!
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of an <strong>ATM machine</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Hidden internals:</strong> You can't see the cash storage or internal mechanisms
+                        </li>
+                        <li><strong>Controlled access:</strong> You interact through a screen and keypad (public
+                            interface)</li>
+                        <li><strong>Validation:</strong> ATM checks your PIN before allowing withdrawal</li>
+                        <li><strong>Protection:</strong> You can't directly access the cash - must use proper methods
+                        </li>
+                    </ul>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <p>
+                        <strong>Encapsulation</strong> is the bundling of data (variables) and methods that operate on
+                        that data
+                        into a single unit (class), while restricting direct access to some of the object's components.
+                        This is
+                        achieved using access modifiers.
+                    </p>
+                    <h4>Key Components:</h4>
+                    <ul>
+                        <li><strong>Private fields:</strong> Data hidden from outside access</li>
+                        <li><strong>Public methods:</strong> Controlled interface (getters/setters)</li>
+                        <li><strong>Data validation:</strong> Methods can validate before modifying data</li>
+                        <li><strong>Information hiding:</strong> Implementation details are hidden</li>
+                    </ul>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Encapsulation Example
 class BankAccount {
     // Private fields - cannot be accessed directly
     private String accountNumber;
@@ -165,7 +574,7 @@ class BankAccount {
     
     // Public method with validation - controlled write access
     public void deposit(double amount) {
-        if (amount > 0) {
+        if (amount &gt; 0) {
             balance += amount;
             System.out.println("Deposited: $" + amount);
         } else {
@@ -175,7 +584,7 @@ class BankAccount {
     
     // Public method with business logic
     public void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
+        if (amount &gt; 0 &amp;&amp; amount &lt;= balance) {
             balance -= amount;
             System.out.println("Withdrawn: $" + amount);
         } else {
@@ -189,83 +598,86 @@ class BankAccount {
     }
 }
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 INDUSTRY EXAMPLE</div>
-                <p>
-                    <strong>E-commerce Payment System:</strong> Credit card details are encapsulated. The payment
-                    gateway exposes only methods like processPayment(), not the actual card number. This protects
-                    sensitive data and ensures PCI compliance.
-                </p>
-            </div>
-
-            <h4>Benefits of Encapsulation:</h4>
-            <ul>
-                <li><strong>Data Protection:</strong> Prevents unauthorized access and modification</li>
-                <li><strong>Flexibility:</strong> Internal implementation can change without affecting external code
-                </li>
-                <li><strong>Maintainability:</strong> Changes are localized to the class</li>
-                <li><strong>Validation:</strong> Ensures data integrity through controlled access</li>
-            </ul>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Common Mistake</div>
-                <p>
-                    Don't make all fields public! This defeats encapsulation. Even if you think "I'll never need
-                    validation," requirements change. Always use private fields with public getters/setters.
-                </p>
-            </div>
-
-            <h4>Best Practices:</h4>
-            <ul>
-                <li>Make fields private by default</li>
-                <li>Provide public getters/setters only when needed</li>
-                <li>Validate data in setters before updating fields</li>
-                <li>Use meaningful names for methods (getBalance, not getB)</li>
-                <li>Don't expose internal collections directly (return copies instead)</li>
-            </ul>
-        </div>
-
-        <!-- Pillar 2: Inheritance -->
-        <div class="content-section">
-            <h2>👨‍👩‍👧 Pillar 2: Inheritance</h2>
-
-            <h3>Level 1: Baby Explanation</h3>
-            <p>
-                Inheritance is like <strong>getting traits from your parents</strong>. You have your mom's eyes and your
-                dad's smile, but you're still your own person with your own unique things! A puppy inherits "being an
-                animal" but also has its own special puppy behaviors.
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of <strong>vehicle types</strong>:
-            </p>
-            <ul>
-                <li><strong>Vehicle (Parent):</strong> All vehicles have wheels, engine, can move</li>
-                <li><strong>Car (Child):</strong> Inherits vehicle properties + has 4 doors, trunk</li>
-                <li><strong>Motorcycle (Child):</strong> Inherits vehicle properties + has 2 wheels, no roof</li>
-                <li><strong>Truck (Child):</strong> Inherits vehicle properties + has cargo bed</li>
-            </ul>
-            <p>Each child type gets the common features from Vehicle but adds its own specific features!</p>
-
-            <h3>Level 3: Technical Explanation</h3>
-            <p>
-                <strong>Inheritance</strong> is a mechanism where a new class (child/subclass) acquires the properties
-                and behaviors of an existing class (parent/superclass). It establishes an "IS-A" relationship between
-                classes.
-            </p>
-
-            <h4>Key Concepts:</h4>
-            <ul>
-                <li><strong>Superclass (Parent):</strong> The class being inherited from</li>
-                <li><strong>Subclass (Child):</strong> The class that inherits</li>
-                <li><strong>extends keyword:</strong> Used to inherit from a class</li>
-                <li><strong>super keyword:</strong> Refers to parent class members</li>
-            </ul>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// Parent class (Superclass)
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 INDUSTRY EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>E-commerce Payment System:</strong> Credit card details are encapsulated. The
+                                payment
+                                gateway exposes only methods like processPayment(), not the actual card number. This
+                                protects
+                                sensitive data and ensures PCI compliance.
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Benefits of Encapsulation:</h4>
+                    <ul>
+                        <li><strong>Data Protection:</strong> Prevents unauthorized access and modification</li>
+                        <li><strong>Flexibility:</strong> Internal implementation can change without affecting external
+                            code
+                        </li>
+                        <li><strong>Maintainability:</strong> Changes are localized to the class</li>
+                        <li><strong>Validation:</strong> Ensures data integrity through controlled access</li>
+                    </ul>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Common Mistake</div>
+                        <div class="admonition-content">
+                            <p>
+                                Don't make all fields public! This defeats encapsulation. Even if you think "I'll never
+                                need
+                                validation," requirements change. Always use private fields with public getters/setters.
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Best Practices:</h4>
+                    <ul>
+                        <li>Make fields private by default</li>
+                        <li>Provide public getters/setters only when needed</li>
+                        <li>Validate data in setters before updating fields</li>
+                        <li>Use meaningful names for methods (getBalance, not getB)</li>
+                        <li>Don't expose internal collections directly (return copies instead)</li>
+                    </ul>
+                </div>
+                <!-- Pillar 2: Inheritance -->
+                <div class="content-section">
+                    <h2>👨‍👩‍👧 Pillar 2: Inheritance</h2>
+                    <h3>Level 1: Baby Explanation</h3>
+                    <p>
+                        Inheritance is like <strong>getting traits from your parents</strong>. You have your mom's eyes
+                        and your
+                        dad's smile, but you're still your own person with your own unique things! A puppy inherits
+                        "being an
+                        animal" but also has its own special puppy behaviors.
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of <strong>vehicle types</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Vehicle (Parent):</strong> All vehicles have wheels, engine, can move</li>
+                        <li><strong>Car (Child):</strong> Inherits vehicle properties + has 4 doors, trunk</li>
+                        <li><strong>Motorcycle (Child):</strong> Inherits vehicle properties + has 2 wheels, no roof
+                        </li>
+                        <li><strong>Truck (Child):</strong> Inherits vehicle properties + has cargo bed</li>
+                    </ul>
+                    <p>Each child type gets the common features from Vehicle but adds its own specific features!</p>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <p>
+                        <strong>Inheritance</strong> is a mechanism where a new class (child/subclass) acquires the
+                        properties
+                        and behaviors of an existing class (parent/superclass). It establishes an "IS-A" relationship
+                        between
+                        classes.
+                    </p>
+                    <h4>Key Concepts:</h4>
+                    <ul>
+                        <li><strong>Superclass (Parent):</strong> The class being inherited from</li>
+                        <li><strong>Subclass (Child):</strong> The class that inherits</li>
+                        <li><strong>extends keyword:</strong> Used to inherit from a class</li>
+                        <li><strong>super keyword:</strong> Refers to parent class members</li>
+                    </ul>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// Parent class (Superclass)
 class Animal {
     protected String name;
     protected int age;
@@ -341,91 +753,95 @@ cat.eat();        // Inherited from Animal
 cat.makeSound();  // Overridden in Cat
 cat.scratch();    // Specific to Cat
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 INDUSTRY EXAMPLE</div>
-                <p>
-                    <strong>E-commerce System:</strong> Base class "User" with common properties (name, email,
-                    password). Subclasses: "Customer" (shopping cart, orders), "Seller" (products, inventory), "Admin"
-                    (user management). All inherit authentication but have specific features.
-                </p>
-            </div>
-
-            <h4>Types of Inheritance in Java:</h4>
-            <ul>
-                <li><strong>Single Inheritance:</strong> One child, one parent (Dog extends Animal)</li>
-                <li><strong>Multilevel Inheritance:</strong> Chain of inheritance (GermanShepherd extends Dog extends
-                    Animal)</li>
-                <li><strong>Hierarchical Inheritance:</strong> Multiple children from one parent (Dog, Cat, Bird all
-                    extend Animal)</li>
-                <li><strong>❌ Multiple Inheritance:</strong> NOT supported in Java for classes (use interfaces instead)
-                </li>
-            </ul>
-
-            <h4>Benefits of Inheritance:</h4>
-            <ul>
-                <li><strong>Code Reusability:</strong> Write common code once in parent class</li>
-                <li><strong>Method Overriding:</strong> Customize behavior in child classes</li>
-                <li><strong>Polymorphism:</strong> Treat child objects as parent type</li>
-                <li><strong>Logical Hierarchy:</strong> Models real-world relationships</li>
-            </ul>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Inheritance Pitfalls</div>
-                <p>
-                    <strong>Don't overuse inheritance!</strong> Inheritance creates tight coupling. If parent changes,
-                    all children are affected. Consider composition (HAS-A) instead of inheritance (IS-A) when
-                    appropriate. "Favor composition over inheritance" is a key design principle.
-                </p>
-            </div>
-
-            <h4>Best Practices:</h4>
-            <ul>
-                <li>Use inheritance for true "IS-A" relationships only</li>
-                <li>Keep inheritance hierarchies shallow (2-3 levels max)</li>
-                <li>Use protected for fields that subclasses need to access</li>
-                <li>Always call super() in child constructors</li>
-                <li>Document which methods are meant to be overridden</li>
-            </ul>
-        </div>
-
-        <!-- Pillar 3: Polymorphism -->
-        <div class="content-section">
-            <h2>🎭 Pillar 3: Polymorphism</h2>
-
-            <h3>Level 1: Baby Explanation</h3>
-            <p>
-                Polymorphism means <strong>"many forms"</strong>. It's like the word "play" - you can play a game, play
-                music, or play a video. Same word, different meanings depending on context! A button can be "pressed" -
-                on a phone, on a shirt, on a remote - same action, different results.
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of a <strong>universal remote control</strong>:
-            </p>
-            <ul>
-                <li><strong>Same button (method):</strong> "Power" button</li>
-                <li><strong>Different devices (objects):</strong> TV, AC, Sound System</li>
-                <li><strong>Different behaviors:</strong> Power button turns on TV, cools room with AC, plays music on
-                    sound system</li>
-            </ul>
-            <p>Same interface, different implementations!</p>
-
-            <h3>Level 3: Technical Explanation</h3>
-            <p>
-                <strong>Polymorphism</strong> allows objects of different classes to be treated as objects of a common
-                superclass. It enables a single interface to represent different underlying forms (data types). The same
-                method name can behave differently based on the object calling it.
-            </p>
-
-            <h4>Types of Polymorphism:</h4>
-
-            <h5>1. Compile-Time Polymorphism (Static Binding / Method Overloading)</h5>
-            <p>Decided at compile time based on method signature.</p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Calculator {
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 INDUSTRY EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>E-commerce System:</strong> Base class "User" with common properties (name,
+                                email,
+                                password). Subclasses: "Customer" (shopping cart, orders), "Seller" (products,
+                                inventory), "Admin"
+                                (user management). All inherit authentication but have specific features.
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Types of Inheritance in Java:</h4>
+                    <ul>
+                        <li><strong>Single Inheritance:</strong> One child, one parent (Dog extends Animal)</li>
+                        <li><strong>Multilevel Inheritance:</strong> Chain of inheritance (GermanShepherd extends Dog
+                            extends
+                            Animal)</li>
+                        <li><strong>Hierarchical Inheritance:</strong> Multiple children from one parent (Dog, Cat, Bird
+                            all
+                            extend Animal)</li>
+                        <li><strong>❌ Multiple Inheritance:</strong> NOT supported in Java for classes (use interfaces
+                            instead)
+                        </li>
+                    </ul>
+                    <h4>Benefits of Inheritance:</h4>
+                    <ul>
+                        <li><strong>Code Reusability:</strong> Write common code once in parent class</li>
+                        <li><strong>Method Overriding:</strong> Customize behavior in child classes</li>
+                        <li><strong>Polymorphism:</strong> Treat child objects as parent type</li>
+                        <li><strong>Logical Hierarchy:</strong> Models real-world relationships</li>
+                    </ul>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Inheritance Pitfalls</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Don't overuse inheritance!</strong> Inheritance creates tight coupling. If
+                                parent changes,
+                                all children are affected. Consider composition (HAS-A) instead of inheritance (IS-A)
+                                when
+                                appropriate. "Favor composition over inheritance" is a key design principle.
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Best Practices:</h4>
+                    <ul>
+                        <li>Use inheritance for true "IS-A" relationships only</li>
+                        <li>Keep inheritance hierarchies shallow (2-3 levels max)</li>
+                        <li>Use protected for fields that subclasses need to access</li>
+                        <li>Always call super() in child constructors</li>
+                        <li>Document which methods are meant to be overridden</li>
+                    </ul>
+                </div>
+                <!-- Pillar 3: Polymorphism -->
+                <div class="content-section">
+                    <h2>🎭 Pillar 3: Polymorphism</h2>
+                    <h3>Level 1: Baby Explanation</h3>
+                    <p>
+                        Polymorphism means <strong>"many forms"</strong>. It's like the word "play" - you can play a
+                        game, play
+                        music, or play a video. Same word, different meanings depending on context! A button can be
+                        "pressed" -
+                        on a phone, on a shirt, on a remote - same action, different results.
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of a <strong>universal remote control</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Same button (method):</strong> "Power" button</li>
+                        <li><strong>Different devices (objects):</strong> TV, AC, Sound System</li>
+                        <li><strong>Different behaviors:</strong> Power button turns on TV, cools room with AC, plays
+                            music on
+                            sound system</li>
+                    </ul>
+                    <p>Same interface, different implementations!</p>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <p>
+                        <strong>Polymorphism</strong> allows objects of different classes to be treated as objects of a
+                        common
+                        superclass. It enables a single interface to represent different underlying forms (data types).
+                        The same
+                        method name can behave differently based on the object calling it.
+                    </p>
+                    <h4>Types of Polymorphism:</h4>
+                    <h5>1. Compile-Time Polymorphism (Static Binding / Method Overloading)</h5>
+                    <p>Decided at compile time based on method signature.</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Calculator {
     // Same method name, different parameters
     
     int add(int a, int b) {
@@ -452,12 +868,10 @@ calc.add(5.5, 10.5);       // Calls double version
 calc.add(1, 2, 3);         // Calls three-parameter version
 calc.add("Hello", "World"); // Calls String version
 </code></pre>
-
-            <h5>2. Runtime Polymorphism (Dynamic Binding / Method Overriding)</h5>
-            <p>Decided at runtime based on the actual object type.</p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>class Shape {
+                    <h5>2. Runtime Polymorphism (Dynamic Binding / Method Overriding)</h5>
+                    <p>Decided at runtime based on the actual object type.</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>class Shape {
     public void draw() {
         System.out.println("Drawing a shape");
     }
@@ -525,79 +939,84 @@ for (Shape s : shapes) {
     s.draw();  // Calls appropriate draw() based on actual object type
 }
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 INDUSTRY EXAMPLE</div>
-                <p>
-                    <strong>Payment Processing System:</strong> Interface "PaymentMethod" with method processPayment().
-                    Implementations: CreditCard, DebitCard, PayPal, GooglePay. The checkout system doesn't care which
-                    payment method - it just calls processPayment(), and each handles it differently. This is
-                    polymorphism in production!
-                </p>
-            </div>
-
-            <h4>Benefits of Polymorphism:</h4>
-            <ul>
-                <li><strong>Flexibility:</strong> Add new types without changing existing code</li>
-                <li><strong>Extensibility:</strong> Easy to extend functionality</li>
-                <li><strong>Maintainability:</strong> Changes localized to specific classes</li>
-                <li><strong>Code Reusability:</strong> Write generic code that works with multiple types</li>
-            </ul>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Polymorphism in Practice</div>
-                <p>
-                    Use polymorphism when you have multiple classes with similar behavior but different implementations.
-                    Instead of if-else chains checking types, use polymorphism to let each object handle its own
-                    behavior.
-                </p>
-            </div>
-
-            <h4>Best Practices:</h4>
-            <ul>
-                <li>Use @Override annotation when overriding methods</li>
-                <li>Design for polymorphism - make methods virtual (non-final) when appropriate</li>
-                <li>Use interfaces for polymorphism when classes don't share implementation</li>
-                <li>Avoid instanceof checks - let polymorphism handle type-specific behavior</li>
-            </ul>
-        </div>
-
-        <!-- Pillar 4: Abstraction -->
-        <div class="content-section">
-            <h2>🎨 Pillar 4: Abstraction</h2>
-
-            <h3>Level 1: Baby Explanation</h3>
-            <p>
-                Abstraction is like using a <strong>TV remote</strong>. You press "power" and the TV turns on. You don't
-                need to know about circuits, electricity, or how the TV works inside. You just know: "Press power = TV
-                on". The complex stuff is hidden!
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of <strong>driving a car</strong>:
-            </p>
-            <ul>
-                <li><strong>What you see:</strong> Steering wheel, pedals, gear shift (abstract interface)</li>
-                <li><strong>What's hidden:</strong> Engine combustion, transmission mechanics, fuel injection</li>
-                <li><strong>What you do:</strong> Turn wheel, press pedal (simple actions)</li>
-                <li><strong>What happens:</strong> Complex mechanical processes (hidden implementation)</li>
-            </ul>
-            <p>You interact with the simple interface without worrying about complex internals!</p>
-
-            <h3>Level 3: Technical Explanation</h3>
-            <p>
-                <strong>Abstraction</strong> is the process of hiding implementation details and showing only essential
-                features to the user. It focuses on WHAT an object does rather than HOW it does it. In Java, abstraction
-                is achieved through abstract classes and interfaces.
-            </p>
-
-            <h4>1. Abstract Classes</h4>
-            <p>A class declared with the <code>abstract</code> keyword. Cannot be instantiated. May contain abstract
-                methods (without body) and concrete methods (with body).</p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Abstract class - cannot create objects directly
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 INDUSTRY EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Payment Processing System:</strong> Interface "PaymentMethod" with method
+                                processPayment().
+                                Implementations: CreditCard, DebitCard, PayPal, GooglePay. The checkout system doesn't
+                                care which
+                                payment method - it just calls processPayment(), and each handles it differently. This
+                                is
+                                polymorphism in production!
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Benefits of Polymorphism:</h4>
+                    <ul>
+                        <li><strong>Flexibility:</strong> Add new types without changing existing code</li>
+                        <li><strong>Extensibility:</strong> Easy to extend functionality</li>
+                        <li><strong>Maintainability:</strong> Changes localized to specific classes</li>
+                        <li><strong>Code Reusability:</strong> Write generic code that works with multiple types</li>
+                    </ul>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Polymorphism in Practice</div>
+                        <div class="admonition-content">
+                            <p>
+                                Use polymorphism when you have multiple classes with similar behavior but different
+                                implementations.
+                                Instead of if-else chains checking types, use polymorphism to let each object handle its
+                                own
+                                behavior.
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Best Practices:</h4>
+                    <ul>
+                        <li>Use @Override annotation when overriding methods</li>
+                        <li>Design for polymorphism - make methods virtual (non-final) when appropriate</li>
+                        <li>Use interfaces for polymorphism when classes don't share implementation</li>
+                        <li>Avoid instanceof checks - let polymorphism handle type-specific behavior</li>
+                    </ul>
+                </div>
+                <!-- Pillar 4: Abstraction -->
+                <div class="content-section">
+                    <h2>🎨 Pillar 4: Abstraction</h2>
+                    <h3>Level 1: Baby Explanation</h3>
+                    <p>
+                        Abstraction is like using a <strong>TV remote</strong>. You press "power" and the TV turns on.
+                        You don't
+                        need to know about circuits, electricity, or how the TV works inside. You just know: "Press
+                        power = TV
+                        on". The complex stuff is hidden!
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of <strong>driving a car</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>What you see:</strong> Steering wheel, pedals, gear shift (abstract interface)</li>
+                        <li><strong>What's hidden:</strong> Engine combustion, transmission mechanics, fuel injection
+                        </li>
+                        <li><strong>What you do:</strong> Turn wheel, press pedal (simple actions)</li>
+                        <li><strong>What happens:</strong> Complex mechanical processes (hidden implementation)</li>
+                    </ul>
+                    <p>You interact with the simple interface without worrying about complex internals!</p>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <p>
+                        <strong>Abstraction</strong> is the process of hiding implementation details and showing only
+                        essential
+                        features to the user. It focuses on WHAT an object does rather than HOW it does it. In Java,
+                        abstraction
+                        is achieved through abstract classes and interfaces.
+                    </p>
+                    <h4>1. Abstract Classes</h4>
+                    <p>A class declared with the <code>abstract</code> keyword. Cannot be instantiated. May contain
+                        abstract
+                        methods (without body) and concrete methods (with body).</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Abstract class - cannot create objects directly
 abstract class Vehicle {
     protected String brand;
     protected int year;
@@ -675,13 +1094,12 @@ Vehicle bike = new Motorcycle("Yamaha", 2022, false);
 car.start();   // Car's implementation
 bike.start();  // Motorcycle's implementation
 </code></pre>
-
-            <h4>2. Interfaces</h4>
-            <p>A completely abstract type that defines a contract. All methods are implicitly public and abstract
-                (before Java 8). A class can implement multiple interfaces.</p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// Interface - pure abstraction
+                    <h4>2. Interfaces</h4>
+                    <p>A completely abstract type that defines a contract. All methods are implicitly public and
+                        abstract
+                        (before Java 8). A class can implement multiple interfaces.</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// Interface - pure abstraction
 interface Drawable {
     void draw();  // Implicitly public abstract
     void resize(double factor);
@@ -732,107 +1150,125 @@ shape.resize(1.5);
 Colorable coloredShape = new Circle(3);
 coloredShape.setColor("Red");
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 INDUSTRY EXAMPLE</div>
-                <p>
-                    <strong>Database Layer:</strong> Interface "DatabaseConnection" with methods connect(), query(),
-                    close(). Implementations: MySQLConnection, PostgreSQLConnection, MongoDBConnection. Application code
-                    uses the interface - doesn't care about specific database. Can switch databases without changing
-                    application code!
-                </p>
-            </div>
-
-            <h4>Abstract Class vs Interface:</h4>
-            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
-                <thead>
-                    <tr style="background: var(--bg-hover);">
-                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Feature</th>
-                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Abstract Class
-                        </th>
-                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Interface</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Methods</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Can have abstract and concrete
-                            methods</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">All methods abstract (before Java
-                            8)</td>
-                    </tr>
-                    <tr style="background: var(--bg-hover);">
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Variables</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Can have any type of variables
-                        </td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Only public static final
-                            (constants)</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Inheritance</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Single inheritance (extends one
-                            class)</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Multiple inheritance (implements
-                            many)</td>
-                    </tr>
-                    <tr style="background: var(--bg-hover);">
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Constructor</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Can have constructors</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Cannot have constructors</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Access Modifiers</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Can use any access modifier</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Methods are public by default
-                        </td>
-                    </tr>
-                    <tr style="background: var(--bg-hover);">
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Use Case</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">When classes share code and state
-                        </td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">When classes share only method
-                            signatures</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h4>Benefits of Abstraction:</h4>
-            <ul>
-                <li><strong>Simplicity:</strong> Users interact with simple interface, not complex implementation</li>
-                <li><strong>Security:</strong> Hides sensitive implementation details</li>
-                <li><strong>Maintainability:</strong> Implementation can change without affecting users</li>
-                <li><strong>Flexibility:</strong> Multiple implementations of same abstraction</li>
-            </ul>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Over-Abstraction</div>
-                <p>
-                    Don't create abstractions for everything! Over-abstraction makes code complex and hard to
-                    understand. Create abstractions only when you have multiple implementations or expect future
-                    variations. YAGNI (You Aren't Gonna Need It) principle applies.
-                </p>
-            </div>
-
-            <h4>Best Practices:</h4>
-            <ul>
-                <li>Use interfaces for defining contracts and capabilities</li>
-                <li>Use abstract classes when you have shared code among subclasses</li>
-                <li>Keep abstractions focused - single responsibility</li>
-                <li>Name interfaces based on capability (Drawable, Serializable, Comparable)</li>
-                <li>Document the contract - what implementers must do</li>
-            </ul>
-        </div>
-
-        <!-- Section 3: Additional OOP Concepts -->
-        <div class="content-section">
-            <h2>🔍 Additional OOP Concepts</h2>
-
-            <h3>Class vs Object</h3>
-            <p>
-                <strong>Class:</strong> Blueprint or template. Defines structure and behavior.<br>
-                <strong>Object:</strong> Instance of a class. Actual entity with specific values.
-            </p>
-            <pre style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>// Class - blueprint
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 INDUSTRY EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Database Layer:</strong> Interface "DatabaseConnection" with methods connect(),
+                                query(),
+                                close(). Implementations: MySQLConnection, PostgreSQLConnection, MongoDBConnection.
+                                Application code
+                                uses the interface - doesn't care about specific database. Can switch databases without
+                                changing
+                                application code!
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Abstract Class vs Interface:</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                        <thead>
+                            <tr style="background: var(--bg-hover);">
+                                <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Feature
+                                </th>
+                                <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">
+                                    Abstract Class
+                                </th>
+                                <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">
+                                    Interface</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Methods</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Can have abstract and
+                                    concrete
+                                    methods</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">All methods abstract
+                                    (before Java
+                                    8)</td>
+                            </tr>
+                            <tr style="background: var(--bg-hover);">
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Variables</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Can have any type of
+                                    variables
+                                </td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Only public static final
+                                    (constants)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Inheritance</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Single inheritance
+                                    (extends one
+                                    class)</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Multiple inheritance
+                                    (implements
+                                    many)</td>
+                            </tr>
+                            <tr style="background: var(--bg-hover);">
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Constructor</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Can have constructors
+                                </td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Cannot have constructors
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Access Modifiers</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Can use any access
+                                    modifier</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Methods are public by
+                                    default
+                                </td>
+                            </tr>
+                            <tr style="background: var(--bg-hover);">
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Use Case</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">When classes share code
+                                    and state
+                                </td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">When classes share only
+                                    method
+                                    signatures</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>Benefits of Abstraction:</h4>
+                    <ul>
+                        <li><strong>Simplicity:</strong> Users interact with simple interface, not complex
+                            implementation</li>
+                        <li><strong>Security:</strong> Hides sensitive implementation details</li>
+                        <li><strong>Maintainability:</strong> Implementation can change without affecting users</li>
+                        <li><strong>Flexibility:</strong> Multiple implementations of same abstraction</li>
+                    </ul>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Over-Abstraction</div>
+                        <div class="admonition-content">
+                            <p>
+                                Don't create abstractions for everything! Over-abstraction makes code complex and hard
+                                to
+                                understand. Create abstractions only when you have multiple implementations or expect
+                                future
+                                variations. YAGNI (You Aren't Gonna Need It) principle applies.
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Best Practices:</h4>
+                    <ul>
+                        <li>Use interfaces for defining contracts and capabilities</li>
+                        <li>Use abstract classes when you have shared code among subclasses</li>
+                        <li>Keep abstractions focused - single responsibility</li>
+                        <li>Name interfaces based on capability (Drawable, Serializable, Comparable)</li>
+                        <li>Document the contract - what implementers must do</li>
+                    </ul>
+                </div>
+                <!-- Section 3: Additional OOP Concepts -->
+                <div class="content-section">
+                    <h2>🔍 Additional OOP Concepts</h2>
+                    <h3>Class vs Object</h3>
+                    <p>
+                        <strong>Class:</strong> Blueprint or template. Defines structure and behavior.<br />
+                        <strong>Object:</strong> Instance of a class. Actual entity with specific values.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>// Class - blueprint
 class Car {
     String model;
     int year;
@@ -847,18 +1283,17 @@ Car car2 = new Car();  // Object 2
 car2.model = "BMW";
 car2.year = 2022;
 </code></pre>
-
-            <h3>IS-A vs HAS-A Relationship</h3>
-
-            <h4>IS-A (Inheritance)</h4>
-            <p>Represents inheritance. "Dog IS-A Animal"</p>
-            <pre style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>class Animal { }
+                    <h3>IS-A vs HAS-A Relationship</h3>
+                    <h4>IS-A (Inheritance)</h4>
+                    <p>Represents inheritance. "Dog IS-A Animal"</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>class Animal { }
 class Dog extends Animal { }  // Dog IS-A Animal
 </code></pre>
-
-            <h4>HAS-A (Composition/Aggregation)</h4>
-            <p>Represents ownership. "Car HAS-A Engine"</p>
-            <pre style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>class Engine {
+                    <h4>HAS-A (Composition/Aggregation)</h4>
+                    <p>Represents ownership. "Car HAS-A Engine"</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>class Engine {
     void start() { }
 }
 
@@ -870,64 +1305,74 @@ class Car {
     }
 }
 </code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - When to Use Which</div>
-                <p>
-                    <strong>Use IS-A (Inheritance):</strong> When there's a clear hierarchical relationship and child is
-                    a specialized version of parent.<br>
-                    <strong>Use HAS-A (Composition):</strong> When one object contains or uses another. Generally prefer
-                    composition over inheritance for flexibility.
-                </p>
-            </div>
-
-            <h3>Method Overloading vs Method Overriding</h3>
-
-            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
-                <thead>
-                    <tr style="background: var(--bg-hover);">
-                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Aspect</th>
-                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Overloading
-                        </th>
-                        <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Overriding</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Definition</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Same name, different parameters
-                        </td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Same signature in parent and
-                            child</td>
-                    </tr>
-                    <tr style="background: var(--bg-hover);">
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Location</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Same class</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Parent and child classes</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Polymorphism</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Compile-time (static)</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Runtime (dynamic)</td>
-                    </tr>
-                    <tr style="background: var(--bg-hover);">
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Return Type</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Can be different</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Must be same or covariant</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Access Modifier</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Can be any</td>
-                        <td style="padding: 0.75rem; border: 1px solid var(--border);">Cannot be more restrictive</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h3>Constructor and Polymorphism</h3>
-            <p>Constructors are NOT inherited and cannot be overridden. However, child class constructors must call
-                parent constructors using <code>super()</code>.</p>
-
-            <pre style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>class Parent {
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - When to Use Which</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Use IS-A (Inheritance):</strong> When there's a clear hierarchical relationship
+                                and child is
+                                a specialized version of parent.<br />
+                                <strong>Use HAS-A (Composition):</strong> When one object contains or uses another.
+                                Generally prefer
+                                composition over inheritance for flexibility.
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Method Overloading vs Method Overriding</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                        <thead>
+                            <tr style="background: var(--bg-hover);">
+                                <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">Aspect
+                                </th>
+                                <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">
+                                    Overloading
+                                </th>
+                                <th style="padding: 0.75rem; text-align: left; border: 1px solid var(--border);">
+                                    Overriding</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Definition</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Same name, different
+                                    parameters
+                                </td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Same signature in parent
+                                    and
+                                    child</td>
+                            </tr>
+                            <tr style="background: var(--bg-hover);">
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Location</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Same class</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Parent and child classes
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Polymorphism</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Compile-time (static)
+                                </td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Runtime (dynamic)</td>
+                            </tr>
+                            <tr style="background: var(--bg-hover);">
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Return Type</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Can be different</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Must be same or covariant
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Access Modifier</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Can be any</td>
+                                <td style="padding: 0.75rem; border: 1px solid var(--border);">Cannot be more
+                                    restrictive</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Constructor and Polymorphism</h3>
+                    <p>Constructors are NOT inherited and cannot be overridden. However, child class constructors must
+                        call
+                        parent constructors using <code>super()</code>.</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>class Parent {
     public Parent() {
         System.out.println("Parent constructor");
     }
@@ -944,23 +1389,21 @@ class Child extends Parent {
 // Parent constructor
 // Child constructor
 </code></pre>
-
-            <h3>Access Modifiers in OOP Context</h3>
-            <ul>
-                <li><strong>private:</strong> Only within the same class (encapsulation)</li>
-                <li><strong>default:</strong> Within same package</li>
-                <li><strong>protected:</strong> Same package + subclasses (inheritance)</li>
-                <li><strong>public:</strong> Everywhere (public interface)</li>
-            </ul>
-
-            <h3>Final Keyword in OOP</h3>
-            <ul>
-                <li><strong>final class:</strong> Cannot be inherited (e.g., String class)</li>
-                <li><strong>final method:</strong> Cannot be overridden</li>
-                <li><strong>final variable:</strong> Cannot be reassigned (constant)</li>
-            </ul>
-
-            <pre style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>final class ImmutableClass {  // Cannot extend
+                    <h3>Access Modifiers in OOP Context</h3>
+                    <ul>
+                        <li><strong>private:</strong> Only within the same class (encapsulation)</li>
+                        <li><strong>default:</strong> Within same package</li>
+                        <li><strong>protected:</strong> Same package + subclasses (inheritance)</li>
+                        <li><strong>public:</strong> Everywhere (public interface)</li>
+                    </ul>
+                    <h3>Final Keyword in OOP</h3>
+                    <ul>
+                        <li><strong>final class:</strong> Cannot be inherited (e.g., String class)</li>
+                        <li><strong>final method:</strong> Cannot be overridden</li>
+                        <li><strong>final variable:</strong> Cannot be reassigned (constant)</li>
+                    </ul>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>final class ImmutableClass {  // Cannot extend
     private final int value;  // Cannot change after initialization
     
     public ImmutableClass(int value) {
@@ -972,15 +1415,15 @@ class Child extends Parent {
     }
 }
 </code></pre>
-        </div>
-
-        <!-- Section 4: Common OOP Design Issues -->
-        <div class="content-section">
-            <h2>⚠️ Common OOP Design Issues</h2>
-
-            <h3>1. Tight Coupling</h3>
-            <p><strong>Problem:</strong> Classes are too dependent on each other. Changes in one class break others.</p>
-            <pre style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>// Bad - Tight Coupling
+                </div>
+                <!-- Section 4: Common OOP Design Issues -->
+                <div class="content-section">
+                    <h2>⚠️ Common OOP Design Issues</h2>
+                    <h3>1. Tight Coupling</h3>
+                    <p><strong>Problem:</strong> Classes are too dependent on each other. Changes in one class break
+                        others.</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>// Bad - Tight Coupling
 class OrderProcessor {
     private MySQLDatabase db = new MySQLDatabase();  // Tightly coupled!
     
@@ -1002,92 +1445,100 @@ class OrderProcessor {
     }
 }
 </code></pre>
-
-            <h3>2. Improper Abstraction</h3>
-            <p><strong>Problem:</strong> Abstractions that leak implementation details or are too specific.</p>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING</div>
-                <p>Don't create abstractions that expose implementation details. Interface should be stable even if
-                    implementation changes.</p>
-            </div>
-
-            <h3>3. Violation of Law of Demeter</h3>
-            <p><strong>Problem:</strong> "Don't talk to strangers" - object should only interact with immediate friends.
-            </p>
-            <pre style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>// Bad - Violates Law of Demeter
+                    <h3>2. Improper Abstraction</h3>
+                    <p><strong>Problem:</strong> Abstractions that leak implementation details or are too specific.</p>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING</div>
+                        <div class="admonition-content">
+                            <p>Don't create abstractions that expose implementation details. Interface should be stable
+                                even if
+                                implementation changes.</p>
+                        </div>
+                    </div>
+                    <h3>3. Violation of Law of Demeter</h3>
+                    <p><strong>Problem:</strong> "Don't talk to strangers" - object should only interact with immediate
+                        friends.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm);"><code>// Bad - Violates Law of Demeter
 customer.getAddress().getCity().getName();  // Too many dots!
 
 // Good - Ask, don't reach
 customer.getCityName();  // Encapsulated
 </code></pre>
-
-            <h3>4. Overusing Inheritance</h3>
-            <p><strong>Problem:</strong> Deep inheritance hierarchies that are fragile and hard to maintain.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p><strong>Favor Composition Over Inheritance:</strong> Use HAS-A instead of IS-A when possible.
-                    Composition is more flexible and easier to change.</p>
+                    <h3>4. Overusing Inheritance</h3>
+                    <p><strong>Problem:</strong> Deep inheritance hierarchies that are fragile and hard to maintain.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p><strong>Favor Composition Over Inheritance:</strong> Use HAS-A instead of IS-A when
+                                possible.
+                                Composition is more flexible and easier to change.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 5: Best Practices -->
+                <div class="content-section">
+                    <h2>✅ OOP Best Practices</h2>
+                    <h3>1. Favor Composition Over Inheritance</h3>
+                    <p>Use composition (HAS-A) for code reuse instead of inheritance when there's no clear IS-A
+                        relationship.
+                    </p>
+                    <h3>2. Program to Interfaces, Not Implementations</h3>
+                    <p>Depend on abstractions (interfaces/abstract classes) rather than concrete classes.</p>
+                    <h3>3. Encapsulate What Varies</h3>
+                    <p>Identify aspects that vary and separate them from what stays the same. Encapsulate the varying
+                        parts.</p>
+                    <h3>4. SOLID Principles</h3>
+                    <ul>
+                        <li><strong>S</strong>ingle Responsibility: Class should have one reason to change</li>
+                        <li><strong>O</strong>pen/Closed: Open for extension, closed for modification</li>
+                        <li><strong>L</strong>iskov Substitution: Subclass should be substitutable for parent</li>
+                        <li><strong>I</strong>nterface Segregation: Many specific interfaces better than one general
+                        </li>
+                        <li><strong>D</strong>ependency Inversion: Depend on abstractions, not concretions</li>
+                    </ul>
+                    <h3>5. Keep It Simple</h3>
+                    <p>Don't over-engineer. Start simple, refactor when needed. YAGNI (You Aren't Gonna Need It).</p>
+                    <h3>6. Use Meaningful Names</h3>
+                    <p>Classes are nouns (Customer, Order). Methods are verbs (calculateTotal, processPayment).</p>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 INDUSTRY EXAMPLE - Well-Designed System</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>E-commerce Platform:</strong><br />
+                                • Interfaces: PaymentProcessor, ShippingProvider, NotificationService<br />
+                                • Abstract Classes: BaseProduct, BaseUser<br />
+                                • Concrete Classes: CreditCardPayment, FedExShipping, EmailNotification<br />
+                                • Composition: Order HAS-A List of OrderItems, Customer HAS-A ShoppingCart<br />
+                                • Polymorphism: Different payment methods, shipping providers work through same
+                                interface
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--secondary" href="../programs/oops.html">💻 View Programs</a>
+                        <a class="md-button md-button--primary" href="../mcq/oops.html">✅ Take Quiz</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p><strong>Coming Soon:</strong> Java Collection Framework in Depth<br />Master List, Set,
+                                Map, Queue
+                                interfaces and their implementations.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Section 5: Best Practices -->
-        <div class="content-section">
-            <h2>✅ OOP Best Practices</h2>
-
-            <h3>1. Favor Composition Over Inheritance</h3>
-            <p>Use composition (HAS-A) for code reuse instead of inheritance when there's no clear IS-A relationship.
-            </p>
-
-            <h3>2. Program to Interfaces, Not Implementations</h3>
-            <p>Depend on abstractions (interfaces/abstract classes) rather than concrete classes.</p>
-
-            <h3>3. Encapsulate What Varies</h3>
-            <p>Identify aspects that vary and separate them from what stays the same. Encapsulate the varying parts.</p>
-
-            <h3>4. SOLID Principles</h3>
-            <ul>
-                <li><strong>S</strong>ingle Responsibility: Class should have one reason to change</li>
-                <li><strong>O</strong>pen/Closed: Open for extension, closed for modification</li>
-                <li><strong>L</strong>iskov Substitution: Subclass should be substitutable for parent</li>
-                <li><strong>I</strong>nterface Segregation: Many specific interfaces better than one general</li>
-                <li><strong>D</strong>ependency Inversion: Depend on abstractions, not concretions</li>
-            </ul>
-
-            <h3>5. Keep It Simple</h3>
-            <p>Don't over-engineer. Start simple, refactor when needed. YAGNI (You Aren't Gonna Need It).</p>
-
-            <h3>6. Use Meaningful Names</h3>
-            <p>Classes are nouns (Customer, Order). Methods are verbs (calculateTotal, processPayment).</p>
-
-            <div class="callout example">
-                <div class="callout-title">💡 INDUSTRY EXAMPLE - Well-Designed System</div>
-                <p>
-                    <strong>E-commerce Platform:</strong><br>
-                    • Interfaces: PaymentProcessor, ShippingProvider, NotificationService<br>
-                    • Abstract Classes: BaseProduct, BaseUser<br>
-                    • Concrete Classes: CreditCardPayment, FedExShipping, EmailNotification<br>
-                    • Composition: Order HAS-A List of OrderItems, Customer HAS-A ShoppingCart<br>
-                    • Polymorphism: Different payment methods, shipping providers work through same interface
-                </p>
-            </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../programs/oops.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../mcq/oops.html" class="btn btn-success">✅ Take Quiz</a>
-                <a href="../index.html" class="btn btn-primary">🏠 Back to Home</a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p><strong>Coming Soon:</strong> Java Collection Framework in Depth<br>Master List, Set, Map, Queue
-                    interfaces and their implementations.</p>
-            </div>
-        </div>
+        </main>
     </div>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

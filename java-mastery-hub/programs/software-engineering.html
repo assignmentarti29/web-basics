@@ -1,52 +1,455 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Software Engineering Programs - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Software Engineering - Code Examples</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Programs</span>
-                <span>/</span>
-                <span>Software Engineering</span>
-            </div>
-        </div>
-
-        <!-- Program 1: SDLC Phase Demonstration -->
-        <div class="content-section">
-            <h2>Program 1: SDLC Phase Tracker</h2>
-            <p>This program demonstrates the different phases of the Software Development Life Cycle.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Software Engineering - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>Software Engineering</li>
+                    </ul>
+                </div>
+                <!-- Program 1: SDLC Phase Demonstration -->
+                <div class="content-section">
+                    <h2>Program 1: SDLC Phase Tracker</h2>
+                    <p>This program demonstrates the different phases of the Software Development Life Cycle.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * SDLC Phase Tracker
  * Demonstrates the sequential phases of Software Development Life Cycle
  */
@@ -54,7 +457,7 @@ public class SDLCPhaseTracker {
     
     // Enum to represent different SDLC phases
     enum SDLCPhase {
-        PLANNING("Planning & Requirement Analysis"),
+        PLANNING("Planning &amp; Requirement Analysis"),
         DESIGN("System Design"),
         IMPLEMENTATION("Implementation/Coding"),
         TESTING("Testing"),
@@ -114,24 +517,23 @@ public class SDLCPhaseTracker {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program uses an enum to represent SDLC phases, demonstrating how
-                software engineering concepts can be modeled in code. Each phase has a description and associated
-                activities. This shows the systematic, organized approach of software engineering versus ad-hoc
-                programming.
-            </div>
-        </div>
-
-        <!-- Program 2: Software Project Class -->
-        <div class="content-section">
-            <h2>Program 2: Software Project Management System</h2>
-            <p>Demonstrates object-oriented modeling of a software project with SDLC tracking.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program uses an enum to represent SDLC phases, demonstrating
+                        how
+                        software engineering concepts can be modeled in code. Each phase has a description and
+                        associated
+                        activities. This shows the systematic, organized approach of software engineering versus ad-hoc
+                        programming.
+                    </div>
+                </div>
+                <!-- Program 2: Software Project Class -->
+                <div class="content-section">
+                    <h2>Program 2: Software Project Management System</h2>
+                    <p>Demonstrates object-oriented modeling of a software project with SDLC tracking.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * Software Project Management System
  * Models a real-world software project with phases, team, and status tracking
  */
@@ -142,7 +544,7 @@ import java.util.List;
 public class SoftwareProject {
     private String projectName;
     private String currentPhase;
-    private List<String> teamMembers;
+    private List<string> teamMembers;
     private LocalDate startDate;
     private LocalDate deadline;
     private int completionPercentage;
@@ -151,7 +553,7 @@ public class SoftwareProject {
     public SoftwareProject(String projectName, LocalDate startDate, LocalDate deadline) {
         this.projectName = projectName;
         this.currentPhase = "Planning";
-        this.teamMembers = new ArrayList<>();
+        this.teamMembers = new ArrayList&lt;&gt;();
         this.startDate = startDate;
         this.deadline = deadline;
         this.completionPercentage = 0;
@@ -210,24 +612,23 @@ public class SoftwareProject {
         project.displayProjectStatus();
     }
 }
-</code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program demonstrates how software engineering principles are applied
-                in real projects. It models a project with team management, phase tracking, and deadline monitoring -
-                all essential aspects of professional software development that go beyond just writing code.
-            </div>
-        </div>
-
-        <!-- Program 3: Waterfall Model Simulation -->
-        <div class="content-section">
-            <h2>Program 3: Waterfall Model Simulation</h2>
-            <p>Simulates the sequential, linear nature of the Waterfall SDLC model.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+</string></code></pre>
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program demonstrates how software engineering principles are
+                        applied
+                        in real projects. It models a project with team management, phase tracking, and deadline
+                        monitoring -
+                        all essential aspects of professional software development that go beyond just writing code.
+                    </div>
+                </div>
+                <!-- Program 3: Waterfall Model Simulation -->
+                <div class="content-section">
+                    <h2>Program 3: Waterfall Model Simulation</h2>
+                    <p>Simulates the sequential, linear nature of the Waterfall SDLC model.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * Waterfall Model Simulation
  * Demonstrates the sequential, non-overlapping phases of Waterfall methodology
  */
@@ -252,7 +653,7 @@ public class WaterfallModel {
     // Execute a phase (can only execute if previous phase is complete)
     public void executePhase(int phaseIndex) {
         // Waterfall rule: Can't skip phases
-        if (phaseIndex > 0 && !phaseCompleted[phaseIndex - 1]) {
+        if (phaseIndex &gt; 0 &amp;&amp; !phaseCompleted[phaseIndex - 1]) {
             System.out.println("❌ ERROR: Cannot execute " + phaseNames[phaseIndex]);
             System.out.println("   Reason: Previous phase '" + phaseNames[phaseIndex - 1] + "' not completed!");
             System.out.println("   Waterfall Model Rule: Phases must be sequential!\n");
@@ -309,24 +710,24 @@ public class WaterfallModel {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program illustrates the key characteristic of Waterfall model - its
-                sequential, rigid nature. It enforces that phases must be completed in order and demonstrates why going
-                back to previous phases is problematic. This helps understand when Waterfall is appropriate and when
-                it's not.
-            </div>
-        </div>
-
-        <!-- Program 4: Agile Sprint Simulation -->
-        <div class="content-section">
-            <h2>Program 4: Agile Sprint Simulation</h2>
-            <p>Demonstrates the iterative, flexible nature of Agile methodology with sprints.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program illustrates the key characteristic of Waterfall model
+                        - its
+                        sequential, rigid nature. It enforces that phases must be completed in order and demonstrates
+                        why going
+                        back to previous phases is problematic. This helps understand when Waterfall is appropriate and
+                        when
+                        it's not.
+                    </div>
+                </div>
+                <!-- Program 4: Agile Sprint Simulation -->
+                <div class="content-section">
+                    <h2>Program 4: Agile Sprint Simulation</h2>
+                    <p>Demonstrates the iterative, flexible nature of Agile methodology with sprints.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * Agile Sprint Simulation
  * Demonstrates iterative development with user stories and sprint cycles
  */
@@ -347,14 +748,14 @@ class UserStory {
 
 public class AgileSprint {
     private int sprintNumber;
-    private List<UserStory> backlog;
-    private List<UserStory> currentSprint;
+    private List<userstory> backlog;
+    private List<userstory> currentSprint;
     private int teamVelocity; // Story points team can complete per sprint
     
     public AgileSprint(int teamVelocity) {
         this.sprintNumber = 0;
-        this.backlog = new ArrayList<>();
-        this.currentSprint = new ArrayList<>();
+        this.backlog = new ArrayList&lt;&gt;();
+        this.currentSprint = new ArrayList&lt;&gt;();
         this.teamVelocity = teamVelocity;
     }
     
@@ -377,7 +778,7 @@ public class AgileSprint {
         
         // Select stories that fit within team velocity
         for (UserStory story : backlog) {
-            if (!story.completed && totalPoints + story.storyPoints <= teamVelocity) {
+            if (!story.completed &amp;&amp; totalPoints + story.storyPoints &lt;= teamVelocity) {
                 currentSprint.add(story);
                 totalPoints += story.storyPoints;
                 System.out.println("✓ Added to sprint: " + story.description + " (" + story.storyPoints + " pts)");
@@ -438,24 +839,24 @@ public class AgileSprint {
         System.out.println("✓ Continuous improvement - retrospectives drive learning\n");
     }
 }
-</code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program models Agile's iterative approach with sprints, user stories,
-                and story points. It demonstrates how Agile allows flexibility and continuous delivery, contrasting with
-                Waterfall's rigidity. The retrospective feature shows Agile's emphasis on continuous improvement.
-            </div>
-        </div>
-
-        <!-- Program 5: Monolithic vs Microservices Architecture -->
-        <div class="content-section">
-            <h2>Program 5: Architecture Comparison - Monolithic vs Microservices</h2>
-            <p>Demonstrates the structural differences between monolithic and microservices architectures.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+</userstory></userstory></code></pre>
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program models Agile's iterative approach with sprints, user
+                        stories,
+                        and story points. It demonstrates how Agile allows flexibility and continuous delivery,
+                        contrasting with
+                        Waterfall's rigidity. The retrospective feature shows Agile's emphasis on continuous
+                        improvement.
+                    </div>
+                </div>
+                <!-- Program 5: Monolithic vs Microservices Architecture -->
+                <div class="content-section">
+                    <h2>Program 5: Architecture Comparison - Monolithic vs Microservices</h2>
+                    <p>Demonstrates the structural differences between monolithic and microservices architectures.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * Architecture Comparison
  * Demonstrates Monolithic vs Microservices architecture patterns
  */
@@ -570,24 +971,25 @@ public class ArchitectureComparison {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program contrasts monolithic and microservices architectures through
-                code structure. The monolithic version has all functionality in one class (tightly coupled), while
-                microservices version separates concerns into independent services. This demonstrates why architecture
-                matters in software engineering.
-            </div>
-        </div>
-
-        <!-- Program 6: Layered Architecture Demo -->
-        <div class="content-section">
-            <h2>Program 6: Layered (3-Tier) Architecture</h2>
-            <p>Demonstrates separation of concerns using Presentation, Business Logic, and Data Access layers.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program contrasts monolithic and microservices architectures
+                        through
+                        code structure. The monolithic version has all functionality in one class (tightly coupled),
+                        while
+                        microservices version separates concerns into independent services. This demonstrates why
+                        architecture
+                        matters in software engineering.
+                    </div>
+                </div>
+                <!-- Program 6: Layered Architecture Demo -->
+                <div class="content-section">
+                    <h2>Program 6: Layered (3-Tier) Architecture</h2>
+                    <p>Demonstrates separation of concerns using Presentation, Business Logic, and Data Access layers.
+                    </p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * Layered Architecture (3-Tier)
  * Demonstrates separation of concerns: Presentation, Business Logic, Data Access
  */
@@ -635,7 +1037,7 @@ class UserService {
         System.out.println("  [BLL] Validating user registration");
         
         // Business rules
-        if (name.length() < 3) {
+        if (name.length() &lt; 3) {
             System.out.println("  [BLL] ERROR: Name too short");
             return;
         }
@@ -696,24 +1098,25 @@ public class LayeredArchitecture {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program demonstrates the 3-tier layered architecture pattern. The
-                Presentation layer handles UI, Business Logic layer contains validation and rules, and Data Access layer
-                manages database operations. This separation makes the code maintainable, testable, and follows software
-                engineering best practices.
-            </div>
-        </div>
-
-        <!-- Program 7: Software Logging System -->
-        <div class="content-section">
-            <h2>Program 7: Professional Logging System</h2>
-            <p>Demonstrates proper logging practices essential in software engineering for debugging and monitoring.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program demonstrates the 3-tier layered architecture pattern.
+                        The
+                        Presentation layer handles UI, Business Logic layer contains validation and rules, and Data
+                        Access layer
+                        manages database operations. This separation makes the code maintainable, testable, and follows
+                        software
+                        engineering best practices.
+                    </div>
+                </div>
+                <!-- Program 7: Software Logging System -->
+                <div class="content-section">
+                    <h2>Program 7: Professional Logging System</h2>
+                    <p>Demonstrates proper logging practices essential in software engineering for debugging and
+                        monitoring.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * Professional Logging System
  * Demonstrates importance of logging in software engineering for debugging and monitoring
  */
@@ -802,24 +1205,23 @@ public class LoggingSystem {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Professional software engineering requires proper logging for debugging,
-                monitoring, and auditing. This program demonstrates different log levels and when to use them. In
-                production systems, logs are essential for troubleshooting issues, monitoring performance, and
-                maintaining system health.
-            </div>
-        </div>
-
-        <!-- Program 8: Code Documentation Example -->
-        <div class="content-section">
-            <h2>Program 8: Importance of Documentation</h2>
-            <p>Demonstrates proper code documentation using Javadoc - a key software engineering practice.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Professional software engineering requires proper logging for
+                        debugging,
+                        monitoring, and auditing. This program demonstrates different log levels and when to use them.
+                        In
+                        production systems, logs are essential for troubleshooting issues, monitoring performance, and
+                        maintaining system health.
+                    </div>
+                </div>
+                <!-- Program 8: Code Documentation Example -->
+                <div class="content-section">
+                    <h2>Program 8: Importance of Documentation</h2>
+                    <p>Demonstrates proper code documentation using Javadoc - a key software engineering practice.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * Customer Management System
  * 
  * This class demonstrates proper documentation practices in software engineering.
@@ -879,7 +1281,7 @@ public class Customer {
      * @throws IllegalArgumentException if purchaseAmount is negative
      */
     public int addLoyaltyPoints(double purchaseAmount) {
-        if (purchaseAmount < 0) {
+        if (purchaseAmount &lt; 0) {
             throw new IllegalArgumentException("Purchase amount cannot be negative");
         }
         
@@ -899,7 +1301,7 @@ public class Customer {
      * @throws IllegalArgumentException if insufficient points
      */
     public double redeemPoints(int pointsToRedeem) {
-        if (pointsToRedeem > this.loyaltyPoints) {
+        if (pointsToRedeem &gt; this.loyaltyPoints) {
             throw new IllegalArgumentException(
                 "Insufficient points. Available: " + this.loyaltyPoints
             );
@@ -924,9 +1326,9 @@ public class Customer {
      * @return The loyalty tier name
      */
     public String getLoyaltyTier() {
-        if (loyaltyPoints >= 10000) return "Platinum";
-        if (loyaltyPoints >= 5000) return "Gold";
-        if (loyaltyPoints >= 1000) return "Silver";
+        if (loyaltyPoints &gt;= 10000) return "Platinum";
+        if (loyaltyPoints &gt;= 5000) return "Gold";
+        if (loyaltyPoints &gt;= 1000) return "Silver";
         return "Bronze";
     }
     
@@ -971,25 +1373,26 @@ public class Customer {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program demonstrates professional code documentation using Javadoc
-                comments. Every class, method, and parameter is documented with its purpose, parameters, return values,
-                and exceptions. This is a fundamental software engineering practice that distinguishes professional code
-                from amateur code.
-            </div>
-        </div>
-
-        <!-- Program 9: Version Control Simulation -->
-        <div class="content-section">
-            <h2>Program 9: Version Control Concept</h2>
-            <p>Simulates version control (like Git) - an essential tool in software engineering for tracking changes.
-            </p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program demonstrates professional code documentation using
+                        Javadoc
+                        comments. Every class, method, and parameter is documented with its purpose, parameters, return
+                        values,
+                        and exceptions. This is a fundamental software engineering practice that distinguishes
+                        professional code
+                        from amateur code.
+                    </div>
+                </div>
+                <!-- Program 9: Version Control Simulation -->
+                <div class="content-section">
+                    <h2>Program 9: Version Control Concept</h2>
+                    <p>Simulates version control (like Git) - an essential tool in software engineering for tracking
+                        changes.
+                    </p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * Version Control System Simulation
  * Demonstrates the concept of version control (Git-like) in software engineering
  */
@@ -1023,11 +1426,11 @@ class Commit {
 }
 
 public class VersionControlSystem {
-    private List<Commit> commitHistory;
+    private List<commit> commitHistory;
     private String currentCode;
     
     public VersionControlSystem() {
-        this.commitHistory = new ArrayList<>();
+        this.commitHistory = new ArrayList&lt;&gt;();
         this.currentCode = "";
     }
     
@@ -1054,7 +1457,7 @@ public class VersionControlSystem {
     
     // Rollback to a previous version
     public void rollback(int commitNumber) {
-        if (commitNumber < 1 || commitNumber > commitHistory.size()) {
+        if (commitNumber &lt; 1 || commitNumber &gt; commitHistory.size()) {
             System.out.println("❌ Invalid commit number!");
             return;
         }
@@ -1114,25 +1517,25 @@ public class VersionControlSystem {
         System.out.println("✓ Industry Standard: Every software company uses version control!\n");
     }
 }
-</code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program simulates a version control system like Git. It demonstrates
-                committing changes, viewing history, and rolling back to previous versions. Version control is
-                absolutely essential in software engineering for team collaboration, tracking changes, and managing code
-                evolution.
-            </div>
-        </div>
-
-        <!-- Program 10: Code Review Process -->
-        <div class="content-section">
-            <h2>Program 10: Code Review Process</h2>
-            <p>Demonstrates the code review process - a critical quality assurance practice in software engineering.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+</commit></code></pre>
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program simulates a version control system like Git. It
+                        demonstrates
+                        committing changes, viewing history, and rolling back to previous versions. Version control is
+                        absolutely essential in software engineering for team collaboration, tracking changes, and
+                        managing code
+                        evolution.
+                    </div>
+                </div>
+                <!-- Program 10: Code Review Process -->
+                <div class="content-section">
+                    <h2>Program 10: Code Review Process</h2>
+                    <p>Demonstrates the code review process - a critical quality assurance practice in software
+                        engineering.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * Code Review System
  * Demonstrates the code review process used in professional software engineering
  */
@@ -1143,13 +1546,13 @@ class CodeChange {
     String fileName;
     String author;
     String description;
-    List<String> codeLines;
+    List<string> codeLines;
     
     public CodeChange(String fileName, String author, String description) {
         this.fileName = fileName;
         this.author = author;
         this.description = description;
-        this.codeLines = new ArrayList<>();
+        this.codeLines = new ArrayList&lt;&gt;();
     }
     
     public void addCodeLine(String line) {
@@ -1171,12 +1574,12 @@ class ReviewComment {
 
 class CodeReview {
     CodeChange codeChange;
-    List<ReviewComment> comments;
+    List<reviewcomment> comments;
     String status; // "PENDING", "APPROVED", "CHANGES_REQUESTED"
     
     public CodeReview(CodeChange codeChange) {
         this.codeChange = codeChange;
-        this.comments = new ArrayList<>();
+        this.comments = new ArrayList&lt;&gt;();
         this.status = "PENDING";
     }
     
@@ -1190,7 +1593,7 @@ class CodeReview {
         
         // Check if there are critical issues
         boolean hasCritical = comments.stream()
-            .anyMatch(c -> c.severity.equals("CRITICAL"));
+            .anyMatch(c -&gt; c.severity.equals("CRITICAL"));
         
         if (!hasCritical) {
             status = "APPROVED";
@@ -1301,33 +1704,33 @@ public class CodeReviewProcess {
         System.out.println("✓ Collective Ownership: Team owns the code, not individuals");
         
         System.out.println("\n=== CODE REVIEW BEST PRACTICES ===");
-        System.out.println("• Review small changes (< 400 lines)");
+        System.out.println("• Review small changes (&lt; 400 lines)");
         System.out.println("• Be constructive, not critical");
         System.out.println("• Explain WHY, not just WHAT to change");
         System.out.println("• Use automated tools (linters, static analysis)");
         System.out.println("• Review within 24 hours\n");
     }
 }
-</code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program simulates the code review process used in professional
-                software development. Code reviews are essential for maintaining quality, catching bugs early, sharing
-                knowledge, and ensuring coding standards. This demonstrates that software engineering is a
-                collaborative, quality-focused discipline.
-            </div>
-        </div>
-
-        <!-- Program 11: Testing Pyramid -->
-        <div class="content-section">
-            <h2>Program 11: Software Testing Levels</h2>
-            <p>Demonstrates different levels of testing in software engineering: Unit, Integration, and System testing.
-            </p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+</reviewcomment></string></code></pre>
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program simulates the code review process used in
+                        professional
+                        software development. Code reviews are essential for maintaining quality, catching bugs early,
+                        sharing
+                        knowledge, and ensuring coding standards. This demonstrates that software engineering is a
+                        collaborative, quality-focused discipline.
+                    </div>
+                </div>
+                <!-- Program 11: Testing Pyramid -->
+                <div class="content-section">
+                    <h2>Program 11: Software Testing Levels</h2>
+                    <p>Demonstrates different levels of testing in software engineering: Unit, Integration, and System
+                        testing.
+                    </p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * Testing Levels Demonstration
  * Shows Unit Testing, Integration Testing, and System Testing
  */
@@ -1498,33 +1901,36 @@ public class TestingLevels {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program demonstrates the three main levels of software testing: Unit
-                Testing (testing individual methods), Integration Testing (testing how components work together), and
-                System Testing (testing the entire application). Testing is a fundamental part of software engineering
-                that ensures quality and prevents bugs from reaching production.
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program demonstrates the three main levels of software
+                        testing: Unit
+                        Testing (testing individual methods), Integration Testing (testing how components work
+                        together), and
+                        System Testing (testing the entire application). Testing is a fundamental part of software
+                        engineering
+                        that ensures quality and prevents bugs from reaching production.
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/software-engineering.html">
+                            📚 Back to Theory
+                        </a>
+                        <a class="md-button md-button--primary" href="../mcq/software-engineering.html">
+                            ✅ Test Your Knowledge
+                        </a>
+                        <a class="md-button md-button--secondary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/software-engineering.html" class="btn btn-primary">
-                    📚 Back to Theory
-                </a>
-                <a href="../mcq/software-engineering.html" class="btn btn-success">
-                    ✅ Test Your Knowledge
-                </a>
-                <a href="../index.html" class="btn btn-secondary">
-                    🏠 Back to Home
-                </a>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

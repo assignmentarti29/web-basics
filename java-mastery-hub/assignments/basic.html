@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Basic Java Assignments - Java Mastery Hub</title>
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Assignments & Practice</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">⬅ Back to Home</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="overview.html">Overview</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link md-nav__link--active" href="basic.html">Basic
+                            Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="intermediate.html">Intermediate Programs</a>
+                    </li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="advanced.html">Advanced Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="tricky.html">Tricky Questions</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="real-world.html">Real World Scenarios</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <h1>🟢 Basic Java Assignments (1-20)</h1>
+                <p>Practice these basic programs to strengthen your foundation in Variables, Data Types, Operators, and
+                    Control Flow.</p>
+
+                <hr>
+
+                <!-- Q1 -->
+                <div class="assignment">
+                    <h4>Q1. Write a program to print "Hello, World!" to the console.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Hello, World!
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> The standard way to output text to the console in Java.</p>
+                    </details>
+                </div>
+
+                <!-- Q2 -->
+                <div class="assignment">
+                    <h4>Q2. Write a program to add two integers and print the result.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10 20
+                    // Sample Output:
+                    // Sum: 30
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int a = 5;
+int b = 10;
+int sum = a + b;
+System.out.println("Sum: " + sum);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses the <code>+</code> operator to add two integer variables.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- Q3 -->
+                <div class="assignment">
+                    <h4>Q3. Write a program to check whether a number is even or odd.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10
+                    // Sample Output:
+                    // Even
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int n = 10;
+if (n % 2 == 0) {
+    System.out.println("Even");
+} else {
+    System.out.println("Odd");
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses the modulo operator <code>%</code> to check divisibility
+                            by 2.</p>
+                    </details>
+                </div>
+
+                <!-- Q4 -->
+                <div class="assignment">
+                    <h4>Q4. Write a program to find the largest of three numbers.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10 20 15
+                    // Sample Output:
+                    // 20 is largest
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int a = 10, b = 20, c = 15;
+if (a >= b && a >= c) {
+    System.out.println(a + " is largest");
+} else if (b >= a && b >= c) {
+    System.out.println(b + " is largest");
+} else {
+    System.out.println(c + " is largest");
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses logical AND <code>&&</code> to compare multiple
+                            conditions.</p>
+                    </details>
+                </div>
+
+                <!-- Q5 -->
+                <div class="assignment">
+                    <h4>Q5. Write a program to swap two numbers using a third variable.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // a=5, b=10
+                    // Sample Output:
+                    // a: 10, b: 5
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int a = 5, b = 10;
+int temp = a;
+a = b;
+b = temp;
+System.out.println("a: " + a + ", b: " + b);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses a temporary variable to hold one value during the swap.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- Q6 -->
+                <div class="assignment">
+                    <h4>Q6. Write a program to swap two numbers WITHOUT using a third variable.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // a=5, b=10
+                    // Sample Output:
+                    // a: 10, b: 5
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int a = 5, b = 10;
+a = a + b; // 15
+b = a - b; // 5
+a = a - b; // 10
+System.out.println("a: " + a + ", b: " + b);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses arithmetic operations to swap values.</p>
+                    </details>
+                </div>
+
+                <!-- Q7 -->
+                <div class="assignment">
+                    <h4>Q7. Write a program to check if a year is a leap year.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 2024
+                    // Sample Output:
+                    // Leap Year
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int year = 2024;
+boolean isLeap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+System.out.println(isLeap ? "Leap Year" : "Not a Leap Year");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> A year is a leap year if divisible by 4 but not 100, OR
+                            divisible by 400.</p>
+                    </details>
+                </div>
+
+                <!-- Q8 -->
+                <div class="assignment">
+                    <h4>Q8. Write a program to print the multiplication table of a given number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 5
+                    // Sample Output:
+                    // 5 * 1 = 5
+                    // ...
+                    // 5 * 10 = 50
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int n = 5;
+for (int i = 1; i <= 10; i++) {
+    System.out.println(n + " * " + i + " = " + (n * i));
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses a <code>for</code> loop to iterate from 1 to 10.</p>
+                    </details>
+                </div>
+
+                <!-- Q9 -->
+                <div class="assignment">
+                    <h4>Q9. Write a program to calculate the factorial of a number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 5
+                    // Sample Output:
+                    // Factorial: 120
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int n = 5;
+long factorial = 1;
+for (int i = 1; i <= n; i++) {
+    factorial *= i;
+}
+System.out.println("Factorial: " + factorial);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Multiplies numbers from 1 to n. Uses <code>long</code> to
+                            prevent overflow for larger numbers.</p>
+                    </details>
+                </div>
+
+                <!-- Q10 -->
+                <div class="assignment">
+                    <h4>Q10. Write a program to reverse a number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 12345
+                    // Sample Output:
+                    // Reversed: 54321
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 12345;
+int reversed = 0;
+while (num != 0) {
+    int digit = num % 10;
+    reversed = reversed * 10 + digit;
+    num /= 10;
+}
+System.out.println("Reversed: " + reversed);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Extracts last digit using modulo and builds the reversed
+                            number.</p>
+                    </details>
+                </div>
+
+                <!-- Q11 -->
+                <div class="assignment">
+                    <h4>Q11. Write a program to check if a number is a Palindrome.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 121
+                    // Sample Output:
+                    // Palindrome
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 121;
+int original = num;
+int reversed = 0;
+while (num != 0) {
+    int digit = num % 10;
+    reversed = reversed * 10 + digit;
+    num /= 10;
+}
+System.out.println(original == reversed ? "Palindrome" : "Not Palindrome");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Reverses the number and compares it with the original.</p>
+                    </details>
+                </div>
+
+                <!-- Q12 -->
+                <div class="assignment">
+                    <h4>Q12. Write a program to check if a number is Prime.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 29
+                    // Sample Output:
+                    // Prime
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 29;
+boolean isPrime = true;
+for (int i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i == 0) {
+        isPrime = false;
+        break;
+    }
+}
+System.out.println(isPrime ? "Prime" : "Not Prime");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Checks divisibility from 2 up to square root of the number.</p>
+                    </details>
+                </div>
+
+                <!-- Q13 -->
+                <div class="assignment">
+                    <h4>Q13. Write a program to print the Fibonacci series up to N terms.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10
+                    // Sample Output:
+                    // Fibonacci Series: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int n = 10, t1 = 0, t2 = 1;
+System.out.print("Fibonacci Series: " + t1 + ", " + t2);
+for (int i = 3; i <= n; ++i) {
+    int sum = t1 + t2;
+    System.out.print(", " + sum);
+    t1 = t2;
+    t2 = sum;
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Each number is the sum of the two preceding ones.</p>
+                    </details>
+                </div>
+
+                <!-- Q14 -->
+                <div class="assignment">
+                    <h4>Q14. Write a program to calculate the sum of digits of a number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 1234
+                    // Sample Output:
+                    // Sum of digits: 10
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 1234;
+int sum = 0;
+while (num > 0) {
+    sum += num % 10;
+    num /= 10;
+}
+System.out.println("Sum of digits: " + sum);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Extracts digits using modulo and adds them to sum.</p>
+                    </details>
+                </div>
+
+                <!-- Q15 -->
+                <div class="assignment">
+                    <h4>Q15. Write a program to check if a number is an Armstrong number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 153
+                    // Sample Output:
+                    // Armstrong Number
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 153, original = num, result = 0;
+while (original != 0) {
+    int remainder = original % 10;
+    result += Math.pow(remainder, 3);
+    original /= 10;
+}
+System.out.println(result == num ? "Armstrong Number" : "Not Armstrong");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Sum of cubes of digits equals the number itself (for 3-digit
+                            numbers).</p>
+                    </details>
+                </div>
+
+                <!-- Q16 -->
+                <div class="assignment">
+                    <h4>Q16. Write a program to print a pattern of stars (Right Triangle).</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Rows: 5
+                    // Sample Output:
+                    // *
+                    // * *
+                    // * * *
+                    // * * * *
+                    // * * * * *
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int rows = 5;
+for (int i = 1; i <= rows; ++i) {
+    for (int j = 1; j <= i; ++j) {
+        System.out.print("* ");
+    }
+    System.out.println();
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Nested loops to control rows and columns of stars.</p>
+                    </details>
+                </div>
+
+                <!-- Q17 -->
+                <div class="assignment">
+                    <h4>Q17. Write a program to print a pattern of stars (Pyramid).</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Rows: 5
+                    // Sample Output:
+                    // *
+                    // ***
+                    // *****
+                    // *******
+                    // *********
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int rows = 5;
+for (int i = 1; i <= rows; i++) {
+    for (int j = rows; j > i; j--) {
+        System.out.print(" ");
+    }
+    for (int k = 1; k <= (2 * i - 1); k++) {
+        System.out.print("*");
+    }
+    System.out.println();
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Manages spaces and stars to form a centered pyramid.</p>
+                    </details>
+                </div>
+
+                <!-- Q18 -->
+                <div class="assignment">
+                    <h4>Q18. Write a program to convert Celsius to Fahrenheit.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 25
+                    // Sample Output:
+                    // 25.0C = 77.0F
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+double celsius = 25;
+double fahrenheit = (celsius * 9 / 5) + 32;
+System.out.println(celsius + "C = " + fahrenheit + "F");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses the standard conversion formula.</p>
+                    </details>
+                </div>
+
+                <!-- Q19 -->
+                <div class="assignment">
+                    <h4>Q19. Write a program to calculate Simple Interest.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // P=1000, R=5, T=2
+                    // Sample Output:
+                    // Simple Interest: 100.0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+double principal = 1000, rate = 5, time = 2;
+double si = (principal * rate * time) / 100;
+System.out.println("Simple Interest: " + si);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Formula: SI = (P * R * T) / 100.</p>
+                    </details>
+                </div>
+
+                <!-- Q20 -->
+                <div class="assignment">
+                    <h4>Q20. Write a program to find the ASCII value of a character.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // A
+                    // Sample Output:
+                    // ASCII value of A is: 65
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+char ch = 'A';
+int ascii = ch;
+System.out.println("ASCII value of " + ch + " is: " + ascii);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Casting a char to an int reveals its ASCII value.</p>
+                    </details>
+                </div>
+
+                <!-- Q21 -->
+                <div class="assignment">
+                    <h4>Q21. Write a program to calculate the area of a circle.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Radius: 7.5
+                    // Sample Output:
+                    // Area of Circle: 176.71458676442586
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+double radius = 7.5;
+double area = Math.PI * radius * radius;
+System.out.println("Area of Circle: " + area);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Formula: Area = π * r * r. Uses <code>Math.PI</code> constant.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- Q22 -->
+                <div class="assignment">
+                    <h4>Q22. Write a program to calculate the perimeter of a rectangle.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Length: 10, Width: 5
+                    // Sample Output:
+                    // Perimeter of Rectangle: 30.0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+double length = 10, width = 5;
+double perimeter = 2 * (length + width);
+System.out.println("Perimeter of Rectangle: " + perimeter);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Formula: Perimeter = 2 * (length + width).</p>
+                    </details>
+                </div>
+
+                <!-- Q23 -->
+                <div class="assignment">
+                    <h4>Q23. Write a program to calculate the power of a number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Base: 2, Exponent: 3
+                    // Sample Output:
+                    // 2^3 = 8.0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int base = 2, exponent = 3;
+double result = Math.pow(base, exponent);
+System.out.println(base + "^" + exponent + " = " + result);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses <code>Math.pow()</code> method.</p>
+                    </details>
+                </div>
+
+                <!-- Q24 -->
+                <div class="assignment">
+                    <h4>Q24. Write a program to calculate the average of 5 numbers.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10 20 30 40 50
+                    // Sample Output:
+                    // Average: 30.0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int n1 = 10, n2 = 20, n3 = 30, n4 = 40, n5 = 50;
+double average = (n1 + n2 + n3 + n4 + n5) / 5.0;
+System.out.println("Average: " + average);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Sum of elements divided by count.</p>
+                    </details>
+                </div>
+
+                <!-- Q25 -->
+                <div class="assignment">
+                    <h4>Q25. Write a program to check if a character is a vowel or consonant.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // e
+                    // Sample Output:
+                    // e is a Vowel
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+char ch = 'e';
+if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ||
+    ch == 'A' || ch == 'E' || ch == 'I' || ch == 'O' || ch == 'U') {
+    System.out.println(ch + " is a Vowel");
+} else {
+    System.out.println(ch + " is a Consonant");
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Checks against all vowel characters (both cases).</p>
+                    </details>
+                </div>
+
+                <!-- Q26 -->
+                <div class="assignment">
+                    <h4>Q26. Write a program to count the number of digits in an integer.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 123456
+                    // Sample Output:
+                    // Number of digits: 6
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 123456;
+int count = 0;
+while (num != 0) {
+    num /= 10;
+    count++;
+}
+System.out.println("Number of digits: " + count);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Repeatedly divides by 10 until number becomes 0.</p>
+                    </details>
+                </div>
+
+                <!-- Q27 -->
+                <div class="assignment">
+                    <h4>Q27. Write a program to calculate Compound Interest.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // P=1000, R=5, T=2
+                    // Sample Output:
+                    // Compound Interest: 102.5
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+double principal = 1000, rate = 5, time = 2, number = 1;
+double ci = principal * Math.pow((1 + rate/100), time) - principal;
+System.out.println("Compound Interest: " + ci);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Formula: A = P(1 + r/n)^(nt).</p>
+                    </details>
+                </div>
+
+                <!-- Q28 -->
+                <div class="assignment">
+                    <h4>Q28. Write a program to check if a number is a Perfect Number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 28
+                    // Sample Output:
+                    // Perfect Number
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 28, sum = 0;
+for (int i = 1; i < num; i++) {
+    if (num % i == 0) {
+        sum += i;
+    }
+}
+System.out.println(sum == num ? "Perfect Number" : "Not Perfect");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> A perfect number is a positive integer that is equal to the sum
+                            of its proper divisors.</p>
+                    </details>
+                </div>
+
+                <!-- Q29 -->
+                <div class="assignment">
+                    <h4>Q29. Write a program to find the factors of a number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 60
+                    // Sample Output:
+                    // Factors of 60: 1 2 3 4 5 6 10 12 15 20 30 60
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 60;
+System.out.print("Factors of " + num + ": ");
+for (int i = 1; i <= num; ++i) {
+    if (num % i == 0) {
+        System.out.print(i + " ");
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Iterates from 1 to num and checks for divisibility.</p>
+                    </details>
+                </div>
+
+                <!-- Q30 -->
+                <div class="assignment">
+                    <h4>Q30. Write a program to make a simple calculator using switch case.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10 + 5
+                    // Sample Output:
+                    // Result: 15.0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+char operator = '+';
+double num1 = 10, num2 = 5, result;
+switch (operator) {
+    case '+': result = num1 + num2; break;
+    case '-': result = num1 - num2; break;
+    case '*': result = num1 * num2; break;
+    case '/': result = num1 / num2; break;
+    default: System.out.println("Invalid operator!"); return;
+}
+System.out.println("Result: " + result);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses switch statement to perform operation based on operator
+                            char.</p>
+                    </details>
+                </div>
+
+                <!-- Q31 -->
+                <div class="assignment">
+                    <h4>Q31. Write a program to print the Fibonacci series using recursion.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10
+                    // Sample Output:
+                    // 0 1 1 2 3 5 8 13 21 34
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+public class Fibonacci {
+    public static int fib(int n) {
+        if (n <= 1) return n;
+        return fib(n - 1) + fib(n - 2);
+    }
+    public static void main(String[] args) {
+        int n = 10;
+        for (int i = 0; i < n; i++) {
+            System.out.print(fib(i) + " ");
+        }
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Recursive function calls itself to calculate Fibonacci numbers.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- Q32 -->
+                <div class="assignment">
+                    <h4>Q32. Write a program to calculate factorial using recursion.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 5
+                    // Sample Output:
+                    // 120
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+public class Factorial {
+    public static long factorial(int n) {
+        if (n == 0) return 1;
+        return n * factorial(n - 1);
+    }
+    public static void main(String[] args) {
+        System.out.println(factorial(5));
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Recursive function calls itself to calculate factorial.</p>
+                    </details>
+                </div>
+
+                <!-- Q33 -->
+                <div class="assignment">
+                    <h4>Q33. Write a program to find the GCD of two numbers.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 81 153
+                    // Sample Output:
+                    // GCD: 9
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int n1 = 81, n2 = 153;
+while(n1 != n2) {
+    if(n1 > n2) n1 -= n2;
+    else n2 -= n1;
+}
+System.out.println("GCD: " + n1);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses Euclidean algorithm by subtraction.</p>
+                    </details>
+                </div>
+
+                <!-- Q34 -->
+                <div class="assignment">
+                    <h4>Q34. Write a program to find the LCM of two numbers.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 72 120
+                    // Sample Output:
+                    // LCM: 360
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int n1 = 72, n2 = 120, gcd = 1;
+for(int i = 1; i <= n1 && i <= n2; ++i) {
+    if(n1 % i == 0 && n2 % i == 0) gcd = i;
+}
+int lcm = (n1 * n2) / gcd;
+System.out.println("LCM: " + lcm);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Formula: LCM = (n1 * n2) / GCD.</p>
+                    </details>
+                </div>
+
+                <!-- Q35 -->
+                <div class="assignment">
+                    <h4>Q35. Write a program to display alphabets (A-Z) using loop.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // A B C ... Z
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+for(char c = 'A'; c <= 'Z'; ++c)
+    System.out.print(c + " ");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Iterates through char values from 'A' to 'Z'.</p>
+                    </details>
+                </div>
+
+                <!-- Q36 -->
+                <div class="assignment">
+                    <h4>Q36. Write a program to count number of digits in a number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 123456
+                    // Sample Output:
+                    // Number of digits: 6
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int count = 0, num = 123456;
+while (num != 0) {
+    num /= 10;
+    ++count;
+}
+System.out.println("Number of digits: " + count);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Divide number by 10 repeatedly until 0.</p>
+                    </details>
+                </div>
+
+                <!-- Q37 -->
+                <div class="assignment">
+                    <h4>Q37. Write a program to reverse a String.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Hello
+                    // Sample Output:
+                    // Reversed: olleH
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String str = "Hello", reversed = "";
+for(int i = str.length()-1; i >= 0; i--) {
+    reversed += str.charAt(i);
+}
+System.out.println("Reversed: " + reversed);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Iterate string backwards and append characters.</p>
+                    </details>
+                </div>
+
+                <!-- Q38 -->
+                <div class="assignment">
+                    <h4>Q38. Write a program to check if a number is Positive or Negative.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 12.3
+                    // Sample Output:
+                    // 12.3 is a positive number.
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+double number = 12.3;
+if (number < 0.0)
+    System.out.println(number + " is a negative number.");
+else if ( number > 0.0)
+    System.out.println(number + " is a positive number.");
+else
+    System.out.println(number + " is 0.");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Simple if-else check against 0.</p>
+                    </details>
+                </div>
+
+                <!-- Q39 -->
+                <div class="assignment">
+                    <h4>Q39. Write a program to check if a character is Alphabet or not.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // *
+                    // Sample Output:
+                    // * is not an alphabet.
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+char c = '*';
+if( (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+    System.out.println(c + " is an alphabet.");
+else
+    System.out.println(c + " is not an alphabet.");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Checks ASCII ranges for a-z and A-Z.</p>
+                    </details>
+                </div>
+
+                <!-- Q40 -->
+                <div class="assignment">
+                    <h4>Q40. Write a program to calculate sum of natural numbers.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 100
+                    // Sample Output:
+                    // Sum = 5050
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 100, sum = 0;
+for(int i = 1; i <= num; ++i) {
+    sum += i;
+}
+System.out.println("Sum = " + sum);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Loop from 1 to 100 adding to sum.</p>
+                    </details>
+                </div>
+
+                <!-- Q41 -->
+                <div class="assignment">
+                    <h4>Q41. Write a program to generate multiplication table.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 5
+                    // Sample Output:
+                    // 5 * 1 = 5
+                    // ...
+                    // 5 * 10 = 50
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 5;
+for(int i = 1; i <= 10; ++i) {
+    System.out.printf("%d * %d = %d \n", num, i, num * i);
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Standard for loop for multiplication table.</p>
+                    </details>
+                </div>
+
+                <!-- Q42 -->
+                <div class="assignment">
+                    <h4>Q42. Write a program to display Fibonacci series using while loop.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10
+                    // Sample Output:
+                    // First 10 terms: 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 +
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int i = 1, n = 10, t1 = 0, t2 = 1;
+System.out.print("First " + n + " terms: ");
+while (i <= n) {
+    System.out.print(t1 + " + ");
+    int sum = t1 + t2;
+    t1 = t2;
+    t2 = sum;
+    i++;
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Fibonacci using while loop instead of for loop.</p>
+                    </details>
+                </div>
+
+                <!-- Q43 -->
+                <div class="assignment">
+                    <h4>Q43. Write a program to find GCD using recursion.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 81 153
+                    // Sample Output:
+                    // 9
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+public static int gcd(int n1, int n2) {
+    if (n2 != 0)
+        return gcd(n2, n1 % n2);
+    else
+        return n1;
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Recursive implementation of Euclidean algorithm.</p>
+                    </details>
+                </div>
+
+                <!-- Q44 -->
+                <div class="assignment">
+                    <h4>Q44. Write a program to convert Binary to Decimal.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 110110111
+                    // Sample Output:
+                    // Decimal: 439
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+long num = 110110111;
+int decimal = 0, i = 0;
+long remainder;
+while (num != 0) {
+    remainder = num % 10;
+    num /= 10;
+    decimal += remainder * Math.pow(2, i);
+    ++i;
+}
+System.out.println("Decimal: " + decimal);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Multiplies each digit by 2 power position.</p>
+                    </details>
+                </div>
+
+                <!-- Q45 -->
+                <div class="assignment">
+                    <h4>Q45. Write a program to convert Decimal to Binary.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 19
+                    // Sample Output:
+                    // Binary: 10011
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int n = 19;
+long binary = 0;
+int remainder, i = 1;
+while (n!=0) {
+    remainder = n % 2;
+    n /= 2;
+    binary += remainder * i;
+    i *= 10;
+}
+System.out.println("Binary: " + binary);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Repeated division by 2.</p>
+                    </details>
+                </div>
+
+                <!-- Q46 -->
+                <div class="assignment">
+                    <h4>Q46. Write a program to calculate standard deviation.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 1 2 3 4 5 6 7 8 9 10
+                    // Sample Output:
+                    // SD: 2.8722813232690143
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+double[] numArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+double sum = 0.0, standardDeviation = 0.0;
+int length = numArray.length;
+for(double num : numArray) {
+    sum += num;
+}
+double mean = sum/length;
+for(double num: numArray) {
+    standardDeviation += Math.pow(num - mean, 2);
+}
+System.out.println("SD: " + Math.sqrt(standardDeviation/length));
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Calculates mean, then variance, then square root for SD.</p>
+                    </details>
+                </div>
+
+                <!-- Q47 -->
+                <div class="assignment">
+                    <h4>Q47. Write a program to print Pascal's Triangle.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Rows: 6
+                    // Sample Output:
+                    // (Triangle pattern)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int rows = 6, coef = 1;
+for(int i = 0; i < rows; i++) {
+    for(int space = 1; space < rows - i; ++space) {
+        System.out.print("  ");
+    }
+    for(int j = 0; j <= i; j++) {
+        if (j == 0 || i == 0)
+            coef = 1;
+        else
+            coef = coef * (i - j + 1) / j;
+        System.out.printf("%4d", coef);
+    }
+    System.out.println();
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses binomial coefficient formula.</p>
+                    </details>
+                </div>
+
+                <!-- Q48 -->
+                <div class="assignment">
+                    <h4>Q48. Write a program to print Floyd's Triangle.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Rows: 4
+                    // Sample Output:
+                    // 1
+                    // 2 3
+                    // 4 5 6
+                    // 7 8 9 10
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int rows = 4, number = 1;
+for(int i = 1; i <= rows; i++) {
+    for(int j = 1; j <= i; j++) {
+        System.out.print(number + " ");
+        number++;
+    }
+    System.out.println();
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Prints consecutive numbers in a triangle shape.</p>
+                    </details>
+                </div>
+
+                <!-- Q49 -->
+                <div class="assignment">
+                    <h4>Q49. Write a program to check if a number is Neon Number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 9
+                    // Sample Output:
+                    // Neon Number
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int n = 9;
+int square = n * n;
+int sum = 0;
+while(square > 0) {
+    sum += square % 10;
+    square /= 10;
+}
+if(sum == n) System.out.println("Neon Number");
+else System.out.println("Not Neon Number");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> A neon number is one where sum of digits of square of the
+                            number is equal to the number itself (e.g., 9 -> 81 -> 8+1=9).</p>
+                    </details>
+                </div>
+
+                <!-- Q50 -->
+                <div class="assignment">
+                    <h4>Q50. Write a program to check if a number is Spy Number.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 1124
+                    // Sample Output:
+                    // Spy Number
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int num = 1124;
+int sum = 0, product = 1;
+int temp = num;
+while(temp > 0) {
+    int d = temp % 10;
+    sum += d;
+    product *= d;
+    temp /= 10;
+}
+if(sum == product) System.out.println("Spy Number");
+else System.out.println("Not Spy Number");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> A spy number is one where sum of digits equals product of
+                            digits (e.g., 1124 -> 1+1+2+4=8, 1*1*2*4=8).</p>
+                    </details>
+                </div>
+
+                <div class="content-section text-center" style="margin-top: 3rem;">
+                    <h3>🎉 Basic Section Completed!</h3>
+                    <p>Great job! You have completed 50 basic programs. Now move to the Intermediate section.</p>
+                    <a class="md-button md-button--primary" href="intermediate.html">Go to Intermediate ➡</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>

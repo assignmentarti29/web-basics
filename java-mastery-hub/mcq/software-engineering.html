@@ -1,512 +1,991 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Software Engineering Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Software Engineering - Knowledge Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>Software Engineering</span>
-            </div>
-        </div>
-
-        <!-- Quiz Container -->
-        <div class="quiz-container">
-            <!-- Quiz Header -->
-            <div class="quiz-header">
-                <div class="quiz-progress">Question 0/22</div>
-                <div class="quiz-score">Score: 0/22 (0%)</div>
-            </div>
-
-            <!-- Question 1 -->
-            <div class="question" data-question-id="q1"
-                data-correct-answer="Systematic, disciplined approach to software development">
-                <p class="question-text">Q1. What is Software Engineering?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Just writing code">Just writing code</button>
-                    <button class="option-btn"
-                        data-answer="Systematic, disciplined approach to software development">Systematic, disciplined
-                        approach to software development</button>
-                    <button class="option-btn" data-answer="Only testing software">Only testing software</button>
-                    <button class="option-btn" data-answer="Designing user interfaces">Designing user
-                        interfaces</button>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Software Engineering - Knowledge Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>Software Engineering</li>
+                    </ul>
                 </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Systematic, disciplined approach to software
-                        development</div>
-                    <p>Software Engineering is a systematic, disciplined, and quantifiable approach to the development,
-                        operation, and maintenance of software. It's not just coding - it encompasses the entire
-                        software development lifecycle including planning, design, implementation, testing, deployment,
-                        and maintenance.</p>
-                </div>
-            </div>
-
-            <!-- Question 2 -->
-            <div class="question" data-question-id="q2" data-correct-answer="Planning & Requirement Analysis">
-                <p class="question-text">Q2. What is the first phase of the Software Development Life Cycle (SDLC)?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Testing">Testing</button>
-                    <button class="option-btn" data-answer="Planning & Requirement Analysis">Planning & Requirement
-                        Analysis</button>
-                    <button class="option-btn" data-answer="Implementation">Implementation</button>
-                    <button class="option-btn" data-answer="Deployment">Deployment</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Planning & Requirement Analysis</div>
-                    <p>The SDLC starts with Planning & Requirement Analysis where we gather and analyze what the
-                        software needs to do. This phase produces the Software Requirements Specification (SRS)
-                        document. You can't design or build software without first understanding what it should do!</p>
-                </div>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="question" data-question-id="q3" data-correct-answer="6">
-                <p class="question-text">Q3. How many phases are there in the traditional SDLC?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="4">4</button>
-                    <button class="option-btn" data-answer="5">5</button>
-                    <button class="option-btn" data-answer="6">6</button>
-                    <button class="option-btn" data-answer="7">7</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: 6</div>
-                    <p>The traditional SDLC has 6 phases: (1) Planning & Requirement Analysis, (2) System Design, (3)
-                        Implementation, (4) Testing, (5) Deployment, and (6) Maintenance. Each phase has specific
-                        deliverables and activities.</p>
-                </div>
-            </div>
-
-            <!-- Question 4 -->
-            <div class="question" data-question-id="q4" data-correct-answer="Waterfall Model">
-                <p class="question-text">Q4. Which SDLC model follows a strictly sequential, linear approach where you
-                    cannot go back to previous phases?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Agile Model">Agile Model</button>
-                    <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
-                    <button class="option-btn" data-answer="Spiral Model">Spiral Model</button>
-                    <button class="option-btn" data-answer="Prototype Model">Prototype Model</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Waterfall Model</div>
-                    <p>The Waterfall Model is characterized by its sequential, linear approach. Once a phase is
-                        completed, you cannot go back. This rigidity makes it suitable for projects with well-defined,
-                        unchanging requirements but problematic for projects where requirements might evolve.</p>
-                </div>
-            </div>
-
-            <!-- Question 5 -->
-            <div class="question" data-question-id="q5" data-correct-answer="Agile Model">
-                <p class="question-text">Q5. Which SDLC model is best suited for a startup building a mobile app with
-                    evolving requirements?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
-                    <button class="option-btn" data-answer="V-Model">V-Model</button>
-                    <button class="option-btn" data-answer="Agile Model">Agile Model</button>
-                    <button class="option-btn" data-answer="None of the above">None of the above</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Agile Model</div>
-                    <p>Agile is perfect for startups because it embraces changing requirements, delivers working
-                        software in short iterations (sprints), involves continuous customer feedback, and allows rapid
-                        adaptation to market needs. This flexibility is crucial when building innovative products.</p>
-                </div>
-            </div>
-
-            <!-- Question 6 -->
-            <div class="question" data-question-id="q6" data-correct-answer="2-4 weeks">
-                <p class="question-text">Q6. In Agile methodology, how long is a typical sprint?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="1 day">1 day</button>
-                    <button class="option-btn" data-answer="2-4 weeks">2-4 weeks</button>
-                    <button class="option-btn" data-answer="3 months">3 months</button>
-                    <button class="option-btn" data-answer="6 months">6 months</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: 2-4 weeks</div>
-                    <p>Agile sprints typically last 2-4 weeks. This timeframe is short enough to maintain focus and
-                        adapt quickly, but long enough to deliver meaningful, working software. At the end of each
-                        sprint, the team delivers a potentially shippable product increment.</p>
-                </div>
-            </div>
-
-            <!-- Question 7 -->
-            <div class="question" data-question-id="q7" data-correct-answer="V-Model">
-                <p class="question-text">Q7. Which SDLC model emphasizes testing at every development phase with
-                    corresponding test phases?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
-                    <button class="option-btn" data-answer="V-Model">V-Model</button>
-                    <button class="option-btn" data-answer="Prototype Model">Prototype Model</button>
-                    <button class="option-btn" data-answer="Agile Model">Agile Model</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: V-Model</div>
-                    <p>The V-Model (Verification and Validation Model) pairs each development phase with a corresponding
-                        testing phase. For example, Requirements phase corresponds to Acceptance Testing, Design
-                        corresponds to System Testing, etc. This ensures quality is built-in from the start.</p>
-                </div>
-            </div>
-
-            <!-- Question 8 -->
-            <div class="question" data-question-id="q8" data-correct-answer="Spiral Model">
-                <p class="question-text">Q8. Which SDLC model is best for large, complex projects with high risk and
-                    emphasizes risk analysis?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
-                    <button class="option-btn" data-answer="Agile Model">Agile Model</button>
-                    <button class="option-btn" data-answer="Spiral Model">Spiral Model</button>
-                    <button class="option-btn" data-answer="Prototype Model">Prototype Model</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Spiral Model</div>
-                    <p>The Spiral Model combines iterative development with systematic risk analysis. It's ideal for
-                        large, complex projects like operating systems or aerospace systems where identifying and
-                        mitigating risks early is critical. Each spiral includes planning, risk analysis, engineering,
-                        and evaluation phases.</p>
-                </div>
-            </div>
-
-            <!-- Question 9 -->
-            <div class="question" data-question-id="q9" data-correct-answer="Prototype Model">
-                <p class="question-text">Q9. Which model involves building a working model to understand requirements
-                    better before actual development?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
-                    <button class="option-btn" data-answer="Prototype Model">Prototype Model</button>
-                    <button class="option-btn" data-answer="V-Model">V-Model</button>
-                    <button class="option-btn" data-answer="Spiral Model">Spiral Model</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Prototype Model</div>
-                    <p>The Prototype Model involves creating a quick, working prototype to help stakeholders visualize
-                        and understand the system better. This is especially useful when requirements are unclear or for
-                        UI/UX-heavy applications. The prototype helps gather better requirements before full
-                        development.</p>
-                </div>
-            </div>
-
-            <!-- Question 10 -->
-            <div class="question" data-question-id="q10"
-                data-correct-answer="All components in one codebase, tightly coupled">
-                <p class="question-text">Q10. What characterizes a Monolithic Architecture?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="All components in one codebase, tightly coupled">All
-                        components in one codebase, tightly coupled</button>
-                    <button class="option-btn" data-answer="Independent services communicating via APIs">Independent
-                        services communicating via APIs</button>
-                    <button class="option-btn" data-answer="Organized in separate layers">Organized in separate
-                        layers</button>
-                    <button class="option-btn" data-answer="Distributed across multiple servers">Distributed across
-                        multiple servers</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: All components in one codebase, tightly coupled
+                <!-- Quiz Container -->
+                <div class="quiz-container">
+                    <!-- Quiz Header -->
+                    <div class="quiz-header">
+                        <div class="quiz-progress">Question 0/22</div>
+                        <div class="quiz-score">Score: 0/22 (0%)</div>
                     </div>
-                    <p>Monolithic Architecture means all functionality (UI, business logic, data access) is in a single,
-                        unified codebase and deployed as one unit. Components are tightly coupled. While simple to
-                        develop initially, it becomes difficult to scale and maintain as the application grows.</p>
-                </div>
-            </div>
-
-            <!-- Question 11 -->
-            <div class="question" data-question-id="q11" data-correct-answer="Microservices Architecture">
-                <p class="question-text">Q11. Which architecture allows different services to use different technology
-                    stacks and scale independently?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Monolithic Architecture">Monolithic Architecture</button>
-                    <button class="option-btn" data-answer="Layered Architecture">Layered Architecture</button>
-                    <button class="option-btn" data-answer="Microservices Architecture">Microservices
-                        Architecture</button>
-                    <button class="option-btn" data-answer="Client-Server Architecture">Client-Server
-                        Architecture</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Microservices Architecture</div>
-                    <p>Microservices Architecture breaks the application into small, independent services. Each service
-                        can use its own technology stack (one might use Java, another Python), has its own database, and
-                        can be scaled independently. This is used by companies like Netflix, Amazon, and Uber.</p>
-                </div>
-            </div>
-
-            <!-- Question 12 -->
-            <div class="question" data-question-id="q12"
-                data-correct-answer="Presentation, Business Logic, Data Access">
-                <p class="question-text">Q12. What are the three typical layers in a Layered (3-Tier) Architecture?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Frontend, Backend, Database">Frontend, Backend,
-                        Database</button>
-                    <button class="option-btn" data-answer="Presentation, Business Logic, Data Access">Presentation,
-                        Business Logic, Data Access</button>
-                    <button class="option-btn" data-answer="UI, API, Storage">UI, API, Storage</button>
-                    <button class="option-btn" data-answer="Client, Server, Network">Client, Server, Network</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Presentation, Business Logic, Data Access</div>
-                    <p>The 3-tier Layered Architecture consists of: (1) Presentation Layer (UI/user interaction), (2)
-                        Business Logic Layer (application logic and rules), and (3) Data Access Layer (database
-                        operations). This separation of concerns makes the system more maintainable and testable.</p>
-                </div>
-            </div>
-
-            <!-- Question 13 -->
-            <div class="question" data-question-id="q13" data-correct-answer="Microservices">
-                <p class="question-text">Q13. Netflix uses which type of architecture to handle millions of users
-                    streaming simultaneously?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Monolithic">Monolithic</button>
-                    <button class="option-btn" data-answer="Layered">Layered</button>
-                    <button class="option-btn" data-answer="Microservices">Microservices</button>
-                    <button class="option-btn" data-answer="Client-Server">Client-Server</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Microservices</div>
-                    <p>Netflix uses Microservices Architecture with hundreds of independent services (user service,
-                        recommendation service, streaming service, billing service, etc.). This allows them to scale
-                        specific services independently, deploy updates without downtime, and maintain fault isolation.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Question 14 -->
-            <div class="question" data-question-id="q14"
-                data-correct-answer="Separation of concerns, each layer has one responsibility">
-                <p class="question-text">Q14. What is the main benefit of Layered Architecture?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Faster development">Faster development</button>
-                    <button class="option-btn"
-                        data-answer="Separation of concerns, each layer has one responsibility">Separation of concerns,
-                        each layer has one responsibility</button>
-                    <button class="option-btn" data-answer="Uses less memory">Uses less memory</button>
-                    <button class="option-btn" data-answer="Requires fewer developers">Requires fewer
-                        developers</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Separation of concerns, each layer has one
-                        responsibility</div>
-                    <p>The main benefit of Layered Architecture is separation of concerns. Each layer has a single,
-                        well-defined responsibility. This makes the code more maintainable (you can change the UI
-                        without touching database code), testable (test business logic independently), and reusable.</p>
-                </div>
-            </div>
-
-            <!-- Question 15 -->
-            <div class="question" data-question-id="q15" data-correct-answer="It depends on the project requirements">
-                <p class="question-text">Q15. Which SDLC model is the "best" for all projects?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
-                    <button class="option-btn" data-answer="Agile Model">Agile Model</button>
-                    <button class="option-btn" data-answer="Spiral Model">Spiral Model</button>
-                    <button class="option-btn" data-answer="It depends on the project requirements">It depends on the
-                        project requirements</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: It depends on the project requirements</div>
-                    <p>There is NO one-size-fits-all SDLC model! The best model depends on: project size, requirement
-                        stability, risk level, timeline, budget, and team expertise. Fixed requirements favor Waterfall,
-                        changing requirements favor Agile, high-risk projects favor Spiral, etc.</p>
-                </div>
-            </div>
-
-            <!-- Question 16 -->
-            <div class="question" data-question-id="q16"
-                data-correct-answer="Software Requirements Specification (SRS)">
-                <p class="question-text">Q16. What is the main deliverable of the Planning & Requirement Analysis phase?
-                </p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Source Code">Source Code</button>
-                    <button class="option-btn" data-answer="Software Requirements Specification (SRS)">Software
-                        Requirements Specification (SRS)</button>
-                    <button class="option-btn" data-answer="Test Cases">Test Cases</button>
-                    <button class="option-btn" data-answer="User Manual">User Manual</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Software Requirements Specification (SRS)</div>
-                    <p>The SRS document is the main deliverable of the Planning & Requirement Analysis phase. It
-                        contains detailed descriptions of what the software should do, functional and non-functional
-                        requirements, constraints, and acceptance criteria. It serves as a contract between stakeholders
-                        and developers.</p>
-                </div>
-            </div>
-
-            <!-- Question 17 -->
-            <div class="question" data-question-id="q17" data-correct-answer="Maintenance">
-                <p class="question-text">Q17. Which SDLC phase typically consumes the most time and resources over the
-                    software's lifetime?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Planning">Planning</button>
-                    <button class="option-btn" data-answer="Implementation">Implementation</button>
-                    <button class="option-btn" data-answer="Testing">Testing</button>
-                    <button class="option-btn" data-answer="Maintenance">Maintenance</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Maintenance</div>
-                    <p>Maintenance typically consumes 60-80% of the total software lifecycle cost! After deployment,
-                        software needs continuous bug fixes, security updates, performance improvements, and new
-                        features. This phase can last for years or even decades (think of Windows, Java, etc.).</p>
-                </div>
-            </div>
-
-            <!-- Question 18 -->
-            <div class="question" data-question-id="q18"
-                data-correct-answer="One service failure doesn't crash the entire system">
-                <p class="question-text">Q18. What does "fault isolation" mean in Microservices Architecture?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Services never fail">Services never fail</button>
-                    <button class="option-btn" data-answer="One service failure doesn't crash the entire system">One
-                        service failure doesn't crash the entire system</button>
-                    <button class="option-btn" data-answer="All services share the same database">All services share the
-                        same database</button>
-                    <button class="option-btn" data-answer="Services cannot communicate">Services cannot
-                        communicate</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: One service failure doesn't crash the entire system
+                    <!-- Question 1 -->
+                    <div class="question" data-correct-answer="Systematic, disciplined approach to software development"
+                        data-question-id="q1">
+                        <p class="question-text">Q1. What is Software Engineering?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Just writing code">Just writing code</button>
+                            <button class="option-btn"
+                                data-answer="Systematic, disciplined approach to software development">Systematic,
+                                disciplined
+                                approach to software development</button>
+                            <button class="option-btn" data-answer="Only testing software">Only testing
+                                software</button>
+                            <button class="option-btn" data-answer="Designing user interfaces">Designing user
+                                interfaces</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Systematic, disciplined approach to
+                                software
+                                development</div>
+                            <p>Software Engineering is a systematic, disciplined, and quantifiable approach to the
+                                development,
+                                operation, and maintenance of software. It's not just coding - it encompasses the entire
+                                software development lifecycle including planning, design, implementation, testing,
+                                deployment,
+                                and maintenance.</p>
+                        </div>
                     </div>
-                    <p>Fault isolation means if one microservice fails (e.g., payment service), other services (user
-                        service, product service) continue working. In a monolithic architecture, one component failure
-                        can crash the entire application. This makes microservices more resilient.</p>
-                </div>
-            </div>
-
-            <!-- Question 19 -->
-            <div class="question" data-question-id="q19"
-                data-correct-answer="Track changes, collaborate, and rollback to previous versions">
-                <p class="question-text">Q19. Why is version control (like Git) essential in software engineering?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Makes code run faster">Makes code run faster</button>
-                    <button class="option-btn"
-                        data-answer="Track changes, collaborate, and rollback to previous versions">Track changes,
-                        collaborate, and rollback to previous versions</button>
-                    <button class="option-btn" data-answer="Automatically fixes bugs">Automatically fixes bugs</button>
-                    <button class="option-btn" data-answer="Reduces code size">Reduces code size</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Track changes, collaborate, and rollback to
-                        previous versions</div>
-                    <p>Version control is essential because it: (1) tracks who changed what and when, (2) enables
-                        multiple developers to work on the same codebase, (3) allows reverting to previous versions if
-                        bugs are introduced, (4) supports branching for feature development, and (5) serves as backup.
-                        Every professional software team uses version control!</p>
-                </div>
-            </div>
-
-            <!-- Question 20 -->
-            <div class="question" data-question-id="q20"
-                data-correct-answer="Catch bugs, ensure quality, and prevent regressions">
-                <p class="question-text">Q20. What is the primary purpose of software testing?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Delay project delivery">Delay project delivery</button>
-                    <button class="option-btn" data-answer="Catch bugs, ensure quality, and prevent regressions">Catch
-                        bugs, ensure quality, and prevent regressions</button>
-                    <button class="option-btn" data-answer="Make code more complex">Make code more complex</button>
-                    <button class="option-btn" data-answer="Increase development cost">Increase development
-                        cost</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Catch bugs, ensure quality, and prevent regressions
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="Planning &amp; Requirement Analysis"
+                        data-question-id="q2">
+                        <p class="question-text">Q2. What is the first phase of the Software Development Life Cycle
+                            (SDLC)?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Testing">Testing</button>
+                            <button class="option-btn" data-answer="Planning &amp; Requirement Analysis">Planning &amp;
+                                Requirement
+                                Analysis</button>
+                            <button class="option-btn" data-answer="Implementation">Implementation</button>
+                            <button class="option-btn" data-answer="Deployment">Deployment</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Planning &amp; Requirement Analysis</div>
+                            <p>The SDLC starts with Planning &amp; Requirement Analysis where we gather and analyze what
+                                the
+                                software needs to do. This phase produces the Software Requirements Specification (SRS)
+                                document. You can't design or build software without first understanding what it should
+                                do!</p>
+                        </div>
                     </div>
-                    <p>Testing is crucial for: (1) catching bugs before users encounter them, (2) ensuring software
-                        meets requirements, (3) preventing old bugs from reappearing (regression), (4) building
-                        confidence in code changes, and (5) serving as documentation. Fixing bugs in production is 100x
-                        more expensive than catching them during development!</p>
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="6" data-question-id="q3">
+                        <p class="question-text">Q3. How many phases are there in the traditional SDLC?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="4">4</button>
+                            <button class="option-btn" data-answer="5">5</button>
+                            <button class="option-btn" data-answer="6">6</button>
+                            <button class="option-btn" data-answer="7">7</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: 6</div>
+                            <p>The traditional SDLC has 6 phases: (1) Planning &amp; Requirement Analysis, (2) System
+                                Design, (3)
+                                Implementation, (4) Testing, (5) Deployment, and (6) Maintenance. Each phase has
+                                specific
+                                deliverables and activities.</p>
+                        </div>
+                    </div>
+                    <!-- Question 4 -->
+                    <div class="question" data-correct-answer="Waterfall Model" data-question-id="q4">
+                        <p class="question-text">Q4. Which SDLC model follows a strictly sequential, linear approach
+                            where you
+                            cannot go back to previous phases?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Agile Model">Agile Model</button>
+                            <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
+                            <button class="option-btn" data-answer="Spiral Model">Spiral Model</button>
+                            <button class="option-btn" data-answer="Prototype Model">Prototype Model</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Waterfall Model</div>
+                            <p>The Waterfall Model is characterized by its sequential, linear approach. Once a phase is
+                                completed, you cannot go back. This rigidity makes it suitable for projects with
+                                well-defined,
+                                unchanging requirements but problematic for projects where requirements might evolve.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="Agile Model" data-question-id="q5">
+                        <p class="question-text">Q5. Which SDLC model is best suited for a startup building a mobile app
+                            with
+                            evolving requirements?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
+                            <button class="option-btn" data-answer="V-Model">V-Model</button>
+                            <button class="option-btn" data-answer="Agile Model">Agile Model</button>
+                            <button class="option-btn" data-answer="None of the above">None of the above</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Agile Model</div>
+                            <p>Agile is perfect for startups because it embraces changing requirements, delivers working
+                                software in short iterations (sprints), involves continuous customer feedback, and
+                                allows rapid
+                                adaptation to market needs. This flexibility is crucial when building innovative
+                                products.</p>
+                        </div>
+                    </div>
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="2-4 weeks" data-question-id="q6">
+                        <p class="question-text">Q6. In Agile methodology, how long is a typical sprint?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="1 day">1 day</button>
+                            <button class="option-btn" data-answer="2-4 weeks">2-4 weeks</button>
+                            <button class="option-btn" data-answer="3 months">3 months</button>
+                            <button class="option-btn" data-answer="6 months">6 months</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: 2-4 weeks</div>
+                            <p>Agile sprints typically last 2-4 weeks. This timeframe is short enough to maintain focus
+                                and
+                                adapt quickly, but long enough to deliver meaningful, working software. At the end of
+                                each
+                                sprint, the team delivers a potentially shippable product increment.</p>
+                        </div>
+                    </div>
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="V-Model" data-question-id="q7">
+                        <p class="question-text">Q7. Which SDLC model emphasizes testing at every development phase with
+                            corresponding test phases?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
+                            <button class="option-btn" data-answer="V-Model">V-Model</button>
+                            <button class="option-btn" data-answer="Prototype Model">Prototype Model</button>
+                            <button class="option-btn" data-answer="Agile Model">Agile Model</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: V-Model</div>
+                            <p>The V-Model (Verification and Validation Model) pairs each development phase with a
+                                corresponding
+                                testing phase. For example, Requirements phase corresponds to Acceptance Testing, Design
+                                corresponds to System Testing, etc. This ensures quality is built-in from the start.</p>
+                        </div>
+                    </div>
+                    <!-- Question 8 -->
+                    <div class="question" data-correct-answer="Spiral Model" data-question-id="q8">
+                        <p class="question-text">Q8. Which SDLC model is best for large, complex projects with high risk
+                            and
+                            emphasizes risk analysis?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
+                            <button class="option-btn" data-answer="Agile Model">Agile Model</button>
+                            <button class="option-btn" data-answer="Spiral Model">Spiral Model</button>
+                            <button class="option-btn" data-answer="Prototype Model">Prototype Model</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Spiral Model</div>
+                            <p>The Spiral Model combines iterative development with systematic risk analysis. It's ideal
+                                for
+                                large, complex projects like operating systems or aerospace systems where identifying
+                                and
+                                mitigating risks early is critical. Each spiral includes planning, risk analysis,
+                                engineering,
+                                and evaluation phases.</p>
+                        </div>
+                    </div>
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="Prototype Model" data-question-id="q9">
+                        <p class="question-text">Q9. Which model involves building a working model to understand
+                            requirements
+                            better before actual development?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
+                            <button class="option-btn" data-answer="Prototype Model">Prototype Model</button>
+                            <button class="option-btn" data-answer="V-Model">V-Model</button>
+                            <button class="option-btn" data-answer="Spiral Model">Spiral Model</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Prototype Model</div>
+                            <p>The Prototype Model involves creating a quick, working prototype to help stakeholders
+                                visualize
+                                and understand the system better. This is especially useful when requirements are
+                                unclear or for
+                                UI/UX-heavy applications. The prototype helps gather better requirements before full
+                                development.</p>
+                        </div>
+                    </div>
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="All components in one codebase, tightly coupled"
+                        data-question-id="q10">
+                        <p class="question-text">Q10. What characterizes a Monolithic Architecture?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="All components in one codebase, tightly coupled">All
+                                components in one codebase, tightly coupled</button>
+                            <button class="option-btn"
+                                data-answer="Independent services communicating via APIs">Independent
+                                services communicating via APIs</button>
+                            <button class="option-btn" data-answer="Organized in separate layers">Organized in separate
+                                layers</button>
+                            <button class="option-btn" data-answer="Distributed across multiple servers">Distributed
+                                across
+                                multiple servers</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: All components in one codebase, tightly
+                                coupled
+                            </div>
+                            <p>Monolithic Architecture means all functionality (UI, business logic, data access) is in a
+                                single,
+                                unified codebase and deployed as one unit. Components are tightly coupled. While simple
+                                to
+                                develop initially, it becomes difficult to scale and maintain as the application grows.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer="Microservices Architecture" data-question-id="q11">
+                        <p class="question-text">Q11. Which architecture allows different services to use different
+                            technology
+                            stacks and scale independently?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Monolithic Architecture">Monolithic
+                                Architecture</button>
+                            <button class="option-btn" data-answer="Layered Architecture">Layered Architecture</button>
+                            <button class="option-btn" data-answer="Microservices Architecture">Microservices
+                                Architecture</button>
+                            <button class="option-btn" data-answer="Client-Server Architecture">Client-Server
+                                Architecture</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Microservices Architecture</div>
+                            <p>Microservices Architecture breaks the application into small, independent services. Each
+                                service
+                                can use its own technology stack (one might use Java, another Python), has its own
+                                database, and
+                                can be scaled independently. This is used by companies like Netflix, Amazon, and Uber.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="Presentation, Business Logic, Data Access"
+                        data-question-id="q12">
+                        <p class="question-text">Q12. What are the three typical layers in a Layered (3-Tier)
+                            Architecture?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Frontend, Backend, Database">Frontend, Backend,
+                                Database</button>
+                            <button class="option-btn"
+                                data-answer="Presentation, Business Logic, Data Access">Presentation,
+                                Business Logic, Data Access</button>
+                            <button class="option-btn" data-answer="UI, API, Storage">UI, API, Storage</button>
+                            <button class="option-btn" data-answer="Client, Server, Network">Client, Server,
+                                Network</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Presentation, Business Logic, Data Access
+                            </div>
+                            <p>The 3-tier Layered Architecture consists of: (1) Presentation Layer (UI/user
+                                interaction), (2)
+                                Business Logic Layer (application logic and rules), and (3) Data Access Layer (database
+                                operations). This separation of concerns makes the system more maintainable and
+                                testable.</p>
+                        </div>
+                    </div>
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="Microservices" data-question-id="q13">
+                        <p class="question-text">Q13. Netflix uses which type of architecture to handle millions of
+                            users
+                            streaming simultaneously?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Monolithic">Monolithic</button>
+                            <button class="option-btn" data-answer="Layered">Layered</button>
+                            <button class="option-btn" data-answer="Microservices">Microservices</button>
+                            <button class="option-btn" data-answer="Client-Server">Client-Server</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Microservices</div>
+                            <p>Netflix uses Microservices Architecture with hundreds of independent services (user
+                                service,
+                                recommendation service, streaming service, billing service, etc.). This allows them to
+                                scale
+                                specific services independently, deploy updates without downtime, and maintain fault
+                                isolation.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 14 -->
+                    <div class="question"
+                        data-correct-answer="Separation of concerns, each layer has one responsibility"
+                        data-question-id="q14">
+                        <p class="question-text">Q14. What is the main benefit of Layered Architecture?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Faster development">Faster development</button>
+                            <button class="option-btn"
+                                data-answer="Separation of concerns, each layer has one responsibility">Separation of
+                                concerns,
+                                each layer has one responsibility</button>
+                            <button class="option-btn" data-answer="Uses less memory">Uses less memory</button>
+                            <button class="option-btn" data-answer="Requires fewer developers">Requires fewer
+                                developers</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Separation of concerns, each layer has one
+                                responsibility</div>
+                            <p>The main benefit of Layered Architecture is separation of concerns. Each layer has a
+                                single,
+                                well-defined responsibility. This makes the code more maintainable (you can change the
+                                UI
+                                without touching database code), testable (test business logic independently), and
+                                reusable.</p>
+                        </div>
+                    </div>
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="It depends on the project requirements"
+                        data-question-id="q15">
+                        <p class="question-text">Q15. Which SDLC model is the "best" for all projects?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Waterfall Model">Waterfall Model</button>
+                            <button class="option-btn" data-answer="Agile Model">Agile Model</button>
+                            <button class="option-btn" data-answer="Spiral Model">Spiral Model</button>
+                            <button class="option-btn" data-answer="It depends on the project requirements">It depends
+                                on the
+                                project requirements</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: It depends on the project requirements
+                            </div>
+                            <p>There is NO one-size-fits-all SDLC model! The best model depends on: project size,
+                                requirement
+                                stability, risk level, timeline, budget, and team expertise. Fixed requirements favor
+                                Waterfall,
+                                changing requirements favor Agile, high-risk projects favor Spiral, etc.</p>
+                        </div>
+                    </div>
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="Software Requirements Specification (SRS)"
+                        data-question-id="q16">
+                        <p class="question-text">Q16. What is the main deliverable of the Planning &amp; Requirement
+                            Analysis phase?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Source Code">Source Code</button>
+                            <button class="option-btn" data-answer="Software Requirements Specification (SRS)">Software
+                                Requirements Specification (SRS)</button>
+                            <button class="option-btn" data-answer="Test Cases">Test Cases</button>
+                            <button class="option-btn" data-answer="User Manual">User Manual</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Software Requirements Specification (SRS)
+                            </div>
+                            <p>The SRS document is the main deliverable of the Planning &amp; Requirement Analysis
+                                phase. It
+                                contains detailed descriptions of what the software should do, functional and
+                                non-functional
+                                requirements, constraints, and acceptance criteria. It serves as a contract between
+                                stakeholders
+                                and developers.</p>
+                        </div>
+                    </div>
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="Maintenance" data-question-id="q17">
+                        <p class="question-text">Q17. Which SDLC phase typically consumes the most time and resources
+                            over the
+                            software's lifetime?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Planning">Planning</button>
+                            <button class="option-btn" data-answer="Implementation">Implementation</button>
+                            <button class="option-btn" data-answer="Testing">Testing</button>
+                            <button class="option-btn" data-answer="Maintenance">Maintenance</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Maintenance</div>
+                            <p>Maintenance typically consumes 60-80% of the total software lifecycle cost! After
+                                deployment,
+                                software needs continuous bug fixes, security updates, performance improvements, and new
+                                features. This phase can last for years or even decades (think of Windows, Java, etc.).
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="One service failure doesn't crash the entire system"
+                        data-question-id="q18">
+                        <p class="question-text">Q18. What does "fault isolation" mean in Microservices Architecture?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Services never fail">Services never fail</button>
+                            <button class="option-btn"
+                                data-answer="One service failure doesn't crash the entire system">One
+                                service failure doesn't crash the entire system</button>
+                            <button class="option-btn" data-answer="All services share the same database">All services
+                                share the
+                                same database</button>
+                            <button class="option-btn" data-answer="Services cannot communicate">Services cannot
+                                communicate</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: One service failure doesn't crash the
+                                entire system
+                            </div>
+                            <p>Fault isolation means if one microservice fails (e.g., payment service), other services
+                                (user
+                                service, product service) continue working. In a monolithic architecture, one component
+                                failure
+                                can crash the entire application. This makes microservices more resilient.</p>
+                        </div>
+                    </div>
+                    <!-- Question 19 -->
+                    <div class="question"
+                        data-correct-answer="Track changes, collaborate, and rollback to previous versions"
+                        data-question-id="q19">
+                        <p class="question-text">Q19. Why is version control (like Git) essential in software
+                            engineering?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Makes code run faster">Makes code run
+                                faster</button>
+                            <button class="option-btn"
+                                data-answer="Track changes, collaborate, and rollback to previous versions">Track
+                                changes,
+                                collaborate, and rollback to previous versions</button>
+                            <button class="option-btn" data-answer="Automatically fixes bugs">Automatically fixes
+                                bugs</button>
+                            <button class="option-btn" data-answer="Reduces code size">Reduces code size</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Track changes, collaborate, and rollback to
+                                previous versions</div>
+                            <p>Version control is essential because it: (1) tracks who changed what and when, (2)
+                                enables
+                                multiple developers to work on the same codebase, (3) allows reverting to previous
+                                versions if
+                                bugs are introduced, (4) supports branching for feature development, and (5) serves as
+                                backup.
+                                Every professional software team uses version control!</p>
+                        </div>
+                    </div>
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="Catch bugs, ensure quality, and prevent regressions"
+                        data-question-id="q20">
+                        <p class="question-text">Q20. What is the primary purpose of software testing?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Delay project delivery">Delay project
+                                delivery</button>
+                            <button class="option-btn"
+                                data-answer="Catch bugs, ensure quality, and prevent regressions">Catch
+                                bugs, ensure quality, and prevent regressions</button>
+                            <button class="option-btn" data-answer="Make code more complex">Make code more
+                                complex</button>
+                            <button class="option-btn" data-answer="Increase development cost">Increase development
+                                cost</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Catch bugs, ensure quality, and prevent
+                                regressions
+                            </div>
+                            <p>Testing is crucial for: (1) catching bugs before users encounter them, (2) ensuring
+                                software
+                                meets requirements, (3) preventing old bugs from reappearing (regression), (4) building
+                                confidence in code changes, and (5) serving as documentation. Fixing bugs in production
+                                is 100x
+                                more expensive than catching them during development!</p>
+                        </div>
+                    </div>
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="Code review" data-question-id="q21">
+                        <p class="question-text">Q21. What practice involves team members reviewing each other's code
+                            before
+                            merging to the main branch?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Code review">Code review</button>
+                            <button class="option-btn" data-answer="Code compilation">Code compilation</button>
+                            <button class="option-btn" data-answer="Code deployment">Code deployment</button>
+                            <button class="option-btn" data-answer="Code refactoring">Code refactoring</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Code review</div>
+                            <p>Code review is a quality assurance practice where team members review each other's code
+                                before
+                                it's merged. Benefits include: catching bugs early, ensuring coding standards, knowledge
+                                sharing, mentorship, and collective code ownership. It's a standard practice in
+                                professional
+                                software development.</p>
+                        </div>
+                    </div>
+                    <!-- Question 22 -->
+                    <div class="question"
+                        data-correct-answer="Debugging, monitoring, audit trail, and performance tracking"
+                        data-question-id="q22">
+                        <p class="question-text">Q22. Why is logging important in software engineering?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Makes code look professional">Makes code look
+                                professional</button>
+                            <button class="option-btn"
+                                data-answer="Debugging, monitoring, audit trail, and performance tracking">Debugging,
+                                monitoring, audit trail, and performance tracking</button>
+                            <button class="option-btn" data-answer="Increases application speed">Increases application
+                                speed</button>
+                            <button class="option-btn" data-answer="Reduces code size">Reduces code size</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Debugging, monitoring, audit trail, and
+                                performance
+                                tracking</div>
+                            <p>Logging is essential for: (1) debugging - identifying where errors occur, (2) monitoring
+                                -
+                                tracking application health in production, (3) audit trail - knowing who did what and
+                                when
+                                (required in regulated industries), (4) performance - identifying bottlenecks, and (5)
+                                compliance. Professional applications have comprehensive logging at different levels
+                                (DEBUG,
+                                INFO, WARNING, ERROR, CRITICAL).</p>
+                        </div>
+                    </div>
+                    <!-- Reset Button -->
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button class="md-button md-button--secondary" onclick="quizManager.reset()">
+                            🔄 Reset Quiz
+                        </button>
+                    </div>
+                    <!-- Navigation -->
+                    <div class="content-section text-center" style="margin-top: 2rem;">
+                        <h3>Continue Your Learning Journey</h3>
+                        <div
+                            style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                            <a class="md-button md-button--primary" href="../theory/software-engineering.html">
+                                📚 Review Theory
+                            </a>
+                            <a class="md-button md-button--secondary" href="../programs/software-engineering.html">
+                                💻 View Programs
+                            </a>
+                            <a class="md-button md-button--primary" href="../index.html">
+                                🏠 Back to Home
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <!-- Question 21 -->
-            <div class="question" data-question-id="q21" data-correct-answer="Code review">
-                <p class="question-text">Q21. What practice involves team members reviewing each other's code before
-                    merging to the main branch?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Code review">Code review</button>
-                    <button class="option-btn" data-answer="Code compilation">Code compilation</button>
-                    <button class="option-btn" data-answer="Code deployment">Code deployment</button>
-                    <button class="option-btn" data-answer="Code refactoring">Code refactoring</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Code review</div>
-                    <p>Code review is a quality assurance practice where team members review each other's code before
-                        it's merged. Benefits include: catching bugs early, ensuring coding standards, knowledge
-                        sharing, mentorship, and collective code ownership. It's a standard practice in professional
-                        software development.</p>
-                </div>
-            </div>
-
-            <!-- Question 22 -->
-            <div class="question" data-question-id="q22"
-                data-correct-answer="Debugging, monitoring, audit trail, and performance tracking">
-                <p class="question-text">Q22. Why is logging important in software engineering?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Makes code look professional">Makes code look
-                        professional</button>
-                    <button class="option-btn"
-                        data-answer="Debugging, monitoring, audit trail, and performance tracking">Debugging,
-                        monitoring, audit trail, and performance tracking</button>
-                    <button class="option-btn" data-answer="Increases application speed">Increases application
-                        speed</button>
-                    <button class="option-btn" data-answer="Reduces code size">Reduces code size</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Debugging, monitoring, audit trail, and performance
-                        tracking</div>
-                    <p>Logging is essential for: (1) debugging - identifying where errors occur, (2) monitoring -
-                        tracking application health in production, (3) audit trail - knowing who did what and when
-                        (required in regulated industries), (4) performance - identifying bottlenecks, and (5)
-                        compliance. Professional applications have comprehensive logging at different levels (DEBUG,
-                        INFO, WARNING, ERROR, CRITICAL).</p>
-                </div>
-            </div>
-
-            <!-- Reset Button -->
-            <div style="text-align: center; margin-top: 2rem;">
-                <button class="btn btn-secondary" onclick="quizManager.reset()">
-                    🔄 Reset Quiz
-                </button>
-            </div>
-
-            <!-- Navigation -->
-            <div class="content-section text-center" style="margin-top: 2rem;">
-                <h3>Continue Your Learning Journey</h3>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                    <a href="../theory/software-engineering.html" class="btn btn-primary">
-                        📚 Review Theory
-                    </a>
-                    <a href="../programs/software-engineering.html" class="btn btn-secondary">
-                        💻 View Programs
-                    </a>
-                    <a href="../index.html" class="btn btn-success">
-                        🏠 Back to Home
-                    </a>
-                </div>
-            </div>
-        </div>
+        </main>
     </div>
-
+    <script src="../assets/js/docs-style.js"></script>
     <script src="../assets/js/mcq.js"></script>
 </body>
 

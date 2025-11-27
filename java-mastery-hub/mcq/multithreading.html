@@ -1,353 +1,1110 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Multithreading - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>Multithreading - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>Multithreading</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Test Your Multithreading Knowledge</h2>
-            <p>This quiz contains 30 questions covering all aspects of Java multithreading including thread creation,
-                lifecycle, synchronization, executor framework, concurrency utilities, and best practices.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Take your time and read each question carefully. Pay special attention to code output questions and
-                    synchronization scenarios. Aim for at least 80% to demonstrate mastery!</p>
-            </div>
-        </div>
-
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
-            </div>
-        </div>
-
-        <div id="quizContainer" class="content-section"></div>
-
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
                 </div>
-                <div id="performanceMessage" class="performance-message"></div>
             </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Multithreading - Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>Multithreading - Quiz</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Test Your Multithreading Knowledge</h2>
+                    <p>This quiz contains 30 questions covering all aspects of Java multithreading including thread
+                        creation,
+                        lifecycle, synchronization, executor framework, concurrency utilities, and best practices.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Take your time and read each question carefully. Pay special attention to code output
+                                questions and
+                                synchronization scenarios. Aim for at least 80% to demonstrate mastery!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
+                    </div>
+                </div>
+                <div class="content-section" id="quizContainer">
+                    <!-- Question 1 -->
+                    <div class="question" data-correct-answer="java.lang" data-question-id="q1">
+                        <p class="question-text">Q1. Which package contains the Thread class and Runnable interface?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="java.util">java.util</button>
+                            <button class="option-btn" data-answer="java.io">java.io</button>
+                            <button class="option-btn" data-answer="java.lang">java.lang</button>
+                            <button class="option-btn" data-answer="java.util.concurrent">java.util.concurrent</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: java.lang</div>
+                            <p>The `Thread` class and `Runnable` interface are part of the `java.lang` package, which is
+                                automatically imported.</p>
+                        </div>
+                    </div>
 
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/multithreading.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/multithreading.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="start()" data-question-id="q2">
+                        <p class="question-text">Q2. Which method is used to begin the execution of a thread?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="run()">run()</button>
+                            <button class="option-btn" data-answer="start()">start()</button>
+                            <button class="option-btn" data-answer="init()">init()</button>
+                            <button class="option-btn" data-answer="execute()">execute()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: start()</div>
+                            <p>The `start()` method is used to begin the execution of a thread. It calls the `run()`
+                                method internally in a separate call stack.</p>
+                        </div>
+                    </div>
 
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/multithreading.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../programs/multithreading.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="Runnable" data-question-id="q3">
+                        <p class="question-text">Q3. Which interface should be implemented to create a thread?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Threadable">Threadable</button>
+                            <button class="option-btn" data-answer="Executable">Executable</button>
+                            <button class="option-btn" data-answer="Runnable">Runnable</button>
+                            <button class="option-btn" data-answer="Callable">Callable</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Runnable</div>
+                            <p>The `Runnable` interface is the primary interface to implement for creating a thread.
+                                `Callable` is also used but returns a result.</p>
+                        </div>
+                    </div>
 
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">🚀 Next Topic Coming Soon</div>
-                <p><strong>Topic 14:</strong> Java 8+ Advanced Features & Enhancements</p>
+                    <!-- Question 4 -->
+                    <div class="question" data-correct-answer="NEW" data-question-id="q4">
+                        <p class="question-text">Q4. What is the state of a thread after it is created but before the
+                            start() method is called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="RUNNABLE">RUNNABLE</button>
+                            <button class="option-btn" data-answer="NEW">NEW</button>
+                            <button class="option-btn" data-answer="WAITING">WAITING</button>
+                            <button class="option-btn" data-answer="BLOCKED">BLOCKED</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: NEW</div>
+                            <p>A thread is in the `NEW` state when it is created but not yet started.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="synchronized" data-question-id="q5">
+                        <p class="question-text">Q5. Which keyword is used to prevent multiple threads from accessing a
+                            block of code simultaneously?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="volatile">volatile</button>
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="synchronized">synchronized</button>
+                            <button class="option-btn" data-answer="transient">transient</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: synchronized</div>
+                            <p>The `synchronized` keyword is used to acquire a lock on an object or class, ensuring that
+                                only one thread can execute the synchronized block or method at a time.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="wait()" data-question-id="q6">
+                        <p class="question-text">Q6. Which method causes the current thread to release the lock and wait
+                            until another thread invokes notify()?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="sleep()">sleep()</button>
+                            <button class="option-btn" data-answer="yield()">yield()</button>
+                            <button class="option-btn" data-answer="wait()">wait()</button>
+                            <button class="option-btn" data-answer="stop()">stop()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: wait()</div>
+                            <p>The `wait()` method causes the current thread to release the lock and wait until another
+                                thread invokes `notify()` or `notifyAll()` on the same object.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="Object" data-question-id="q7">
+                        <p class="question-text">Q7. In which class are the wait(), notify(), and notifyAll() methods
+                            defined?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Thread">Thread</button>
+                            <button class="option-btn" data-answer="Runnable">Runnable</button>
+                            <button class="option-btn" data-answer="Object">Object</button>
+                            <button class="option-btn" data-answer="System">System</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Object</div>
+                            <p>These methods are defined in the `Object` class because they are related to the monitor
+                                lock associated with every object.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question" data-correct-answer="sleep()" data-question-id="q8">
+                        <p class="question-text">Q8. Which method pauses the execution of the current thread for a
+                            specified time without releasing the lock?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="wait()">wait()</button>
+                            <button class="option-btn" data-answer="sleep()">sleep()</button>
+                            <button class="option-btn" data-answer="yield()">yield()</button>
+                            <button class="option-btn" data-answer="suspend()">suspend()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: sleep()</div>
+                            <p>`Thread.sleep()` pauses the current thread for a specified time but does not release any
+                                locks it holds.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="Deadlock" data-question-id="q9">
+                        <p class="question-text">Q9. What is the condition called when two or more threads are waiting
+                            for each other to release a lock forever?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Starvation">Starvation</button>
+                            <button class="option-btn" data-answer="Deadlock">Deadlock</button>
+                            <button class="option-btn" data-answer="Livelock">Livelock</button>
+                            <button class="option-btn" data-answer="Race Condition">Race Condition</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Deadlock</div>
+                            <p>Deadlock occurs when two or more threads are blocked forever, each waiting for the other
+                                to release a resource.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="volatile" data-question-id="q10">
+                        <p class="question-text">Q10. Which keyword guarantees that the value of a variable is always
+                            read from the main memory?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="synchronized">synchronized</button>
+                            <button class="option-btn" data-answer="transient">transient</button>
+                            <button class="option-btn" data-answer="volatile">volatile</button>
+                            <button class="option-btn" data-answer="final">final</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: volatile</div>
+                            <p>The `volatile` keyword ensures visibility of changes to variables across threads by
+                                guaranteeing reads and writes go directly to main memory.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer="join()" data-question-id="q11">
+                        <p class="question-text">Q11. Which method allows one thread to wait for the completion of
+                            another thread?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="wait()">wait()</button>
+                            <button class="option-btn" data-answer="join()">join()</button>
+                            <button class="option-btn" data-answer="yield()">yield()</button>
+                            <button class="option-btn" data-answer="stop()">stop()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: join()</div>
+                            <p>The `join()` method allows the calling thread to wait until the thread on which `join()`
+                                is called completes its execution.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="ExecutorService" data-question-id="q12">
+                        <p class="question-text">Q12. Which interface in the java.util.concurrent package represents an
+                            asynchronous execution mechanism?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="ThreadFactory">ThreadFactory</button>
+                            <button class="option-btn" data-answer="ExecutorService">ExecutorService</button>
+                            <button class="option-btn" data-answer="ThreadPool">ThreadPool</button>
+                            <button class="option-btn" data-answer="FutureTask">FutureTask</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ExecutorService</div>
+                            <p>`ExecutorService` is a higher-level replacement for working directly with threads. It
+                                manages a pool of threads and provides methods for submitting tasks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="Callable" data-question-id="q13">
+                        <p class="question-text">Q13. Which interface is similar to Runnable but can return a result and
+                            throw a checked exception?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Future">Future</button>
+                            <button class="option-btn" data-answer="Task">Task</button>
+                            <button class="option-btn" data-answer="Callable">Callable</button>
+                            <button class="option-btn" data-answer="Executable">Executable</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Callable</div>
+                            <p>The `Callable` interface is similar to `Runnable`, but its `call()` method can return a
+                                value and throw a checked exception.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question" data-correct-answer="Future" data-question-id="q14">
+                        <p class="question-text">Q14. Which interface represents the result of an asynchronous
+                            computation?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Promise">Promise</button>
+                            <button class="option-btn" data-answer="Future">Future</button>
+                            <button class="option-btn" data-answer="Result">Result</button>
+                            <button class="option-btn" data-answer="Callback">Callback</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Future</div>
+                            <p>A `Future` represents the result of an asynchronous computation. Methods are provided to
+                                check if the computation is complete, to wait for its completion, and to retrieve the
+                                result.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="Race Condition" data-question-id="q15">
+                        <p class="question-text">Q15. What occurs when multiple threads access shared data and try to
+                            change it at the same time?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Deadlock">Deadlock</button>
+                            <button class="option-btn" data-answer="Race Condition">Race Condition</button>
+                            <button class="option-btn" data-answer="Starvation">Starvation</button>
+                            <button class="option-btn" data-answer="Livelock">Livelock</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Race Condition</div>
+                            <p>A race condition occurs when the correctness of a program depends on the relative timing
+                                or interleaving of multiple threads.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="ThreadLocal" data-question-id="q16">
+                        <p class="question-text">Q16. Which class provides thread-local variables?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="LocalThread">LocalThread</button>
+                            <button class="option-btn" data-answer="ThreadScope">ThreadScope</button>
+                            <button class="option-btn" data-answer="ThreadLocal">ThreadLocal</button>
+                            <button class="option-btn" data-answer="ThreadVariable">ThreadVariable</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ThreadLocal</div>
+                            <p>`ThreadLocal` provides thread-local variables. Each thread accessing such a variable has
+                                its own, independently initialized copy of the variable.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="yield()" data-question-id="q17">
+                        <p class="question-text">Q17. Which method hints to the scheduler that the current thread is
+                            willing to yield its current use of a processor?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="sleep()">sleep()</button>
+                            <button class="option-btn" data-answer="wait()">wait()</button>
+                            <button class="option-btn" data-answer="yield()">yield()</button>
+                            <button class="option-btn" data-answer="stop()">stop()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: yield()</div>
+                            <p>`Thread.yield()` is a hint to the scheduler that the current thread is willing to yield
+                                its current use of a processor. The scheduler is free to ignore this hint.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="Daemon Thread" data-question-id="q18">
+                        <p class="question-text">Q18. What type of thread runs in the background and does not prevent
+                            the JVM from exiting?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="User Thread">User Thread</button>
+                            <button class="option-btn" data-answer="Daemon Thread">Daemon Thread</button>
+                            <button class="option-btn" data-answer="Worker Thread">Worker Thread</button>
+                            <button class="option-btn" data-answer="Main Thread">Main Thread</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Daemon Thread</div>
+                            <p>Daemon threads are low-priority threads that run in the background to perform tasks such
+                                as garbage collection. The JVM exits when the only threads running are all daemon
+                                threads.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question" data-correct-answer="AtomicInteger" data-question-id="q19">
+                        <p class="question-text">Q19. Which class provides atomic operations on an int value without
+                            using synchronization?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Integer">Integer</button>
+                            <button class="option-btn" data-answer="VolatileInteger">VolatileInteger</button>
+                            <button class="option-btn" data-answer="AtomicInteger">AtomicInteger</button>
+                            <button class="option-btn" data-answer="SynchronizedInteger">SynchronizedInteger</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: AtomicInteger</div>
+                            <p>`AtomicInteger` (in `java.util.concurrent.atomic`) provides atomic operations on an `int`
+                                value, allowing thread-safe updates without explicit synchronization.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="ReentrantLock" data-question-id="q20">
+                        <p class="question-text">Q20. Which class implements the Lock interface and provides more
+                            flexible locking operations than synchronized blocks?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="ReentrantLock">ReentrantLock</button>
+                            <button class="option-btn" data-answer="MonitorLock">MonitorLock</button>
+                            <button class="option-btn" data-answer="ObjectLock">ObjectLock</button>
+                            <button class="option-btn" data-answer="ThreadLock">ThreadLock</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ReentrantLock</div>
+                            <p>`ReentrantLock` implements the `Lock` interface and provides extended capabilities
+                                compared to the implicit monitor lock accessed using `synchronized` methods and
+                                statements.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="CountDownLatch" data-question-id="q21">
+                        <p class="question-text">Q21. Which synchronization aid allows one or more threads to wait until
+                            a set of operations being performed in other threads completes?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="CyclicBarrier">CyclicBarrier</button>
+                            <button class="option-btn" data-answer="CountDownLatch">CountDownLatch</button>
+                            <button class="option-btn" data-answer="Semaphore">Semaphore</button>
+                            <button class="option-btn" data-answer="Exchanger">Exchanger</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: CountDownLatch</div>
+                            <p>`CountDownLatch` is a synchronization aid that allows one or more threads to wait until a
+                                set of operations being performed in other threads completes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question" data-correct-answer="CyclicBarrier" data-question-id="q22">
+                        <p class="question-text">Q22. Which synchronization aid allows a set of threads to all wait for
+                            each other to reach a common barrier point?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="CountDownLatch">CountDownLatch</button>
+                            <button class="option-btn" data-answer="CyclicBarrier">CyclicBarrier</button>
+                            <button class="option-btn" data-answer="Semaphore">Semaphore</button>
+                            <button class="option-btn" data-answer="Phaser">Phaser</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: CyclicBarrier</div>
+                            <p>`CyclicBarrier` is a synchronization aid that allows a set of threads to all wait for
+                                each other to reach a common barrier point. It is useful for parallel computations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question" data-correct-answer="Semaphore" data-question-id="q23">
+                        <p class="question-text">Q23. Which class maintains a set of permits and is often used to
+                            restrict the number of threads than can access some (physical or logical) resource?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Lock">Lock</button>
+                            <button class="option-btn" data-answer="Barrier">Barrier</button>
+                            <button class="option-btn" data-answer="Semaphore">Semaphore</button>
+                            <button class="option-btn" data-answer="Monitor">Monitor</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Semaphore</div>
+                            <p>A `Semaphore` maintains a set of permits. It is useful for restricting the number of
+                                threads that can access a resource.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question" data-correct-answer="ForkJoinPool" data-question-id="q24">
+                        <p class="question-text">Q24. Which ExecutorService implementation is designed for work that can
+                            be broken down into smaller pieces recursively?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="ThreadPoolExecutor">ThreadPoolExecutor</button>
+                            <button class="option-btn"
+                                data-answer="ScheduledThreadPoolExecutor">ScheduledThreadPoolExecutor</button>
+                            <button class="option-btn" data-answer="ForkJoinPool">ForkJoinPool</button>
+                            <button class="option-btn" data-answer="WorkStealingPool">WorkStealingPool</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ForkJoinPool</div>
+                            <p>`ForkJoinPool` is an `ExecutorService` for running `ForkJoinTask`s. It employs a
+                                work-stealing algorithm and is ideal for recursive tasks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question" data-correct-answer="InterruptedException" data-question-id="q25">
+                        <p class="question-text">Q25. Which exception is thrown when a thread is waiting, sleeping, or
+                            otherwise occupied, and the thread is interrupted?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="ThreadDeath">ThreadDeath</button>
+                            <button class="option-btn"
+                                data-answer="IllegalThreadStateException">IllegalThreadStateException</button>
+                            <button class="option-btn" data-answer="InterruptedException">InterruptedException</button>
+                            <button class="option-btn" data-answer="RuntimeException">RuntimeException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: InterruptedException</div>
+                            <p>`InterruptedException` is thrown when a thread is waiting, sleeping, or otherwise
+                                occupied, and the thread is interrupted, either before or during the activity.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 26 -->
+                    <div class="question" data-correct-answer="Executors" data-question-id="q26">
+                        <p class="question-text">Q26. Which utility class provides factory methods for creating thread
+                            pools?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="ThreadPools">ThreadPools</button>
+                            <button class="option-btn" data-answer="Executors">Executors</button>
+                            <button class="option-btn" data-answer="ThreadFactory">ThreadFactory</button>
+                            <button class="option-btn" data-answer="Concurrency">Concurrency</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Executors</div>
+                            <p>The `Executors` class provides factory and utility methods for `Executor`,
+                                `ExecutorService`, `ScheduledExecutorService`, `ThreadFactory`, and `Callable`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 27 -->
+                    <div class="question" data-correct-answer="BlockingQueue" data-question-id="q27">
+                        <p class="question-text">Q27. Which interface represents a queue that additionally supports
+                            operations that wait for the queue to become non-empty when retrieving an element, and wait
+                            for space to become available in the queue when storing an element?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Queue">Queue</button>
+                            <button class="option-btn" data-answer="ConcurrentQueue">ConcurrentQueue</button>
+                            <button class="option-btn" data-answer="BlockingQueue">BlockingQueue</button>
+                            <button class="option-btn" data-answer="SynchronizedQueue">SynchronizedQueue</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: BlockingQueue</div>
+                            <p>`BlockingQueue` implementations are thread-safe and are commonly used in
+                                producer-consumer scenarios.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 28 -->
+                    <div class="question" data-correct-answer="Starvation" data-question-id="q28">
+                        <p class="question-text">Q28. What occurs when a thread is unable to gain regular access to
+                            shared resources and is unable to make progress?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Deadlock">Deadlock</button>
+                            <button class="option-btn" data-answer="Starvation">Starvation</button>
+                            <button class="option-btn" data-answer="Livelock">Livelock</button>
+                            <button class="option-btn" data-answer="Blocking">Blocking</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Starvation</div>
+                            <p>Starvation describes a situation where a thread is unable to gain regular access to
+                                shared resources and is unable to make progress. This happens when shared resources are
+                                made unavailable for long periods by "greedy" threads.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 29 -->
+                    <div class="question" data-correct-answer="Livelock" data-question-id="q29">
+                        <p class="question-text">Q29. What occurs when threads are not blocked but are too busy
+                            responding to each other to resume work?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Deadlock">Deadlock</button>
+                            <button class="option-btn" data-answer="Starvation">Starvation</button>
+                            <button class="option-btn" data-answer="Livelock">Livelock</button>
+                            <button class="option-btn" data-answer="Spinlock">Spinlock</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Livelock</div>
+                            <p>A livelock is similar to a deadlock, except that the states of the processes involved in
+                                the livelock constantly change with regard to one another, none progressing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 30 -->
+                    <div class="question" data-correct-answer="CompletableFuture" data-question-id="q30">
+                        <p class="question-text">Q30. Which class introduced in Java 8 implements Future and
+                            CompletionStage, allowing for composable asynchronous programming?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="FutureTask">FutureTask</button>
+                            <button class="option-btn" data-answer="CompletableFuture">CompletableFuture</button>
+                            <button class="option-btn" data-answer="Promise">Promise</button>
+                            <button class="option-btn" data-answer="AsyncResult">AsyncResult</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: CompletableFuture</div>
+                            <p>`CompletableFuture` is a powerful class for asynchronous programming, allowing you to
+                                chain tasks, combine results, and handle errors.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 31 -->
+                    <div class="question" data-correct-answer="CopyOnWriteArrayList" data-question-id="q31">
+                        <p class="question-text">Q31. Which thread-safe List implementation is efficient when reads
+                            vastly outnumber writes?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Vector">Vector</button>
+                            <button class="option-btn" data-answer="SynchronizedList">SynchronizedList</button>
+                            <button class="option-btn" data-answer="CopyOnWriteArrayList">CopyOnWriteArrayList</button>
+                            <button class="option-btn" data-answer="ConcurrentLinkedList">ConcurrentLinkedList</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: CopyOnWriteArrayList</div>
+                            <p>`CopyOnWriteArrayList` is a thread-safe variant of `ArrayList` in which all mutative
+                                operations (add, set, and so on) are implemented by making a fresh copy of the
+                                underlying array.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 32 -->
+                    <div class="question" data-correct-answer="ConcurrentHashMap" data-question-id="q32">
+                        <p class="question-text">Q32. Which Map implementation allows concurrent access and updates
+                            without locking the entire map?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Hashtable">Hashtable</button>
+                            <button class="option-btn" data-answer="SynchronizedMap">SynchronizedMap</button>
+                            <button class="option-btn" data-answer="ConcurrentHashMap">ConcurrentHashMap</button>
+                            <button class="option-btn" data-answer="HashMap">HashMap</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ConcurrentHashMap</div>
+                            <p>`ConcurrentHashMap` allows concurrent read and thread-safe update operations. It uses a
+                                more sophisticated locking strategy (bucket-level locking or CAS) than `Hashtable`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 33 -->
+                    <div class="question" data-correct-answer="interrupt()" data-question-id="q33">
+                        <p class="question-text">Q33. Which method is used to interrupt a thread?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="stop()">stop()</button>
+                            <button class="option-btn" data-answer="kill()">kill()</button>
+                            <button class="option-btn" data-answer="interrupt()">interrupt()</button>
+                            <button class="option-btn" data-answer="break()">break()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: interrupt()</div>
+                            <p>The `interrupt()` method is used to interrupt a thread. If the thread is blocked in an
+                                invocation of `wait()`, `sleep()`, or `join()`, its interrupted status will be cleared
+                                and it will receive an `InterruptedException`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 34 -->
+                    <div class="question" data-correct-answer="isAlive()" data-question-id="q34">
+                        <p class="question-text">Q34. Which method checks if a thread is still running?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="isRunning()">isRunning()</button>
+                            <button class="option-btn" data-answer="isAlive()">isAlive()</button>
+                            <button class="option-btn" data-answer="isActive()">isActive()</button>
+                            <button class="option-btn" data-answer="check()">check()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: isAlive()</div>
+                            <p>The `isAlive()` method returns true if the thread has been started and has not yet died.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 35 -->
+                    <div class="question" data-correct-answer="Thread.currentThread()" data-question-id="q35">
+                        <p class="question-text">Q35. How do you get a reference to the currently executing thread
+                            object?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="this">this</button>
+                            <button class="option-btn" data-answer="Thread.current()">Thread.current()</button>
+                            <button class="option-btn"
+                                data-answer="Thread.currentThread()">Thread.currentThread()</button>
+                            <button class="option-btn" data-answer="Thread.now()">Thread.now()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Thread.currentThread()</div>
+                            <p>`Thread.currentThread()` is a static method that returns a reference to the currently
+                                executing thread object.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section" id="quizResults" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="results-summary">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+                        </div>
+                        <div class="performance-message" id="performanceMessage"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake
+                            Quiz</button>
+                        <a class="md-button md-button--secondary" href="../theory/multithreading.html">📚 Review
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/multithreading.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                </div>
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/multithreading.html">📚 Back to
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/multithreading.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">🚀 Next Topic Coming Soon</div>
+                        <div class="admonition-content">
+                            <p><strong>Topic 14:</strong> Java 8+ Advanced Features &amp; Enhancements</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
-
+    <script src="../assets/js/docs-style.js"></script>
     <script src="../assets/js/mcq.js"></script>
-    <script>
-        const quizQuestions = [
-            {
-                id: 1,
-                question: "What is a thread in Java?",
-                options: ["A lightweight process", "A heavy process", "A class", "A package"],
-                answerIndex: 0,
-                explanation: "A thread is a lightweight subprocess, the smallest unit of processing. It's a separate path of execution within a program."
-            },
-            {
-                id: 2,
-                question: "Which package contains the Thread class?",
-                options: ["java.util", "java.lang", "java.thread", "java.concurrent"],
-                answerIndex: 1,
-                explanation: "The Thread class is in the java.lang package, which is automatically imported in every Java program."
-            },
-            {
-                id: 3,
-                question: "What happens when you call run() directly instead of start()?",
-                options: ["Creates a new thread", "Executes in the same thread (no new thread created)", "Throws an exception", "Does nothing"],
-                answerIndex: 1,
-                explanation: "Calling run() directly executes the method in the current thread like a normal method call. Only start() creates a new thread."
-            },
-            {
-                id: 4,
-                question: "Which method is used to create a new thread?",
-                options: ["run()", "start()", "execute()", "begin()"],
-                answerIndex: 1,
-                explanation: "The start() method creates a new thread and calls the run() method internally. It can only be called once per thread object."
-            },
-            {
-                id: 5,
-                question: "How many ways can you create a thread in Java?",
-                options: ["1", "2", "3", "4"],
-                answerIndex: 1,
-                explanation: "There are two main ways: 1) Extending the Thread class, 2) Implementing the Runnable interface. Implementing Runnable is preferred."
-            },
-            {
-                id: 6,
-                question: "What is the default priority of a thread?",
-                options: ["1", "5", "10", "0"],
-                answerIndex: 1,
-                explanation: "The default thread priority is 5 (Thread.NORM_PRIORITY). Priorities range from 1 (MIN_PRIORITY) to 10 (MAX_PRIORITY)."
-            },
-            {
-                id: 7,
-                question: "Which of the following is NOT a valid thread state?",
-                options: ["NEW", "RUNNABLE", "RUNNING", "SLEEPING"],
-                answerIndex: 3,
-                explanation: "SLEEPING is not a valid thread state. The valid states are: NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, and TERMINATED."
-            },
-            {
-                id: 8,
-                question: "What does the sleep() method do?",
-                options: ["Terminates the thread", "Pauses the thread for specified time", "Wakes up a waiting thread", "Creates a new thread"],
-                answerIndex: 1,
-                explanation: "Thread.sleep(milliseconds) pauses the current thread for the specified duration. It throws InterruptedException."
-            },
-            {
-                id: 9,
-                question: "What is the purpose of the join() method?",
-                options: ["Combine two threads", "Wait for a thread to die", "Start a thread", "Pause a thread"],
-                answerIndex: 1,
-                explanation: "The join() method waits for a thread to complete its execution before the calling thread continues."
-            },
-            {
-                id: 10,
-                question: "What is a race condition?",
-                options: ["When threads compete for CPU time", "When multiple threads access shared data concurrently causing inconsistent results", "When a thread runs very fast", "When threads are created in sequence"],
-                answerIndex: 1,
-                explanation: "A race condition occurs when two or more threads access shared data concurrently and try to change it, leading to unpredictable results."
-            },
-            {
-                id: 11,
-                question: "Which keyword is used to prevent race conditions?",
-                options: ["volatile", "synchronized", "atomic", "locked"],
-                answerIndex: 1,
-                explanation: "The synchronized keyword ensures that only one thread can execute a block of code or method at a time, preventing race conditions."
-            },
-            {
-                id: 12,
-                question: "Can a synchronized method be called by multiple threads simultaneously?",
-                options: ["Yes, always", "No, only one thread at a time", "Yes, if they have different priorities", "Depends on the JVM"],
-                answerIndex: 1,
-                explanation: "A synchronized method can only be executed by one thread at a time. Other threads must wait until the lock is released."
-            },
-            {
-                id: 13,
-                question: "What is a monitor lock in Java?",
-                options: ["A hardware lock", "An intrinsic lock associated with every object", "A special thread", "A synchronization tool"],
-                answerIndex: 1,
-                explanation: "Every object in Java has an intrinsic lock (monitor lock). When a thread enters a synchronized method/block, it acquires this lock."
-            },
-            {
-                id: 14,
-                question: "Which methods are used for inter-thread communication?",
-                options: ["sleep(), wake(), notify()", "wait(), notify(), notifyAll()", "pause(), resume(), stop()", "hold(), release(), signal()"],
-                answerIndex: 1,
-                explanation: "wait(), notify(), and notifyAll() are used for inter-thread communication. They must be called from within a synchronized context."
-            },
-            {
-                id: 15,
-                question: "Where must wait(), notify(), and notifyAll() be called?",
-                options: ["Anywhere in the code", "Only in the main method", "Within a synchronized context", "Only in Thread class"],
-                answerIndex: 2,
-                explanation: "These methods must be called from within a synchronized method or block. Otherwise, they throw IllegalMonitorStateException."
-            },
-            {
-                id: 16,
-                question: "What is a daemon thread?",
-                options: ["A high-priority thread", "A low-priority background thread", "A thread that never terminates", "A thread that runs on a separate JVM"],
-                answerIndex: 1,
-                explanation: "Daemon threads are low-priority threads that run in the background (e.g., garbage collection). JVM exits when only daemon threads remain."
-            },
-            {
-                id: 17,
-                question: "When should you call setDaemon(true)?",
-                options: ["After calling start()", "Before calling start()", "Anytime", "Never"],
-                answerIndex: 1,
-                explanation: "setDaemon(true) must be called BEFORE calling start(). Calling it after start() throws IllegalThreadStateException."
-            },
-            {
-                id: 18,
-                question: "What is deadlock?",
-                options: ["When a thread dies", "When two or more threads are blocked forever, waiting for each other", "When a thread runs too slowly", "When a thread has low priority"],
-                answerIndex: 1,
-                explanation: "Deadlock occurs when two or more threads are blocked forever, each waiting for the other to release a lock."
-            },
-            {
-                id: 19,
-                question: "How can you prevent deadlock?",
-                options: ["Use higher thread priorities", "Always acquire locks in the same order", "Use more threads", "Avoid using threads"],
-                answerIndex: 1,
-                explanation: "One way to prevent deadlock is to always acquire locks in the same order across all threads. This prevents circular wait conditions."
-            },
-            {
-                id: 20,
-                question: "What is the Executor framework?",
-                options: ["A class for executing code", "A higher-level replacement for working with threads directly", "A debugging tool", "A thread priority manager"],
-                answerIndex: 1,
-                explanation: "The Executor framework provides a higher-level API for thread management, including thread pools, task scheduling, and lifecycle management."
-            },
-            {
-                id: 21,
-                question: "Which method creates a fixed-size thread pool?",
-                options: ["Executors.newThreadPool()", "Executors.newFixedThreadPool(n)", "Executors.createPool(n)", "new ThreadPool(n)"],
-                answerIndex: 1,
-                explanation: "Executors.newFixedThreadPool(n) creates a thread pool with a fixed number of threads that are reused for executing tasks."
-            },
-            {
-                id: 22,
-                question: "What is the difference between Runnable and Callable?",
-                options: ["No difference", "Callable can return a value and throw checked exceptions", "Runnable is faster", "Callable doesn't need a thread"],
-                answerIndex: 1,
-                explanation: "Callable can return a value and throw checked exceptions, while Runnable cannot return a value and can only throw unchecked exceptions."
-            },
-            {
-                id: 23,
-                question: "What does Future represent?",
-                options: ["A future thread", "The result of an asynchronous computation", "A scheduled task", "A thread pool"],
-                answerIndex: 1,
-                explanation: "Future represents the result of an asynchronous computation. You can use get() to retrieve the result, which blocks until available."
-            },
-            {
-                id: 24,
-                question: "What is the purpose of volatile keyword?",
-                options: ["Make variables constant", "Ensure visibility of changes across threads", "Increase performance", "Prevent exceptions"],
-                answerIndex: 1,
-                explanation: "The volatile keyword ensures that changes to a variable are immediately visible to all threads. It prevents thread caching of the variable."
-            },
-            {
-                id: 25,
-                question: "What is CountDownLatch used for?",
-                options: ["Counting threads", "Allowing threads to wait until a set of operations completes", "Creating threads", "Destroying threads"],
-                answerIndex: 1,
-                explanation: "CountDownLatch allows one or more threads to wait until a set of operations being performed in other threads completes."
-            },
-            {
-                id: 26,
-                question: "What is the difference between synchronized and Lock?",
-                options: ["No difference", "Lock provides more flexibility and features", "synchronized is faster", "Lock is deprecated"],
-                answerIndex: 1,
-                explanation: "Lock interface provides more flexibility than synchronized, including try-lock, timed lock, interruptible lock, and multiple condition variables."
-            },
-            {
-                id: 27,
-                question: "What is ConcurrentHashMap?",
-                options: ["A synchronized HashMap", "A thread-safe map with better concurrency than Hashtable", "A map that runs in multiple threads", "A faster HashMap"],
-                answerIndex: 1,
-                explanation: "ConcurrentHashMap is a thread-safe map that allows concurrent reads and writes without locking the entire map, providing better performance than Hashtable."
-            },
-            {
-                id: 28,
-                question: "What happens if you don't call shutdown() on an ExecutorService?",
-                options: ["Nothing", "The program may not terminate", "Throws an exception", "Threads are automatically stopped"],
-                answerIndex: 1,
-                explanation: "If you don't call shutdown(), the ExecutorService keeps running and the program may not terminate because the threads are still alive."
-            },
-            {
-                id: 29,
-                question: "What is thread starvation?",
-                options: ["When a thread dies", "When a thread is unable to gain regular access to shared resources", "When a thread runs too fast", "When a thread has no work"],
-                answerIndex: 1,
-                explanation: "Thread starvation occurs when a thread is unable to gain regular access to shared resources and is unable to make progress."
-            },
-            {
-                id: 30,
-                question: "What is the output of this code?\n\nThread t = new Thread(() -> System.out.println(\"Hello\"));\nt.run();\nt.run();",
-                options: ["Hello (printed once)", "Hello (printed twice)", "Exception thrown", "Nothing printed"],
-                answerIndex: 1,
-                explanation: "Calling run() directly executes it like a normal method in the same thread. It can be called multiple times, so 'Hello' is printed twice. No new thread is created."
-            },
-            {
-                id: 31,
-                question: "Which is the correct way to stop a thread?",
-                options: ["thread.stop()", "Use a volatile boolean flag", "thread.destroy()", "thread.kill()"],
-                answerIndex: 1,
-                explanation: "The correct way is to use a volatile boolean flag that the thread checks periodically. The stop() method is deprecated and unsafe."
-            },
-            {
-                id: 32,
-                question: "What is the purpose of yield() method?",
-                options: ["Stop the thread", "Hint to scheduler that current thread is willing to yield CPU", "Wait for another thread", "Create a new thread"],
-                answerIndex: 1,
-                explanation: "yield() is a hint to the thread scheduler that the current thread is willing to yield its current use of CPU. The scheduler may ignore this hint."
-            },
-            {
-                id: 33,
-                question: "What is a Semaphore?",
-                options: ["A type of thread", "A synchronization aid that controls access to shared resources through permits", "A thread pool", "A lock mechanism"],
-                answerIndex: 1,
-                explanation: "Semaphore controls access to a shared resource through the use of permits. Threads acquire permits before accessing and release them after."
-            },
-            {
-                id: 34,
-                question: "What is CyclicBarrier used for?",
-                options: ["Creating barriers in code", "Allowing threads to wait for each other at a common barrier point", "Preventing thread creation", "Stopping threads"],
-                answerIndex: 1,
-                explanation: "CyclicBarrier allows a set of threads to wait for each other to reach a common barrier point before continuing execution."
-            },
-            {
-                id: 35,
-                question: "Which is better for a simple counter: synchronized or AtomicInteger?",
-                options: ["synchronized", "AtomicInteger", "Both are equal", "Neither"],
-                answerIndex: 1,
-                explanation: "AtomicInteger is better for simple counters as it provides lock-free thread-safe operations with better performance than synchronized."
-            }
-        ];
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-            window.quizManager = quizManager;
-        });
-    </script>
 </body>
 
 </html>

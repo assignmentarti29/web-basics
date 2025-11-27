@@ -1,326 +1,1123 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>OOPs Concepts - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>OOPs Concepts - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>OOPs Concepts</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Test Your OOP Knowledge</h2>
-            <p>This quiz contains 30+ questions covering Encapsulation, Inheritance, Polymorphism, Abstraction, and
-                more.
-                Challenge yourself to see how well you understand Object-Oriented Programming!</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Read the code snippets carefully. Pay attention to access modifiers, inheritance hierarchies, and
-                    method signatures.</p>
-            </div>
-        </div>
-
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
-            </div>
-        </div>
-
-        <div id="quizContainer" class="content-section"></div>
-
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
                 </div>
-                <div id="performanceMessage" class="performance-message"></div>
             </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>OOPs Concepts - Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>OOPs Concepts - Quiz</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Test Your OOP Knowledge</h2>
+                    <p>This quiz contains 30+ questions covering Encapsulation, Inheritance, Polymorphism, Abstraction,
+                        and
+                        more.
+                        Challenge yourself to see how well you understand Object-Oriented Programming!</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Read the code snippets carefully. Pay attention to access modifiers, inheritance
+                                hierarchies, and
+                                method signatures.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
+                    </div>
+                </div>
+                <div class="content-section" id="quizContainer">
+                    <!-- Question 1 -->
+                    <div class="question" data-correct-answer="Encapsulation" data-question-id="q1">
+                        <p class="question-text">Q1. Which OOP principle involves wrapping code and data together into a
+                            single unit?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Inheritance">Inheritance</button>
+                            <button class="option-btn" data-answer="Polymorphism">Polymorphism</button>
+                            <button class="option-btn" data-answer="Encapsulation">Encapsulation</button>
+                            <button class="option-btn" data-answer="Abstraction">Abstraction</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Encapsulation</div>
+                            <p>Encapsulation is the mechanism of wrapping the data (variables) and code acting on the
+                                data (methods) together as a single unit (class). It also involves restricting direct
+                                access to some of an object's components.</p>
+                        </div>
+                    </div>
 
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/oops.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/oops.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="extends" data-question-id="q2">
+                        <p class="question-text">Q2. Which keyword is used to inherit a class in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="implements">implements</button>
+                            <button class="option-btn" data-answer="extends">extends</button>
+                            <button class="option-btn" data-answer="inherits">inherits</button>
+                            <button class="option-btn" data-answer="super">super</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: extends</div>
+                            <p>The `extends` keyword is used to create a subclass that inherits attributes and methods
+                                from a superclass. Example: `class Dog extends Animal`.</p>
+                        </div>
+                    </div>
 
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/oops.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../programs/oops.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="Polymorphism" data-question-id="q3">
+                        <p class="question-text">Q3. "One interface, multiple methods" describes which OOP concept?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Encapsulation">Encapsulation</button>
+                            <button class="option-btn" data-answer="Inheritance">Inheritance</button>
+                            <button class="option-btn" data-answer="Polymorphism">Polymorphism</button>
+                            <button class="option-btn" data-answer="Abstraction">Abstraction</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Polymorphism</div>
+                            <p>Polymorphism allows objects to be treated as instances of their parent class. It allows a
+                                single interface to map to different underlying forms (methods), such as through method
+                                overloading or overriding.</p>
+                        </div>
+                    </div>
 
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p><strong>Coming Soon:</strong> Java Collection Framework in Depth</p>
+                    <!-- Question 4 -->
+                    <div class="question"
+                        data-correct-answer="Hiding implementation details and showing only functionality"
+                        data-question-id="q4">
+                        <p class="question-text">Q4. What is Abstraction?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Hiding data">Hiding data</button>
+                            <button class="option-btn"
+                                data-answer="Hiding implementation details and showing only functionality">Hiding
+                                implementation details and showing only functionality</button>
+                            <button class="option-btn" data-answer="Creating multiple objects">Creating multiple
+                                objects</button>
+                            <button class="option-btn" data-answer="Reusing code">Reusing code</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Hiding implementation details and showing
+                                only functionality</div>
+                            <p>Abstraction is the process of hiding the implementation details and showing only the
+                                functionality to the user. In Java, this is achieved using abstract classes and
+                                interfaces.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="Multiple inheritance of classes" data-question-id="q5">
+                        <p class="question-text">Q5. Which type of inheritance is NOT supported by Java classes?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Single Inheritance">Single Inheritance</button>
+                            <button class="option-btn" data-answer="Multilevel Inheritance">Multilevel
+                                Inheritance</button>
+                            <button class="option-btn" data-answer="Hierarchical Inheritance">Hierarchical
+                                Inheritance</button>
+                            <button class="option-btn" data-answer="Multiple inheritance of classes">Multiple
+                                inheritance of classes</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Multiple inheritance of classes</div>
+                            <p>Java does not support multiple inheritance with classes (a class cannot extend more than
+                                one class) to avoid the "Diamond Problem". However, it supports multiple inheritance
+                                through interfaces.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="super" data-question-id="q6">
+                        <p class="question-text">Q6. Which keyword is used to refer to the immediate parent class
+                            object?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="this">this</button>
+                            <button class="option-btn" data-answer="parent">parent</button>
+                            <button class="option-btn" data-answer="super">super</button>
+                            <button class="option-btn" data-answer="base">base</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: super</div>
+                            <p>The `super` keyword is a reference variable used to refer to the immediate parent class
+                                object. It can be used to invoke parent class methods or constructors.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="Method Overriding" data-question-id="q7">
+                        <p class="question-text">Q7. Providing a specific implementation of a method already defined in
+                            the parent class is called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Method Overloading">Method Overloading</button>
+                            <button class="option-btn" data-answer="Method Overriding">Method Overriding</button>
+                            <button class="option-btn" data-answer="Method Hiding">Method Hiding</button>
+                            <button class="option-btn" data-answer="Encapsulation">Encapsulation</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Method Overriding</div>
+                            <p>Method Overriding occurs when a subclass provides a specific implementation for a method
+                                that is already defined in its superclass. The method signature must be exactly the
+                                same.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question" data-correct-answer="Runtime Polymorphism" data-question-id="q8">
+                        <p class="question-text">Q8. Method overriding is an example of which type of polymorphism?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Compile-time Polymorphism">Compile-time
+                                Polymorphism</button>
+                            <button class="option-btn" data-answer="Runtime Polymorphism">Runtime Polymorphism</button>
+                            <button class="option-btn" data-answer="Static Polymorphism">Static Polymorphism</button>
+                            <button class="option-btn" data-answer="Ad-hoc Polymorphism">Ad-hoc Polymorphism</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Runtime Polymorphism</div>
+                            <p>Method overriding is resolved at runtime (Dynamic Method Dispatch), making it an example
+                                of Runtime Polymorphism. Method overloading is Compile-time polymorphism.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="Cannot be instantiated" data-question-id="q9">
+                        <p class="question-text">Q9. Which of the following is true about an abstract class?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Cannot have constructors">Cannot have
+                                constructors</button>
+                            <button class="option-btn" data-answer="Cannot be instantiated">Cannot be
+                                instantiated</button>
+                            <button class="option-btn" data-answer="Must have all abstract methods">Must have all
+                                abstract methods</button>
+                            <button class="option-btn" data-answer="Cannot have static methods">Cannot have static
+                                methods</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Cannot be instantiated</div>
+                            <p>An abstract class cannot be instantiated directly using the `new` keyword. It is meant to
+                                be subclassed. It can have constructors, static methods, and both abstract and concrete
+                                methods.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="implements" data-question-id="q10">
+                        <p class="question-text">Q10. Which keyword is used to implement an interface?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="extends">extends</button>
+                            <button class="option-btn" data-answer="implements">implements</button>
+                            <button class="option-btn" data-answer="using">using</button>
+                            <button class="option-btn" data-answer="interface">interface</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: implements</div>
+                            <p>A class uses the `implements` keyword to implement an interface. A class can implement
+                                multiple interfaces.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer="public static final" data-question-id="q11">
+                        <p class="question-text">Q11. Variables declared in an interface are implicitly...?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="private static final">private static final</button>
+                            <button class="option-btn" data-answer="public static final">public static final</button>
+                            <button class="option-btn" data-answer="protected final">protected final</button>
+                            <button class="option-btn" data-answer="public abstract">public abstract</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: public static final</div>
+                            <p>All variables declared in an interface are implicitly `public`, `static`, and `final`
+                                (constants), even if you don't explicitly specify these modifiers.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="IS-A relationship" data-question-id="q12">
+                        <p class="question-text">Q12. Inheritance represents which type of relationship?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="HAS-A relationship">HAS-A relationship</button>
+                            <button class="option-btn" data-answer="IS-A relationship">IS-A relationship</button>
+                            <button class="option-btn" data-answer="USES-A relationship">USES-A relationship</button>
+                            <button class="option-btn" data-answer="PART-OF relationship">PART-OF relationship</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: IS-A relationship</div>
+                            <p>Inheritance represents an IS-A relationship (e.g., A Car IS-A Vehicle).
+                                Composition/Aggregation represents a HAS-A relationship (e.g., A Car HAS-A Engine).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="instanceof" data-question-id="q13">
+                        <p class="question-text">Q13. Which operator is used to check if an object is an instance of a
+                            specific class?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="typeof">typeof</button>
+                            <button class="option-btn" data-answer="isA">isA</button>
+                            <button class="option-btn" data-answer="instanceof">instanceof</button>
+                            <button class="option-btn" data-answer="check">check</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: instanceof</div>
+                            <p>The `instanceof` operator is used to test whether the object is an instance of the
+                                specified type (class or subclass or interface).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question" data-correct-answer="private" data-question-id="q14">
+                        <p class="question-text">Q14. Which access modifier is most restrictive?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="public">public</button>
+                            <button class="option-btn" data-answer="protected">protected</button>
+                            <button class="option-btn" data-answer="default (package-private)">default
+                                (package-private)</button>
+                            <button class="option-btn" data-answer="private">private</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: private</div>
+                            <p>`private` is the most restrictive access modifier. Members declared as private are
+                                accessible only within the same class.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="Same package and subclasses" data-question-id="q15">
+                        <p class="question-text">Q15. Where can a protected member be accessed?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Same class only">Same class only</button>
+                            <button class="option-btn" data-answer="Same package only">Same package only</button>
+                            <button class="option-btn" data-answer="Same package and subclasses">Same package and
+                                subclasses</button>
+                            <button class="option-btn" data-answer="Everywhere">Everywhere</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Same package and subclasses</div>
+                            <p>`protected` members are accessible within the same package and by subclasses in other
+                                packages.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="Object" data-question-id="q16">
+                        <p class="question-text">Q16. Which class is the root of the Java class hierarchy?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Class">Class</button>
+                            <button class="option-btn" data-answer="Root">Root</button>
+                            <button class="option-btn" data-answer="Object">Object</button>
+                            <button class="option-btn" data-answer="System">System</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Object</div>
+                            <p>The `java.lang.Object` class is the root of the class hierarchy. Every class has Object
+                                as a superclass.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="super()" data-question-id="q17">
+                        <p class="question-text">Q17. How do you call the parent class constructor from a subclass
+                            constructor?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="parent()">parent()</button>
+                            <button class="option-btn" data-answer="super()">super()</button>
+                            <button class="option-btn" data-answer="this.parent()">this.parent()</button>
+                            <button class="option-btn" data-answer="base()">base()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: super()</div>
+                            <p>`super()` is used to invoke the parent class constructor. It must be the first statement
+                                in the subclass constructor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="Association" data-question-id="q18">
+                        <p class="question-text">Q18. What is the relationship between two separate classes which
+                            establish communication through their objects?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Inheritance">Inheritance</button>
+                            <button class="option-btn" data-answer="Association">Association</button>
+                            <button class="option-btn" data-answer="Encapsulation">Encapsulation</button>
+                            <button class="option-btn" data-answer="Polymorphism">Polymorphism</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Association</div>
+                            <p>Association represents a relationship between two classes. It can be one-to-one,
+                                one-to-many, etc. Aggregation and Composition are specialized forms of Association.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question" data-correct-answer="Strong Association (Death relationship)"
+                        data-question-id="q19">
+                        <p class="question-text">Q19. What is Composition?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Weak Association">Weak Association</button>
+                            <button class="option-btn" data-answer="Strong Association (Death relationship)">Strong
+                                Association (Death relationship)</button>
+                            <button class="option-btn" data-answer="Inheritance">Inheritance</button>
+                            <button class="option-btn" data-answer="Method Hiding">Method Hiding</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Strong Association (Death relationship)
+                            </div>
+                            <p>Composition is a strong form of association where the child object cannot exist without
+                                the parent object (e.g., A House and a Room). If the House is destroyed, the Room is
+                                also destroyed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="Aggregation" data-question-id="q20">
+                        <p class="question-text">Q20. A 'Department' has 'Teachers'. If the Department is closed,
+                            Teachers still exist. This is an example of?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Composition">Composition</button>
+                            <button class="option-btn" data-answer="Aggregation">Aggregation</button>
+                            <button class="option-btn" data-answer="Inheritance">Inheritance</button>
+                            <button class="option-btn" data-answer="Encapsulation">Encapsulation</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Aggregation</div>
+                            <p>This is Aggregation (Weak Association). The child object (Teacher) can exist
+                                independently of the parent object (Department).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="No, constructors are not inherited"
+                        data-question-id="q21">
+                        <p class="question-text">Q21. Are constructors inherited in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Yes, always">Yes, always</button>
+                            <button class="option-btn" data-answer="No, constructors are not inherited">No, constructors
+                                are not inherited</button>
+                            <button class="option-btn" data-answer="Only public constructors">Only public
+                                constructors</button>
+                            <button class="option-btn" data-answer="Only default constructors">Only default
+                                constructors</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: No, constructors are not inherited</div>
+                            <p>Constructors are not inherited by subclasses. However, the subclass constructor invokes
+                                the superclass constructor (either implicitly or explicitly using `super()`).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question" data-correct-answer="Upcasting" data-question-id="q22">
+                        <p class="question-text">Q22. Casting a subclass object to a superclass reference is called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Downcasting">Downcasting</button>
+                            <button class="option-btn" data-answer="Upcasting">Upcasting</button>
+                            <button class="option-btn" data-answer="Broadcasting">Broadcasting</button>
+                            <button class="option-btn" data-answer="Typecasting">Typecasting</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Upcasting</div>
+                            <p>Upcasting is casting a subclass object to a superclass reference (e.g., `Animal a = new
+                                Dog();`). It is done implicitly and is safe.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question" data-correct-answer="ClassCastException" data-question-id="q23">
+                        <p class="question-text">Q23. What exception is thrown if an invalid Downcast is attempted?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="NullPointerException">NullPointerException</button>
+                            <button class="option-btn" data-answer="ClassCastException">ClassCastException</button>
+                            <button class="option-btn"
+                                data-answer="IllegalArgumentException">IllegalArgumentException</button>
+                            <button class="option-btn"
+                                data-answer="TypeMismatchException">TypeMismatchException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ClassCastException</div>
+                            <p>A `ClassCastException` is thrown at runtime if you try to cast an object to a subclass of
+                                which it is not an instance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question" data-correct-answer="Marker Interface" data-question-id="q24">
+                        <p class="question-text">Q24. An interface with no methods is called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Functional Interface">Functional Interface</button>
+                            <button class="option-btn" data-answer="Marker Interface">Marker Interface</button>
+                            <button class="option-btn" data-answer="Abstract Interface">Abstract Interface</button>
+                            <button class="option-btn" data-answer="Null Interface">Null Interface</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Marker Interface</div>
+                            <p>A Marker Interface (or Tagging Interface) is an interface with no methods or constants
+                                (e.g., `Serializable`, `Cloneable`). It provides run-time type information about
+                                objects.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question" data-correct-answer="Functional Interface" data-question-id="q25">
+                        <p class="question-text">Q25. An interface with exactly one abstract method is called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Single Interface">Single Interface</button>
+                            <button class="option-btn" data-answer="Functional Interface">Functional Interface</button>
+                            <button class="option-btn" data-answer="Lambda Interface">Lambda Interface</button>
+                            <button class="option-btn" data-answer="Unique Interface">Unique Interface</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Functional Interface</div>
+                            <p>A Functional Interface is an interface that contains exactly one abstract method. They
+                                are used with Lambda expressions (e.g., `Runnable`, `Callable`).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 26 -->
+                    <div class="question" data-correct-answer="default" data-question-id="q26">
+                        <p class="question-text">Q26. Which keyword allows concrete methods in interfaces (Java 8+)?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="default">default</button>
+                            <button class="option-btn" data-answer="public">public</button>
+                            <button class="option-btn" data-answer="concrete">concrete</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: default</div>
+                            <p>Since Java 8, interfaces can have methods with implementation using the `default`
+                                keyword. This allows adding new methods to interfaces without breaking existing
+                                implementations.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 27 -->
+                    <div class="question" data-correct-answer="Coupling" data-question-id="q27">
+                        <p class="question-text">Q27. The degree of dependency between components is called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Cohesion">Cohesion</button>
+                            <button class="option-btn" data-answer="Coupling">Coupling</button>
+                            <button class="option-btn" data-answer="Encapsulation">Encapsulation</button>
+                            <button class="option-btn" data-answer="Inheritance">Inheritance</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Coupling</div>
+                            <p>Coupling refers to the degree of direct knowledge that one element has of another. Loose
+                                coupling is desirable in OOP design.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 28 -->
+                    <div class="question" data-correct-answer="Cohesion" data-question-id="q28">
+                        <p class="question-text">Q28. The measure of how strongly related the responsibilities of a
+                            class are is called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Coupling">Coupling</button>
+                            <button class="option-btn" data-answer="Cohesion">Cohesion</button>
+                            <button class="option-btn" data-answer="Polymorphism">Polymorphism</button>
+                            <button class="option-btn" data-answer="Abstraction">Abstraction</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Cohesion</div>
+                            <p>Cohesion refers to how closely related the functions within a single class are. High
+                                cohesion is desirable (Single Responsibility Principle).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 29 -->
+                    <div class="question" data-correct-answer="No, static methods cannot be overridden"
+                        data-question-id="q29">
+                        <p class="question-text">Q29. Can static methods be overridden?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Yes, always">Yes, always</button>
+                            <button class="option-btn" data-answer="No, static methods cannot be overridden">No, static
+                                methods cannot be overridden</button>
+                            <button class="option-btn" data-answer="Only in abstract classes">Only in abstract
+                                classes</button>
+                            <button class="option-btn" data-answer="Yes, if they are public">Yes, if they are
+                                public</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: No, static methods cannot be overridden
+                            </div>
+                            <p>Static methods cannot be overridden because they are bound to the class, not the
+                                instance. However, they can be *hidden* (Method Hiding) if a subclass defines a static
+                                method with the same signature.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 30 -->
+                    <div class="question" data-correct-answer="final" data-question-id="q30">
+                        <p class="question-text">Q30. Which keyword prevents a class from being subclassed?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="abstract">abstract</button>
+                            <button class="option-btn" data-answer="final">final</button>
+                            <button class="option-btn" data-answer="private">private</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: final</div>
+                            <p>A `final` class cannot be subclassed (e.g., `String`, `System`). This is used to create
+                                immutable classes or for security reasons.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 31 -->
+                    <div class="question" data-correct-answer="Dynamic Binding" data-question-id="q31">
+                        <p class="question-text">Q31. Runtime polymorphism is achieved through?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Static Binding">Static Binding</button>
+                            <button class="option-btn" data-answer="Dynamic Binding">Dynamic Binding</button>
+                            <button class="option-btn" data-answer="Early Binding">Early Binding</button>
+                            <button class="option-btn" data-answer="Operator Overloading">Operator Overloading</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Dynamic Binding</div>
+                            <p>Runtime polymorphism (method overriding) is achieved through Dynamic Binding (Late
+                                Binding), where the method call is resolved at runtime based on the actual object type.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 32 -->
+                    <div class="question" data-correct-answer="Both Abstract Class and Interface"
+                        data-question-id="q32">
+                        <p class="question-text">Q32. Which of the following can have abstract methods?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Concrete Class">Concrete Class</button>
+                            <button class="option-btn" data-answer="Abstract Class only">Abstract Class only</button>
+                            <button class="option-btn" data-answer="Interface only">Interface only</button>
+                            <button class="option-btn" data-answer="Both Abstract Class and Interface">Both Abstract
+                                Class and Interface</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Both Abstract Class and Interface</div>
+                            <p>Both Abstract Classes and Interfaces can contain abstract methods (methods without a
+                                body).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 33 -->
+                    <div class="question" data-correct-answer="Diamond Problem" data-question-id="q33">
+                        <p class="question-text">Q33. What is the ambiguity problem in multiple inheritance called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Triangle Problem">Triangle Problem</button>
+                            <button class="option-btn" data-answer="Circle Problem">Circle Problem</button>
+                            <button class="option-btn" data-answer="Diamond Problem">Diamond Problem</button>
+                            <button class="option-btn" data-answer="Square Problem">Square Problem</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Diamond Problem</div>
+                            <p>The Diamond Problem occurs in multiple inheritance when a class inherits from two classes
+                                that have a common ancestor, leading to ambiguity about which method to inherit.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 34 -->
+                    <div class="question" data-correct-answer="No" data-question-id="q34">
+                        <p class="question-text">Q34. Can an abstract class be final?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Yes">Yes</button>
+                            <button class="option-btn" data-answer="No">No</button>
+                            <button class="option-btn" data-answer="Only if it has no abstract methods">Only if it has
+                                no abstract methods</button>
+                            <button class="option-btn" data-answer="Only if it is static">Only if it is static</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: No</div>
+                            <p>An abstract class cannot be `final` because abstract classes are meant to be subclassed,
+                                while `final` prevents subclassing. These keywords are mutually exclusive.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 35 -->
+                    <div class="question" data-correct-answer="Deep Copy" data-question-id="q35">
+                        <p class="question-text">Q35. Which type of object cloning creates a new copy of all objects in
+                            the original object's hierarchy?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Shallow Copy">Shallow Copy</button>
+                            <button class="option-btn" data-answer="Deep Copy">Deep Copy</button>
+                            <button class="option-btn" data-answer="Reference Copy">Reference Copy</button>
+                            <button class="option-btn" data-answer="Shadow Copy">Shadow Copy</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Deep Copy</div>
+                            <p>A Deep Copy creates a new object and recursively copies all objects referenced by the
+                                original object, ensuring that changes to the new object do not affect the original one.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section" id="quizResults" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="results-summary">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+                        </div>
+                        <div class="performance-message" id="performanceMessage"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake
+                            Quiz</button>
+                        <a class="md-button md-button--secondary" href="../theory/oops.html">📚 Review Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/oops.html">💻 View Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                </div>
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/oops.html">📚 Back to Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/oops.html">💻 View Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p><strong>Coming Soon:</strong> Java Collection Framework in Depth</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
-
+    <script src="../assets/js/docs-style.js"></script>
     <script src="../assets/js/mcq.js"></script>
-    <script>
-        const quizQuestions = [
-            {
-                id: 1,
-                question: "Which OOP concept is implemented using 'private' variables and public getters/setters?",
-                options: ["Inheritance", "Encapsulation", "Polymorphism", "Abstraction"],
-                answerIndex: 1,
-                explanation: "Encapsulation hides data and exposes controlled access via methods."
-            },
-            {
-                id: 2,
-                question: "Which keyword is used to inherit a class in Java?",
-                options: ["implement", "extends", "inherits", "super"],
-                answerIndex: 1,
-                explanation: "'extends' keyword is used to inherit a class in Java."
-            },
-            {
-                id: 3,
-                question: "What is the output? class A { void show() { System.out.println(\"A\"); } } class B extends A { void show() { System.out.println(\"B\"); } } public class Test { public static void main(String[] args) { A obj = new B(); obj.show(); } }",
-                options: ["A", "B", "Compilation Error", "Runtime Error"],
-                answerIndex: 1,
-                explanation: "This is runtime polymorphism (method overriding). The method of the object type (B) is called, not the reference type (A)."
-            },
-            {
-                id: 4,
-                question: "Which of the following is NOT a pillar of OOP?",
-                options: ["Encapsulation", "Inheritance", "Compilation", "Polymorphism"],
-                answerIndex: 2,
-                explanation: "Compilation is a process, not an OOP pillar. The 4 pillars are Encapsulation, Inheritance, Polymorphism, and Abstraction."
-            },
-            {
-                id: 5,
-                question: "Can a class extend multiple classes in Java?",
-                options: ["Yes", "No", "Only if abstract", "Only if final"],
-                answerIndex: 1,
-                explanation: "Java does not support multiple inheritance for classes to avoid the Diamond Problem. It supports multiple inheritance via interfaces."
-            },
-            {
-                id: 6,
-                question: "Which keyword is used to access the parent class constructor?",
-                options: ["this()", "parent()", "super()", "base()"],
-                answerIndex: 2,
-                explanation: "'super()' is used to call the parent class constructor."
-            },
-            {
-                id: 7,
-                question: "What is true about an abstract class?",
-                options: ["It cannot be instantiated", "It must have abstract methods", "It cannot have constructors", "It cannot have static methods"],
-                answerIndex: 0,
-                explanation: "Abstract classes cannot be instantiated. They can have constructors, static methods, and concrete methods."
-            },
-            {
-                id: 8,
-                question: "Which access modifier provides the widest visibility?",
-                options: ["private", "protected", "default", "public"],
-                answerIndex: 3,
-                explanation: "'public' makes the member accessible from anywhere."
-            },
-            {
-                id: 9,
-                question: "Method overloading is an example of which type of polymorphism?",
-                options: ["Runtime Polymorphism", "Compile-time Polymorphism", "Dynamic Binding", "None"],
-                answerIndex: 1,
-                explanation: "Method overloading is resolved at compile time based on method signature."
-            },
-            {
-                id: 10,
-                question: "What happens if you try to override a final method?",
-                options: ["It works normally", "Compilation Error", "Runtime Error", "Warning"],
-                answerIndex: 1,
-                explanation: "Final methods cannot be overridden. Attempting to do so causes a compilation error."
-            },
-            {
-                id: 11,
-                question: "Which relationship does Inheritance represent?",
-                options: ["HAS-A", "IS-A", "USES-A", "PART-OF"],
-                answerIndex: 1,
-                explanation: "Inheritance represents an IS-A relationship (e.g., Dog IS-A Animal)."
-            },
-            {
-                id: 12,
-                question: "Which relationship does Composition represent?",
-                options: ["HAS-A", "IS-A", "USES-A", "KIND-OF"],
-                answerIndex: 0,
-                explanation: "Composition represents a HAS-A relationship (e.g., Car HAS-A Engine)."
-            },
-            {
-                id: 13,
-                question: "Can an interface have private methods in Java (Java 9+)?",
-                options: ["Yes", "No", "Only static ones", "Only abstract ones"],
-                answerIndex: 0,
-                explanation: "Since Java 9, interfaces can have private methods to share code between default methods."
-            },
-            {
-                id: 14,
-                question: "What is the default access modifier in an interface (for methods)?",
-                options: ["private", "protected", "public", "default"],
-                answerIndex: 2,
-                explanation: "Interface methods are implicitly public and abstract (unless default/static/private)."
-            },
-            {
-                id: 15,
-                question: "Which keyword prevents a class from being inherited?",
-                options: ["static", "abstract", "final", "private"],
-                answerIndex: 2,
-                explanation: "A 'final' class cannot be subclassed."
-            },
-            {
-                id: 16,
-                question: "What is the output? class A { A() { System.out.print(\"A\"); } } class B extends A { B() { System.out.print(\"B\"); } } new B();",
-                options: ["B", "AB", "BA", "Compilation Error"],
-                answerIndex: 1,
-                explanation: "Parent constructor runs first, then child constructor. So 'A' then 'B'."
-            },
-            {
-                id: 17,
-                question: "Can we overload the main method?",
-                options: ["Yes", "No", "Only in abstract classes", "Only in interfaces"],
-                answerIndex: 0,
-                explanation: "Yes, we can overload main(), but JVM only calls public static void main(String[] args)."
-            },
-            {
-                id: 18,
-                question: "What is the Diamond Problem related to?",
-                options: ["Encapsulation", "Multiple Inheritance", "Polymorphism", "Abstraction"],
-                answerIndex: 1,
-                explanation: "The Diamond Problem occurs in multiple inheritance when two parents have the same method, and the child doesn't know which one to inherit."
-            },
-            {
-                id: 19,
-                question: "Which keyword refers to the current object instance?",
-                options: ["super", "this", "self", "object"],
-                answerIndex: 1,
-                explanation: "'this' keyword refers to the current object instance."
-            },
-            {
-                id: 20,
-                question: "Can an abstract class have a constructor?",
-                options: ["Yes", "No", "Only private", "Only protected"],
-                answerIndex: 0,
-                explanation: "Yes, abstract classes can have constructors, which are called when a subclass is instantiated."
-            },
-            {
-                id: 21,
-                question: "What is dynamic binding?",
-                options: ["Linking method call to body at compile time", "Linking method call to body at runtime", "Linking variables", "None"],
-                answerIndex: 1,
-                explanation: "Dynamic binding (late binding) resolves method calls at runtime based on the actual object type."
-            },
-            {
-                id: 22,
-                question: "Which principle states 'Program to an interface, not an implementation'?",
-                options: ["Encapsulation", "Abstraction", "Loose Coupling", "Inheritance"],
-                answerIndex: 2,
-                explanation: "This is a design principle that promotes loose coupling and flexibility."
-            },
-            {
-                id: 23,
-                question: "Can a static method be overridden?",
-                options: ["Yes", "No", "Only in same package", "Only if public"],
-                answerIndex: 1,
-                explanation: "No, static methods are hidden, not overridden. This is called Method Hiding."
-            },
-            {
-                id: 24,
-                question: "What is the use of 'instanceof' operator?",
-                options: ["To create an instance", "To check if an object is an instance of a class", "To call a method", "To import a package"],
-                answerIndex: 1,
-                explanation: "'instanceof' checks if an object is an instance of a specific class or interface."
-            },
-            {
-                id: 25,
-                question: "Can we declare an interface as final?",
-                options: ["Yes", "No", "Only if empty", "Only if private"],
-                answerIndex: 1,
-                explanation: "No, interfaces are meant to be implemented. 'final' prevents implementation/inheritance, so it contradicts the purpose of an interface."
-            },
-            {
-                id: 26,
-                question: "What is a marker interface?",
-                options: ["Interface with one method", "Interface with no methods", "Interface with constants only", "Interface with default methods"],
-                answerIndex: 1,
-                explanation: "A marker interface (like Serializable, Cloneable) has no methods and is used to signal something to the JVM/compiler."
-            },
-            {
-                id: 27,
-                question: "Which method is used to return the string representation of an object?",
-                options: ["getString()", "toString()", "repr()", "valueOf()"],
-                answerIndex: 1,
-                explanation: "toString() method returns the string representation of an object."
-            },
-            {
-                id: 28,
-                question: "If a class contains an abstract method, must the class be abstract?",
-                options: ["Yes", "No", "Only if public", "Only if static"],
-                answerIndex: 0,
-                explanation: "Yes, if a class has at least one abstract method, the class itself must be declared abstract."
-            },
-            {
-                id: 29,
-                question: "Can a constructor be final?",
-                options: ["Yes", "No", "Only in abstract class", "Only in final class"],
-                answerIndex: 1,
-                explanation: "No, constructors cannot be final, static, or abstract. They are not inherited, so 'final' makes no sense."
-            },
-            {
-                id: 30,
-                question: "What is the benefit of Encapsulation?",
-                options: ["Code reuse", "Data hiding and control", "Multiple inheritance", "Faster execution"],
-                answerIndex: 1,
-                explanation: "Encapsulation provides data hiding and controlled access, improving security and maintainability."
-            },
-            {
-                id: 31,
-                question: "Which of these is a valid way to create an object?",
-                options: ["ClassName obj;", "new ClassName();", "ClassName obj = new ClassName();", "Both B and C"],
-                answerIndex: 3,
-                explanation: "Both 'new ClassName()' (anonymous object) and 'ClassName obj = new ClassName();' (reference variable) are valid."
-            }
-        ];
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-            window.quizManager = quizManager;
-        });
-    </script>
 </body>
 
 </html>

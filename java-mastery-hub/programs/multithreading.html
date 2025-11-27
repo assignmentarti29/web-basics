@@ -1,60 +1,470 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Multithreading - Programs - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>Multithreading - Code Examples</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Programs</span>
-                <span>/</span>
-                <span>Multithreading</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Hands-On Multithreading Programs</h2>
-            <p>Welcome to the practical section! These 15+ programs demonstrate concurrent programming in Java, from
-                basic thread creation to advanced concurrency utilities. Each example includes complete working code
-                with three-level explanations.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Run these programs multiple times to observe different thread execution orders. Multithreading
-                    behavior can vary between runs!</p>
-            </div>
-        </div>
-
-        <!-- Program 1: Basic Thread using Thread class -->
-        <div class="content-section">
-            <h2>Program 1: Basic Thread using Thread Class</h2>
-            <p>Demonstrates creating and starting a thread by extending the Thread class.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">class MyThread extends Thread {
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Multithreading - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>Multithreading</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Hands-On Multithreading Programs</h2>
+                    <p>Welcome to the practical section! These 15+ programs demonstrate concurrent programming in Java,
+                        from
+                        basic thread creation to advanced concurrency utilities. Each example includes complete working
+                        code
+                        with three-level explanations.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Run these programs multiple times to observe different thread execution orders.
+                                Multithreading
+                                behavior can vary between runs!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 1: Basic Thread using Thread class -->
+                <div class="content-section">
+                    <h2>Program 1: Basic Thread using Thread Class</h2>
+                    <p>Demonstrates creating and starting a thread by extending the Thread class.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">class MyThread extends Thread {
     public void run() {
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i &lt;= 5; i++) {
             System.out.println(Thread.currentThread().getName() + " - Count: " + i);
             try {
                 Thread.sleep(500);
@@ -79,20 +489,22 @@ public class BasicThreadExample {
         System.out.println("Main thread continues...");
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like having two toy robots that move at the same time independently.</p>
-                <p><strong>Real-world:</strong> Two cashiers serving customers simultaneously at a store.</p>
-                <p><strong>Technical:</strong> Extending Thread class and overriding run() method. start() creates a new
-                    thread and calls run() internally. Both threads execute concurrently with the main thread.</p>
-            </div>
-        </div>
-
-        <!-- Program 2: Thread using Runnable interface -->
-        <div class="content-section">
-            <h2>Program 2: Thread using Runnable Interface</h2>
-            <p>Demonstrates creating threads using the Runnable interface (preferred approach).</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">class MyRunnable implements Runnable {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like having two toy robots that move at the same time independently.
+                        </p>
+                        <p><strong>Real-world:</strong> Two cashiers serving customers simultaneously at a store.</p>
+                        <p><strong>Technical:</strong> Extending Thread class and overriding run() method. start()
+                            creates a new
+                            thread and calls run() internally. Both threads execute concurrently with the main thread.
+                        </p>
+                    </div>
+                </div>
+                <!-- Program 2: Thread using Runnable interface -->
+                <div class="content-section">
+                    <h2>Program 2: Thread using Runnable Interface</h2>
+                    <p>Demonstrates creating threads using the Runnable interface (preferred approach).</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">class MyRunnable implements Runnable {
     private String taskName;
     
     public MyRunnable(String taskName) {
@@ -100,7 +512,7 @@ public class BasicThreadExample {
     }
     
     public void run() {
-        for (int i = 1; i <= 3; i++) {
+        for (int i = 1; i &lt;= 3; i++) {
             System.out.println(taskName + " executing step " + i);
             try {
                 Thread.sleep(300);
@@ -123,26 +535,28 @@ public class RunnableExample {
         t3.start();
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like giving different instruction cards to the same type of robot.</p>
-                <p><strong>Real-world:</strong> Assigning different tasks to workers using the same job template.</p>
-                <p><strong>Technical:</strong> Implementing Runnable is preferred over extending Thread because it
-                    allows
-                    the class to extend other classes and promotes better separation of task and thread management.</p>
-            </div>
-        </div>
-
-        <!-- Program 3: Using sleep() -->
-        <div class="content-section">
-            <h2>Program 3: Thread sleep() Method</h2>
-            <p>Demonstrates pausing thread execution using sleep().</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">public class SleepExample {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like giving different instruction cards to the same type of robot.</p>
+                        <p><strong>Real-world:</strong> Assigning different tasks to workers using the same job
+                            template.</p>
+                        <p><strong>Technical:</strong> Implementing Runnable is preferred over extending Thread because
+                            it
+                            allows
+                            the class to extend other classes and promotes better separation of task and thread
+                            management.</p>
+                    </div>
+                </div>
+                <!-- Program 3: Using sleep() -->
+                <div class="content-section">
+                    <h2>Program 3: Thread sleep() Method</h2>
+                    <p>Demonstrates pausing thread execution using sleep().</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">public class SleepExample {
     public static void main(String[] args) {
-        Thread timer = new Thread(() -> {
+        Thread timer = new Thread(() -&gt; {
             System.out.println("Timer started!");
             
-            for (int i = 5; i >= 1; i--) {
+            for (int i = 5; i &gt;= 1; i--) {
                 System.out.println("Countdown: " + i);
                 try {
                     Thread.sleep(1000);  // Sleep for 1 second
@@ -161,24 +575,26 @@ public class RunnableExample {
         System.out.println("Main thread doing other work...");
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a toy that pauses for a few seconds before moving again.</p>
-                <p><strong>Real-world:</strong> A traffic light that stays red for a specific time before turning green.
-                </p>
-                <p><strong>Technical:</strong> Thread.sleep(milliseconds) pauses the current thread for the specified
-                    duration. It throws InterruptedException which must be handled. The thread enters TIMED_WAITING
-                    state.</p>
-            </div>
-        </div>
-
-        <!-- Program 4: Using join() -->
-        <div class="content-section">
-            <h2>Program 4: Thread join() Method</h2>
-            <p>Demonstrates waiting for a thread to complete using join().</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">public class JoinExample {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a toy that pauses for a few seconds before moving again.</p>
+                        <p><strong>Real-world:</strong> A traffic light that stays red for a specific time before
+                            turning green.
+                        </p>
+                        <p><strong>Technical:</strong> Thread.sleep(milliseconds) pauses the current thread for the
+                            specified
+                            duration. It throws InterruptedException which must be handled. The thread enters
+                            TIMED_WAITING
+                            state.</p>
+                    </div>
+                </div>
+                <!-- Program 4: Using join() -->
+                <div class="content-section">
+                    <h2>Program 4: Thread join() Method</h2>
+                    <p>Demonstrates waiting for a thread to complete using join().</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">public class JoinExample {
     public static void main(String[] args) {
-        Thread dataLoader = new Thread(() -> {
+        Thread dataLoader = new Thread(() -&gt; {
             System.out.println("Loading data...");
             try {
                 Thread.sleep(2000);  // Simulate data loading
@@ -202,30 +618,31 @@ public class RunnableExample {
         System.out.println("Application ready!");
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like waiting for your friend to finish their homework before playing together.
-                </p>
-                <p><strong>Real-world:</strong> Waiting for a file download to complete before opening it.</p>
-                <p><strong>Technical:</strong> join() makes the calling thread wait until the thread on which join() is
-                    called terminates. Useful for ensuring sequential execution when needed.</p>
-            </div>
-        </div>
-
-        <!-- Program 5: Thread Priority -->
-        <div class="content-section">
-            <h2>Program 5: Thread Priority Demonstration</h2>
-            <p>Shows how thread priorities affect execution (results may vary by JVM).</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">public class PriorityExample {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like waiting for your friend to finish their homework before playing
+                            together.
+                        </p>
+                        <p><strong>Real-world:</strong> Waiting for a file download to complete before opening it.</p>
+                        <p><strong>Technical:</strong> join() makes the calling thread wait until the thread on which
+                            join() is
+                            called terminates. Useful for ensuring sequential execution when needed.</p>
+                    </div>
+                </div>
+                <!-- Program 5: Thread Priority -->
+                <div class="content-section">
+                    <h2>Program 5: Thread Priority Demonstration</h2>
+                    <p>Shows how thread priorities affect execution (results may vary by JVM).</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">public class PriorityExample {
     public static void main(String[] args) {
-        Thread lowPriority = new Thread(() -> {
-            for (int i = 0; i < 5; i++) {
+        Thread lowPriority = new Thread(() -&gt; {
+            for (int i = 0; i &lt; 5; i++) {
                 System.out.println("Low Priority Thread: " + i);
             }
         });
         
-        Thread highPriority = new Thread(() -> {
-            for (int i = 0; i < 5; i++) {
+        Thread highPriority = new Thread(() -&gt; {
+            for (int i = 0; i &lt; 5; i++) {
                 System.out.println("High Priority Thread: " + i);
             }
         });
@@ -241,22 +658,24 @@ public class RunnableExample {
         highPriority.start();
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like choosing which toy to play with first—your favorite gets picked more
-                    often.</p>
-                <p><strong>Real-world:</strong> Emergency vehicles get priority on roads over regular cars.</p>
-                <p><strong>Technical:</strong> Thread priority (1-10) is a hint to the thread scheduler. Higher priority
-                    threads are more likely to be executed first, but it's not guaranteed. Actual behavior depends on OS
-                    and JVM.</p>
-            </div>
-        </div>
-
-        <!-- Program 6: Synchronized Method -->
-        <div class="content-section">
-            <h2>Program 6: Synchronized Method</h2>
-            <p>Demonstrates preventing race conditions using synchronized methods.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">class Counter {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like choosing which toy to play with first—your favorite gets picked
+                            more
+                            often.</p>
+                        <p><strong>Real-world:</strong> Emergency vehicles get priority on roads over regular cars.</p>
+                        <p><strong>Technical:</strong> Thread priority (1-10) is a hint to the thread scheduler. Higher
+                            priority
+                            threads are more likely to be executed first, but it's not guaranteed. Actual behavior
+                            depends on OS
+                            and JVM.</p>
+                    </div>
+                </div>
+                <!-- Program 6: Synchronized Method -->
+                <div class="content-section">
+                    <h2>Program 6: Synchronized Method</h2>
+                    <p>Demonstrates preventing race conditions using synchronized methods.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">class Counter {
     private int count = 0;
     
     // Synchronized method
@@ -275,9 +694,9 @@ public class SynchronizedMethodExample {
         
         // Create 1000 threads that increment the counter
         Thread[] threads = new Thread[1000];
-        for (int i = 0; i < 1000; i++) {
-            threads[i] = new Thread(() -> {
-                for (int j = 0; j < 100; j++) {
+        for (int i = 0; i &lt; 1000; i++) {
+            threads[i] = new Thread(() -&gt; {
+                for (int j = 0; j &lt; 100; j++) {
                     counter.increment();
                 }
             });
@@ -293,21 +712,22 @@ public class SynchronizedMethodExample {
         System.out.println("Expected: 100000");
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a rule that only one person can use the bathroom at a time.</p>
-                <p><strong>Real-world:</strong> A bank ATM that allows only one transaction at a time.</p>
-                <p><strong>Technical:</strong> The synchronized keyword ensures that only one thread can execute the
-                    increment() method at a time, preventing race conditions. Without it, the final count would be less
-                    than 100000.</p>
-            </div>
-        </div>
-
-        <!-- Program 7: Synchronized Block -->
-        <div class="content-section">
-            <h2>Program 7: Synchronized Block</h2>
-            <p>Demonstrates fine-grained synchronization using synchronized blocks.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">class BankAccount {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a rule that only one person can use the bathroom at a time.</p>
+                        <p><strong>Real-world:</strong> A bank ATM that allows only one transaction at a time.</p>
+                        <p><strong>Technical:</strong> The synchronized keyword ensures that only one thread can execute
+                            the
+                            increment() method at a time, preventing race conditions. Without it, the final count would
+                            be less
+                            than 100000.</p>
+                    </div>
+                </div>
+                <!-- Program 7: Synchronized Block -->
+                <div class="content-section">
+                    <h2>Program 7: Synchronized Block</h2>
+                    <p>Demonstrates fine-grained synchronization using synchronized blocks.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">class BankAccount {
     private double balance = 1000.0;
     private final Object lock = new Object();
     
@@ -316,7 +736,7 @@ public class SynchronizedMethodExample {
         
         // Only critical section is synchronized
         synchronized(lock) {
-            if (balance >= amount) {
+            if (balance &gt;= amount) {
                 try {
                     Thread.sleep(100);  // Simulate processing time
                 } catch (InterruptedException e) {
@@ -340,9 +760,9 @@ public class SynchronizedBlockExample {
     public static void main(String[] args) throws InterruptedException {
         BankAccount account = new BankAccount();
         
-        Thread t1 = new Thread(() -> account.withdraw(600), "User-1");
-        Thread t2 = new Thread(() -> account.withdraw(500), "User-2");
-        Thread t3 = new Thread(() -> account.withdraw(400), "User-3");
+        Thread t1 = new Thread(() -&gt; account.withdraw(600), "User-1");
+        Thread t2 = new Thread(() -&gt; account.withdraw(500), "User-2");
+        Thread t3 = new Thread(() -&gt; account.withdraw(400), "User-3");
         
         t1.start();
         t2.start();
@@ -355,20 +775,20 @@ public class SynchronizedBlockExample {
         System.out.println("Final balance: " + account.getBalance());
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like locking only the cookie jar, not the entire kitchen.</p>
-                <p><strong>Real-world:</strong> Protecting only the cash register, not the entire store.</p>
-                <p><strong>Technical:</strong> Synchronized blocks provide finer control than synchronized methods. Only
-                    the critical section is locked, improving performance by reducing lock contention.</p>
-            </div>
-        </div>
-
-        <!-- Program 8: Wait and Notify -->
-        <div class="content-section">
-            <h2>Program 8: Inter-thread Communication (wait/notify)</h2>
-            <p>Demonstrates producer-consumer pattern using wait() and notify().</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">class SharedQueue {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like locking only the cookie jar, not the entire kitchen.</p>
+                        <p><strong>Real-world:</strong> Protecting only the cash register, not the entire store.</p>
+                        <p><strong>Technical:</strong> Synchronized blocks provide finer control than synchronized
+                            methods. Only
+                            the critical section is locked, improving performance by reducing lock contention.</p>
+                    </div>
+                </div>
+                <!-- Program 8: Wait and Notify -->
+                <div class="content-section">
+                    <h2>Program 8: Inter-thread Communication (wait/notify)</h2>
+                    <p>Demonstrates producer-consumer pattern using wait() and notify().</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">class SharedQueue {
     private int data;
     private boolean available = false;
     
@@ -408,8 +828,8 @@ public class WaitNotifyExample {
         SharedQueue queue = new SharedQueue();
         
         // Producer thread
-        Thread producer = new Thread(() -> {
-            for (int i = 1; i <= 5; i++) {
+        Thread producer = new Thread(() -&gt; {
+            for (int i = 1; i &lt;= 5; i++) {
                 queue.produce(i);
                 try {
                     Thread.sleep(500);
@@ -420,8 +840,8 @@ public class WaitNotifyExample {
         });
         
         // Consumer thread
-        Thread consumer = new Thread(() -> {
-            for (int i = 1; i <= 5; i++) {
+        Thread consumer = new Thread(() -&gt; {
+            for (int i = 1; i &lt;= 5; i++) {
                 queue.consume();
                 try {
                     Thread.sleep(1000);
@@ -435,27 +855,29 @@ public class WaitNotifyExample {
         consumer.start();
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like taking turns on a swing—one waits while the other plays.</p>
-                <p><strong>Real-world:</strong> A baker making bread and a customer buying it—they coordinate timing.
-                </p>
-                <p><strong>Technical:</strong> wait() releases the lock and waits. notify() wakes up one waiting thread.
-                    This implements the producer-consumer pattern where producer and consumer coordinate access to
-                    shared data.</p>
-            </div>
-        </div>
-
-        <!-- Program 9: Deadlock Demonstration -->
-        <div class="content-section">
-            <h2>Program 9: Deadlock Demonstration</h2>
-            <p>Shows how deadlock occurs when threads wait for each other's locks.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">public class DeadlockExample {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like taking turns on a swing—one waits while the other plays.</p>
+                        <p><strong>Real-world:</strong> A baker making bread and a customer buying it—they coordinate
+                            timing.
+                        </p>
+                        <p><strong>Technical:</strong> wait() releases the lock and waits. notify() wakes up one waiting
+                            thread.
+                            This implements the producer-consumer pattern where producer and consumer coordinate access
+                            to
+                            shared data.</p>
+                    </div>
+                </div>
+                <!-- Program 9: Deadlock Demonstration -->
+                <div class="content-section">
+                    <h2>Program 9: Deadlock Demonstration</h2>
+                    <p>Shows how deadlock occurs when threads wait for each other's locks.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">public class DeadlockExample {
     private static final Object lock1 = new Object();
     private static final Object lock2 = new Object();
     
     public static void main(String[] args) {
-        Thread thread1 = new Thread(() -> {
+        Thread thread1 = new Thread(() -&gt; {
             synchronized (lock1) {
                 System.out.println("Thread 1: Holding lock1...");
                 
@@ -463,12 +885,12 @@ public class WaitNotifyExample {
                 
                 System.out.println("Thread 1: Waiting for lock2...");
                 synchronized (lock2) {
-                    System.out.println("Thread 1: Holding lock1 & lock2");
+                    System.out.println("Thread 1: Holding lock1 &amp; lock2");
                 }
             }
         });
         
-        Thread thread2 = new Thread(() -> {
+        Thread thread2 = new Thread(() -&gt; {
             synchronized (lock2) {
                 System.out.println("Thread 2: Holding lock2...");
                 
@@ -476,7 +898,7 @@ public class WaitNotifyExample {
                 
                 System.out.println("Thread 2: Waiting for lock1...");
                 synchronized (lock1) {
-                    System.out.println("Thread 2: Holding lock2 & lock1");
+                    System.out.println("Thread 2: Holding lock2 &amp; lock1");
                 }
             }
         });
@@ -488,22 +910,25 @@ public class WaitNotifyExample {
         System.out.println("If you see this immediately, no deadlock occurred");
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Two kids each holding one toy and wanting the other's toy—nobody can play!</p>
-                <p><strong>Real-world:</strong> Two cars on a narrow bridge, each waiting for the other to reverse.</p>
-                <p><strong>Technical:</strong> Deadlock occurs when Thread 1 holds lock1 and waits for lock2, while
-                    Thread
-                    2 holds lock2 and waits for lock1. Both wait forever. Solution: Always acquire locks in the same
-                    order.</p>
-            </div>
-        </div>
-
-        <!-- Program 10: ThreadPoolExecutor -->
-        <div class="content-section">
-            <h2>Program 10: Using ThreadPoolExecutor</h2>
-            <p>Demonstrates efficient thread management using thread pools.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.concurrent.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Two kids each holding one toy and wanting the other's toy—nobody can
+                            play!</p>
+                        <p><strong>Real-world:</strong> Two cars on a narrow bridge, each waiting for the other to
+                            reverse.</p>
+                        <p><strong>Technical:</strong> Deadlock occurs when Thread 1 holds lock1 and waits for lock2,
+                            while
+                            Thread
+                            2 holds lock2 and waits for lock1. Both wait forever. Solution: Always acquire locks in the
+                            same
+                            order.</p>
+                    </div>
+                </div>
+                <!-- Program 10: ThreadPoolExecutor -->
+                <div class="content-section">
+                    <h2>Program 10: Using ThreadPoolExecutor</h2>
+                    <p>Demonstrates efficient thread management using thread pools.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.concurrent.*;
 
 public class ThreadPoolExample {
     public static void main(String[] args) {
@@ -511,9 +936,9 @@ public class ThreadPoolExample {
         ExecutorService executor = Executors.newFixedThreadPool(3);
         
         // Submit 10 tasks
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i &lt;= 10; i++) {
             final int taskId = i;
-            executor.submit(() -> {
+            executor.submit(() -&gt; {
                 System.out.println("Task " + taskId + " started by " + 
                                    Thread.currentThread().getName());
                 try {
@@ -540,33 +965,34 @@ public class ThreadPoolExample {
         System.out.println("All tasks completed!");
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like having 3 workers who take turns doing 10 jobs from a list.</p>
-                <p><strong>Real-world:</strong> A company with 3 employees handling 10 customer requests in queue.</p>
-                <p><strong>Technical:</strong> Thread pools reuse threads instead of creating new ones for each task,
-                    improving performance and resource management. The pool size limits concurrent threads.</p>
-            </div>
-        </div>
-
-        <!-- Program 11: Callable and Future -->
-        <div class="content-section">
-            <h2>Program 11: Callable and Future</h2>
-            <p>Demonstrates getting return values from threads using Callable and Future.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.concurrent.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like having 3 workers who take turns doing 10 jobs from a list.</p>
+                        <p><strong>Real-world:</strong> A company with 3 employees handling 10 customer requests in
+                            queue.</p>
+                        <p><strong>Technical:</strong> Thread pools reuse threads instead of creating new ones for each
+                            task,
+                            improving performance and resource management. The pool size limits concurrent threads.</p>
+                    </div>
+                </div>
+                <!-- Program 11: Callable and Future -->
+                <div class="content-section">
+                    <h2>Program 11: Callable and Future</h2>
+                    <p>Demonstrates getting return values from threads using Callable and Future.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.concurrent.*;
 
 public class CallableFutureExample {
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(2);
         
         // Callable that returns a value
-        Callable<Integer> task1 = () -> {
+        Callable<integer> task1 = () -&gt; {
             System.out.println("Task 1: Calculating sum...");
             Thread.sleep(2000);
             return 100 + 200;
         };
         
-        Callable<String> task2 = () -> {
+        Callable<string> task2 = () -&gt; {
             System.out.println("Task 2: Fetching data...");
             Thread.sleep(1500);
             return "Hello from Task 2";
@@ -574,8 +1000,8 @@ public class CallableFutureExample {
         
         try {
             // Submit tasks and get Future objects
-            Future<Integer> future1 = executor.submit(task1);
-            Future<String> future2 = executor.submit(task2);
+            Future<integer> future1 = executor.submit(task1);
+            Future<string> future2 = executor.submit(task2);
             
             System.out.println("Tasks submitted. Doing other work...");
             
@@ -592,24 +1018,27 @@ public class CallableFutureExample {
             executor.shutdown();
         }
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like asking someone to do a task and they promise to give you the answer
-                    later.</p>
-                <p><strong>Real-world:</strong> Ordering food online—you get a tracking number (Future) and food arrives
-                    later.</p>
-                <p><strong>Technical:</strong> Callable is like Runnable but can return a value and throw checked
-                    exceptions. Future represents the result of an asynchronous computation. get() blocks until result
-                    is available.</p>
-            </div>
-        </div>
-
-        <!-- Program 12: ScheduledExecutorService -->
-        <div class="content-section">
-            <h2>Program 12: ScheduledExecutorService</h2>
-            <p>Demonstrates scheduling tasks to run after a delay or periodically.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.concurrent.*;
+}</string></integer></string></integer></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like asking someone to do a task and they promise to give you the
+                            answer
+                            later.</p>
+                        <p><strong>Real-world:</strong> Ordering food online—you get a tracking number (Future) and food
+                            arrives
+                            later.</p>
+                        <p><strong>Technical:</strong> Callable is like Runnable but can return a value and throw
+                            checked
+                            exceptions. Future represents the result of an asynchronous computation. get() blocks until
+                            result
+                            is available.</p>
+                    </div>
+                </div>
+                <!-- Program 12: ScheduledExecutorService -->
+                <div class="content-section">
+                    <h2>Program 12: ScheduledExecutorService</h2>
+                    <p>Demonstrates scheduling tasks to run after a delay or periodically.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.concurrent.*;
 import java.time.LocalTime;
 
 public class ScheduledExecutorExample {
@@ -617,12 +1046,12 @@ public class ScheduledExecutorExample {
         ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
         
         // Task 1: Execute once after 3 seconds delay
-        scheduler.schedule(() -> {
+        scheduler.schedule(() -&gt; {
             System.out.println("Delayed task executed at " + LocalTime.now());
         }, 3, TimeUnit.SECONDS);
         
         // Task 2: Execute every 2 seconds
-        scheduler.scheduleAtFixedRate(() -> {
+        scheduler.scheduleAtFixedRate(() -&gt; {
             System.out.println("Periodic task executed at " + LocalTime.now());
         }, 1, 2, TimeUnit.SECONDS);  // Initial delay: 1s, Period: 2s
         
@@ -635,25 +1064,26 @@ public class ScheduledExecutorExample {
         System.out.println("Scheduler stopped");
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like setting an alarm clock to ring at specific times.</p>
-                <p><strong>Real-world:</strong> Scheduling automatic backups every night at midnight.</p>
-                <p><strong>Technical:</strong> ScheduledExecutorService allows scheduling tasks with delays or at fixed
-                    rates. schedule() runs once, scheduleAtFixedRate() runs periodically. Useful for recurring tasks.
-                </p>
-            </div>
-        </div>
-
-        <!-- Program 13: Volatile Keyword -->
-        <div class="content-section">
-            <h2>Program 13: Volatile Keyword Usage</h2>
-            <p>Demonstrates using volatile for thread-safe flag variables.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">public class VolatileExample {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like setting an alarm clock to ring at specific times.</p>
+                        <p><strong>Real-world:</strong> Scheduling automatic backups every night at midnight.</p>
+                        <p><strong>Technical:</strong> ScheduledExecutorService allows scheduling tasks with delays or
+                            at fixed
+                            rates. schedule() runs once, scheduleAtFixedRate() runs periodically. Useful for recurring
+                            tasks.
+                        </p>
+                    </div>
+                </div>
+                <!-- Program 13: Volatile Keyword -->
+                <div class="content-section">
+                    <h2>Program 13: Volatile Keyword Usage</h2>
+                    <p>Demonstrates using volatile for thread-safe flag variables.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">public class VolatileExample {
     private volatile boolean running = true;  // volatile ensures visibility
     
     public void startTask() {
-        Thread worker = new Thread(() -> {
+        Thread worker = new Thread(() -&gt; {
             int count = 0;
             while (running) {
                 count++;
@@ -678,22 +1108,24 @@ public class ScheduledExecutorExample {
         new VolatileExample().startTask();
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a flag that everyone can see immediately when it changes.</p>
-                <p><strong>Real-world:</strong> A traffic light that all drivers see change at the same time.</p>
-                <p><strong>Technical:</strong> volatile ensures that changes to a variable are immediately visible to
-                    all
-                    threads. Without volatile, threads might cache the variable and not see updates. Use for simple
-                    flags, not for compound operations.</p>
-            </div>
-        </div>
-
-        <!-- Program 14: CountDownLatch -->
-        <div class="content-section">
-            <h2>Program 14: CountDownLatch Example</h2>
-            <p>Demonstrates coordinating multiple threads using CountDownLatch.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.concurrent.CountDownLatch;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a flag that everyone can see immediately when it changes.</p>
+                        <p><strong>Real-world:</strong> A traffic light that all drivers see change at the same time.
+                        </p>
+                        <p><strong>Technical:</strong> volatile ensures that changes to a variable are immediately
+                            visible to
+                            all
+                            threads. Without volatile, threads might cache the variable and not see updates. Use for
+                            simple
+                            flags, not for compound operations.</p>
+                    </div>
+                </div>
+                <!-- Program 14: CountDownLatch -->
+                <div class="content-section">
+                    <h2>Program 14: CountDownLatch Example</h2>
+                    <p>Demonstrates coordinating multiple threads using CountDownLatch.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.concurrent.CountDownLatch;
 
 public class CountDownLatchExample {
     public static void main(String[] args) {
@@ -701,7 +1133,7 @@ public class CountDownLatchExample {
         CountDownLatch latch = new CountDownLatch(numberOfServices);
         
         // Service 1: Database
-        Thread dbService = new Thread(() -> {
+        Thread dbService = new Thread(() -&gt; {
             System.out.println("Database service starting...");
             try {
                 Thread.sleep(2000);
@@ -713,7 +1145,7 @@ public class CountDownLatchExample {
         });
         
         // Service 2: Cache
-        Thread cacheService = new Thread(() -> {
+        Thread cacheService = new Thread(() -&gt; {
             System.out.println("Cache service starting...");
             try {
                 Thread.sleep(1500);
@@ -725,7 +1157,7 @@ public class CountDownLatchExample {
         });
         
         // Service 3: API
-        Thread apiService = new Thread(() -> {
+        Thread apiService = new Thread(() -&gt; {
             System.out.println("API service starting...");
             try {
                 Thread.sleep(1000);
@@ -751,22 +1183,24 @@ public class CountDownLatchExample {
         System.out.println("All services started! Application ready! 🚀");
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like waiting for all your friends to arrive before starting a game.</p>
-                <p><strong>Real-world:</strong> A race that starts only when all runners are at the starting line.</p>
-                <p><strong>Technical:</strong> CountDownLatch allows threads to wait until a set of operations
-                    completes.
-                    countDown() decrements the count, await() blocks until count reaches zero. Useful for startup
-                    coordination.</p>
-            </div>
-        </div>
-
-        <!-- Program 15: Real-world Bank Transaction System -->
-        <div class="content-section">
-            <h2>Program 15: Real-world Bank Transaction System</h2>
-            <p>A complete example combining multiple threading concepts for a concurrent banking system.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.concurrent.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like waiting for all your friends to arrive before starting a game.
+                        </p>
+                        <p><strong>Real-world:</strong> A race that starts only when all runners are at the starting
+                            line.</p>
+                        <p><strong>Technical:</strong> CountDownLatch allows threads to wait until a set of operations
+                            completes.
+                            countDown() decrements the count, await() blocks until count reaches zero. Useful for
+                            startup
+                            coordination.</p>
+                    </div>
+                </div>
+                <!-- Program 15: Real-world Bank Transaction System -->
+                <div class="content-section">
+                    <h2>Program 15: Real-world Bank Transaction System</h2>
+                    <p>A complete example combining multiple threading concepts for a concurrent banking system.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 class BankingSystem {
@@ -786,7 +1220,7 @@ class BankingSystem {
     public void withdraw(String customer, double amount) {
         synchronized(lock) {
             System.out.println(customer + " attempting to withdraw $" + amount);
-            if (balance >= amount) {
+            if (balance &gt;= amount) {
                 try {
                     Thread.sleep(100);  // Simulate processing
                 } catch (InterruptedException e) {
@@ -803,8 +1237,8 @@ class BankingSystem {
     
     public void transfer(String from, String to, double amount) {
         synchronized(lock) {
-            System.out.println("Transfer: " + from + " -> " + to + " ($" + amount + ")");
-            if (balance >= amount) {
+            System.out.println("Transfer: " + from + " -&gt; " + to + " ($" + amount + ")");
+            if (balance &gt;= amount) {
                 balance -= amount;
                 // In real system, would credit to another account
                 transactionCount.incrementAndGet();
@@ -831,52 +1265,52 @@ public class BankTransactionSystem {
         CountDownLatch latch = new CountDownLatch(10);
         
         // Submit various transactions
-        executor.submit(() -> {
+        executor.submit(() -&gt; {
             bank.deposit("Alice", 1000);
             latch.countDown();
         });
         
-        executor.submit(() -> {
+        executor.submit(() -&gt; {
             bank.withdraw("Bob", 500);
             latch.countDown();
         });
         
-        executor.submit(() -> {
+        executor.submit(() -&gt; {
             bank.deposit("Charlie", 2000);
             latch.countDown();
         });
         
-        executor.submit(() -> {
+        executor.submit(() -&gt; {
             bank.withdraw("David", 3000);
             latch.countDown();
         });
         
-        executor.submit(() -> {
+        executor.submit(() -&gt; {
             bank.transfer("Alice", "Bob", 500);
             latch.countDown();
         });
         
-        executor.submit(() -> {
+        executor.submit(() -&gt; {
             bank.withdraw("Eve", 1000);
             latch.countDown();
         });
         
-        executor.submit(() -> {
+        executor.submit(() -&gt; {
             bank.deposit("Frank", 1500);
             latch.countDown();
         });
         
-        executor.submit(() -> {
+        executor.submit(() -&gt; {
             bank.withdraw("Grace", 2000);
             latch.countDown();
         });
         
-        executor.submit(() -> {
+        executor.submit(() -&gt; {
             bank.deposit("Henry", 3000);
             latch.countDown();
         });
         
-        executor.submit(() -> {
+        executor.submit(() -&gt; {
             bank.withdraw("Ivy", 500);
             latch.countDown();
         });
@@ -892,32 +1326,38 @@ public class BankTransactionSystem {
         System.out.println("Total Transactions: " + bank.getTransactionCount());
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a piggy bank where multiple people can add or take money, but only one at
-                    a time.</p>
-                <p><strong>Real-world:</strong> A real banking system handling multiple customer transactions
-                    concurrently.</p>
-                <p><strong>Technical:</strong> This example combines ExecutorService for thread management, synchronized
-                    blocks for thread safety, AtomicInteger for lock-free counters, and CountDownLatch for coordination.
-                    Demonstrates real-world concurrent programming patterns.</p>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a piggy bank where multiple people can add or take money, but
+                            only one at
+                            a time.</p>
+                        <p><strong>Real-world:</strong> A real banking system handling multiple customer transactions
+                            concurrently.</p>
+                        <p><strong>Technical:</strong> This example combines ExecutorService for thread management,
+                            synchronized
+                            blocks for thread safety, AtomicInteger for lock-free counters, and CountDownLatch for
+                            coordination.
+                            Demonstrates real-world concurrent programming patterns.</p>
+                    </div>
+                </div>
+                <!-- Next Topic -->
+                <div class="next-topic">
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a class="md-button md-button--primary" href="../theory/multithreading.html">📚 Back to
+                            Theory</a>
+                        <a class="md-button md-button--primary" href="../mcq/multithreading.html">✅ Take Quiz</a>
+                        <a class="md-button md-button--secondary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">🚀 Next Topic Coming Soon</div>
+                        <div class="admonition-content">
+                            <p><strong>Topic 14:</strong> Java 8+ Advanced Features &amp; Enhancements</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Next Topic -->
-        <div class="next-topic">
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="../theory/multithreading.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../mcq/multithreading.html" class="btn btn-success">✅ Take Quiz</a>
-                <a href="../index.html" class="btn btn-secondary">🏠 Back to Home</a>
-            </div>
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">🚀 Next Topic Coming Soon</div>
-                <p><strong>Topic 14:</strong> Java 8+ Advanced Features & Enhancements</p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

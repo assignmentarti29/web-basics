@@ -1,58 +1,469 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Methods - Programs - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>Methods - Code Examples</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Programs</span>
-                <span>/</span>
-                <span>Methods</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Hands-On Java Programs</h2>
-            <p>Welcome to the practical section! These 15+ programs demonstrate every method type and concept. Each
-                program is heavily commented to explain not just WHAT the code does, but WHY and HOW each method works.
-            </p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Try running these programs yourself! Modify the methods, change parameters, and observe how the
-                    behavior changes. Understanding methods is essential for writing modular, reusable code!</p>
-            </div>
-        </div>
-
-        <!-- Program 1 -->
-        <div class="content-section">
-            <h2>Program 1: Basic Method Definition and Call</h2>
-            <p>Demonstrates the simplest method - no parameters, no return value.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Methods - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>Methods</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Hands-On Java Programs</h2>
+                    <p>Welcome to the practical section! These 15+ programs demonstrate every method type and concept.
+                        Each
+                        program is heavily commented to explain not just WHAT the code does, but WHY and HOW each method
+                        works.
+                    </p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Try running these programs yourself! Modify the methods, change parameters, and observe
+                                how the
+                                behavior changes. Understanding methods is essential for writing modular, reusable code!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 1 -->
+                <div class="content-section">
+                    <h2>Program 1: Basic Method Definition and Call</h2>
+                    <p>Demonstrates the simplest method - no parameters, no return value.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * BasicMethodDemo - Understanding basic method structure
  * Baby-level: "Like teaching a robot a simple task"
  */
@@ -99,19 +510,19 @@ Welcome to Java Methods!
 3. Exit
 */
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This demonstrates the simplest method type - void methods with no
-                parameters. They perform actions but don't return values or need input. Perfect for displaying messages,
-                printing menus, or performing simple tasks.
-            </div>
-        </div>
-
-        <!-- Program 2 -->
-        <div class="content-section">
-            <h2>Program 2: Method with Return Type and Input</h2>
-            <p>Demonstrates methods that accept parameters and return values.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This demonstrates the simplest method type - void methods with no
+                        parameters. They perform actions but don't return values or need input. Perfect for displaying
+                        messages,
+                        printing menus, or performing simple tasks.
+                    </div>
+                </div>
+                <!-- Program 2 -->
+                <div class="content-section">
+                    <h2>Program 2: Method with Return Type and Input</h2>
+                    <p>Demonstrates methods that accept parameters and return values.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * ReturnMethodDemo - Methods with return values
  * Baby-level: "Give the machine ingredients, get back a product"
  */
@@ -158,18 +569,19 @@ public class ReturnMethodDemo {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Methods with return types provide results back to the caller. The return
-                type must match what's declared. Use these for calculations, transformations, and data retrieval.
-            </div>
-        </div>
-
-        <!-- Program 3 -->
-        <div class="content-section">
-            <h2>Program 3: Method without Return but with Input</h2>
-            <p>Demonstrates void methods that accept parameters.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Methods with return types provide results back to the caller. The
+                        return
+                        type must match what's declared. Use these for calculations, transformations, and data
+                        retrieval.
+                    </div>
+                </div>
+                <!-- Program 3 -->
+                <div class="content-section">
+                    <h2>Program 3: Method without Return but with Input</h2>
+                    <p>Demonstrates void methods that accept parameters.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * VoidWithParamsDemo - void methods with parameters
  * Baby-level: "Tell the robot what to do, it does it but doesn't tell you back"
  */
@@ -181,7 +593,7 @@ public class VoidWithParamsDemo {
     
     void printMultiplicationTable(int number) {
         System.out.println("Multiplication table of " + number + ":");
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i &lt;= 10; i++) {
             System.out.println(number + " x " + i + " = " + (number * i));
         }
     }
@@ -207,18 +619,19 @@ public class VoidWithParamsDemo {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Void methods with parameters perform actions based on input but don't
-                return values. Perfect for display operations, logging, updating state, or sending notifications.
-            </div>
-        </div>
-
-        <!-- Program 4 -->
-        <div class="content-section">
-            <h2>Program 4: Method with Return but without Input</h2>
-            <p>Demonstrates methods that return values without needing parameters.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Void methods with parameters perform actions based on input but
+                        don't
+                        return values. Perfect for display operations, logging, updating state, or sending
+                        notifications.
+                    </div>
+                </div>
+                <!-- Program 4 -->
+                <div class="content-section">
+                    <h2>Program 4: Method with Return but without Input</h2>
+                    <p>Demonstrates methods that return values without needing parameters.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * ReturnNoParamsDemo - Methods returning values without input
  * Baby-level: "Ask a question, get an answer - no extra info needed"
  */
@@ -256,18 +669,18 @@ public class ReturnNoParamsDemo {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> These methods return values without needing input. Perfect for getters,
-                constants, random values, current state, or computed properties that don't depend on parameters.
-            </div>
-        </div>
-
-        <!-- Program 5 -->
-        <div class="content-section">
-            <h2>Program 5: Static Methods</h2>
-            <p>Demonstrates static methods that belong to the class, not objects.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> These methods return values without needing input. Perfect for
+                        getters,
+                        constants, random values, current state, or computed properties that don't depend on parameters.
+                    </div>
+                </div>
+                <!-- Program 5 -->
+                <div class="content-section">
+                    <h2>Program 5: Static Methods</h2>
+                    <p>Demonstrates static methods that belong to the class, not objects.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * StaticMethodDemo - Understanding static methods
  * Baby-level: "Shared tools everyone can use without owning them"
  */
@@ -283,8 +696,8 @@ public class StaticMethodDemo {
     }
     
     static boolean isPrime(int number) {
-        if (number <= 1) return false;
-        for (int i = 2; i <= Math.sqrt(number); i++) {
+        if (number &lt;= 1) return false;
+        for (int i = 2; i &lt;= Math.sqrt(number); i++) {
             if (number % i == 0) return false;
         }
         return true;
@@ -292,9 +705,9 @@ public class StaticMethodDemo {
     
     static void printArray(int[] arr) {
         System.out.print("[");
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i &lt; arr.length; i++) {
             System.out.print(arr[i]);
-            if (i < arr.length - 1) System.out.print(", ");
+            if (i &lt; arr.length - 1) System.out.print(", ");
         }
         System.out.println("]");
     }
@@ -317,18 +730,18 @@ public class StaticMethodDemo {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Static methods belong to the class itself, not to any object. Call them
-                using ClassName.methodName(). Perfect for utility functions that don't need object state.
-            </div>
-        </div>
-
-        <!-- Program 6 -->
-        <div class="content-section">
-            <h2>Program 6: Instance Methods</h2>
-            <p>Demonstrates instance methods that work with object-specific data.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Static methods belong to the class itself, not to any object. Call
+                        them
+                        using ClassName.methodName(). Perfect for utility functions that don't need object state.
+                    </div>
+                </div>
+                <!-- Program 6 -->
+                <div class="content-section">
+                    <h2>Program 6: Instance Methods</h2>
+                    <p>Demonstrates instance methods that work with object-specific data.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * InstanceMethodDemo - Methods that work with object data
  * Baby-level: "Each toy has its own actions"
  */
@@ -343,14 +756,14 @@ class BankAccount {
     
     // Instance methods - work with object's data
     void deposit(double amount) {
-        if (amount > 0) {
+        if (amount &gt; 0) {
             balance += amount;
             System.out.println("Deposited: $" + amount);
         }
     }
     
     void withdraw(double amount) {
-        if (amount > 0 && amount <= balance) {
+        if (amount &gt; 0 &amp;&amp; amount &lt;= balance) {
             balance -= amount;
             System.out.println("Withdrawn: $" + amount);
         } else {
@@ -387,18 +800,18 @@ public class InstanceMethodDemo {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Instance methods operate on object-specific data. Each object has its own
-                copy of instance variables, and instance methods work with that data.
-            </div>
-        </div>
-
-        <!-- Program 7 -->
-        <div class="content-section">
-            <h2>Program 7: Recursive Method - Factorial</h2>
-            <p>Demonstrates recursion with factorial calculation.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Instance methods operate on object-specific data. Each object has
+                        its own
+                        copy of instance variables, and instance methods work with that data.
+                    </div>
+                </div>
+                <!-- Program 7 -->
+                <div class="content-section">
+                    <h2>Program 7: Recursive Method - Factorial</h2>
+                    <p>Demonstrates recursion with factorial calculation.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * RecursiveFactorial - Understanding recursion
  * Baby-level: "A method that calls itself until it reaches a stopping point"
  */
@@ -417,7 +830,7 @@ public class RecursiveFactorial {
     // For comparison: iterative version
     int factorialIterative(int n) {
         int result = 1;
-        for (int i = 2; i <= n; i++) {
+        for (int i = 2; i &lt;= n; i++) {
             result *= i;
         }
         return result;
@@ -438,24 +851,24 @@ public class RecursiveFactorial {
         //              = 120
         
         System.out.println("\nFactorials 1-10:");
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i &lt;= 10; i++) {
             System.out.println(i + "! = " + demo.factorial(i));
         }
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Recursive methods call themselves to solve problems by breaking them into
-                smaller sub-problems. Must have a base case to prevent infinite recursion.
-            </div>
-        </div>
-
-        <!-- Program 8 -->
-        <div class="content-section">
-            <h2>Program 8: Recursive Method - Fibonacci</h2>
-            <p>Demonstrates recursion with Fibonacci sequence.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Recursive methods call themselves to solve problems by breaking
+                        them into
+                        smaller sub-problems. Must have a base case to prevent infinite recursion.
+                    </div>
+                </div>
+                <!-- Program 8 -->
+                <div class="content-section">
+                    <h2>Program 8: Recursive Method - Fibonacci</h2>
+                    <p>Demonstrates recursion with Fibonacci sequence.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * RecursiveFibonacci - Fibonacci using recursion
  * Baby-level: "Each number is sum of previous two"
  */
@@ -472,7 +885,7 @@ public class RecursiveFibonacci {
     
     void printFibonacciSeries(int count) {
         System.out.print("Fibonacci Series: ");
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i &lt; count; i++) {
             System.out.print(fibonacci(i) + " ");
         }
         System.out.println();
@@ -493,18 +906,18 @@ public class RecursiveFibonacci {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Fibonacci demonstrates recursion with multiple recursive calls. Each call
-                branches into two more calls until base cases are reached.
-            </div>
-        </div>
-
-        <!-- Program 9 -->
-        <div class="content-section">
-            <h2>Program 9: Method Overloading</h2>
-            <p>Demonstrates method overloading with different parameter combinations.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Fibonacci demonstrates recursion with multiple recursive calls.
+                        Each call
+                        branches into two more calls until base cases are reached.
+                    </div>
+                </div>
+                <!-- Program 9 -->
+                <div class="content-section">
+                    <h2>Program 9: Method Overloading</h2>
+                    <p>Demonstrates method overloading with different parameter combinations.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * MethodOverloadingDemo - Same name, different parameters
  * Baby-level: "Different sized spoons, all called 'spoon'"
  */
@@ -564,18 +977,17 @@ public class MethodOverloadingDemo {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Method overloading allows multiple methods with the same name but
-                different parameters. Java chooses the correct method based on the arguments at compile-time.
-            </div>
-        </div>
-
-        <!-- Program 10 -->
-        <div class="content-section">
-            <h2>Program 10: Getter and Setter Methods</h2>
-            <p>Demonstrates encapsulation with getter and setter methods.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Method overloading allows multiple methods with the same name but
+                        different parameters. Java chooses the correct method based on the arguments at compile-time.
+                    </div>
+                </div>
+                <!-- Program 10 -->
+                <div class="content-section">
+                    <h2>Program 10: Getter and Setter Methods</h2>
+                    <p>Demonstrates encapsulation with getter and setter methods.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * GetterSetterDemo - Controlled access to private fields
  * Baby-level: "Ask to see (getter) or give (setter) with permission"
  */
@@ -591,7 +1003,7 @@ class Student {
     
     // Setter for name with validation
     public void setName(String name) {
-        if (name != null && !name.trim().isEmpty()) {
+        if (name != null &amp;&amp; !name.trim().isEmpty()) {
             this.name = name;
         } else {
             System.out.println("Invalid name!");
@@ -605,7 +1017,7 @@ class Student {
     
     // Setter for age with validation
     public void setAge(int age) {
-        if (age > 0 && age < 150) {
+        if (age &gt; 0 &amp;&amp; age &lt; 150) {
             this.age = age;
         } else {
             System.out.println("Invalid age!");
@@ -619,7 +1031,7 @@ class Student {
     
     // Setter for GPA with validation
     public void setGpa(double gpa) {
-        if (gpa >= 0.0 && gpa <= 4.0) {
+        if (gpa &gt;= 0.0 &amp;&amp; gpa &lt;= 4.0) {
             this.gpa = gpa;
         } else {
             System.out.println("Invalid GPA! Must be 0.0-4.0");
@@ -656,18 +1068,18 @@ public class GetterSetterDemo {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Getters and setters provide controlled access to private fields. Setters
-                can validate data before updating, preventing invalid states. This is encapsulation in action.
-            </div>
-        </div>
-
-        <!-- Program 11 -->
-        <div class="content-section">
-            <h2>Program 11: Method Calling Another Method</h2>
-            <p>Demonstrates methods calling other methods within the same class.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Getters and setters provide controlled access to private fields.
+                        Setters
+                        can validate data before updating, preventing invalid states. This is encapsulation in action.
+                    </div>
+                </div>
+                <!-- Program 11 -->
+                <div class="content-section">
+                    <h2>Program 11: Method Calling Another Method</h2>
+                    <p>Demonstrates methods calling other methods within the same class.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * MethodCallingMethod - Methods working together
  * Baby-level: "One helper calls another helper to complete a task"
  */
@@ -675,7 +1087,7 @@ public class MethodCallingMethod {
     
     // Helper method 1
     boolean isPositive(int num) {
-        return num > 0;
+        return num &gt; 0;
     }
     
     // Helper method 2
@@ -733,18 +1145,18 @@ public class MethodCallingMethod {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Methods can call other methods to break down complex logic. This improves
-                code organization and reusability.
-            </div>
-        </div>
-
-        <!-- Program 12 -->
-        <div class="content-section">
-            <h2>Program 12: Multiple Methods in a Class</h2>
-            <p>Demonstrates a complete class with various method types working together.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Methods can call other methods to break down complex logic. This
+                        improves
+                        code organization and reusability.
+                    </div>
+                </div>
+                <!-- Program 12 -->
+                <div class="content-section">
+                    <h2>Program 12: Multiple Methods in a Class</h2>
+                    <p>Demonstrates a complete class with various method types working together.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * CompleteClassDemo - Multiple methods working together
  * Baby-level: "A complete toolbox with different tools"
  */
@@ -780,7 +1192,7 @@ class Calculator {
     // Advanced operations
     int power(int base, int exponent) {
         int result = 1;
-        for (int i = 0; i < exponent; i++) {
+        for (int i = 0; i &lt; exponent; i++) {
             result *= base;
         }
         return result;
@@ -820,18 +1232,17 @@ public class CompleteClassDemo {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> A complete class with multiple methods of different types working
-                together. Shows how to organize related functionality in a single class.
-            </div>
-        </div>
-
-        <!-- Program 13 -->
-        <div class="content-section">
-            <h2>Program 13: Grade Calculator with Methods</h2>
-            <p>Real-world example: Student grade calculation system.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> A complete class with multiple methods of different types working
+                        together. Shows how to organize related functionality in a single class.
+                    </div>
+                </div>
+                <!-- Program 13 -->
+                <div class="content-section">
+                    <h2>Program 13: Grade Calculator with Methods</h2>
+                    <p>Real-world example: Student grade calculation system.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * GradeCalculator - Real-world method usage
  * Baby-level: "Different methods to calculate and display grades"
  */
@@ -846,10 +1257,10 @@ class GradeCalculator {
     }
     
     char getLetterGrade(double average) {
-        if (average >= 90) return 'A';
-        else if (average >= 80) return 'B';
-        else if (average >= 70) return 'C';
-        else if (average >= 60) return 'D';
+        if (average &gt;= 90) return 'A';
+        else if (average &gt;= 80) return 'B';
+        else if (average &gt;= 70) return 'C';
+        else if (average &gt;= 60) return 'D';
         else return 'F';
     }
     
@@ -906,18 +1317,18 @@ class GradeCalculator {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Real-world example showing how multiple methods work together to create a
-                complete grade calculation system. Each method has a single, clear responsibility.
-            </div>
-        </div>
-
-        <!-- Program 14 -->
-        <div class="content-section">
-            <h2>Program 14: Method Returning Object</h2>
-            <p>Demonstrates methods that create and return objects.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Real-world example showing how multiple methods work together to
+                        create a
+                        complete grade calculation system. Each method has a single, clear responsibility.
+                    </div>
+                </div>
+                <!-- Program 14 -->
+                <div class="content-section">
+                    <h2>Program 14: Method Returning Object</h2>
+                    <p>Demonstrates methods that create and return objects.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * MethodReturningObject - Methods can return objects
  * Baby-level: "Method creates and gives back a complete package"
  */
@@ -953,7 +1364,7 @@ class RectangleFactory {
     
     // Method returns larger of two rectangles
     Rectangle getLarger(Rectangle r1, Rectangle r2) {
-        if (r1.getArea() > r2.getArea()) {
+        if (r1.getArea() &gt; r2.getArea()) {
             return r1;
         } else {
             return r2;
@@ -978,18 +1389,18 @@ public class MethodReturningObject {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Methods can return objects, not just primitive types. This is useful for
-                factory patterns, builders, and creating complex objects.
-            </div>
-        </div>
-
-        <!-- Program 15 -->
-        <div class="content-section">
-            <h2>Program 15: EMI Calculator - Real-World Application</h2>
-            <p>Complete real-world example: Loan EMI calculation system.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Methods can return objects, not just primitive types. This is
+                        useful for
+                        factory patterns, builders, and creating complex objects.
+                    </div>
+                </div>
+                <!-- Program 15 -->
+                <div class="content-section">
+                    <h2>Program 15: EMI Calculator - Real-World Application</h2>
+                    <p>Complete real-world example: Loan EMI calculation system.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">/**
  * EMICalculator - Real-world loan EMI calculator
  * Baby-level: "Calculate monthly payment for a loan"
  */
@@ -1018,7 +1429,7 @@ class EMICalculator {
     
     // Validate loan parameters
     boolean validateLoan(double principal, double rate, int years) {
-        return principal > 0 && rate >= 0 && years > 0;
+        return principal &gt; 0 &amp;&amp; rate &gt;= 0 &amp;&amp; years &gt; 0;
     }
     
     // Display complete loan details
@@ -1058,39 +1469,44 @@ class EMICalculator {
     }
 }
 </code></pre>
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Complete real-world application showing how methods work together to
-                create a loan EMI calculator. Demonstrates validation, calculation, and display methods working in
-                harmony.
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Complete real-world application showing how methods work together
+                        to
+                        create a loan EMI calculator. Demonstrates validation, calculation, and display methods working
+                        in
+                        harmony.
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/methods.html">
+                            📚 Back to Theory
+                        </a>
+                        <a class="md-button md-button--primary" href="../mcq/methods.html">
+                            ✅ Take Quiz
+                        </a>
+                        <a class="md-button md-button--secondary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> OOPs Concepts in Depth
+                                <br />Deep dive into inheritance, polymorphism, encapsulation, abstraction, and
+                                interfaces.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/methods.html" class="btn btn-primary">
-                    📚 Back to Theory
-                </a>
-                <a href="../mcq/methods.html" class="btn btn-success">
-                    ✅ Take Quiz
-                </a>
-                <a href="../index.html" class="btn btn-secondary">
-                    🏠 Back to Home
-                </a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> OOPs Concepts in Depth
-                    <br>Deep dive into inheritance, polymorphism, encapsulation, abstraction, and interfaces.
-                </p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

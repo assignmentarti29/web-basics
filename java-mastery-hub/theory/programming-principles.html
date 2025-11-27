@@ -1,109 +1,520 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Programming Principles (The Philosophy) - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Programming Principles (The Philosophy)</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Theory</span>
-                <span>/</span>
-                <span>Programming Principles</span>
-            </div>
-        </div>
-
-        <!-- Section 1: Introduction -->
-        <div class="content-section">
-            <h2>🎯 Introduction: Why Programming Principles Matter</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
-            <p>
-                Imagine you're building with LEGO blocks. If you just throw blocks together randomly, your building
-                will be messy and fall apart easily. But if you follow some <strong>simple rules</strong>—like putting
-                big blocks at the bottom and connecting pieces properly—your building will be strong and beautiful!
-            </p>
-            <p>
-                Programming principles are like those LEGO rules. They help you write code that is
-                <strong>strong</strong>, <strong>easy to understand</strong>, and <strong>easy to change</strong> later.
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of building a house:
-            </p>
-            <ul>
-                <li><strong>Without principles:</strong> You build rooms randomly, mix plumbing with electrical wiring,
-                    and use weak materials. The house might stand, but it's dangerous, hard to repair, and will
-                    collapse easily.</li>
-                <li><strong>With principles:</strong> You follow building codes, separate concerns (plumbing separate
-                    from electrical), use quality materials, and design for future additions. The house is safe,
-                    maintainable, and can grow with your needs.</li>
-            </ul>
-            <p>
-                Programming principles are the "building codes" of software development. They ensure your code is
-                robust, maintainable, and scalable.
-            </p>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                Programming principles are fundamental guidelines that help developers write high-quality code.
-                They address critical software engineering concerns:
-            </p>
-            <ul>
-                <li><strong>Maintainability:</strong> Code that's easy to understand and modify</li>
-                <li><strong>Scalability:</strong> Systems that can grow without complete rewrites</li>
-                <li><strong>Reusability:</strong> Components that can be used in multiple contexts</li>
-                <li><strong>Testability:</strong> Code that can be easily tested</li>
-                <li><strong>Flexibility:</strong> Systems that adapt to changing requirements</li>
-            </ul>
-
-            <div class="callout note">
-                <div class="callout-title">📚 NOTE</div>
-                <p>These principles aren't strict rules—they're guidelines. Sometimes you'll need to balance
-                    trade-offs. The key is understanding <em>why</em> each principle exists and when to apply it.</p>
-            </div>
-        </div>
-
-        <!-- Section 2: Core Design Principles -->
-        <div class="content-section">
-            <h2>🧩 Core Design Principles</h2>
-
-            <h3>1. DRY (Don't Repeat Yourself)</h3>
-            <p>
-                <strong>Baby:</strong> If you know how to tie your shoes, you don't need someone to teach you every
-                single time. You learned it once!<br>
-                <strong>Real-world:</strong> Like having a recipe card instead of writing the same recipe in multiple
-                cookbooks.<br>
-                <strong>Technical:</strong> Every piece of knowledge should have a single, unambiguous representation
-                in the system.
-            </p>
-            <pre><code class="language-java">// BAD - Repeated code
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Programming Principles (The Philosophy)</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Theory</a></li>
+                        <li>Programming Principles (The Philosophy)</li>
+                    </ul>
+                </div>
+                <!-- Section 1: Introduction -->
+                <div class="content-section">
+                    <h2>🎯 Introduction: Why Programming Principles Matter</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+                    <p>
+                        Imagine you're building with LEGO blocks. If you just throw blocks together randomly, your
+                        building
+                        will be messy and fall apart easily. But if you follow some <strong>simple rules</strong>—like
+                        putting
+                        big blocks at the bottom and connecting pieces properly—your building will be strong and
+                        beautiful!
+                    </p>
+                    <p>
+                        Programming principles are like those LEGO rules. They help you write code that is
+                        <strong>strong</strong>, <strong>easy to understand</strong>, and <strong>easy to
+                            change</strong> later.
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of building a house:
+                    </p>
+                    <ul>
+                        <li><strong>Without principles:</strong> You build rooms randomly, mix plumbing with electrical
+                            wiring,
+                            and use weak materials. The house might stand, but it's dangerous, hard to repair, and will
+                            collapse easily.</li>
+                        <li><strong>With principles:</strong> You follow building codes, separate concerns (plumbing
+                            separate
+                            from electrical), use quality materials, and design for future additions. The house is safe,
+                            maintainable, and can grow with your needs.</li>
+                    </ul>
+                    <p>
+                        Programming principles are the "building codes" of software development. They ensure your code
+                        is
+                        robust, maintainable, and scalable.
+                    </p>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        Programming principles are fundamental guidelines that help developers write high-quality code.
+                        They address critical software engineering concerns:
+                    </p>
+                    <ul>
+                        <li><strong>Maintainability:</strong> Code that's easy to understand and modify</li>
+                        <li><strong>Scalability:</strong> Systems that can grow without complete rewrites</li>
+                        <li><strong>Reusability:</strong> Components that can be used in multiple contexts</li>
+                        <li><strong>Testability:</strong> Code that can be easily tested</li>
+                        <li><strong>Flexibility:</strong> Systems that adapt to changing requirements</li>
+                    </ul>
+                    <div class="admonition note">
+                        <div class="admonition-title">📚 NOTE</div>
+                        <div class="admonition-content">
+                            <p>These principles aren't strict rules—they're guidelines. Sometimes you'll need to balance
+                                trade-offs. The key is understanding <em>why</em> each principle exists and when to
+                                apply it.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2: Core Design Principles -->
+                <div class="content-section">
+                    <h2>🧩 Core Design Principles</h2>
+                    <h3>1. DRY (Don't Repeat Yourself)</h3>
+                    <p>
+                        <strong>Baby:</strong> If you know how to tie your shoes, you don't need someone to teach you
+                        every
+                        single time. You learned it once!<br />
+                        <strong>Real-world:</strong> Like having a recipe card instead of writing the same recipe in
+                        multiple
+                        cookbooks.<br />
+                        <strong>Technical:</strong> Every piece of knowledge should have a single, unambiguous
+                        representation
+                        in the system.
+                    </p>
+                    <pre><code class="language-java">// BAD - Repeated code
 public void printUserReport(User user) {
     System.out.println("Name: " + user.getName());
     System.out.println("Email: " + user.getEmail());
@@ -119,20 +530,23 @@ public void printUserInfo(User user) {
     System.out.println("Name: " + user.getName());
     System.out.println("Email: " + user.getEmail());
 }</code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>If you find yourself copying and pasting code, stop! Extract it into a reusable method or class.</p>
-            </div>
-
-            <h3>2. KISS (Keep It Simple, Stupid)</h3>
-            <p>
-                <strong>Baby:</strong> Use a spoon to eat soup, not a complicated machine!<br>
-                <strong>Real-world:</strong> Like using a simple door lock instead of a fingerprint scanner with facial
-                recognition for your bedroom.<br>
-                <strong>Technical:</strong> Simplicity should be a key goal in design. Avoid unnecessary complexity.
-            </p>
-            <pre><code class="language-java">// BAD - Overcomplicated
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>If you find yourself copying and pasting code, stop! Extract it into a reusable method or
+                                class.</p>
+                        </div>
+                    </div>
+                    <h3>2. KISS (Keep It Simple, Stupid)</h3>
+                    <p>
+                        <strong>Baby:</strong> Use a spoon to eat soup, not a complicated machine!<br />
+                        <strong>Real-world:</strong> Like using a simple door lock instead of a fingerprint scanner with
+                        facial
+                        recognition for your bedroom.<br />
+                        <strong>Technical:</strong> Simplicity should be a key goal in design. Avoid unnecessary
+                        complexity.
+                    </p>
+                    <pre><code class="language-java">// BAD - Overcomplicated
 public boolean isEven(int number) {
     return (number % 2 == 0) ? true : false;
 }
@@ -141,31 +555,34 @@ public boolean isEven(int number) {
 public boolean isEven(int number) {
     return number % 2 == 0;
 }</code></pre>
-
-            <h3>3. YAGNI (You Aren't Gonna Need It)</h3>
-            <p>
-                <strong>Baby:</strong> Don't pack winter clothes for a summer vacation!<br>
-                <strong>Real-world:</strong> Like not buying a 10-bedroom house when you live alone "just in
-                case."<br>
-                <strong>Technical:</strong> Don't add functionality until it's actually needed. Avoid speculative
-                generality.
-            </p>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING</div>
-                <p>Over-engineering is a common trap. Build what you need now, not what you <em>might</em> need in the
-                    future. You can always add features later when requirements are clear.</p>
-            </div>
-
-            <h3>4. Separation of Concerns (SoC)</h3>
-            <p>
-                <strong>Baby:</strong> Keep your toys in the toy box, books on the bookshelf, and clothes in the
-                closet.<br>
-                <strong>Real-world:</strong> Like having separate departments in a company: HR, Finance, Engineering,
-                Marketing.<br>
-                <strong>Technical:</strong> Different concerns should be separated into distinct sections or modules.
-            </p>
-            <pre><code class="language-java">// BAD - Mixed concerns
+                    <h3>3. YAGNI (You Aren't Gonna Need It)</h3>
+                    <p>
+                        <strong>Baby:</strong> Don't pack winter clothes for a summer vacation!<br />
+                        <strong>Real-world:</strong> Like not buying a 10-bedroom house when you live alone "just in
+                        case."<br />
+                        <strong>Technical:</strong> Don't add functionality until it's actually needed. Avoid
+                        speculative
+                        generality.
+                    </p>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING</div>
+                        <div class="admonition-content">
+                            <p>Over-engineering is a common trap. Build what you need now, not what you <em>might</em>
+                                need in the
+                                future. You can always add features later when requirements are clear.</p>
+                        </div>
+                    </div>
+                    <h3>4. Separation of Concerns (SoC)</h3>
+                    <p>
+                        <strong>Baby:</strong> Keep your toys in the toy box, books on the bookshelf, and clothes in the
+                        closet.<br />
+                        <strong>Real-world:</strong> Like having separate departments in a company: HR, Finance,
+                        Engineering,
+                        Marketing.<br />
+                        <strong>Technical:</strong> Different concerns should be separated into distinct sections or
+                        modules.
+                    </p>
+                    <pre><code class="language-java">// BAD - Mixed concerns
 public class User {
     private String name;
     
@@ -187,64 +604,64 @@ public class UserRepository {
 public class EmailService {
     public void sendWelcomeEmail(User user) { /* email logic */ }
 }</code></pre>
-
-            <h3>5. Coupling vs Cohesion</h3>
-            <table class="comparison-table">
-                <thead>
-                    <tr>
-                        <th>Coupling (Bad when High)</th>
-                        <th>Cohesion (Good when High)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>How much one class depends on another</td>
-                        <td>How focused a class is on a single purpose</td>
-                    </tr>
-                    <tr>
-                        <td>Goal: <strong>Low coupling</strong> (loose dependencies)</td>
-                        <td>Goal: <strong>High cohesion</strong> (focused responsibility)</td>
-                    </tr>
-                    <tr>
-                        <td>Like tangled headphone wires—hard to separate</td>
-                        <td>Like a Swiss Army knife—all tools serve camping</td>
-                    </tr>
-                    <tr>
-                        <td>Changes in one class break others</td>
-                        <td>All methods work toward the same goal</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p><strong>High Coupling (Bad):</strong> Class A directly creates instances of Class B, C, and D.
-                    Changing B breaks A.</p>
-                <p><strong>Low Coupling (Good):</strong> Class A depends on interfaces. Implementations can change
-                    without affecting A.</p>
-            </div>
-        </div>
-
-        <!-- Section 3: SOLID Principles -->
-        <div class="content-section">
-            <h2>🏛️ S.O.L.I.D Principles</h2>
-            <p>
-                SOLID is an acronym for five design principles that make software designs more understandable,
-                flexible, and maintainable. These principles were introduced by Robert C. Martin (Uncle Bob).
-            </p>
-
-            <h3>S - Single Responsibility Principle (SRP)</h3>
-            <p><strong>Definition:</strong> A class should have only one reason to change.</p>
-
-            <p>
-                <strong>Baby:</strong> A spoon is for eating, not for cutting. Each tool has one job!<br>
-                <strong>Real-world:</strong> A chef cooks, a waiter serves, a cashier handles payment. Each person has
-                one clear responsibility.<br>
-                <strong>Technical:</strong> Each class should have only one responsibility or job. If a class does too
-                many things, changes to one feature can break others.
-            </p>
-
-            <pre><code class="language-java">// BAD - Multiple responsibilities
+                    <h3>5. Coupling vs Cohesion</h3>
+                    <table class="comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Coupling (Bad when High)</th>
+                                <th>Cohesion (Good when High)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>How much one class depends on another</td>
+                                <td>How focused a class is on a single purpose</td>
+                            </tr>
+                            <tr>
+                                <td>Goal: <strong>Low coupling</strong> (loose dependencies)</td>
+                                <td>Goal: <strong>High cohesion</strong> (focused responsibility)</td>
+                            </tr>
+                            <tr>
+                                <td>Like tangled headphone wires—hard to separate</td>
+                                <td>Like a Swiss Army knife—all tools serve camping</td>
+                            </tr>
+                            <tr>
+                                <td>Changes in one class break others</td>
+                                <td>All methods work toward the same goal</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p><strong>High Coupling (Bad):</strong> Class A directly creates instances of Class B, C,
+                                and D.
+                                Changing B breaks A.</p>
+                            <p><strong>Low Coupling (Good):</strong> Class A depends on interfaces. Implementations can
+                                change
+                                without affecting A.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 3: SOLID Principles -->
+                <div class="content-section">
+                    <h2>🏛️ S.O.L.I.D Principles</h2>
+                    <p>
+                        SOLID is an acronym for five design principles that make software designs more understandable,
+                        flexible, and maintainable. These principles were introduced by Robert C. Martin (Uncle Bob).
+                    </p>
+                    <h3>S - Single Responsibility Principle (SRP)</h3>
+                    <p><strong>Definition:</strong> A class should have only one reason to change.</p>
+                    <p>
+                        <strong>Baby:</strong> A spoon is for eating, not for cutting. Each tool has one job!<br />
+                        <strong>Real-world:</strong> A chef cooks, a waiter serves, a cashier handles payment. Each
+                        person has
+                        one clear responsibility.<br />
+                        <strong>Technical:</strong> Each class should have only one responsibility or job. If a class
+                        does too
+                        many things, changes to one feature can break others.
+                    </p>
+                    <pre><code class="language-java">// BAD - Multiple responsibilities
 public class Employee {
     private String name;
     private double salary;
@@ -275,31 +692,35 @@ public class EmployeeRepository {
 public class EmployeeReportGenerator {
     public String generateReport(Employee emp) { /* reporting logic */ }
 }</code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 INDUSTRY BEST PRACTICE</div>
-                <p>Ask yourself: "What is the one reason this class would need to change?" If you can think of multiple
-                    reasons, it's doing too much.</p>
-            </div>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ COMMON MISTAKE</div>
-                <p>Creating "God classes" that do everything. These become maintenance nightmares as they grow.</p>
-            </div>
-
-            <h3>O - Open/Closed Principle (OCP)</h3>
-            <p><strong>Definition:</strong> Software entities should be open for extension but closed for modification.
-            </p>
-
-            <p>
-                <strong>Baby:</strong> You can add new toys to your toy box without breaking the old ones!<br>
-                <strong>Real-world:</strong> Like a smartphone with apps—you can add new apps without changing the
-                phone's operating system.<br>
-                <strong>Technical:</strong> You should be able to add new functionality without modifying existing
-                code. Use abstraction and polymorphism.
-            </p>
-
-            <pre><code class="language-java">// BAD - Closed for extension, must modify for new shapes
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 INDUSTRY BEST PRACTICE</div>
+                        <div class="admonition-content">
+                            <p>Ask yourself: "What is the one reason this class would need to change?" If you can think
+                                of multiple
+                                reasons, it's doing too much.</p>
+                        </div>
+                    </div>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ COMMON MISTAKE</div>
+                        <div class="admonition-content">
+                            <p>Creating "God classes" that do everything. These become maintenance nightmares as they
+                                grow.</p>
+                        </div>
+                    </div>
+                    <h3>O - Open/Closed Principle (OCP)</h3>
+                    <p><strong>Definition:</strong> Software entities should be open for extension but closed for
+                        modification.
+                    </p>
+                    <p>
+                        <strong>Baby:</strong> You can add new toys to your toy box without breaking the old ones!<br />
+                        <strong>Real-world:</strong> Like a smartphone with apps—you can add new apps without changing
+                        the
+                        phone's operating system.<br />
+                        <strong>Technical:</strong> You should be able to add new functionality without modifying
+                        existing
+                        code. Use abstraction and polymorphism.
+                    </p>
+                    <pre><code class="language-java">// BAD - Closed for extension, must modify for new shapes
 public class AreaCalculator {
     public double calculateArea(Object shape) {
         if (shape instanceof Circle) {
@@ -346,27 +767,29 @@ public class Triangle implements Shape {
         return 0.5 * base * height;
     }
 }</code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>Think of USB ports. You can plug in new USB devices (extension) without modifying the port itself
-                    (closed for modification).</p>
-            </div>
-
-            <h3>L - Liskov Substitution Principle (LSP)</h3>
-            <p><strong>Definition:</strong> Objects of a superclass should be replaceable with objects of a subclass
-                without breaking the application.</p>
-
-            <p>
-                <strong>Baby:</strong> If someone asks for a "vehicle," you can give them a car, bike, or truck—all
-                work!<br>
-                <strong>Real-world:</strong> Like replacing a regular battery with a rechargeable one—both work in your
-                remote.<br>
-                <strong>Technical:</strong> Subtypes must be substitutable for their base types without altering
-                program correctness.
-            </p>
-
-            <pre><code class="language-java">// BAD - Violates LSP
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>Think of USB ports. You can plug in new USB devices (extension) without modifying the
+                                port itself
+                                (closed for modification).</p>
+                        </div>
+                    </div>
+                    <h3>L - Liskov Substitution Principle (LSP)</h3>
+                    <p><strong>Definition:</strong> Objects of a superclass should be replaceable with objects of a
+                        subclass
+                        without breaking the application.</p>
+                    <p>
+                        <strong>Baby:</strong> If someone asks for a "vehicle," you can give them a car, bike, or
+                        truck—all
+                        work!<br />
+                        <strong>Real-world:</strong> Like replacing a regular battery with a rechargeable one—both work
+                        in your
+                        remote.<br />
+                        <strong>Technical:</strong> Subtypes must be substitutable for their base types without altering
+                        program correctness.
+                    </p>
+                    <pre><code class="language-java">// BAD - Violates LSP
 public class Bird {
     public void fly() {
         System.out.println("Flying...");
@@ -404,25 +827,27 @@ public class Penguin extends Bird {
 public void makeBirdMove(Bird bird) {
     bird.move(); // Works for all birds!
 }</code></pre>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ COMMON MISTAKE</div>
-                <p>Creating inheritance hierarchies based on "is-a" relationships that don't hold behaviorally. Just
-                    because a penguin "is a" bird doesn't mean it should inherit flying behavior.</p>
-            </div>
-
-            <h3>I - Interface Segregation Principle (ISP)</h3>
-            <p><strong>Definition:</strong> Clients should not be forced to depend on interfaces they don't use.</p>
-
-            <p>
-                <strong>Baby:</strong> Don't force someone to eat vegetables if they only want dessert!<br>
-                <strong>Real-world:</strong> Like a TV remote with only the buttons you need, not 100 buttons you never
-                use.<br>
-                <strong>Technical:</strong> Create specific, focused interfaces rather than one large, general-purpose
-                interface.
-            </p>
-
-            <pre><code class="language-java">// BAD - Fat interface
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ COMMON MISTAKE</div>
+                        <div class="admonition-content">
+                            <p>Creating inheritance hierarchies based on "is-a" relationships that don't hold
+                                behaviorally. Just
+                                because a penguin "is a" bird doesn't mean it should inherit flying behavior.</p>
+                        </div>
+                    </div>
+                    <h3>I - Interface Segregation Principle (ISP)</h3>
+                    <p><strong>Definition:</strong> Clients should not be forced to depend on interfaces they don't use.
+                    </p>
+                    <p>
+                        <strong>Baby:</strong> Don't force someone to eat vegetables if they only want dessert!<br />
+                        <strong>Real-world:</strong> Like a TV remote with only the buttons you need, not 100 buttons
+                        you never
+                        use.<br />
+                        <strong>Technical:</strong> Create specific, focused interfaces rather than one large,
+                        general-purpose
+                        interface.
+                    </p>
+                    <pre><code class="language-java">// BAD - Fat interface
 public interface Worker {
     void work();
     void eat();
@@ -473,27 +898,29 @@ public class Robot implements Workable {
     public void work() { /* work */ }
     // Only implements what it needs!
 }</code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 INDUSTRY BEST PRACTICE</div>
-                <p>Prefer many small, specific interfaces over one large interface. This is also known as "role
-                    interfaces."</p>
-            </div>
-
-            <h3>D - Dependency Inversion Principle (DIP)</h3>
-            <p><strong>Definition:</strong> High-level modules should not depend on low-level modules. Both should
-                depend on abstractions.</p>
-
-            <p>
-                <strong>Baby:</strong> You don't care if your toy car has batteries or a wind-up key—you just want it
-                to move!<br>
-                <strong>Real-world:</strong> Like a power outlet—you don't care what device plugs in, as long as it
-                follows the plug standard.<br>
-                <strong>Technical:</strong> Depend on abstractions (interfaces/abstract classes), not concrete
-                implementations. This decouples your code.
-            </p>
-
-            <pre><code class="language-java">// BAD - High-level depends on low-level
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 INDUSTRY BEST PRACTICE</div>
+                        <div class="admonition-content">
+                            <p>Prefer many small, specific interfaces over one large interface. This is also known as
+                                "role
+                                interfaces."</p>
+                        </div>
+                    </div>
+                    <h3>D - Dependency Inversion Principle (DIP)</h3>
+                    <p><strong>Definition:</strong> High-level modules should not depend on low-level modules. Both
+                        should
+                        depend on abstractions.</p>
+                    <p>
+                        <strong>Baby:</strong> You don't care if your toy car has batteries or a wind-up key—you just
+                        want it
+                        to move!<br />
+                        <strong>Real-world:</strong> Like a power outlet—you don't care what device plugs in, as long as
+                        it
+                        follows the plug standard.<br />
+                        <strong>Technical:</strong> Depend on abstractions (interfaces/abstract classes), not concrete
+                        implementations. This decouples your code.
+                    </p>
+                    <pre><code class="language-java">// BAD - High-level depends on low-level
 public class MySQLDatabase {
     public void save(String data) {
         System.out.println("Saving to MySQL: " + data);
@@ -541,60 +968,62 @@ public class UserService {
         // Can work with ANY database implementation!
     }
 }</code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>This is the foundation of Dependency Injection frameworks like Spring. You define what you need
-                    (interface), and the framework provides the implementation.</p>
-            </div>
-
-            <div class="callout note">
-                <div class="callout-title">📚 SOLID SUMMARY</div>
-                <p><strong>S</strong>ingle Responsibility: One class, one job<br>
-                    <strong>O</strong>pen/Closed: Extend, don't modify<br>
-                    <strong>L</strong>iskov Substitution: Subtypes must be substitutable<br>
-                    <strong>I</strong>nterface Segregation: Small, focused interfaces<br>
-                    <strong>D</strong>ependency Inversion: Depend on abstractions, not concretions
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 4: Singleton Pattern -->
-        <div class="content-section">
-            <h2>👑 The Singleton Pattern (Deep Dive)</h2>
-
-            <h3>What is Singleton?</h3>
-            <p>
-                <strong>Baby:</strong> Like having only ONE principal in a school—not two or three!<br>
-                <strong>Real-world:</strong> Like a country having only one president at a time.<br>
-                <strong>Technical:</strong> A design pattern that ensures a class has only one instance and provides a
-                global point of access to it.
-            </p>
-
-            <h3>When to Use Singleton</h3>
-            <ul>
-                <li><strong>Configuration Management:</strong> One central config object for the entire application</li>
-                <li><strong>Logging:</strong> Single logger instance to avoid file conflicts</li>
-                <li><strong>Database Connection Pool:</strong> Manage connections centrally</li>
-                <li><strong>Cache:</strong> Single cache instance shared across the application</li>
-            </ul>
-
-            <h3>When NOT to Use Singleton</h3>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING</div>
-                <p>Singletons are often overused! Avoid them when:</p>
-                <ul>
-                    <li>You need multiple instances in testing</li>
-                    <li>The class maintains state that could cause issues in multi-threaded environments</li>
-                    <li>It makes your code harder to test (hidden dependencies)</li>
-                    <li>You're using it just to avoid passing parameters</li>
-                </ul>
-            </div>
-
-            <h3>Types of Singleton Implementation</h3>
-
-            <h4>1. Eager Initialization</h4>
-            <pre><code class="language-java">public class EagerSingleton {
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>This is the foundation of Dependency Injection frameworks like Spring. You define what
+                                you need
+                                (interface), and the framework provides the implementation.</p>
+                        </div>
+                    </div>
+                    <div class="admonition note">
+                        <div class="admonition-title">📚 SOLID SUMMARY</div>
+                        <div class="admonition-content">
+                            <p><strong>S</strong>ingle Responsibility: One class, one job<br />
+                                <strong>O</strong>pen/Closed: Extend, don't modify<br />
+                                <strong>L</strong>iskov Substitution: Subtypes must be substitutable<br />
+                                <strong>I</strong>nterface Segregation: Small, focused interfaces<br />
+                                <strong>D</strong>ependency Inversion: Depend on abstractions, not concretions
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 4: Singleton Pattern -->
+                <div class="content-section">
+                    <h2>👑 The Singleton Pattern (Deep Dive)</h2>
+                    <h3>What is Singleton?</h3>
+                    <p>
+                        <strong>Baby:</strong> Like having only ONE principal in a school—not two or three!<br />
+                        <strong>Real-world:</strong> Like a country having only one president at a time.<br />
+                        <strong>Technical:</strong> A design pattern that ensures a class has only one instance and
+                        provides a
+                        global point of access to it.
+                    </p>
+                    <h3>When to Use Singleton</h3>
+                    <ul>
+                        <li><strong>Configuration Management:</strong> One central config object for the entire
+                            application</li>
+                        <li><strong>Logging:</strong> Single logger instance to avoid file conflicts</li>
+                        <li><strong>Database Connection Pool:</strong> Manage connections centrally</li>
+                        <li><strong>Cache:</strong> Single cache instance shared across the application</li>
+                    </ul>
+                    <h3>When NOT to Use Singleton</h3>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING</div>
+                        <div class="admonition-content">
+                            <p>Singletons are often overused! Avoid them when:</p>
+                            <ul>
+                                <li>You need multiple instances in testing</li>
+                                <li>The class maintains state that could cause issues in multi-threaded environments
+                                </li>
+                                <li>It makes your code harder to test (hidden dependencies)</li>
+                                <li>You're using it just to avoid passing parameters</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3>Types of Singleton Implementation</h3>
+                    <h4>1. Eager Initialization</h4>
+                    <pre><code class="language-java">public class EagerSingleton {
     // Instance created at class loading time
     private static final EagerSingleton instance = new EagerSingleton();
     
@@ -609,9 +1038,8 @@ public class UserService {
 
 // Pros: Simple, thread-safe
 // Cons: Instance created even if never used (wastes memory)</code></pre>
-
-            <h4>2. Lazy Initialization</h4>
-            <pre><code class="language-java">public class LazySingleton {
+                    <h4>2. Lazy Initialization</h4>
+                    <pre><code class="language-java">public class LazySingleton {
     private static LazySingleton instance;
     
     private LazySingleton() {}
@@ -626,9 +1054,8 @@ public class UserService {
 
 // Pros: Instance created only when needed
 // Cons: NOT thread-safe! Multiple threads can create multiple instances</code></pre>
-
-            <h4>3. Thread-Safe Singleton (Synchronized)</h4>
-            <pre><code class="language-java">public class ThreadSafeSingleton {
+                    <h4>3. Thread-Safe Singleton (Synchronized)</h4>
+                    <pre><code class="language-java">public class ThreadSafeSingleton {
     private static ThreadSafeSingleton instance;
     
     private ThreadSafeSingleton() {}
@@ -643,9 +1070,8 @@ public class UserService {
 
 // Pros: Thread-safe
 // Cons: Synchronized method is slow (performance hit on every call)</code></pre>
-
-            <h4>4. Double-Checked Locking (Best Practice)</h4>
-            <pre><code class="language-java">public class DoubleCheckedSingleton {
+                    <h4>4. Double-Checked Locking (Best Practice)</h4>
+                    <pre><code class="language-java">public class DoubleCheckedSingleton {
     private static volatile DoubleCheckedSingleton instance;
     
     private DoubleCheckedSingleton() {}
@@ -664,9 +1090,8 @@ public class UserService {
 
 // Pros: Thread-safe, better performance (synchronization only on first creation)
 // Cons: More complex code</code></pre>
-
-            <h4>5. Bill Pugh Singleton (Recommended)</h4>
-            <pre><code class="language-java">public class BillPughSingleton {
+                    <h4>5. Bill Pugh Singleton (Recommended)</h4>
+                    <pre><code class="language-java">public class BillPughSingleton {
     
     private BillPughSingleton() {}
     
@@ -683,9 +1108,8 @@ public class UserService {
 // Pros: Thread-safe, lazy initialization, no synchronization overhead
 // How: Inner class is loaded only when getInstance() is called
 // This is the BEST approach for most cases!</code></pre>
-
-            <h3>Real-World Example: Logger</h3>
-            <pre><code class="language-java">public class Logger {
+                    <h3>Real-World Example: Logger</h3>
+                    <pre><code class="language-java">public class Logger {
     private static volatile Logger instance;
     
     private Logger() {
@@ -711,63 +1135,61 @@ public class UserService {
 // Usage
 Logger.getInstance().log("Application started");
 Logger.getInstance().log("User logged in");</code></pre>
-
-            <h3>Memory Impact</h3>
-            <p>
-                Singletons remain in memory for the entire application lifetime. This is fine for lightweight objects
-                like configuration or loggers, but be cautious with heavy objects that hold large amounts of data.
-            </p>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 MODERN ALTERNATIVE</div>
-                <p>In modern Java applications (especially with Spring), prefer Dependency Injection over Singleton
-                    pattern. Let the framework manage single instances for you!</p>
-            </div>
-        </div>
-
-        <!-- Section 5: MVC Architecture -->
-        <div class="content-section">
-            <h2>🎨 MVC Architecture (Model-View-Controller)</h2>
-
-            <h3>What is MVC?</h3>
-            <p>
-                <strong>Baby:</strong> Like a restaurant: Chef (Model) makes food, Waiter (Controller) takes orders,
-                Menu (View) shows what's available!<br>
-                <strong>Real-world:</strong> Like a theater: Actors (Model) perform, Director (Controller) manages,
-                Audience (View) watches.<br>
-                <strong>Technical:</strong> An architectural pattern that separates an application into three
-                interconnected components.
-            </p>
-
-            <h3>The Three Components</h3>
-
-            <h4>Model (Data + Business Logic)</h4>
-            <ul>
-                <li>Represents the data and business rules</li>
-                <li>Manages the state of the application</li>
-                <li>Independent of the user interface</li>
-                <li>Notifies observers when data changes</li>
-            </ul>
-
-            <h4>View (User Interface)</h4>
-            <ul>
-                <li>Displays data to the user</li>
-                <li>Presents the model in a specific format</li>
-                <li>Multiple views can exist for the same model</li>
-                <li>Should contain minimal logic (only presentation)</li>
-            </ul>
-
-            <h4>Controller (Request Handler)</h4>
-            <ul>
-                <li>Handles user input and requests</li>
-                <li>Updates the model based on user actions</li>
-                <li>Selects the appropriate view to display</li>
-                <li>Acts as the intermediary between Model and View</li>
-            </ul>
-
-            <h3>MVC Flow Diagram</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                    <h3>Memory Impact</h3>
+                    <p>
+                        Singletons remain in memory for the entire application lifetime. This is fine for lightweight
+                        objects
+                        like configuration or loggers, but be cautious with heavy objects that hold large amounts of
+                        data.
+                    </p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 MODERN ALTERNATIVE</div>
+                        <div class="admonition-content">
+                            <p>In modern Java applications (especially with Spring), prefer Dependency Injection over
+                                Singleton
+                                pattern. Let the framework manage single instances for you!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 5: MVC Architecture -->
+                <div class="content-section">
+                    <h2>🎨 MVC Architecture (Model-View-Controller)</h2>
+                    <h3>What is MVC?</h3>
+                    <p>
+                        <strong>Baby:</strong> Like a restaurant: Chef (Model) makes food, Waiter (Controller) takes
+                        orders,
+                        Menu (View) shows what's available!<br />
+                        <strong>Real-world:</strong> Like a theater: Actors (Model) perform, Director (Controller)
+                        manages,
+                        Audience (View) watches.<br />
+                        <strong>Technical:</strong> An architectural pattern that separates an application into three
+                        interconnected components.
+                    </p>
+                    <h3>The Three Components</h3>
+                    <h4>Model (Data + Business Logic)</h4>
+                    <ul>
+                        <li>Represents the data and business rules</li>
+                        <li>Manages the state of the application</li>
+                        <li>Independent of the user interface</li>
+                        <li>Notifies observers when data changes</li>
+                    </ul>
+                    <h4>View (User Interface)</h4>
+                    <ul>
+                        <li>Displays data to the user</li>
+                        <li>Presents the model in a specific format</li>
+                        <li>Multiple views can exist for the same model</li>
+                        <li>Should contain minimal logic (only presentation)</li>
+                    </ul>
+                    <h4>Controller (Request Handler)</h4>
+                    <ul>
+                        <li>Handles user input and requests</li>
+                        <li>Updates the model based on user actions</li>
+                        <li>Selects the appropriate view to display</li>
+                        <li>Acts as the intermediary between Model and View</li>
+                    </ul>
+                    <h3>MVC Flow Diagram</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
 ┌──────────┐
 │   User   │
 └────┬─────┘
@@ -779,7 +1201,7 @@ Logger.getInstance().log("User logged in");</code></pre>
        │ 2. Updates
        ▼
 ┌──────────────┐
-│    Model     │ ◄─── Business logic & data
+│    Model     │ ◄─── Business logic &amp; data
 └──────┬───────┘
        │ 3. Notifies of changes
        ▼
@@ -792,18 +1214,18 @@ Logger.getInstance().log("User logged in");</code></pre>
 │   User   │ ◄─── Sees updated UI
 └──────────┘
             </pre>
-
-            <h3>Why MVC is Used in Web Applications</h3>
-            <ul>
-                <li><strong>Separation of Concerns:</strong> Each component has a distinct responsibility</li>
-                <li><strong>Parallel Development:</strong> Frontend and backend teams can work independently</li>
-                <li><strong>Reusability:</strong> Same model can be used with different views (web, mobile, API)</li>
-                <li><strong>Testability:</strong> Each component can be tested in isolation</li>
-                <li><strong>Maintainability:</strong> Changes in one component don't affect others</li>
-            </ul>
-
-            <h3>Example: Java Spring MVC</h3>
-            <pre><code class="language-java">// Model
+                    <h3>Why MVC is Used in Web Applications</h3>
+                    <ul>
+                        <li><strong>Separation of Concerns:</strong> Each component has a distinct responsibility</li>
+                        <li><strong>Parallel Development:</strong> Frontend and backend teams can work independently
+                        </li>
+                        <li><strong>Reusability:</strong> Same model can be used with different views (web, mobile, API)
+                        </li>
+                        <li><strong>Testability:</strong> Each component can be tested in isolation</li>
+                        <li><strong>Maintainability:</strong> Changes in one component don't affect others</li>
+                    </ul>
+                    <h3>Example: Java Spring MVC</h3>
+                    <pre><code class="language-java">// Model
 public class User {
     private Long id;
     private String name;
@@ -821,7 +1243,7 @@ public class UserController {
     
     @GetMapping("/users")
     public String listUsers(Model model) {
-        List<User> users = userService.getAllUsers();
+        List<user> users = userService.getAllUsers();
         model.addAttribute("users", users);
         return "userList"; // View name
     }
@@ -834,42 +1256,47 @@ public class UserController {
 }
 
 // View (userList.jsp or Thymeleaf template)
-// Displays the list of users from the model</code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 REAL-WORLD EXAMPLE</div>
-                <p>Think of an e-commerce website:</p>
-                <ul>
-                    <li><strong>Model:</strong> Product data, shopping cart, order processing logic</li>
-                    <li><strong>View:</strong> Product listing page, cart page, checkout page</li>
-                    <li><strong>Controller:</strong> Handles "Add to Cart," "Checkout," "Search Products" actions</li>
-                </ul>
-            </div>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Keep your controllers thin! They should delegate business logic to services/models, not implement it
-                    themselves.</p>
-            </div>
-        </div>
-
-        <!-- Section 6: Additional Design Patterns -->
-        <div class="content-section">
-            <h2>🎭 Additional Design Patterns (Introduction)</h2>
-            <p>
-                Design patterns are reusable solutions to common problems in software design. Here are brief
-                introductions to four important patterns. (Detailed coverage will be in advanced architecture topics.)
-            </p>
-
-            <h3>1. Factory Pattern</h3>
-            <p>
-                <strong>Purpose:</strong> Create objects without specifying the exact class to create.<br>
-                <strong>Analogy:</strong> Like ordering a pizza—you don't make it yourself, you ask the pizza factory
-                (restaurant).<br>
-                <strong>Use Case:</strong> When object creation logic is complex or when you want to decouple object
-                creation from usage.
-            </p>
-            <pre><code class="language-java">// Simple Factory example
+// Displays the list of users from the model</user></code></pre>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 REAL-WORLD EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>Think of an e-commerce website:</p>
+                            <ul>
+                                <li><strong>Model:</strong> Product data, shopping cart, order processing logic</li>
+                                <li><strong>View:</strong> Product listing page, cart page, checkout page</li>
+                                <li><strong>Controller:</strong> Handles "Add to Cart," "Checkout," "Search Products"
+                                    actions</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Keep your controllers thin! They should delegate business logic to services/models, not
+                                implement it
+                                themselves.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 6: Additional Design Patterns -->
+                <div class="content-section">
+                    <h2>🎭 Additional Design Patterns (Introduction)</h2>
+                    <p>
+                        Design patterns are reusable solutions to common problems in software design. Here are brief
+                        introductions to four important patterns. (Detailed coverage will be in advanced architecture
+                        topics.)
+                    </p>
+                    <h3>1. Factory Pattern</h3>
+                    <p>
+                        <strong>Purpose:</strong> Create objects without specifying the exact class to create.<br />
+                        <strong>Analogy:</strong> Like ordering a pizza—you don't make it yourself, you ask the pizza
+                        factory
+                        (restaurant).<br />
+                        <strong>Use Case:</strong> When object creation logic is complex or when you want to decouple
+                        object
+                        creation from usage.
+                    </p>
+                    <pre><code class="language-java">// Simple Factory example
 public interface Shape {
     void draw();
 }
@@ -893,17 +1320,18 @@ public class ShapeFactory {
 // Usage
 Shape shape = ShapeFactory.getShape("CIRCLE");
 shape.draw();</code></pre>
-
-            <h3>2. Strategy Pattern</h3>
-            <p>
-                <strong>Purpose:</strong> Define a family of algorithms, encapsulate each one, and make them
-                interchangeable.<br>
-                <strong>Analogy:</strong> Like choosing different routes to reach the same destination (highway, scenic
-                route, shortest path).<br>
-                <strong>Use Case:</strong> When you have multiple ways to perform an operation and want to switch
-                between them at runtime.
-            </p>
-            <pre><code class="language-java">// Strategy interface
+                    <h3>2. Strategy Pattern</h3>
+                    <p>
+                        <strong>Purpose:</strong> Define a family of algorithms, encapsulate each one, and make them
+                        interchangeable.<br />
+                        <strong>Analogy:</strong> Like choosing different routes to reach the same destination (highway,
+                        scenic
+                        route, shortest path).<br />
+                        <strong>Use Case:</strong> When you have multiple ways to perform an operation and want to
+                        switch
+                        between them at runtime.
+                    </p>
+                    <pre><code class="language-java">// Strategy interface
 public interface PaymentStrategy {
     void pay(int amount);
 }
@@ -932,23 +1360,24 @@ public class ShoppingCart {
         paymentStrategy.pay(amount);
     }
 }</code></pre>
-
-            <h3>3. Observer Pattern</h3>
-            <p>
-                <strong>Purpose:</strong> Define a one-to-many dependency so that when one object changes state, all
-                dependents are notified.<br>
-                <strong>Analogy:</strong> Like subscribing to a YouTube channel—when a new video is uploaded, all
-                subscribers get notified.<br>
-                <strong>Use Case:</strong> Event handling systems, implementing distributed event handling.
-            </p>
-            <pre><code class="language-java">// Observer interface
+                    <h3>3. Observer Pattern</h3>
+                    <p>
+                        <strong>Purpose:</strong> Define a one-to-many dependency so that when one object changes state,
+                        all
+                        dependents are notified.<br />
+                        <strong>Analogy:</strong> Like subscribing to a YouTube channel—when a new video is uploaded,
+                        all
+                        subscribers get notified.<br />
+                        <strong>Use Case:</strong> Event handling systems, implementing distributed event handling.
+                    </p>
+                    <pre><code class="language-java">// Observer interface
 public interface Observer {
     void update(String message);
 }
 
 // Subject
 public class NewsAgency {
-    private List<Observer> observers = new ArrayList<>();
+    private List<observer> observers = new ArrayList&lt;&gt;();
     
     public void addObserver(Observer observer) {
         observers.add(observer);
@@ -968,16 +1397,17 @@ public class NewsChannel implements Observer {
     public void update(String news) {
         System.out.println(name + " received: " + news);
     }
-}</code></pre>
-
-            <h3>4. Builder Pattern</h3>
-            <p>
-                <strong>Purpose:</strong> Construct complex objects step by step.<br>
-                <strong>Analogy:</strong> Like building a custom burger—choose bun, patty, toppings, sauce step by
-                step.<br>
-                <strong>Use Case:</strong> When an object has many optional parameters or complex construction logic.
-            </p>
-            <pre><code class="language-java">public class User {
+}</observer></code></pre>
+                    <h3>4. Builder Pattern</h3>
+                    <p>
+                        <strong>Purpose:</strong> Construct complex objects step by step.<br />
+                        <strong>Analogy:</strong> Like building a custom burger—choose bun, patty, toppings, sauce step
+                        by
+                        step.<br />
+                        <strong>Use Case:</strong> When an object has many optional parameters or complex construction
+                        logic.
+                    </p>
+                    <pre><code class="language-java">public class User {
     private String name;      // Required
     private String email;     // Required
     private int age;          // Optional
@@ -1022,29 +1452,31 @@ User user = new User.UserBuilder("John", "john@email.com")
                     .age(30)
                     .phone("123-456-7890")
                     .build();</code></pre>
-
-            <div class="callout note">
-                <div class="callout-title">📚 NOTE</div>
-                <p>These are just introductions. Each pattern deserves deep study. The Gang of Four (GoF) book
-                    documents 23 design patterns in total!</p>
-            </div>
-        </div>
-
-        <!-- Section 7: Layered Architecture -->
-        <div class="content-section">
-            <h2>🏗️ Layered Architecture</h2>
-
-            <p>
-                <strong>Baby:</strong> Like a sandwich with different layers—bread, lettuce, cheese, meat. Each layer
-                has its purpose!<br>
-                <strong>Real-world:</strong> Like a building with floors—ground floor for shops, middle floors for
-                offices, top floor for penthouse.<br>
-                <strong>Technical:</strong> Organizing code into horizontal layers, each with a specific responsibility.
-            </p>
-
-            <h3>Three-Tier Architecture</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                    <div class="admonition note">
+                        <div class="admonition-title">📚 NOTE</div>
+                        <div class="admonition-content">
+                            <p>These are just introductions. Each pattern deserves deep study. The Gang of Four (GoF)
+                                book
+                                documents 23 design patterns in total!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 7: Layered Architecture -->
+                <div class="content-section">
+                    <h2>🏗️ Layered Architecture</h2>
+                    <p>
+                        <strong>Baby:</strong> Like a sandwich with different layers—bread, lettuce, cheese, meat. Each
+                        layer
+                        has its purpose!<br />
+                        <strong>Real-world:</strong> Like a building with floors—ground floor for shops, middle floors
+                        for
+                        offices, top floor for penthouse.<br />
+                        <strong>Technical:</strong> Organizing code into horizontal layers, each with a specific
+                        responsibility.
+                    </p>
+                    <h3>Three-Tier Architecture</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
 ┌─────────────────────────────────────┐
 │   Presentation Layer (UI)           │ ◄─── User Interface
 │   - Controllers                     │      (Web pages, REST APIs)
@@ -1065,100 +1497,96 @@ User user = new User.UserBuilder("John", "john@email.com")
 │   - Database Queries                │
 └─────────────────────────────────────┘
             </pre>
-
-            <h3>Layer Responsibilities</h3>
-
-            <h4>1. Presentation Layer</h4>
-            <ul>
-                <li>Handles user interaction</li>
-                <li>Displays data to users</li>
-                <li>Captures user input</li>
-                <li>Should NOT contain business logic</li>
-            </ul>
-            <pre><code class="language-java">@RestController
+                    <h3>Layer Responsibilities</h3>
+                    <h4>1. Presentation Layer</h4>
+                    <ul>
+                        <li>Handles user interaction</li>
+                        <li>Displays data to users</li>
+                        <li>Captures user input</li>
+                        <li>Should NOT contain business logic</li>
+                    </ul>
+                    <pre><code class="language-java">@RestController
 public class UserController {
     @Autowired
     private UserService userService; // Delegates to business layer
     
     @GetMapping("/users/{id}")
-    public ResponseEntity<User> getUser(@PathVariable Long id) {
+    public ResponseEntity<user> getUser(@PathVariable Long id) {
         User user = userService.findById(id);
         return ResponseEntity.ok(user);
     }
-}</code></pre>
-
-            <h4>2. Business Logic Layer</h4>
-            <ul>
-                <li>Contains business rules and logic</li>
-                <li>Validates data</li>
-                <li>Coordinates between presentation and data layers</li>
-                <li>Independent of UI and database details</li>
-            </ul>
-            <pre><code class="language-java">@Service
+}</user></code></pre>
+                    <h4>2. Business Logic Layer</h4>
+                    <ul>
+                        <li>Contains business rules and logic</li>
+                        <li>Validates data</li>
+                        <li>Coordinates between presentation and data layers</li>
+                        <li>Independent of UI and database details</li>
+                    </ul>
+                    <pre><code class="language-java">@Service
 public class UserService {
     @Autowired
     private UserRepository userRepository; // Delegates to data layer
     
     public User findById(Long id) {
         return userRepository.findById(id)
-            .orElseThrow(() -> new UserNotFoundException(id));
+            .orElseThrow(() -&gt; new UserNotFoundException(id));
     }
     
     public void createUser(User user) {
         // Business validation
-        if (user.getAge() < 18) {
+        if (user.getAge() &lt; 18) {
             throw new InvalidAgeException("Must be 18+");
         }
         userRepository.save(user);
     }
 }</code></pre>
-
-            <h4>3. Data Access Layer</h4>
-            <ul>
-                <li>Handles database operations</li>
-                <li>Abstracts data storage details</li>
-                <li>Provides CRUD operations</li>
-                <li>Can be swapped without affecting business logic</li>
-            </ul>
-            <pre><code class="language-java">@Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-    List<User> findByEmail(String email);
-    List<User> findByAgeGreaterThan(int age);
-}</code></pre>
-
-            <h3>Benefits of Layered Architecture</h3>
-            <ul>
-                <li><strong>Separation of Concerns:</strong> Each layer has a clear responsibility</li>
-                <li><strong>Maintainability:</strong> Changes in one layer don't affect others</li>
-                <li><strong>Testability:</strong> Each layer can be tested independently</li>
-                <li><strong>Reusability:</strong> Business logic can be reused across different UIs</li>
-                <li><strong>Scalability:</strong> Layers can be scaled independently</li>
-            </ul>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING</div>
-                <p>Don't skip layers! Presentation should never directly access the database. Always go through the
-                    business layer.</p>
-            </div>
-        </div>
-
-        <!-- Section 8: Best Practices -->
-        <div class="content-section">
-            <h2>✅ Best Practices</h2>
-
-            <h3>1. Write Clean and Readable Code</h3>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <ul>
-                    <li>Use meaningful variable and method names</li>
-                    <li>Keep methods short (ideally under 20 lines)</li>
-                    <li>Use comments to explain "why," not "what"</li>
-                    <li>Follow consistent naming conventions</li>
-                    <li>Format code consistently (use IDE auto-formatting)</li>
-                </ul>
-            </div>
-
-            <pre><code class="language-java">// BAD
+                    <h4>3. Data Access Layer</h4>
+                    <ul>
+                        <li>Handles database operations</li>
+                        <li>Abstracts data storage details</li>
+                        <li>Provides CRUD operations</li>
+                        <li>Can be swapped without affecting business logic</li>
+                    </ul>
+                    <pre><code class="language-java">@Repository
+public interface UserRepository extends JpaRepository<user, long=""> {
+    List<user> findByEmail(String email);
+    List<user> findByAgeGreaterThan(int age);
+}</user></user></user,></code></pre>
+                    <h3>Benefits of Layered Architecture</h3>
+                    <ul>
+                        <li><strong>Separation of Concerns:</strong> Each layer has a clear responsibility</li>
+                        <li><strong>Maintainability:</strong> Changes in one layer don't affect others</li>
+                        <li><strong>Testability:</strong> Each layer can be tested independently</li>
+                        <li><strong>Reusability:</strong> Business logic can be reused across different UIs</li>
+                        <li><strong>Scalability:</strong> Layers can be scaled independently</li>
+                    </ul>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING</div>
+                        <div class="admonition-content">
+                            <p>Don't skip layers! Presentation should never directly access the database. Always go
+                                through the
+                                business layer.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 8: Best Practices -->
+                <div class="content-section">
+                    <h2>✅ Best Practices</h2>
+                    <h3>1. Write Clean and Readable Code</h3>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <ul>
+                                <li>Use meaningful variable and method names</li>
+                                <li>Keep methods short (ideally under 20 lines)</li>
+                                <li>Use comments to explain "why," not "what"</li>
+                                <li>Follow consistent naming conventions</li>
+                                <li>Format code consistently (use IDE auto-formatting)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <pre><code class="language-java">// BAD
 public int calc(int a, int b) {
     return a * b * 365;
 }
@@ -1168,13 +1596,13 @@ public int calculateAnnualSalary(int monthlySalary, int monthsWorked) {
     final int DAYS_IN_YEAR = 365;
     return monthlySalary * monthsWorked * DAYS_IN_YEAR;
 }</code></pre>
-
-            <h3>2. Design for Extensibility</h3>
-            <p>
-                Write code that can be easily extended without modification. Use interfaces, abstract classes, and
-                design patterns.
-            </p>
-            <pre><code class="language-java">// Extensible design using Strategy pattern
+                    <h3>2. Design for Extensibility</h3>
+                    <p>
+                        Write code that can be easily extended without modification. Use interfaces, abstract classes,
+                        and
+                        design patterns.
+                    </p>
+                    <pre><code class="language-java">// Extensible design using Strategy pattern
 public interface NotificationService {
     void send(String message);
 }
@@ -1191,12 +1619,11 @@ public class SMSNotification implements NotificationService {
 public class PushNotification implements NotificationService {
     public void send(String message) { /* send push */ }
 }</code></pre>
-
-            <h3>3. Use Interfaces Where Needed</h3>
-            <p>
-                Program to interfaces, not implementations. This makes your code flexible and testable.
-            </p>
-            <pre><code class="language-java">// GOOD - Depends on interface
+                    <h3>3. Use Interfaces Where Needed</h3>
+                    <p>
+                        Program to interfaces, not implementations. This makes your code flexible and testable.
+                    </p>
+                    <pre><code class="language-java">// GOOD - Depends on interface
 public class OrderService {
     private PaymentProcessor paymentProcessor;
     
@@ -1209,14 +1636,15 @@ public class OrderService {
 PaymentProcessor processor = new StripePaymentProcessor();
 // or
 PaymentProcessor processor = new PayPalPaymentProcessor();</code></pre>
-
-            <h3>4. Avoid Over-Engineering</h3>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING</div>
-                <p>Don't create elaborate architectures for simple problems. Start simple and refactor as needed.</p>
-            </div>
-
-            <pre><code class="language-java">// Over-engineered for a simple calculator
+                    <h3>4. Avoid Over-Engineering</h3>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING</div>
+                        <div class="admonition-content">
+                            <p>Don't create elaborate architectures for simple problems. Start simple and refactor as
+                                needed.</p>
+                        </div>
+                    </div>
+                    <pre><code class="language-java">// Over-engineered for a simple calculator
 public interface CalculationStrategy { }
 public class AdditionStrategy implements CalculationStrategy { }
 public class CalculatorFactory { }
@@ -1227,18 +1655,17 @@ public class Calculator {
     public int add(int a, int b) { return a + b; }
     public int subtract(int a, int b) { return a - b; }
 }</code></pre>
-
-            <h3>5. Unit Testing Linkage</h3>
-            <p>
-                Good design principles make code testable. Following SOLID principles naturally leads to testable code.
-            </p>
-            <ul>
-                <li><strong>SRP:</strong> Small, focused classes are easier to test</li>
-                <li><strong>DIP:</strong> Dependency injection allows mocking dependencies</li>
-                <li><strong>OCP:</strong> Extensible code can be tested without modification</li>
-            </ul>
-
-            <pre><code class="language-java">// Testable design with dependency injection
+                    <h3>5. Unit Testing Linkage</h3>
+                    <p>
+                        Good design principles make code testable. Following SOLID principles naturally leads to
+                        testable code.
+                    </p>
+                    <ul>
+                        <li><strong>SRP:</strong> Small, focused classes are easier to test</li>
+                        <li><strong>DIP:</strong> Dependency injection allows mocking dependencies</li>
+                        <li><strong>OCP:</strong> Extensible code can be tested without modification</li>
+                    </ul>
+                    <pre><code class="language-java">// Testable design with dependency injection
 public class UserService {
     private UserRepository repository;
     private EmailService emailService;
@@ -1267,26 +1694,28 @@ public void testRegisterUser() {
     verify(mockRepo).save(user);
     verify(mockEmail).sendWelcomeEmail(user);
 }</code></pre>
-
-            <h3>Additional Best Practices</h3>
-            <ul>
-                <li><strong>Fail Fast:</strong> Validate inputs early and throw exceptions for invalid data</li>
-                <li><strong>Immutability:</strong> Prefer immutable objects when possible (use <code>final</code>)</li>
-                <li><strong>Composition over Inheritance:</strong> Favor object composition over class inheritance</li>
-                <li><strong>Code Reviews:</strong> Have peers review your code for quality and adherence to principles
-                </li>
-                <li><strong>Refactoring:</strong> Continuously improve code structure without changing behavior</li>
-            </ul>
-        </div>
-
-        <!-- Section 9: Common Mistakes -->
-        <div class="content-section">
-            <h2>❌ Common Mistakes</h2>
-
-            <h3>1. Violation of Single Responsibility Principle</h3>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ MISTAKE</div>
-                <pre><code class="language-java">// BAD - God class doing everything
+                    <h3>Additional Best Practices</h3>
+                    <ul>
+                        <li><strong>Fail Fast:</strong> Validate inputs early and throw exceptions for invalid data</li>
+                        <li><strong>Immutability:</strong> Prefer immutable objects when possible (use
+                            <code>final</code>)</li>
+                        <li><strong>Composition over Inheritance:</strong> Favor object composition over class
+                            inheritance</li>
+                        <li><strong>Code Reviews:</strong> Have peers review your code for quality and adherence to
+                            principles
+                        </li>
+                        <li><strong>Refactoring:</strong> Continuously improve code structure without changing behavior
+                        </li>
+                    </ul>
+                </div>
+                <!-- Section 9: Common Mistakes -->
+                <div class="content-section">
+                    <h2>❌ Common Mistakes</h2>
+                    <h3>1. Violation of Single Responsibility Principle</h3>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ MISTAKE</div>
+                        <div class="admonition-content">
+                            <pre><code class="language-java">// BAD - God class doing everything
 public class User {
     private String name;
     
@@ -1304,12 +1733,13 @@ public class User {
 public class UserRepository { void save(User u) { } }
 public class EmailService { void send(User u) { } }
 public class ReportGenerator { String generate(User u) { } }</code></pre>
-            </div>
-
-            <h3>2. Tight Coupling</h3>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ MISTAKE</div>
-                <pre><code class="language-java">// BAD - Tightly coupled
+                        </div>
+                    </div>
+                    <h3>2. Tight Coupling</h3>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ MISTAKE</div>
+                        <div class="admonition-content">
+                            <pre><code class="language-java">// BAD - Tightly coupled
 public class OrderService {
     private MySQLDatabase db = new MySQLDatabase(); // Hard-coded dependency
     
@@ -1326,13 +1756,14 @@ public class OrderService {
         this.db = database; // Flexible!
     }
 }</code></pre>
-            </div>
-
-            <h3>3. Wrong Use of Singleton</h3>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ MISTAKE</div>
-                <p>Using Singleton for everything just to avoid passing parameters:</p>
-                <pre><code class="language-java">// BAD - Singleton abuse
+                        </div>
+                    </div>
+                    <h3>3. Wrong Use of Singleton</h3>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ MISTAKE</div>
+                        <div class="admonition-content">
+                            <p>Using Singleton for everything just to avoid passing parameters:</p>
+                            <pre><code class="language-java">// BAD - Singleton abuse
 public class UserManager {
     private static UserManager instance;
     private User currentUser; // Shared state is dangerous!
@@ -1346,17 +1777,18 @@ public class UserService {
         // No global state!
     }
 }</code></pre>
-                <p><strong>Why it's bad:</strong> Global state makes testing difficult and can cause bugs in
-                    multi-threaded environments.</p>
-            </div>
-
-            <h3>4. Overcomplicating Simple Logic</h3>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ MISTAKE</div>
-                <pre><code class="language-java">// BAD - Overcomplicated
+                            <p><strong>Why it's bad:</strong> Global state makes testing difficult and can cause bugs in
+                                multi-threaded environments.</p>
+                        </div>
+                    </div>
+                    <h3>4. Overcomplicating Simple Logic</h3>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ MISTAKE</div>
+                        <div class="admonition-content">
+                            <pre><code class="language-java">// BAD - Overcomplicated
 public class AgeValidator {
     public boolean validate(int age) {
-        if (age >= 18) {
+        if (age &gt;= 18) {
             return true;
         } else {
             return false;
@@ -1366,14 +1798,15 @@ public class AgeValidator {
 
 // GOOD - Simple and clear
 public boolean isAdult(int age) {
-    return age >= 18;
+    return age &gt;= 18;
 }</code></pre>
-            </div>
-
-            <h3>5. Not Following Naming Conventions</h3>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ MISTAKE</div>
-                <pre><code class="language-java">// BAD
+                        </div>
+                    </div>
+                    <h3>5. Not Following Naming Conventions</h3>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ MISTAKE</div>
+                        <div class="admonition-content">
+                            <pre><code class="language-java">// BAD
 public class usr {
     private String n;
     public void sv() { }
@@ -1384,12 +1817,13 @@ public class User {
     private String name;
     public void save() { }
 }</code></pre>
-            </div>
-
-            <h3>6. Ignoring Exception Handling</h3>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ MISTAKE</div>
-                <pre><code class="language-java">// BAD - Swallowing exceptions
+                        </div>
+                    </div>
+                    <h3>6. Ignoring Exception Handling</h3>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ MISTAKE</div>
+                        <div class="admonition-content">
+                            <pre><code class="language-java">// BAD - Swallowing exceptions
 try {
     riskyOperation();
 } catch (Exception e) {
@@ -1403,36 +1837,41 @@ try {
     logger.error("Operation failed", e);
     throw new ServiceException("Failed to process", e);
 }</code></pre>
+                        </div>
+                    </div>
+                    <h3>7. Premature Optimization</h3>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ MISTAKE</div>
+                        <div class="admonition-content">
+                            <p>"Premature optimization is the root of all evil" - Donald Knuth</p>
+                            <p>Don't optimize code before you have a performance problem. Write clean, readable code
+                                first, then
+                                optimize if needed based on profiling.</p>
+                        </div>
+                    </div>
+                    <h3>8. Not Writing Tests</h3>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ MISTAKE</div>
+                        <div class="admonition-content">
+                            <p>Skipping unit tests to "save time" always backfires. Tests save time in the long run by
+                                catching
+                                bugs early and enabling confident refactoring.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Next Topic -->
+                <div class="next-topic">
+                    <p style="text-align: center; font-size: 1.2rem; margin-top: 2rem;">
+                        🎉 <strong>Congratulations!</strong> You've completed the Java Mastery Series!
+                    </p>
+                    <p style="text-align: center; color: var(--text-secondary);">
+                        You now have a solid foundation in Java programming principles and best practices.
+                    </p>
+                </div>
             </div>
-
-            <h3>7. Premature Optimization</h3>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ MISTAKE</div>
-                <p>"Premature optimization is the root of all evil" - Donald Knuth</p>
-                <p>Don't optimize code before you have a performance problem. Write clean, readable code first, then
-                    optimize if needed based on profiling.</p>
-            </div>
-
-            <h3>8. Not Writing Tests</h3>
-            <div class="callout warning">
-                <div class="callout-title">⚠️ MISTAKE</div>
-                <p>Skipping unit tests to "save time" always backfires. Tests save time in the long run by catching
-                    bugs early and enabling confident refactoring.</p>
-            </div>
-        </div>
-
-        <!-- Next Topic -->
-        <div class="next-topic">
-            <p style="text-align: center; font-size: 1.2rem; margin-top: 2rem;">
-                🎉 <strong>Congratulations!</strong> You've completed the Java Mastery Series!
-            </p>
-            <p style="text-align: center; color: var(--text-secondary);">
-                You now have a solid foundation in Java programming principles and best practices.
-            </p>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

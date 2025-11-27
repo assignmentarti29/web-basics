@@ -1,105 +1,519 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Variables and Data Types - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Variables and Data Types</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Theory</span>
-                <span>/</span>
-                <span>Variables and Data Types</span>
-            </div>
-        </div>
-
-        <!-- Section 1: What are Variables? -->
-        <div class="content-section">
-            <h2>🎯 What are Variables?</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
-            <p>
-                Imagine you have many toy boxes in your room. Each box has a label on it - one says "LEGO", another says
-                "Cars",
-                and another says "Dolls". When you want to play with LEGOs, you go to the box labeled "LEGO" and take
-                them out!
-            </p>
-            <p>
-                <strong>Variables</strong> are like those labeled boxes, but for computers! They are containers that
-                hold information
-                (like numbers, words, or true/false). Each container has a name (the label), and you can put things in
-                it, take things out,
-                or change what's inside. 📦
-            </p>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE</div>
-                <p>The word "variable" comes from "vary" - meaning it can change! The value inside a variable can be
-                    different at different times.</p>
-            </div>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of variables like <strong>lockers in a school</strong>. Each locker has:
-            </p>
-            <ul>
-                <li><strong>A number (name):</strong> Like "Locker 42" - this is the variable name</li>
-                <li><strong>Contents (value):</strong> What's inside - books, lunch, jacket</li>
-                <li><strong>A type:</strong> Some lockers are small (for books), some are large (for sports equipment)
-                </li>
-            </ul>
-            <p>
-                When you say "Put my math book in Locker 42," you're doing exactly what programmers do: storing a value
-                (math book)
-                in a variable (Locker 42). Later, you can retrieve it: "Get my math book from Locker 42."
-            </p>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>
-                    <strong>Real-life variable:</strong> Your age is a variable! The name is "age", and the value
-                    changes every year.
-                    When you were born, age = 0. On your first birthday, age = 1. It keeps changing (varying)!
-                </p>
-            </div>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                A <strong>variable</strong> is a named memory location that stores a value. In Java, every variable must
-                have:
-            </p>
-            <ul>
-                <li><strong>Data Type:</strong> Defines what kind of data it can hold (int, String, boolean, etc.)</li>
-                <li><strong>Name (Identifier):</strong> A unique name following Java naming rules</li>
-                <li><strong>Value:</strong> The actual data stored (can be changed unless marked as final)</li>
-            </ul>
-
-            <h4>Variable Declaration and Initialization:</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Variables and Data Types</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Theory</a></li>
+                        <li>Variables and Data Types</li>
+                    </ul>
+                </div>
+                <!-- Section 1: What are Variables? -->
+                <div class="content-section">
+                    <h2>🎯 What are Variables?</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+                    <p>
+                        Imagine you have many toy boxes in your room. Each box has a label on it - one says "LEGO",
+                        another says
+                        "Cars",
+                        and another says "Dolls". When you want to play with LEGOs, you go to the box labeled "LEGO" and
+                        take
+                        them out!
+                    </p>
+                    <p>
+                        <strong>Variables</strong> are like those labeled boxes, but for computers! They are containers
+                        that
+                        hold information
+                        (like numbers, words, or true/false). Each container has a name (the label), and you can put
+                        things in
+                        it, take things out,
+                        or change what's inside. 📦
+                    </p>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE</div>
+                        <div class="admonition-content">
+                            <p>The word "variable" comes from "vary" - meaning it can change! The value inside a
+                                variable can be
+                                different at different times.</p>
+                        </div>
+                    </div>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of variables like <strong>lockers in a school</strong>. Each locker has:
+                    </p>
+                    <ul>
+                        <li><strong>A number (name):</strong> Like "Locker 42" - this is the variable name</li>
+                        <li><strong>Contents (value):</strong> What's inside - books, lunch, jacket</li>
+                        <li><strong>A type:</strong> Some lockers are small (for books), some are large (for sports
+                            equipment)
+                        </li>
+                    </ul>
+                    <p>
+                        When you say "Put my math book in Locker 42," you're doing exactly what programmers do: storing
+                        a value
+                        (math book)
+                        in a variable (Locker 42). Later, you can retrieve it: "Get my math book from Locker 42."
+                    </p>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Real-life variable:</strong> Your age is a variable! The name is "age", and the
+                                value
+                                changes every year.
+                                When you were born, age = 0. On your first birthday, age = 1. It keeps changing
+                                (varying)!
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        A <strong>variable</strong> is a named memory location that stores a value. In Java, every
+                        variable must
+                        have:
+                    </p>
+                    <ul>
+                        <li><strong>Data Type:</strong> Defines what kind of data it can hold (int, String, boolean,
+                            etc.)</li>
+                        <li><strong>Name (Identifier):</strong> A unique name following Java naming rules</li>
+                        <li><strong>Value:</strong> The actual data stored (can be changed unless marked as final)</li>
+                    </ul>
+                    <h4>Variable Declaration and Initialization:</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
 <code>// Declaration: Tells Java to reserve memory
 int age;
 
@@ -108,122 +522,124 @@ age = 25;
 
 // Declaration + Initialization (most common)
 int score = 100;</code></pre>
-
-            <h4>Identifier Rules (Variable Naming):</h4>
-            <ul>
-                <li>✅ Must start with a letter, $ or _ (underscore)</li>
-                <li>✅ Can contain letters, digits, $ or _</li>
-                <li>✅ Case-sensitive (age ≠ Age ≠ AGE)</li>
-                <li>❌ Cannot be a Java keyword (int, class, public, etc.)</li>
-                <li>❌ Cannot contain spaces or special characters (except $ and _)</li>
-            </ul>
-
-            <h4>Naming Conventions (Best Practices):</h4>
-            <ul>
-                <li><strong>camelCase:</strong> For variables and methods (firstName, totalScore, isActive)</li>
-                <li><strong>PascalCase:</strong> For class names (Student, BankAccount)</li>
-                <li><strong>UPPER_SNAKE_CASE:</strong> For constants (MAX_VALUE, PI, DEFAULT_SIZE)</li>
-            </ul>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Interview Perspective</div>
-                <p>
-                    When asked "What is a variable?", say: <strong>"A variable is a named memory location that stores a
-                        value of a specific data type.
-                        It must be declared with a type before use, and its value can be changed during program
-                        execution unless marked as final."</strong>
-                </p>
-            </div>
-
-            <h4>Memory Allocation:</h4>
-            <p>
-                When you declare a variable, Java allocates memory:
-            </p>
-            <ul>
-                <li><strong>Primitive types:</strong> Store actual values directly in memory</li>
-                <li><strong>Reference types:</strong> Store memory addresses (references) pointing to objects</li>
-            </ul>
-        </div>
-
-        <!-- Section 2: Memory Location & Stack vs Heap -->
-        <div class="content-section">
-            <h2>🧠 Memory Location & Understanding Stack vs Heap</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Imagine your kitchen has two types of storage:
-            </p>
-            <ul>
-                <li><strong>Kitchen Counter (Stack):</strong> For things you're using RIGHT NOW - like ingredients while
-                    cooking.
-                    Small, quick to access, but limited space. When you're done cooking, you clear the counter!</li>
-                <li><strong>Pantry/Storeroom (Heap):</strong> For things you keep for a long time - like canned food,
-                    big pots.
-                    Lots of space, but takes a bit longer to walk to the pantry and back.</li>
-            </ul>
-            <p>
-                Java's memory works the same way! Some things go on the "counter" (stack) for quick use, and some go in
-                the "pantry" (heap)
-                for longer storage.
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of <strong>Stack</strong> as a stack of plates:
-            </p>
-            <ul>
-                <li>You add plates on top (push)</li>
-                <li>You remove plates from the top (pop)</li>
-                <li>Last In, First Out (LIFO)</li>
-                <li>Fast and organized, but limited height</li>
-            </ul>
-            <p>
-                Think of <strong>Heap</strong> as a warehouse:
-            </p>
-            <ul>
-                <li>Items can be stored anywhere with space</li>
-                <li>You get a ticket (reference) to find your item later</li>
-                <li>Lots of space, but needs organization (garbage collection)</li>
-            </ul>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>
-                    When you call a method, local variables go on the stack (quick, temporary). When you create an
-                    object with "new",
-                    it goes on the heap (long-lived, accessible from anywhere).
-                </p>
-            </div>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <h4>Stack Memory:</h4>
-            <ul>
-                <li><strong>Stores:</strong> Primitive local variables, method call information, references to objects
-                </li>
-                <li><strong>Structure:</strong> LIFO (Last In, First Out) - like a stack of plates</li>
-                <li><strong>Size:</strong> Limited (typically 1MB, configurable with -Xss)</li>
-                <li><strong>Speed:</strong> Very fast access</li>
-                <li><strong>Lifetime:</strong> Exists only during method execution</li>
-                <li><strong>Thread-specific:</strong> Each thread has its own stack</li>
-                <li><strong>Automatic cleanup:</strong> When method returns, stack frame is popped</li>
-            </ul>
-
-            <h4>Heap Memory:</h4>
-            <ul>
-                <li><strong>Stores:</strong> Objects, instance variables, arrays</li>
-                <li><strong>Structure:</strong> Unordered, dynamic allocation</li>
-                <li><strong>Size:</strong> Large (configurable with -Xmx, -Xms)</li>
-                <li><strong>Speed:</strong> Slower than stack (but still fast)</li>
-                <li><strong>Lifetime:</strong> Until garbage collected (no references remain)</li>
-                <li><strong>Shared:</strong> All threads share the same heap</li>
-                <li><strong>Managed cleanup:</strong> Garbage Collector removes unreferenced objects</li>
-            </ul>
-
-            <h4>Visual Representation:</h4>
-            <div
-                style="background: var(--bg-hover); border: 2px solid var(--primary); border-radius: var(--radius-md); padding: var(--spacing-lg); margin: var(--spacing-md) 0;">
-                <pre style="background: transparent; border: none; color: var(--text-primary); font-size: 0.85rem;">
+                    <h4>Identifier Rules (Variable Naming):</h4>
+                    <ul>
+                        <li>✅ Must start with a letter, $ or _ (underscore)</li>
+                        <li>✅ Can contain letters, digits, $ or _</li>
+                        <li>✅ Case-sensitive (age ≠ Age ≠ AGE)</li>
+                        <li>❌ Cannot be a Java keyword (int, class, public, etc.)</li>
+                        <li>❌ Cannot contain spaces or special characters (except $ and _)</li>
+                    </ul>
+                    <h4>Naming Conventions (Best Practices):</h4>
+                    <ul>
+                        <li><strong>camelCase:</strong> For variables and methods (firstName, totalScore, isActive)</li>
+                        <li><strong>PascalCase:</strong> For class names (Student, BankAccount)</li>
+                        <li><strong>UPPER_SNAKE_CASE:</strong> For constants (MAX_VALUE, PI, DEFAULT_SIZE)</li>
+                    </ul>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Interview Perspective</div>
+                        <div class="admonition-content">
+                            <p>
+                                When asked "What is a variable?", say: <strong>"A variable is a named memory location
+                                    that stores a
+                                    value of a specific data type.
+                                    It must be declared with a type before use, and its value can be changed during
+                                    program
+                                    execution unless marked as final."</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Memory Allocation:</h4>
+                    <p>
+                        When you declare a variable, Java allocates memory:
+                    </p>
+                    <ul>
+                        <li><strong>Primitive types:</strong> Store actual values directly in memory</li>
+                        <li><strong>Reference types:</strong> Store memory addresses (references) pointing to objects
+                        </li>
+                    </ul>
+                </div>
+                <!-- Section 2: Memory Location & Stack vs Heap -->
+                <div class="content-section">
+                    <h2>🧠 Memory Location &amp; Understanding Stack vs Heap</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Imagine your kitchen has two types of storage:
+                    </p>
+                    <ul>
+                        <li><strong>Kitchen Counter (Stack):</strong> For things you're using RIGHT NOW - like
+                            ingredients while
+                            cooking.
+                            Small, quick to access, but limited space. When you're done cooking, you clear the counter!
+                        </li>
+                        <li><strong>Pantry/Storeroom (Heap):</strong> For things you keep for a long time - like canned
+                            food,
+                            big pots.
+                            Lots of space, but takes a bit longer to walk to the pantry and back.</li>
+                    </ul>
+                    <p>
+                        Java's memory works the same way! Some things go on the "counter" (stack) for quick use, and
+                        some go in
+                        the "pantry" (heap)
+                        for longer storage.
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of <strong>Stack</strong> as a stack of plates:
+                    </p>
+                    <ul>
+                        <li>You add plates on top (push)</li>
+                        <li>You remove plates from the top (pop)</li>
+                        <li>Last In, First Out (LIFO)</li>
+                        <li>Fast and organized, but limited height</li>
+                    </ul>
+                    <p>
+                        Think of <strong>Heap</strong> as a warehouse:
+                    </p>
+                    <ul>
+                        <li>Items can be stored anywhere with space</li>
+                        <li>You get a ticket (reference) to find your item later</li>
+                        <li>Lots of space, but needs organization (garbage collection)</li>
+                    </ul>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                When you call a method, local variables go on the stack (quick, temporary). When you
+                                create an
+                                object with "new",
+                                it goes on the heap (long-lived, accessible from anywhere).
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <h4>Stack Memory:</h4>
+                    <ul>
+                        <li><strong>Stores:</strong> Primitive local variables, method call information, references to
+                            objects
+                        </li>
+                        <li><strong>Structure:</strong> LIFO (Last In, First Out) - like a stack of plates</li>
+                        <li><strong>Size:</strong> Limited (typically 1MB, configurable with -Xss)</li>
+                        <li><strong>Speed:</strong> Very fast access</li>
+                        <li><strong>Lifetime:</strong> Exists only during method execution</li>
+                        <li><strong>Thread-specific:</strong> Each thread has its own stack</li>
+                        <li><strong>Automatic cleanup:</strong> When method returns, stack frame is popped</li>
+                    </ul>
+                    <h4>Heap Memory:</h4>
+                    <ul>
+                        <li><strong>Stores:</strong> Objects, instance variables, arrays</li>
+                        <li><strong>Structure:</strong> Unordered, dynamic allocation</li>
+                        <li><strong>Size:</strong> Large (configurable with -Xmx, -Xms)</li>
+                        <li><strong>Speed:</strong> Slower than stack (but still fast)</li>
+                        <li><strong>Lifetime:</strong> Until garbage collected (no references remain)</li>
+                        <li><strong>Shared:</strong> All threads share the same heap</li>
+                        <li><strong>Managed cleanup:</strong> Garbage Collector removes unreferenced objects</li>
+                    </ul>
+                    <h4>Visual Representation:</h4>
+                    <div
+                        style="background: var(--bg-hover); border: 2px solid var(--primary); border-radius: var(--radius-md); padding: var(--spacing-lg); margin: var(--spacing-md) 0;">
+                        <pre
+                            style="background: transparent; border: none; color: var(--text-primary); font-size: 0.85rem;">
 ┌─────────────────────────────────────────────────────────────┐
 │                    JAVA MEMORY MODEL                        │
 ├─────────────────────────────────────────────────────────────┤
@@ -249,417 +665,458 @@ int score = 100;</code></pre>
 │  • Auto-cleanup                      • GC cleanup          │
 └─────────────────────────────────────────────────────────────┘
                 </pre>
-            </div>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ IMPORTANT - StackOverflowError</div>
-                <p>
-                    If you have too many method calls (especially recursive calls without a base case), the stack runs
-                    out of space,
-                    causing a <strong>StackOverflowError</strong>. This is a common error with infinite recursion!
-                </p>
-            </div>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - Garbage Collection</div>
-                <p>
-                    Java automatically cleans up heap memory through Garbage Collection (GC). When an object has no
-                    references pointing to it,
-                    the GC marks it for deletion and frees the memory. You don't need to manually free memory like in
-                    C/C++!
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 3: Primitive Data Types -->
-        <div class="content-section">
-            <h2>🔢 Primitive Data Types</h2>
-
-            <p>
-                Java has <strong>8 primitive data types</strong>. These are the building blocks for data manipulation.
-                They store actual values
-                (not references) and are stored on the stack.
-            </p>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Imagine you have different types of containers:
-            </p>
-            <ul>
-                <li><strong>Tiny box (byte):</strong> Can hold a very small number</li>
-                <li><strong>Small box (short):</strong> Can hold a small number</li>
-                <li><strong>Medium box (int):</strong> Can hold a regular number (most common!)</li>
-                <li><strong>Large box (long):</strong> Can hold a HUGE number</li>
-                <li><strong>Decimal box (float):</strong> Can hold numbers with decimal points</li>
-                <li><strong>Precise decimal box (double):</strong> Can hold very precise decimal numbers</li>
-                <li><strong>Letter box (char):</strong> Can hold ONE letter or symbol</li>
-                <li><strong>Yes/No box (boolean):</strong> Can only hold true or false</li>
-            </ul>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of primitive types like <strong>different measuring cups</strong>:
-            </p>
-            <ul>
-                <li><strong>byte:</strong> Teaspoon (small measurements)</li>
-                <li><strong>int:</strong> Regular cup (everyday use)</li>
-                <li><strong>long:</strong> Gallon jug (large quantities)</li>
-                <li><strong>double:</strong> Precise scientific measuring cup (exact measurements)</li>
-            </ul>
-            <p>
-                You choose the right "cup" based on what you're measuring. Don't use a gallon jug for a teaspoon of
-                salt!
-            </p>
-
-            <h3>Level 3: Technical Details</h3>
-
-            <h4>1. Integer Types (Whole Numbers)</h4>
-
-            <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
-                <thead style="background: var(--bg-hover);">
-                    <tr>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Type</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Size</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Range</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Default</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Use Case</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>byte</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">8 bits (1 byte)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">-128 to 127</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Small numbers, file
-                            I/O, memory optimization</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>short</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">16 bits (2 bytes)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">-32,768 to 32,767</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Rarely used,
-                            memory-constrained systems</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>int</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">32 bits (4 bytes)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">-2,147,483,648 to
-                            2,147,483,647</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Most
-                                common!</strong> Age, count, ID</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>long</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">64 bits (8 bytes)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0L</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Timestamps, large
-                            numbers, file sizes</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - Long Suffix</div>
-                <p>
-                    When using long literals, add 'L' or 'l' suffix: <code>long population = 7800000000L;</code>
-                    <br>Without 'L', Java treats it as int and may cause an error if the number is too large!
-                </p>
-            </div>
-
-            <h4>2. Floating-Point Types (Decimal Numbers)</h4>
-
-            <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
-                <thead style="background: var(--bg-hover);">
-                    <tr>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Type</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Size</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Precision</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Default</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Use Case</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>float</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">32 bits (4 bytes)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">~6-7 decimal digits
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0.0f</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Graphics, less
-                            precision needed</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>double</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">64 bits (8 bytes)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">~15-16 decimal digits
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0.0d</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <strong>Preferred!</strong> Scientific calculations, currency
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Floating-Point Precision</div>
-                <p>
-                    Never use float or double for exact values like currency! Use BigDecimal instead.
-                    <br>Example: 0.1 + 0.2 = 0.30000000000000004 (not exactly 0.3!)
-                </p>
-            </div>
-
-            <h4>3. Character Type</h4>
-
-            <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
-                <thead style="background: var(--bg-hover);">
-                    <tr>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Type</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Size</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Range</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Default</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>char</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">16 bits (2 bytes)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0 to 65,535 (Unicode)
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">'\u0000'</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Single character, uses
-                            Unicode (supports all languages!)</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>
-                    <code>char letter = 'A';</code> (single quotes!)
-                    <br><code>char symbol = '☕';</code> (Java supports Unicode!)
-                    <br><code>char digit = '5';</code> (character '5', not number 5)
-                </p>
-            </div>
-
-            <h4>4. Boolean Type</h4>
-
-            <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
-                <thead style="background: var(--bg-hover);">
-                    <tr>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Type</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Size</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Values</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Default</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Use Case</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <strong>boolean</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">1 bit (JVM-dependent)
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">true or false</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">false</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Flags, conditions,
-                            decision making</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Interview Question</div>
-                <p>
-                    <strong>Q: How many primitive types in Java?</strong>
-                    <br><strong>A:</strong> 8 primitives: byte, short, int, long (integers), float, double (decimals),
-                    char (character), boolean (true/false).
-                    <br><br>
-                    <strong>Q: What's the default value of int?</strong>
-                    <br><strong>A:</strong> 0 for instance variables. Local variables have NO default value and must be
-                    initialized before use!
-                </p>
-            </div>
-
-            <h4>Numeric Overflow Example:</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
+                    </div>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ IMPORTANT - StackOverflowError</div>
+                        <div class="admonition-content">
+                            <p>
+                                If you have too many method calls (especially recursive calls without a base case), the
+                                stack runs
+                                out of space,
+                                causing a <strong>StackOverflowError</strong>. This is a common error with infinite
+                                recursion!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - Garbage Collection</div>
+                        <div class="admonition-content">
+                            <p>
+                                Java automatically cleans up heap memory through Garbage Collection (GC). When an object
+                                has no
+                                references pointing to it,
+                                the GC marks it for deletion and frees the memory. You don't need to manually free
+                                memory like in
+                                C/C++!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 3: Primitive Data Types -->
+                <div class="content-section">
+                    <h2>🔢 Primitive Data Types</h2>
+                    <p>
+                        Java has <strong>8 primitive data types</strong>. These are the building blocks for data
+                        manipulation.
+                        They store actual values
+                        (not references) and are stored on the stack.
+                    </p>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Imagine you have different types of containers:
+                    </p>
+                    <ul>
+                        <li><strong>Tiny box (byte):</strong> Can hold a very small number</li>
+                        <li><strong>Small box (short):</strong> Can hold a small number</li>
+                        <li><strong>Medium box (int):</strong> Can hold a regular number (most common!)</li>
+                        <li><strong>Large box (long):</strong> Can hold a HUGE number</li>
+                        <li><strong>Decimal box (float):</strong> Can hold numbers with decimal points</li>
+                        <li><strong>Precise decimal box (double):</strong> Can hold very precise decimal numbers</li>
+                        <li><strong>Letter box (char):</strong> Can hold ONE letter or symbol</li>
+                        <li><strong>Yes/No box (boolean):</strong> Can only hold true or false</li>
+                    </ul>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of primitive types like <strong>different measuring cups</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>byte:</strong> Teaspoon (small measurements)</li>
+                        <li><strong>int:</strong> Regular cup (everyday use)</li>
+                        <li><strong>long:</strong> Gallon jug (large quantities)</li>
+                        <li><strong>double:</strong> Precise scientific measuring cup (exact measurements)</li>
+                    </ul>
+                    <p>
+                        You choose the right "cup" based on what you're measuring. Don't use a gallon jug for a teaspoon
+                        of
+                        salt!
+                    </p>
+                    <h3>Level 3: Technical Details</h3>
+                    <h4>1. Integer Types (Whole Numbers)</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
+                        <thead style="background: var(--bg-hover);">
+                            <tr>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Type</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Size</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Range</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Default</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>byte</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">8 bits (1 byte)
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">-128 to 127
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Small numbers,
+                                    file
+                                    I/O, memory optimization</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>short</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">16 bits (2
+                                    bytes)</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">-32,768 to
+                                    32,767</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Rarely used,
+                                    memory-constrained systems</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>int</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">32 bits (4
+                                    bytes)</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">-2,147,483,648
+                                    to
+                                    2,147,483,647</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Most
+                                        common!</strong> Age, count, ID</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>long</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">64 bits (8
+                                    bytes)</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0L</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Timestamps,
+                                    large
+                                    numbers, file sizes</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - Long Suffix</div>
+                        <div class="admonition-content">
+                            <p>
+                                When using long literals, add 'L' or 'l' suffix:
+                                <code>long population = 7800000000L;</code>
+                                <br />Without 'L', Java treats it as int and may cause an error if the number is too
+                                large!
+                            </p>
+                        </div>
+                    </div>
+                    <h4>2. Floating-Point Types (Decimal Numbers)</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
+                        <thead style="background: var(--bg-hover);">
+                            <tr>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Type</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Size</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Precision</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Default</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>float</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">32 bits (4
+                                    bytes)</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">~6-7 decimal
+                                    digits
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0.0f</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Graphics, less
+                                    precision needed</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>double</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">64 bits (8
+                                    bytes)</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">~15-16 decimal
+                                    digits
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0.0d</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>Preferred!</strong> Scientific calculations, currency
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Floating-Point Precision</div>
+                        <div class="admonition-content">
+                            <p>
+                                Never use float or double for exact values like currency! Use BigDecimal instead.
+                                <br />Example: 0.1 + 0.2 = 0.30000000000000004 (not exactly 0.3!)
+                            </p>
+                        </div>
+                    </div>
+                    <h4>3. Character Type</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
+                        <thead style="background: var(--bg-hover);">
+                            <tr>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Type</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Size</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Range</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Default</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>char</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">16 bits (2
+                                    bytes)</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0 to 65,535
+                                    (Unicode)
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">'\u0000'</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Single
+                                    character, uses
+                                    Unicode (supports all languages!)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                <code>char letter = 'A';</code> (single quotes!)
+                                <br /><code>char symbol = '☕';</code> (Java supports Unicode!)
+                                <br /><code>char digit = '5';</code> (character '5', not number 5)
+                            </p>
+                        </div>
+                    </div>
+                    <h4>4. Boolean Type</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
+                        <thead style="background: var(--bg-hover);">
+                            <tr>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Type</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Size</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Values</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Default</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>boolean</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">1 bit
+                                    (JVM-dependent)
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">true or false
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">false</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Flags,
+                                    conditions,
+                                    decision making</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Interview Question</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Q: How many primitive types in Java?</strong>
+                                <br /><strong>A:</strong> 8 primitives: byte, short, int, long (integers), float, double
+                                (decimals),
+                                char (character), boolean (true/false).
+                                <br /><br />
+                                <strong>Q: What's the default value of int?</strong>
+                                <br /><strong>A:</strong> 0 for instance variables. Local variables have NO default
+                                value and must be
+                                initialized before use!
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Numeric Overflow Example:</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
 <code>byte b = 127;     // Maximum value for byte
 b = b + 1;        // Overflows to -128!
 
 int maxInt = Integer.MAX_VALUE;  // 2,147,483,647
 maxInt = maxInt + 1;             // Overflows to -2,147,483,648!</code></pre>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ IMPORTANT - Overflow</div>
-                <p>
-                    When a number exceeds the maximum value, it wraps around to the minimum value (and vice versa).
-                    This is called <strong>overflow</strong> and can cause serious bugs! Always choose appropriate data
-                    types.
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 4: Non-Primitive Data Types -->
-        <div class="content-section">
-            <h2>📦 Non-Primitive Data Types (Reference Types)</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Remember how primitive types are like small boxes that hold actual values? Well, <strong>non-primitive
-                    types</strong> are
-                like <strong>treasure maps</strong>! They don't hold the actual treasure (data), they hold directions to
-                WHERE the treasure is hidden!
-            </p>
-            <p>
-                When you create a String or an object, Java puts the actual data in a big storage area (heap). The
-                variable just holds
-                the "address" or "map" to find that data.
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of it like <strong>house addresses</strong>:
-            </p>
-            <ul>
-                <li><strong>Primitive:</strong> You carry the actual item in your pocket (the value itself)</li>
-                <li><strong>Reference:</strong> You carry a piece of paper with an address written on it (reference to
-                    the object)</li>
-            </ul>
-            <p>
-                When you say "My house is at 123 Main Street," you're not carrying your house around - you're giving a
-                reference to it!
-                Similarly, when you create an object, the variable holds the "address" (reference) to where the object
-                lives in memory.
-            </p>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>
-                    <code>String name = "Alice";</code>
-                    <br><br>
-                    The variable <code>name</code> doesn't contain "Alice" - it contains the memory address where
-                    "Alice" is stored in the heap!
-                </p>
-            </div>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <p>
-                <strong>Non-primitive (Reference) types</strong> include:
-            </p>
-            <ul>
-                <li>Strings</li>
-                <li>Arrays</li>
-                <li>Classes</li>
-                <li>Interfaces</li>
-                <li>Enums</li>
-            </ul>
-
-            <h4>Key Differences: Primitive vs Reference</h4>
-
-            <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
-                <thead style="background: var(--bg-hover);">
-                    <tr>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Aspect</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Primitive Types</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Reference Types</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <strong>Storage</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Actual value</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Memory address
-                            (reference)</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Memory
-                                Location</strong></td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Stack</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Heap (reference on
-                            stack)</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Default
-                                Value</strong></td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0, false, '\u0000'</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">null</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Size</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Fixed (1, 2, 4, 8
-                            bytes)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Variable (depends on
-                            object)</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <strong>Comparison</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Use == (compares
-                            values)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Use .equals() (compares
-                            content)</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <strong>Methods</strong>
-                        </td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">No methods</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Have methods</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h4>1. Strings</h4>
-            <p>
-                Strings are special reference types for text. They are immutable (cannot be changed after creation).
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ IMPORTANT - Overflow</div>
+                        <div class="admonition-content">
+                            <p>
+                                When a number exceeds the maximum value, it wraps around to the minimum value (and vice
+                                versa).
+                                This is called <strong>overflow</strong> and can cause serious bugs! Always choose
+                                appropriate data
+                                types.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 4: Non-Primitive Data Types -->
+                <div class="content-section">
+                    <h2>📦 Non-Primitive Data Types (Reference Types)</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Remember how primitive types are like small boxes that hold actual values? Well,
+                        <strong>non-primitive
+                            types</strong> are
+                        like <strong>treasure maps</strong>! They don't hold the actual treasure (data), they hold
+                        directions to
+                        WHERE the treasure is hidden!
+                    </p>
+                    <p>
+                        When you create a String or an object, Java puts the actual data in a big storage area (heap).
+                        The
+                        variable just holds
+                        the "address" or "map" to find that data.
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of it like <strong>house addresses</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Primitive:</strong> You carry the actual item in your pocket (the value itself)</li>
+                        <li><strong>Reference:</strong> You carry a piece of paper with an address written on it
+                            (reference to
+                            the object)</li>
+                    </ul>
+                    <p>
+                        When you say "My house is at 123 Main Street," you're not carrying your house around - you're
+                        giving a
+                        reference to it!
+                        Similarly, when you create an object, the variable holds the "address" (reference) to where the
+                        object
+                        lives in memory.
+                    </p>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                <code>String name = "Alice";</code>
+                                <br /><br />
+                                The variable <code>name</code> doesn't contain "Alice" - it contains the memory address
+                                where
+                                "Alice" is stored in the heap!
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <p>
+                        <strong>Non-primitive (Reference) types</strong> include:
+                    </p>
+                    <ul>
+                        <li>Strings</li>
+                        <li>Arrays</li>
+                        <li>Classes</li>
+                        <li>Interfaces</li>
+                        <li>Enums</li>
+                    </ul>
+                    <h4>Key Differences: Primitive vs Reference</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
+                        <thead style="background: var(--bg-hover);">
+                            <tr>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Aspect</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Primitive Types
+                                </th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Reference Types
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>Storage</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Actual value
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Memory address
+                                    (reference)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Memory
+                                        Location</strong></td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Stack</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Heap (reference
+                                    on
+                                    stack)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);"><strong>Default
+                                        Value</strong></td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">0, false,
+                                    '\u0000'</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">null</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>Size</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Fixed (1, 2, 4,
+                                    8
+                                    bytes)</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Variable
+                                    (depends on
+                                    object)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>Comparison</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Use ==
+                                    (compares
+                                    values)</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Use .equals()
+                                    (compares
+                                    content)</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <strong>Methods</strong>
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">No methods</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Have methods
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>1. Strings</h4>
+                    <p>
+                        Strings are special reference types for text. They are immutable (cannot be changed after
+                        creation).
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
 <code>String greeting = "Hello";  // String literal (stored in String Pool)
 String name = new String("Alice");  // Creates new object in heap</code></pre>
-
-            <h4>2. Arrays</h4>
-            <p>
-                Arrays are fixed-size collections of elements of the same type.
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                    <h4>2. Arrays</h4>
+                    <p>
+                        Arrays are fixed-size collections of elements of the same type.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
 <code>int[] numbers = {1, 2, 3, 4, 5};  // Array of integers
 String[] names = new String[10];    // Array of 10 Strings (initially null)</code></pre>
-
-            <h4>3. Objects (Custom Classes)</h4>
-            <p>
-                Any instance of a class is a reference type.
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                    <h4>3. Objects (Custom Classes)</h4>
+                    <p>
+                        Any instance of a class is a reference type.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
 <code>Student student = new Student();  // Reference to Student object
 Car myCar = new Car("Toyota");     // Reference to Car object</code></pre>
-
-            <h4>Memory Diagram:</h4>
-            <div
-                style="background: var(--bg-hover); border: 2px solid var(--accent); border-radius: var(--radius-md); padding: var(--spacing-lg); margin: var(--spacing-md) 0;">
-                <pre style="background: transparent; border: none; color: var(--text-primary); font-size: 0.85rem;">
+                    <h4>Memory Diagram:</h4>
+                    <div
+                        style="background: var(--bg-hover); border: 2px solid var(--accent); border-radius: var(--radius-md); padding: var(--spacing-lg); margin: var(--spacing-md) 0;">
+                        <pre
+                            style="background: transparent; border: none; color: var(--text-primary); font-size: 0.85rem;">
 STACK                           HEAP
 ┌──────────────────┐            ┌──────────────────────────┐
 │                  │            │                          │
@@ -678,76 +1135,78 @@ STACK                           HEAP
 Primitive: Stores actual value (25)
 Reference: Stores memory address (0x1A2B, 0x3C4D)
                 </pre>
-            </div>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ COMMON MISTAKE - Comparing References</div>
-                <p>
-                    <code>String s1 = "Hello";</code>
-                    <br><code>String s2 = "Hello";</code>
-                    <br><code>s1 == s2</code> → true (same reference due to String Pool)
-                    <br><br>
-                    <code>String s3 = new String("Hello");</code>
-                    <br><code>s1 == s3</code> → false (different references!)
-                    <br><code>s1.equals(s3)</code> → true (same content)
-                    <br><br>
-                    <strong>Rule:</strong> Use == for primitives, use .equals() for objects!
-                </p>
-            </div>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - null</div>
-                <p>
-                    <code>null</code> is a special value for reference types meaning "no object". You CANNOT use null
-                    with primitives!
-                    <br><br>
-                    <code>String name = null;</code> ✅ Valid
-                    <br><code>int age = null;</code> ❌ Compile error!
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 5: Type Casting -->
-        <div class="content-section">
-            <h2>🔄 Type Casting</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Imagine you have water in different sized containers. Sometimes you need to pour water from a big jug
-                into a small cup,
-                or from a small cup into a big jug.
-            </p>
-            <ul>
-                <li><strong>Small to Big (Widening):</strong> Pouring from a cup into a jug - EASY! No water spills.
-                    Java does this automatically!</li>
-                <li><strong>Big to Small (Narrowing):</strong> Pouring from a jug into a cup - CAREFUL! Water might
-                    spill. You need to tell Java "I know what I'm doing!"</li>
-            </ul>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of type casting like <strong>changing money</strong>:
-            </p>
-            <ul>
-                <li><strong>Widening:</strong> Converting pennies to dollars - no problem, no loss of value</li>
-                <li><strong>Narrowing:</strong> Converting dollars to pennies - you might lose the decimal part!</li>
-            </ul>
-            <p>
-                Example: $10.75 converted to pennies = 1075 pennies (exact). But if you force 1075 pennies back to
-                dollars
-                and only keep whole dollars, you get $10 (lost the 75 cents!).
-            </p>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <h4>1. Implicit Casting (Widening/Automatic)</h4>
-            <p>
-                Java automatically converts smaller types to larger types. No data loss occurs.
-            </p>
-            <p><strong>Order (small to large):</strong> byte → short → int → long → float → double</p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                    </div>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ COMMON MISTAKE - Comparing References</div>
+                        <div class="admonition-content">
+                            <p>
+                                <code>String s1 = "Hello";</code>
+                                <br /><code>String s2 = "Hello";</code>
+                                <br /><code>s1 == s2</code> → true (same reference due to String Pool)
+                                <br /><br />
+                                <code>String s3 = new String("Hello");</code>
+                                <br /><code>s1 == s3</code> → false (different references!)
+                                <br /><code>s1.equals(s3)</code> → true (same content)
+                                <br /><br />
+                                <strong>Rule:</strong> Use == for primitives, use .equals() for objects!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - null</div>
+                        <div class="admonition-content">
+                            <p>
+                                <code>null</code> is a special value for reference types meaning "no object". You CANNOT
+                                use null
+                                with primitives!
+                                <br /><br />
+                                <code>String name = null;</code> ✅ Valid
+                                <br /><code>int age = null;</code> ❌ Compile error!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 5: Type Casting -->
+                <div class="content-section">
+                    <h2>🔄 Type Casting</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Imagine you have water in different sized containers. Sometimes you need to pour water from a
+                        big jug
+                        into a small cup,
+                        or from a small cup into a big jug.
+                    </p>
+                    <ul>
+                        <li><strong>Small to Big (Widening):</strong> Pouring from a cup into a jug - EASY! No water
+                            spills.
+                            Java does this automatically!</li>
+                        <li><strong>Big to Small (Narrowing):</strong> Pouring from a jug into a cup - CAREFUL! Water
+                            might
+                            spill. You need to tell Java "I know what I'm doing!"</li>
+                    </ul>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of type casting like <strong>changing money</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Widening:</strong> Converting pennies to dollars - no problem, no loss of value</li>
+                        <li><strong>Narrowing:</strong> Converting dollars to pennies - you might lose the decimal part!
+                        </li>
+                    </ul>
+                    <p>
+                        Example: $10.75 converted to pennies = 1075 pennies (exact). But if you force 1075 pennies back
+                        to
+                        dollars
+                        and only keep whole dollars, you get $10 (lost the 75 cents!).
+                    </p>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <h4>1. Implicit Casting (Widening/Automatic)</h4>
+                    <p>
+                        Java automatically converts smaller types to larger types. No data loss occurs.
+                    </p>
+                    <p><strong>Order (small to large):</strong> byte → short → int → long → float → double</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
 <code>byte b = 10;
 int i = b;        // Automatic: byte to int (widening)
 
@@ -757,24 +1216,24 @@ long bigNum = num;  // Automatic: int to long (widening)
 int x = 50;
 double d = x;     // Automatic: int to double (widening)
 // d = 50.0</code></pre>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - Why int to float is widening</div>
-                <p>
-                    Even though int and float are both 4 bytes, int → float is widening because float can represent
-                    larger numbers
-                    (though with less precision). Java allows this automatic conversion.
-                </p>
-            </div>
-
-            <h4>2. Explicit Casting (Narrowing/Manual)</h4>
-            <p>
-                Converting larger types to smaller types requires explicit casting. Data loss may occur!
-            </p>
-            <p><strong>Syntax:</strong> <code>(targetType) value</code></p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - Why int to float is widening</div>
+                        <div class="admonition-content">
+                            <p>
+                                Even though int and float are both 4 bytes, int → float is widening because float can
+                                represent
+                                larger numbers
+                                (though with less precision). Java allows this automatic conversion.
+                            </p>
+                        </div>
+                    </div>
+                    <h4>2. Explicit Casting (Narrowing/Manual)</h4>
+                    <p>
+                        Converting larger types to smaller types requires explicit casting. Data loss may occur!
+                    </p>
+                    <p><strong>Syntax:</strong> <code>(targetType) value</code></p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
 <code>double d = 9.78;
 int i = (int) d;     // Explicit: double to int (narrowing)
 // i = 9 (decimal part lost!)
@@ -785,206 +1244,220 @@ int smallNum = (int) bigNum;  // Explicit: long to int (narrowing)
 int num = 130;
 byte b = (byte) num;  // Explicit: int to byte (narrowing)
 // b = -126 (overflow! 130 is outside byte range)</code></pre>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Data Loss in Narrowing</div>
-                <p>
-                    Narrowing can cause:
-                    <br>• <strong>Truncation:</strong> Decimal parts are lost (9.99 → 9)
-                    <br>• <strong>Overflow:</strong> Value outside target range wraps around (130 → -126 for byte)
-                    <br><br>
-                    Always ensure the value fits in the target type before narrowing!
-                </p>
-            </div>
-
-            <h4>Type Casting Table:</h4>
-
-            <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
-                <thead style="background: var(--bg-hover);">
-                    <tr>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">From</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">To</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Type</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Automatic?</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Data Loss?</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">byte</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">int</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Widening</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">✅ Yes</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">❌ No</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">int</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">double</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Widening</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">✅ Yes</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">❌ No</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">double</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">int</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Narrowing</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">❌ No (explicit)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">⚠️ Yes (decimal lost)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">long</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">byte</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Narrowing</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">❌ No (explicit)</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">⚠️ Yes (overflow risk)
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Practical Use</div>
-                <p>
-                    <strong>Scenario:</strong> You have a double representing money and need to display only dollars (no
-                    cents).
-                    <br><br>
-                    <code>double price = 19.99;</code>
-                    <br><code>int dollars = (int) price;  // dollars = 19</code>
-                    <br><br>
-                    You explicitly cast to int, knowing you'll lose the decimal part.
-                </p>
-            </div>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Interview Question</div>
-                <p>
-                    <strong>Q: What's the difference between widening and narrowing?</strong>
-                    <br><strong>A:</strong> Widening (implicit) converts smaller to larger types automatically with no
-                    data loss.
-                    Narrowing (explicit) converts larger to smaller types, requires manual casting, and may cause data
-                    loss or overflow.
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 6: Wrapper Classes -->
-        <div class="content-section">
-            <h2>🎁 Wrapper Classes</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Remember how primitive types (int, double, etc.) are like simple boxes? Well, sometimes you need those
-                boxes to have
-                special powers - like being able to fly, or talk, or do tricks!
-            </p>
-            <p>
-                <strong>Wrapper classes</strong> are like putting your simple box inside a magical box that HAS those
-                powers!
-                The number is still inside, but now it's wrapped in something that can do more things.
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of wrapper classes like <strong>gift wrapping</strong>:
-            </p>
-            <ul>
-                <li><strong>Primitive (int):</strong> A plain toy (just the value)</li>
-                <li><strong>Wrapper (Integer):</strong> The same toy wrapped in fancy paper with a bow (value + extra
-                    features)</li>
-            </ul>
-            <p>
-                The toy is the same, but the wrapped version can be:
-            </p>
-            <ul>
-                <li>Stored in special collections (like ArrayList)</li>
-                <li>Converted to strings</li>
-                <li>Compared using methods</li>
-                <li>Set to null (unwrapped toy can't be "nothing")</li>
-            </ul>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <p>
-                <strong>Wrapper classes</strong> convert primitive types into objects. Each primitive has a
-                corresponding wrapper class:
-            </p>
-
-            <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
-                <thead style="background: var(--bg-hover);">
-                    <tr>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Primitive Type</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Wrapper Class</th>
-                        <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Example</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">byte</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Byte</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <code>Byte b = 10;</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">short</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Short</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <code>Short s = 100;</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">int</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Integer</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <code>Integer i = 500;</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">long</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Long</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <code>Long l = 10000L;</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">float</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Float</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <code>Float f = 3.14f;</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">double</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Double</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <code>Double d = 9.99;</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">char</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Character</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <code>Character c = 'A';</code></td>
-                    </tr>
-                    <tr>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">boolean</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Boolean</td>
-                        <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
-                            <code>Boolean flag = true;</code></td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <h4>Why Use Wrapper Classes?</h4>
-            <ul>
-                <li><strong>Collections:</strong> ArrayList, HashMap, etc. only work with objects, not primitives</li>
-                <li><strong>Null Values:</strong> Wrappers can be null, primitives cannot</li>
-                <li><strong>Utility Methods:</strong> parseInt(), toString(), compare(), etc.</li>
-                <li><strong>Generics:</strong> Generic types require objects</li>
-            </ul>
-
-            <h4>Autoboxing and Unboxing (Java 5+)</h4>
-            <p>
-                Java automatically converts between primitives and wrappers:
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Data Loss in Narrowing</div>
+                        <div class="admonition-content">
+                            <p>
+                                Narrowing can cause:
+                                <br />• <strong>Truncation:</strong> Decimal parts are lost (9.99 → 9)
+                                <br />• <strong>Overflow:</strong> Value outside target range wraps around (130 → -126
+                                for byte)
+                                <br /><br />
+                                Always ensure the value fits in the target type before narrowing!
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Type Casting Table:</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
+                        <thead style="background: var(--bg-hover);">
+                            <tr>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">From</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">To</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Type</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Automatic?</th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Data Loss?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">byte</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">int</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Widening</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">✅ Yes</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">❌ No</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">int</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">double</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Widening</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">✅ Yes</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">❌ No</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">double</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">int</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Narrowing</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">❌ No (explicit)
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">⚠️ Yes (decimal
+                                    lost)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">long</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">byte</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Narrowing</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">❌ No (explicit)
+                                </td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">⚠️ Yes
+                                    (overflow risk)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Practical Use</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Scenario:</strong> You have a double representing money and need to display only
+                                dollars (no
+                                cents).
+                                <br /><br />
+                                <code>double price = 19.99;</code>
+                                <br /><code>int dollars = (int) price;  // dollars = 19</code>
+                                <br /><br />
+                                You explicitly cast to int, knowing you'll lose the decimal part.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Interview Question</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Q: What's the difference between widening and narrowing?</strong>
+                                <br /><strong>A:</strong> Widening (implicit) converts smaller to larger types
+                                automatically with no
+                                data loss.
+                                Narrowing (explicit) converts larger to smaller types, requires manual casting, and may
+                                cause data
+                                loss or overflow.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 6: Wrapper Classes -->
+                <div class="content-section">
+                    <h2>🎁 Wrapper Classes</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Remember how primitive types (int, double, etc.) are like simple boxes? Well, sometimes you need
+                        those
+                        boxes to have
+                        special powers - like being able to fly, or talk, or do tricks!
+                    </p>
+                    <p>
+                        <strong>Wrapper classes</strong> are like putting your simple box inside a magical box that HAS
+                        those
+                        powers!
+                        The number is still inside, but now it's wrapped in something that can do more things.
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of wrapper classes like <strong>gift wrapping</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Primitive (int):</strong> A plain toy (just the value)</li>
+                        <li><strong>Wrapper (Integer):</strong> The same toy wrapped in fancy paper with a bow (value +
+                            extra
+                            features)</li>
+                    </ul>
+                    <p>
+                        The toy is the same, but the wrapped version can be:
+                    </p>
+                    <ul>
+                        <li>Stored in special collections (like ArrayList)</li>
+                        <li>Converted to strings</li>
+                        <li>Compared using methods</li>
+                        <li>Set to null (unwrapped toy can't be "nothing")</li>
+                    </ul>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <p>
+                        <strong>Wrapper classes</strong> convert primitive types into objects. Each primitive has a
+                        corresponding wrapper class:
+                    </p>
+                    <table style="width: 100%; border-collapse: collapse; margin: var(--spacing-md) 0;">
+                        <thead style="background: var(--bg-hover);">
+                            <tr>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Primitive Type
+                                </th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Wrapper Class
+                                </th>
+                                <th style="padding: var(--spacing-sm); border: 1px solid var(--border);">Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">byte</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Byte</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <code>Byte b = 10;</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">short</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Short</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <code>Short s = 100;</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">int</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Integer</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <code>Integer i = 500;</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">long</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Long</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <code>Long l = 10000L;</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">float</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Float</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <code>Float f = 3.14f;</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">double</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Double</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <code>Double d = 9.99;</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">char</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Character</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <code>Character c = 'A';</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">boolean</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">Boolean</td>
+                                <td style="padding: var(--spacing-sm); border: 1px solid var(--border);">
+                                    <code>Boolean flag = true;</code>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h4>Why Use Wrapper Classes?</h4>
+                    <ul>
+                        <li><strong>Collections:</strong> ArrayList, HashMap, etc. only work with objects, not
+                            primitives</li>
+                        <li><strong>Null Values:</strong> Wrappers can be null, primitives cannot</li>
+                        <li><strong>Utility Methods:</strong> parseInt(), toString(), compare(), etc.</li>
+                        <li><strong>Generics:</strong> Generic types require objects</li>
+                    </ul>
+                    <h4>Autoboxing and Unboxing (Java 5+)</h4>
+                    <p>
+                        Java automatically converts between primitives and wrappers:
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
 <code>// AUTOBOXING: Primitive → Wrapper (automatic)
 int primitive = 10;
 Integer wrapper = primitive;  // Auto-boxing
@@ -996,21 +1469,21 @@ int primitiveNum = wrapperNum;  // Auto-unboxing
 // Before Java 5, you had to do this manually:
 Integer oldWay = new Integer(10);  // Manual boxing (deprecated)
 int oldUnbox = oldWay.intValue();  // Manual unboxing</code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Collections</div>
-                <p>
-                    <code>ArrayList&lt;int&gt; numbers;</code> ❌ Compile error! Primitives not allowed
-                    <br><code>ArrayList&lt;Integer&gt; numbers;</code> ✅ Correct! Wrapper class
-                    <br><br>
-                    <code>numbers.add(5);</code> // Auto-boxing: int 5 → Integer 5
-                    <br><code>int num = numbers.get(0);</code> // Auto-unboxing: Integer → int
-                </p>
-            </div>
-
-            <h4>Useful Wrapper Methods:</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Collections</div>
+                        <div class="admonition-content">
+                            <p>
+                                <code>ArrayList&lt;int&gt; numbers;</code> ❌ Compile error! Primitives not allowed
+                                <br /><code>ArrayList&lt;Integer&gt; numbers;</code> ✅ Correct! Wrapper class
+                                <br /><br />
+                                <code>numbers.add(5);</code> // Auto-boxing: int 5 → Integer 5
+                                <br /><code>int num = numbers.get(0);</code> // Auto-unboxing: Integer → int
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Useful Wrapper Methods:</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
 <code>// String to primitive
 int num = Integer.parseInt("123");
 double d = Double.parseDouble("3.14");
@@ -1022,97 +1495,96 @@ String s = String.valueOf(789);  // Works for any type
 // Comparison
 Integer a = 10;
 Integer b = 20;
-int result = a.compareTo(b);  // Returns -1 (a < b)
+int result = a.compareTo(b);  // Returns -1 (a &lt; b)
 
 // Constants
 int max = Integer.MAX_VALUE;  // 2,147,483,647
 int min = Integer.MIN_VALUE;  // -2,147,483,648</code></pre>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - NullPointerException</div>
-                <p>
-                    Unboxing a null wrapper causes NullPointerException!
-                    <br><br>
-                    <code>Integer wrapper = null;</code>
-                    <br><code>int primitive = wrapper;</code> ❌ NullPointerException at runtime!
-                    <br><br>
-                    Always check for null before unboxing: <code>if (wrapper != null) { ... }</code>
-                </p>
-            </div>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - Memory Difference</div>
-                <p>
-                    <strong>Primitive:</strong> 4 bytes for int (stored on stack)
-                    <br><strong>Wrapper:</strong> ~16 bytes for Integer (object overhead + reference on stack + object
-                    on heap)
-                    <br><br>
-                    Use primitives for performance-critical code. Use wrappers when you need object features.
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 7: Final Variables (Constants) -->
-        <div class="content-section">
-            <h2>🔒 Final Variables (Constants)</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Imagine you write something in pen instead of pencil. Once you write it, you CAN'T erase it or change
-                it!
-                That's what <strong>final</strong> does - it makes a variable permanent. Once you set the value, it's
-                locked forever!
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of final variables like <strong>your birthday</strong>:
-            </p>
-            <ul>
-                <li>Once you're born, your birthday is SET</li>
-                <li>It never changes for your entire life</li>
-                <li>Everyone knows it's a fixed value</li>
-            </ul>
-            <p>
-                In programming, some values should never change - like the number of days in a week (7), or pi
-                (3.14159...).
-                We mark these as <code>final</code> to prevent accidental changes.
-            </p>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <p>
-                The <code>final</code> keyword makes a variable a <strong>constant</strong> - its value cannot be
-                changed after initialization.
-            </p>
-
-            <h4>Syntax:</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - NullPointerException</div>
+                        <div class="admonition-content">
+                            <p>
+                                Unboxing a null wrapper causes NullPointerException!
+                                <br /><br />
+                                <code>Integer wrapper = null;</code>
+                                <br /><code>int primitive = wrapper;</code> ❌ NullPointerException at runtime!
+                                <br /><br />
+                                Always check for null before unboxing: <code>if (wrapper != null) { ... }</code>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - Memory Difference</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Primitive:</strong> 4 bytes for int (stored on stack)
+                                <br /><strong>Wrapper:</strong> ~16 bytes for Integer (object overhead + reference on
+                                stack + object
+                                on heap)
+                                <br /><br />
+                                Use primitives for performance-critical code. Use wrappers when you need object
+                                features.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 7: Final Variables (Constants) -->
+                <div class="content-section">
+                    <h2>🔒 Final Variables (Constants)</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Imagine you write something in pen instead of pencil. Once you write it, you CAN'T erase it or
+                        change
+                        it!
+                        That's what <strong>final</strong> does - it makes a variable permanent. Once you set the value,
+                        it's
+                        locked forever!
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of final variables like <strong>your birthday</strong>:
+                    </p>
+                    <ul>
+                        <li>Once you're born, your birthday is SET</li>
+                        <li>It never changes for your entire life</li>
+                        <li>Everyone knows it's a fixed value</li>
+                    </ul>
+                    <p>
+                        In programming, some values should never change - like the number of days in a week (7), or pi
+                        (3.14159...).
+                        We mark these as <code>final</code> to prevent accidental changes.
+                    </p>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <p>
+                        The <code>final</code> keyword makes a variable a <strong>constant</strong> - its value cannot
+                        be
+                        changed after initialization.
+                    </p>
+                    <h4>Syntax:</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
 <code>final int MAX_USERS = 100;
 final double PI = 3.14159;
 final String COMPANY_NAME = "TechCorp";
 
 // Attempting to change will cause compile error:
 MAX_USERS = 200;  // ❌ Error: cannot assign a value to final variable</code></pre>
-
-            <h4>Naming Convention:</h4>
-            <p>
-                Constants are typically named in <strong>UPPER_SNAKE_CASE</strong>:
-            </p>
-            <ul>
-                <li>✅ <code>MAX_VALUE</code></li>
-                <li>✅ <code>DEFAULT_SIZE</code></li>
-                <li>✅ <code>TAX_RATE</code></li>
-                <li>❌ <code>maxValue</code> (not conventional for constants)</li>
-            </ul>
-
-            <h4>Static Final (Class-Level Constants):</h4>
-            <p>
-                Most constants are declared as <code>static final</code> - shared across all instances:
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
+                    <h4>Naming Convention:</h4>
+                    <p>
+                        Constants are typically named in <strong>UPPER_SNAKE_CASE</strong>:
+                    </p>
+                    <ul>
+                        <li>✅ <code>MAX_VALUE</code></li>
+                        <li>✅ <code>DEFAULT_SIZE</code></li>
+                        <li>✅ <code>TAX_RATE</code></li>
+                        <li>❌ <code>maxValue</code> (not conventional for constants)</li>
+                    </ul>
+                    <h4>Static Final (Class-Level Constants):</h4>
+                    <p>
+                        Most constants are declared as <code>static final</code> - shared across all instances:
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);">
 <code>public class MathConstants {
     public static final double PI = 3.14159265359;
     public static final double E = 2.71828182846;
@@ -1121,66 +1593,69 @@ MAX_USERS = 200;  // ❌ Error: cannot assign a value to final variable</code></
 
 // Usage:
 double circumference = 2 * MathConstants.PI * radius;</code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Real-World Usage</div>
-                <p>
-                    <strong>Configuration Constants:</strong>
-                    <br><code>public static final int MAX_LOGIN_ATTEMPTS = 3;</code>
-                    <br><code>public static final String DATABASE_URL = "jdbc:mysql://localhost:3306/mydb";</code>
-                    <br><code>public static final double TAX_RATE = 0.08;</code>
-                    <br><br>
-                    These values are used throughout the application. If you need to change them, you change them in ONE
-                    place!
-                </p>
-            </div>
-
-            <h4>Benefits of Using final:</h4>
-            <ul>
-                <li><strong>Prevents Accidental Changes:</strong> Compiler catches attempts to modify</li>
-                <li><strong>Improves Readability:</strong> Clearly indicates intent (this value doesn't change)</li>
-                <li><strong>Thread Safety:</strong> Immutable values are inherently thread-safe</li>
-                <li><strong>Performance:</strong> JVM can optimize final variables</li>
-                <li><strong>Maintainability:</strong> Change value in one place, affects entire codebase</li>
-            </ul>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Best Practice</div>
-                <p>
-                    Use <code>final</code> for:
-                    <br>• Mathematical constants (PI, E)
-                    <br>• Configuration values (MAX_SIZE, DEFAULT_TIMEOUT)
-                    <br>• Fixed business rules (TAX_RATE, DISCOUNT_PERCENTAGE)
-                    <br>• Any value that should never change
-                    <br><br>
-                    <strong>Interview Tip:</strong> "final makes variables immutable, preventing reassignment and
-                    improving code safety and clarity."
-                </p>
-            </div>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - final vs Immutability</div>
-                <p>
-                    <code>final</code> means the <strong>reference</strong> cannot change, not the object itself!
-                    <br><br>
-                    <code>final StringBuilder sb = new StringBuilder("Hello");</code>
-                    <br><code>sb.append(" World");</code> ✅ Allowed! (modifying object content)
-                    <br><code>sb = new StringBuilder("Bye");</code> ❌ Error! (changing reference)
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 8: Common Mistakes -->
-        <div class="content-section">
-            <h2>⚠️ Common Mistakes with Variables and Data Types</h2>
-
-            <p>
-                Let's look at common pitfalls and how to avoid them:
-            </p>
-
-            <h3>1. Uninitialized Variables</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Real-World Usage</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Configuration Constants:</strong>
+                                <br /><code>public static final int MAX_LOGIN_ATTEMPTS = 3;</code>
+                                <br /><code>public static final String DATABASE_URL = "jdbc:mysql://localhost:3306/mydb";</code>
+                                <br /><code>public static final double TAX_RATE = 0.08;</code>
+                                <br /><br />
+                                These values are used throughout the application. If you need to change them, you change
+                                them in ONE
+                                place!
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Benefits of Using final:</h4>
+                    <ul>
+                        <li><strong>Prevents Accidental Changes:</strong> Compiler catches attempts to modify</li>
+                        <li><strong>Improves Readability:</strong> Clearly indicates intent (this value doesn't change)
+                        </li>
+                        <li><strong>Thread Safety:</strong> Immutable values are inherently thread-safe</li>
+                        <li><strong>Performance:</strong> JVM can optimize final variables</li>
+                        <li><strong>Maintainability:</strong> Change value in one place, affects entire codebase</li>
+                    </ul>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Best Practice</div>
+                        <div class="admonition-content">
+                            <p>
+                                Use <code>final</code> for:
+                                <br />• Mathematical constants (PI, E)
+                                <br />• Configuration values (MAX_SIZE, DEFAULT_TIMEOUT)
+                                <br />• Fixed business rules (TAX_RATE, DISCOUNT_PERCENTAGE)
+                                <br />• Any value that should never change
+                                <br /><br />
+                                <strong>Interview Tip:</strong> "final makes variables immutable, preventing
+                                reassignment and
+                                improving code safety and clarity."
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - final vs Immutability</div>
+                        <div class="admonition-content">
+                            <p>
+                                <code>final</code> means the <strong>reference</strong> cannot change, not the object
+                                itself!
+                                <br /><br />
+                                <code>final StringBuilder sb = new StringBuilder("Hello");</code>
+                                <br /><code>sb.append(" World");</code> ✅ Allowed! (modifying object content)
+                                <br /><code>sb = new StringBuilder("Bye");</code> ❌ Error! (changing reference)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 8: Common Mistakes -->
+                <div class="content-section">
+                    <h2>⚠️ Common Mistakes with Variables and Data Types</h2>
+                    <p>
+                        Let's look at common pitfalls and how to avoid them:
+                    </p>
+                    <h3>1. Uninitialized Variables</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
 <code>// ❌ WRONG: Local variable not initialized
 public void calculate() {
     int result;
@@ -1192,12 +1667,12 @@ public void calculate() {
     int result = 0;  // or assign a meaningful value
     System.out.println(result);
 }</code></pre>
-            <p><strong>Rule:</strong> Local variables must be initialized before use. Instance variables have default
-                values (0, false, null).</p>
-
-            <h3>2. Integer Overflow</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
+                    <p><strong>Rule:</strong> Local variables must be initialized before use. Instance variables have
+                        default
+                        values (0, false, null).</p>
+                    <h3>2. Integer Overflow</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
 <code>// ❌ WRONG: Overflow not handled
 int max = Integer.MAX_VALUE;
 int overflow = max + 1;  // Wraps to Integer.MIN_VALUE!
@@ -1205,14 +1680,13 @@ int overflow = max + 1;  // Wraps to Integer.MIN_VALUE!
 // ✅ CORRECT: Use appropriate type or check bounds
 long bigNumber = (long) Integer.MAX_VALUE + 1;  // Use long
 // Or check before operation:
-if (max < Integer.MAX_VALUE) {
+if (max &lt; Integer.MAX_VALUE) {
     max = max + 1;
 }</code></pre>
-            <p><strong>Lesson:</strong> Choose data types that can hold your expected range of values.</p>
-
-            <h3>3. Floating-Point Precision Loss</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
+                    <p><strong>Lesson:</strong> Choose data types that can hold your expected range of values.</p>
+                    <h3>3. Floating-Point Precision Loss</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
 <code>// ❌ WRONG: Using double for currency
 double price = 0.1;
 double total = price + price + price;  // 0.30000000000000004 (not 0.3!)
@@ -1220,27 +1694,27 @@ double total = price + price + price;  // 0.30000000000000004 (not 0.3!)
 // ✅ CORRECT: Use BigDecimal for currency
 BigDecimal price = new BigDecimal("0.1");
 BigDecimal total = price.add(price).add(price);  // Exactly 0.3</code></pre>
-            <p><strong>Lesson:</strong> Never use float/double for money! Use BigDecimal for exact decimal arithmetic.
-            </p>
-
-            <h3>4. Incorrect Type Casting</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
+                    <p><strong>Lesson:</strong> Never use float/double for money! Use BigDecimal for exact decimal
+                        arithmetic.
+                    </p>
+                    <h3>4. Incorrect Type Casting</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
 <code>// ❌ WRONG: Narrowing without checking
 long bigNum = 1000000000000L;
 int smallNum = (int) bigNum;  // Data loss! Value doesn't fit in int
 
 // ✅ CORRECT: Check range before casting
-if (bigNum >= Integer.MIN_VALUE && bigNum <= Integer.MAX_VALUE) {
+if (bigNum &gt;= Integer.MIN_VALUE &amp;&amp; bigNum &lt;= Integer.MAX_VALUE) {
     int smallNum = (int) bigNum;
 } else {
     System.out.println("Value too large for int!");
 }</code></pre>
-            <p><strong>Lesson:</strong> Always validate that values fit in the target type before narrowing casts.</p>
-
-            <h3>5. Comparing Objects with ==</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
+                    <p><strong>Lesson:</strong> Always validate that values fit in the target type before narrowing
+                        casts.</p>
+                    <h3>5. Comparing Objects with ==</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
 <code>// ❌ WRONG: Using == for String comparison
 String s1 = new String("Hello");
 String s2 = new String("Hello");
@@ -1252,11 +1726,10 @@ if (s1 == s2) {  // false! (different references)
 if (s1.equals(s2)) {  // true! (same content)
     System.out.println("Equal");
 }</code></pre>
-            <p><strong>Lesson:</strong> Use == for primitives, use .equals() for objects!</p>
-
-            <h3>6. NullPointerException with Wrappers</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
+                    <p><strong>Lesson:</strong> Use == for primitives, use .equals() for objects!</p>
+                    <h3>6. NullPointerException with Wrappers</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
 <code>// ❌ WRONG: Unboxing null wrapper
 Integer num = null;
 int value = num;  // NullPointerException!
@@ -1264,22 +1737,20 @@ int value = num;  // NullPointerException!
 // ✅ CORRECT: Check for null before unboxing
 Integer num = null;
 int value = (num != null) ? num : 0;  // Safe with default value</code></pre>
-            <p><strong>Lesson:</strong> Always check wrapper objects for null before auto-unboxing.</p>
-
-            <h3>7. Confusing char and String</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
+                    <p><strong>Lesson:</strong> Always check wrapper objects for null before auto-unboxing.</p>
+                    <h3>7. Confusing char and String</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
 <code>// ❌ WRONG: Using double quotes for char
 char letter = "A";  // Compile error! Double quotes are for String
 
 // ✅ CORRECT: Use single quotes for char
 char letter = 'A';  // Correct!
 String word = "A";  // This is a String with one character</code></pre>
-            <p><strong>Lesson:</strong> Single quotes (') for char, double quotes (") for String.</p>
-
-            <h3>8. Modifying final Variables</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
+                    <p><strong>Lesson:</strong> Single quotes (') for char, double quotes (") for String.</p>
+                    <h3>8. Modifying final Variables</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;">
 <code>// ❌ WRONG: Attempting to change final variable
 final int MAX_SIZE = 100;
 MAX_SIZE = 200;  // Compile error!
@@ -1287,51 +1758,55 @@ MAX_SIZE = 200;  // Compile error!
 // ✅ CORRECT: Don't use final if value needs to change
 int maxSize = 100;  // Not final
 maxSize = 200;  // OK</code></pre>
-            <p><strong>Lesson:</strong> Only use final for values that truly should never change.</p>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Avoiding Mistakes</div>
-                <p>
-                    <strong>Best Practices:</strong>
-                    <br>• Always initialize local variables
-                    <br>• Choose appropriate data types for your range
-                    <br>• Use BigDecimal for currency
-                    <br>• Validate before narrowing casts
-                    <br>• Use .equals() for object comparison
-                    <br>• Check for null before unboxing
-                    <br>• Remember: ' for char, " for String
-                    <br>• Use final for true constants only
-                </p>
+                    <p><strong>Lesson:</strong> Only use final for values that truly should never change.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Avoiding Mistakes</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Best Practices:</strong>
+                                <br />• Always initialize local variables
+                                <br />• Choose appropriate data types for your range
+                                <br />• Use BigDecimal for currency
+                                <br />• Validate before narrowing casts
+                                <br />• Use .equals() for object comparison
+                                <br />• Check for null before unboxing
+                                <br />• Remember: ' for char, " for String
+                                <br />• Use final for true constants only
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../programs/variables-and-data-types.html">
+                            💻 View Code Examples
+                        </a>
+                        <a class="md-button md-button--primary" href="../mcq/variables-and-data-types.html">
+                            ✅ Test Your Knowledge
+                        </a>
+                        <a class="md-button md-button--secondary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> Java Keywords
+                                <br />Learn all reserved keywords in Java and their specific purposes in program
+                                structure and
+                                control.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../programs/variables-and-data-types.html" class="btn btn-primary">
-                    💻 View Code Examples
-                </a>
-                <a href="../mcq/variables-and-data-types.html" class="btn btn-success">
-                    ✅ Test Your Knowledge
-                </a>
-                <a href="../index.html" class="btn btn-secondary">
-                    🏠 Back to Home
-                </a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> Java Keywords
-                    <br>Learn all reserved keywords in Java and their specific purposes in program structure and
-                    control.
-                </p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

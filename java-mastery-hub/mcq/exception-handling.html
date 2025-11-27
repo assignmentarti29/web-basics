@@ -1,333 +1,1028 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Exception Handling - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>Exception Handling - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>Exception Handling</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Test Your Knowledge</h2>
-            <p>This quiz contains 30 questions covering all aspects of Java Exception Handling including
-                try-catch-finally,
-                throw vs throws, custom exceptions, and best practices.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Take your time and read each question carefully. Pay special attention to code execution flow and
-                    exception hierarchy. Aim for at least 80% to demonstrate mastery!</p>
-            </div>
-        </div>
-
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
-            </div>
-        </div>
-
-        <div id="quizContainer" class="content-section"></div>
-
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
                 </div>
-                <div id="performanceMessage" class="performance-message"></div>
             </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Exception Handling - Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>Exception Handling - Quiz</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Test Your Knowledge</h2>
+                    <p>This quiz contains 30 questions covering all aspects of Java Exception Handling including
+                        try-catch-finally,
+                        throw vs throws, custom exceptions, and best practices.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Take your time and read each question carefully. Pay special attention to code execution
+                                flow and
+                                exception hierarchy. Aim for at least 80% to demonstrate mastery!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
+                    </div>
+                </div>
+                <div class="content-section" id="quizContainer">
+                    <!-- Question 1 -->
+                    <div class="question" data-correct-answer="Throwable" data-question-id="q1">
+                        <p class="question-text">Q1. Which class is the superclass of all errors and exceptions in Java?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Exception">Exception</button>
+                            <button class="option-btn" data-answer="Error">Error</button>
+                            <button class="option-btn" data-answer="Throwable">Throwable</button>
+                            <button class="option-btn" data-answer="Object">Object</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Throwable</div>
+                            <p>`Throwable` is the superclass of all errors and exceptions in the Java language. `Error`
+                                and `Exception` are its direct subclasses.</p>
+                        </div>
+                    </div>
 
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/exception-handling.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/exception-handling.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="RuntimeException" data-question-id="q2">
+                        <p class="question-text">Q2. Which type of exception is NOT checked by the compiler?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="IOException">IOException</button>
+                            <button class="option-btn" data-answer="SQLException">SQLException</button>
+                            <button class="option-btn" data-answer="RuntimeException">RuntimeException</button>
+                            <button class="option-btn"
+                                data-answer="ClassNotFoundException">ClassNotFoundException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: RuntimeException</div>
+                            <p>`RuntimeException` and its subclasses are unchecked exceptions. The compiler does not
+                                force you to catch or declare them.</p>
+                        </div>
+                    </div>
 
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/exception-handling.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../programs/exception-handling.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="finally" data-question-id="q3">
+                        <p class="question-text">Q3. Which block is always executed regardless of whether an exception
+                            is thrown or not?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="try">try</button>
+                            <button class="option-btn" data-answer="catch">catch</button>
+                            <button class="option-btn" data-answer="finally">finally</button>
+                            <button class="option-btn" data-answer="throw">throw</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: finally</div>
+                            <p>The `finally` block is always executed (unless the JVM exits), making it useful for
+                                cleanup code like closing resources.</p>
+                        </div>
+                    </div>
 
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p><strong>Coming Soon:</strong> Handling Files in Java</p>
+                    <!-- Question 4 -->
+                    <div class="question" data-correct-answer="throws" data-question-id="q4">
+                        <p class="question-text">Q4. Which keyword is used to declare that a method might throw an
+                            exception?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="throw">throw</button>
+                            <button class="option-btn" data-answer="throws">throws</button>
+                            <button class="option-btn" data-answer="exception">exception</button>
+                            <button class="option-btn" data-answer="catch">catch</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: throws</div>
+                            <p>The `throws` keyword is used in the method signature to declare that the method might
+                                throw one or more exceptions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="throw" data-question-id="q5">
+                        <p class="question-text">Q5. Which keyword is used to explicitly throw an exception?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="throws">throws</button>
+                            <button class="option-btn" data-answer="throw">throw</button>
+                            <button class="option-btn" data-answer="raise">raise</button>
+                            <button class="option-btn" data-answer="new">new</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: throw</div>
+                            <p>The `throw` keyword is used to explicitly throw an exception object.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="ArithmeticException" data-question-id="q6">
+                        <p class="question-text">Q6. What exception is thrown when dividing an integer by zero?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="NullPointerException">NullPointerException</button>
+                            <button class="option-btn"
+                                data-answer="NumberFormatException">NumberFormatException</button>
+                            <button class="option-btn" data-answer="ArithmeticException">ArithmeticException</button>
+                            <button class="option-btn"
+                                data-answer="IllegalArgumentException">IllegalArgumentException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ArithmeticException</div>
+                            <p>`ArithmeticException` is thrown when an exceptional arithmetic condition has occurred,
+                                such as integer division by zero.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="NullPointerException" data-question-id="q7">
+                        <p class="question-text">Q7. What exception is thrown when accessing a method or field of a null
+                            object?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="NullPointerException">NullPointerException</button>
+                            <button class="option-btn"
+                                data-answer="ClassNotFoundException">ClassNotFoundException</button>
+                            <button class="option-btn"
+                                data-answer="IllegalAccessException">IllegalAccessException</button>
+                            <button class="option-btn"
+                                data-answer="InstantiationException">InstantiationException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: NullPointerException</div>
+                            <p>`NullPointerException` is thrown when an application attempts to use `null` in a case
+                                where an object is required.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question" data-correct-answer="AutoCloseable" data-question-id="q8">
+                        <p class="question-text">Q8. Which interface must a resource implement to be used in a
+                            try-with-resources statement?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Closeable">Closeable</button>
+                            <button class="option-btn" data-answer="AutoCloseable">AutoCloseable</button>
+                            <button class="option-btn" data-answer="Disposable">Disposable</button>
+                            <button class="option-btn" data-answer="Finalizable">Finalizable</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: AutoCloseable</div>
+                            <p>Any object that implements `java.lang.AutoCloseable` (or `java.io.Closeable`) can be used
+                                as a resource in a try-with-resources statement.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="Error" data-question-id="q9">
+                        <p class="question-text">Q9. Which class represents serious problems that a reasonable
+                            application should not try to catch?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Exception">Exception</button>
+                            <button class="option-btn" data-answer="RuntimeException">RuntimeException</button>
+                            <button class="option-btn" data-answer="Error">Error</button>
+                            <button class="option-btn" data-answer="Throwable">Throwable</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Error</div>
+                            <p>`Error` indicates serious problems that a reasonable application should not try to catch
+                                (e.g., `OutOfMemoryError`, `StackOverflowError`).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="Multiple catch blocks" data-question-id="q10">
+                        <p class="question-text">Q10. Can a try block have multiple catch blocks?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Yes">Yes</button>
+                            <button class="option-btn" data-answer="No">No</button>
+                            <button class="option-btn" data-answer="Only if nested">Only if nested</button>
+                            <button class="option-btn" data-answer="Only in Java 8+">Only in Java 8+</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Yes</div>
+                            <p>A `try` block can be followed by multiple `catch` blocks to handle different types of
+                                exceptions separately.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer="Most specific to most general" data-question-id="q11">
+                        <p class="question-text">Q11. In what order should catch blocks be placed?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Most general to most specific">Most general to most
+                                specific</button>
+                            <button class="option-btn" data-answer="Most specific to most general">Most specific to most
+                                general</button>
+                            <button class="option-btn" data-answer="Random order">Random order</button>
+                            <button class="option-btn" data-answer="Alphabetical order">Alphabetical order</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Most specific to most general</div>
+                            <p>Catch blocks must be ordered from most specific (subclass) to most general (superclass).
+                                Otherwise, the specific catch block will never be reached (unreachable code).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="NumberFormatException" data-question-id="q12">
+                        <p class="question-text">Q12. What exception is thrown when parsing an invalid string to a
+                            number?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="ClassCastException">ClassCastException</button>
+                            <button class="option-btn"
+                                data-answer="NumberFormatException">NumberFormatException</button>
+                            <button class="option-btn"
+                                data-answer="IllegalArgumentException">IllegalArgumentException</button>
+                            <button class="option-btn"
+                                data-answer="InputMismatchException">InputMismatchException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: NumberFormatException</div>
+                            <p>`NumberFormatException` is thrown when an attempt is made to convert a string with an
+                                incorrect format to a numeric type.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="System.exit(0)" data-question-id="q13">
+                        <p class="question-text">Q13. In which case will the finally block NOT be executed?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Exception thrown in try">Exception thrown in
+                                try</button>
+                            <button class="option-btn" data-answer="Return statement in try">Return statement in
+                                try</button>
+                            <button class="option-btn" data-answer="System.exit(0)">System.exit(0)</button>
+                            <button class="option-btn" data-answer="Exception caught">Exception caught</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: System.exit(0)</div>
+                            <p>The `finally` block will not execute if `System.exit()` is called, as it terminates the
+                                JVM immediately.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question" data-correct-answer="Exception Propagation" data-question-id="q14">
+                        <p class="question-text">Q14. What is the process of an exception dropping down the call stack
+                            called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Exception Handling">Exception Handling</button>
+                            <button class="option-btn" data-answer="Exception Propagation">Exception
+                                Propagation</button>
+                            <button class="option-btn" data-answer="Exception Throwing">Exception Throwing</button>
+                            <button class="option-btn" data-answer="Stack Unwinding">Stack Unwinding</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Exception Propagation</div>
+                            <p>Exception propagation is the process where an exception is passed from the method where
+                                it occurred to the method that called it, and so on, until it is caught.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="Custom Exception" data-question-id="q15">
+                        <p class="question-text">Q15. How do you create a user-defined exception?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Extend Exception class">Extend Exception
+                                class</button>
+                            <button class="option-btn" data-answer="Implement Throwable">Implement Throwable</button>
+                            <button class="option-btn" data-answer="Use new keyword">Use new keyword</button>
+                            <button class="option-btn" data-answer="Extend Error class">Extend Error class</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Extend Exception class</div>
+                            <p>To create a custom checked exception, extend the `Exception` class. For a custom
+                                unchecked exception, extend `RuntimeException`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="ArrayIndexOutOfBoundsException" data-question-id="q16">
+                        <p class="question-text">Q16. What exception is thrown when accessing an array with an illegal
+                            index?</p>
+                        <div class="options">
+                            <button class="option-btn"
+                                data-answer="IndexOutOfBoundsException">IndexOutOfBoundsException</button>
+                            <button class="option-btn"
+                                data-answer="ArrayIndexOutOfBoundsException">ArrayIndexOutOfBoundsException</button>
+                            <button class="option-btn" data-answer="ArrayStoreException">ArrayStoreException</button>
+                            <button class="option-btn" data-answer="NullPointerException">NullPointerException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ArrayIndexOutOfBoundsException</div>
+                            <p>`ArrayIndexOutOfBoundsException` is thrown when an array is accessed with an illegal
+                                index (negative or greater than or equal to size).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="Multi-catch block" data-question-id="q17">
+                        <p class="question-text">Q17. Which feature allows catching multiple exceptions in a single
+                            catch block (Java 7+)?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Multi-catch block">Multi-catch block</button>
+                            <button class="option-btn" data-answer="Poly-catch block">Poly-catch block</button>
+                            <button class="option-btn" data-answer="Group-catch block">Group-catch block</button>
+                            <button class="option-btn" data-answer="Unified-catch block">Unified-catch block</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Multi-catch block</div>
+                            <p>A multi-catch block allows you to catch multiple exception types in a single `catch`
+                                clause, separating them with a vertical bar (`|`).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="ClassCastException" data-question-id="q18">
+                        <p class="question-text">Q18. What exception is thrown when casting an object to a subclass of
+                            which it is not an instance?</p>
+                        <div class="options">
+                            <button class="option-btn"
+                                data-answer="TypeMismatchException">TypeMismatchException</button>
+                            <button class="option-btn" data-answer="ClassCastException">ClassCastException</button>
+                            <button class="option-btn" data-answer="InvalidCastException">InvalidCastException</button>
+                            <button class="option-btn" data-answer="ObjectCastException">ObjectCastException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ClassCastException</div>
+                            <p>`ClassCastException` is thrown to indicate that the code has attempted to cast an object
+                                to a subclass of which it is not an instance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question" data-correct-answer="getMessage()" data-question-id="q19">
+                        <p class="question-text">Q19. Which method of Throwable returns the detailed message string?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="toString()">toString()</button>
+                            <button class="option-btn" data-answer="getMessage()">getMessage()</button>
+                            <button class="option-btn" data-answer="printStackTrace()">printStackTrace()</button>
+                            <button class="option-btn" data-answer="getDetails()">getDetails()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: getMessage()</div>
+                            <p>`getMessage()` returns the detail message string of the throwable.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="printStackTrace()" data-question-id="q20">
+                        <p class="question-text">Q20. Which method prints the exception and its backtrace to the
+                            standard error stream?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="printError()">printError()</button>
+                            <button class="option-btn" data-answer="printStackTrace()">printStackTrace()</button>
+                            <button class="option-btn" data-answer="logException()">logException()</button>
+                            <button class="option-btn" data-answer="showTrace()">showTrace()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: printStackTrace()</div>
+                            <p>`printStackTrace()` prints the throwable and its backtrace to the standard error stream.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="Chained Exception" data-question-id="q21">
+                        <p class="question-text">Q21. What is the concept of wrapping an exception within another
+                            exception called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Nested Exception">Nested Exception</button>
+                            <button class="option-btn" data-answer="Chained Exception">Chained Exception</button>
+                            <button class="option-btn" data-answer="Wrapped Exception">Wrapped Exception</button>
+                            <button class="option-btn" data-answer="Encapsulated Exception">Encapsulated
+                                Exception</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Chained Exception</div>
+                            <p>Chained exceptions allow you to relate one exception to another (cause), preserving the
+                                original stack trace while throwing a higher-level exception.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question" data-correct-answer="StackOverflowError" data-question-id="q22">
+                        <p class="question-text">Q22. What error is thrown when a recursive method calls itself too many
+                            times?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="OutOfMemoryError">OutOfMemoryError</button>
+                            <button class="option-btn" data-answer="StackOverflowError">StackOverflowError</button>
+                            <button class="option-btn" data-answer="RecursionError">RecursionError</button>
+                            <button class="option-btn" data-answer="LoopError">LoopError</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: StackOverflowError</div>
+                            <p>`StackOverflowError` is thrown when a stack overflow occurs because an application
+                                recurses too deeply.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question" data-correct-answer="Checked Exception" data-question-id="q23">
+                        <p class="question-text">Q23. Is FileNotFoundException a checked or unchecked exception?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Checked Exception">Checked Exception</button>
+                            <button class="option-btn" data-answer="Unchecked Exception">Unchecked Exception</button>
+                            <button class="option-btn" data-answer="Error">Error</button>
+                            <button class="option-btn" data-answer="Runtime Exception">Runtime Exception</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Checked Exception</div>
+                            <p>`FileNotFoundException` is a subclass of `IOException`, which is a checked exception. It
+                                must be handled or declared.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question" data-correct-answer="Unchecked Exception" data-question-id="q24">
+                        <p class="question-text">Q24. Is IllegalArgumentException a checked or unchecked exception?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Checked Exception">Checked Exception</button>
+                            <button class="option-btn" data-answer="Unchecked Exception">Unchecked Exception</button>
+                            <button class="option-btn" data-answer="Error">Error</button>
+                            <button class="option-btn" data-answer="Compile-time Exception">Compile-time
+                                Exception</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Unchecked Exception</div>
+                            <p>`IllegalArgumentException` is a subclass of `RuntimeException`, making it an unchecked
+                                exception.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question" data-correct-answer="try-with-resources" data-question-id="q25">
+                        <p class="question-text">Q25. Which statement automatically closes resources at the end of the
+                            block?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="try-catch-finally">try-catch-finally</button>
+                            <button class="option-btn" data-answer="try-with-resources">try-with-resources</button>
+                            <button class="option-btn" data-answer="auto-try">auto-try</button>
+                            <button class="option-btn" data-answer="resource-try">resource-try</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: try-with-resources</div>
+                            <p>The `try-with-resources` statement ensures that each resource is closed at the end of the
+                                statement.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 26 -->
+                    <div class="question" data-correct-answer="getCause()" data-question-id="q26">
+                        <p class="question-text">Q26. Which method returns the cause of this throwable or null if the
+                            cause is nonexistent or unknown?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="getReason()">getReason()</button>
+                            <button class="option-btn" data-answer="getCause()">getCause()</button>
+                            <button class="option-btn" data-answer="getSource()">getSource()</button>
+                            <button class="option-btn" data-answer="getOrigin()">getOrigin()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: getCause()</div>
+                            <p>`getCause()` returns the cause of the exception (the exception that triggered this
+                                exception) in exception chaining.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 27 -->
+                    <div class="question" data-correct-answer="assert" data-question-id="q27">
+                        <p class="question-text">Q27. Which keyword is used to test assumptions about the program during
+                            development?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="test">test</button>
+                            <button class="option-btn" data-answer="check">check</button>
+                            <button class="option-btn" data-answer="assert">assert</button>
+                            <button class="option-btn" data-answer="verify">verify</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: assert</div>
+                            <p>The `assert` keyword is used to create assertions, which are boolean expressions that the
+                                programmer believes to be true at that point in the code.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 28 -->
+                    <div class="question" data-correct-answer="AssertionError" data-question-id="q28">
+                        <p class="question-text">Q28. What error is thrown if an assertion fails?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="AssertionException">AssertionException</button>
+                            <button class="option-btn" data-answer="AssertionError">AssertionError</button>
+                            <button class="option-btn" data-answer="TestFailedException">TestFailedException</button>
+                            <button class="option-btn" data-answer="ValidationException">ValidationException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: AssertionError</div>
+                            <p>If an assertion evaluates to false, an `AssertionError` is thrown.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 29 -->
+                    <div class="question" data-correct-answer="finalize()" data-question-id="q29">
+                        <p class="question-text">Q29. Which method is called by the garbage collector before an object
+                            is destroyed (deprecated)?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="destroy()">destroy()</button>
+                            <button class="option-btn" data-answer="delete()">delete()</button>
+                            <button class="option-btn" data-answer="finalize()">finalize()</button>
+                            <button class="option-btn" data-answer="clean()">clean()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: finalize()</div>
+                            <p>`finalize()` is called by the garbage collector on an object when garbage collection
+                                determines that there are no more references to the object. It is deprecated since Java
+                                9.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 30 -->
+                    <div class="question" data-correct-answer="No" data-question-id="q30">
+                        <p class="question-text">Q30. Is it good practice to catch the generic Exception class?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Yes">Yes</button>
+                            <button class="option-btn" data-answer="No">No</button>
+                            <button class="option-btn" data-answer="Always">Always</button>
+                            <button class="option-btn" data-answer="Only in main">Only in main</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: No</div>
+                            <p>Catching `Exception` is generally bad practice ("pokemon exception handling") because it
+                                can hide bugs and make debugging difficult. Catch specific exceptions instead.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section" id="quizResults" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="results-summary">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+                        </div>
+                        <div class="performance-message" id="performanceMessage"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake
+                            Quiz</button>
+                        <a class="md-button md-button--secondary" href="../theory/exception-handling.html">📚 Review
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/exception-handling.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                </div>
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/exception-handling.html">📚 Back to
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/exception-handling.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p><strong>Coming Soon:</strong> Handling Files in Java</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
-
+    <script src="../assets/js/docs-style.js"></script>
     <script src="../assets/js/mcq.js"></script>
-    <script>
-        const quizQuestions = [
-            {
-                id: 1,
-                question: "Which block is guaranteed to execute whether an exception occurs or not?",
-                options: ["try", "catch", "finally", "throw"],
-                answerIndex: 2,
-                explanation: "The finally block always executes, whether an exception occurs or not. It's used for cleanup operations like closing resources."
-            },
-            {
-                id: 2,
-                question: "What is the parent class of all exceptions and errors in Java?",
-                options: ["Exception", "Error", "Throwable", "RuntimeException"],
-                answerIndex: 2,
-                explanation: "Throwable is the root class of all exceptions and errors. Exception and Error both extend Throwable."
-            },
-            {
-                id: 3,
-                question: "Which of these is a checked exception?",
-                options: ["NullPointerException", "IOException", "ArithmeticException", "ArrayIndexOutOfBoundsException"],
-                answerIndex: 1,
-                explanation: "IOException is a checked exception that must be caught or declared. The others are unchecked RuntimeExceptions."
-            },
-            {
-                id: 4,
-                question: "What keyword is used to explicitly throw an exception?",
-                options: ["throws", "throw", "try", "catch"],
-                answerIndex: 1,
-                explanation: "The 'throw' keyword is used to explicitly throw an exception object. 'throws' is used in method signatures to declare exceptions."
-            },
-            {
-                id: 5,
-                question: "What keyword is used to declare that a method might throw exceptions?",
-                options: ["throw", "throws", "catch", "finally"],
-                answerIndex: 1,
-                explanation: "The 'throws' keyword is used in method signatures to declare that the method might throw certain exceptions."
-            },
-            {
-                id: 6,
-                question: "Which exception is thrown when dividing by zero?",
-                options: ["NullPointerException", "ArithmeticException", "NumberFormatException", "IllegalArgumentException"],
-                answerIndex: 1,
-                explanation: "ArithmeticException is thrown for arithmetic errors like division by zero."
-            },
-            {
-                id: 7,
-                question: "Can you have a try block without a catch block?",
-                options: ["No, catch is mandatory", "Yes, if there's a finally block", "Yes, always", "Only with checked exceptions"],
-                answerIndex: 1,
-                explanation: "You can have try without catch if you have a finally block. You must have either catch or finally (or both) with try."
-            },
-            {
-                id: 8,
-                question: "What happens if an exception is not caught anywhere in the program?",
-                options: ["Program continues normally", "Exception is ignored", "Program terminates abnormally", "Exception is automatically handled"],
-                answerIndex: 2,
-                explanation: "If an exception is not caught, it propagates to the JVM which terminates the program abnormally and prints the stack trace."
-            },
-            {
-                id: 9,
-                question: "Which is the correct order for multiple catch blocks?",
-                options: ["General to specific", "Specific to general", "Any order", "Alphabetical order"],
-                answerIndex: 1,
-                explanation: "Catch blocks must be ordered from most specific to most general. Otherwise, specific exceptions would be unreachable."
-            },
-            {
-                id: 10,
-                question: "What is the difference between Error and Exception?",
-                options: ["No difference", "Errors are unchecked, Exceptions are checked", "Errors are serious and shouldn't be caught, Exceptions can be handled", "Errors are for syntax, Exceptions are for runtime"],
-                answerIndex: 2,
-                explanation: "Errors represent serious problems that applications should not try to catch (like OutOfMemoryError). Exceptions represent conditions that can be caught and handled."
-            },
-            {
-                id: 11,
-                question: "Which exception is thrown when accessing a null object reference?",
-                options: ["NullPointerException", "NullException", "ReferenceException", "ObjectException"],
-                answerIndex: 0,
-                explanation: "NullPointerException is thrown when attempting to use a null object reference (calling methods or accessing fields)."
-            },
-            {
-                id: 12,
-                question: "What will happen if you put a return statement in the try block and also in the finally block?",
-                options: ["try return executes", "finally return executes", "Compilation error", "Runtime error"],
-                answerIndex: 1,
-                explanation: "The finally block's return will override the try block's return. This is generally considered bad practice as it can hide exceptions."
-            },
-            {
-                id: 13,
-                question: "Which class should you extend to create a custom checked exception?",
-                options: ["RuntimeException", "Exception", "Error", "Throwable"],
-                answerIndex: 1,
-                explanation: "To create a custom checked exception, extend Exception (but not RuntimeException). Extending RuntimeException creates an unchecked exception."
-            },
-            {
-                id: 14,
-                question: "Which class should you extend to create a custom unchecked exception?",
-                options: ["Exception", "RuntimeException", "Error", "CheckedException"],
-                answerIndex: 1,
-                explanation: "To create a custom unchecked exception, extend RuntimeException. These don't need to be declared or caught."
-            },
-            {
-                id: 15,
-                question: "Can you have multiple catch blocks for the same try block?",
-                options: ["No", "Yes", "Only for checked exceptions", "Only for unchecked exceptions"],
-                answerIndex: 1,
-                explanation: "Yes, you can have multiple catch blocks to handle different exception types differently. They must be ordered from specific to general."
-            },
-            {
-                id: 16,
-                question: "What is exception propagation?",
-                options: ["Throwing multiple exceptions", "Exception moving up the call stack", "Catching all exceptions", "Creating custom exceptions"],
-                answerIndex: 1,
-                explanation: "Exception propagation is when an uncaught exception moves up the call stack from the method where it occurred to the calling method, and so on."
-            },
-            {
-                id: 17,
-                question: "Which of these is NOT a valid exception handling keyword?",
-                options: ["try", "catch", "finally", "ensure"],
-                answerIndex: 3,
-                explanation: "'ensure' is not a Java keyword. The valid exception handling keywords are try, catch, finally, throw, and throws."
-            },
-            {
-                id: 18,
-                question: "Can a finally block be skipped?",
-                options: ["Never", "Yes, if System.exit() is called", "Yes, if exception is not thrown", "Yes, if return is in try"],
-                answerIndex: 1,
-                explanation: "Finally block is almost always executed, but it can be skipped if System.exit() is called or if the JVM crashes."
-            },
-            {
-                id: 19,
-                question: "What does the following code print? try { return 1; } finally { return 2; }",
-                options: ["1", "2", "Compilation error", "Runtime error"],
-                answerIndex: 1,
-                explanation: "The finally block's return (2) overrides the try block's return (1). This is bad practice as it can suppress exceptions."
-            },
-            {
-                id: 20,
-                question: "Which exception is thrown when converting an invalid string to a number?",
-                options: ["NumberException", "NumberFormatException", "ParseException", "ConversionException"],
-                answerIndex: 1,
-                explanation: "NumberFormatException is thrown when attempting to convert a string to a numeric type, but the string doesn't have an appropriate format."
-            },
-            {
-                id: 21,
-                question: "Can you catch multiple exception types in a single catch block (Java 7+)?",
-                options: ["No", "Yes, using the | operator", "Yes, using the & operator", "Yes, using the || operator"],
-                answerIndex: 1,
-                explanation: "Java 7 introduced multi-catch, allowing you to catch multiple exception types in one catch block using the pipe (|) operator."
-            },
-            {
-                id: 22,
-                question: "What is the purpose of the throws clause in a method signature?",
-                options: ["To throw an exception", "To declare exceptions the method might throw", "To catch exceptions", "To handle exceptions"],
-                answerIndex: 1,
-                explanation: "The throws clause declares that a method might throw certain checked exceptions, informing callers that they must handle these exceptions."
-            },
-            {
-                id: 23,
-                question: "Which is better: catching Exception or specific exception types?",
-                options: ["Catching Exception", "Catching specific types", "Both are equally good", "Neither should be caught"],
-                answerIndex: 1,
-                explanation: "Catching specific exception types is better because it allows different handling for different errors and makes debugging easier."
-            },
-            {
-                id: 24,
-                question: "What happens if you don't handle a checked exception?",
-                options: ["Runtime error", "Compilation error", "Exception is ignored", "Program continues"],
-                answerIndex: 1,
-                explanation: "Checked exceptions must be either caught or declared with throws. Not doing so results in a compilation error."
-            },
-            {
-                id: 25,
-                question: "Can you rethrow an exception after catching it?",
-                options: ["No", "Yes, using throw", "Yes, using throws", "Only unchecked exceptions"],
-                answerIndex: 1,
-                explanation: "Yes, you can rethrow an exception using the throw keyword inside a catch block. This is useful for logging before propagating."
-            },
-            {
-                id: 26,
-                question: "What is a try-with-resources statement (Java 7+)?",
-                options: ["Try with multiple catch blocks", "Try that automatically closes resources", "Try with finally", "Try with custom exceptions"],
-                answerIndex: 1,
-                explanation: "Try-with-resources automatically closes resources (that implement AutoCloseable) when the try block exits, even if an exception occurs."
-            },
-            {
-                id: 27,
-                question: "Which exception indicates an array index is out of bounds?",
-                options: ["IndexException", "ArrayException", "ArrayIndexOutOfBoundsException", "BoundsException"],
-                answerIndex: 2,
-                explanation: "ArrayIndexOutOfBoundsException is thrown when trying to access an array with an invalid index (negative or >= array length)."
-            },
-            {
-                id: 28,
-                question: "Should you use exceptions for normal program flow control?",
-                options: ["Yes, always", "No, exceptions are for exceptional conditions", "Only for checked exceptions", "Only in loops"],
-                answerIndex: 1,
-                explanation: "No, exceptions should be used for exceptional conditions, not normal flow control. They have performance overhead and reduce code clarity."
-            },
-            {
-                id: 29,
-                question: "What is the output of: try { System.out.print('A'); throw new Exception(); } catch(Exception e) { System.out.print('B'); } finally { System.out.print('C'); }",
-                options: ["A", "AB", "ABC", "AC"],
-                answerIndex: 2,
-                explanation: "Output is 'ABC'. 'A' prints in try, exception is thrown and caught (prints 'B'), then finally always executes (prints 'C')."
-            },
-            {
-                id: 30,
-                question: "Can you have nested try-catch blocks?",
-                options: ["No", "Yes", "Only 2 levels deep", "Only for checked exceptions"],
-                answerIndex: 1,
-                explanation: "Yes, you can have try-catch blocks nested inside other try-catch blocks. This allows different exception handling strategies for different code sections."
-            },
-            {
-                id: 31,
-                question: "What is exception chaining?",
-                options: ["Catching multiple exceptions", "Throwing multiple exceptions", "Wrapping one exception inside another", "Handling exceptions in sequence"],
-                answerIndex: 2,
-                explanation: "Exception chaining is wrapping one exception inside another to preserve the original cause. This is done by passing the original exception to the new exception's constructor."
-            },
-            {
-                id: 32,
-                question: "Which method is used to print the exception stack trace?",
-                options: ["printStackTrace()", "printTrace()", "showStack()", "displayException()"],
-                answerIndex: 0,
-                explanation: "printStackTrace() prints the exception's stack trace, showing the sequence of method calls that led to the exception."
-            }
-        ];
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-            window.quizManager = quizManager;
-        });
-    </script>
 </body>
 
 </html>

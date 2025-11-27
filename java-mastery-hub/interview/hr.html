@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Interview Questions - HR Round (Q671-Q700) - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style-mkdocs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="md-header" data-md-component="header">
+        <nav class="md-header__inner md-grid" aria-label="Header">
+            <a href="../index.html" title="Java Mastery Hub" class="md-header__button md-logo"
+                aria-label="Java Mastery Hub" data-md-component="logo">
+                <i class="fa-brands fa-java fa-2x"></i>
+            </a>
+            <label class="md-header__button md-icon" for="__drawer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" />
+                </svg>
+            </label>
+            <div class="md-header__title" data-md-component="header-title">
+                <div class="md-header__ellipsis">
+                    <div class="md-header__topic">
+                        <span class="md-ellipsis">Java Mastery Hub</span>
+                    </div>
+                    <div class="md-header__topic" data-md-component="header-topic">
+                        <span class="md-ellipsis">Topic 18: HR Interview Questions</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="md-container" data-md-component="container">
+        <main class="md-main" data-md-component="main">
+            <div class="md-main__inner md-grid">
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                                <label class="md-nav__title" for="__drawer">
+                                    <a href="../index.html" title="Java Mastery Hub" class="md-nav__button md-logo"
+                                        aria-label="Java Mastery Hub" data-md-component="logo">
+                                        <i class="fa-brands fa-java"></i>
+                                    </a>
+                                    Java Mastery Hub
+                                </label>
+                                <ul class="md-nav__list" data-md-scrollfix>
+                                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">1. Software Engineering</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/software-engineering.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/software-engineering.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">2. What is Java</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/what-is-java.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/what-is-java.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/variables-and-data-types.html">Programs</a>
+                                                </li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">4. Java Keywords</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/java-keywords.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/java-keywords.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">7. Methods</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/methods.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/methods.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/methods.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">8. OOP Concepts</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/oops.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/oops.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/oops.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">9. Collections Framework</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/collections.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/collections.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/collections.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">10. Exception Handling</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/exception-handling.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/exception-handling.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">11. File Handling</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/handling-files.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/handling-files.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/handling-files.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">12. JDBC</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/jdbc.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/jdbc.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/jdbc.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">13. Multithreading</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/multithreading.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/multithreading.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/multithreading.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">14. Java 8+ Features</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/java8features.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/java8features.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/java8features.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">15. Programming Principles</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/programming-principles.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/programming-principles.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/arrays.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/arrays.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/arrays.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/strings.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/strings.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/strings.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">18. Java Interview Questions</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/introduction.html">Introduction</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/intermediate.html">Intermediate (151-350)</a>
+                                                </li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                                <li class="md-nav__item"><a
+                                                        class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                                        href="../interview/hr.html">HR Questions</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md-content" data-md-component="content">
+                    <div class="md-content__inner md-typeset">
+
+                        <div class="content-header">
+                            <h1>HR Interview Questions (Q671 - Q700)</h1>
+                            <p style="margin-top: 0.5rem; opacity: 0.9;">Behavioral, Situational, and Personality
+                                questions.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <p>These questions assess your soft skills, cultural fit, and how you handle workplace
+                                situations. Be honest, positive, and use the <strong>STAR Method</strong> (Situation,
+                                Task, Action, Result) where applicable.</p>
+                        </div>
+
+                        <!-- Q671 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q671. Tell me about yourself. <span class="tag-most-asked">🔥
+                                    Most
+                                    Asked</span></div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Keep it professional. Start with your current role, mention key
+                                    achievements, and explain why you are interested in this position. Avoid personal
+                                    life
+                                    details.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q672 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q672. Why do you want to leave your current company?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Focus on growth opportunities, new challenges, or changing
+                                    career
+                                    direction. <strong>Never badmouth</strong> your current employer or boss.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q673 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q673. What are your greatest strengths?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Choose strengths relevant to the job (e.g., problem-solving,
+                                    adaptability, fast learner). Back it up with a specific example.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q674 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q674. What are your greatest weaknesses?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Choose a real weakness but one that is not critical to the job.
+                                    Explain how you are working to improve it. (e.g., "I sometimes have trouble saying
+                                    no,
+                                    so I use a task management tool to prioritize"). Avoid clichés like "I work too
+                                    hard".</p>
+                            </div>
+                        </div>
+
+                        <!-- Q675 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q675. Why should we hire you?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Connect your skills and experience directly to the job
+                                    description.
+                                    Highlight what unique value you bring to the team.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q676 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q676. Where do you see yourself in 5 years?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Show ambition but be realistic. Align your goals with the
+                                    company's
+                                    growth. (e.g., "I see myself as a Senior Developer leading a team and architecting
+                                    scalable solutions").</p>
+                            </div>
+                        </div>
+
+                        <!-- Q677 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q677. Tell me about a time you faced a challenge at work and
+                                how you handled
+                                it.</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Use the <strong>STAR Method</strong>. Describe the Situation,
+                                    the
+                                    Task, the Action you took, and the positive Result.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q678 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q678. How do you handle conflict with a coworker?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Focus on communication, empathy, and finding a solution. Show
+                                    that
+                                    you can remain professional and do not hold grudges.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q679 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q679. How do you handle tight deadlines or pressure?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Explain your prioritization techniques, how you communicate
+                                    with
+                                    stakeholders, and your ability to stay focused.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q680 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q680. Describe a time you made a mistake. How did you handle
+                                it?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Admit the mistake honestly. Focus on how you fixed it, what you
+                                    learned, and what steps you took to prevent it from happening again.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q681 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q681. What is your expected salary?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Do your research beforehand. You can give a range or ask for
+                                    their
+                                    budget first. Be open to negotiation based on the total package.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q682 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q682. Why do you want to work for us?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Show that you have researched the company. Mention their
+                                    products,
+                                    culture, or recent news that excites you.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q683 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q683. What motivates you?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Be honest. It could be solving complex problems, learning new
+                                    technologies, seeing users use your product, or career growth.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q684 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q684. How do you stay updated with the latest technology
+                                trends?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Mention blogs, podcasts, online courses, conferences, or side
+                                    projects.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q685 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q685. Do you prefer working independently or in a team?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Most roles require teamwork, but also independent work. Say you
+                                    are
+                                    comfortable with both, but emphasize the value of collaboration.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q686 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q686. What is your ideal work environment?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Describe an environment that encourages learning,
+                                    collaboration,
+                                    and open communication. Ensure it aligns with the company's culture.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q687 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q687. Are you willing to relocate or travel?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Be honest about your situation. If you are open to it, say so.
+                                    If
+                                    not, explain your constraints politely.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q688 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q688. How do you handle criticism?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> View it as an opportunity to improve. Give an example of when
+                                    you
+                                    received constructive feedback and how you acted on it.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q689 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q689. Tell me about a time you disagreed with your boss.</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Focus on a professional disagreement (e.g., technical
+                                    approach).
+                                    Explain how you presented your data/arguments respectfully and accepted the final
+                                    decision.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q690 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q690. What are your hobbies?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Share genuine hobbies. It helps build rapport and shows you are
+                                    a
+                                    well-rounded person.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q691 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q691. What makes you angry?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Avoid saying "nothing". Mention professional frustrations like
+                                    "lack of communication" or "unfairness", but explain how you handle it
+                                    constructively.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q692 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q692. Are you interviewing with other companies?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> You can say "Yes, I am exploring a few opportunities" without
+                                    giving names. It shows you are in demand.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q693 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q693. How quickly can you join us?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Be honest about your notice period. If it's negotiable, mention
+                                    that.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q694 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q694. Do you have any questions for us? <span
+                                    class="tag-most-asked">🔥
+                                    Most Asked</span></div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Always ask questions! It shows interest.
+                                <ul>
+                                    <li>"What does a typical day look like?"</li>
+                                    <li>"What are the biggest challenges the team is facing?"</li>
+                                    <li>"What is the company culture like?"</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q695 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q695. Describe a time you went above and beyond for a project.
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Share a story where you took initiative, put in extra effort,
+                                    or
+                                    solved a critical problem that wasn't strictly your responsibility.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q696 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q696. How do you prioritize tasks when you have multiple
+                                projects?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Mention tools (Jira, Trello) and techniques (Eisenhower Matrix,
+                                    communicating with stakeholders to adjust deadlines).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q697 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q697. What was the last book you read?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Have a professional or self-improvement book in mind. If you
+                                    read
+                                    fiction, that's fine too, just be ready to discuss it briefly.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q698 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q698. Who is your role model?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Pick someone who inspires you professionally or personally and
+                                    explain why (e.g., their leadership style, innovation, resilience).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q699 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q699. If you won the lottery, would you still work?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> This tests your passion. A good answer is "Yes, because I enjoy
+                                    building things/solving problems, though I might focus more on [specific interest]."
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q700 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q700. Rate yourself on a scale of 1 to 10 in Java.</div>
+                            <div class="admonition-content">
+                                <p>
+                                <p><strong>Tip:</strong> Avoid 10 (nobody is perfect) and 1 (you are interviewing!). A
+                                    safe
+                                    bet is 8 or 9, explaining that you are confident but there is always more to learn.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="content-section text-center" style="margin-top: 3rem;">
+                            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
+                                <a class="md-button md-button--secondary" href="scenario-based.html">
+                                    ⬅️ Scenario Based
+                                </a>
+                                <a class="md-button md-button--primary" href="../index.html">
+                                    🏠 Back to Home
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>

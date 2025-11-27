@@ -1,472 +1,1078 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Java Keywords - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Java Keywords - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>Java Keywords</span>
-            </div>
-        </div>
-
-        <!-- Quiz Introduction -->
-        <div class="content-section">
-            <h2>Test Your Knowledge</h2>
-            <p>
-                This quiz contains 27 questions covering all aspects of Java keywords including access modifiers,
-                non-access modifiers, control flow, class/object keywords, exception handling, and best practices.
-            </p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>
-                    Take your time and read each question carefully. After answering, you'll receive detailed
-                    explanations to reinforce your understanding. Aim for at least 80% to demonstrate mastery!
-                </p>
-            </div>
-        </div>
-
-        <!-- Quiz Progress -->
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
-            </div>
-        </div>
-
-        <!-- Quiz Container -->
-        <div id="quizContainer" class="content-section">
-            <!-- Questions will be dynamically loaded here -->
-        </div>
-
-        <!-- Quiz Results -->
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
                 </div>
-                <div id="performanceMessage" class="performance-message"></div>
             </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Java Keywords - Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>Java Keywords - Quiz</li>
+                    </ul>
+                </div>
+                <!-- Quiz Introduction -->
+                <div class="content-section">
+                    <h2>Test Your Knowledge</h2>
+                    <p>
+                        This quiz contains 27 questions covering all aspects of Java keywords including access
+                        modifiers,
+                        non-access modifiers, control flow, class/object keywords, exception handling, and best
+                        practices.
+                    </p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>
+                                Take your time and read each question carefully. After answering, you'll receive
+                                detailed
+                                explanations to reinforce your understanding. Aim for at least 80% to demonstrate
+                                mastery!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quiz Progress -->
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
+                    </div>
+                </div>
+                <!-- Quiz Container -->
+                <div class="content-section" id="quizContainer">
 
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/java-keywords.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/java-keywords.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
+                    <!-- Question 1 -->
+                    <div class="question" data-correct-answer="50" data-question-id="q1">
+                        <p class="question-text">Q1. How many reserved keywords does Java have (as of Java 17)?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="48">48</button>
+                            <button class="option-btn" data-answer="50">50</button>
+                            <button class="option-btn" data-answer="52">52</button>
+                            <button class="option-btn" data-answer="54">54</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: 50</div>
+                            <p>Java has 50 reserved keywords. These are words that have special meaning in Java and
+                                cannot be used as identifiers (variable names, method names, class names, etc.).
+                                Keywords like const and goto are reserved but not used.</p>
+                        </div>
+                    </div>
 
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/java-keywords.html" class="btn btn-primary">
-                    📚 Back to Theory
-                </a>
-                <a href="../programs/java-keywords.html" class="btn btn-secondary">
-                    💻 View Programs
-                </a>
-                <a href="../index.html" class="btn btn-success">
-                    🏠 Back to Home
-                </a>
-            </div>
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="public" data-question-id="q2">
+                        <p class="question-text">Q2. Which access modifier allows a class member to be accessible from
+                            anywhere?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="private">private</button>
+                            <button class="option-btn" data-answer="protected">protected</button>
+                            <button class="option-btn" data-answer="public">public</button>
+                            <button class="option-btn" data-answer="default">default</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: public</div>
+                            <p>The public access modifier makes a class member accessible from anywhere - from the same
+                                class, same package, subclasses, and even different packages. It provides the widest
+                                level of access.</p>
+                        </div>
+                    </div>
 
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> Control Flow Statements & Loops
-                    <br>Master if-else, switch, for, while, do-while loops, and control flow mechanisms.
-                </p>
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="private" data-question-id="q3">
+                        <p class="question-text">Q3. Which access modifier provides the most restrictive access?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="public">public</button>
+                            <button class="option-btn" data-answer="protected">protected</button>
+                            <button class="option-btn" data-answer="private">private</button>
+                            <button class="option-btn" data-answer="default">default</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: private</div>
+                            <p>The private access modifier is the most restrictive. Private members are accessible only
+                                within the same class where they are declared. This is fundamental to encapsulation in
+                                OOP.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question" data-correct-answer="Same package and subclasses in any package"
+                        data-question-id="q4">
+                        <p class="question-text">Q4. Where can protected members be accessed?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Only within the same class">Only within the same
+                                class</button>
+                            <button class="option-btn" data-answer="Only within the same package">Only within the same
+                                package</button>
+                            <button class="option-btn" data-answer="Same package and subclasses in any package">Same
+                                package and subclasses in any package</button>
+                            <button class="option-btn" data-answer="Anywhere in the application">Anywhere in the
+                                application</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Same package and subclasses in any package
+                            </div>
+                            <p>Protected members are accessible within the same package and by subclasses in any package
+                                (through inheritance). This is more permissive than default but more restrictive than
+                                public.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="Only within the same package" data-question-id="q5">
+                        <p class="question-text">Q5. What is the scope of default (package-private) access modifier?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Only within the same class">Only within the same
+                                class</button>
+                            <button class="option-btn" data-answer="Only within the same package">Only within the same
+                                package</button>
+                            <button class="option-btn" data-answer="Within subclasses only">Within subclasses
+                                only</button>
+                            <button class="option-btn" data-answer="Everywhere">Everywhere</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Only within the same package</div>
+                            <p>When no access modifier is specified (default/package-private), the member is accessible
+                                only within the same package. It's not accessible from subclasses in different packages,
+                                unlike protected.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="static" data-question-id="q6">
+                        <p class="question-text">Q6. Which keyword is used to create a class-level variable that is
+                            shared among all instances?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="final">final</button>
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="abstract">abstract</button>
+                            <button class="option-btn" data-answer="volatile">volatile</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: static</div>
+                            <p>The static keyword creates class-level members that belong to the class itself rather
+                                than to instances. Static variables are shared among all instances of the class and can
+                                be accessed without creating an object.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="final" data-question-id="q7">
+                        <p class="question-text">Q7. Which keyword prevents a variable from being reassigned after
+                            initialization?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="const">const</button>
+                            <button class="option-btn" data-answer="final">final</button>
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="immutable">immutable</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: final</div>
+                            <p>The final keyword makes a variable constant - once assigned, it cannot be reassigned. For
+                                reference types, the reference cannot change, but the object's state can still be
+                                modified. Note: 'const' is a reserved keyword but not used in Java.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question" data-correct-answer="abstract" data-question-id="q8">
+                        <p class="question-text">Q8. Which keyword is used to declare a class that cannot be
+                            instantiated?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="final">final</button>
+                            <button class="option-btn" data-answer="abstract">abstract</button>
+                            <button class="option-btn" data-answer="private">private</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: abstract</div>
+                            <p>The abstract keyword declares a class that cannot be instantiated directly. Abstract
+                                classes are meant to be extended by subclasses. They can contain both abstract methods
+                                (without implementation) and concrete methods (with implementation).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="this" data-question-id="q9">
+                        <p class="question-text">Q9. Which keyword refers to the current instance of a class?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="self">self</button>
+                            <button class="option-btn" data-answer="this">this</button>
+                            <button class="option-btn" data-answer="current">current</button>
+                            <button class="option-btn" data-answer="me">me</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: this</div>
+                            <p>The 'this' keyword refers to the current instance of the class. It's used to access
+                                instance variables and methods, differentiate between instance variables and parameters
+                                with the same name, and call other constructors in the same class.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="super" data-question-id="q10">
+                        <p class="question-text">Q10. Which keyword is used to call the parent class constructor?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="parent">parent</button>
+                            <button class="option-btn" data-answer="super">super</button>
+                            <button class="option-btn" data-answer="base">base</button>
+                            <button class="option-btn" data-answer="this">this</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: super</div>
+                            <p>The 'super' keyword is used to call the parent class constructor (super()) or access
+                                parent class members (super.methodName()). When calling the parent constructor, super()
+                                must be the first statement in the child constructor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer="new" data-question-id="q11">
+                        <p class="question-text">Q11. Which keyword is used to create an object instance?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="create">create</button>
+                            <button class="option-btn" data-answer="new">new</button>
+                            <button class="option-btn" data-answer="instance">instance</button>
+                            <button class="option-btn" data-answer="object">object</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: new</div>
+                            <p>The 'new' keyword is used to create new objects (instances) of a class. It allocates
+                                memory on the heap for the object and calls the constructor. Example: Student s = new
+                                Student();</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="synchronized" data-question-id="q12">
+                        <p class="question-text">Q12. Which keyword is used to ensure thread-safe access to a method or
+                            block?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="volatile">volatile</button>
+                            <button class="option-btn" data-answer="synchronized">synchronized</button>
+                            <button class="option-btn" data-answer="atomic">atomic</button>
+                            <button class="option-btn" data-answer="threadsafe">threadsafe</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: synchronized</div>
+                            <p>The synchronized keyword ensures that only one thread can execute a method or block at a
+                                time. It provides mutual exclusion and prevents race conditions in multi-threaded
+                                applications.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="volatile" data-question-id="q13">
+                        <p class="question-text">Q13. Which keyword ensures that a variable's value is always read from
+                            main memory?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="synchronized">synchronized</button>
+                            <button class="option-btn" data-answer="volatile">volatile</button>
+                            <button class="option-btn" data-answer="transient">transient</button>
+                            <button class="option-btn" data-answer="static">static</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: volatile</div>
+                            <p>The volatile keyword ensures that a variable's value is always read from and written to
+                                main memory, not from thread-local cache. This guarantees visibility of changes across
+                                threads but doesn't provide atomicity.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question" data-correct-answer="transient" data-question-id="q14">
+                        <p class="question-text">Q14. Which keyword prevents a field from being serialized?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="volatile">volatile</button>
+                            <button class="option-btn" data-answer="transient">transient</button>
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="final">final</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: transient</div>
+                            <p>The transient keyword marks a field to be excluded from serialization. When an object is
+                                serialized, transient fields are not saved. This is useful for sensitive data or fields
+                                that can be recalculated.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="instanceof" data-question-id="q15">
+                        <p class="question-text">Q15. Which keyword is used to test if an object is an instance of a
+                            specific class?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="typeof">typeof</button>
+                            <button class="option-btn" data-answer="instanceof">instanceof</button>
+                            <button class="option-btn" data-answer="is">is</button>
+                            <button class="option-btn" data-answer="classof">classof</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: instanceof</div>
+                            <p>The instanceof keyword tests whether an object is an instance of a specific class or
+                                implements a specific interface. It returns true if the object is an instance, false
+                                otherwise. Example: if (obj instanceof String)</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="extends" data-question-id="q16">
+                        <p class="question-text">Q16. Which keyword is used to inherit from a class?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="inherits">inherits</button>
+                            <button class="option-btn" data-answer="extends">extends</button>
+                            <button class="option-btn" data-answer="implements">implements</button>
+                            <button class="option-btn" data-answer="derives">derives</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: extends</div>
+                            <p>The extends keyword is used for class inheritance. A class can extend only one parent
+                                class (single inheritance). Example: class Dog extends Animal. The child class inherits
+                                all non-private members of the parent class.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="implements" data-question-id="q17">
+                        <p class="question-text">Q17. Which keyword is used to implement an interface?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="extends">extends</button>
+                            <button class="option-btn" data-answer="implements">implements</button>
+                            <button class="option-btn" data-answer="uses">uses</button>
+                            <button class="option-btn" data-answer="interface">interface</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: implements</div>
+                            <p>The implements keyword is used when a class implements an interface. A class can
+                                implement multiple interfaces (separated by commas), providing implementations for all
+                                abstract methods. Example: class MyClass implements Interface1, Interface2</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="return" data-question-id="q18">
+                        <p class="question-text">Q18. Which keyword is used to exit from a method and optionally return
+                            a value?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="break">break</button>
+                            <button class="option-btn" data-answer="return">return</button>
+                            <button class="option-btn" data-answer="exit">exit</button>
+                            <button class="option-btn" data-answer="yield">yield</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: return</div>
+                            <p>The return keyword exits from a method and optionally returns a value to the caller. For
+                                void methods, use 'return;' without a value. For non-void methods, you must return a
+                                value of the declared return type.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question" data-correct-answer="break" data-question-id="q19">
+                        <p class="question-text">Q19. Which keyword is used to exit from a loop or switch statement?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="exit">exit</button>
+                            <button class="option-btn" data-answer="break">break</button>
+                            <button class="option-btn" data-answer="stop">stop</button>
+                            <button class="option-btn" data-answer="return">return</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: break</div>
+                            <p>The break keyword immediately exits from a loop (for, while, do-while) or switch
+                                statement. Control transfers to the statement immediately following the loop or switch.
+                                It can also be used with labels to break out of nested loops.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="continue" data-question-id="q20">
+                        <p class="question-text">Q20. Which keyword skips the current iteration of a loop and continues
+                            with the next?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="skip">skip</button>
+                            <button class="option-btn" data-answer="continue">continue</button>
+                            <button class="option-btn" data-answer="next">next</button>
+                            <button class="option-btn" data-answer="pass">pass</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: continue</div>
+                            <p>The continue keyword skips the remaining code in the current iteration and moves to the
+                                next iteration of the loop. It's useful when you want to skip certain iterations based
+                                on a condition without exiting the entire loop.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="try, catch, finally" data-question-id="q21">
+                        <p class="question-text">Q21. Which keywords are used for exception handling?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="try, catch, finally">try, catch, finally</button>
+                            <button class="option-btn" data-answer="try, except, finally">try, except, finally</button>
+                            <button class="option-btn" data-answer="begin, rescue, ensure">begin, rescue,
+                                ensure</button>
+                            <button class="option-btn" data-answer="attempt, handle, cleanup">attempt, handle,
+                                cleanup</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: try, catch, finally</div>
+                            <p>Exception handling in Java uses try (to wrap risky code), catch (to handle exceptions),
+                                and finally (to execute cleanup code regardless of whether an exception occurred). The
+                                finally block is optional but always executes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question" data-correct-answer="throw" data-question-id="q22">
+                        <p class="question-text">Q22. Which keyword is used to explicitly throw an exception?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="throw">throw</button>
+                            <button class="option-btn" data-answer="throws">throws</button>
+                            <button class="option-btn" data-answer="raise">raise</button>
+                            <button class="option-btn" data-answer="except">except</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: throw</div>
+                            <p>The 'throw' keyword is used to explicitly throw an exception. Example: throw new
+                                IllegalArgumentException("Invalid input"); It's used inside method bodies to throw
+                                exceptions when error conditions are detected.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question" data-correct-answer="throws" data-question-id="q23">
+                        <p class="question-text">Q23. Which keyword is used in a method signature to declare that it may
+                            throw exceptions?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="throw">throw</button>
+                            <button class="option-btn" data-answer="throws">throws</button>
+                            <button class="option-btn" data-answer="exception">exception</button>
+                            <button class="option-btn" data-answer="raise">raise</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: throws</div>
+                            <p>The 'throws' keyword is used in method signatures to declare that the method may throw
+                                certain checked exceptions. Example: public void readFile() throws IOException. Callers
+                                must either handle these exceptions or declare them in their own throws clause.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question" data-correct-answer="It prevents method overriding" data-question-id="q24">
+                        <p class="question-text">Q24. What does the final keyword do when applied to a method?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="It makes the method static">It makes the method
+                                static</button>
+                            <button class="option-btn" data-answer="It prevents method overriding">It prevents method
+                                overriding</button>
+                            <button class="option-btn" data-answer="It makes the method abstract">It makes the method
+                                abstract</button>
+                            <button class="option-btn" data-answer="It makes the method private">It makes the method
+                                private</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: It prevents method overriding</div>
+                            <p>When applied to a method, the final keyword prevents subclasses from overriding that
+                                method. This is useful when you want to ensure that the method's implementation remains
+                                unchanged in all subclasses.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question" data-correct-answer="It prevents inheritance" data-question-id="q25">
+                        <p class="question-text">Q25. What does the final keyword do when applied to a class?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="It makes the class abstract">It makes the class
+                                abstract</button>
+                            <button class="option-btn" data-answer="It prevents inheritance">It prevents
+                                inheritance</button>
+                            <button class="option-btn" data-answer="It makes all methods static">It makes all methods
+                                static</button>
+                            <button class="option-btn" data-answer="It makes the class immutable">It makes the class
+                                immutable</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: It prevents inheritance</div>
+                            <p>When applied to a class, the final keyword prevents other classes from extending it. The
+                                class cannot be subclassed. Examples of final classes in Java include String, Integer,
+                                and other wrapper classes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 26 -->
+                    <div class="question" data-correct-answer="strictfp" data-question-id="q26">
+                        <p class="question-text">Q26. Which keyword ensures consistent floating-point calculations
+                            across platforms?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="strict">strict</button>
+                            <button class="option-btn" data-answer="strictfp">strictfp</button>
+                            <button class="option-btn" data-answer="precise">precise</button>
+                            <button class="option-btn" data-answer="float">float</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: strictfp</div>
+                            <p>The strictfp (strict floating-point) keyword ensures that floating-point calculations
+                                produce identical results on all platforms. It can be applied to classes, interfaces, or
+                                methods. This is rarely used in modern Java.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 27 -->
+                    <div class="question" data-correct-answer="native" data-question-id="q27">
+                        <p class="question-text">Q27. Which keyword indicates that a method is implemented in
+                            platform-specific code (C/C++)?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="external">external</button>
+                            <button class="option-btn" data-answer="native">native</button>
+                            <button class="option-btn" data-answer="foreign">foreign</button>
+                            <button class="option-btn" data-answer="jni">jni</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: native</div>
+                            <p>The native keyword indicates that a method is implemented in platform-specific code
+                                (usually C or C++) using JNI (Java Native Interface). Native methods have no body in
+                                Java and are declared with a semicolon. Example: public native void nativeMethod();</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 28 -->
+                    <div class="question" data-correct-answer="assert" data-question-id="q28">
+                        <p class="question-text">Q28. Which keyword is used for debugging to test assumptions in code?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="test">test</button>
+                            <button class="option-btn" data-answer="assert">assert</button>
+                            <button class="option-btn" data-answer="verify">verify</button>
+                            <button class="option-btn" data-answer="check">check</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: assert</div>
+                            <p>The assert keyword is used to test assumptions during development. If the assertion
+                                fails, an AssertionError is thrown. Assertions can be enabled/disabled at runtime with
+                                -ea/-da flags. Example: assert x > 0 : "x must be positive";</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 29 -->
+                    <div class="question" data-correct-answer="No, they are reserved but not used"
+                        data-question-id="q29">
+                        <p class="question-text">Q29. Are 'goto' and 'const' valid keywords in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Yes, they are fully functional">Yes, they are fully
+                                functional</button>
+                            <button class="option-btn" data-answer="No, they are reserved but not used">No, they are
+                                reserved but not used</button>
+                            <button class="option-btn" data-answer="Only goto is valid">Only goto is valid</button>
+                            <button class="option-btn" data-answer="Only const is valid">Only const is valid</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: No, they are reserved but not used</div>
+                            <p>'goto' and 'const' are reserved keywords in Java but are not used. They cannot be used as
+                                identifiers. Java reserves them to prevent confusion for programmers coming from C/C++.
+                                Use 'final' instead of 'const' for constants.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 30 -->
+                    <div class="question" data-correct-answer="package" data-question-id="q30">
+                        <p class="question-text">Q30. Which keyword is used to declare a package in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="namespace">namespace</button>
+                            <button class="option-btn" data-answer="package">package</button>
+                            <button class="option-btn" data-answer="module">module</button>
+                            <button class="option-btn" data-answer="import">import</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: package</div>
+                            <p>The package keyword is used to declare a package at the beginning of a Java file.
+                                Packages organize classes into namespaces and provide access protection. Example:
+                                package com.example.myapp; The package statement must be the first statement in the
+                                file.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quiz Results -->
+                <div class="content-section" id="quizResults" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="results-summary">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
+                        </div>
+                        <div class="performance-message" id="performanceMessage"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake
+                            Quiz</button>
+                        <a class="md-button md-button--secondary" href="../theory/java-keywords.html">📚 Review
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/java-keywords.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/java-keywords.html">
+                            📚 Back to Theory
+                        </a>
+                        <a class="md-button md-button--secondary" href="../programs/java-keywords.html">
+                            💻 View Programs
+                        </a>
+                        <a class="md-button md-button--primary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> Control Flow Statements &amp; Loops
+                                <br />Master if-else, switch, for, while, do-while loops, and control flow mechanisms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
-
+    <script src="../assets/js/docs-style.js"></script>
     <script src="../assets/js/mcq.js"></script>
-    <script>
-        // Quiz questions for Java Keywords
-        const quizQuestions = [
-            // Section 1: Introduction to Keywords (Questions 1-3)
-            {
-                id: 1,
-                question: "What are Java keywords?",
-                options: [
-                    "User-defined identifiers for variables",
-                    "Reserved words with predefined meanings in Java",
-                    "Comments that explain code",
-                    "Special characters used in Java"
-                ],
-                answerIndex: 1,
-                explanation: "Keywords are reserved words that have predefined, special meanings in Java. They cannot be used as identifiers (variable names, method names, etc.) and form the fundamental syntax of the language."
-            },
-            {
-                id: 2,
-                question: "Can you use a keyword as a variable name?",
-                options: [
-                    "Yes, if you use camelCase",
-                    "Yes, if you capitalize it",
-                    "No, it will cause a compilation error",
-                    "Yes, but only in methods"
-                ],
-                answerIndex: 2,
-                explanation: "Keywords are reserved and cannot be used as identifiers. Attempting to use a keyword as a variable name (e.g., int class = 5;) will result in a compilation error."
-            },
-            {
-                id: 3,
-                question: "Which of the following is NOT a valid Java keyword?",
-                options: [
-                    "static",
-                    "final",
-                    "String",
-                    "abstract"
-                ],
-                answerIndex: 2,
-                explanation: "String is a class name, not a keyword. Keywords include static, final, abstract, etc. String starts with uppercase because it's a class, while keywords are always lowercase."
-            },
-
-            // Section 2: Access Modifiers (Questions 4-7)
-            {
-                id: 4,
-                question: "Which access modifier provides the widest accessibility?",
-                options: [
-                    "private",
-                    "protected",
-                    "default (no modifier)",
-                    "public"
-                ],
-                answerIndex: 3,
-                explanation: "public provides the widest accessibility - members can be accessed from anywhere (any class, any package). The order from most to least restrictive is: private → default → protected → public."
-            },
-            {
-                id: 5,
-                question: "What is the accessibility of a private member?",
-                options: [
-                    "Only within the same class",
-                    "Within the same package",
-                    "Within subclasses only",
-                    "Everywhere"
-                ],
-                answerIndex: 0,
-                explanation: "private members are only accessible within the same class. This is the most restrictive access level and is used for encapsulation to hide internal implementation details."
-            },
-            {
-                id: 6,
-                question: "Which access modifier allows access in the same package and subclasses?",
-                options: [
-                    "public",
-                    "private",
-                    "protected",
-                    "default"
-                ],
-                answerIndex: 2,
-                explanation: "protected allows access within the same package AND in subclasses (even if they're in different packages). It's commonly used for members that should be accessible to child classes."
-            },
-            {
-                id: 7,
-                question: "What is the default access modifier if none is specified?",
-                options: [
-                    "public",
-                    "private",
-                    "protected",
-                    "package-private (default)"
-                ],
-                answerIndex: 3,
-                explanation: "If no access modifier is specified, the default is package-private (also called default access). Members are accessible only within the same package, not from other packages."
-            },
-
-            // Section 3: Non-Access Modifiers (Questions 8-13)
-            {
-                id: 8,
-                question: "What does the static keyword indicate?",
-                options: [
-                    "Variable cannot be changed",
-                    "Member belongs to the class, not instances",
-                    "Method cannot be overridden",
-                    "Class cannot be instantiated"
-                ],
-                answerIndex: 1,
-                explanation: "static means the member belongs to the class itself, not to individual objects. Static members are shared across all instances and can be accessed without creating an object."
-            },
-            {
-                id: 9,
-                question: "What does the final keyword do when applied to a variable?",
-                options: [
-                    "Makes it accessible everywhere",
-                    "Makes it a constant (cannot be reassigned)",
-                    "Makes it thread-safe",
-                    "Makes it private"
-                ],
-                answerIndex: 1,
-                explanation: "final makes a variable a constant - once assigned, it cannot be reassigned. For reference types, the reference cannot change, but the object itself can still be modified."
-            },
-            {
-                id: 10,
-                question: "Can you create an instance of an abstract class?",
-                options: [
-                    "Yes, using the new keyword",
-                    "Yes, but only in the same package",
-                    "No, abstract classes cannot be instantiated",
-                    "Yes, if it has a constructor"
-                ],
-                answerIndex: 2,
-                explanation: "Abstract classes cannot be instantiated directly. They serve as templates for concrete subclasses. You must create an instance of a concrete subclass that implements all abstract methods."
-            },
-            {
-                id: 11,
-                question: "What is the purpose of the synchronized keyword?",
-                options: [
-                    "To make code run faster",
-                    "To ensure thread safety by allowing only one thread at a time",
-                    "To synchronize with database",
-                    "To make methods static"
-                ],
-                answerIndex: 1,
-                explanation: "synchronized ensures thread safety by allowing only one thread to execute a method/block at a time. This prevents race conditions when multiple threads access shared resources."
-            },
-            {
-                id: 12,
-                question: "What does the volatile keyword ensure?",
-                options: [
-                    "Variable cannot be changed",
-                    "Variable is thread-safe for all operations",
-                    "Variable changes are visible to all threads immediately",
-                    "Variable is stored on heap"
-                ],
-                answerIndex: 2,
-                explanation: "volatile ensures that variable reads/writes go directly to main memory, making changes visible to all threads immediately. However, it doesn't guarantee atomicity for compound operations."
-            },
-            {
-                id: 13,
-                question: "Which combination of modifiers is INVALID?",
-                options: [
-                    "public static final",
-                    "private final",
-                    "abstract final",
-                    "public static"
-                ],
-                answerIndex: 2,
-                explanation: "abstract final is invalid because they contradict each other. abstract requires subclasses to override, while final prevents overriding. This combination makes no logical sense."
-            },
-
-            // Section 4: Control Flow (Questions 14-17)
-            {
-                id: 14,
-                question: "What is the difference between break and continue?",
-                options: [
-                    "break exits the loop, continue skips current iteration",
-                    "break skips iteration, continue exits loop",
-                    "They are the same",
-                    "break is for loops, continue is for switch"
-                ],
-                answerIndex: 0,
-                explanation: "break exits the entire loop immediately. continue skips the rest of the current iteration and moves to the next iteration. break stops the loop, continue just skips one iteration."
-            },
-            {
-                id: 15,
-                question: "Can you use break outside of a loop or switch statement?",
-                options: [
-                    "Yes, anywhere in a method",
-                    "Yes, but only in if statements",
-                    "No, it will cause a compilation error",
-                    "Yes, but only in static methods"
-                ],
-                answerIndex: 2,
-                explanation: "break can only be used inside loops (for, while, do-while) or switch statements. Using it elsewhere causes a compilation error: 'break outside switch or loop'."
-            },
-            {
-                id: 16,
-                question: "What does the return keyword do?",
-                options: [
-                    "Exits the current loop",
-                    "Skips to next iteration",
-                    "Exits the method and optionally returns a value",
-                    "Restarts the method"
-                ],
-                answerIndex: 2,
-                explanation: "return exits the entire method immediately and optionally returns a value to the caller. For void methods, use 'return;' without a value. For non-void methods, return the appropriate type."
-            },
-            {
-                id: 17,
-                question: "In a switch statement, what happens if you omit the break keyword?",
-                options: [
-                    "Compilation error",
-                    "Fall-through occurs (executes next cases)",
-                    "Switch exits automatically",
-                    "Runtime exception"
-                ],
-                answerIndex: 1,
-                explanation: "Without break, fall-through occurs - execution continues to the next case even if it doesn't match. This is sometimes intentional but often a bug. Always use break unless you specifically want fall-through."
-            },
-
-            // Section 5: Class and Object Keywords (Questions 18-22)
-            {
-                id: 18,
-                question: "What does the 'this' keyword refer to?",
-                options: [
-                    "The parent class",
-                    "The current object instance",
-                    "A static variable",
-                    "The main method"
-                ],
-                answerIndex: 1,
-                explanation: "this refers to the current object instance. It's used to distinguish instance variables from parameters, call other constructors, enable method chaining, and pass the current object as a parameter."
-            },
-            {
-                id: 19,
-                question: "What does the 'super' keyword refer to?",
-                options: [
-                    "The current class",
-                    "The child class",
-                    "The parent class",
-                    "A static method"
-                ],
-                answerIndex: 2,
-                explanation: "super refers to the parent (superclass). It's used to call parent constructors, access parent methods (especially when overridden), and access parent variables (when shadowed)."
-            },
-            {
-                id: 20,
-                question: "What does the 'new' keyword do?",
-                options: [
-                    "Creates a new method",
-                    "Creates a new object in heap memory",
-                    "Creates a new class",
-                    "Creates a new variable"
-                ],
-                answerIndex: 1,
-                explanation: "new creates a new object instance in heap memory and returns a reference to it. It allocates memory, calls the constructor, and initializes the object."
-            },
-            {
-                id: 21,
-                question: "What does 'instanceof' check?",
-                options: [
-                    "If two objects are equal",
-                    "If an object is an instance of a specific class or interface",
-                    "If a class has instances",
-                    "If a variable is static"
-                ],
-                answerIndex: 1,
-                explanation: "instanceof checks if an object is an instance of a specific class or implements a specific interface. Returns true if the object is of that type or a subtype, false otherwise."
-            },
-            {
-                id: 22,
-                question: "Can a class extend multiple classes in Java?",
-                options: [
-                    "Yes, using extends keyword",
-                    "Yes, using implements keyword",
-                    "No, Java supports single inheritance only",
-                    "Yes, but only abstract classes"
-                ],
-                answerIndex: 2,
-                explanation: "Java supports single inheritance - a class can extend only ONE parent class. However, a class can implement multiple interfaces. This prevents the diamond problem of multiple inheritance."
-            },
-
-            // Section 6: Exception Handling (Questions 23-26)
-            {
-                id: 23,
-                question: "What is the difference between 'throw' and 'throws'?",
-                options: [
-                    "They are the same",
-                    "throw is used in method body, throws is used in method signature",
-                    "throw is for checked exceptions, throws is for unchecked",
-                    "throws is deprecated"
-                ],
-                answerIndex: 1,
-                explanation: "throw is used inside a method body to actually throw an exception. throws is used in the method signature to declare that the method might throw specific exceptions. Example: void method() throws IOException { throw new IOException(); }"
-            },
-            {
-                id: 24,
-                question: "Does the finally block always execute?",
-                options: [
-                    "Yes, always",
-                    "No, only if exception occurs",
-                    "No, only if no exception occurs",
-                    "Yes, except if JVM exits or thread is killed"
-                ],
-                answerIndex: 3,
-                explanation: "finally almost always executes, even if there's a return statement in try/catch. The only exceptions are: JVM exits (System.exit()), thread is killed, or infinite loop in try/catch."
-            },
-            {
-                id: 25,
-                question: "Can you have a try block without a catch block?",
-                options: [
-                    "No, catch is mandatory",
-                    "Yes, if you have a finally block",
-                    "Yes, but only for unchecked exceptions",
-                    "No, you need both catch and finally"
-                ],
-                answerIndex: 1,
-                explanation: "You can have try-finally without catch. This is useful when you want cleanup code (finally) but don't want to handle the exception - you let it propagate to the caller."
-            },
-            {
-                id: 26,
-                question: "What type of exceptions must be declared with 'throws'?",
-                options: [
-                    "All exceptions",
-                    "Only RuntimeException",
-                    "Checked exceptions (except RuntimeException and Error)",
-                    "Only custom exceptions"
-                ],
-                answerIndex: 2,
-                explanation: "Checked exceptions (those extending Exception but not RuntimeException) must be either caught or declared with throws. Unchecked exceptions (RuntimeException and Error) don't require declaration."
-            },
-
-            // Section 7: Best Practices and Code Analysis (Question 27)
-            {
-                id: 27,
-                question: "Which is the best practice for access modifiers?",
-                options: [
-                    "Make everything public for easy access",
-                    "Use private by default, only make public what's necessary",
-                    "Use protected for all variables",
-                    "Never use private"
-                ],
-                answerIndex: 1,
-                explanation: "Best practice: Use the most restrictive access level that makes sense (principle of least privilege). Start with private and only make more accessible if needed. This ensures encapsulation and reduces coupling."
-            }
-        ];
-
-        // Initialize the quiz when page loads
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-
-            // Make quizManager globally accessible for retake button
-            window.quizManager = quizManager;
-        });
-    </script>
 </body>
 
 </html>

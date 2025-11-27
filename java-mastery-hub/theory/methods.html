@@ -1,119 +1,527 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Methods - Theory - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Methods, their types, and usage</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Theory</span>
-                <span>/</span>
-                <span>Methods</span>
-            </div>
-        </div>
-
-        <!-- Section 1: What is a Method? -->
-        <div class="content-section">
-            <h2>🔧 What is a Method in Java?</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
-            <p>
-                Imagine you have a <strong>toy robot</strong> that can do different tasks. Instead of telling the robot
-                every single step each time, you teach it a <strong>special command</strong> like "clean room" or "make
-                breakfast". Once taught, you just say the command and the robot does all the steps!
-            </p>
-            <p>
-                A <strong>method</strong> is exactly like that command! It's a <strong>small machine</strong> or
-                <strong>task</strong> that does a specific job. You give it a name, and whenever you call that name,
-                it does its job!
-            </p>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE</div>
-                <p>
-                    Think of methods like buttons on a remote control. Each button (method) does something specific:
-                    power on, change channel, increase volume. You just press the button, and it does its job!
-                </p>
-            </div>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of a method like a <strong>vending machine function</strong>:
-            </p>
-            <ul>
-                <li><strong>Input:</strong> You insert money and press a button (parameters)</li>
-                <li><strong>Process:</strong> The machine does its work internally (method body)</li>
-                <li><strong>Output:</strong> You get your snack (return value)</li>
-            </ul>
-            <p>
-                Or think of a <strong>recipe</strong>:
-            </p>
-            <ul>
-                <li><strong>Method Name:</strong> "Make Chocolate Cake"</li>
-                <li><strong>Inputs (Parameters):</strong> Flour, eggs, sugar, chocolate</li>
-                <li><strong>Steps (Method Body):</strong> Mix, bake, cool, frost</li>
-                <li><strong>Output (Return):</strong> A delicious chocolate cake!</li>
-            </ul>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                A <strong>method</strong> is a block of code that performs a specific task and can be called/invoked
-                from other parts of the program. Methods are fundamental to code reusability, modularity, and
-                organization in Java.
-            </p>
-
-            <h4>Why Use Methods?</h4>
-            <ul>
-                <li><strong>Code Reusability:</strong> Write once, use many times</li>
-                <li><strong>Modularity:</strong> Break complex problems into smaller, manageable pieces</li>
-                <li><strong>Maintainability:</strong> Easier to update and debug</li>
-                <li><strong>Readability:</strong> Makes code self-documenting with meaningful names</li>
-                <li><strong>Abstraction:</strong> Hide implementation details, expose only what's necessary</li>
-            </ul>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Real-World Method</div>
-                <p>
-                    <strong>Banking System:</strong> Instead of writing withdrawal logic everywhere, create a
-                    <code>withdraw(amount)</code> method. Now you can call it from ATM, mobile app, or bank counter -
-                    all using the same reliable code!
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 2: Method Syntax and Structure -->
-        <div class="content-section">
-            <h2>📝 Method Syntax and Structure</h2>
-
-            <h3>Complete Method Anatomy</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Complete method syntax
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Methods, their types, and usage</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Theory</a></li>
+                        <li>Methods, their types, and usage</li>
+                    </ul>
+                </div>
+                <!-- Section 1: What is a Method? -->
+                <div class="content-section">
+                    <h2>🔧 What is a Method in Java?</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+                    <p>
+                        Imagine you have a <strong>toy robot</strong> that can do different tasks. Instead of telling
+                        the robot
+                        every single step each time, you teach it a <strong>special command</strong> like "clean room"
+                        or "make
+                        breakfast". Once taught, you just say the command and the robot does all the steps!
+                    </p>
+                    <p>
+                        A <strong>method</strong> is exactly like that command! It's a <strong>small machine</strong> or
+                        <strong>task</strong> that does a specific job. You give it a name, and whenever you call that
+                        name,
+                        it does its job!
+                    </p>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE</div>
+                        <div class="admonition-content">
+                            <p>
+                                Think of methods like buttons on a remote control. Each button (method) does something
+                                specific:
+                                power on, change channel, increase volume. You just press the button, and it does its
+                                job!
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of a method like a <strong>vending machine function</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Input:</strong> You insert money and press a button (parameters)</li>
+                        <li><strong>Process:</strong> The machine does its work internally (method body)</li>
+                        <li><strong>Output:</strong> You get your snack (return value)</li>
+                    </ul>
+                    <p>
+                        Or think of a <strong>recipe</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Method Name:</strong> "Make Chocolate Cake"</li>
+                        <li><strong>Inputs (Parameters):</strong> Flour, eggs, sugar, chocolate</li>
+                        <li><strong>Steps (Method Body):</strong> Mix, bake, cool, frost</li>
+                        <li><strong>Output (Return):</strong> A delicious chocolate cake!</li>
+                    </ul>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        A <strong>method</strong> is a block of code that performs a specific task and can be
+                        called/invoked
+                        from other parts of the program. Methods are fundamental to code reusability, modularity, and
+                        organization in Java.
+                    </p>
+                    <h4>Why Use Methods?</h4>
+                    <ul>
+                        <li><strong>Code Reusability:</strong> Write once, use many times</li>
+                        <li><strong>Modularity:</strong> Break complex problems into smaller, manageable pieces</li>
+                        <li><strong>Maintainability:</strong> Easier to update and debug</li>
+                        <li><strong>Readability:</strong> Makes code self-documenting with meaningful names</li>
+                        <li><strong>Abstraction:</strong> Hide implementation details, expose only what's necessary</li>
+                    </ul>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Real-World Method</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Banking System:</strong> Instead of writing withdrawal logic everywhere, create
+                                a
+                                <code>withdraw(amount)</code> method. Now you can call it from ATM, mobile app, or bank
+                                counter -
+                                all using the same reliable code!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2: Method Syntax and Structure -->
+                <div class="content-section">
+                    <h2>📝 Method Syntax and Structure</h2>
+                    <h3>Complete Method Anatomy</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Complete method syntax
 accessModifier returnType methodName(parameterList) {
     // Method body - code to execute
     // Optional return statement
@@ -125,63 +533,56 @@ public int add(int a, int b) {
     return sum;
 }
 </code></pre>
-
-            <h4>Method Components Explained:</h4>
-
-            <h5>1. Access Modifier (Optional)</h5>
-            <ul>
-                <li><strong>public:</strong> Accessible from anywhere</li>
-                <li><strong>private:</strong> Only within the same class</li>
-                <li><strong>protected:</strong> Within same package and subclasses</li>
-                <li><strong>default (no modifier):</strong> Within same package only</li>
-            </ul>
-
-            <h5>2. Return Type (Mandatory)</h5>
-            <ul>
-                <li><strong>void:</strong> Method doesn't return any value</li>
-                <li><strong>int, double, String, etc.:</strong> Method returns a value of that type</li>
-                <li><strong>Custom types:</strong> Can return objects (Car, Student, etc.)</li>
-            </ul>
-
-            <h5>3. Method Name (Mandatory)</h5>
-            <ul>
-                <li>Should be a verb or verb phrase (calculate, getName, displayInfo)</li>
-                <li>Follow camelCase convention (first word lowercase, rest capitalized)</li>
-                <li>Should be descriptive and meaningful</li>
-            </ul>
-
-            <h5>4. Parameter List (Optional)</h5>
-            <ul>
-                <li>Input values the method needs to do its job</li>
-                <li>Can have zero or more parameters</li>
-                <li>Each parameter has a type and name: <code>(int age, String name)</code></li>
-            </ul>
-
-            <h5>5. Method Body (Mandatory)</h5>
-            <ul>
-                <li>Code that executes when method is called</li>
-                <li>Enclosed in curly braces <code>{ }</code></li>
-                <li>Contains the logic and operations</li>
-            </ul>
-
-            <h5>6. Return Statement (Conditional)</h5>
-            <ul>
-                <li>Required if return type is NOT void</li>
-                <li>Returns a value to the caller</li>
-                <li>Syntax: <code>return value;</code></li>
-                <li>Immediately exits the method</li>
-            </ul>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Return Type Mismatch</div>
-                <p>
-                    If a method declares a return type, it MUST return that type! If you declare <code>int
+                    <h4>Method Components Explained:</h4>
+                    <h5>1. Access Modifier (Optional)</h5>
+                    <ul>
+                        <li><strong>public:</strong> Accessible from anywhere</li>
+                        <li><strong>private:</strong> Only within the same class</li>
+                        <li><strong>protected:</strong> Within same package and subclasses</li>
+                        <li><strong>default (no modifier):</strong> Within same package only</li>
+                    </ul>
+                    <h5>2. Return Type (Mandatory)</h5>
+                    <ul>
+                        <li><strong>void:</strong> Method doesn't return any value</li>
+                        <li><strong>int, double, String, etc.:</strong> Method returns a value of that type</li>
+                        <li><strong>Custom types:</strong> Can return objects (Car, Student, etc.)</li>
+                    </ul>
+                    <h5>3. Method Name (Mandatory)</h5>
+                    <ul>
+                        <li>Should be a verb or verb phrase (calculate, getName, displayInfo)</li>
+                        <li>Follow camelCase convention (first word lowercase, rest capitalized)</li>
+                        <li>Should be descriptive and meaningful</li>
+                    </ul>
+                    <h5>4. Parameter List (Optional)</h5>
+                    <ul>
+                        <li>Input values the method needs to do its job</li>
+                        <li>Can have zero or more parameters</li>
+                        <li>Each parameter has a type and name: <code>(int age, String name)</code></li>
+                    </ul>
+                    <h5>5. Method Body (Mandatory)</h5>
+                    <ul>
+                        <li>Code that executes when method is called</li>
+                        <li>Enclosed in curly braces <code>{ }</code></li>
+                        <li>Contains the logic and operations</li>
+                    </ul>
+                    <h5>6. Return Statement (Conditional)</h5>
+                    <ul>
+                        <li>Required if return type is NOT void</li>
+                        <li>Returns a value to the caller</li>
+                        <li>Syntax: <code>return value;</code></li>
+                        <li>Immediately exits the method</li>
+                    </ul>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Return Type Mismatch</div>
+                        <div class="admonition-content">
+                            <p>
+                                If a method declares a return type, it MUST return that type! If you declare <code>int
                         calculate()</code>, you cannot return a String or double. Compiler will throw an error!
-                </p>
-            </div>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// Examples of different method structures:
+                            </p>
+                        </div>
+                    </div>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// Examples of different method structures:
 
 // 1. No parameters, no return
 void greet() {
@@ -203,36 +604,34 @@ int multiply(int x, int y) {
     return x * y;
 }
 </code></pre>
-        </div>
-
-        <!-- Section 3: Types of Methods -->
-        <div class="content-section">
-            <h2>🎯 Types of Methods in Java</h2>
-
-            <h3>A. Instance Methods</h3>
-
-            <h4>Level 1: Baby Explanation</h4>
-            <p>
-                Instance methods are like <strong>personal actions</strong> each toy can do. Your red car can
-                <code>drive()</code>, your blue car can also <code>drive()</code>, but they're separate cars doing
-                their own driving!
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Think of instance methods like <strong>individual phone features</strong>. Each phone (object) can make
-                calls, send texts, take photos. Your phone's actions are separate from your friend's phone, even though
-                both have the same capabilities.
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                Instance methods belong to an object (instance) of a class. They can access instance variables and other
-                instance methods. You must create an object to call instance methods.
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Calculator {
+                </div>
+                <!-- Section 3: Types of Methods -->
+                <div class="content-section">
+                    <h2>🎯 Types of Methods in Java</h2>
+                    <h3>A. Instance Methods</h3>
+                    <h4>Level 1: Baby Explanation</h4>
+                    <p>
+                        Instance methods are like <strong>personal actions</strong> each toy can do. Your red car can
+                        <code>drive()</code>, your blue car can also <code>drive()</code>, but they're separate cars
+                        doing
+                        their own driving!
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Think of instance methods like <strong>individual phone features</strong>. Each phone (object)
+                        can make
+                        calls, send texts, take photos. Your phone's actions are separate from your friend's phone, even
+                        though
+                        both have the same capabilities.
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        Instance methods belong to an object (instance) of a class. They can access instance variables
+                        and other
+                        instance methods. You must create an object to call instance methods.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Calculator {
     int number;  // Instance variable
     
     // Instance method - operates on instance data
@@ -255,30 +654,28 @@ Calculator calc2 = new Calculator();
 calc2.setNumber(10);
 calc2.displaySquare();  // Square: 100
 </code></pre>
-
-            <h3>B. Static Methods</h3>
-
-            <h4>Level 1: Baby Explanation</h4>
-            <p>
-                Static methods are like <strong>shared tools</strong> that everyone can use without owning them. Like a
-                public playground slide - you don't need to own it, you just use it!
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Think of static methods like <strong>utility services</strong>. The electricity company's
-                <code>calculateBill()</code> method doesn't belong to any one customer - it's a shared service everyone
-                can use.
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                Static methods belong to the class itself, not to any specific object. They can be called without
-                creating an instance. They can only access static variables and other static methods directly.
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>class MathUtils {
+                    <h3>B. Static Methods</h3>
+                    <h4>Level 1: Baby Explanation</h4>
+                    <p>
+                        Static methods are like <strong>shared tools</strong> that everyone can use without owning them.
+                        Like a
+                        public playground slide - you don't need to own it, you just use it!
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Think of static methods like <strong>utility services</strong>. The electricity company's
+                        <code>calculateBill()</code> method doesn't belong to any one customer - it's a shared service
+                        everyone
+                        can use.
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        Static methods belong to the class itself, not to any specific object. They can be called
+                        without
+                        creating an instance. They can only access static variables and other static methods directly.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>class MathUtils {
     // Static method - belongs to class, not object
     static int add(int a, int b) {
         return a + b;
@@ -293,23 +690,24 @@ calc2.displaySquare();  // Square: 100
 int sum = MathUtils.add(5, 10);  // 15
 double area = MathUtils.calculateCircleArea(7);  // 153.938
 </code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - When to Use Static vs Instance</div>
-                <p>
-                    <strong>Use Static:</strong> For utility methods that don't need object state (Math.sqrt(),
-                    Arrays.sort())<br>
-                    <strong>Use Instance:</strong> When method needs to work with object-specific data (car.drive(),
-                    student.calculateGPA())
-                </p>
-            </div>
-
-            <h3>C. Parameterized vs Non-Parameterized Methods</h3>
-
-            <h4>Non-Parameterized Methods</h4>
-            <p>Methods that don't take any input parameters.</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>void greet() {
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - When to Use Static vs Instance</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Use Static:</strong> For utility methods that don't need object state
+                                (Math.sqrt(),
+                                Arrays.sort())<br />
+                                <strong>Use Instance:</strong> When method needs to work with object-specific data
+                                (car.drive(),
+                                student.calculateGPA())
+                            </p>
+                        </div>
+                    </div>
+                    <h3>C. Parameterized vs Non-Parameterized Methods</h3>
+                    <h4>Non-Parameterized Methods</h4>
+                    <p>Methods that don't take any input parameters.</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>void greet() {
     System.out.println("Hello, World!");
 }
 
@@ -317,11 +715,10 @@ int getRandomNumber() {
     return (int)(Math.random() * 100);
 }
 </code></pre>
-
-            <h4>Parameterized Methods</h4>
-            <p>Methods that accept input parameters to customize their behavior.</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>void greet(String name) {
+                    <h4>Parameterized Methods</h4>
+                    <p>Methods that accept input parameters to customize their behavior.</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>void greet(String name) {
     System.out.println("Hello, " + name + "!");
 }
 
@@ -333,29 +730,27 @@ double calculateBMI(double weight, double height) {
     return weight / (height * height);
 }
 </code></pre>
-
-            <h3>D. Recursive Methods</h3>
-
-            <h4>Level 1: Baby Explanation</h4>
-            <p>
-                A recursive method is like <strong>looking in a mirror that reflects another mirror</strong> - it keeps
-                calling itself until it reaches a stopping point!
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Think of <strong>Russian nesting dolls</strong>. You open one doll, find another inside, open that one,
-                find another... until you reach the smallest doll (base case). Then you stop!
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                A recursive method calls itself to solve a problem by breaking it into smaller sub-problems. Must have a
-                base case to prevent infinite recursion.
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// Factorial using recursion
+                    <h3>D. Recursive Methods</h3>
+                    <h4>Level 1: Baby Explanation</h4>
+                    <p>
+                        A recursive method is like <strong>looking in a mirror that reflects another mirror</strong> -
+                        it keeps
+                        calling itself until it reaches a stopping point!
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Think of <strong>Russian nesting dolls</strong>. You open one doll, find another inside, open
+                        that one,
+                        find another... until you reach the smallest doll (base case). Then you stop!
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        A recursive method calls itself to solve a problem by breaking it into smaller sub-problems.
+                        Must have a
+                        base case to prevent infinite recursion.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// Factorial using recursion
 int factorial(int n) {
     // Base case - stops recursion
     if (n == 0 || n == 1) {
@@ -371,40 +766,38 @@ int factorial(int n) {
 //              = 5 * 4 * 3 * 2 * factorial(1)
 //              = 5 * 4 * 3 * 2 * 1 = 120
 </code></pre>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Infinite Recursion</div>
-                <p>
-                    Always include a base case! Without it, the method calls itself forever, causing a
-                    StackOverflowError and crashing your program.
-                </p>
-            </div>
-
-            <h3>E. Getter and Setter Methods</h3>
-
-            <h4>Level 1: Baby Explanation</h4>
-            <p>
-                Getters are like <strong>asking to see</strong> something ("Can I see your toy?"). Setters are like
-                <strong>giving something</strong> ("Here, take this toy!").
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Think of a <strong>bank account</strong>:
-            </p>
-            <ul>
-                <li><strong>Getter:</strong> Check your balance (read-only access)</li>
-                <li><strong>Setter:</strong> Deposit money (controlled modification)</li>
-            </ul>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                Getters and setters provide controlled access to private fields, implementing encapsulation. They allow
-                validation, logging, and controlled modification of object state.
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>class Person {
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Infinite Recursion</div>
+                        <div class="admonition-content">
+                            <p>
+                                Always include a base case! Without it, the method calls itself forever, causing a
+                                StackOverflowError and crashing your program.
+                            </p>
+                        </div>
+                    </div>
+                    <h3>E. Getter and Setter Methods</h3>
+                    <h4>Level 1: Baby Explanation</h4>
+                    <p>
+                        Getters are like <strong>asking to see</strong> something ("Can I see your toy?"). Setters are
+                        like
+                        <strong>giving something</strong> ("Here, take this toy!").
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Think of a <strong>bank account</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Getter:</strong> Check your balance (read-only access)</li>
+                        <li><strong>Setter:</strong> Deposit money (controlled modification)</li>
+                    </ul>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        Getters and setters provide controlled access to private fields, implementing encapsulation.
+                        They allow
+                        validation, logging, and controlled modification of object state.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>class Person {
     private String name;  // Private - cannot access directly
     private int age;
     
@@ -415,7 +808,7 @@ int factorial(int n) {
     
     // Setter for name with validation
     public void setName(String name) {
-        if (name != null && !name.isEmpty()) {
+        if (name != null &amp;&amp; !name.isEmpty()) {
             this.name = name;
         } else {
             System.out.println("Invalid name!");
@@ -429,7 +822,7 @@ int factorial(int n) {
     
     // Setter for age with validation
     public void setAge(int age) {
-        if (age > 0 && age < 150) {
+        if (age &gt; 0 &amp;&amp; age &lt; 150) {
             this.age = age;
         } else {
             System.out.println("Invalid age!");
@@ -444,43 +837,42 @@ p.setAge(25);        // Valid
 System.out.println(p.getName());  // Alice
 p.setAge(-5);        // Invalid age! (validation prevents bad data)
 </code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Naming Convention</div>
-                <p>
-                    Getters: <code>getFieldName()</code> or <code>isFieldName()</code> for boolean<br>
-                    Setters: <code>setFieldName(value)</code><br>
-                    Example: <code>getName()</code>, <code>setName()</code>, <code>isActive()</code>
-                </p>
-            </div>
-
-            <h3>F. Utility/Helper Methods</h3>
-
-            <h4>Level 1: Baby Explanation</h4>
-            <p>
-                Helper methods are like <strong>little assistants</strong> that help the main method do its job. Like
-                having a friend help you build a LEGO castle!
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Think of <strong>cooking a meal</strong>. The main method is "prepareDinner()", but it uses helper
-                methods like "chopVegetables()", "boilWater()", "seasonMeat()".
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                Helper methods are private methods that break down complex logic into smaller, reusable pieces. They
-                improve code organization and readability.
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class EmailValidator {
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Naming Convention</div>
+                        <div class="admonition-content">
+                            <p>
+                                Getters: <code>getFieldName()</code> or <code>isFieldName()</code> for boolean<br />
+                                Setters: <code>setFieldName(value)</code><br />
+                                Example: <code>getName()</code>, <code>setName()</code>, <code>isActive()</code>
+                            </p>
+                        </div>
+                    </div>
+                    <h3>F. Utility/Helper Methods</h3>
+                    <h4>Level 1: Baby Explanation</h4>
+                    <p>
+                        Helper methods are like <strong>little assistants</strong> that help the main method do its job.
+                        Like
+                        having a friend help you build a LEGO castle!
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Think of <strong>cooking a meal</strong>. The main method is "prepareDinner()", but it uses
+                        helper
+                        methods like "chopVegetables()", "boilWater()", "seasonMeat()".
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        Helper methods are private methods that break down complex logic into smaller, reusable pieces.
+                        They
+                        improve code organization and readability.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class EmailValidator {
     
     // Public method - main functionality
     public boolean isValidEmail(String email) {
-        return hasAtSymbol(email) && 
-               hasDomain(email) && 
+        return hasAtSymbol(email) &amp;&amp; 
+               hasDomain(email) &amp;&amp; 
                hasValidLength(email);
     }
     
@@ -494,43 +886,39 @@ p.setAge(-5);        // Invalid age! (validation prevents bad data)
     }
     
     private boolean hasValidLength(String email) {
-        return email.length() >= 5 && email.length() <= 50;
+        return email.length() &gt;= 5 &amp;&amp; email.length() &lt;= 50;
     }
 }
 </code></pre>
-        </div>
-
-        <!-- Section 4: Method Type Combinations -->
-        <div class="content-section">
-            <h2>🔀 Method Type Combinations (Return Type + Input Parameters)</h2>
-
-            <p>
-                Methods can be categorized by their return type and parameter combinations. Understanding these
-                combinations helps you choose the right method signature for your needs.
-            </p>
-
-            <h3>Combination 1: No Return Type + No Input Parameters</h3>
-
-            <h4>Level 1: Baby Explanation</h4>
-            <p>
-                Like a <strong>robot that just does its thing</strong> when you press a button. No input needed, no
-                output given. Just does the job!
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Like a <strong>doorbell</strong>. You press it (call the method), it rings (does its job), but you don't
-                give it anything and it doesn't give you anything back.
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                These methods have <code>void</code> return type and empty parameter list. They perform actions but
-                don't return values or need input.
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>void greet() {
+                </div>
+                <!-- Section 4: Method Type Combinations -->
+                <div class="content-section">
+                    <h2>🔀 Method Type Combinations (Return Type + Input Parameters)</h2>
+                    <p>
+                        Methods can be categorized by their return type and parameter combinations. Understanding these
+                        combinations helps you choose the right method signature for your needs.
+                    </p>
+                    <h3>Combination 1: No Return Type + No Input Parameters</h3>
+                    <h4>Level 1: Baby Explanation</h4>
+                    <p>
+                        Like a <strong>robot that just does its thing</strong> when you press a button. No input needed,
+                        no
+                        output given. Just does the job!
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Like a <strong>doorbell</strong>. You press it (call the method), it rings (does its job), but
+                        you don't
+                        give it anything and it doesn't give you anything back.
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        These methods have <code>void</code> return type and empty parameter list. They perform actions
+                        but
+                        don't return values or need input.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>void greet() {
     System.out.println("Hello, World!");
 }
 
@@ -541,40 +929,39 @@ void displayMenu() {
 }
 
 void clearScreen() {
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i &lt; 50; i++) {
         System.out.println();
     }
 }
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Use Cases</div>
-                <p>
-                    Perfect for: Display messages, print menus, initialize settings, clear data, play sounds
-                </p>
-            </div>
-
-            <h3>Combination 2: With Return Type + With Input Parameters</h3>
-
-            <h4>Level 1: Baby Explanation</h4>
-            <p>
-                Like a <strong>magic box</strong>! You put something in (input), it does magic inside, and gives you
-                something back (output)!
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Like a <strong>calculator</strong>. You give it numbers (input), it calculates (process), and shows you
-                the answer (return value).
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                These methods accept parameters, process them, and return a result. Most common and useful method type.
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>int add(int a, int b) {
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Use Cases</div>
+                        <div class="admonition-content">
+                            <p>
+                                Perfect for: Display messages, print menus, initialize settings, clear data, play sounds
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Combination 2: With Return Type + With Input Parameters</h3>
+                    <h4>Level 1: Baby Explanation</h4>
+                    <p>
+                        Like a <strong>magic box</strong>! You put something in (input), it does magic inside, and gives
+                        you
+                        something back (output)!
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Like a <strong>calculator</strong>. You give it numbers (input), it calculates (process), and
+                        shows you
+                        the answer (return value).
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        These methods accept parameters, process them, and return a result. Most common and useful
+                        method type.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>int add(int a, int b) {
     return a + b;
 }
 
@@ -587,44 +974,43 @@ String getFullName(String firstName, String lastName) {
 }
 
 boolean isEligibleToVote(int age) {
-    return age >= 18;
+    return age &gt;= 18;
 }
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Use Cases</div>
-                <p>
-                    Perfect for: Calculations, transformations, validations, data processing, conversions
-                </p>
-            </div>
-
-            <h3>Combination 3: No Return Type + With Input Parameters</h3>
-
-            <h4>Level 1: Baby Explanation</h4>
-            <p>
-                Like <strong>telling a robot what to do</strong>. You give instructions (input), it does the task, but
-                doesn't tell you anything back.
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Like <strong>sending a text message</strong>. You provide the message and recipient (input), it sends
-                the message (action), but doesn't return anything to you.
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                These methods have <code>void</code> return type but accept parameters. They perform actions based on
-                input but don't return values.
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>void displayMessage(String message) {
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Use Cases</div>
+                        <div class="admonition-content">
+                            <p>
+                                Perfect for: Calculations, transformations, validations, data processing, conversions
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Combination 3: No Return Type + With Input Parameters</h3>
+                    <h4>Level 1: Baby Explanation</h4>
+                    <p>
+                        Like <strong>telling a robot what to do</strong>. You give instructions (input), it does the
+                        task, but
+                        doesn't tell you anything back.
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Like <strong>sending a text message</strong>. You provide the message and recipient (input), it
+                        sends
+                        the message (action), but doesn't return anything to you.
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        These methods have <code>void</code> return type but accept parameters. They perform actions
+                        based on
+                        input but don't return values.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>void displayMessage(String message) {
     System.out.println("Message: " + message);
 }
 
 void printMultiplicationTable(int number) {
-    for (int i = 1; i <= 10; i++) {
+    for (int i = 1; i &lt;= 10; i++) {
         System.out.println(number + " x " + i + " = " + (number * i));
     }
 }
@@ -634,35 +1020,35 @@ void updateAge(int newAge) {
     System.out.println("Age updated to: " + newAge);
 }
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Use Cases</div>
-                <p>
-                    Perfect for: Display operations, printing, updating state, logging, sending notifications
-                </p>
-            </div>
-
-            <h3>Combination 4: With Return Type + No Input Parameters</h3>
-
-            <h4>Level 1: Baby Explanation</h4>
-            <p>
-                Like a <strong>surprise box</strong>! You open it (call the method) and it gives you something, but you
-                didn't put anything in!
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Like <strong>checking the time</strong>. You don't give anything, but you get the current time back.
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                These methods return a value but don't need input parameters. They typically return computed values,
-                constants, or object state.
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>double getPi() {
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Use Cases</div>
+                        <div class="admonition-content">
+                            <p>
+                                Perfect for: Display operations, printing, updating state, logging, sending
+                                notifications
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Combination 4: With Return Type + No Input Parameters</h3>
+                    <h4>Level 1: Baby Explanation</h4>
+                    <p>
+                        Like a <strong>surprise box</strong>! You open it (call the method) and it gives you something,
+                        but you
+                        didn't put anything in!
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Like <strong>checking the time</strong>. You don't give anything, but you get the current time
+                        back.
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        These methods return a value but don't need input parameters. They typically return computed
+                        values,
+                        constants, or object state.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>double getPi() {
     return 3.14159;
 }
 
@@ -679,65 +1065,64 @@ boolean isWeekend() {
     return day == 6 || day == 7;  // Saturday or Sunday
 }
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Use Cases</div>
-                <p>
-                    Perfect for: Getters, constants, random values, current state, computed properties
-                </p>
-            </div>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Choosing the Right Combination</div>
-                <p>
-                    <strong>Ask yourself:</strong><br>
-                    1. Does the method need input? → Add parameters<br>
-                    2. Should it give something back? → Add return type<br>
-                    3. Just performing an action? → Use void<br>
-                    4. Calculating/retrieving a value? → Use appropriate return type
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 5: Method Overloading -->
-        <div class="content-section">
-            <h2>🔄 Method Overloading</h2>
-
-            <h3>Level 1: Baby Explanation</h3>
-            <p>
-                Method overloading is like having <strong>different sized spoons</strong> - all called "spoon", but you
-                use the small one for tea, medium for soup, and large for serving. Same name, different uses!
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of <strong>printing documents</strong>:
-            </p>
-            <ul>
-                <li>print(document) - prints one copy</li>
-                <li>print(document, 5) - prints 5 copies</li>
-                <li>print(document, 5, color) - prints 5 color copies</li>
-            </ul>
-            <p>Same action (print), but different options!</p>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                Method overloading allows multiple methods with the <strong>same name</strong> but <strong>different
-                    parameters</strong> (number, type, or order). Java determines which method to call based on the
-                arguments provided at compile-time (compile-time polymorphism).
-            </p>
-
-            <h4>Rules for Method Overloading:</h4>
-            <ul>
-                <li>✅ Methods must have the same name</li>
-                <li>✅ Methods must have different parameter lists (number, type, or order)</li>
-                <li>✅ Return type can be same or different (doesn't matter for overloading)</li>
-                <li>❌ Cannot overload by changing only return type</li>
-                <li>❌ Cannot overload by changing only access modifiers</li>
-            </ul>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Calculator {
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Use Cases</div>
+                        <div class="admonition-content">
+                            <p>
+                                Perfect for: Getters, constants, random values, current state, computed properties
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Choosing the Right Combination</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Ask yourself:</strong><br />
+                                1. Does the method need input? → Add parameters<br />
+                                2. Should it give something back? → Add return type<br />
+                                3. Just performing an action? → Use void<br />
+                                4. Calculating/retrieving a value? → Use appropriate return type
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 5: Method Overloading -->
+                <div class="content-section">
+                    <h2>🔄 Method Overloading</h2>
+                    <h3>Level 1: Baby Explanation</h3>
+                    <p>
+                        Method overloading is like having <strong>different sized spoons</strong> - all called "spoon",
+                        but you
+                        use the small one for tea, medium for soup, and large for serving. Same name, different uses!
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of <strong>printing documents</strong>:
+                    </p>
+                    <ul>
+                        <li>print(document) - prints one copy</li>
+                        <li>print(document, 5) - prints 5 copies</li>
+                        <li>print(document, 5, color) - prints 5 color copies</li>
+                    </ul>
+                    <p>Same action (print), but different options!</p>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        Method overloading allows multiple methods with the <strong>same name</strong> but
+                        <strong>different
+                            parameters</strong> (number, type, or order). Java determines which method to call based on
+                        the
+                        arguments provided at compile-time (compile-time polymorphism).
+                    </p>
+                    <h4>Rules for Method Overloading:</h4>
+                    <ul>
+                        <li>✅ Methods must have the same name</li>
+                        <li>✅ Methods must have different parameter lists (number, type, or order)</li>
+                        <li>✅ Return type can be same or different (doesn't matter for overloading)</li>
+                        <li>❌ Cannot overload by changing only return type</li>
+                        <li>❌ Cannot overload by changing only access modifiers</li>
+                    </ul>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Calculator {
     
     // Overloaded add methods - different parameter count
     int add(int a, int b) {
@@ -771,21 +1156,21 @@ calc.add(5.5, 10.5);       // Calls add(double, double) → 16.0
 calc.add("Sum: ", 100);    // Calls add(String, int) → "Sum: 100"
 calc.add(100, " items");   // Calls add(int, String) → "100 items"
 </code></pre>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Invalid Overloading</div>
-                <p>
-                    These are NOT valid overloading (will cause compilation error):<br><br>
-                    <code>int add(int a, int b) { ... }</code><br>
-                    <code>double add(int a, int b) { ... }</code> ❌ Only return type differs!<br><br>
-                    <code>public int add(int a, int b) { ... }</code><br>
-                    <code>private int add(int a, int b) { ... }</code> ❌ Only access modifier differs!
-                </p>
-            </div>
-
-            <h4>Real-World Example: Print Method Overloading</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>class Printer {
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Invalid Overloading</div>
+                        <div class="admonition-content">
+                            <p>
+                                These are NOT valid overloading (will cause compilation error):<br /><br />
+                                <code>int add(int a, int b) { ... }</code><br />
+                                <code>double add(int a, int b) { ... }</code> ❌ Only return type differs!<br /><br />
+                                <code>public int add(int a, int b) { ... }</code><br />
+                                <code>private int add(int a, int b) { ... }</code> ❌ Only access modifier differs!
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Real-World Example: Print Method Overloading</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>class Printer {
     
     void print(String message) {
         System.out.println(message);
@@ -796,7 +1181,7 @@ calc.add(100, " items");   // Calls add(int, String) → "100 items"
     }
     
     void print(String message, int copies) {
-        for (int i = 0; i < copies; i++) {
+        for (int i = 0; i &lt; copies; i++) {
             System.out.println(message);
         }
     }
@@ -815,55 +1200,53 @@ p.print(42);                         // Calls print(int)
 p.print("Important!", 3);            // Calls print(String, int)
 p.print(new String[]{"A", "B"});     // Calls print(String[])
 </code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Benefits of Overloading</div>
-                <p>
-                    1. <strong>Flexibility:</strong> Same operation, different inputs<br>
-                    2. <strong>Readability:</strong> One name instead of add1, add2, add3<br>
-                    3. <strong>Convenience:</strong> Users don't need to remember multiple names<br>
-                    4. <strong>Consistency:</strong> Similar operations have similar names
-                </p>
-            </div>
-
-            <h4>Method Overriding vs Overloading (Basic Introduction)</h4>
-            <p>
-                <strong>Overloading (Compile-time):</strong> Same class, same method name, different parameters<br>
-                <strong>Overriding (Runtime):</strong> Parent-child classes, same method signature, different
-                implementation
-            </p>
-            <p>
-                <em>Note: Method overriding will be covered in depth in the OOP Concepts topic.</em>
-            </p>
-        </div>
-
-        <!-- Section 6: Pass by Value -->
-        <div class="content-section">
-            <h2>📦 Pass by Value in Java</h2>
-
-            <h3>Level 1: Baby Explanation</h3>
-            <p>
-                When you give a toy to your friend to play with, you give them a <strong>copy</strong> of the toy, not
-                your actual toy. They can play with the copy, but your original toy stays with you!
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of <strong>photocopying a document</strong>. You give someone a photocopy. They can write on it,
-                tear it, or throw it away - but your original document remains unchanged!
-            </p>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                Java is <strong>strictly pass-by-value</strong>. When you pass a variable to a method, Java passes a
-                <strong>copy</strong> of the value, not the original variable.
-            </p>
-
-            <h4>For Primitive Types:</h4>
-            <p>A copy of the actual value is passed. Changes inside the method don't affect the original.</p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class PassByValueDemo {
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Benefits of Overloading</div>
+                        <div class="admonition-content">
+                            <p>
+                                1. <strong>Flexibility:</strong> Same operation, different inputs<br />
+                                2. <strong>Readability:</strong> One name instead of add1, add2, add3<br />
+                                3. <strong>Convenience:</strong> Users don't need to remember multiple names<br />
+                                4. <strong>Consistency:</strong> Similar operations have similar names
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Method Overriding vs Overloading (Basic Introduction)</h4>
+                    <p>
+                        <strong>Overloading (Compile-time):</strong> Same class, same method name, different
+                        parameters<br />
+                        <strong>Overriding (Runtime):</strong> Parent-child classes, same method signature, different
+                        implementation
+                    </p>
+                    <p>
+                        <em>Note: Method overriding will be covered in depth in the OOP Concepts topic.</em>
+                    </p>
+                </div>
+                <!-- Section 6: Pass by Value -->
+                <div class="content-section">
+                    <h2>📦 Pass by Value in Java</h2>
+                    <h3>Level 1: Baby Explanation</h3>
+                    <p>
+                        When you give a toy to your friend to play with, you give them a <strong>copy</strong> of the
+                        toy, not
+                        your actual toy. They can play with the copy, but your original toy stays with you!
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of <strong>photocopying a document</strong>. You give someone a photocopy. They can write
+                        on it,
+                        tear it, or throw it away - but your original document remains unchanged!
+                    </p>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        Java is <strong>strictly pass-by-value</strong>. When you pass a variable to a method, Java
+                        passes a
+                        <strong>copy</strong> of the value, not the original variable.
+                    </p>
+                    <h4>For Primitive Types:</h4>
+                    <p>A copy of the actual value is passed. Changes inside the method don't affect the original.</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class PassByValueDemo {
     
     static void modifyPrimitive(int num) {
         num = 100;  // Changes only the copy
@@ -881,16 +1264,16 @@ p.print(new String[]{"A", "B"});     // Calls print(String[])
     }
 }
 </code></pre>
-
-            <h4>For Reference Types (Objects):</h4>
-            <p>
-                A copy of the <strong>reference</strong> (memory address) is passed. Both the original and copy point to
-                the same object, so changes to the object are visible. But reassigning the reference doesn't affect the
-                original.
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>class Person {
+                    <h4>For Reference Types (Objects):</h4>
+                    <p>
+                        A copy of the <strong>reference</strong> (memory address) is passed. Both the original and copy
+                        point to
+                        the same object, so changes to the object are visible. But reassigning the reference doesn't
+                        affect the
+                        original.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>class Person {
     String name;
     
     Person(String name) {
@@ -924,48 +1307,48 @@ class ReferenceDemo {
     }
 }
 </code></pre>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - Key Understanding</div>
-                <p>
-                    <strong>Primitives:</strong> Copy of value → Original never changes<br>
-                    <strong>Objects:</strong> Copy of reference → Can modify object, but can't change what original
-                    reference points to
-                </p>
-            </div>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Visual Analogy</div>
-                <p>
-                    Think of a reference as a <strong>house address</strong>:<br>
-                    - Passing the address to someone (pass by value of reference)<br>
-                    - They can go to the house and paint it (modify object) ✅<br>
-                    - But if they write a different address on their paper, your address doesn't change ❌
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 7: Best Practices -->
-        <div class="content-section">
-            <h2>✨ Best Practices for Methods</h2>
-
-            <h3>1. Follow Naming Conventions</h3>
-            <ul>
-                <li>Use camelCase: <code>calculateTotal()</code>, not <code>CalculateTotal()</code></li>
-                <li>Start with a verb: <code>getName()</code>, <code>setAge()</code>, <code>isValid()</code></li>
-                <li>Be descriptive: <code>calculateMonthlyPayment()</code>, not <code>calc()</code></li>
-                <li>Boolean methods: Start with <code>is</code>, <code>has</code>, <code>can</code></li>
-            </ul>
-
-            <h3>2. Keep Methods Small and Focused</h3>
-            <ul>
-                <li>One method = One responsibility (Single Responsibility Principle)</li>
-                <li>If a method is too long, break it into helper methods</li>
-                <li>Aim for 10-20 lines maximum (guideline, not rule)</li>
-            </ul>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ❌ Bad - Too many responsibilities
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - Key Understanding</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Primitives:</strong> Copy of value → Original never changes<br />
+                                <strong>Objects:</strong> Copy of reference → Can modify object, but can't change what
+                                original
+                                reference points to
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Visual Analogy</div>
+                        <div class="admonition-content">
+                            <p>
+                                Think of a reference as a <strong>house address</strong>:<br />
+                                - Passing the address to someone (pass by value of reference)<br />
+                                - They can go to the house and paint it (modify object) ✅<br />
+                                - But if they write a different address on their paper, your address doesn't change ❌
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 7: Best Practices -->
+                <div class="content-section">
+                    <h2>✨ Best Practices for Methods</h2>
+                    <h3>1. Follow Naming Conventions</h3>
+                    <ul>
+                        <li>Use camelCase: <code>calculateTotal()</code>, not <code>CalculateTotal()</code></li>
+                        <li>Start with a verb: <code>getName()</code>, <code>setAge()</code>, <code>isValid()</code>
+                        </li>
+                        <li>Be descriptive: <code>calculateMonthlyPayment()</code>, not <code>calc()</code></li>
+                        <li>Boolean methods: Start with <code>is</code>, <code>has</code>, <code>can</code></li>
+                    </ul>
+                    <h3>2. Keep Methods Small and Focused</h3>
+                    <ul>
+                        <li>One method = One responsibility (Single Responsibility Principle)</li>
+                        <li>If a method is too long, break it into helper methods</li>
+                        <li>Aim for 10-20 lines maximum (guideline, not rule)</li>
+                    </ul>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ❌ Bad - Too many responsibilities
 void processOrder() {
     validateCustomer();
     checkInventory();
@@ -985,36 +1368,33 @@ void processOrder() {
     }
 }
 </code></pre>
-
-            <h3>3. Use Appropriate Access Modifiers</h3>
-            <ul>
-                <li><code>private</code> for helper methods (internal use only)</li>
-                <li><code>public</code> for API methods (external use)</li>
-                <li>Default to most restrictive, open up as needed</li>
-            </ul>
-
-            <h3>4. Validate Parameters</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>void setAge(int age) {
-    if (age < 0 || age > 150) {
+                    <h3>3. Use Appropriate Access Modifiers</h3>
+                    <ul>
+                        <li><code>private</code> for helper methods (internal use only)</li>
+                        <li><code>public</code> for API methods (external use)</li>
+                        <li>Default to most restrictive, open up as needed</li>
+                    </ul>
+                    <h3>4. Validate Parameters</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>void setAge(int age) {
+    if (age &lt; 0 || age &gt; 150) {
         throw new IllegalArgumentException("Invalid age: " + age);
     }
     this.age = age;
 }
 
 void processPayment(double amount) {
-    if (amount <= 0) {
+    if (amount &lt;= 0) {
         throw new IllegalArgumentException("Amount must be positive");
     }
     // Process payment
 }
 </code></pre>
-
-            <h3>5. Return Early for Clarity</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// ❌ Bad - Nested conditions
+                    <h3>5. Return Early for Clarity</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// ❌ Bad - Nested conditions
 boolean isEligible(int age, boolean hasLicense) {
-    if (age >= 18) {
+    if (age &gt;= 18) {
         if (hasLicense) {
             return true;
         } else {
@@ -1027,20 +1407,18 @@ boolean isEligible(int age, boolean hasLicense) {
 
 // ✅ Good - Early returns
 boolean isEligible(int age, boolean hasLicense) {
-    if (age < 18) return false;
+    if (age &lt; 18) return false;
     if (!hasLicense) return false;
     return true;
 }
 </code></pre>
-
-            <h3>6. Avoid Too Many Parameters</h3>
-            <ul>
-                <li>Maximum 3-4 parameters is ideal</li>
-                <li>More than 5? Consider creating a parameter object</li>
-            </ul>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ Bad - Too many parameters
+                    <h3>6. Avoid Too Many Parameters</h3>
+                    <ul>
+                        <li>Maximum 3-4 parameters is ideal</li>
+                        <li>More than 5? Consider creating a parameter object</li>
+                    </ul>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ Bad - Too many parameters
 void createUser(String name, String email, int age, String address, 
                 String phone, String city, String country) {
     // ...
@@ -1056,10 +1434,9 @@ void createUser(UserData userData) {
     // ...
 }
 </code></pre>
-
-            <h3>7. Document Complex Methods</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>/**
+                    <h3>7. Document Complex Methods</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>/**
  * Calculates the monthly EMI for a loan.
  * 
  * @param principal The loan amount
@@ -1069,7 +1446,7 @@ void createUser(UserData userData) {
  * @throws IllegalArgumentException if any parameter is invalid
  */
 double calculateEMI(double principal, double rate, int years) {
-    if (principal <= 0 || rate < 0 || years <= 0) {
+    if (principal &lt;= 0 || rate &lt; 0 || years &lt;= 0) {
         throw new IllegalArgumentException("Invalid loan parameters");
     }
     
@@ -1080,27 +1457,26 @@ double calculateEMI(double principal, double rate, int years) {
            (Math.pow(1 + monthlyRate, months) - 1);
 }
 </code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Method Design Checklist</div>
-                <p>
-                    ✅ Does it have a clear, single purpose?<br>
-                    ✅ Is the name descriptive?<br>
-                    ✅ Are parameters validated?<br>
-                    ✅ Is it testable?<br>
-                    ✅ Is it reusable?<br>
-                    ✅ Does it follow DRY (Don't Repeat Yourself)?
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 8: Common Mistakes -->
-        <div class="content-section">
-            <h2>⚠️ Common Mistakes with Methods</h2>
-
-            <h3>1. Forgetting to Return a Value</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ Compilation Error!
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Method Design Checklist</div>
+                        <div class="admonition-content">
+                            <p>
+                                ✅ Does it have a clear, single purpose?<br />
+                                ✅ Is the name descriptive?<br />
+                                ✅ Are parameters validated?<br />
+                                ✅ Is it testable?<br />
+                                ✅ Is it reusable?<br />
+                                ✅ Does it follow DRY (Don't Repeat Yourself)?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 8: Common Mistakes -->
+                <div class="content-section">
+                    <h2>⚠️ Common Mistakes with Methods</h2>
+                    <h3>1. Forgetting to Return a Value</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ Compilation Error!
 int add(int a, int b) {
     int sum = a + b;
     // Forgot to return!
@@ -1112,26 +1488,24 @@ int add(int a, int b) {
     return sum;
 }
 </code></pre>
-
-            <h3>2. Returning from void Method</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ Error - void methods can't return values
+                    <h3>2. Returning from void Method</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ Error - void methods can't return values
 void display() {
     return 5;  // Compilation error!
 }
 
 // ✅ Correct - void methods can use return to exit early
 void display(int value) {
-    if (value < 0) {
+    if (value &lt; 0) {
         return;  // Exit early
     }
     System.out.println(value);
 }
 </code></pre>
-
-            <h3>3. Not Using Method Return Value</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ Wasteful - calculates but doesn't use result
+                    <h3>3. Not Using Method Return Value</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ Wasteful - calculates but doesn't use result
 int calculateTotal(int a, int b) {
     return a + b;
 }
@@ -1142,10 +1516,9 @@ calculateTotal(5, 10);  // Result is lost!
 int total = calculateTotal(5, 10);
 System.out.println("Total: " + total);
 </code></pre>
-
-            <h3>4. Modifying Parameters Expecting Original to Change</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ Won't work - primitives are pass-by-value
+                    <h3>4. Modifying Parameters Expecting Original to Change</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ Won't work - primitives are pass-by-value
 void increment(int num) {
     num++;  // Only modifies copy
 }
@@ -1163,10 +1536,9 @@ int value = 5;
 value = increment(value);
 System.out.println(value);  // 6
 </code></pre>
-
-            <h3>5. Infinite Recursion</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ StackOverflowError - no base case!
+                    <h3>5. Infinite Recursion</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ StackOverflowError - no base case!
 int factorial(int n) {
     return n * factorial(n - 1);  // Never stops!
 }
@@ -1179,10 +1551,9 @@ int factorial(int n) {
     return n * factorial(n - 1);
 }
 </code></pre>
-
-            <h3>6. Calling Non-Static Method from Static Context</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>class Example {
+                    <h3>6. Calling Non-Static Method from Static Context</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>class Example {
     void instanceMethod() {
         System.out.println("Instance method");
     }
@@ -1199,10 +1570,9 @@ int factorial(int n) {
     }
 }
 </code></pre>
-
-            <h3>7. Method Name Conflicts with Variables</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ Confusing - method and variable have same name
+                    <h3>7. Method Name Conflicts with Variables</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// ❌ Confusing - method and variable have same name
 int count = 10;
 
 int count() {
@@ -1216,47 +1586,51 @@ int getCount() {
     return count;
 }
 </code></pre>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Common Pitfalls Summary</div>
-                <p>
-                    1. Missing return statements<br>
-                    2. Type mismatches in return<br>
-                    3. Ignoring return values<br>
-                    4. Expecting pass-by-reference behavior<br>
-                    5. Missing base case in recursion<br>
-                    6. Static/instance context confusion<br>
-                    7. Poor naming causing conflicts
-                </p>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Common Pitfalls Summary</div>
+                        <div class="admonition-content">
+                            <p>
+                                1. Missing return statements<br />
+                                2. Type mismatches in return<br />
+                                3. Ignoring return values<br />
+                                4. Expecting pass-by-reference behavior<br />
+                                5. Missing base case in recursion<br />
+                                6. Static/instance context confusion<br />
+                                7. Poor naming causing conflicts
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--secondary" href="../programs/methods.html">
+                            💻 View Programs
+                        </a>
+                        <a class="md-button md-button--primary" href="../mcq/methods.html">
+                            ✅ Take Quiz
+                        </a>
+                        <a class="md-button md-button--primary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> OOPs Concepts in Depth
+                                <br />Deep dive into inheritance, polymorphism, encapsulation, abstraction, and
+                                interfaces.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../programs/methods.html" class="btn btn-secondary">
-                    💻 View Programs
-                </a>
-                <a href="../mcq/methods.html" class="btn btn-success">
-                    ✅ Take Quiz
-                </a>
-                <a href="../index.html" class="btn btn-primary">
-                    🏠 Back to Home
-                </a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> OOPs Concepts in Depth
-                    <br>Deep dive into inheritance, polymorphism, encapsulation, abstraction, and interfaces.
-                </p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

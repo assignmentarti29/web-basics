@@ -1,319 +1,1024 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>JDBC - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>JDBC - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>JDBC</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Test Your JDBC Knowledge</h2>
-            <p>This quiz contains 30 questions covering all aspects of JDBC including connections, statements, CRUD
-                operations, transactions, SQL injection prevention, and best practices.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Take your time and read each question carefully. Pay special attention to code output questions and
-                    security-related topics. Aim for at least 80% to demonstrate mastery!</p>
-            </div>
-        </div>
-
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
-            </div>
-        </div>
-
-        <div id="quizContainer" class="content-section"></div>
-
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
                 </div>
-                <div id="performanceMessage" class="performance-message"></div>
             </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>JDBC - Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>JDBC - Quiz</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Test Your JDBC Knowledge</h2>
+                    <p>This quiz contains 30 questions covering all aspects of JDBC including connections, statements,
+                        CRUD
+                        operations, transactions, SQL injection prevention, and best practices.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Take your time and read each question carefully. Pay special attention to code output
+                                questions and
+                                security-related topics. Aim for at least 80% to demonstrate mastery!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
+                    </div>
+                </div>
+                <div class="content-section" id="quizContainer">
+                    <!-- Question 1 -->
+                    <div class="question" data-correct-answer="Java Database Connectivity" data-question-id="q1">
+                        <p class="question-text">Q1. What does JDBC stand for?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Java Data Base Connectivity">Java Data Base
+                                Connectivity</button>
+                            <button class="option-btn" data-answer="Java Database Connectivity">Java Database
+                                Connectivity</button>
+                            <button class="option-btn" data-answer="Java Data Connectivity">Java Data
+                                Connectivity</button>
+                            <button class="option-btn" data-answer="Java Database Connection">Java Database
+                                Connection</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Java Database Connectivity</div>
+                            <p>JDBC stands for Java Database Connectivity, which is a standard Java API for
+                                database-independent connectivity between the Java programming language and a wide range
+                                of databases.</p>
+                        </div>
+                    </div>
 
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/jdbc.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/jdbc.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="java.sql" data-question-id="q2">
+                        <p class="question-text">Q2. Which package contains the core JDBC classes and interfaces?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="javax.sql">javax.sql</button>
+                            <button class="option-btn" data-answer="java.jdbc">java.jdbc</button>
+                            <button class="option-btn" data-answer="java.sql">java.sql</button>
+                            <button class="option-btn" data-answer="java.db">java.db</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: java.sql</div>
+                            <p>The `java.sql` package contains the core JDBC API, including `Connection`, `Statement`,
+                                `ResultSet`, and `DriverManager`.</p>
+                        </div>
+                    </div>
 
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/jdbc.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../programs/jdbc.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="DriverManager" data-question-id="q3">
+                        <p class="question-text">Q3. Which class is responsible for managing a list of database drivers?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Driver">Driver</button>
+                            <button class="option-btn" data-answer="Connection">Connection</button>
+                            <button class="option-btn" data-answer="DriverManager">DriverManager</button>
+                            <button class="option-btn" data-answer="DataSource">DataSource</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: DriverManager</div>
+                            <p>`DriverManager` is the basic service for managing a set of JDBC drivers. It attempts to
+                                locate a suitable driver from the loaded drivers.</p>
+                        </div>
+                    </div>
 
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">🎉 Final Topic Complete!</div>
-                <p><strong>Congratulations!</strong> You've completed all 12 core Java topics. Advanced topics coming
-                    soon!</p>
+                    <!-- Question 4 -->
+                    <div class="question" data-correct-answer="Type 4" data-question-id="q4">
+                        <p class="question-text">Q4. Which type of JDBC driver is known as the "Thin Driver" and
+                            converts JDBC calls directly into the vendor-specific database protocol?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Type 1">Type 1</button>
+                            <button class="option-btn" data-answer="Type 2">Type 2</button>
+                            <button class="option-btn" data-answer="Type 3">Type 3</button>
+                            <button class="option-btn" data-answer="Type 4">Type 4</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Type 4</div>
+                            <p>Type 4 drivers (Native-Protocol/All-Java Driver) convert JDBC calls directly into the
+                                vendor-specific database protocol. They are written entirely in Java and are
+                                platform-independent.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="Connection" data-question-id="q5">
+                        <p class="question-text">Q5. Which interface represents a session with a specific database?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Session">Session</button>
+                            <button class="option-btn" data-answer="Statement">Statement</button>
+                            <button class="option-btn" data-answer="Connection">Connection</button>
+                            <button class="option-btn" data-answer="Driver">Driver</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Connection</div>
+                            <p>The `Connection` interface represents a session with a specific database. SQL statements
+                                are executed and results are returned within the context of a connection.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="PreparedStatement" data-question-id="q6">
+                        <p class="question-text">Q6. Which interface is used to execute precompiled SQL statements?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Statement">Statement</button>
+                            <button class="option-btn" data-answer="PreparedStatement">PreparedStatement</button>
+                            <button class="option-btn" data-answer="CallableStatement">CallableStatement</button>
+                            <button class="option-btn" data-answer="CompiledStatement">CompiledStatement</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: PreparedStatement</div>
+                            <p>`PreparedStatement` is used to execute precompiled SQL statements. It is more efficient
+                                for repeated execution and prevents SQL injection.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="ResultSet" data-question-id="q7">
+                        <p class="question-text">Q7. Which interface represents the result set of a database query?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Result">Result</button>
+                            <button class="option-btn" data-answer="RowSet">RowSet</button>
+                            <button class="option-btn" data-answer="ResultSet">ResultSet</button>
+                            <button class="option-btn" data-answer="Table">Table</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ResultSet</div>
+                            <p>A `ResultSet` object maintains a cursor pointing to its current row of data. It provides
+                                methods to retrieve column values from the current row.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question" data-correct-answer="CallableStatement" data-question-id="q8">
+                        <p class="question-text">Q8. Which interface is used to execute stored procedures?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Statement">Statement</button>
+                            <button class="option-btn" data-answer="PreparedStatement">PreparedStatement</button>
+                            <button class="option-btn" data-answer="CallableStatement">CallableStatement</button>
+                            <button class="option-btn" data-answer="ProcedureStatement">ProcedureStatement</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: CallableStatement</div>
+                            <p>`CallableStatement` is used to execute SQL stored procedures.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="executeQuery()" data-question-id="q9">
+                        <p class="question-text">Q9. Which method is used to execute a SELECT statement?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="execute()">execute()</button>
+                            <button class="option-btn" data-answer="executeUpdate()">executeUpdate()</button>
+                            <button class="option-btn" data-answer="executeQuery()">executeQuery()</button>
+                            <button class="option-btn" data-answer="executeSelect()">executeSelect()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: executeQuery()</div>
+                            <p>`executeQuery()` is used to execute statements that return a single `ResultSet` object,
+                                typically SELECT statements.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="executeUpdate()" data-question-id="q10">
+                        <p class="question-text">Q10. Which method is used to execute INSERT, UPDATE, or DELETE
+                            statements?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="execute()">execute()</button>
+                            <button class="option-btn" data-answer="executeUpdate()">executeUpdate()</button>
+                            <button class="option-btn" data-answer="executeQuery()">executeQuery()</button>
+                            <button class="option-btn" data-answer="executeBatch()">executeBatch()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: executeUpdate()</div>
+                            <p>`executeUpdate()` is used for SQL statements that return a row count (INSERT, UPDATE,
+                                DELETE) or nothing (DDL statements).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer="Class.forName()" data-question-id="q11">
+                        <p class="question-text">Q11. Which method is commonly used to register a JDBC driver class
+                            explicitly?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Driver.register()">Driver.register()</button>
+                            <button class="option-btn" data-answer="Class.forName()">Class.forName()</button>
+                            <button class="option-btn"
+                                data-answer="DriverManager.registerDriver()">DriverManager.registerDriver()</button>
+                            <button class="option-btn" data-answer="System.loadLibrary()">System.loadLibrary()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Class.forName()</div>
+                            <p>`Class.forName("com.mysql.cj.jdbc.Driver")` is the traditional way to load and register a
+                                JDBC driver. In modern JDBC (4.0+), this is often automatic via SPI.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="setAutoCommit(false)" data-question-id="q12">
+                        <p class="question-text">Q12. How do you disable auto-commit mode to manage transactions
+                            manually?</p>
+                        <div class="options">
+                            <button class="option-btn"
+                                data-answer="connection.setAutoCommit(false)">connection.setAutoCommit(false)</button>
+                            <button class="option-btn"
+                                data-answer="connection.commit(false)">connection.commit(false)</button>
+                            <button class="option-btn"
+                                data-answer="connection.setTransaction(false)">connection.setTransaction(false)</button>
+                            <button class="option-btn"
+                                data-answer="connection.disableAutoCommit()">connection.disableAutoCommit()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: setAutoCommit(false)</div>
+                            <p>By default, new connections are in auto-commit mode. Calling `setAutoCommit(false)`
+                                allows you to group multiple statements into a single transaction.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="commit()" data-question-id="q13">
+                        <p class="question-text">Q13. Which method is used to save changes made in the current
+                            transaction?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="save()">save()</button>
+                            <button class="option-btn" data-answer="persist()">persist()</button>
+                            <button class="option-btn" data-answer="commit()">commit()</button>
+                            <button class="option-btn" data-answer="flush()">flush()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: commit()</div>
+                            <p>`commit()` makes all changes made since the previous commit/rollback permanent and
+                                releases any database locks currently held by the Connection.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question" data-correct-answer="rollback()" data-question-id="q14">
+                        <p class="question-text">Q14. Which method is used to undo changes made in the current
+                            transaction?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="undo()">undo()</button>
+                            <button class="option-btn" data-answer="rollback()">rollback()</button>
+                            <button class="option-btn" data-answer="cancel()">cancel()</button>
+                            <button class="option-btn" data-answer="revert()">revert()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: rollback()</div>
+                            <p>`rollback()` undoes all changes made in the current transaction and releases any database
+                                locks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="Batch Processing" data-question-id="q15">
+                        <p class="question-text">Q15. What feature allows executing a group of SQL statements together
+                            for performance?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Transaction Management">Transaction
+                                Management</button>
+                            <button class="option-btn" data-answer="Batch Processing">Batch Processing</button>
+                            <button class="option-btn" data-answer="Stored Procedures">Stored Procedures</button>
+                            <button class="option-btn" data-answer="Connection Pooling">Connection Pooling</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Batch Processing</div>
+                            <p>Batch processing allows you to group related SQL statements into a batch and submit them
+                                with a single call to the database, improving performance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="addBatch()" data-question-id="q16">
+                        <p class="question-text">Q16. Which method is used to add a SQL command to the current batch?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="add()">add()</button>
+                            <button class="option-btn" data-answer="addToBatch()">addToBatch()</button>
+                            <button class="option-btn" data-answer="addBatch()">addBatch()</button>
+                            <button class="option-btn" data-answer="append()">append()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: addBatch()</div>
+                            <p>`addBatch()` adds the given SQL command to the current list of commands for the Statement
+                                object.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="next()" data-question-id="q17">
+                        <p class="question-text">Q17. Which method moves the cursor to the next row in a ResultSet?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="moveNext()">moveNext()</button>
+                            <button class="option-btn" data-answer="next()">next()</button>
+                            <button class="option-btn" data-answer="forward()">forward()</button>
+                            <button class="option-btn" data-answer="hasNext()">hasNext()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: next()</div>
+                            <p>`next()` moves the cursor forward one row from its current position. It returns `true` if
+                                the new current row is valid; `false` if there are no more rows.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="SQLException" data-question-id="q18">
+                        <p class="question-text">Q18. Which checked exception is thrown by most JDBC methods?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="DatabaseException">DatabaseException</button>
+                            <button class="option-btn" data-answer="JDBCException">JDBCException</button>
+                            <button class="option-btn" data-answer="SQLException">SQLException</button>
+                            <button class="option-btn" data-answer="DataAccessException">DataAccessException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: SQLException</div>
+                            <p>`SQLException` is the general exception thrown when a database access error or other
+                                errors occur.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question" data-correct-answer="PreparedStatement" data-question-id="q19">
+                        <p class="question-text">Q19. Which is the best defense against SQL Injection attacks in JDBC?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Input Validation">Input Validation</button>
+                            <button class="option-btn" data-answer="PreparedStatement">PreparedStatement</button>
+                            <button class="option-btn" data-answer="Stored Procedures">Stored Procedures</button>
+                            <button class="option-btn" data-answer="Escaping Characters">Escaping Characters</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: PreparedStatement</div>
+                            <p>Using `PreparedStatement` with parameterized queries is the most effective way to prevent
+                                SQL injection, as the database treats parameters as data, not executable code.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="DataSource" data-question-id="q20">
+                        <p class="question-text">Q20. Which interface is preferred over DriverManager for obtaining
+                            connections in enterprise applications?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="ConnectionFactory">ConnectionFactory</button>
+                            <button class="option-btn" data-answer="Driver">Driver</button>
+                            <button class="option-btn" data-answer="DataSource">DataSource</button>
+                            <button class="option-btn" data-answer="ConnectionPool">ConnectionPool</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: DataSource</div>
+                            <p>`DataSource` is the preferred way to get a connection. It can provide connection pooling
+                                and distributed transaction support.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="Connection Pooling" data-question-id="q21">
+                        <p class="question-text">Q21. What technique is used to reuse database connections to improve
+                            performance?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Connection Caching">Connection Caching</button>
+                            <button class="option-btn" data-answer="Connection Reuse">Connection Reuse</button>
+                            <button class="option-btn" data-answer="Connection Pooling">Connection Pooling</button>
+                            <button class="option-btn" data-answer="Connection Sharing">Connection Sharing</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Connection Pooling</div>
+                            <p>Connection pooling maintains a cache of database connections so that they can be reused
+                                when future requests to the database are required, avoiding the overhead of establishing
+                                a new connection.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question" data-correct-answer="TYPE_SCROLL_INSENSITIVE" data-question-id="q22">
+                        <p class="question-text">Q22. Which ResultSet type allows the cursor to move both forward and
+                            backward?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="TYPE_FORWARD_ONLY">TYPE_FORWARD_ONLY</button>
+                            <button class="option-btn"
+                                data-answer="TYPE_SCROLL_INSENSITIVE">TYPE_SCROLL_INSENSITIVE</button>
+                            <button class="option-btn" data-answer="TYPE_READ_ONLY">TYPE_READ_ONLY</button>
+                            <button class="option-btn" data-answer="TYPE_STATIC">TYPE_STATIC</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: TYPE_SCROLL_INSENSITIVE</div>
+                            <p>`TYPE_SCROLL_INSENSITIVE` (and `TYPE_SCROLL_SENSITIVE`) allows the cursor to move forward
+                                and backward, and also to jump to a specific row.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question" data-correct-answer="CONCUR_UPDATABLE" data-question-id="q23">
+                        <p class="question-text">Q23. Which concurrency mode allows updates to the ResultSet to be
+                            reflected in the database?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="CONCUR_READ_ONLY">CONCUR_READ_ONLY</button>
+                            <button class="option-btn" data-answer="CONCUR_UPDATABLE">CONCUR_UPDATABLE</button>
+                            <button class="option-btn" data-answer="CONCUR_WRITE_ONLY">CONCUR_WRITE_ONLY</button>
+                            <button class="option-btn" data-answer="CONCUR_DYNAMIC">CONCUR_DYNAMIC</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: CONCUR_UPDATABLE</div>
+                            <p>`CONCUR_UPDATABLE` allows changes made to the `ResultSet` object (using update methods)
+                                to be saved to the underlying database.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question" data-correct-answer="DatabaseMetaData" data-question-id="q24">
+                        <p class="question-text">Q24. Which interface provides comprehensive information about the
+                            database as a whole?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="ResultSetMetaData">ResultSetMetaData</button>
+                            <button class="option-btn" data-answer="DatabaseMetaData">DatabaseMetaData</button>
+                            <button class="option-btn" data-answer="ConnectionMetaData">ConnectionMetaData</button>
+                            <button class="option-btn" data-answer="DriverMetaData">DriverMetaData</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: DatabaseMetaData</div>
+                            <p>`DatabaseMetaData` provides information about the database, such as table names, column
+                                names, supported features, and version information.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question" data-correct-answer="ResultSetMetaData" data-question-id="q25">
+                        <p class="question-text">Q25. Which interface provides information about the types and
+                            properties of the columns in a ResultSet?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="DatabaseMetaData">DatabaseMetaData</button>
+                            <button class="option-btn" data-answer="ResultSetMetaData">ResultSetMetaData</button>
+                            <button class="option-btn" data-answer="RowMetaData">RowMetaData</button>
+                            <button class="option-btn" data-answer="ColumnMetaData">ColumnMetaData</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ResultSetMetaData</div>
+                            <p>`ResultSetMetaData` can be used to get information about the types and properties of the
+                                columns in a `ResultSet` object.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 26 -->
+                    <div class="question" data-correct-answer="close()" data-question-id="q26">
+                        <p class="question-text">Q26. What is the most important step to do in a finally block when
+                            using JDBC?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="commit()">commit()</button>
+                            <button class="option-btn" data-answer="rollback()">rollback()</button>
+                            <button class="option-btn" data-answer="close()">close()</button>
+                            <button class="option-btn" data-answer="log()">log()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: close()</div>
+                            <p>It is crucial to close JDBC resources (`ResultSet`, `Statement`, `Connection`) in a
+                                `finally` block (or try-with-resources) to prevent resource leaks.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 27 -->
+                    <div class="question" data-correct-answer="JDBC-ODBC Bridge" data-question-id="q27">
+                        <p class="question-text">Q27. What is the Type 1 JDBC driver also known as?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Native API Driver">Native API Driver</button>
+                            <button class="option-btn" data-answer="Network Protocol Driver">Network Protocol
+                                Driver</button>
+                            <button class="option-btn" data-answer="JDBC-ODBC Bridge">JDBC-ODBC Bridge</button>
+                            <button class="option-btn" data-answer="Thin Driver">Thin Driver</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: JDBC-ODBC Bridge</div>
+                            <p>The Type 1 driver translates JDBC calls into ODBC calls. It is generally considered
+                                obsolete and was removed in Java 8.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 28 -->
+                    <div class="question" data-correct-answer="setFetchSize()" data-question-id="q28">
+                        <p class="question-text">Q28. Which method can be used to give the JDBC driver a hint as to the
+                            number of rows that should be fetched from the database?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="setMaxRows()">setMaxRows()</button>
+                            <button class="option-btn" data-answer="setFetchSize()">setFetchSize()</button>
+                            <button class="option-btn" data-answer="setBatchSize()">setBatchSize()</button>
+                            <button class="option-btn" data-answer="setRowLimit()">setRowLimit()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: setFetchSize()</div>
+                            <p>`setFetchSize()` gives the JDBC driver a hint as to the number of rows that should be
+                                fetched from the database when more rows are needed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 29 -->
+                    <div class="question" data-correct-answer="Savepoint" data-question-id="q29">
+                        <p class="question-text">Q29. Which interface allows you to set a point within a transaction to
+                            which you can later roll back?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Checkpoint">Checkpoint</button>
+                            <button class="option-btn" data-answer="Savepoint">Savepoint</button>
+                            <button class="option-btn" data-answer="RestorePoint">RestorePoint</button>
+                            <button class="option-btn" data-answer="Mark">Mark</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Savepoint</div>
+                            <p>The `Savepoint` interface allows you to set a savepoint within a transaction, enabling
+                                partial rollbacks to that specific point.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 30 -->
+                    <div class="question" data-correct-answer="getGeneratedKeys()" data-question-id="q30">
+                        <p class="question-text">Q30. Which method is used to retrieve auto-generated keys after an
+                            INSERT statement?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="getKeys()">getKeys()</button>
+                            <button class="option-btn" data-answer="getGeneratedKeys()">getGeneratedKeys()</button>
+                            <button class="option-btn" data-answer="getAutoKeys()">getAutoKeys()</button>
+                            <button class="option-btn" data-answer="getLastId()">getLastId()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: getGeneratedKeys()</div>
+                            <p>`getGeneratedKeys()` returns a `ResultSet` containing the auto-generated keys created as
+                                a result of executing a `Statement`.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section" id="quizResults" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="results-summary">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+                        </div>
+                        <div class="performance-message" id="performanceMessage"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake
+                            Quiz</button>
+                        <a class="md-button md-button--secondary" href="../theory/jdbc.html">📚 Review Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/jdbc.html">💻 View Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                </div>
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/jdbc.html">📚 Back to Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/jdbc.html">💻 View Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">🎉 Final Topic Complete!</div>
+                        <div class="admonition-content">
+                            <p><strong>Congratulations!</strong> You've completed all 12 core Java topics. Advanced
+                                topics coming
+                                soon!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
-
+    <script src="../assets/js/docs-style.js"></script>
     <script src="../assets/js/mcq.js"></script>
-    <script>
-        const quizQuestions = [
-            {
-                id: 1,
-                question: "What does JDBC stand for?",
-                options: ["Java Database Connection", "Java Database Connectivity", "Java Data Base Control", "Java Direct Base Connection"],
-                answerIndex: 1,
-                explanation: "JDBC stands for Java Database Connectivity. It is an API that defines how a client may access a database."
-            },
-            {
-                id: 2,
-                question: "Which package contains JDBC classes and interfaces?",
-                options: ["java.jdbc", "java.sql", "java.database", "java.db"],
-                answerIndex: 1,
-                explanation: "The java.sql package contains all the JDBC classes and interfaces like Connection, Statement, ResultSet, etc."
-            },
-            {
-                id: 3,
-                question: "Which JDBC driver type is pure Java and platform-independent?",
-                options: ["Type 1", "Type 2", "Type 3", "Type 4"],
-                answerIndex: 3,
-                explanation: "Type 4 (Thin Driver) is pure Java, converts JDBC calls directly to database protocol, and is platform-independent."
-            },
-            {
-                id: 4,
-                question: "Which method is used to establish a database connection?",
-                options: ["Connection.getConnection()", "DriverManager.getConnection()", "Database.connect()", "JDBC.connect()"],
-                answerIndex: 1,
-                explanation: "DriverManager.getConnection(url, user, password) is used to establish a connection to the database."
-            },
-            {
-                id: 5,
-                question: "Which interface is used to execute SQL queries?",
-                options: ["Query", "Statement", "Executor", "SQLRunner"],
-                answerIndex: 1,
-                explanation: "The Statement interface (and its subinterfaces PreparedStatement and CallableStatement) is used to execute SQL queries."
-            },
-            {
-                id: 6,
-                question: "Which method executes a SELECT query?",
-                options: ["executeQuery()", "executeUpdate()", "execute()", "runQuery()"],
-                answerIndex: 0,
-                explanation: "executeQuery() is used for SELECT statements and returns a ResultSet. executeUpdate() is for INSERT, UPDATE, DELETE."
-            },
-            {
-                id: 7,
-                question: "Which method is used for INSERT, UPDATE, or DELETE operations?",
-                options: ["executeQuery()", "executeUpdate()", "executeDML()", "runUpdate()"],
-                answerIndex: 1,
-                explanation: "executeUpdate() is used for DML statements (INSERT, UPDATE, DELETE) and DDL statements. It returns the number of rows affected."
-            },
-            {
-                id: 8,
-                question: "What does ResultSet represent?",
-                options: ["Database connection", "SQL query", "Query results", "Database table"],
-                answerIndex: 2,
-                explanation: "ResultSet represents the result set of a database query. It contains rows returned by a SELECT statement."
-            },
-            {
-                id: 9,
-                question: "Which method moves the cursor to the next row in ResultSet?",
-                options: ["next()", "moveNext()", "forward()", "advance()"],
-                answerIndex: 0,
-                explanation: "The next() method moves the cursor forward one row and returns true if the new row is valid."
-            },
-            {
-                id: 10,
-                question: "Which statement type is recommended to prevent SQL injection?",
-                options: ["Statement", "PreparedStatement", "CallableStatement", "DynamicStatement"],
-                answerIndex: 1,
-                explanation: "PreparedStatement uses parameterized queries which prevent SQL injection by treating user input as data, not SQL code."
-            },
-            {
-                id: 11,
-                question: "What is the placeholder symbol in PreparedStatement?",
-                options: ["$", "?", "#", "@"],
-                answerIndex: 1,
-                explanation: "The question mark (?) is used as a placeholder in PreparedStatement. Values are set using setXxx() methods."
-            },
-            {
-                id: 12,
-                question: "Which statement is used to call stored procedures?",
-                options: ["Statement", "PreparedStatement", "CallableStatement", "ProcedureStatement"],
-                answerIndex: 2,
-                explanation: "CallableStatement is used to execute stored procedures in the database."
-            },
-            {
-                id: 13,
-                question: "What is the default auto-commit mode in JDBC?",
-                options: ["false", "true", "null", "depends on database"],
-                answerIndex: 1,
-                explanation: "By default, auto-commit is enabled (true). Each SQL statement is automatically committed after execution."
-            },
-            {
-                id: 14,
-                question: "Which method disables auto-commit to start a transaction?",
-                options: ["setAutoCommit(false)", "startTransaction()", "beginTransaction()", "disableCommit()"],
-                answerIndex: 0,
-                explanation: "con.setAutoCommit(false) disables auto-commit mode, allowing you to group multiple statements into a transaction."
-            },
-            {
-                id: 15,
-                question: "Which method is used to save changes in a transaction?",
-                options: ["save()", "commit()", "persist()", "saveChanges()"],
-                answerIndex: 1,
-                explanation: "commit() permanently saves all changes made since the last commit or rollback."
-            },
-            {
-                id: 16,
-                question: "Which method undoes changes in a transaction?",
-                options: ["undo()", "rollback()", "revert()", "cancel()"],
-                answerIndex: 1,
-                explanation: "rollback() undoes all changes made in the current transaction and restores the previous state."
-            },
-            {
-                id: 17,
-                question: "What does ACID stand for in database transactions?",
-                options: ["Atomicity, Consistency, Isolation, Durability", "Automatic, Consistent, Isolated, Durable", "Atomic, Complete, Independent, Definite", "All, Complete, Isolated, Definite"],
-                answerIndex: 0,
-                explanation: "ACID stands for Atomicity (all or nothing), Consistency (valid state), Isolation (no interference), and Durability (permanent changes)."
-            },
-            {
-                id: 18,
-                question: "Which method adds a statement to a batch?",
-                options: ["add()", "addBatch()", "batch()", "addStatement()"],
-                answerIndex: 1,
-                explanation: "addBatch() adds a SQL statement to the current batch. executeBatch() executes all batched statements."
-            },
-            {
-                id: 19,
-                question: "What does executeBatch() return?",
-                options: ["int", "boolean", "int[]", "ResultSet"],
-                answerIndex: 2,
-                explanation: "executeBatch() returns an int array where each element represents the update count for each statement in the batch."
-            },
-            {
-                id: 20,
-                question: "Which is the correct JDBC URL format for MySQL?",
-                options: ["jdbc:mysql:localhost:3306/mydb", "jdbc:mysql://localhost:3306/mydb", "mysql://localhost:3306/mydb", "jdbc://mysql:localhost:3306/mydb"],
-                answerIndex: 1,
-                explanation: "The correct format is jdbc:mysql://hostname:port/database. For example: jdbc:mysql://localhost:3306/mydb"
-            },
-            {
-                id: 21,
-                question: "What happens if you don't close a database connection?",
-                options: ["Nothing", "Memory leak", "Connection pool exhaustion", "Both B and C"],
-                answerIndex: 3,
-                explanation: "Not closing connections leads to memory leaks and eventually exhausts the connection pool, causing 'Too many connections' errors."
-            },
-            {
-                id: 22,
-                question: "Which is the best way to close JDBC resources?",
-                options: ["finally block", "try-with-resources", "close() method", "All are equally good"],
-                answerIndex: 1,
-                explanation: "try-with-resources (Java 7+) is the best way as it automatically closes resources even if exceptions occur."
-            },
-            {
-                id: 23,
-                question: "In what order should JDBC resources be closed?",
-                options: ["Connection → Statement → ResultSet", "ResultSet → Statement → Connection", "Statement → ResultSet → Connection", "Any order"],
-                answerIndex: 1,
-                explanation: "Resources should be closed in reverse order of creation: ResultSet → Statement → Connection."
-            },
-            {
-                id: 24,
-                question: "What is SQL injection?",
-                options: ["A database feature", "A security vulnerability", "A JDBC method", "A SQL command"],
-                answerIndex: 1,
-                explanation: "SQL injection is a security vulnerability where malicious SQL code is inserted into application queries to manipulate the database."
-            },
-            {
-                id: 25,
-                question: "Which code is vulnerable to SQL injection?",
-                options: ["PreparedStatement with ?", "Statement with string concatenation", "CallableStatement", "All of the above"],
-                answerIndex: 1,
-                explanation: "Using Statement with string concatenation (e.g., 'SELECT * FROM users WHERE name = ' + userInput) is vulnerable to SQL injection."
-            },
-            {
-                id: 26,
-                question: "What is the purpose of connection pooling?",
-                options: ["Store passwords", "Reuse database connections", "Execute queries faster", "Backup data"],
-                answerIndex: 1,
-                explanation: "Connection pooling maintains a pool of reusable database connections, improving performance by avoiding the overhead of creating new connections."
-            },
-            {
-                id: 27,
-                question: "Which library is commonly used for connection pooling?",
-                options: ["HikariCP", "Apache DBCP", "C3P0", "All of the above"],
-                answerIndex: 3,
-                explanation: "HikariCP, Apache DBCP, and C3P0 are all popular connection pooling libraries. HikariCP is known for high performance."
-            },
-            {
-                id: 28,
-                question: "What does ResultSetMetaData provide?",
-                options: ["Query results", "Information about ResultSet structure", "Database schema", "Connection details"],
-                answerIndex: 1,
-                explanation: "ResultSetMetaData provides information about the ResultSet structure like column names, types, and count."
-            },
-            {
-                id: 29,
-                question: "Which exception is thrown for database errors?",
-                options: ["DatabaseException", "SQLException", "JDBCException", "ConnectionException"],
-                answerIndex: 1,
-                explanation: "SQLException is thrown when a database access error occurs or other errors related to JDBC operations."
-            },
-            {
-                id: 30,
-                question: "What is the output of this code?\n\nPreparedStatement pstmt = con.prepareStatement(\"INSERT INTO users VALUES (?, ?)\");\npstmt.setString(1, \"Alice\");\npstmt.setInt(2, 25);\nint result = pstmt.executeUpdate();\nSystem.out.println(result);",
-                options: ["0", "1", "2", "Exception"],
-                answerIndex: 1,
-                explanation: "executeUpdate() returns the number of rows affected. Since one row is inserted, it returns 1."
-            }
-        ];
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-            window.quizManager = quizManager;
-        });
-    </script>
 </body>
 
 </html>

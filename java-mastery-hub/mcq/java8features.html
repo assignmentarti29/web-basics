@@ -1,353 +1,1104 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Java 8+ Features - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>Java 8+ Features - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>Java 8+ Features</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Test Your Java 8+ Knowledge</h2>
-            <p>This quiz contains 35 questions covering all aspects of modern Java features including Lambda
-                expressions, Streams API, Optional, Records, Sealed Classes, Pattern Matching, and more.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Take your time and read each question carefully. Pay special attention to code output questions and
-                    feature comparison topics. Aim for at least 80% to demonstrate mastery!</p>
-            </div>
-        </div>
-
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">35</span> Questions
-            </div>
-        </div>
-
-        <div id="quizContainer" class="content-section"></div>
-
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/35</span></p>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
                 </div>
-                <div id="performanceMessage" class="performance-message"></div>
             </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Java 8+ Features - Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>Java 8+ Features - Quiz</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Test Your Java 8+ Knowledge</h2>
+                    <p>This quiz contains 35 questions covering all aspects of modern Java features including Lambda
+                        expressions, Streams API, Optional, Records, Sealed Classes, Pattern Matching, and more.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Take your time and read each question carefully. Pay special attention to code output
+                                questions and
+                                feature comparison topics. Aim for at least 80% to demonstrate mastery!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">0</span> / <span id="totalQuestions">35</span> Questions
+                    </div>
+                </div>
+                <div class="content-section" id="quizContainer">
+                    <!-- Question 1 -->
+                    <div class="question" data-correct-answer="Lambda Expression" data-question-id="q1">
+                        <p class="question-text">Q1. What feature allows you to treat functionality as a method
+                            argument, or code as data?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Method Reference">Method Reference</button>
+                            <button class="option-btn" data-answer="Lambda Expression">Lambda Expression</button>
+                            <button class="option-btn" data-answer="Stream API">Stream API</button>
+                            <button class="option-btn" data-answer="Optional Class">Optional Class</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Lambda Expression</div>
+                            <p>Lambda expressions enable you to treat functionality as a method argument, or code as
+                                data, providing a clear and concise way to represent one method interface using an
+                                expression.</p>
+                        </div>
+                    </div>
 
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/java8features.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/java8features.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="Functional Interface" data-question-id="q2">
+                        <p class="question-text">Q2. What is an interface with exactly one abstract method called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Single Interface">Single Interface</button>
+                            <button class="option-btn" data-answer="Abstract Interface">Abstract Interface</button>
+                            <button class="option-btn" data-answer="Functional Interface">Functional Interface</button>
+                            <button class="option-btn" data-answer="Lambda Interface">Lambda Interface</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Functional Interface</div>
+                            <p>A functional interface is an interface that contains exactly one abstract method. It can
+                                have any number of default or static methods.</p>
+                        </div>
+                    </div>
 
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/java8features.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../programs/java8features.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="@FunctionalInterface" data-question-id="q3">
+                        <p class="question-text">Q3. Which annotation is used to ensure an interface is a functional
+                            interface?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="@Interface">@Interface</button>
+                            <button class="option-btn" data-answer="@Functional">@Functional</button>
+                            <button class="option-btn" data-answer="@FunctionalInterface">@FunctionalInterface</button>
+                            <button class="option-btn" data-answer="@Lambda">@Lambda</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: @FunctionalInterface</div>
+                            <p>The `@FunctionalInterface` annotation is used to indicate that an interface type
+                                declaration is intended to be a functional interface.</p>
+                        </div>
+                    </div>
 
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">🚀 Next Topic Coming Soon</div>
-                <p><strong>Programming Principles & Design (SOLID, MVC, Design Patterns)</strong></p>
+                    <!-- Question 4 -->
+                    <div class="question" data-correct-answer="Stream API" data-question-id="q4">
+                        <p class="question-text">Q4. Which API is used to process collections of objects in a functional
+                            style?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Collection API">Collection API</button>
+                            <button class="option-btn" data-answer="Stream API">Stream API</button>
+                            <button class="option-btn" data-answer="IO API">IO API</button>
+                            <button class="option-btn" data-answer="NIO API">NIO API</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Stream API</div>
+                            <p>The Stream API (`java.util.stream`) is used to process sequences of elements (streams) in
+                                a functional style, supporting operations like map, filter, and reduce.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="default" data-question-id="q5">
+                        <p class="question-text">Q5. Which keyword allows interfaces to have methods with
+                            implementation?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="final">final</button>
+                            <button class="option-btn" data-answer="default">default</button>
+                            <button class="option-btn" data-answer="abstract">abstract</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: default</div>
+                            <p>The `default` keyword allows you to add new methods to interfaces with a default
+                                implementation, ensuring backward compatibility.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="Optional" data-question-id="q6">
+                        <p class="question-text">Q6. Which class is a container object which may or may not contain a
+                            non-null value?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Nullable">Nullable</button>
+                            <button class="option-btn" data-answer="Maybe">Maybe</button>
+                            <button class="option-btn" data-answer="Optional">Optional</button>
+                            <button class="option-btn" data-answer="Wrapper">Wrapper</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Optional</div>
+                            <p>`Optional` is a container object used to contain not-null objects. It is used to
+                                represent null with a type-system and avoid `NullPointerException`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="::" data-question-id="q7">
+                        <p class="question-text">Q7. What is the syntax for a method reference?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="->">-></button>
+                            <button class="option-btn" data-answer="::">::</button>
+                            <button class="option-btn" data-answer="=>">=></button>
+                            <button class="option-btn" data-answer="..">..</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ::</div>
+                            <p>Method references use the double colon `::` operator (e.g., `System.out::println`) to
+                                refer to a method without invoking it.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question" data-correct-answer="Predicate" data-question-id="q8">
+                        <p class="question-text">Q8. Which functional interface represents a boolean-valued function of
+                            one argument?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Function">Function</button>
+                            <button class="option-btn" data-answer="Supplier">Supplier</button>
+                            <button class="option-btn" data-answer="Consumer">Consumer</button>
+                            <button class="option-btn" data-answer="Predicate">Predicate</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Predicate</div>
+                            <p>`Predicate<T>` represents a predicate (boolean-valued function) of one argument. Its
+                                    functional method is `test(T t)`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="Consumer" data-question-id="q9">
+                        <p class="question-text">Q9. Which functional interface represents an operation that accepts a
+                            single input argument and returns no result?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Function">Function</button>
+                            <button class="option-btn" data-answer="Supplier">Supplier</button>
+                            <button class="option-btn" data-answer="Consumer">Consumer</button>
+                            <button class="option-btn" data-answer="Predicate">Predicate</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Consumer</div>
+                            <p>`Consumer<T>` represents an operation that accepts a single input argument and returns no
+                                    result. Its functional method is `accept(T t)`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="Supplier" data-question-id="q10">
+                        <p class="question-text">Q10. Which functional interface represents a supplier of results?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Function">Function</button>
+                            <button class="option-btn" data-answer="Supplier">Supplier</button>
+                            <button class="option-btn" data-answer="Consumer">Consumer</button>
+                            <button class="option-btn" data-answer="Predicate">Predicate</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Supplier</div>
+                            <p>`Supplier<T>` represents a supplier of results. It takes no arguments and returns a
+                                    result. Its functional method is `get()`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer="Function" data-question-id="q11">
+                        <p class="question-text">Q11. Which functional interface represents a function that accepts one
+                            argument and produces a result?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Function">Function</button>
+                            <button class="option-btn" data-answer="Supplier">Supplier</button>
+                            <button class="option-btn" data-answer="Consumer">Consumer</button>
+                            <button class="option-btn" data-answer="Predicate">Predicate</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Function</div>
+                            <p>`Function<T, R>` represents a function that accepts one argument and produces a result.
+                                    Its functional method is `apply(T t)`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="LocalDate" data-question-id="q12">
+                        <p class="question-text">Q12. Which class in the new Date and Time API represents a date without
+                            time and time-zone?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Date">Date</button>
+                            <button class="option-btn" data-answer="LocalDateTime">LocalDateTime</button>
+                            <button class="option-btn" data-answer="LocalDate">LocalDate</button>
+                            <button class="option-btn" data-answer="LocalTime">LocalTime</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: LocalDate</div>
+                            <p>`LocalDate` represents a date (year-month-day) in the ISO-8601 calendar system, such as
+                                2023-10-05.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="map()" data-question-id="q13">
+                        <p class="question-text">Q13. Which Stream operation transforms each element into another
+                            object?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="filter()">filter()</button>
+                            <button class="option-btn" data-answer="map()">map()</button>
+                            <button class="option-btn" data-answer="reduce()">reduce()</button>
+                            <button class="option-btn" data-answer="collect()">collect()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: map()</div>
+                            <p>`map()` is an intermediate operation that returns a stream consisting of the results of
+                                applying the given function to the elements of this stream.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question" data-correct-answer="filter()" data-question-id="q14">
+                        <p class="question-text">Q14. Which Stream operation returns a stream consisting of elements
+                            that match a given predicate?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="filter()">filter()</button>
+                            <button class="option-btn" data-answer="map()">map()</button>
+                            <button class="option-btn" data-answer="sorted()">sorted()</button>
+                            <button class="option-btn" data-answer="distinct()">distinct()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: filter()</div>
+                            <p>`filter()` is an intermediate operation that returns a stream consisting of the elements
+                                of this stream that match the given predicate.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="collect()" data-question-id="q15">
+                        <p class="question-text">Q15. Which Stream operation is a terminal operation that transforms the
+                            elements of the stream into a different result container, such as a List or Map?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="map()">map()</button>
+                            <button class="option-btn" data-answer="reduce()">reduce()</button>
+                            <button class="option-btn" data-answer="collect()">collect()</button>
+                            <button class="option-btn" data-answer="forEach()">forEach()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: collect()</div>
+                            <p>`collect()` is a terminal operation that performs a mutable reduction operation on the
+                                elements of the stream, often using `Collectors`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="var" data-question-id="q16">
+                        <p class="question-text">Q16. Which keyword introduced in Java 10 allows local variable type
+                            inference?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="let">let</button>
+                            <button class="option-btn" data-answer="auto">auto</button>
+                            <button class="option-btn" data-answer="var">var</button>
+                            <button class="option-btn" data-answer="dynamic">dynamic</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: var</div>
+                            <p>`var` allows the compiler to infer the type of a local variable from the initializer
+                                expression.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="record" data-question-id="q17">
+                        <p class="question-text">Q17. Which keyword introduced in Java 14 (preview) / 16 (standard) is
+                            used to create immutable data carrier classes?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="data">data</button>
+                            <button class="option-btn" data-answer="struct">struct</button>
+                            <button class="option-btn" data-answer="record">record</button>
+                            <button class="option-btn" data-answer="value">value</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: record</div>
+                            <p>Records provide a compact syntax for declaring classes which are transparent holders for
+                                shallowly immutable data.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="Text Blocks" data-question-id="q18">
+                        <p class="question-text">Q18. What feature introduced in Java 15 allows for multi-line string
+                            literals?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="String Blocks">String Blocks</button>
+                            <button class="option-btn" data-answer="Text Blocks">Text Blocks</button>
+                            <button class="option-btn" data-answer="Multi Strings">Multi Strings</button>
+                            <button class="option-btn" data-answer="Raw Strings">Raw Strings</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Text Blocks</div>
+                            <p>Text blocks allow you to write multi-line strings using triple quotes `"""`, avoiding the
+                                need for escape sequences and concatenation.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question" data-correct-answer="sealed" data-question-id="q19">
+                        <p class="question-text">Q19. Which keyword introduced in Java 15 (preview) / 17 (standard)
+                            restricts which other classes or interfaces may extend or implement a class or interface?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="final">final</button>
+                            <button class="option-btn" data-answer="sealed">sealed</button>
+                            <button class="option-btn" data-answer="restricted">restricted</button>
+                            <button class="option-btn" data-answer="closed">closed</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: sealed</div>
+                            <p>Sealed classes and interfaces restrict which other classes or interfaces may extend or
+                                implement them, providing more control over inheritance.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="Switch Expressions" data-question-id="q20">
+                        <p class="question-text">Q20. What feature allows switch statements to be used as expressions
+                            and return a value?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Enhanced Switch">Enhanced Switch</button>
+                            <button class="option-btn" data-answer="Switch Expressions">Switch Expressions</button>
+                            <button class="option-btn" data-answer="Lambda Switch">Lambda Switch</button>
+                            <button class="option-btn" data-answer="Return Switch">Return Switch</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Switch Expressions</div>
+                            <p>Switch expressions (Java 12 preview, Java 14 standard) allow `switch` to be used as an
+                                expression that evaluates to a single value, using the `->` syntax.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="Pattern Matching for instanceof" data-question-id="q21">
+                        <p class="question-text">Q21. What feature allows you to test an object's type and cast it in
+                            one step?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Type Casting">Type Casting</button>
+                            <button class="option-btn" data-answer="Smart Casting">Smart Casting</button>
+                            <button class="option-btn" data-answer="Pattern Matching for instanceof">Pattern Matching
+                                for instanceof</button>
+                            <button class="option-btn" data-answer="Auto Casting">Auto Casting</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Pattern Matching for instanceof</div>
+                            <p>Pattern Matching for `instanceof` (Java 14 preview, Java 16 standard) allows you to test
+                                if an object is an instance of a class and bind it to a variable in one step.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question" data-correct-answer="Period" data-question-id="q22">
+                        <p class="question-text">Q22. Which class in the Date and Time API represents a quantity of time
+                            in terms of years, months, and days?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Duration">Duration</button>
+                            <button class="option-btn" data-answer="Period">Period</button>
+                            <button class="option-btn" data-answer="Interval">Interval</button>
+                            <button class="option-btn" data-answer="TimeSpan">TimeSpan</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Period</div>
+                            <p>`Period` represents a date-based amount of time, such as "2 years, 3 months and 4 days".
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question" data-correct-answer="Duration" data-question-id="q23">
+                        <p class="question-text">Q23. Which class in the Date and Time API represents a quantity of time
+                            in terms of seconds and nanoseconds?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Period">Period</button>
+                            <button class="option-btn" data-answer="Duration">Duration</button>
+                            <button class="option-btn" data-answer="Instant">Instant</button>
+                            <button class="option-btn" data-answer="Time">Time</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Duration</div>
+                            <p>`Duration` represents a time-based amount of time, such as "34.5 seconds".</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question" data-correct-answer="forEach()" data-question-id="q24">
+                        <p class="question-text">Q24. Which method is used to iterate over elements in a Stream or
+                            Collection and perform an action on each element?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="iterate()">iterate()</button>
+                            <button class="option-btn" data-answer="loop()">loop()</button>
+                            <button class="option-btn" data-answer="forEach()">forEach()</button>
+                            <button class="option-btn" data-answer="each()">each()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: forEach()</div>
+                            <p>`forEach()` is a terminal operation (or method on `Iterable`) that performs an action for
+                                each element of this stream/collection.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question" data-correct-answer="reduce()" data-question-id="q25">
+                        <p class="question-text">Q25. Which Stream operation combines elements of a stream into a single
+                            result?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="map()">map()</button>
+                            <button class="option-btn" data-answer="reduce()">reduce()</button>
+                            <button class="option-btn" data-answer="filter()">filter()</button>
+                            <button class="option-btn" data-answer="combine()">combine()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: reduce()</div>
+                            <p>`reduce()` is a terminal operation that performs a reduction on the elements of the
+                                stream, using an associative accumulation function, and returns an `Optional`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 26 -->
+                    <div class="question" data-correct-answer="Parallel Stream" data-question-id="q26">
+                        <p class="question-text">Q26. What feature allows you to process stream elements concurrently
+                            using multiple threads?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Multi Stream">Multi Stream</button>
+                            <button class="option-btn" data-answer="Concurrent Stream">Concurrent Stream</button>
+                            <button class="option-btn" data-answer="Parallel Stream">Parallel Stream</button>
+                            <button class="option-btn" data-answer="Threaded Stream">Threaded Stream</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Parallel Stream</div>
+                            <p>Parallel streams allow you to execute stream operations in parallel, leveraging
+                                multi-core architectures for better performance on large datasets.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 27 -->
+                    <div class="question" data-correct-answer="java.time" data-question-id="q27">
+                        <p class="question-text">Q27. Which package contains the new Date and Time API introduced in
+                            Java 8?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="java.util">java.util</button>
+                            <button class="option-btn" data-answer="java.sql">java.sql</button>
+                            <button class="option-btn" data-answer="java.date">java.date</button>
+                            <button class="option-btn" data-answer="java.time">java.time</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: java.time</div>
+                            <p>The `java.time` package contains the new Date and Time API, which is immutable,
+                                thread-safe, and based on the ISO calendar system.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 28 -->
+                    <div class="question" data-correct-answer="orElse()" data-question-id="q28">
+                        <p class="question-text">Q28. Which Optional method returns the value if present, otherwise
+                            returns a default value?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="get()">get()</button>
+                            <button class="option-btn" data-answer="orElse()">orElse()</button>
+                            <button class="option-btn" data-answer="orElseGet()">orElseGet()</button>
+                            <button class="option-btn" data-answer="ifPresent()">ifPresent()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: orElse()</div>
+                            <p>`orElse(T other)` returns the value if present, otherwise returns `other`.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 29 -->
+                    <div class="question" data-correct-answer="orElseThrow()" data-question-id="q29">
+                        <p class="question-text">Q29. Which Optional method returns the value if present, otherwise
+                            throws an exception?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="get()">get()</button>
+                            <button class="option-btn" data-answer="orElse()">orElse()</button>
+                            <button class="option-btn" data-answer="orElseThrow()">orElseThrow()</button>
+                            <button class="option-btn" data-answer="throwIfNull()">throwIfNull()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: orElseThrow()</div>
+                            <p>`orElseThrow()` returns the contained value, if present, otherwise throws an exception to
+                                be created by the provided supplier.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 30 -->
+                    <div class="question" data-correct-answer="static" data-question-id="q30">
+                        <p class="question-text">Q30. Besides default methods, what other type of methods with
+                            implementation can interfaces have in Java 8?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="final">final</button>
+                            <button class="option-btn" data-answer="private">private</button>
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="protected">protected</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: static</div>
+                            <p>Java 8 allows static methods in interfaces. These are utility methods associated with the
+                                interface.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 31 -->
+                    <div class="question" data-correct-answer="Collectors" data-question-id="q31">
+                        <p class="question-text">Q31. Which utility class provides implementations of Collector for
+                            common reductions like toList, toSet, and joining?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Collections">Collections</button>
+                            <button class="option-btn" data-answer="Collectors">Collectors</button>
+                            <button class="option-btn" data-answer="StreamUtils">StreamUtils</button>
+                            <button class="option-btn" data-answer="Reducers">Reducers</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Collectors</div>
+                            <p>`Collectors` implements various useful reduction operations, such as accumulating
+                                elements into collections, summarizing elements according to various criteria, etc.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 32 -->
+                    <div class="question" data-correct-answer="flatMap()" data-question-id="q32">
+                        <p class="question-text">Q32. Which Stream operation is used to flatten a stream of streams into
+                            a single stream?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="map()">map()</button>
+                            <button class="option-btn" data-answer="flatten()">flatten()</button>
+                            <button class="option-btn" data-answer="flatMap()">flatMap()</button>
+                            <button class="option-btn" data-answer="merge()">merge()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: flatMap()</div>
+                            <p>`flatMap()` returns a stream consisting of the results of replacing each element of this
+                                stream with the contents of a mapped stream produced by applying the provided mapping
+                                function to each element.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 33 -->
+                    <div class="question" data-correct-answer="java.util.function" data-question-id="q33">
+                        <p class="question-text">Q33. Which package contains the built-in functional interfaces like
+                            Predicate, Consumer, and Function?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="java.util.stream">java.util.stream</button>
+                            <button class="option-btn" data-answer="java.util.function">java.util.function</button>
+                            <button class="option-btn" data-answer="java.lang.function">java.lang.function</button>
+                            <button class="option-btn" data-answer="java.functional">java.functional</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: java.util.function</div>
+                            <p>The `java.util.function` package contains general purpose functional interfaces used by
+                                the JDK.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 34 -->
+                    <div class="question" data-correct-answer="sorted()" data-question-id="q34">
+                        <p class="question-text">Q34. Which Stream operation returns a stream consisting of the elements
+                            of this stream, sorted according to natural order or a comparator?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="order()">order()</button>
+                            <button class="option-btn" data-answer="sort()">sort()</button>
+                            <button class="option-btn" data-answer="sorted()">sorted()</button>
+                            <button class="option-btn" data-answer="arrange()">arrange()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: sorted()</div>
+                            <p>`sorted()` returns a stream consisting of the elements of this stream, sorted according
+                                to natural order. `sorted(Comparator)` sorts according to the provided Comparator.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 35 -->
+                    <div class="question" data-correct-answer="distinct()" data-question-id="q35">
+                        <p class="question-text">Q35. Which Stream operation returns a stream consisting of the distinct
+                            elements (according to Object.equals(Object)) of this stream?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="unique()">unique()</button>
+                            <button class="option-btn" data-answer="distinct()">distinct()</button>
+                            <button class="option-btn" data-answer="different()">different()</button>
+                            <button class="option-btn" data-answer="single()">single()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: distinct()</div>
+                            <p>`distinct()` returns a stream consisting of the distinct elements of this stream.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section" id="quizResults" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="results-summary">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <p class="score-text">Your Score: <span id="scoreText">0/35</span></p>
+                        </div>
+                        <div class="performance-message" id="performanceMessage"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake
+                            Quiz</button>
+                        <a class="md-button md-button--secondary" href="../theory/java8features.html">📚 Review
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/java8features.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                </div>
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/java8features.html">📚 Back to
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/java8features.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">🚀 Next Topic Coming Soon</div>
+                        <div class="admonition-content">
+                            <p><strong>Programming Principles &amp; Design (SOLID, MVC, Design Patterns)</strong></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
-
+    <script src="../assets/js/docs-style.js"></script>
     <script src="../assets/js/mcq.js"></script>
-    <script>
-        const quizQuestions = [
-            {
-                id: 1,
-                question: "What is a Lambda expression in Java?",
-                options: ["A loop construct", "An anonymous function", "A class declaration", "A variable type"],
-                answerIndex: 1,
-                explanation: "A Lambda expression is an anonymous function that can be passed as an argument or stored in a variable. It enables functional programming in Java."
-            },
-            {
-                id: 2,
-                question: "Which Java version introduced Lambda expressions?",
-                options: ["Java 7", "Java 8", "Java 11", "Java 17"],
-                answerIndex: 1,
-                explanation: "Lambda expressions were introduced in Java 8 (March 2014), marking a major shift toward functional programming."
-            },
-            {
-                id: 3,
-                question: "What is a functional interface?",
-                options: ["An interface with multiple methods", "An interface with exactly one abstract method", "An interface with no methods", "An interface with only static methods"],
-                answerIndex: 1,
-                explanation: "A functional interface has exactly one abstract method. It can have default and static methods, but only one abstract method."
-            },
-            {
-                id: 4,
-                question: "Which annotation marks a functional interface?",
-                options: ["@Functional", "@FunctionalInterface", "@Lambda", "@SingleMethod"],
-                answerIndex: 1,
-                explanation: "@FunctionalInterface annotation ensures the interface has exactly one abstract method. It's optional but recommended."
-            },
-            {
-                id: 5,
-                question: "What is the output?\n\nList<Integer> nums = Arrays.asList(1, 2, 3);\nnums.forEach(n -> System.out.print(n * 2 + \" \"));",
-                options: ["1 2 3", "2 4 6", "3 6 9", "Compile error"],
-                answerIndex: 1,
-                explanation: "The Lambda multiplies each number by 2. Output: 2 4 6"
-            },
-            {
-                id: 6,
-                question: "Which is a valid method reference syntax?",
-                options: ["System.out.println()", "System.out::println", "System.out->println", "System.out.println::"],
-                answerIndex: 1,
-                explanation: "Method references use :: syntax. System.out::println is a method reference to the println method."
-            },
-            {
-                id: 7,
-                question: "What does the Stream API provide?",
-                options: ["File I/O operations", "Sequential and parallel aggregate operations", "Network streaming", "Audio streaming"],
-                answerIndex: 1,
-                explanation: "The Stream API provides a way to process sequences of elements with operations like filter, map, and reduce."
-            },
-            {
-                id: 8,
-                question: "Which is an intermediate operation in Streams?",
-                options: ["forEach()", "collect()", "filter()", "count()"],
-                answerIndex: 2,
-                explanation: "filter() is an intermediate operation (lazy). forEach(), collect(), and count() are terminal operations (eager)."
-            },
-            {
-                id: 9,
-                question: "Which is a terminal operation in Streams?",
-                options: ["map()", "filter()", "sorted()", "collect()"],
-                answerIndex: 3,
-                explanation: "collect() is a terminal operation that triggers stream processing. map(), filter(), and sorted() are intermediate operations."
-            },
-            {
-                id: 10,
-                question: "What is the output?\n\nList<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);\nint sum = nums.stream().filter(n -> n % 2 == 0).mapToInt(n -> n).sum();\nSystem.out.println(sum);",
-                options: ["6", "9", "15", "10"],
-                answerIndex: 0,
-                explanation: "Filters even numbers (2, 4) and sums them: 2 + 4 = 6"
-            },
-            {
-                id: 11,
-                question: "What is Optional used for?",
-                options: ["Optional parameters", "Avoiding NullPointerException", "Optional methods", "Optional classes"],
-                answerIndex: 1,
-                explanation: "Optional is a container that may or may not contain a non-null value. It helps avoid NullPointerException."
-            },
-            {
-                id: 12,
-                question: "Which method checks if Optional has a value?",
-                options: ["hasValue()", "isPresent()", "exists()", "contains()"],
-                answerIndex: 1,
-                explanation: "isPresent() returns true if Optional contains a value, false otherwise."
-            },
-            {
-                id: 13,
-                question: "What happens if you call get() on an empty Optional?",
-                options: ["Returns null", "Returns empty string", "Throws NoSuchElementException", "Returns default value"],
-                answerIndex: 2,
-                explanation: "Calling get() on an empty Optional throws NoSuchElementException. Use orElse() or orElseGet() instead."
-            },
-            {
-                id: 14,
-                question: "Which built-in functional interface tests a condition?",
-                options: ["Function", "Predicate", "Consumer", "Supplier"],
-                answerIndex: 1,
-                explanation: "Predicate<T> has a test(T t) method that returns boolean. It's used for testing conditions."
-            },
-            {
-                id: 15,
-                question: "Which functional interface transforms data?",
-                options: ["Predicate", "Function", "Consumer", "Supplier"],
-                answerIndex: 1,
-                explanation: "Function<T, R> has an apply(T t) method that transforms T to R. It's used for data transformation."
-            },
-            {
-                id: 16,
-                question: "What does Consumer do?",
-                options: ["Returns a value", "Tests a condition", "Accepts input and performs action", "Supplies a value"],
-                answerIndex: 2,
-                explanation: "Consumer<T> has an accept(T t) method that takes input and performs an action without returning anything."
-            },
-            {
-                id: 17,
-                question: "What does Supplier do?",
-                options: ["Accepts input", "Tests condition", "Supplies/generates a value", "Transforms data"],
-                answerIndex: 2,
-                explanation: "Supplier<T> has a get() method that supplies/generates a value without taking any input."
-            },
-            {
-                id: 18,
-                question: "When were default methods in interfaces introduced?",
-                options: ["Java 7", "Java 8", "Java 11", "Java 17"],
-                answerIndex: 1,
-                explanation: "Default methods in interfaces were introduced in Java 8 to allow interface evolution without breaking existing implementations."
-            },
-            {
-                id: 19,
-                question: "Can an interface have static methods?",
-                options: ["No, never", "Yes, since Java 8", "Yes, since Java 11", "Only in abstract classes"],
-                answerIndex: 1,
-                explanation: "Interfaces can have static methods since Java 8. They belong to the interface, not implementing classes."
-            },
-            {
-                id: 20,
-                question: "What is type erasure in Generics?",
-                options: ["Deleting types", "Runtime removal of generic type information", "Compile-time type checking", "Type conversion"],
-                answerIndex: 1,
-                explanation: "Type erasure removes generic type information at runtime. List<String> and List<Integer> become just List at runtime."
-            },
-            {
-                id: 21,
-                question: "What is auto-boxing?",
-                options: ["Automatic package creation", "Primitive to wrapper conversion", "Wrapper to primitive conversion", "Automatic casting"],
-                answerIndex: 1,
-                explanation: "Auto-boxing is automatic conversion from primitive types to their wrapper classes (e.g., int to Integer)."
-            },
-            {
-                id: 22,
-                question: "What is unboxing?",
-                options: ["Opening packages", "Wrapper to primitive conversion", "Primitive to wrapper conversion", "Type casting"],
-                answerIndex: 1,
-                explanation: "Unboxing is automatic conversion from wrapper classes to primitive types (e.g., Integer to int)."
-            },
-            {
-                id: 23,
-                question: "Which Java version introduced Records?",
-                options: ["Java 8", "Java 11", "Java 14", "Java 17"],
-                answerIndex: 2,
-                explanation: "Records were introduced as a preview feature in Java 14 and became standard in Java 16."
-            },
-            {
-                id: 24,
-                question: "Are Records mutable or immutable?",
-                options: ["Mutable", "Immutable", "Depends on declaration", "Can be both"],
-                answerIndex: 1,
-                explanation: "Records are immutable by design. All fields are final and cannot be changed after creation."
-            },
-            {
-                id: 25,
-                question: "What does a Record automatically generate?",
-                options: ["Only constructor", "Only getters", "Constructor, accessors, equals, hashCode, toString", "Nothing"],
-                answerIndex: 2,
-                explanation: "Records automatically generate constructor, accessor methods, equals(), hashCode(), and toString()."
-            },
-            {
-                id: 26,
-                question: "Which Java version introduced switch expressions?",
-                options: ["Java 8", "Java 11", "Java 14", "Java 17"],
-                answerIndex: 2,
-                explanation: "Switch expressions were introduced as a preview in Java 12 and became standard in Java 14."
-            },
-            {
-                id: 27,
-                question: "What keyword is used in switch expressions for complex blocks?",
-                options: ["return", "yield", "break", "give"],
-                answerIndex: 1,
-                explanation: "The yield keyword is used in switch expressions to return a value from a block."
-            },
-            {
-                id: 28,
-                question: "What is pattern matching for instanceof?",
-                options: ["String matching", "Combining type check and cast", "Pattern recognition", "Regular expressions"],
-                answerIndex: 1,
-                explanation: "Pattern matching for instanceof combines type checking and casting in one step, eliminating explicit casts."
-            },
-            {
-                id: 29,
-                question: "Which Java version introduced sealed classes?",
-                options: ["Java 8", "Java 11", "Java 14", "Java 17"],
-                answerIndex: 3,
-                explanation: "Sealed classes were introduced as a preview in Java 15 and became standard in Java 17."
-            },
-            {
-                id: 30,
-                question: "What do sealed classes restrict?",
-                options: ["Method access", "Field access", "Which classes can extend them", "Object creation"],
-                answerIndex: 2,
-                explanation: "Sealed classes restrict which other classes can extend them using the permits clause."
-            },
-            {
-                id: 31,
-                question: "What are text blocks delimited by?",
-                options: ["Single quotes", "Double quotes", "Triple quotes", "Backticks"],
-                answerIndex: 2,
-                explanation: "Text blocks use triple double quotes (\"\"\") as delimiters for multi-line string literals."
-            },
-            {
-                id: 32,
-                question: "Which Java version introduced the var keyword?",
-                options: ["Java 8", "Java 9", "Java 10", "Java 11"],
-                answerIndex: 2,
-                explanation: "Local variable type inference (var keyword) was introduced in Java 10."
-            },
-            {
-                id: 33,
-                question: "Can var be used for method parameters?",
-                options: ["Yes, always", "No, only for local variables", "Yes, since Java 11", "Only for Lambda parameters"],
-                answerIndex: 1,
-                explanation: "var can only be used for local variables with initializers. It cannot be used for method parameters, return types, or fields."
-            },
-            {
-                id: 34,
-                question: "What is CompletableFuture used for?",
-                options: ["Synchronous operations", "Asynchronous programming", "File operations", "Network operations"],
-                answerIndex: 1,
-                explanation: "CompletableFuture is used for asynchronous programming, allowing non-blocking operations and composable async tasks."
-            },
-            {
-                id: 35,
-                question: "What is the output?\n\nOptional<String> opt = Optional.of(\"Java\");\nString result = opt.map(String::toUpperCase).orElse(\"Default\");\nSystem.out.println(result);",
-                options: ["Java", "JAVA", "Default", "null"],
-                answerIndex: 1,
-                explanation: "Optional contains 'Java', map() transforms it to 'JAVA', orElse() is not needed. Output: JAVA"
-            }
-        ];
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-            window.quizManager = quizManager;
-        });
-    </script>
 </body>
 
 </html>

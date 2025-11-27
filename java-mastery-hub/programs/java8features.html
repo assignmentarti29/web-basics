@@ -1,63 +1,472 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Java 8+ Features - Programs - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>Java 8+ Features - Code Examples</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Programs</span>
-                <span>/</span>
-                <span>Java 8+ Features</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Hands-On Java 8+ Programs</h2>
-            <p>Welcome to the practical section! These 20+ programs demonstrate modern Java features from Java 8
-                through Java 21. From Lambda expressions to Sealed Classes, these examples cover everything you need to
-                master modern Java development.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Try running these examples in your IDE. Experiment by modifying the code to see how different
-                    features work together!</p>
-            </div>
-        </div>
-
-        <!-- Program 1: Basic Lambda -->
-        <div class="content-section">
-            <h2>Program 1: Basic Lambda Expression</h2>
-            <p>Demonstrates the simplest form of Lambda expressions.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Java 8+ Features - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>Java 8+ Features</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Hands-On Java 8+ Programs</h2>
+                    <p>Welcome to the practical section! These 20+ programs demonstrate modern Java features from Java 8
+                        through Java 21. From Lambda expressions to Sealed Classes, these examples cover everything you
+                        need to
+                        master modern Java development.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Try running these examples in your IDE. Experiment by modifying the code to see how
+                                different
+                                features work together!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 1: Basic Lambda -->
+                <div class="content-section">
+                    <h2>Program 1: Basic Lambda Expression</h2>
+                    <p>Demonstrates the simplest form of Lambda expressions.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 
 public class BasicLambda {
     public static void main(String[] args) {
         // Traditional way
-        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        List<string> names = Arrays.asList("Alice", "Bob", "Charlie");
         
         System.out.println("Traditional approach:");
         for (String name : names) {
@@ -65,27 +474,27 @@ public class BasicLambda {
         }
         
         System.out.println("\nLambda approach:");
-        names.forEach(name -> System.out.println(name));
+        names.forEach(name -&gt; System.out.println(name));
         
         // Even shorter with method reference
         System.out.println("\nMethod reference:");
         names.forEach(System.out::println);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Instead of writing a long instruction, we use a shortcut.</p>
-                <p><strong>Real-world:</strong> Like saying "print each" instead of writing detailed steps.</p>
-                <p><strong>Technical:</strong> Lambda expression `name -> System.out.println(name)` is a concise way
-                    to define an anonymous function. Method reference `System.out::println` is even shorter.</p>
-            </div>
-        </div>
-
-        <!-- Program 2: Functional Interface -->
-        <div class="content-section">
-            <h2>Program 2: Custom Functional Interface</h2>
-            <p>Creating and using a custom functional interface.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">@FunctionalInterface
+}</string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Instead of writing a long instruction, we use a shortcut.</p>
+                        <p><strong>Real-world:</strong> Like saying "print each" instead of writing detailed steps.</p>
+                        <p><strong>Technical:</strong> Lambda expression `name -&gt; System.out.println(name)` is a
+                            concise way
+                            to define an anonymous function. Method reference `System.out::println` is even shorter.</p>
+                    </div>
+                </div>
+                <!-- Program 2: Functional Interface -->
+                <div class="content-section">
+                    <h2>Program 2: Custom Functional Interface</h2>
+                    <p>Creating and using a custom functional interface.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">@FunctionalInterface
 interface Calculator {
     int calculate(int a, int b);
 }
@@ -93,17 +502,17 @@ interface Calculator {
 public class FunctionalInterfaceDemo {
     public static void main(String[] args) {
         // Lambda for addition
-        Calculator add = (a, b) -> a + b;
+        Calculator add = (a, b) -&gt; a + b;
         System.out.println("5 + 3 = " + add.calculate(5, 3));
         
         // Lambda for multiplication
-        Calculator multiply = (a, b) -> a * b;
+        Calculator multiply = (a, b) -&gt; a * b;
         System.out.println("5 * 3 = " + multiply.calculate(5, 3));
         
         // Lambda with block body
-        Calculator power = (a, b) -> {
+        Calculator power = (a, b) -&gt; {
             int result = 1;
-            for (int i = 0; i < b; i++) {
+            for (int i = 0; i &lt; b; i++) {
                 result *= a;
             }
             return result;
@@ -111,20 +520,20 @@ public class FunctionalInterfaceDemo {
         System.out.println("2 ^ 3 = " + power.calculate(2, 3));
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A tool that does one specific job, and we tell it how to do it.</p>
-                <p><strong>Real-world:</strong> A calculator app where you define different operations.</p>
-                <p><strong>Technical:</strong> @FunctionalInterface ensures the interface has exactly one abstract
-                    method. Lambdas provide different implementations.</p>
-            </div>
-        </div>
-
-        <!-- Program 3: Method Reference -->
-        <div class="content-section">
-            <h2>Program 3: Method Reference Types</h2>
-            <p>Demonstrates all types of method references.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A tool that does one specific job, and we tell it how to do it.</p>
+                        <p><strong>Real-world:</strong> A calculator app where you define different operations.</p>
+                        <p><strong>Technical:</strong> @FunctionalInterface ensures the interface has exactly one
+                            abstract
+                            method. Lambdas provide different implementations.</p>
+                    </div>
+                </div>
+                <!-- Program 3: Method Reference -->
+                <div class="content-section">
+                    <h2>Program 3: Method Reference Types</h2>
+                    <p>Demonstrates all types of method references.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 import java.util.function.*;
 
 public class MethodReferenceDemo {
@@ -141,85 +550,85 @@ public class MethodReferenceDemo {
     
     public static void main(String[] args) {
         // 1. Static method reference
-        BiFunction<Integer, Integer, Integer> multiplyRef = MethodReferenceDemo::multiply;
+        BiFunction<integer, integer="" integer,=""> multiplyRef = MethodReferenceDemo::multiply;
         System.out.println("Static: 5 * 3 = " + multiplyRef.apply(5, 3));
         
         // 2. Instance method reference
         MethodReferenceDemo demo = new MethodReferenceDemo();
-        BiFunction<Integer, Integer, Integer> addRef = demo::add;
+        BiFunction<integer, integer="" integer,=""> addRef = demo::add;
         System.out.println("Instance: 5 + 3 = " + addRef.apply(5, 3));
         
         // 3. Instance method of arbitrary object
-        List<String> words = Arrays.asList("apple", "banana", "cherry");
+        List<string> words = Arrays.asList("apple", "banana", "cherry");
         words.stream()
              .map(String::toUpperCase)
              .forEach(System.out::println);
         
         // 4. Constructor reference
-        Supplier<List<String>> listSupplier = ArrayList::new;
-        List<String> newList = listSupplier.get();
+        Supplier<list<string>&gt; listSupplier = ArrayList::new;
+        List<string> newList = listSupplier.get();
         System.out.println("Created list: " + newList);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Pointing to someone who already knows how to do the job.</p>
-                <p><strong>Real-world:</strong> Instead of explaining, you say "Ask the expert."</p>
-                <p><strong>Technical:</strong> Method references are shorthand for Lambdas that call existing methods.
-                    Four types: static, instance, arbitrary object, and constructor.</p>
-            </div>
-        </div>
-
-        <!-- Program 4: Stream Filter and Map -->
-        <div class="content-section">
-            <h2>Program 4: Stream Filter and Map Operations</h2>
-            <p>Using intermediate operations to process data.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+}</string></list<string></string></integer,></integer,></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Pointing to someone who already knows how to do the job.</p>
+                        <p><strong>Real-world:</strong> Instead of explaining, you say "Ask the expert."</p>
+                        <p><strong>Technical:</strong> Method references are shorthand for Lambdas that call existing
+                            methods.
+                            Four types: static, instance, arbitrary object, and constructor.</p>
+                    </div>
+                </div>
+                <!-- Program 4: Stream Filter and Map -->
+                <div class="content-section">
+                    <h2>Program 4: Stream Filter and Map Operations</h2>
+                    <p>Using intermediate operations to process data.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 import java.util.stream.*;
 
 public class StreamFilterMap {
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         
         // Filter even numbers and square them
-        List<Integer> evenSquares = numbers.stream()
-            .filter(n -> n % 2 == 0)           // Keep only even numbers
-            .map(n -> n * n)                    // Square each number
+        List<integer> evenSquares = numbers.stream()
+            .filter(n -&gt; n % 2 == 0)           // Keep only even numbers
+            .map(n -&gt; n * n)                    // Square each number
             .collect(Collectors.toList());      // Collect to list
         
         System.out.println("Even squares: " + evenSquares);
         
         // Chain multiple operations
-        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David", "Eve");
+        List<string> names = Arrays.asList("Alice", "Bob", "Charlie", "David", "Eve");
         
-        List<String> result = names.stream()
-            .filter(name -> name.length() > 3)  // Names longer than 3 chars
+        List<string> result = names.stream()
+            .filter(name -&gt; name.length() &gt; 3)  // Names longer than 3 chars
             .map(String::toUpperCase)           // Convert to uppercase
             .sorted()                            // Sort alphabetically
             .collect(Collectors.toList());
         
         System.out.println("Filtered names: " + result);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a factory line—filter out bad items, then paint the good ones.</p>
-                <p><strong>Real-world:</strong> Sorting emails—filter spam, then mark important ones.</p>
-                <p><strong>Technical:</strong> filter() selects elements, map() transforms them. These are
-                    intermediate operations (lazy) that return a new stream.</p>
-            </div>
-        </div>
-
-        <!-- Program 5: Parallel Streams -->
-        <div class="content-section">
-            <h2>Program 5: Parallel Streams for Performance</h2>
-            <p>Demonstrates parallel processing with streams.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+}</string></string></integer></integer></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a factory line—filter out bad items, then paint the good ones.
+                        </p>
+                        <p><strong>Real-world:</strong> Sorting emails—filter spam, then mark important ones.</p>
+                        <p><strong>Technical:</strong> filter() selects elements, map() transforms them. These are
+                            intermediate operations (lazy) that return a new stream.</p>
+                    </div>
+                </div>
+                <!-- Program 5: Parallel Streams -->
+                <div class="content-section">
+                    <h2>Program 5: Parallel Streams for Performance</h2>
+                    <p>Demonstrates parallel processing with streams.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 import java.util.stream.*;
 
 public class ParallelStreamDemo {
     public static void main(String[] args) {
-        List<Integer> numbers = IntStream.rangeClosed(1, 1000000)
+        List<integer> numbers = IntStream.rangeClosed(1, 1000000)
                                          .boxed()
                                          .collect(Collectors.toList());
         
@@ -247,23 +656,23 @@ public class ParallelStreamDemo {
         System.out.println("\nThreads used in parallel stream:");
         numbers.parallelStream()
                .limit(10)
-               .forEach(n -> System.out.println(n + " - " + Thread.currentThread().getName()));
+               .forEach(n -&gt; System.out.println(n + " - " + Thread.currentThread().getName()));
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Getting many friends to help you count instead of counting alone.</p>
-                <p><strong>Real-world:</strong> Multiple cashiers at a store vs one cashier.</p>
-                <p><strong>Technical:</strong> parallelStream() uses ForkJoinPool to process elements concurrently.
-                    Best for CPU-intensive operations on large datasets.</p>
-            </div>
-        </div>
-
-        <!-- Program 6: Sorting with Streams -->
-        <div class="content-section">
-            <h2>Program 6: Sorting with Streams and Comparator</h2>
-            <p>Advanced sorting using streams.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+}</integer></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Getting many friends to help you count instead of counting alone.</p>
+                        <p><strong>Real-world:</strong> Multiple cashiers at a store vs one cashier.</p>
+                        <p><strong>Technical:</strong> parallelStream() uses ForkJoinPool to process elements
+                            concurrently.
+                            Best for CPU-intensive operations on large datasets.</p>
+                    </div>
+                </div>
+                <!-- Program 6: Sorting with Streams -->
+                <div class="content-section">
+                    <h2>Program 6: Sorting with Streams and Comparator</h2>
+                    <p>Advanced sorting using streams.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 import java.util.stream.*;
 
 class Person {
@@ -283,7 +692,7 @@ class Person {
 
 public class StreamSorting {
     public static void main(String[] args) {
-        List<Person> people = Arrays.asList(
+        List<person> people = Arrays.asList(
             new Person("Alice", 25),
             new Person("Bob", 30),
             new Person("Charlie", 20),
@@ -293,101 +702,101 @@ public class StreamSorting {
         // Sort by age
         System.out.println("Sorted by age:");
         people.stream()
-              .sorted(Comparator.comparingInt(p -> p.age))
+              .sorted(Comparator.comparingInt(p -&gt; p.age))
               .forEach(System.out::println);
         
         // Sort by name
         System.out.println("\nSorted by name:");
         people.stream()
-              .sorted(Comparator.comparing(p -> p.name))
+              .sorted(Comparator.comparing(p -&gt; p.name))
               .forEach(System.out::println);
         
         // Sort by age descending, then by name
         System.out.println("\nSorted by age (desc), then name:");
         people.stream()
-              .sorted(Comparator.comparingInt((Person p) -> p.age)
+              .sorted(Comparator.comparingInt((Person p) -&gt; p.age)
                                .reversed()
-                               .thenComparing(p -> p.name))
+                               .thenComparing(p -&gt; p.name))
               .forEach(System.out::println);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Arranging toys by size or color.</p>
-                <p><strong>Real-world:</strong> Sorting contacts by name or sorting products by price.</p>
-                <p><strong>Technical:</strong> Comparator.comparing() creates comparators using method references.
-                    reversed() and thenComparing() allow complex sorting.</p>
-            </div>
-        </div>
-
-        <!-- Program 7: Optional Usage -->
-        <div class="content-section">
-            <h2>Program 7: Optional to Avoid Null Checks</h2>
-            <p>Using Optional to handle potentially null values safely.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+}</person></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Arranging toys by size or color.</p>
+                        <p><strong>Real-world:</strong> Sorting contacts by name or sorting products by price.</p>
+                        <p><strong>Technical:</strong> Comparator.comparing() creates comparators using method
+                            references.
+                            reversed() and thenComparing() allow complex sorting.</p>
+                    </div>
+                </div>
+                <!-- Program 7: Optional Usage -->
+                <div class="content-section">
+                    <h2>Program 7: Optional to Avoid Null Checks</h2>
+                    <p>Using Optional to handle potentially null values safely.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 
 public class OptionalDemo {
     
-    public static Optional<String> findName(String search) {
-        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+    public static Optional<string> findName(String search) {
+        List<string> names = Arrays.asList("Alice", "Bob", "Charlie");
         return names.stream()
-                    .filter(name -> name.equalsIgnoreCase(search))
+                    .filter(name -&gt; name.equalsIgnoreCase(search))
                     .findFirst();
     }
     
     public static void main(String[] args) {
         // Using ifPresent
-        Optional<String> name1 = findName("Alice");
-        name1.ifPresent(n -> System.out.println("Found: " + n));
+        Optional<string> name1 = findName("Alice");
+        name1.ifPresent(n -&gt; System.out.println("Found: " + n));
         
         // Using orElse
         String name2 = findName("David").orElse("Not Found");
         System.out.println("Result: " + name2);
         
         // Using orElseGet (lazy evaluation)
-        String name3 = findName("Bob").orElseGet(() -> {
+        String name3 = findName("Bob").orElseGet(() -&gt; {
             System.out.println("Generating default...");
             return "Default Name";
         });
         System.out.println("Result: " + name3);
         
         // Using map
-        Optional<Integer> length = findName("Charlie")
+        Optional<integer> length = findName("Charlie")
             .map(String::length);
         System.out.println("Length: " + length.orElse(0));
         
         // Using filter
         findName("Alice")
-            .filter(n -> n.length() > 3)
-            .ifPresent(n -> System.out.println("Long name: " + n));
+            .filter(n -&gt; n.length() &gt; 3)
+            .ifPresent(n -&gt; System.out.println("Long name: " + n));
         
         // Chaining operations
         String result = findName("Bob")
             .map(String::toUpperCase)
-            .map(s -> "Hello, " + s)
+            .map(s -&gt; "Hello, " + s)
             .orElse("No greeting");
         System.out.println(result);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A box that might have a toy—check before opening!</p>
-                <p><strong>Real-world:</strong> A gift box—you check if there's something inside first.</p>
-                <p><strong>Technical:</strong> Optional wraps potentially null values. Use ifPresent(), orElse(),
-                    map(), and filter() instead of null checks.</p>
-            </div>
-        </div>
-
-        <!-- Program 8: Generic Method -->
-        <div class="content-section">
-            <h2>Program 8: Generic Method with Type Parameters</h2>
-            <p>Creating type-safe generic methods.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+}</integer></string></string></string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A box that might have a toy—check before opening!</p>
+                        <p><strong>Real-world:</strong> A gift box—you check if there's something inside first.</p>
+                        <p><strong>Technical:</strong> Optional wraps potentially null values. Use ifPresent(),
+                            orElse(),
+                            map(), and filter() instead of null checks.</p>
+                    </div>
+                </div>
+                <!-- Program 8: Generic Method -->
+                <div class="content-section">
+                    <h2>Program 8: Generic Method with Type Parameters</h2>
+                    <p>Creating type-safe generic methods.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 
 public class GenericMethodDemo {
     
     // Generic method to print array
-    public static <T> void printArray(T[] array) {
+    public static <t> void printArray(T[] array) {
         for (T element : array) {
             System.out.print(element + " ");
         }
@@ -395,7 +804,7 @@ public class GenericMethodDemo {
     }
     
     // Generic method with bounded type
-    public static <T extends Number> double sum(T[] numbers) {
+    public static <t extends="" number=""> double sum(T[] numbers) {
         double total = 0;
         for (T num : numbers) {
             total += num.doubleValue();
@@ -404,9 +813,9 @@ public class GenericMethodDemo {
     }
     
     // Generic method with multiple type parameters
-    public static <K, V> void printMap(Map<K, V> map) {
-        map.forEach((key, value) -> 
-            System.out.println(key + " -> " + value));
+    public static <k, v=""> void printMap(Map<k, v=""> map) {
+        map.forEach((key, value) -&gt; 
+            System.out.println(key + " -&gt; " + value));
     }
     
     public static void main(String[] args) {
@@ -426,27 +835,27 @@ public class GenericMethodDemo {
         System.out.println("Sum of doubles: " + sum(doubleArray));
         
         // Print map
-        Map<String, Integer> scores = new HashMap<>();
+        Map<string, integer=""> scores = new HashMap&lt;&gt;();
         scores.put("Alice", 95);
         scores.put("Bob", 87);
         System.out.println("\nScores:");
         printMap(scores);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A magic box that works with any type of toy.</p>
-                <p><strong>Real-world:</strong> A universal remote that works with any TV brand.</p>
-                <p><strong>Technical:</strong> Generic methods use type parameters &lt;T&gt; for compile-time type
-                    safety. Bounded types (&lt;T extends Number&gt;) restrict allowed types.</p>
-            </div>
-        </div>
-
-        <!-- Program 9: Wrapper Class Auto-boxing -->
-        <div class="content-section">
-            <h2>Program 9: Wrapper Class Auto-boxing and Unboxing</h2>
-            <p>Demonstrates automatic conversion between primitives and wrappers.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+}</string,></k,></k,></t></t></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A magic box that works with any type of toy.</p>
+                        <p><strong>Real-world:</strong> A universal remote that works with any TV brand.</p>
+                        <p><strong>Technical:</strong> Generic methods use type parameters &lt;T&gt; for compile-time
+                            type
+                            safety. Bounded types (&lt;T extends Number&gt;) restrict allowed types.</p>
+                    </div>
+                </div>
+                <!-- Program 9: Wrapper Class Auto-boxing -->
+                <div class="content-section">
+                    <h2>Program 9: Wrapper Class Auto-boxing and Unboxing</h2>
+                    <p>Demonstrates automatic conversion between primitives and wrappers.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 
 public class WrapperClassDemo {
     public static void main(String[] args) {
@@ -461,7 +870,7 @@ public class WrapperClassDemo {
         System.out.println("Primitive: " + primitive2);
         
         // Collections require wrappers
-        List<Integer> numbers = new ArrayList<>();
+        List<integer> numbers = new ArrayList&lt;&gt;();
         numbers.add(1);      // Auto-boxing
         numbers.add(2);
         numbers.add(3);
@@ -498,26 +907,26 @@ public class WrapperClassDemo {
         System.out.println("y1 == y2: " + (y1 == y2)); // false (not cached)
         System.out.println("y1.equals(y2): " + y1.equals(y2)); // true
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Wrapping a toy in a box and unwrapping it automatically.</p>
-                <p><strong>Real-world:</strong> Gift wrapping service that wraps and unwraps automatically.</p>
-                <p><strong>Technical:</strong> Auto-boxing converts primitives to wrappers, unboxing does the reverse.
-                    Java caches Integer values -128 to 127 for performance.</p>
-            </div>
-        </div>
-
-        <!-- Program 10: CompletableFuture -->
-        <div class="content-section">
-            <h2>Program 10: CompletableFuture Async Operations</h2>
-            <p>Asynchronous programming with CompletableFuture.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.concurrent.*;
+}</integer></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Wrapping a toy in a box and unwrapping it automatically.</p>
+                        <p><strong>Real-world:</strong> Gift wrapping service that wraps and unwraps automatically.</p>
+                        <p><strong>Technical:</strong> Auto-boxing converts primitives to wrappers, unboxing does the
+                            reverse.
+                            Java caches Integer values -128 to 127 for performance.</p>
+                    </div>
+                </div>
+                <!-- Program 10: CompletableFuture -->
+                <div class="content-section">
+                    <h2>Program 10: CompletableFuture Async Operations</h2>
+                    <p>Asynchronous programming with CompletableFuture.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.concurrent.*;
 
 public class CompletableFutureDemo {
     
-    public static CompletableFuture<String> fetchUserData(int userId) {
-        return CompletableFuture.supplyAsync(() -> {
+    public static CompletableFuture<string> fetchUserData(int userId) {
+        return CompletableFuture.supplyAsync(() -&gt; {
             System.out.println("Fetching user " + userId + " in: " + 
                 Thread.currentThread().getName());
             sleep(1000); // Simulate API call
@@ -525,8 +934,8 @@ public class CompletableFutureDemo {
         });
     }
     
-    public static CompletableFuture<String> fetchUserOrders(String user) {
-        return CompletableFuture.supplyAsync(() -> {
+    public static CompletableFuture<string> fetchUserOrders(String user) {
+        return CompletableFuture.supplyAsync(() -&gt; {
             System.out.println("Fetching orders for " + user + " in: " + 
                 Thread.currentThread().getName());
             sleep(1000); // Simulate API call
@@ -542,7 +951,7 @@ public class CompletableFutureDemo {
         System.out.println("Main thread: " + Thread.currentThread().getName());
         
         // Simple async task
-        CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> {
+        CompletableFuture<string> future1 = CompletableFuture.supplyAsync(() -&gt; {
             sleep(1000);
             return "Hello from async task";
         });
@@ -551,47 +960,47 @@ public class CompletableFutureDemo {
         System.out.println("Result: " + future1.get()); // Blocks until complete
         
         // Chaining operations
-        CompletableFuture<String> chain = CompletableFuture
-            .supplyAsync(() -> "Hello")
-            .thenApply(s -> s + " World")
+        CompletableFuture<string> chain = CompletableFuture
+            .supplyAsync(() -&gt; "Hello")
+            .thenApply(s -&gt; s + " World")
             .thenApply(String::toUpperCase);
         
         System.out.println("Chained result: " + chain.get());
         
         // Combining futures
-        CompletableFuture<String> userData = fetchUserData(123);
-        CompletableFuture<String> orders = userData.thenCompose(user -> fetchUserOrders(user));
+        CompletableFuture<string> userData = fetchUserData(123);
+        CompletableFuture<string> orders = userData.thenCompose(user -&gt; fetchUserOrders(user));
         
         System.out.println("Orders: " + orders.get());
         
         // Exception handling
-        CompletableFuture<String> withError = CompletableFuture.supplyAsync(() -> {
-            if (Math.random() > 0.5) {
+        CompletableFuture<string> withError = CompletableFuture.supplyAsync(() -&gt; {
+            if (Math.random() &gt; 0.5) {
                 throw new RuntimeException("Random error!");
             }
             return "Success";
-        }).exceptionally(ex -> {
+        }).exceptionally(ex -&gt; {
             System.out.println("Caught: " + ex.getMessage());
             return "Default value";
         });
         
         System.out.println("Result with error handling: " + withError.get());
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Asking someone to do something while you play with other toys.</p>
-                <p><strong>Real-world:</strong> Ordering food delivery and continuing your work.</p>
-                <p><strong>Technical:</strong> CompletableFuture enables non-blocking async operations. thenApply()
-                    transforms results, thenCompose() chains futures, exceptionally() handles errors.</p>
-            </div>
-        </div>
-
-        <!-- Program 11: Default Interface Methods -->
-        <div class="content-section">
-            <h2>Program 11: Default Methods in Interfaces</h2>
-            <p>Using default and static methods in interfaces.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">interface Vehicle {
+}</string></string></string></string></string></string></string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Asking someone to do something while you play with other toys.</p>
+                        <p><strong>Real-world:</strong> Ordering food delivery and continuing your work.</p>
+                        <p><strong>Technical:</strong> CompletableFuture enables non-blocking async operations.
+                            thenApply()
+                            transforms results, thenCompose() chains futures, exceptionally() handles errors.</p>
+                    </div>
+                </div>
+                <!-- Program 11: Default Interface Methods -->
+                <div class="content-section">
+                    <h2>Program 11: Default Methods in Interfaces</h2>
+                    <p>Using default and static methods in interfaces.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">interface Vehicle {
     // Abstract method
     void start();
     
@@ -652,37 +1061,37 @@ public class DefaultMethodDemo {
         Vehicle.checkLicense();
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A toy that comes with batteries—you can use it right away!</p>
-                <p><strong>Real-world:</strong> A contract with standard clauses you can customize.</p>
-                <p><strong>Technical:</strong> Default methods provide implementations in interfaces. Classes can
-                    override them or use the default. Static methods belong to the interface.</p>
-            </div>
-        </div>
-
-        <!-- Program 12: Record Class -->
-        <div class="content-section">
-            <h2>Program 12: Record Class Example</h2>
-            <p>Using Records for immutable data carriers.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// Simple record
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A toy that comes with batteries—you can use it right away!</p>
+                        <p><strong>Real-world:</strong> A contract with standard clauses you can customize.</p>
+                        <p><strong>Technical:</strong> Default methods provide implementations in interfaces. Classes
+                            can
+                            override them or use the default. Static methods belong to the interface.</p>
+                    </div>
+                </div>
+                <!-- Program 12: Record Class -->
+                <div class="content-section">
+                    <h2>Program 12: Record Class Example</h2>
+                    <p>Using Records for immutable data carriers.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// Simple record
 record Person(String name, int age) {}
 
 // Record with validation
 record Employee(String name, int age, double salary) {
     // Compact constructor for validation
     public Employee {
-        if (age < 18) {
-            throw new IllegalArgumentException("Age must be >= 18");
+        if (age &lt; 18) {
+            throw new IllegalArgumentException("Age must be &gt;= 18");
         }
-        if (salary < 0) {
+        if (salary &lt; 0) {
             throw new IllegalArgumentException("Salary must be positive");
         }
     }
     
     // Custom methods
     public boolean isHighEarner() {
-        return salary > 100000;
+        return salary &gt; 100000;
     }
     
     // Static factory method
@@ -721,49 +1130,48 @@ public class RecordDemo {
         // emp.salary = 80000; // Compile error!
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A pre-made toy box with everything included—no assembly!</p>
-                <p><strong>Real-world:</strong> A form that's already filled out and can't be changed.</p>
-                <p><strong>Technical:</strong> Records automatically generate constructor, accessors, equals(),
-                    hashCode(), and toString(). They're final and immutable.</p>
-            </div>
-        </div>
-
-        <!-- Program 13: Switch Expression -->
-        <div class="content-section">
-            <h2>Program 13: Switch Expression with yield</h2>
-            <p>Modern switch expressions for cleaner code.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">public class SwitchExpressionDemo {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A pre-made toy box with everything included—no assembly!</p>
+                        <p><strong>Real-world:</strong> A form that's already filled out and can't be changed.</p>
+                        <p><strong>Technical:</strong> Records automatically generate constructor, accessors, equals(),
+                            hashCode(), and toString(). They're final and immutable.</p>
+                    </div>
+                </div>
+                <!-- Program 13: Switch Expression -->
+                <div class="content-section">
+                    <h2>Program 13: Switch Expression with yield</h2>
+                    <p>Modern switch expressions for cleaner code.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">public class SwitchExpressionDemo {
     
     public static String getDayType(String day) {
         // Switch expression (returns value)
         return switch (day) {
-            case "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY" -> "Weekday";
-            case "SATURDAY", "SUNDAY" -> "Weekend";
-            default -> "Invalid day";
+            case "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY" -&gt; "Weekday";
+            case "SATURDAY", "SUNDAY" -&gt; "Weekend";
+            default -&gt; "Invalid day";
         };
     }
     
     public static int getQuarter(int month) {
         return switch (month) {
-            case 1, 2, 3 -> 1;
-            case 4, 5, 6 -> 2;
-            case 7, 8, 9 -> 3;
-            case 10, 11, 12 -> 4;
-            default -> throw new IllegalArgumentException("Invalid month: " + month);
+            case 1, 2, 3 -&gt; 1;
+            case 4, 5, 6 -&gt; 2;
+            case 7, 8, 9 -&gt; 3;
+            case 10, 11, 12 -&gt; 4;
+            default -&gt; throw new IllegalArgumentException("Invalid month: " + month);
         };
     }
     
     public static String getGrade(int score) {
         // Using yield for complex logic
         return switch (score / 10) {
-            case 10, 9 -> "A";
-            case 8 -> "B";
-            case 7 -> "C";
-            case 6 -> "D";
-            default -> {
-                if (score < 0 || score > 100) {
+            case 10, 9 -&gt; "A";
+            case 8 -&gt; "B";
+            case 7 -&gt; "C";
+            case 6 -&gt; "D";
+            default -&gt; {
+                if (score &lt; 0 || score &gt; 100) {
                     yield "Invalid";
                 }
                 yield "F";
@@ -790,27 +1198,27 @@ public class RecordDemo {
         Size size = Size.MEDIUM;
         
         String description = switch (size) {
-            case SMALL -> "S";
-            case MEDIUM -> "M";
-            case LARGE -> "L";
+            case SMALL -&gt; "S";
+            case MEDIUM -&gt; "M";
+            case LARGE -&gt; "L";
         };
         System.out.println("Size: " + description);
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A better way to choose—cleaner and safer.</p>
-                <p><strong>Real-world:</strong> A menu where you pick one item and get exactly what you want.</p>
-                <p><strong>Technical:</strong> Switch expressions can return values, use arrow syntax, support
-                    multiple labels, and use yield for complex blocks. No fall-through!</p>
-            </div>
-        </div>
-
-        <!-- Program 14: Pattern Matching -->
-        <div class="content-section">
-            <h2>Program 14: Pattern Matching with instanceof</h2>
-            <p>Simplified type checking and casting.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A better way to choose—cleaner and safer.</p>
+                        <p><strong>Real-world:</strong> A menu where you pick one item and get exactly what you want.
+                        </p>
+                        <p><strong>Technical:</strong> Switch expressions can return values, use arrow syntax, support
+                            multiple labels, and use yield for complex blocks. No fall-through!</p>
+                    </div>
+                </div>
+                <!-- Program 14: Pattern Matching -->
+                <div class="content-section">
+                    <h2>Program 14: Pattern Matching with instanceof</h2>
+                    <p>Simplified type checking and casting.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 
 public class PatternMatchingDemo {
     
@@ -828,11 +1236,11 @@ public class PatternMatchingDemo {
     
     public static void printType(Object obj) {
         // With complex conditions
-        if (obj instanceof String str && str.length() > 5) {
+        if (obj instanceof String str &amp;&amp; str.length() &gt; 5) {
             System.out.println("Long string: " + str.toUpperCase());
-        } else if (obj instanceof Integer num && num > 100) {
+        } else if (obj instanceof Integer num &amp;&amp; num &gt; 100) {
             System.out.println("Large number: " + num);
-        } else if (obj instanceof List<?> list && !list.isEmpty()) {
+        } else if (obj instanceof List<?> list &amp;&amp; !list.isEmpty()) {
             System.out.println("Non-empty list with " + list.size() + " elements");
         } else {
             System.out.println("Other type: " + obj);
@@ -842,12 +1250,12 @@ public class PatternMatchingDemo {
     public static String format(Object obj) {
         // Pattern matching in expressions
         return switch (obj) {
-            case Integer i -> String.format("int %d", i);
-            case Long l -> String.format("long %d", l);
-            case Double d -> String.format("double %.2f", d);
-            case String s -> String.format("String '%s'", s);
-            case null -> "null value";
-            default -> obj.toString();
+            case Integer i -&gt; String.format("int %d", i);
+            case Long l -&gt; String.format("long %d", l);
+            case Double d -&gt; String.format("double %.2f", d);
+            case String s -&gt; String.format("String '%s'", s);
+            case null -&gt; "null value";
+            default -&gt; obj.toString();
         };
     }
     
@@ -875,20 +1283,20 @@ public class PatternMatchingDemo {
         System.out.println(format(null));
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Checking what's in a box and using it right away.</p>
-                <p><strong>Real-world:</strong> Opening a package and immediately using what's inside.</p>
-                <p><strong>Technical:</strong> Pattern matching combines instanceof check and cast in one step. The
-                    pattern variable is scoped to the if block.</p>
-            </div>
-        </div>
-
-        <!-- Program 15: Sealed Classes -->
-        <div class="content-section">
-            <h2>Program 15: Sealed Class Implementation</h2>
-            <p>Restricting class hierarchies with sealed classes.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// Sealed class with permitted subclasses
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Checking what's in a box and using it right away.</p>
+                        <p><strong>Real-world:</strong> Opening a package and immediately using what's inside.</p>
+                        <p><strong>Technical:</strong> Pattern matching combines instanceof check and cast in one step.
+                            The
+                            pattern variable is scoped to the if block.</p>
+                    </div>
+                </div>
+                <!-- Program 15: Sealed Classes -->
+                <div class="content-section">
+                    <h2>Program 15: Sealed Class Implementation</h2>
+                    <p>Restricting class hierarchies with sealed classes.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// Sealed class with permitted subclasses
 sealed class Shape permits Circle, Rectangle, Triangle {
     abstract double area();
 }
@@ -939,9 +1347,9 @@ public class SealedClassDemo {
     // Exhaustive switch - compiler knows all subtypes
     public static String describe(Shape shape) {
         return switch (shape) {
-            case Circle c -> "Circle with radius " + c.radius;
-            case Rectangle r -> "Rectangle " + r.width + "x" + r.height;
-            case Triangle t -> "Triangle with base " + t.base;
+            case Circle c -&gt; "Circle with radius " + c.radius;
+            case Rectangle r -&gt; "Rectangle " + r.width + "x" + r.height;
+            case Triangle t -&gt; "Triangle with base " + t.base;
             // No default needed!
         };
     }
@@ -964,20 +1372,21 @@ public class SealedClassDemo {
 
 // This would be a compile error:
 // class Square extends Shape {} // Not in permits list!</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A family where you decide exactly who can join.</p>
-                <p><strong>Real-world:</strong> A VIP club with a fixed member list.</p>
-                <p><strong>Technical:</strong> Sealed classes restrict which classes can extend them. Compiler can
-                    verify exhaustiveness in switch expressions. Subclasses must be final, sealed, or non-sealed.</p>
-            </div>
-        </div>
-
-        <!-- Program 16: Text Blocks -->
-        <div class="content-section">
-            <h2>Program 16: Text Block for Multi-line Strings</h2>
-            <p>Clean multi-line string literals.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">public class TextBlockDemo {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A family where you decide exactly who can join.</p>
+                        <p><strong>Real-world:</strong> A VIP club with a fixed member list.</p>
+                        <p><strong>Technical:</strong> Sealed classes restrict which classes can extend them. Compiler
+                            can
+                            verify exhaustiveness in switch expressions. Subclasses must be final, sealed, or
+                            non-sealed.</p>
+                    </div>
+                </div>
+                <!-- Program 16: Text Blocks -->
+                <div class="content-section">
+                    <h2>Program 16: Text Block for Multi-line Strings</h2>
+                    <p>Clean multi-line string literals.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">public class TextBlockDemo {
     public static void main(String[] args) {
         // JSON example
         String json = """
@@ -994,6 +1403,11 @@ public class SealedClassDemo {
         // HTML example
         String html = """
             <!DOCTYPE html>
+
+
+
+
+
             <html>
               <head>
                 <title>My Page</title>
@@ -1012,7 +1426,7 @@ public class SealedClassDemo {
             SELECT u.id, u.name, u.email, o.order_id
             FROM users u
             INNER JOIN orders o ON u.id = o.user_id
-            WHERE u.age > 18
+            WHERE u.age &gt; 18
             ORDER BY u.name
             """;
         System.out.println("SQL:");
@@ -1038,20 +1452,19 @@ public class SealedClassDemo {
         System.out.println(quote);
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Writing a story on multiple lines without worrying about quotes.</p>
-                <p><strong>Real-world:</strong> Typing an email with line breaks—natural and easy.</p>
-                <p><strong>Technical:</strong> Text blocks use triple quotes (""") for multi-line strings. They
-                    preserve formatting, remove common indentation, and eliminate escape sequences.</p>
-            </div>
-        </div>
-
-        <!-- Program 17: var Keyword -->
-        <div class="content-section">
-            <h2>Program 17: var Keyword for Type Inference</h2>
-            <p>Using var for cleaner local variable declarations.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Writing a story on multiple lines without worrying about quotes.</p>
+                        <p><strong>Real-world:</strong> Typing an email with line breaks—natural and easy.</p>
+                        <p><strong>Technical:</strong> Text blocks use triple quotes (""") for multi-line strings. They
+                            preserve formatting, remove common indentation, and eliminate escape sequences.</p>
+                    </div>
+                </div>
+                <!-- Program 17: var Keyword -->
+                <div class="content-section">
+                    <h2>Program 17: var Keyword for Type Inference</h2>
+                    <p>Using var for cleaner local variable declarations.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 import java.util.stream.*;
 
 public class VarKeywordDemo {
@@ -1065,16 +1478,16 @@ public class VarKeywordDemo {
         System.out.println(name + ", " + age + ", " + salary + ", " + isActive);
         
         // Collections
-        var names = new ArrayList<String>();
+        var names = new ArrayList<string>();
         names.add("Bob");
         names.add("Charlie");
         
-        var scores = new HashMap<String, Integer>();
+        var scores = new HashMap<string, integer="">();
         scores.put("Math", 95);
         scores.put("Science", 87);
         
         // In loops
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i &lt; 5; i++) {
             System.out.print(i + " ");
         }
         System.out.println();
@@ -1085,7 +1498,7 @@ public class VarKeywordDemo {
         
         // With streams
         var result = names.stream()
-            .filter(n -> n.length() > 3)
+            .filter(n -&gt; n.length() &gt; 3)
             .map(String::toUpperCase)
             .collect(Collectors.toList());
         System.out.println("Filtered: " + result);
@@ -1098,29 +1511,30 @@ public class VarKeywordDemo {
         System.out.println("Sum: " + sum);
         
         // Complex generic types (where var shines)
-        var complexMap = new HashMap<String, List<Map<String, Integer>>>();
+        var complexMap = new HashMap<string, integer="" list<map<string,="">&gt;&gt;();
         // Much better than:
-        // HashMap<String, List<Map<String, Integer>>> complexMap = new HashMap<>();
+        // HashMap<string, integer="" list<map<string,="">&gt;&gt; complexMap = new HashMap&lt;&gt;();
         
         // Lambda with var (Java 11+)
-        BiFunction<Integer, Integer, Integer> add = (var a, var b) -> a + b;
+        BiFunction<integer, integer="" integer,=""> add = (var a, var b) -&gt; a + b;
         System.out.println("5 + 3 = " + add.apply(5, 3));
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Letting Java figure out what type of toy you have.</p>
-                <p><strong>Real-world:</strong> Saying "give me that" instead of "give me that red plastic ball".</p>
-                <p><strong>Technical:</strong> var enables local variable type inference. The compiler infers the type
-                    from the initializer. It's NOT dynamic typing—the type is fixed at compile time.</p>
-            </div>
-        </div>
-
-        <!-- Program 18: Stream to List/Map Conversion -->
-        <div class="content-section">
-            <h2>Program 18: Stream to List and Map Conversion</h2>
-            <p>Converting streams to different collection types.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+}</integer,></string,></string,></string,></string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Letting Java figure out what type of toy you have.</p>
+                        <p><strong>Real-world:</strong> Saying "give me that" instead of "give me that red plastic
+                            ball".</p>
+                        <p><strong>Technical:</strong> var enables local variable type inference. The compiler infers
+                            the type
+                            from the initializer. It's NOT dynamic typing—the type is fixed at compile time.</p>
+                    </div>
+                </div>
+                <!-- Program 18: Stream to List/Map Conversion -->
+                <div class="content-section">
+                    <h2>Program 18: Stream to List and Map Conversion</h2>
+                    <p>Converting streams to different collection types.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 import java.util.stream.*;
 
 class Student {
@@ -1142,7 +1556,7 @@ class Student {
 
 public class StreamCollectionDemo {
     public static void main(String[] args) {
-        List<Student> students = Arrays.asList(
+        List<student> students = Arrays.asList(
             new Student("Alice", 101, 85),
             new Student("Bob", 102, 92),
             new Student("Charlie", 103, 78),
@@ -1151,154 +1565,155 @@ public class StreamCollectionDemo {
         );
         
         // Stream to List
-        List<String> names = students.stream()
-            .map(s -> s.name)
+        List<string> names = students.stream()
+            .map(s -&gt; s.name)
             .collect(Collectors.toList());
         System.out.println("Names: " + names);
         
         // Stream to Set (removes duplicates)
-        Set<Integer> marksSet = students.stream()
-            .map(s -> s.marks / 10 * 10) // Round to nearest 10
+        Set<integer> marksSet = students.stream()
+            .map(s -&gt; s.marks / 10 * 10) // Round to nearest 10
             .collect(Collectors.toSet());
         System.out.println("Marks ranges: " + marksSet);
         
-        // Stream to Map (rollNo -> name)
-        Map<Integer, String> rollNoToName = students.stream()
+        // Stream to Map (rollNo -&gt; name)
+        Map<integer, string=""> rollNoToName = students.stream()
             .collect(Collectors.toMap(
-                s -> s.rollNo,
-                s -> s.name
+                s -&gt; s.rollNo,
+                s -&gt; s.name
             ));
         System.out.println("Roll No to Name: " + rollNoToName);
         
-        // Stream to Map (name -> Student)
-        Map<String, Student> nameToStudent = students.stream()
+        // Stream to Map (name -&gt; Student)
+        Map<string, student=""> nameToStudent = students.stream()
             .collect(Collectors.toMap(
-                s -> s.name,
-                s -> s
+                s -&gt; s.name,
+                s -&gt; s
             ));
         System.out.println("Name to Student: " + nameToStudent);
         
         // Grouping by grade
-        Map<String, List<Student>> byGrade = students.stream()
-            .collect(Collectors.groupingBy(s -> {
-                if (s.marks >= 90) return "A";
-                else if (s.marks >= 80) return "B";
+        Map<string, list<student="">&gt; byGrade = students.stream()
+            .collect(Collectors.groupingBy(s -&gt; {
+                if (s.marks &gt;= 90) return "A";
+                else if (s.marks &gt;= 80) return "B";
                 else return "C";
             }));
         System.out.println("\nGrouped by grade:");
-        byGrade.forEach((grade, list) -> {
+        byGrade.forEach((grade, list) -&gt; {
             System.out.println(grade + ": " + list);
         });
         
         // Partitioning (passed/failed)
-        Map<Boolean, List<Student>> passedFailed = students.stream()
-            .collect(Collectors.partitioningBy(s -> s.marks >= 80));
+        Map<boolean, list<student="">&gt; passedFailed = students.stream()
+            .collect(Collectors.partitioningBy(s -&gt; s.marks &gt;= 80));
         System.out.println("\nPassed: " + passedFailed.get(true));
         System.out.println("Failed: " + passedFailed.get(false));
         
         // Joining strings
         String allNames = students.stream()
-            .map(s -> s.name)
+            .map(s -&gt; s.name)
             .collect(Collectors.joining(", "));
         System.out.println("\nAll names: " + allNames);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Putting toys into different boxes based on their type.</p>
-                <p><strong>Real-world:</strong> Organizing contacts by first letter or grouping products by category.</p>
-                <p><strong>Technical:</strong> Collectors.toList(), toSet(), toMap() convert streams to collections.
-                    groupingBy() and partitioningBy() create maps based on criteria.</p>
-            </div>
-        </div>
-
-        <!-- Program 19: Filter + Reduce -->
-        <div class="content-section">
-            <h2>Program 19: Filter and Reduce Combination</h2>
-            <p>Combining filter and reduce for data aggregation.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+}</boolean,></string,></string,></integer,></integer></string></student></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Putting toys into different boxes based on their type.</p>
+                        <p><strong>Real-world:</strong> Organizing contacts by first letter or grouping products by
+                            category.</p>
+                        <p><strong>Technical:</strong> Collectors.toList(), toSet(), toMap() convert streams to
+                            collections.
+                            groupingBy() and partitioningBy() create maps based on criteria.</p>
+                    </div>
+                </div>
+                <!-- Program 19: Filter + Reduce -->
+                <div class="content-section">
+                    <h2>Program 19: Filter and Reduce Combination</h2>
+                    <p>Combining filter and reduce for data aggregation.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 import java.util.stream.*;
 
 public class FilterReduceDemo {
     public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         
         // Sum of even numbers
         int sumEven = numbers.stream()
-            .filter(n -> n % 2 == 0)
+            .filter(n -&gt; n % 2 == 0)
             .reduce(0, Integer::sum);
         System.out.println("Sum of even numbers: " + sumEven);
         
         // Product of odd numbers
         int productOdd = numbers.stream()
-            .filter(n -> n % 2 != 0)
-            .reduce(1, (a, b) -> a * b);
+            .filter(n -&gt; n % 2 != 0)
+            .reduce(1, (a, b) -&gt; a * b);
         System.out.println("Product of odd numbers: " + productOdd);
         
-        // Max of numbers > 5
-        Optional<Integer> maxAbove5 = numbers.stream()
-            .filter(n -> n > 5)
+        // Max of numbers &gt; 5
+        Optional<integer> maxAbove5 = numbers.stream()
+            .filter(n -&gt; n &gt; 5)
             .reduce(Integer::max);
-        maxAbove5.ifPresent(max -> System.out.println("Max above 5: " + max));
+        maxAbove5.ifPresent(max -&gt; System.out.println("Max above 5: " + max));
         
         // Concatenate strings
-        List<String> words = Arrays.asList("Java", "is", "awesome");
+        List<string> words = Arrays.asList("Java", "is", "awesome");
         String sentence = words.stream()
-            .reduce("", (a, b) -> a + " " + b)
+            .reduce("", (a, b) -&gt; a + " " + b)
             .trim();
         System.out.println("Sentence: " + sentence);
         
         // Count elements (using reduce)
         long count = numbers.stream()
-            .filter(n -> n > 5)
-            .reduce(0L, (acc, n) -> acc + 1, Long::sum);
-        System.out.println("Count > 5: " + count);
+            .filter(n -&gt; n &gt; 5)
+            .reduce(0L, (acc, n) -&gt; acc + 1, Long::sum);
+        System.out.println("Count &gt; 5: " + count);
         
         // Sum of squares of even numbers
         int sumOfSquares = numbers.stream()
-            .filter(n -> n % 2 == 0)
-            .map(n -> n * n)
+            .filter(n -&gt; n % 2 == 0)
+            .map(n -&gt; n * n)
             .reduce(0, Integer::sum);
         System.out.println("Sum of squares of even: " + sumOfSquares);
         
         // Complex reduction
-        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
+        List<string> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
         String initials = names.stream()
-            .map(name -> String.valueOf(name.charAt(0)))
-            .reduce("", (a, b) -> a + b);
+            .map(name -&gt; String.valueOf(name.charAt(0)))
+            .reduce("", (a, b) -&gt; a + b);
         System.out.println("Initials: " + initials);
         
         // Using reduce with Optional
-        Optional<Integer> min = numbers.stream()
-            .reduce((a, b) -> a < b ? a : b);
+        Optional<integer> min = numbers.stream()
+            .reduce((a, b) -&gt; a &lt; b ? a : b);
         System.out.println("Min: " + min.orElse(0));
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Picking specific toys and combining them into one pile.</p>
-                <p><strong>Real-world:</strong> Filtering emails and counting unread ones.</p>
-                <p><strong>Technical:</strong> filter() selects elements, reduce() combines them into a single value.
-                    reduce() takes an identity value and a combining function.</p>
-            </div>
-        </div>
-
-        <!-- Program 20: Real-world Employee Salary Processing -->
-        <div class="content-section">
-            <h2>Program 20: Real-World Employee Salary Processing</h2>
-            <p>Complete example using multiple Java 8+ features together.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+}</integer></string></string></integer></integer></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Picking specific toys and combining them into one pile.</p>
+                        <p><strong>Real-world:</strong> Filtering emails and counting unread ones.</p>
+                        <p><strong>Technical:</strong> filter() selects elements, reduce() combines them into a single
+                            value.
+                            reduce() takes an identity value and a combining function.</p>
+                    </div>
+                </div>
+                <!-- Program 20: Real-world Employee Salary Processing -->
+                <div class="content-section">
+                    <h2>Program 20: Real-World Employee Salary Processing</h2>
+                    <p>Complete example using multiple Java 8+ features together.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 import java.util.stream.*;
 
 record Employee(String name, String department, double salary, int experience) {
     public double getBonus() {
-        return salary * (experience >= 5 ? 0.15 : 0.10);
+        return salary * (experience &gt;= 5 ? 0.15 : 0.10);
     }
 }
 
 public class EmployeeSalaryProcessing {
     public static void main(String[] args) {
-        List<Employee> employees = Arrays.asList(
+        List<employee> employees = Arrays.asList(
             new Employee("Alice", "IT", 75000, 6),
             new Employee("Bob", "HR", 55000, 3),
             new Employee("Charlie", "IT", 85000, 8),
@@ -1324,34 +1739,34 @@ public class EmployeeSalaryProcessing {
         System.out.println("Average Salary: $" + String.format("%.2f", avgSalary));
         
         // 3. Highest paid employee
-        Optional<Employee> highestPaid = employees.stream()
+        Optional<employee> highestPaid = employees.stream()
             .max(Comparator.comparingDouble(Employee::salary));
-        highestPaid.ifPresent(emp -> 
+        highestPaid.ifPresent(emp -&gt; 
             System.out.println("Highest Paid: " + emp.name() + " - $" + emp.salary()));
         
         // 4. Employees earning above average
         System.out.println("\nEmployees above average salary:");
         employees.stream()
-            .filter(emp -> emp.salary() > avgSalary)
-            .forEach(emp -> System.out.println("  " + emp.name() + " - $" + emp.salary()));
+            .filter(emp -&gt; emp.salary() &gt; avgSalary)
+            .forEach(emp -&gt; System.out.println("  " + emp.name() + " - $" + emp.salary()));
         
         // 5. Group by department
         System.out.println("\nEmployees by Department:");
-        Map<String, List<Employee>> byDept = employees.stream()
+        Map<string, list<employee="">&gt; byDept = employees.stream()
             .collect(Collectors.groupingBy(Employee::department));
-        byDept.forEach((dept, empList) -> {
+        byDept.forEach((dept, empList) -&gt; {
             System.out.println("  " + dept + ":");
-            empList.forEach(emp -> System.out.println("    - " + emp.name()));
+            empList.forEach(emp -&gt; System.out.println("    - " + emp.name()));
         });
         
         // 6. Average salary by department
         System.out.println("\nAverage Salary by Department:");
-        Map<String, Double> avgByDept = employees.stream()
+        Map<string, double=""> avgByDept = employees.stream()
             .collect(Collectors.groupingBy(
                 Employee::department,
                 Collectors.averagingDouble(Employee::salary)
             ));
-        avgByDept.forEach((dept, avg) -> 
+        avgByDept.forEach((dept, avg) -&gt; 
             System.out.println("  " + dept + ": $" + String.format("%.2f", avg)));
         
         // 7. Total bonus payout
@@ -1360,17 +1775,17 @@ public class EmployeeSalaryProcessing {
             .sum();
         System.out.println("\nTotal Bonus Payout: $" + String.format("%.2f", totalBonus));
         
-        // 8. Senior employees (experience >= 5)
+        // 8. Senior employees (experience &gt;= 5)
         System.out.println("\nSenior Employees (5+ years):");
         employees.stream()
-            .filter(emp -> emp.experience() >= 5)
+            .filter(emp -&gt; emp.experience() &gt;= 5)
             .sorted(Comparator.comparingInt(Employee::experience).reversed())
-            .forEach(emp -> System.out.println("  " + emp.name() + 
+            .forEach(emp -&gt; System.out.println("  " + emp.name() + 
                 " (" + emp.experience() + " years) - Bonus: $" + 
                 String.format("%.2f", emp.getBonus())));
         
         // 9. Department with highest total salary
-        Map.Entry<String, Double> highestDept = employees.stream()
+        Map.Entry<string, double=""> highestDept = employees.stream()
             .collect(Collectors.groupingBy(
                 Employee::department,
                 Collectors.summingDouble(Employee::salary)
@@ -1397,31 +1812,37 @@ public class EmployeeSalaryProcessing {
         System.out.println("  Average: $" + String.format("%.2f", stats.getAverage()));
         System.out.println("  Sum: $" + String.format("%.2f", stats.getSum()));
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Managing a toy store—counting toys, grouping by type, finding the most
-                    expensive.</p>
-                <p><strong>Real-world:</strong> HR system processing employee data for reports and analytics.</p>
-                <p><strong>Technical:</strong> Combines Records, Streams, Collectors, Optional, and method references
-                    for a complete data processing pipeline. Demonstrates real-world usage of Java 8+ features.</p>
+}</string,></string,></string,></employee></employee></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Managing a toy store—counting toys, grouping by type, finding the most
+                            expensive.</p>
+                        <p><strong>Real-world:</strong> HR system processing employee data for reports and analytics.
+                        </p>
+                        <p><strong>Technical:</strong> Combines Records, Streams, Collectors, Optional, and method
+                            references
+                            for a complete data processing pipeline. Demonstrates real-world usage of Java 8+ features.
+                        </p>
+                    </div>
+                </div>
+                <!-- Next Topic -->
+                <div class="next-topic">
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a class="md-button md-button--primary" href="../theory/java8features.html">📚 Back to
+                            Theory</a>
+                        <a class="md-button md-button--primary" href="../mcq/java8features.html">✅ Take Quiz</a>
+                        <a class="md-button md-button--secondary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">🚀 Next Topic Coming Soon</div>
+                        <div class="admonition-content">
+                            <p><strong>Programming Principles &amp; Design (SOLID, MVC, Design Patterns)</strong></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Next Topic -->
-        <div class="next-topic">
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="../theory/java8features.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../mcq/java8features.html" class="btn btn-success">✅ Take Quiz</a>
-                <a href="../index.html" class="btn btn-secondary">🏠 Back to Home</a>
-            </div>
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">🚀 Next Topic Coming Soon</div>
-                <p><strong>Programming Principles & Design (SOLID, MVC, Design Patterns)</strong></p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

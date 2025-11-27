@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Interview Questions - Tricky (Q501-Q600) - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style-mkdocs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="md-header" data-md-component="header">
+        <nav class="md-header__inner md-grid" aria-label="Header">
+            <a href="../index.html" title="Java Mastery Hub" class="md-header__button md-logo"
+                aria-label="Java Mastery Hub" data-md-component="logo">
+                <i class="fa-brands fa-java fa-2x"></i>
+            </a>
+            <label class="md-header__button md-icon" for="__drawer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" />
+                </svg>
+            </label>
+            <div class="md-header__title" data-md-component="header-title">
+                <div class="md-header__ellipsis">
+                    <div class="md-header__topic">
+                        <span class="md-ellipsis">Java Mastery Hub</span>
+                    </div>
+                    <div class="md-header__topic" data-md-component="header-topic">
+                        <span class="md-ellipsis">Topic 17: Tricky Interview Questions</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="md-container" data-md-component="container">
+        <main class="md-main" data-md-component="main">
+            <div class="md-main__inner md-grid">
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                                <label class="md-nav__title" for="__drawer">
+                                    <a href="../index.html" title="Java Mastery Hub" class="md-nav__button md-logo"
+                                        aria-label="Java Mastery Hub" data-md-component="logo">
+                                        <i class="fa-brands fa-java"></i>
+                                    </a>
+                                    Java Mastery Hub
+                                </label>
+                                <ul class="md-nav__list" data-md-scrollfix>
+                                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">1. Software Engineering</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/software-engineering.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/software-engineering.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">2. What is Java</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/what-is-java.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/what-is-java.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/variables-and-data-types.html">Programs</a>
+                                                </li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">4. Java Keywords</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/java-keywords.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/java-keywords.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">7. Methods</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/methods.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/methods.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/methods.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">8. OOP Concepts</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/oops.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/oops.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/oops.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">9. Collections Framework</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/collections.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/collections.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/collections.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">10. Exception Handling</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/exception-handling.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/exception-handling.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">11. File Handling</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/handling-files.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/handling-files.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/handling-files.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">12. JDBC</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/jdbc.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/jdbc.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/jdbc.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">13. Multithreading</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/multithreading.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/multithreading.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/multithreading.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">14. Java 8+ Features</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/java8features.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/java8features.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/java8features.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">15. Programming Principles</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/programming-principles.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/programming-principles.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/arrays.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/arrays.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/arrays.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/strings.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/strings.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/strings.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">18. Java Interview Questions</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/introduction.html">Introduction</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/intermediate.html">Intermediate (151-350)</a>
+                                                </li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                                <li class="md-nav__item"><a
+                                                        class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/hr.html">HR Questions</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md-content" data-md-component="content">
+                    <div class="md-content__inner md-typeset">
+
+                        <div class="content-header">
+                            <h1>Tricky Interview Questions (Q501 - Q600)</h1>
+                            <p style="margin-top: 0.5rem; opacity: 0.9;">Test your deep understanding with edge cases,
+                                confusing outputs, and tricky scenarios.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <p>This section contains questions that often trip up candidates. They focus on
+                                <strong>operator precedence</strong>, <strong>implicit casting</strong>, <strong>string
+                                    pool nuances</strong>, and <strong>exception handling edge cases</strong>.
+                            </p>
+                        </div>
+
+                        <!-- Q501 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q501. What will be the output of
+                                `System.out.println(1.0/0.0)`?</div>
+                            <div class="admonition-content">
+                                <p>It prints <code>Infinity</code>. It does <strong>not</strong>
+                                    throw `ArithmeticException` because floating-point arithmetic follows IEEE 754
+                                    standard,
+                                    which defines Infinity.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q502 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q502. What will be the output of
+                                `System.out.println(0.0/0.0)`?</div>
+                            <div class="admonition-content">
+                                <p>It prints <code>NaN</code> (Not a Number).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q503 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q503. Can we override a private or static method in Java?
+                                <span class="tag-most-asked">🔥 Most Asked</span>
+                            </div>
+                            <div class="admonition-content">
+                                <p>No.
+                                <ul>
+                                    <li><strong>Private:</strong> Not visible to child class, so cannot be overridden.
+                                    </li>
+                                    <li><strong>Static:</strong> Method hiding occurs, not overriding. The method called
+                                        depends on the reference type, not the object type.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q504 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q504. What does `System.exit(0)` do in a try-catch-finally
+                                block?</div>
+                            <div class="admonition-content">
+                                <p>It terminates the JVM immediately. The `finally` block will
+                                    <strong>NOT</strong> be executed.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q505 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q505. What is the output of `Math.min(Double.MIN_VALUE,
+                                0.0d)`?</div>
+                            <div class="admonition-content">
+                                <p>It prints <code>0.0</code>.
+                                    <br><strong>Reason:</strong> `Double.MIN_VALUE` is the smallest
+                                    <strong>positive</strong> non-zero value (4.9E-324), unlike `Integer.MIN_VALUE`
+                                    which is
+                                    negative.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q506 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q506. Can we execute a Java program without a main method?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>JDK 6 and below:</strong> Yes, using a static block.</li>
+                                    <li><strong>JDK 7+:</strong> No, the main method is mandatory for execution.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q507 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q507. What happens if we put `return` in both try and finally
+                                blocks?
+                            </div>
+                            <div class="admonition-content">
+                                <p>The value returned from the `finally` block will override the
+                                    value returned from the `try` block. The `try` block's return is discarded.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q508 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q508. Is `String s = null;` the same as `String s = "null";`?
+                            </div>
+                            <div class="admonition-content">
+                                <p>No.
+                                <ul>
+                                    <li>`s = null`: The reference points to nothing. Calling methods on it throws NPE.
+                                    </li>
+                                    <li>`s = "null"`: The reference points to a String object containing the text
+                                        "null".
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q509 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q509. What is the output of `long l = 1000 * 60 * 60 * 24 *
+                                365L;` vs without
+                                'L'?</div>
+                            <div class="admonition-content">
+                                <p>Without 'L', the calculation is done in `int`. If the result
+                                    exceeds `Integer.MAX_VALUE`, it overflows and wraps around (possibly becoming
+                                    negative)
+                                    <strong>before</strong> being assigned to the long variable. With 'L', calculation
+                                    is
+                                    done in `long`.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q510 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q510. Can we have a try block without catch or finally?</div>
+                            <div class="admonition-content">
+                                <p>No. A try block must be followed by either a `catch` block or a
+                                    `finally` block (or both). In Java 7+, try-with-resources can exist without
+                                    catch/finally.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q511 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q511. What is the difference between `foo(Object o)` and
+                                `foo(String s)` when
+                                calling `foo(null)`?</div>
+                            <div class="admonition-content">
+                                <p>Java chooses the <strong>most specific</strong> method. Since
+                                    `String` is a subclass of `Object`, `foo(String s)` will be called.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q512 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q512. What happens if we throw an exception inside a static
+                                block?</div>
+                            <div class="admonition-content">
+                                <p>It causes an `ExceptionInInitializerError` and the class fails
+                                    to load.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q513 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q513. Can an Interface have a static block?</div>
+                            <div class="admonition-content">
+                                <p>No. Interfaces cannot have static initialization blocks. They
+                                    can have static methods (Java 8+), but not static blocks.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q514 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q514. Is `Integer i = 100; Integer j = 100; (i == j)` true or
+                                false?</div>
+                            <div class="admonition-content">
+                                <p>True. Java caches Integer objects from -128 to 127 (Integer
+                                    Cache). Both point to the same object.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q515 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q515. Is `Integer i = 200; Integer j = 200; (i == j)` true or
+                                false?</div>
+                            <div class="admonition-content">
+                                <p>False. 200 is outside the cache range (-128 to 127), so new
+                                    objects are created.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q516 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q516. What is the output of `System.out.println('j' + 'a' +
+                                'v' +
+                                'a');`?</div>
+                            <div class="admonition-content">
+                                <p>It prints the sum of ASCII values of the characters (106 + 97 +
+                                    118 + 97 = 418), not "java". To concatenate, start with a string: `"" + 'j' + ...`.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q517 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q517. Can we declare the main method as `final`?</div>
+                            <div class="admonition-content">
+                                <p>Yes. It doesn't affect execution because the main method is
+                                    static and cannot be overridden anyway.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q518 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q518. Can we declare the main method as `private`?</div>
+                            <div class="admonition-content">
+                                <p>It compiles, but at runtime, the JVM will complain that the main
+                                    method is not public (NoSuchMethodError or "Main method not found").</p>
+                            </div>
+                        </div>
+
+                        <!-- Q519 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q519. What is the difference between `ArrayList` and `Vector`?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Vector:</strong> Synchronized (Thread-safe), Slow, Legacy.</li>
+                                    <li><strong>ArrayList:</strong> Not Synchronized, Fast, Modern replacement.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q520 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q520. Why is char array preferred over String for storing
+                                passwords?
+                                <span class="tag-most-asked">🔥 Most Asked</span>
+                            </div>
+                            <div class="admonition-content">
+                                <p>Strings are immutable and stay in the String Pool until GC. You
+                                    cannot explicitly clear them. Char arrays can be explicitly wiped (set to 0s)
+                                    immediately after use, reducing security risk.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q521 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q521. What is the output of `System.out.println(10 + 20 +
+                                "Java");`?</div>
+                            <div class="admonition-content">
+                                <p>`30Java`. Addition happens left-to-right. 10+20=30, then
+                                    30+"Java"="30Java".</p>
+                            </div>
+                        </div>
+
+                        <!-- Q522 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q522. What is the output of `System.out.println("Java" + 10 +
+                                20);`?</div>
+                            <div class="admonition-content">
+                                <p>`Java1020`. String concatenation happens left-to-right.
+                                    "Java"+10="Java10", then "Java10"+20="Java1020".</p>
+                            </div>
+                        </div>
+
+                        <!-- Q523 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q523. Can we cast `null` to any type?</div>
+                            <div class="admonition-content">
+                                <p>Yes. `(String) null` is valid. `(Integer) null` is valid.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q524 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q524. What happens if we cast `null` to `int`?</div>
+                            <div class="admonition-content">
+                                <p>It throws `NullPointerException` because unboxing attempts to
+                                    call `intValue()` on null.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q525 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q525. Does `finally` block execute if the thread is killed or
+                                power
+                                fails?</div>
+                            <div class="admonition-content">
+                                <p>No. If the JVM crashes or the OS kills the process, `finally`
+                                    will not execute.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q526 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q526. What is the size of `boolean` in Java?</div>
+                            <div class="admonition-content">
+                                <p>Not precisely defined by the spec.
+                                <ul>
+                                    <li>In an array, it's usually 1 byte (same as byte).</li>
+                                    <li>As a single variable, it's often treated as an `int` (4 bytes) by the JVM.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q527 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q527. Can we create an instance of an abstract class?</div>
+                            <div class="admonition-content">
+                                <p>No. But we can create an instance of an <strong>anonymous
+                                        subclass</strong> of the abstract class.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q528 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q528. What is Marker Interface?</div>
+                            <div class="admonition-content">
+                                <p>An interface with no methods. It signals the JVM/Compiler to
+                                    treat the object specially. (e.g., `Serializable`, `Cloneable`, `Remote`).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q529 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q529. Can we import the same package/class twice?</div>
+                            <div class="admonition-content">
+                                <p>Yes, the compiler ignores duplicate imports.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q530 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q530. What is the default value of a local variable?</div>
+                            <div class="admonition-content">
+                                <p>Local variables do <strong>not</strong> have default values.
+                                    They must be initialized before use, otherwise, it's a compile-time error.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q531 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q531. Can we have a class named `System`?</div>
+                            <div class="admonition-content">
+                                <p>Yes, but you will have to use the fully qualified name
+                                    `java.lang.System` to access the standard System class.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q532 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q532. What is `strictfp` keyword?</div>
+                            <div class="admonition-content">
+                                <p>Ensures that floating-point calculations result in the same
+                                    output on every platform (IEEE 754). Without it, some platforms might use higher
+                                    precision.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q533 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q533. Can we serialize a static variable?</div>
+                            <div class="admonition-content">
+                                <p>No. Static variables belong to the class, not the object state.
+                                    They are not serialized.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q534 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q534. What is `transient` keyword?</div>
+                            <div class="admonition-content">
+                                <p>Prevents a field from being serialized. When deserialized, it
+                                    will have its default value (null/0).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q535 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q535. Can a constructor be final, static, or abstract?</div>
+                            <div class="admonition-content">
+                                <p>No. Constructors cannot be overridden (so final is meaningless),
+                                    are not inherited (so abstract is meaningless), and are instance-creation logic (so
+                                    static is meaningless).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q536 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q536. What is the difference between `throw` and `throws`?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>`throw`: Used to explicitly throw an exception instance.</li>
+                                    <li>`throws`: Used in method signature to declare that the method might throw
+                                        exceptions.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q537 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q537. Can we catch `Error` in Java?</div>
+                            <div class="admonition-content">
+                                <p>Yes, you can catch `Throwable` or `Error`, but it is <strong>not
+                                        recommended</strong>. Errors (like OOM, StackOverflow) usually indicate serious
+                                    system problems that an app cannot recover from.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q538 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q538. What is the parent class of all classes?</div>
+                            <div class="admonition-content">
+                                <p>`java.lang.Object`.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q539 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q539. Does Java support multiple inheritance?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Classes:</strong> No (to avoid Diamond Problem).</li>
+                                    <li><strong>Interfaces:</strong> Yes (a class can implement multiple interfaces, an
+                                        interface can extend multiple interfaces).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q540 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q540. What is the Diamond Problem?</div>
+                            <div class="admonition-content">
+                                <p>Ambiguity that arises when two parent classes have a method with
+                                    the same signature, and a child class inherits from both. Java avoids this by not
+                                    allowing multiple class inheritance.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q541 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q541. Can we access a non-static variable from a static
+                                context?</div>
+                            <div class="admonition-content">
+                                <p>No. Static methods belong to the class and run without an
+                                    instance. Non-static variables require an instance.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q542 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q542. What is `ClassCastException`?</div>
+                            <div class="admonition-content">
+                                <p>Thrown when trying to cast an object to a subclass of which it
+                                    is not an instance.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q543 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q543. What is `instanceof` operator?</div>
+                            <div class="admonition-content">
+                                <p>Used to test if an object is an instance of a specific class,
+                                    subclass, or interface.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q544 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q544. Can we make a constructor private?</div>
+                            <div class="admonition-content">
+                                <p>Yes. This prevents instantiation from outside the class. Used in
+                                    Singleton Pattern and Utility classes (like `java.lang.Math`).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q545 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q545. What is the difference between `==` and `.equals()`?
+                                <span class="tag-most-asked">🔥 Most Asked</span>
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>`==`: Compares references (memory addresses).</li>
+                                    <li>`.equals()`: Compares content (if overridden). Default behavior in Object class
+                                        is
+                                        same as `==`.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q546 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q546. What is the contract between `hashCode()` and
+                                `equals()`?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>If `a.equals(b)` is true, then `a.hashCode()` MUST equal `b.hashCode()`.</li>
+                                    <li>If `a.hashCode() == b.hashCode()`, `a.equals(b)` does NOT have to be true
+                                        (Collision).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q547 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q547. What happens if you override equals() but not
+                                hashCode()?</div>
+                            <div class="admonition-content">
+                                <p>Hash-based collections (HashMap, HashSet) will fail to work
+                                    correctly. Two "equal" objects might have different hashCodes and end up in
+                                    different
+                                    buckets, so you won't be able to find/retrieve them.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q548 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q548. Can we change the value of a final variable?</div>
+                            <div class="admonition-content">
+                                <p>No. Once assigned, it cannot be reassigned.
+                                    <br><strong>Note:</strong> If the final variable is a reference to an object, the
+                                    <em>state</em> of the object can be changed, but the <em>reference</em> cannot.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q549 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q549. What is Blank Final Variable?</div>
+                            <div class="admonition-content">
+                                <p>A final variable that is not initialized at the time of
+                                    declaration. It must be initialized in the constructor (for instance variables) or
+                                    static block (for static variables).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q550 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q550. What is `this` keyword?</div>
+                            <div class="admonition-content">
+                                <p>Refers to the current object instance. Used to access instance
+                                    variables, methods, or call other constructors (`this()`).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q551 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q551. What is the output of
+                                `System.out.println("Hello".replace('l',
+                                'w'));`?</div>
+                            <div class="admonition-content">
+                                <p>`Hewwo`. `replace(char, char)` replaces <strong>all</strong>
+                                    occurrences.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q552 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q552. What is the output of
+                                `System.out.println("Hello".replaceAll("l",
+                                "w"));`?</div>
+                            <div class="admonition-content">
+                                <p>`Hewwo`. `replaceAll(String regex, String replacement)` also
+                                    replaces all occurrences, but the first argument is a Regex.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q553 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q553. What is the difference between `replace()` and
+                                `replaceAll()`?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>`replace()`: Works with `char` or `CharSequence` (literal string).</li>
+                                    <li>`replaceAll()`: Works with Regex. Slower if you just want simple string
+                                        replacement.
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q554 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q554. Can we override a method to throw a checked exception if
+                                the parent method
+                                doesn't?</div>
+                            <div class="admonition-content">
+                                <p>No. If the parent method does not declare a checked exception,
+                                    the overriding method cannot declare a new checked exception. It can only throw
+                                    unchecked exceptions.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q555 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q555. Can we override a method to throw a narrower (subclass)
+                                exception?
+                            </div>
+                            <div class="admonition-content">
+                                <p>Yes. This is allowed.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q556 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q556. Can we override a method to throw a broader (superclass)
+                                exception?</div>
+                            <div class="admonition-content">
+                                <p>No. This would break the contract for the caller who is catching
+                                    the specific exception.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q557 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q557. What happens if we call `run()` method directly instead
+                                of
+                                `start()`? <span class="tag-most-asked">🔥 Most Asked</span></div>
+                            <div class="admonition-content">
+                                <p>The code inside `run()` will execute in the <strong>current
+                                        thread</strong> (main thread), not in a new separate thread. No multithreading
+                                    happens.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q558 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q558. Can we start a thread twice?</div>
+                            <div class="admonition-content">
+                                <p>No. It throws `IllegalThreadStateException`.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q559 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q559. What is the difference between `wait()` and `sleep()`?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>`wait()`: Releases the lock. Must be called from synchronized context. Object
+                                        class
+                                        method.</li>
+                                    <li>`sleep()`: Keeps the lock. Can be called anywhere. Thread class static method.
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q560 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q560. Can we call `wait()` without synchronized block?</div>
+                            <div class="admonition-content">
+                                <p>No. It throws `IllegalMonitorStateException`.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q561 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q561. What is the output of
+                                `System.out.println(Math.round(-1.5));`?</div>
+                            <div class="admonition-content">
+                                <p>`-1`. `Math.round()` adds 0.5 and takes the floor. -1.5 + 0.5 =
+                                    -1.0 -> floor is -1.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q562 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q562. What is the output of
+                                `System.out.println(Math.round(1.5));`?</div>
+                            <div class="admonition-content">
+                                <p>`2`. 1.5 + 0.5 = 2.0 -> floor is 2.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q563 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q563. Is `Set<Object> s = new HashSet<String>();` valid?</div>
+                            <div class="admonition-content">
+                                <p>No. Generics are invariant. `Set<String>` is NOT a subtype of
+                                        `Set<Object>`.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q564 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q564. What is `
+                                <? extends Number>`?</div>
+    <div class="admonition-content">
+        <p>Upper Bounded Wildcard. It accepts `Number` or any of its subclasses (Integer, Double, etc.). You can read from it, but cannot write to it (except null).</p>
+    </div>
+</div>
+
+                        <!-- Q565 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q565. What is `<? super Integer>`?</div>
+    <div class="admonition-content">
+        <p>Lower Bounded Wildcard. It accepts `Integer` or any of its superclasses (Number, Object). You can write Integers to it.</p>
+    </div>
+</div>
+
+                        <!-- Q566 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q566. Can we use `this` or `super` in a static method?</div>
+    <div class="admonition-content">
+        <p>No. Static methods do not have an instance associated with them.</p>
+    </div>
+</div>
+
+                        <!-- Q567 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q567. What is the difference between `ClassNotFoundException` and `NoClassDefFoundError`?</div>
+    <div class="admonition-content">
+        <p><ul>
+                                    <li>`ClassNotFoundException`: Checked exception. Class not found in classpath during dynamic loading (`Class.forName()`).</li>
+                                    <li>`NoClassDefFoundError`: Error. Class was present at compile time but missing at runtime.</li>
+                                </ul></p>
+    </div>
+</div>
+
+                        <!-- Q568 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q568. Can we declare a class as static?</div>
+    <div class="admonition-content">
+        <p>Only <strong>inner</strong> classes can be static. Top-level classes cannot be static.</p>
+    </div>
+</div>
+
+                        <!-- Q569 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q569. What is the scope of a default (package-private) member?</div>
+    <div class="admonition-content">
+        <p>Accessible only within the same package.</p>
+    </div>
+</div>
+
+                        <!-- Q570 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q570. What is the scope of a protected member?</div>
+    <div class="admonition-content">
+        <p>Accessible within the same package AND by subclasses in different packages.</p>
+    </div>
+</div>
+
+                        <!-- Q571 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q571. Can an abstract class implement an interface?</div>
+    <div class="admonition-content">
+        <p>Yes. It is not required to implement all methods of the interface. The responsibility is passed to the first concrete subclass.</p>
+    </div>
+</div>
+
+                        <!-- Q572 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q572. Can an interface extend another interface?</div>
+    <div class="admonition-content">
+        <p>Yes. An interface can extend multiple interfaces.</p>
+    </div>
+</div>
+
+                        <!-- Q573 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q573. Can an interface implement another interface?</div>
+    <div class="admonition-content">
+        <p>No. Interfaces cannot "implement" anything. They can only "extend".</p>
+    </div>
+</div>
+
+                        <!-- Q574 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q574. What is the default priority of a thread?</div>
+    <div class="admonition-content">
+        <p>5 (NORM_PRIORITY). Range is 1 (MIN) to 10 (MAX).</p>
+    </div>
+</div>
+
+                        <!-- Q575 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q575. Can we change the priority of a thread after starting it?</div>
+    <div class="admonition-content">
+        <p>Yes, using `setPriority()`. But it depends on the OS scheduler if it respects it.</p>
+    </div>
+</div>
+
+                        <!-- Q576 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q576. What is the difference between `StringBuffer` and `StringBuilder`?</div>
+    <div class="admonition-content">
+        <p><ul>
+                                    <li>`StringBuffer`: Synchronized (Thread-safe), Slower.</li>
+                                    <li>`StringBuilder`: Not Synchronized, Faster. Introduced in Java 5.</li>
+                                </ul></p>
+    </div>
+</div>
+
+                        <!-- Q577 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q577. How does `HashMap` handle collisions?</div>
+    <div class="admonition-content">
+        <p>It uses a Linked List (chaining) at the bucket index. In Java 8+, if the list grows beyond a threshold (8), it converts to a Balanced Tree (Red-Black Tree) for O(log n) performance.</p>
+    </div>
+</div>
+
+                        <!-- Q578 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q578. Can we use `null` as a key in `TreeMap`?</div>
+    <div class="admonition-content">
+        <p>No. It throws `NullPointerException` because it tries to compare keys.</p>
+    </div>
+</div>
+
+                        <!-- Q579 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q579. Can we use `null` as a key in `HashMap`?</div>
+    <div class="admonition-content">
+        <p>Yes. It allows one null key (stored at index 0).</p>
+    </div>
+</div>
+
+                        <!-- Q580 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q580. What is `WeakHashMap`?</div>
+    <div class="admonition-content">
+        <p>A Map implementation where keys are WeakReferences. If a key is no longer referenced elsewhere, the entry is removed from the map during GC. Useful for caches.</p>
+    </div>
+</div>
+
+                        <!-- Q581 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q581. What is `IdentityHashMap`?</div>
+    <div class="admonition-content">
+        <p>A Map that uses reference equality (`==`) instead of object equality (`.equals()`) for keys.</p>
+    </div>
+</div>
+
+                        <!-- Q582 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q582. What is `EnumSet`?</div>
+    <div class="admonition-content">
+        <p>A specialized Set implementation for use with enum types. Extremely efficient (uses bit vectors).</p>
+    </div>
+</div>
+
+                        <!-- Q583 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q583. Can we create an object without using `new` keyword?</div>
+    <div class="admonition-content">
+        <p>Yes.
+                                <ul>
+                                    <li>`Class.forName("...").newInstance()` (Reflection)</li>
+                                    <li>`clone()`</li>
+                                    <li>Deserialization</li>
+                                    <li>Factory methods</li>
+                                </ul></p>
+    </div>
+</div>
+
+                        <!-- Q584 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q584. What is the difference between `fail-fast` and `fail-safe` iterators?</div>
+    <div class="admonition-content">
+        <p><ul>
+                                    <li>`fail-fast`: Throws `ConcurrentModificationException` if collection is modified during iteration (ArrayList, HashMap).</li>
+                                    <li>`fail-safe`: Works on a clone or snapshot, does not throw exception (ConcurrentHashMap, CopyOnWriteArrayList).</li>
+                                </ul></p>
+    </div>
+</div>
+
+                        <!-- Q585 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q585. What is `CopyOnWriteArrayList`?</div>
+    <div class="admonition-content">
+        <p>A thread-safe variant of ArrayList where all mutative operations (add, set) are implemented by making a fresh copy of the underlying array. Good for read-heavy scenarios.</p>
+    </div>
+</div>
+
+                        <!-- Q586 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q586. What is `BlockingQueue`?</div>
+    <div class="admonition-content">
+        <p>A Queue that supports operations that wait for the queue to become non-empty when retrieving an element, and wait for space to become available when storing an element. (Producer-Consumer pattern).</p>
+    </div>
+</div>
+
+                        <!-- Q587 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q587. What is `SynchronousQueue`?</div>
+    <div class="admonition-content">
+        <p>A blocking queue in which each insert operation must wait for a corresponding remove operation by another thread, and vice versa. It has capacity 0.</p>
+    </div>
+</div>
+
+                        <!-- Q588 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q588. What is `ThreadLocal`?</div>
+    <div class="admonition-content">
+        <p>Provides thread-local variables. Each thread accessing such a variable has its own, independently initialized copy of the variable.</p>
+    </div>
+</div>
+
+                        <!-- Q589 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q589. What is Memory Leak in ThreadLocal?</div>
+    <div class="admonition-content">
+        <p>If `ThreadLocal` variables are not removed (`remove()`), they stay in the thread's map. In thread pools (like Tomcat), threads are reused, so these variables persist, causing memory leaks.</p>
+    </div>
+</div>
+
+                        <!-- Q590 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q590. What is `Externalizable` interface?</div>
+    <div class="admonition-content">
+        <p>Extends Serializable. Gives you full control over serialization logic via `writeExternal` and `readExternal`.</p>
+    </div>
+</div>
+
+                        <!-- Q591 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q591. What is `SerialVersionUID`?</div>
+    <div class="admonition-content">
+        <p>A unique identifier for Serializable classes. Ensures that a loaded class corresponds exactly to a serialized object. If they don't match, `InvalidClassException` is thrown.</p>
+    </div>
+</div>
+
+                        <!-- Q592 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q592. Can we serialize a Singleton class?</div>
+    <div class="admonition-content">
+        <p>Yes, but deserialization creates a new instance, breaking the Singleton pattern. You must implement `readResolve()` to return the existing instance.</p>
+    </div>
+</div>
+
+                        <!-- Q593 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q593. What is `readResolve()` method?</div>
+    <div class="admonition-content">
+        <p>A hook method called during deserialization. It allows you to replace the deserialized object with another object (e.g., the Singleton instance).</p>
+    </div>
+</div>
+
+                        <!-- Q594 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q594. What is `finalize()` method?</div>
+    <div class="admonition-content">
+        <p>Called by GC before reclaiming an object. Deprecated in Java 9. Unpredictable and should be avoided.</p>
+    </div>
+</div>
+
+                        <!-- Q595 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q595. What is `Cleaner` or `PhantomReference`?</div>
+    <div class="admonition-content">
+        <p>Better alternatives to `finalize()` for resource cleanup.</p>
+    </div>
+</div>
+
+                        <!-- Q596 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q596. What is `try-with-resources`?</div>
+    <div class="admonition-content">
+        <p>Introduced in Java 7. Automatically closes resources (that implement `AutoCloseable`) at the end of the statement. Replaces `finally` block for closing resources.</p>
+    </div>
+</div>
+
+                        <!-- Q597 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q597. Can we have multiple catch blocks for a single try?</div>
+    <div class="admonition-content">
+        <p>Yes. But they must be ordered from most specific to most general (subclass to superclass). Otherwise, compile error (Unreachable code).</p>
+    </div>
+</div>
+
+                        <!-- Q598 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q598. What is Multi-catch block?</div>
+    <div class="admonition-content">
+        <p>Introduced in Java 7. Allows catching multiple exceptions in a single catch block using `|`. `catch (IOException | SQLException e)`.</p>
+    </div>
+</div>
+
+                        <!-- Q599 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q599. What is Rethrowing Exception?</div>
+    <div class="admonition-content">
+        <p>Catching an exception and throwing it again (maybe wrapped in another exception) to be handled by the caller.</p>
+    </div>
+</div>
+
+                        <!-- Q600 -->
+                        <div class="admonition note">
+    <div class="admonition-title">Q600. What is Exception Chaining?</div>
+    <div class="admonition-content">
+        <p>Wrapping an exception inside another exception (using constructor `new Exception(message, cause)`). Preserves the original stack trace (root cause).</p>
+    </div>
+</div>
+
+                        <!-- Navigation -->
+                        <div class="content-section text-center" style="margin-top: 3rem;">
+                            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
+                                <a class="md-button md-button--secondary" href="advanced.html">
+                                    ⬅️ Advanced
+                                </a>
+                                <a class="md-button md-button--primary" href="scenario-based.html">
+                                    Next: Scenario Based ➡️
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>

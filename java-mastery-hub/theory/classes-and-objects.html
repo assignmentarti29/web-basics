@@ -1,103 +1,513 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classes & Objects - Theory - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Classes &amp; Objects - Theory - Java Mastery Hub</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Classes & Objects</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Theory</span>
-                <span>/</span>
-                <span>Classes & Objects</span>
-            </div>
-        </div>
-
-        <!-- Section 1: What are Classes? -->
-        <div class="content-section">
-            <h2>🏗️ What are Classes?</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
-            <p>
-                Imagine you want to build many toy cars. Instead of describing each car from scratch every time, you
-                create a <strong>blueprint</strong> or <strong>template</strong> that shows:
-            </p>
-            <ul>
-                <li>What parts a car has (wheels, color, engine)</li>
-                <li>What a car can do (drive, honk, stop)</li>
-            </ul>
-            <p>
-                A <strong>class</strong> is exactly like that blueprint! It's a template that describes what something
-                should look like and what it can do. Once you have the blueprint, you can create as many actual cars as
-                you want!
-            </p>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE</div>
-                <p>
-                    Think of a class as a cookie cutter and objects as the actual cookies. The cookie cutter (class)
-                    defines the shape, but the cookies (objects) are what you actually eat!
-                </p>
-            </div>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of a class like a <strong>house blueprint</strong>:
-            </p>
-            <ul>
-                <li><strong>Blueprint (Class):</strong> Shows the design - 3 bedrooms, 2 bathrooms, kitchen, living
-                    room</li>
-                <li><strong>Actual Houses (Objects):</strong> Built using that blueprint - House #1 at 123 Main St,
-                    House #2 at 456 Oak Ave</li>
-            </ul>
-            <p>
-                The blueprint itself is not a house you can live in. But you can use it to build many real houses! Each
-                house will have the same structure (3 bedrooms, 2 bathrooms) but different details (different paint
-                colors, different furniture, different owners).
-            </p>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                A <strong>class</strong> is a user-defined data type that serves as a blueprint for creating objects.
-                It encapsulates data (fields/attributes) and behavior (methods) into a single unit. Classes are the
-                foundation of Object-Oriented Programming (OOP) in Java.
-            </p>
-
-            <h4>Class Structure Components:</h4>
-            <ul>
-                <li><strong>Fields (Variables):</strong> Store the state/data of objects</li>
-                <li><strong>Methods:</strong> Define the behavior/actions objects can perform</li>
-                <li><strong>Constructors:</strong> Special methods to initialize objects</li>
-                <li><strong>Access Modifiers:</strong> Control visibility (public, private, protected)</li>
-            </ul>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Basic class syntax
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Classes &amp; Objects</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Theory</a></li>
+                        <li>Classes &amp; Objects</li>
+                    </ul>
+                </div>
+                <!-- Section 1: What are Classes? -->
+                <div class="content-section">
+                    <h2>🏗️ What are Classes?</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+                    <p>
+                        Imagine you want to build many toy cars. Instead of describing each car from scratch every time,
+                        you
+                        create a <strong>blueprint</strong> or <strong>template</strong> that shows:
+                    </p>
+                    <ul>
+                        <li>What parts a car has (wheels, color, engine)</li>
+                        <li>What a car can do (drive, honk, stop)</li>
+                    </ul>
+                    <p>
+                        A <strong>class</strong> is exactly like that blueprint! It's a template that describes what
+                        something
+                        should look like and what it can do. Once you have the blueprint, you can create as many actual
+                        cars as
+                        you want!
+                    </p>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE</div>
+                        <div class="admonition-content">
+                            <p>
+                                Think of a class as a cookie cutter and objects as the actual cookies. The cookie cutter
+                                (class)
+                                defines the shape, but the cookies (objects) are what you actually eat!
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of a class like a <strong>house blueprint</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Blueprint (Class):</strong> Shows the design - 3 bedrooms, 2 bathrooms, kitchen,
+                            living
+                            room</li>
+                        <li><strong>Actual Houses (Objects):</strong> Built using that blueprint - House #1 at 123 Main
+                            St,
+                            House #2 at 456 Oak Ave</li>
+                    </ul>
+                    <p>
+                        The blueprint itself is not a house you can live in. But you can use it to build many real
+                        houses! Each
+                        house will have the same structure (3 bedrooms, 2 bathrooms) but different details (different
+                        paint
+                        colors, different furniture, different owners).
+                    </p>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        A <strong>class</strong> is a user-defined data type that serves as a blueprint for creating
+                        objects.
+                        It encapsulates data (fields/attributes) and behavior (methods) into a single unit. Classes are
+                        the
+                        foundation of Object-Oriented Programming (OOP) in Java.
+                    </p>
+                    <h4>Class Structure Components:</h4>
+                    <ul>
+                        <li><strong>Fields (Variables):</strong> Store the state/data of objects</li>
+                        <li><strong>Methods:</strong> Define the behavior/actions objects can perform</li>
+                        <li><strong>Constructors:</strong> Special methods to initialize objects</li>
+                        <li><strong>Access Modifiers:</strong> Control visibility (public, private, protected)</li>
+                    </ul>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Basic class syntax
 class ClassName {
     // Fields (instance variables)
     dataType fieldName;
@@ -113,68 +523,71 @@ class ClassName {
     }
 }
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Real-World Class</div>
-                <p>
-                    <strong>Car Class:</strong> A car blueprint defines that every car has a brand, model, year, and
-                    color (fields), and every car can start(), drive(), and stop() (methods). You can then create
-                    specific cars like "Honda Civic 2022 Red" or "Toyota Camry 2023 Blue".
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 2: What are Objects? -->
-        <div class="content-section">
-            <h2>🎯 What are Objects?</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                If a class is a blueprint, then an <strong>object</strong> is the <strong>real thing</strong> built
-                using that blueprint!
-            </p>
-            <p>
-                Using our toy car example:
-            </p>
-            <ul>
-                <li><strong>Class (Blueprint):</strong> "A car has color, brand, and can drive"</li>
-                <li><strong>Object (Real Car):</strong> "My red Honda that can actually drive!"</li>
-                <li><strong>Another Object:</strong> "My friend's blue Toyota that can also drive!"</li>
-            </ul>
-            <p>
-                Each object is a separate, independent copy created from the same blueprint. They all have the same
-                structure but different values!
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Using the house blueprint analogy:
-            </p>
-            <ul>
-                <li><strong>Class:</strong> The blueprint showing 3 bedrooms, 2 bathrooms</li>
-                <li><strong>Object 1:</strong> John's house at 123 Main St (painted blue, has a garden)</li>
-                <li><strong>Object 2:</strong> Sarah's house at 456 Oak Ave (painted white, has a pool)</li>
-                <li><strong>Object 3:</strong> Mike's house at 789 Elm Rd (painted yellow, has a garage)</li>
-            </ul>
-            <p>
-                All three houses follow the same blueprint (same structure), but each is a unique, real house with its
-                own characteristics and owner!
-            </p>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                An <strong>object</strong> is an instance of a class. It's a concrete entity that exists in memory with
-                actual values for the fields defined in the class. Objects are created using the <code>new</code>
-                keyword, which:
-            </p>
-            <ol>
-                <li>Allocates memory in the heap</li>
-                <li>Calls the constructor to initialize the object</li>
-                <li>Returns a reference (memory address) to the object</li>
-            </ol>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// Creating objects from a class
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Real-World Class</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Car Class:</strong> A car blueprint defines that every car has a brand, model,
+                                year, and
+                                color (fields), and every car can start(), drive(), and stop() (methods). You can then
+                                create
+                                specific cars like "Honda Civic 2022 Red" or "Toyota Camry 2023 Blue".
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2: What are Objects? -->
+                <div class="content-section">
+                    <h2>🎯 What are Objects?</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        If a class is a blueprint, then an <strong>object</strong> is the <strong>real thing</strong>
+                        built
+                        using that blueprint!
+                    </p>
+                    <p>
+                        Using our toy car example:
+                    </p>
+                    <ul>
+                        <li><strong>Class (Blueprint):</strong> "A car has color, brand, and can drive"</li>
+                        <li><strong>Object (Real Car):</strong> "My red Honda that can actually drive!"</li>
+                        <li><strong>Another Object:</strong> "My friend's blue Toyota that can also drive!"</li>
+                    </ul>
+                    <p>
+                        Each object is a separate, independent copy created from the same blueprint. They all have the
+                        same
+                        structure but different values!
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Using the house blueprint analogy:
+                    </p>
+                    <ul>
+                        <li><strong>Class:</strong> The blueprint showing 3 bedrooms, 2 bathrooms</li>
+                        <li><strong>Object 1:</strong> John's house at 123 Main St (painted blue, has a garden)</li>
+                        <li><strong>Object 2:</strong> Sarah's house at 456 Oak Ave (painted white, has a pool)</li>
+                        <li><strong>Object 3:</strong> Mike's house at 789 Elm Rd (painted yellow, has a garage)</li>
+                    </ul>
+                    <p>
+                        All three houses follow the same blueprint (same structure), but each is a unique, real house
+                        with its
+                        own characteristics and owner!
+                    </p>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        An <strong>object</strong> is an instance of a class. It's a concrete entity that exists in
+                        memory with
+                        actual values for the fields defined in the class. Objects are created using the
+                        <code>new</code>
+                        keyword, which:
+                    </p>
+                    <ol>
+                        <li>Allocates memory in the heap</li>
+                        <li>Calls the constructor to initialize the object</li>
+                        <li>Returns a reference (memory address) to the object</li>
+                    </ol>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// Creating objects from a class
 ClassName objectName = new ClassName();
 
 // Example:
@@ -184,33 +597,33 @@ Car yourCar = new Car();
 // Each object has its own memory space
 // myCar and yourCar are independent objects
 </code></pre>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Common Confusion</div>
-                <p>
-                    The class is NOT the object! The class is the blueprint/template. Objects are the actual instances
-                    created from that blueprint. You can have one class but create thousands of objects from it!
-                </p>
-            </div>
-
-            <h4>Memory Understanding: Heap vs Stack</h4>
-            <ul>
-                <li><strong>Stack:</strong> Stores the reference variable (like a remote control)</li>
-                <li><strong>Heap:</strong> Stores the actual object (like the actual TV)</li>
-                <li>The reference points to the object's location in heap memory</li>
-            </ul>
-        </div>
-
-        <!-- Section 3: Class Structure in Detail -->
-        <div class="content-section">
-            <h2>🔧 Class Structure Components</h2>
-
-            <h3>1. Fields (Instance Variables)</h3>
-            <p>
-                Fields store the state/data of each object. Each object gets its own copy of instance variables.
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Student {
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Common Confusion</div>
+                        <div class="admonition-content">
+                            <p>
+                                The class is NOT the object! The class is the blueprint/template. Objects are the actual
+                                instances
+                                created from that blueprint. You can have one class but create thousands of objects from
+                                it!
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Memory Understanding: Heap vs Stack</h4>
+                    <ul>
+                        <li><strong>Stack:</strong> Stores the reference variable (like a remote control)</li>
+                        <li><strong>Heap:</strong> Stores the actual object (like the actual TV)</li>
+                        <li>The reference points to the object's location in heap memory</li>
+                    </ul>
+                </div>
+                <!-- Section 3: Class Structure in Detail -->
+                <div class="content-section">
+                    <h2>🔧 Class Structure Components</h2>
+                    <h3>1. Fields (Instance Variables)</h3>
+                    <p>
+                        Fields store the state/data of each object. Each object gets its own copy of instance variables.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Student {
     // Fields - each student object has these
     String name;
     int age;
@@ -218,13 +631,12 @@ Car yourCar = new Car();
     double gpa;
 }
 </code></pre>
-
-            <h3>2. Methods</h3>
-            <p>
-                Methods define what objects can do. They operate on the object's data.
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Student {
+                    <h3>2. Methods</h3>
+                    <p>
+                        Methods define what objects can do. They operate on the object's data.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Student {
     String name;
     int age;
     
@@ -238,13 +650,12 @@ Car yourCar = new Car();
     }
 }
 </code></pre>
-
-            <h3>3. Constructors</h3>
-            <p>
-                Special methods called when creating objects. Used to initialize fields.
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Student {
+                    <h3>3. Constructors</h3>
+                    <p>
+                        Special methods called when creating objects. Used to initialize fields.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Student {
     String name;
     int age;
     
@@ -255,37 +666,36 @@ Car yourCar = new Car();
     }
 }
 </code></pre>
-
-            <h3>4. Access Modifiers</h3>
-            <p>
-                Control who can access class members:
-            </p>
-            <ul>
-                <li><strong>public:</strong> Accessible from anywhere</li>
-                <li><strong>private:</strong> Only accessible within the class (encapsulation)</li>
-                <li><strong>protected:</strong> Accessible in same package and subclasses</li>
-                <li><strong>default (no modifier):</strong> Accessible only in same package</li>
-            </ul>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Best Practice</div>
-                <p>
-                    Make fields <code>private</code> and provide <code>public</code> methods (getters/setters) to
-                    access them. This is called <strong>encapsulation</strong> and protects your data from unwanted
-                    changes!
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 4: Syntax and Creation Flow -->
-        <div class="content-section">
-            <h2>📝 Complete Syntax and Creation Flow</h2>
-
-            <h3>Step-by-Step: Define → Create → Use</h3>
-
-            <h4>Step 1: Define the Class</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Car {
+                    <h3>4. Access Modifiers</h3>
+                    <p>
+                        Control who can access class members:
+                    </p>
+                    <ul>
+                        <li><strong>public:</strong> Accessible from anywhere</li>
+                        <li><strong>private:</strong> Only accessible within the class (encapsulation)</li>
+                        <li><strong>protected:</strong> Accessible in same package and subclasses</li>
+                        <li><strong>default (no modifier):</strong> Accessible only in same package</li>
+                    </ul>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Best Practice</div>
+                        <div class="admonition-content">
+                            <p>
+                                Make fields <code>private</code> and provide <code>public</code> methods
+                                (getters/setters) to
+                                access them. This is called <strong>encapsulation</strong> and protects your data from
+                                unwanted
+                                changes!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 4: Syntax and Creation Flow -->
+                <div class="content-section">
+                    <h2>📝 Complete Syntax and Creation Flow</h2>
+                    <h3>Step-by-Step: Define → Create → Use</h3>
+                    <h4>Step 1: Define the Class</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Car {
     // Fields
     String brand;
     String model;
@@ -314,10 +724,9 @@ Car yourCar = new Car();
     }
 }
 </code></pre>
-
-            <h4>Step 2: Create Objects</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>public class Main {
+                    <h4>Step 2: Create Objects</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>public class Main {
     public static void main(String[] args) {
         // Creating objects using 'new' keyword
         Car car1 = new Car("Honda", "Civic", 2022, "Red");
@@ -328,10 +737,9 @@ Car yourCar = new Car();
     }
 }
 </code></pre>
-
-            <h4>Step 3: Use Objects</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// Access fields (if public)
+                    <h4>Step 3: Use Objects</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// Access fields (if public)
 System.out.println(car1.brand);  // Honda
 
 // Call methods
@@ -342,56 +750,55 @@ car1.displayInfo();  // 2022 Honda Civic (Red)
 car2.start();        // Toyota Camry is starting...
 car3.displayInfo();  // 2021 Ford Mustang (Black)
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Creation Flow Visualization</div>
-                <p>
-                    <strong>1. Define Class:</strong> Create the blueprint (Car class)<br>
-                    <strong>2. Create Object:</strong> Build actual car (car1 = new Car(...))<br>
-                    <strong>3. Use Object:</strong> Drive the car (car1.drive())<br><br>
-                    It's like: 1) Draw house plans, 2) Build the house, 3) Live in the house!
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 5: Constructors in Detail -->
-        <div class="content-section">
-            <h2>🏗️ Constructors</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                A constructor is like a <strong>setup wizard</strong> that runs automatically when you create something
-                new. When you buy a new phone, it asks you to set your name, language, and preferences - that's like a
-                constructor setting up your phone!
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of a constructor like <strong>filling out a registration form</strong>:
-            </p>
-            <ul>
-                <li><strong>Default Constructor:</strong> Form with all fields blank (you fill them later)</li>
-                <li><strong>Parameterized Constructor:</strong> Form where you provide all info upfront (name, email,
-                    phone)</li>
-            </ul>
-
-            <h3>Level 3: Technical Explanation</h3>
-            <p>
-                A constructor is a special method that:
-            </p>
-            <ul>
-                <li>Has the SAME name as the class</li>
-                <li>Has NO return type (not even void)</li>
-                <li>Is automatically called when an object is created using <code>new</code></li>
-                <li>Is used to initialize object fields</li>
-            </ul>
-
-            <h4>1. Default Constructor</h4>
-            <p>
-                No parameters. If you don't write any constructor, Java provides one automatically.
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Book {
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Creation Flow Visualization</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>1. Define Class:</strong> Create the blueprint (Car class)<br />
+                                <strong>2. Create Object:</strong> Build actual car (car1 = new Car(...))<br />
+                                <strong>3. Use Object:</strong> Drive the car (car1.drive())<br /><br />
+                                It's like: 1) Draw house plans, 2) Build the house, 3) Live in the house!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 5: Constructors in Detail -->
+                <div class="content-section">
+                    <h2>🏗️ Constructors</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        A constructor is like a <strong>setup wizard</strong> that runs automatically when you create
+                        something
+                        new. When you buy a new phone, it asks you to set your name, language, and preferences - that's
+                        like a
+                        constructor setting up your phone!
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of a constructor like <strong>filling out a registration form</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Default Constructor:</strong> Form with all fields blank (you fill them later)</li>
+                        <li><strong>Parameterized Constructor:</strong> Form where you provide all info upfront (name,
+                            email,
+                            phone)</li>
+                    </ul>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <p>
+                        A constructor is a special method that:
+                    </p>
+                    <ul>
+                        <li>Has the SAME name as the class</li>
+                        <li>Has NO return type (not even void)</li>
+                        <li>Is automatically called when an object is created using <code>new</code></li>
+                        <li>Is used to initialize object fields</li>
+                    </ul>
+                    <h4>1. Default Constructor</h4>
+                    <p>
+                        No parameters. If you don't write any constructor, Java provides one automatically.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Book {
     String title;
     String author;
     
@@ -406,13 +813,12 @@ car3.displayInfo();  // 2021 Ford Mustang (Black)
 // Usage:
 Book book1 = new Book();  // Calls default constructor
 </code></pre>
-
-            <h4>2. Parameterized Constructor</h4>
-            <p>
-                Takes parameters to initialize fields with specific values.
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>class Book {
+                    <h4>2. Parameterized Constructor</h4>
+                    <p>
+                        Takes parameters to initialize fields with specific values.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>class Book {
     String title;
     String author;
     int pages;
@@ -428,13 +834,12 @@ Book book1 = new Book();  // Calls default constructor
 // Usage:
 Book book2 = new Book("Java Basics", "John Doe", 350);
 </code></pre>
-
-            <h4>3. Constructor Overloading</h4>
-            <p>
-                Multiple constructors with different parameters. Provides flexibility in object creation.
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Book {
+                    <h4>3. Constructor Overloading</h4>
+                    <p>
+                        Multiple constructors with different parameters. Provides flexibility in object creation.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Book {
     String title;
     String author;
     int pages;
@@ -466,61 +871,64 @@ Book b1 = new Book();                              // Constructor 1
 Book b2 = new Book("Java", "Smith");               // Constructor 2
 Book b3 = new Book("Python", "Jones", 400);        // Constructor 3
 </code></pre>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - Java's Default Constructor</div>
-                <p>
-                    If you don't write ANY constructor, Java automatically provides a default no-argument constructor.
-                    But if you write even ONE constructor, Java will NOT provide the default one - you must write it
-                    yourself if needed!
-                </p>
-            </div>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Constructor Chaining</div>
-                <p>
-                    You can call one constructor from another using <code>this()</code>. This reduces code duplication!
-                    <br><br>
-                    Example: <code>Book(String title) { this(title, "Unknown", 0); }</code>
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 6: The 'this' Keyword -->
-        <div class="content-section">
-            <h2>👉 The 'this' Keyword</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                <code>this</code> is like pointing to yourself and saying <strong>"ME!"</strong> or <strong>"MY
-                    OWN!"</strong>
-            </p>
-            <p>
-                When you say "my name" or "my toy", you're referring to YOUR specific name and YOUR specific toy, not
-                someone else's. In Java, <code>this</code> means "this current object" or "my own".
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Imagine you're in a classroom with many students. When the teacher asks "Who has the red pencil?", you
-                point to yourself and say "I have it!" or "This is mine!"
-            </p>
-            <p>
-                <code>this</code> is like that - it's the object pointing to itself saying "I'm talking about MY OWN
-                data, not someone else's!"
-            </p>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                <code>this</code> is a reference variable that refers to the current object. It's used to:
-            </p>
-
-            <h4>Use Case 1: Distinguish Instance Variables from Parameters</h4>
-            <p>
-                When parameter names match field names, use <code>this</code> to refer to the instance variable.
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Person {
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - Java's Default Constructor</div>
+                        <div class="admonition-content">
+                            <p>
+                                If you don't write ANY constructor, Java automatically provides a default no-argument
+                                constructor.
+                                But if you write even ONE constructor, Java will NOT provide the default one - you must
+                                write it
+                                yourself if needed!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Constructor Chaining</div>
+                        <div class="admonition-content">
+                            <p>
+                                You can call one constructor from another using <code>this()</code>. This reduces code
+                                duplication!
+                                <br /><br />
+                                Example: <code>Book(String title) { this(title, "Unknown", 0); }</code>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 6: The 'this' Keyword -->
+                <div class="content-section">
+                    <h2>👉 The 'this' Keyword</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        <code>this</code> is like pointing to yourself and saying <strong>"ME!"</strong> or <strong>"MY
+                            OWN!"</strong>
+                    </p>
+                    <p>
+                        When you say "my name" or "my toy", you're referring to YOUR specific name and YOUR specific
+                        toy, not
+                        someone else's. In Java, <code>this</code> means "this current object" or "my own".
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Imagine you're in a classroom with many students. When the teacher asks "Who has the red
+                        pencil?", you
+                        point to yourself and say "I have it!" or "This is mine!"
+                    </p>
+                    <p>
+                        <code>this</code> is like that - it's the object pointing to itself saying "I'm talking about MY
+                        OWN
+                        data, not someone else's!"
+                    </p>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        <code>this</code> is a reference variable that refers to the current object. It's used to:
+                    </p>
+                    <h4>Use Case 1: Distinguish Instance Variables from Parameters</h4>
+                    <p>
+                        When parameter names match field names, use <code>this</code> to refer to the instance variable.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Person {
     String name;  // Instance variable
     int age;      // Instance variable
     
@@ -535,10 +943,9 @@ Book b3 = new Book("Python", "Jones", 400);        // Constructor 3
 // Without 'this':
 // name = name;  // Assigns parameter to itself! Field stays uninitialized!
 </code></pre>
-
-            <h4>Use Case 2: Call Another Constructor (Constructor Chaining)</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>class Person {
+                    <h4>Use Case 2: Call Another Constructor (Constructor Chaining)</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>class Person {
     String name;
     int age;
     String city;
@@ -557,10 +964,9 @@ Book b3 = new Book("Python", "Jones", 400);        // Constructor 3
     }
 }
 </code></pre>
-
-            <h4>Use Case 3: Return Current Object (Method Chaining)</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Person {
+                    <h4>Use Case 3: Return Current Object (Method Chaining)</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>class Person {
     String name;
     int age;
     
@@ -580,10 +986,9 @@ Person p = new Person()
     .setName("Alice")
     .setAge(25);
 </code></pre>
-
-            <h4>Use Case 4: Pass Current Object as Parameter</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>class Person {
+                    <h4>Use Case 4: Pass Current Object as Parameter</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>class Person {
     String name;
     
     void display() {
@@ -601,53 +1006,52 @@ class Printer {
     }
 }
 </code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Why 'this' is Essential</div>
-                <p>
-                    <strong>Without this:</strong> <code>name = name;</code> assigns the parameter to itself. The
-                    instance variable stays uninitialized!<br>
-                    <strong>With this:</strong> <code>this.name = name;</code> clearly assigns parameter to instance
-                    variable. ✅
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 7: Object Reference and Garbage Collection -->
-        <div class="content-section">
-            <h2>🗑️ Object Reference and Garbage Collection</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Think of an object like a <strong>balloon</strong> and the reference variable like the
-                <strong>string</strong> you hold it with:
-            </p>
-            <ul>
-                <li>If you hold the string, the balloon stays with you (object is accessible)</li>
-                <li>If you let go of the string, the balloon floats away (object becomes unreachable)</li>
-                <li>Java's garbage collector is like a cleanup crew that collects all the floating balloons (unused
-                    objects)</li>
-            </ul>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Imagine a <strong>parking lot</strong>:
-            </p>
-            <ul>
-                <li><strong>Car:</strong> The actual object in memory (heap)</li>
-                <li><strong>Parking ticket:</strong> The reference variable (stack)</li>
-                <li><strong>Losing the ticket:</strong> Losing the reference (car becomes inaccessible)</li>
-                <li><strong>Tow truck:</strong> Garbage collector (removes abandoned cars)</li>
-            </ul>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <h4>Object References</h4>
-            <p>
-                A reference variable stores the memory address (reference) of an object, not the object itself.
-            </p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>Car car1 = new Car("Honda");  // car1 holds reference to Car object
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Why 'this' is Essential</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Without this:</strong> <code>name = name;</code> assigns the parameter to
+                                itself. The
+                                instance variable stays uninitialized!<br />
+                                <strong>With this:</strong> <code>this.name = name;</code> clearly assigns parameter to
+                                instance
+                                variable. ✅
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 7: Object Reference and Garbage Collection -->
+                <div class="content-section">
+                    <h2>🗑️ Object Reference and Garbage Collection</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Think of an object like a <strong>balloon</strong> and the reference variable like the
+                        <strong>string</strong> you hold it with:
+                    </p>
+                    <ul>
+                        <li>If you hold the string, the balloon stays with you (object is accessible)</li>
+                        <li>If you let go of the string, the balloon floats away (object becomes unreachable)</li>
+                        <li>Java's garbage collector is like a cleanup crew that collects all the floating balloons
+                            (unused
+                            objects)</li>
+                    </ul>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Imagine a <strong>parking lot</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>Car:</strong> The actual object in memory (heap)</li>
+                        <li><strong>Parking ticket:</strong> The reference variable (stack)</li>
+                        <li><strong>Losing the ticket:</strong> Losing the reference (car becomes inaccessible)</li>
+                        <li><strong>Tow truck:</strong> Garbage collector (removes abandoned cars)</li>
+                    </ul>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <h4>Object References</h4>
+                    <p>
+                        A reference variable stores the memory address (reference) of an object, not the object itself.
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>Car car1 = new Car("Honda");  // car1 holds reference to Car object
 Car car2 = car1;              // car2 holds SAME reference (both point to same object)
 
 car1.brand = "Toyota";
@@ -656,14 +1060,12 @@ System.out.println(car2.brand);  // Toyota (same object!)
 car1 = null;  // car1 no longer references the object
 // But car2 still references it, so object is NOT garbage collected
 </code></pre>
-
-            <h4>When Objects Become Eligible for Garbage Collection</h4>
-            <p>
-                An object becomes eligible for garbage collection when there are NO references pointing to it:
-            </p>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// Scenario 1: Assigning null
+                    <h4>When Objects Become Eligible for Garbage Collection</h4>
+                    <p>
+                        An object becomes eligible for garbage collection when there are NO references pointing to it:
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--warning);"><code>// Scenario 1: Assigning null
 Car car1 = new Car("Honda");
 car1 = null;  // Object is now eligible for GC
 
@@ -679,51 +1081,51 @@ void method() {
 // Scenario 4: Anonymous object
 new Car("Audi").start();  // No reference stored, immediately eligible for GC
 </code></pre>
-
-            <h4>Garbage Collection Process</h4>
-            <ul>
-                <li>Java automatically manages memory through Garbage Collection (GC)</li>
-                <li>GC runs periodically to free memory occupied by unreachable objects</li>
-                <li>You cannot force GC, but can suggest it using <code>System.gc()</code></li>
-                <li>GC improves performance by preventing memory leaks</li>
-            </ul>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING - Null Pointer Exception</div>
-                <p>
-                    If you try to use a null reference, you get a <code>NullPointerException</code>!<br><br>
-                    <code>Car car = null;</code><br>
-                    <code>car.start();  // ❌ NullPointerException!</code>
-                </p>
-            </div>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - finalize() Method</div>
-                <p>
-                    Before an object is garbage collected, Java calls its <code>finalize()</code> method (if
-                    overridden). However, this is deprecated and not recommended for cleanup. Use try-with-resources or
-                    explicit cleanup methods instead.
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 8: Multiple Object Creation -->
-        <div class="content-section">
-            <h2>🎨 Creating Multiple Objects</h2>
-
-            <h3>Why Create Multiple Objects?</h3>
-            <p>
-                In real applications, you need many objects of the same type. For example:
-            </p>
-            <ul>
-                <li>A school system needs multiple Student objects</li>
-                <li>A banking app needs multiple Account objects</li>
-                <li>A game needs multiple Player objects</li>
-            </ul>
-
-            <h3>Example: Multiple Students</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Student {
+                    <h4>Garbage Collection Process</h4>
+                    <ul>
+                        <li>Java automatically manages memory through Garbage Collection (GC)</li>
+                        <li>GC runs periodically to free memory occupied by unreachable objects</li>
+                        <li>You cannot force GC, but can suggest it using <code>System.gc()</code></li>
+                        <li>GC improves performance by preventing memory leaks</li>
+                    </ul>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING - Null Pointer Exception</div>
+                        <div class="admonition-content">
+                            <p>
+                                If you try to use a null reference, you get a
+                                <code>NullPointerException</code>!<br /><br />
+                                <code>Car car = null;</code><br />
+                                <code>car.start();  // ❌ NullPointerException!</code>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - finalize() Method</div>
+                        <div class="admonition-content">
+                            <p>
+                                Before an object is garbage collected, Java calls its <code>finalize()</code> method (if
+                                overridden). However, this is deprecated and not recommended for cleanup. Use
+                                try-with-resources or
+                                explicit cleanup methods instead.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 8: Multiple Object Creation -->
+                <div class="content-section">
+                    <h2>🎨 Creating Multiple Objects</h2>
+                    <h3>Why Create Multiple Objects?</h3>
+                    <p>
+                        In real applications, you need many objects of the same type. For example:
+                    </p>
+                    <ul>
+                        <li>A school system needs multiple Student objects</li>
+                        <li>A banking app needs multiple Account objects</li>
+                        <li>A game needs multiple Player objects</li>
+                    </ul>
+                    <h3>Example: Multiple Students</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class Student {
     String name;
     int rollNumber;
     double gpa;
@@ -759,10 +1161,9 @@ public class Main {
     }
 }
 </code></pre>
-
-            <h3>Using Arrays to Store Multiple Objects</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// Create array of Student objects
+                    <h3>Using Arrays to Store Multiple Objects</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// Create array of Student objects
 Student[] students = new Student[5];
 
 // Initialize each element
@@ -773,7 +1174,7 @@ students[3] = new Student("Diana", 104, 4.0);
 students[4] = new Student("Eve", 105, 3.7);
 
 // Loop through and display all
-for (int i = 0; i < students.length; i++) {
+for (int i = 0; i &lt; students.length; i++) {
     students[i].displayInfo();
 }
 
@@ -782,35 +1183,35 @@ for (Student s : students) {
     s.displayInfo();
 }
 </code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Object Independence</div>
-                <p>
-                    Each object is completely independent! Changing one object's fields does NOT affect other objects,
-                    even if they're from the same class. They each have their own memory space in the heap.
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 9: Best Practices -->
-        <div class="content-section">
-            <h2>✨ Best Practices for Classes and Objects</h2>
-
-            <h3>1. Follow Naming Conventions</h3>
-            <ul>
-                <li><strong>Class names:</strong> PascalCase (capitalize first letter of each word) - <code>Student,
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Object Independence</div>
+                        <div class="admonition-content">
+                            <p>
+                                Each object is completely independent! Changing one object's fields does NOT affect
+                                other objects,
+                                even if they're from the same class. They each have their own memory space in the heap.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 9: Best Practices -->
+                <div class="content-section">
+                    <h2>✨ Best Practices for Classes and Objects</h2>
+                    <h3>1. Follow Naming Conventions</h3>
+                    <ul>
+                        <li><strong>Class names:</strong> PascalCase (capitalize first letter of each word) - <code>Student,
                         BankAccount, CarEngine</code></li>
-                <li><strong>Object names:</strong> camelCase (first word lowercase) - <code>myStudent, bankAccount1,
+                        <li><strong>Object names:</strong> camelCase (first word lowercase) - <code>myStudent, bankAccount1,
                         carEngine</code></li>
-                <li><strong>Method names:</strong> camelCase, start with verb - <code>calculateTotal(), displayInfo(),
+                        <li><strong>Method names:</strong> camelCase, start with verb - <code>calculateTotal(), displayInfo(),
                         getName()</code></li>
-                <li><strong>Field names:</strong> camelCase - <code>studentName, accountBalance, enginePower</code>
-                </li>
-            </ul>
-
-            <h3>2. Encapsulation - Make Fields Private</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ❌ BAD - Public fields (anyone can modify)
+                        <li><strong>Field names:</strong> camelCase -
+                            <code>studentName, accountBalance, enginePower</code>
+                        </li>
+                    </ul>
+                    <h3>2. Encapsulation - Make Fields Private</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--success);"><code>// ❌ BAD - Public fields (anyone can modify)
 class BankAccount {
     public double balance;  // Anyone can do: account.balance = -1000;
 }
@@ -824,16 +1225,15 @@ class BankAccount {
     }
     
     public void deposit(double amount) {
-        if (amount > 0) {
+        if (amount &gt; 0) {
             balance += amount;
         }
     }
 }
 </code></pre>
-
-            <h3>3. Use Meaningful Names</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>// ❌ BAD - Unclear names
+                    <h3>3. Use Meaningful Names</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--info);"><code>// ❌ BAD - Unclear names
 class C {
     int x;
     void m() { }
@@ -845,10 +1245,9 @@ class Customer {
     void displayCustomerInfo() { }
 }
 </code></pre>
-
-            <h3>4. Initialize Fields in Constructor</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// ✅ GOOD - All fields initialized
+                    <h3>4. Initialize Fields in Constructor</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// ✅ GOOD - All fields initialized
 class Product {
     private String name;
     private double price;
@@ -859,38 +1258,37 @@ class Product {
     }
 }
 </code></pre>
-
-            <h3>5. One Class Per File (for public classes)</h3>
-            <ul>
-                <li>Each public class should be in its own file</li>
-                <li>File name must match the public class name</li>
-                <li>Example: <code>Student.java</code> contains <code>public class Student</code></li>
-            </ul>
-
-            <h3>6. Keep Methods Focused and Small</h3>
-            <ul>
-                <li>Each method should do ONE thing well</li>
-                <li>If a method is too long, break it into smaller methods</li>
-                <li>Makes code easier to read, test, and maintain</li>
-            </ul>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Single Responsibility Principle</div>
-                <p>
-                    Each class should have ONE clear purpose. Don't create a "God class" that does everything. For
-                    example, a <code>Student</code> class should handle student data, not database operations or UI
-                    rendering.
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 10: Common Mistakes -->
-        <div class="content-section">
-            <h2>⚠️ Common Mistakes with Classes and Objects</h2>
-
-            <h3>1. Forgetting the 'new' Keyword</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Missing 'new'
+                    <h3>5. One Class Per File (for public classes)</h3>
+                    <ul>
+                        <li>Each public class should be in its own file</li>
+                        <li>File name must match the public class name</li>
+                        <li>Example: <code>Student.java</code> contains <code>public class Student</code></li>
+                    </ul>
+                    <h3>6. Keep Methods Focused and Small</h3>
+                    <ul>
+                        <li>Each method should do ONE thing well</li>
+                        <li>If a method is too long, break it into smaller methods</li>
+                        <li>Makes code easier to read, test, and maintain</li>
+                    </ul>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Single Responsibility Principle</div>
+                        <div class="admonition-content">
+                            <p>
+                                Each class should have ONE clear purpose. Don't create a "God class" that does
+                                everything. For
+                                example, a <code>Student</code> class should handle student data, not database
+                                operations or UI
+                                rendering.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 10: Common Mistakes -->
+                <div class="content-section">
+                    <h2>⚠️ Common Mistakes with Classes and Objects</h2>
+                    <h3>1. Forgetting the 'new' Keyword</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Missing 'new'
 Car car;
 car.start();  // NullPointerException! car is null!
 
@@ -898,20 +1296,18 @@ car.start();  // NullPointerException! car is null!
 Car car = new Car();
 car.start();  // Works!
 </code></pre>
-
-            <h3>2. Confusing Class and Object</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Trying to use class as object
+                    <h3>2. Confusing Class and Object</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Trying to use class as object
 Car.start();  // Compilation error! (unless start() is static)
 
 // ✅ CORRECT - Create object first
 Car myCar = new Car();
 myCar.start();  // Works!
 </code></pre>
-
-            <h3>3. Not Using 'this' in Constructor</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Parameter shadows instance variable
+                    <h3>3. Not Using 'this' in Constructor</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Parameter shadows instance variable
 class Person {
     String name;
     
@@ -929,10 +1325,9 @@ class Person {
     }
 }
 </code></pre>
-
-            <h3>4. Accessing Uninitialized Fields</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Using fields before initialization
+                    <h3>4. Accessing Uninitialized Fields</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Using fields before initialization
 class Student {
     String name;
     
@@ -956,25 +1351,23 @@ class Student {
     }
 }
 </code></pre>
-
-            <h3>5. Creating Objects in a Loop Unnecessarily</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Creating new object in every iteration
-for (int i = 0; i < 1000; i++) {
+                    <h3>5. Creating Objects in a Loop Unnecessarily</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Creating new object in every iteration
+for (int i = 0; i &lt; 1000; i++) {
     Car car = new Car();  // Creates 1000 objects!
     car.drive();
 }
 
 // ✅ CORRECT - Create once, reuse
 Car car = new Car();
-for (int i = 0; i < 1000; i++) {
+for (int i = 0; i &lt; 1000; i++) {
     car.drive();  // Reuses same object
 }
 </code></pre>
-
-            <h3>6. Modifying Objects Through Multiple References</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ⚠️ CAREFUL - Both references point to same object
+                    <h3>6. Modifying Objects Through Multiple References</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ⚠️ CAREFUL - Both references point to same object
 Car car1 = new Car("Honda");
 Car car2 = car1;  // car2 points to SAME object as car1
 
@@ -985,10 +1378,9 @@ System.out.println(car1.brand);  // Toyota! (same object)
 Car car1 = new Car("Honda");
 Car car2 = new Car("Toyota");  // Different objects
 </code></pre>
-
-            <h3>7. Incorrect Constructor Syntax</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Constructor with return type
+                    <h3>7. Incorrect Constructor Syntax</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid #dc3545;"><code>// ❌ WRONG - Constructor with return type
 class Student {
     void Student() {  // This is a METHOD, not a constructor!
         // ...
@@ -1002,34 +1394,38 @@ class Student {
     }
 }
 </code></pre>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../programs/classes-and-objects.html" class="btn btn-primary">
-                    💻 View Programs
-                </a>
-                <a href="../mcq/classes-and-objects.html" class="btn btn-secondary">
-                    ✅ Take Quiz
-                </a>
-                <a href="../index.html" class="btn btn-success">
-                    🏠 Back to Home
-                </a>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../programs/classes-and-objects.html">
+                            💻 View Programs
+                        </a>
+                        <a class="md-button md-button--secondary" href="../mcq/classes-and-objects.html">
+                            ✅ Take Quiz
+                        </a>
+                        <a class="md-button md-button--primary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> Methods - Declaration, Parameters, Return Types, and
+                                Overloading
+                                <br />Master method creation, parameter passing, return values, and method overloading
+                                concepts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> Methods - Declaration, Parameters, Return Types, and Overloading
-                    <br>Master method creation, parameter passing, return values, and method overloading concepts.
-                </p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

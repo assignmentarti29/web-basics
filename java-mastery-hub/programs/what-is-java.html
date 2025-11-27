@@ -1,73 +1,481 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>What is Java - Programs - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>What is Java - Code Examples</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Programs</span>
-                <span>/</span>
-                <span>What is Java</span>
-            </div>
-        </div>
-
-        <!-- Introduction -->
-        <div class="content-section">
-            <h2>First Steps with Java Programs</h2>
-            <p>
-                Welcome to your first Java programs! These examples will help you understand the fundamentals of Java
-                programming,
-                from the classic "Hello World" to understanding how the JVM works. Each program is carefully commented
-                to explain
-                what's happening and why.
-            </p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>
-                    Read the code comments carefully! They explain not just WHAT the code does, but WHY it works that
-                    way.
-                    Understanding the "why" is key to mastering Java.
-                </p>
-            </div>
-        </div>
-
-        <!-- Program 1: Hello World -->
-        <div class="content-section">
-            <h2>Program 1: Hello World - The Starting Point</h2>
-            <p>Every Java journey begins with "Hello World". This simple program demonstrates the basic structure of a
-                Java application.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>What is Java - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>What is Java</li>
+                    </ul>
+                </div>
+                <!-- Introduction -->
+                <div class="content-section">
+                    <h2>First Steps with Java Programs</h2>
+                    <p>
+                        Welcome to your first Java programs! These examples will help you understand the fundamentals of
+                        Java
+                        programming,
+                        from the classic "Hello World" to understanding how the JVM works. Each program is carefully
+                        commented
+                        to explain
+                        what's happening and why.
+                    </p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>
+                                Read the code comments carefully! They explain not just WHAT the code does, but WHY it
+                                works that
+                                way.
+                                Understanding the "why" is key to mastering Java.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 1: Hello World -->
+                <div class="content-section">
+                    <h2>Program 1: Hello World - The Starting Point</h2>
+                    <p>Every Java journey begins with "Hello World". This simple program demonstrates the basic
+                        structure of a
+                        Java application.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * HelloWorld - Your First Java Program
  * This demonstrates the minimum structure required for a Java application
  */
@@ -101,34 +509,36 @@ public class HelloWorld {
  * Java runs on [Your Operating System]
  */
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program demonstrates several key Java concepts:
-                <ul>
-                    <li><strong>Class Declaration:</strong> Every Java program must have at least one class. The class
-                        name must match the filename.</li>
-                    <li><strong>main() Method:</strong> This is the entry point. The JVM looks for
-                        <code>public static void main(String[] args)</code> to start execution.</li>
-                    <li><strong>System.out.println():</strong> Prints text to the console. "System" is a class, "out" is
-                        a static field, "println" is a method.</li>
-                    <li><strong>Comments:</strong> // for single-line, /* */ for multi-line, /** */ for documentation
-                        comments.</li>
-                </ul>
-                <strong>Why this matters:</strong> Understanding the basic structure is crucial. Every Java application,
-                no matter how complex, starts with this foundation.
-            </div>
-        </div>
-
-        <!-- Program 2: Variables and Data Types -->
-        <div class="content-section">
-            <h2>Program 2: Variables and Data Types Demo</h2>
-            <p>Java is a strongly-typed language. This program demonstrates different data types and how to use
-                variables.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program demonstrates several key Java concepts:
+                        <ul>
+                            <li><strong>Class Declaration:</strong> Every Java program must have at least one class. The
+                                class
+                                name must match the filename.</li>
+                            <li><strong>main() Method:</strong> This is the entry point. The JVM looks for
+                                <code>public static void main(String[] args)</code> to start execution.
+                            </li>
+                            <li><strong>System.out.println():</strong> Prints text to the console. "System" is a class,
+                                "out" is
+                                a static field, "println" is a method.</li>
+                            <li><strong>Comments:</strong> // for single-line, /* */ for multi-line, /** */ for
+                                documentation
+                                comments.</li>
+                        </ul>
+                        <strong>Why this matters:</strong> Understanding the basic structure is crucial. Every Java
+                        application,
+                        no matter how complex, starts with this foundation.
+                    </div>
+                </div>
+                <!-- Program 2: Variables and Data Types -->
+                <div class="content-section">
+                    <h2>Program 2: Variables and Data Types Demo</h2>
+                    <p>Java is a strongly-typed language. This program demonstrates different data types and how to use
+                        variables.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * VariablesDemo - Understanding Java Data Types
  * Demonstrates primitive types and basic variable usage
  */
@@ -193,31 +603,32 @@ public class VariablesDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program introduces Java's type system:
-                <ul>
-                    <li><strong>Primitive Types:</strong> byte, short, int, long, float, double, char, boolean - stored
-                        directly in memory</li>
-                    <li><strong>Reference Types:</strong> String and objects - stored as references to memory locations
-                    </li>
-                    <li><strong>Type Suffixes:</strong> 'L' for long, 'f' for float - tells compiler the exact type</li>
-                    <li><strong>Strong Typing:</strong> You must declare the type of every variable</li>
-                </ul>
-                <strong>Why this matters:</strong> Understanding data types is fundamental. Choosing the right type
-                affects memory usage, precision, and program behavior.
-            </div>
-        </div>
-
-        <!-- Program 3: Simple Input/Output -->
-        <div class="content-section">
-            <h2>Program 3: User Input and Output</h2>
-            <p>This program demonstrates how to get input from users and display output.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program introduces Java's type system:
+                        <ul>
+                            <li><strong>Primitive Types:</strong> byte, short, int, long, float, double, char, boolean -
+                                stored
+                                directly in memory</li>
+                            <li><strong>Reference Types:</strong> String and objects - stored as references to memory
+                                locations
+                            </li>
+                            <li><strong>Type Suffixes:</strong> 'L' for long, 'f' for float - tells compiler the exact
+                                type</li>
+                            <li><strong>Strong Typing:</strong> You must declare the type of every variable</li>
+                        </ul>
+                        <strong>Why this matters:</strong> Understanding data types is fundamental. Choosing the right
+                        type
+                        affects memory usage, precision, and program behavior.
+                    </div>
+                </div>
+                <!-- Program 3: Simple Input/Output -->
+                <div class="content-section">
+                    <h2>Program 3: User Input and Output</h2>
+                    <p>This program demonstrates how to get input from users and display output.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * UserInputDemo - Interactive Java Program
  * Demonstrates reading user input using Scanner class
  */
@@ -293,32 +704,32 @@ public class UserInputDemo {
  *    scanner.close() prevents resource leaks
  */
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program demonstrates input/output operations:
-                <ul>
-                    <li><strong>Scanner Class:</strong> Used to read input from various sources (keyboard, files, etc.)
-                    </li>
-                    <li><strong>Import Statement:</strong> <code>import java.util.Scanner;</code> brings Scanner class
-                        into scope</li>
-                    <li><strong>Reading Different Types:</strong> nextLine() for strings, nextInt() for integers, etc.
-                    </li>
-                    <li><strong>Resource Management:</strong> Always close Scanner to free system resources</li>
-                </ul>
-                <strong>Why this matters:</strong> Interactive programs are more engaging. Understanding I/O is
-                essential for building real applications.
-            </div>
-        </div>
-
-        <!-- Program 4: Understanding the main Method -->
-        <div class="content-section">
-            <h2>Program 4: Dissecting the main() Method</h2>
-            <p>Let's understand every part of the main method signature and why it's written that way.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program demonstrates input/output operations:
+                        <ul>
+                            <li><strong>Scanner Class:</strong> Used to read input from various sources (keyboard,
+                                files, etc.)
+                            </li>
+                            <li><strong>Import Statement:</strong> <code>import java.util.Scanner;</code> brings Scanner
+                                class
+                                into scope</li>
+                            <li><strong>Reading Different Types:</strong> nextLine() for strings, nextInt() for
+                                integers, etc.
+                            </li>
+                            <li><strong>Resource Management:</strong> Always close Scanner to free system resources</li>
+                        </ul>
+                        <strong>Why this matters:</strong> Interactive programs are more engaging. Understanding I/O is
+                        essential for building real applications.
+                    </div>
+                </div>
+                <!-- Program 4: Understanding the main Method -->
+                <div class="content-section">
+                    <h2>Program 4: Dissecting the main() Method</h2>
+                    <p>Let's understand every part of the main method signature and why it's written that way.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * MainMethodExplained - Understanding the Entry Point
  * This program explains every keyword in the main method signature
  */
@@ -360,9 +771,9 @@ public class MainMethodExplained {
         // Demonstrating command-line arguments
         System.out.println("Number of arguments passed: " + args.length);
         
-        if (args.length > 0) {
+        if (args.length &gt; 0) {
             System.out.println("\nArguments received:");
-            for (int i = 0; i < args.length; i++) {
+            for (int i = 0; i &lt; args.length; i++) {
                 System.out.println("  Argument " + i + ": " + args[i]);
             }
         } else {
@@ -404,30 +815,29 @@ public class MainMethodExplained {
  * That's why main() must be static.
  */
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program demystifies the main method:
-                <ul>
-                    <li><strong>public:</strong> JVM must access it from outside the class</li>
-                    <li><strong>static:</strong> JVM calls it without creating an object instance</li>
-                    <li><strong>void:</strong> Doesn't return a value (execution just ends)</li>
-                    <li><strong>String[] args:</strong> Accepts command-line arguments as an array</li>
-                </ul>
-                <strong>Why this matters:</strong> Understanding why main() is written this way helps you understand
-                Java's execution model and the role of the JVM.
-            </div>
-        </div>
-
-        <!-- Program 5: JVM Demonstration -->
-        <div class="content-section">
-            <h2>Program 5: Exploring JVM Properties</h2>
-            <p>This program demonstrates how to access JVM and system properties, showing Java's platform independence.
-            </p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program demystifies the main method:
+                        <ul>
+                            <li><strong>public:</strong> JVM must access it from outside the class</li>
+                            <li><strong>static:</strong> JVM calls it without creating an object instance</li>
+                            <li><strong>void:</strong> Doesn't return a value (execution just ends)</li>
+                            <li><strong>String[] args:</strong> Accepts command-line arguments as an array</li>
+                        </ul>
+                        <strong>Why this matters:</strong> Understanding why main() is written this way helps you
+                        understand
+                        Java's execution model and the role of the JVM.
+                    </div>
+                </div>
+                <!-- Program 5: JVM Demonstration -->
+                <div class="content-section">
+                    <h2>Program 5: Exploring JVM Properties</h2>
+                    <p>This program demonstrates how to access JVM and system properties, showing Java's platform
+                        independence.
+                    </p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * JVMPropertiesDemo - Exploring the Java Virtual Machine
  * This program displays information about the JVM and system it's running on
  */
@@ -436,7 +846,7 @@ public class JVMPropertiesDemo {
     public static void main(String[] args) {
         
         System.out.println("╔════════════════════════════════════════════════════════╗");
-        System.out.println("║   JVM & System Properties                              ║");
+        System.out.println("║   JVM &amp; System Properties                              ║");
         System.out.println("╚════════════════════════════════════════════════════════╝\n");
         
         // JAVA VERSION INFORMATION
@@ -515,31 +925,31 @@ public class JVMPropertiesDemo {
  * The bytecode (.class file) is the same, but output shows different OS!
  */
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program demonstrates Java's platform independence:
-                <ul>
-                    <li><strong>System.getProperty():</strong> Accesses JVM and system properties</li>
-                    <li><strong>Runtime class:</strong> Provides interface to the JVM for memory and processor
-                        information</li>
-                    <li><strong>Platform Independence:</strong> Same bytecode runs on any OS with appropriate JVM</li>
-                    <li><strong>Write Once, Run Anywhere:</strong> Compile once, run on Windows, Mac, Linux, Android
-                    </li>
-                </ul>
-                <strong>Why this matters:</strong> This is the core advantage of Java! You write code once, and it runs
-                everywhere without modification.
-            </div>
-        </div>
-
-        <!-- Program 6: Class and Object Basics -->
-        <div class="content-section">
-            <h2>Program 6: Introduction to Classes and Objects</h2>
-            <p>Java is object-oriented. This program introduces the concept of classes and objects.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program demonstrates Java's platform independence:
+                        <ul>
+                            <li><strong>System.getProperty():</strong> Accesses JVM and system properties</li>
+                            <li><strong>Runtime class:</strong> Provides interface to the JVM for memory and processor
+                                information</li>
+                            <li><strong>Platform Independence:</strong> Same bytecode runs on any OS with appropriate
+                                JVM</li>
+                            <li><strong>Write Once, Run Anywhere:</strong> Compile once, run on Windows, Mac, Linux,
+                                Android
+                            </li>
+                        </ul>
+                        <strong>Why this matters:</strong> This is the core advantage of Java! You write code once, and
+                        it runs
+                        everywhere without modification.
+                    </div>
+                </div>
+                <!-- Program 6: Class and Object Basics -->
+                <div class="content-section">
+                    <h2>Program 6: Introduction to Classes and Objects</h2>
+                    <p>Java is object-oriented. This program introduces the concept of classes and objects.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * ClassAndObjectDemo - Understanding OOP Basics
  * Demonstrates classes, objects, and the "new" keyword
  */
@@ -566,7 +976,7 @@ class Book {
     
     // Method to check if book is lengthy
     boolean isLengthy() {
-        return pages > 500;
+        return pages &gt; 500;
     }
 }
 
@@ -643,29 +1053,26 @@ public class ClassAndObjectDemo {
  * You can make many cookies (objects) from one cutter (class)!
  */
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program introduces Object-Oriented Programming:
-                <ul>
-                    <li><strong>Class:</strong> Blueprint defining properties and behaviors</li>
-                    <li><strong>Object:</strong> Instance created from a class using "new" keyword</li>
-                    <li><strong>Instance Variables:</strong> Each object has its own copy</li>
-                    <li><strong>Methods:</strong> Define what objects can do</li>
-                </ul>
-                <strong>Why this matters:</strong> Java is object-oriented. Understanding classes and objects is
-                fundamental to writing Java programs.
-            </div>
-        </div>
-
-        <!-- Program 7: Compilation Process Demo -->
-        <div class="content-section">
-            <h2>Program 7: Understanding Compilation and Bytecode</h2>
-            <p>This program helps visualize the compilation process and what bytecode means.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program introduces Object-Oriented Programming:
+                        <ul>
+                            <li><strong>Class:</strong> Blueprint defining properties and behaviors</li>
+                            <li><strong>Object:</strong> Instance created from a class using "new" keyword</li>
+                            <li><strong>Instance Variables:</strong> Each object has its own copy</li>
+                            <li><strong>Methods:</strong> Define what objects can do</li>
+                        </ul>
+                        <strong>Why this matters:</strong> Java is object-oriented. Understanding classes and objects is
+                        fundamental to writing Java programs.
+                    </div>
+                </div>
+                <!-- Program 7: Compilation Process Demo -->
+                <div class="content-section">
+                    <h2>Program 7: Understanding Compilation and Bytecode</h2>
+                    <p>This program helps visualize the compilation process and what bytecode means.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * CompilationDemo - Understanding Java Compilation
  * This program explains the compilation process conceptually
  */
@@ -780,30 +1187,29 @@ public class CompilationDemo {
  * It's JVM code - and JVM exists for all platforms!
  */
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program demystifies Java's compilation process:
-                <ul>
-                    <li><strong>Source Code (.java):</strong> Human-readable Java code</li>
-                    <li><strong>Compilation (javac):</strong> Converts source to bytecode (.class)</li>
-                    <li><strong>Bytecode:</strong> Platform-independent intermediate code</li>
-                    <li><strong>JVM Execution:</strong> Interprets/compiles bytecode to machine code</li>
-                    <li><strong>Hybrid Approach:</strong> Compilation + Interpretation + JIT = Best of both worlds</li>
-                </ul>
-                <strong>Why this matters:</strong> Understanding compilation is key to understanding why Java is "Write
-                Once, Run Anywhere."
-            </div>
-        </div>
-
-        <!-- Program 8: String Operations -->
-        <div class="content-section">
-            <h2>Program 8: Working with Strings</h2>
-            <p>Strings are one of the most commonly used types in Java. Let's explore string operations.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program demystifies Java's compilation process:
+                        <ul>
+                            <li><strong>Source Code (.java):</strong> Human-readable Java code</li>
+                            <li><strong>Compilation (javac):</strong> Converts source to bytecode (.class)</li>
+                            <li><strong>Bytecode:</strong> Platform-independent intermediate code</li>
+                            <li><strong>JVM Execution:</strong> Interprets/compiles bytecode to machine code</li>
+                            <li><strong>Hybrid Approach:</strong> Compilation + Interpretation + JIT = Best of both
+                                worlds</li>
+                        </ul>
+                        <strong>Why this matters:</strong> Understanding compilation is key to understanding why Java is
+                        "Write
+                        Once, Run Anywhere."
+                    </div>
+                </div>
+                <!-- Program 8: String Operations -->
+                <div class="content-section">
+                    <h2>Program 8: Working with Strings</h2>
+                    <p>Strings are one of the most commonly used types in Java. Let's explore string operations.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * StringOperationsDemo - Understanding Java Strings
  * Demonstrates common string operations and methods
  */
@@ -870,7 +1276,7 @@ public class StringOperationsDemo {
         String sentence = "Write Once, Run Anywhere";
         String[] words = sentence.split(", ");
         System.out.println("Split result:");
-        for (int i = 0; i < words.length; i++) {
+        for (int i = 0; i &lt; words.length; i++) {
             System.out.println("  Word " + i + ": " + words[i]);
         }
         
@@ -930,30 +1336,31 @@ public class StringOperationsDemo {
  *    - StringBuilder: Mutable (use for frequent modifications)
  */
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program covers essential string operations:
-                <ul>
-                    <li><strong>String Creation:</strong> Using literals and constructors</li>
-                    <li><strong>Immutability:</strong> Strings cannot be changed; methods return new strings</li>
-                    <li><strong>Common Methods:</strong> length(), charAt(), substring(), equals(), contains(), etc.
-                    </li>
-                    <li><strong>String Pool:</strong> Java optimizes memory by reusing identical string literals</li>
-                </ul>
-                <strong>Why this matters:</strong> Strings are used everywhere in Java. Understanding string operations
-                and immutability is crucial for writing efficient code.
-            </div>
-        </div>
-
-        <!-- Program 9: Basic Arithmetic Operations -->
-        <div class="content-section">
-            <h2>Program 9: Arithmetic Operations and Operators</h2>
-            <p>This program demonstrates basic arithmetic operations and operator precedence in Java.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program covers essential string operations:
+                        <ul>
+                            <li><strong>String Creation:</strong> Using literals and constructors</li>
+                            <li><strong>Immutability:</strong> Strings cannot be changed; methods return new strings
+                            </li>
+                            <li><strong>Common Methods:</strong> length(), charAt(), substring(), equals(), contains(),
+                                etc.
+                            </li>
+                            <li><strong>String Pool:</strong> Java optimizes memory by reusing identical string literals
+                            </li>
+                        </ul>
+                        <strong>Why this matters:</strong> Strings are used everywhere in Java. Understanding string
+                        operations
+                        and immutability is crucial for writing efficient code.
+                    </div>
+                </div>
+                <!-- Program 9: Basic Arithmetic Operations -->
+                <div class="content-section">
+                    <h2>Program 9: Arithmetic Operations and Operators</h2>
+                    <p>This program demonstrates basic arithmetic operations and operator precedence in Java.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * ArithmeticDemo - Understanding Java Operators
  * Demonstrates arithmetic operations, operator precedence, and type casting
  */
@@ -1049,9 +1456,9 @@ public class ArithmeticDemo {
  * 2. Unary: ++, --, +, -, !
  * 3. Multiplicative: *, /, %
  * 4. Additive: +, -
- * 5. Relational: <, >, <=, >=
+ * 5. Relational: &lt;, &gt;, &lt;=, &gt;=
  * 6. Equality: ==, !=
- * 7. Logical AND: &&
+ * 7. Logical AND: &amp;&amp;
  * 8. Logical OR: ||
  * 9. Assignment: =, +=, -=, *=, /=, %=
  * 
@@ -1071,32 +1478,31 @@ public class ArithmeticDemo {
  *    Integer.MAX_VALUE + 1 wraps around to Integer.MIN_VALUE
  */
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program covers arithmetic operations:
-                <ul>
-                    <li><strong>Basic Operators:</strong> +, -, *, /, % (modulus)</li>
-                    <li><strong>Integer Division:</strong> Truncates decimal part (20/6 = 3, not 3.33)</li>
-                    <li><strong>Type Casting:</strong> Convert between types for accurate results</li>
-                    <li><strong>Increment/Decrement:</strong> ++ and -- operators (pre and post)</li>
-                    <li><strong>Operator Precedence:</strong> Order of operations (PEMDAS)</li>
-                    <li><strong>Math Class:</strong> Built-in mathematical functions</li>
-                </ul>
-                <strong>Why this matters:</strong> Arithmetic operations are fundamental. Understanding integer division
-                and type casting prevents common bugs.
-            </div>
-        </div>
-
-        <!-- Program 10: Comments and Documentation -->
-        <div class="content-section">
-            <h2>Program 10: Proper Code Documentation</h2>
-            <p>Good code is well-documented. This program demonstrates different types of comments and documentation
-                practices.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program covers arithmetic operations:
+                        <ul>
+                            <li><strong>Basic Operators:</strong> +, -, *, /, % (modulus)</li>
+                            <li><strong>Integer Division:</strong> Truncates decimal part (20/6 = 3, not 3.33)</li>
+                            <li><strong>Type Casting:</strong> Convert between types for accurate results</li>
+                            <li><strong>Increment/Decrement:</strong> ++ and -- operators (pre and post)</li>
+                            <li><strong>Operator Precedence:</strong> Order of operations (PEMDAS)</li>
+                            <li><strong>Math Class:</strong> Built-in mathematical functions</li>
+                        </ul>
+                        <strong>Why this matters:</strong> Arithmetic operations are fundamental. Understanding integer
+                        division
+                        and type casting prevents common bugs.
+                    </div>
+                </div>
+                <!-- Program 10: Comments and Documentation -->
+                <div class="content-section">
+                    <h2>Program 10: Proper Code Documentation</h2>
+                    <p>Good code is well-documented. This program demonstrates different types of comments and
+                        documentation
+                        practices.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * DocumentationDemo - The Importance of Code Documentation
  * 
  * This class demonstrates different types of comments in Java
@@ -1167,9 +1573,9 @@ public class DocumentationDemo {
         
         // Apply tiered discount based on amount
         // This encourages larger purchases
-        if (amount >= 5000) {
+        if (amount &gt;= 5000) {
             discount = 0.20;  // 20% for premium customers
-        } else if (amount >= 1000) {
+        } else if (amount &gt;= 1000) {
             discount = 0.10;  // 10% for regular customers
         }
         // No discount for amounts below $1000
@@ -1257,46 +1663,49 @@ public class DocumentationDemo {
  * ✗ Don't write misleading comments
  */
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program demonstrates documentation best practices:
-                <ul>
-                    <li><strong>Single-Line Comments (//)</strong>: For brief explanations</li>
-                    <li><strong>Multi-Line Comments (/* */)</strong>: For longer explanations</li>
-                    <li><strong>Javadoc Comments (/** */)</strong>: For API documentation with tags</li>
-                    <li><strong>Best Practices:</strong> Comment WHY not WHAT, keep updated, avoid obvious comments</li>
-                </ul>
-                <strong>Why this matters:</strong> Well-documented code is maintainable code. Comments help you and
-                others understand the code months or years later.
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program demonstrates documentation best practices:
+                        <ul>
+                            <li><strong>Single-Line Comments (//)</strong>: For brief explanations</li>
+                            <li><strong>Multi-Line Comments (/* */)</strong>: For longer explanations</li>
+                            <li><strong>Javadoc Comments (/** */)</strong>: For API documentation with tags</li>
+                            <li><strong>Best Practices:</strong> Comment WHY not WHAT, keep updated, avoid obvious
+                                comments</li>
+                        </ul>
+                        <strong>Why this matters:</strong> Well-documented code is maintainable code. Comments help you
+                        and
+                        others understand the code months or years later.
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/what-is-java.html">
+                            📚 Back to Theory
+                        </a>
+                        <a class="md-button md-button--primary" href="../mcq/what-is-java.html">
+                            ✅ Test Your Knowledge
+                        </a>
+                        <a class="md-button md-button--secondary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> Variables &amp; Data Types
+                                <br />Deep dive into primitive types, reference types, type casting, and variable scope.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/what-is-java.html" class="btn btn-primary">
-                    📚 Back to Theory
-                </a>
-                <a href="../mcq/what-is-java.html" class="btn btn-success">
-                    ✅ Test Your Knowledge
-                </a>
-                <a href="../index.html" class="btn btn-secondary">
-                    🏠 Back to Home
-                </a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> Variables & Data Types
-                    <br>Deep dive into primitive types, reference types, type casting, and variable scope.
-                </p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

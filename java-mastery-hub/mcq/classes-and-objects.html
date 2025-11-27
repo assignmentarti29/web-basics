@@ -1,416 +1,1191 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classes & Objects - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-    <div class="container">
-        <div class="content-header">
-            <h1>Classes & Objects - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>Classes & Objects</span>
-            </div>
-        </div>
-        <div class="content-section">
-            <h2>Test Your Knowledge</h2>
-            <p>This quiz contains 27 questions covering all aspects of classes and objects including class structure, object creation, constructors, the 'this' keyword, memory management, and best practices.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Take your time and read each question carefully. After answering, you'll receive detailed explanations to reinforce your understanding. Aim for at least 80% to demonstrate mastery!</p>
-            </div>
-        </div>
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
-            </div>
-        </div>
-        <div id="quizContainer" class="content-section"></div>
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
-                </div>
-                <div id="performanceMessage" class="performance-message"></div>
-            </div>
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/classes-and-objects.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/classes-and-objects.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/classes-and-objects.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../programs/classes-and-objects.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p><strong>Coming Soon:</strong> Methods - Declaration, Parameters, Return Types, and Overloading<br>Master method creation and advanced method concepts.</p>
-            </div>
-        </div>
-    </div>
-    <script src="../assets/js/mcq.js"></script>
-    <script>
-        const quizQuestions = [
-            {
-                id: 1,
-                question: "What is a class in Java?",
-                options: [
-                    "A physical object in memory",
-                    "A blueprint or template for creating objects",
-                    "A method that creates objects",
-                    "A variable that stores data"
-                ],
-                answerIndex: 1,
-                explanation: "A class is a blueprint or template that defines the structure and behavior of objects. It specifies what fields (data) and methods (behavior) objects of that class will have."
-            },
-            {
-                id: 2,
-                question: "What is an object in Java?",
-                options: [
-                    "A blueprint for creating classes",
-                    "A method inside a class",
-                    "An instance of a class",
-                    "A variable declaration"
-                ],
-                answerIndex: 2,
-                explanation: "An object is an instance of a class. It's a concrete entity created from the class blueprint, with actual values for the fields defined in the class."
-            },
-            {
-                id: 3,
-                question: "Which keyword is used to create an object?",
-                options: [
-                    "create",
-                    "new",
-                    "object",
-                    "instance"
-                ],
-                answerIndex: 1,
-                explanation: "The 'new' keyword is used to create objects in Java. It allocates memory in the heap, calls the constructor, and returns a reference to the object."
-            },
-            {
-                id: 4,
-                question: "What is a constructor?",
-                options: [
-                    "A method that destroys objects",
-                    "A special method used to initialize objects",
-                    "A variable that stores object data",
-                    "A class that creates other classes"
-                ],
-                answerIndex: 1,
-                explanation: "A constructor is a special method that has the same name as the class and no return type. It's automatically called when an object is created and is used to initialize the object's fields."
-            },
-            {
-                id: 5,
-                question: "What is the difference between a class and an object?",
-                options: [
-                    "There is no difference",
-                    "Class is a blueprint, object is an instance",
-                    "Object is a blueprint, class is an instance",
-                    "Class is for data, object is for methods"
-                ],
-                answerIndex: 1,
-                explanation: "A class is a blueprint or template that defines structure and behavior. An object is an actual instance created from that blueprint with real values in memory."
-            },
-            {
-                id: 6,
-                question: "Can a class have multiple constructors?",
-                options: [
-                    "No, only one constructor is allowed",
-                    "Yes, through constructor overloading",
-                    "Yes, but they must have the same parameters",
-                    "No, Java provides only a default constructor"
-                ],
-                answerIndex: 1,
-                explanation: "Yes, a class can have multiple constructors with different parameters. This is called constructor overloading and provides flexibility in object creation."
-            },
-            {
-                id: 7,
-                question: "What does the 'this' keyword refer to?",
-                options: [
-                    "The parent class",
-                    "The current object",
-                    "A static variable",
-                    "The next object to be created"
-                ],
-                answerIndex: 1,
-                explanation: "'this' is a reference variable that refers to the current object. It's used to distinguish instance variables from parameters and to pass the current object as a parameter."
-            },
-            {
-                id: 8,
-                question: "What happens if you don't write any constructor in a class?",
-                options: [
-                    "Compilation error",
-                    "Java provides a default no-argument constructor",
-                    "Objects cannot be created",
-                    "Runtime error"
-                ],
-                answerIndex: 1,
-                explanation: "If you don't write any constructor, Java automatically provides a default no-argument constructor that initializes fields to default values (0, null, false, etc.)."
-            },
-            {
-                id: 9,
-                question: "What is the correct syntax for a constructor?",
-                options: [
-                    "void ClassName() { }",
-                    "ClassName() { }",
-                    "constructor ClassName() { }",
-                    "public void ClassName() { }"
-                ],
-                answerIndex: 1,
-                explanation: "A constructor has the same name as the class and NO return type (not even void). It can have access modifiers like public or private."
-            },
-            {
-                id: 10,
-                question: "Can you create an object without using the 'new' keyword?",
-                options: [
-                    "Yes, always",
-                    "No, never",
-                    "Yes, for String literals and some special cases",
-                    "Only for primitive types"
-                ],
-                answerIndex: 2,
-                explanation: "Generally, objects require 'new'. However, String literals ("hello") and some special cases like autoboxing don't explicitly use 'new', but objects are still created internally."
-            },
-            {
-                id: 11,
-                question: "What is stored in a reference variable?",
-                options: [
-                    "The actual object",
-                    "The memory address (reference) of the object",
-                    "The class definition",
-                    "The constructor"
-                ],
-                answerIndex: 1,
-                explanation: "A reference variable stores the memory address (reference) of the object in heap memory, not the actual object itself. It's like a remote control that points to the TV."
-            },
-            {
-                id: 12,
-                question: "What happens when you assign one object reference to another?",
-                options: [
-                    "A new object is created",
-                    "Both references point to the same object",
-                    "The first object is deleted",
-                    "Compilation error"
-                ],
-                answerIndex: 1,
-                explanation: "When you assign one reference to another (obj2 = obj1), both references point to the SAME object in memory. Changes through one reference affect the other."
-            },
-            {
-                id: 13,
-                question: "What is null in Java?",
-                options: [
-                    "A special object",
-                    "A keyword indicating no object reference",
-                    "A default value for integers",
-                    "A method"
-                ],
-                answerIndex: 1,
-                explanation: "null is a special literal that indicates a reference variable doesn't point to any object. Attempting to use a null reference causes NullPointerException."
-            },
-            {
-                id: 14,
-                question: "When does an object become eligible for garbage collection?",
-                options: [
-                    "Immediately after creation",
-                    "When there are no references pointing to it",
-                    "When you call delete()",
-                    "Never, you must manually delete it"
-                ],
-                answerIndex: 1,
-                explanation: "An object becomes eligible for garbage collection when there are no references pointing to it. Java's garbage collector automatically frees this memory."
-            },
-            {
-                id: 15,
-                question: "What is the purpose of the 'this' keyword in a constructor?",
-                options: [
-                    "To call another constructor",
-                    "To distinguish instance variables from parameters",
-                    "To return the current object",
-                    "All of the above"
-                ],
-                answerIndex: 3,
-                explanation: "'this' in constructors can: 1) distinguish instance variables from parameters with same names, 2) call another constructor (this(...)), and 3) return the current object for method chaining."
-            },
-            {
-                id: 16,
-                question: "Can instance variables have the same name as constructor parameters?",
-                options: [
-                    "No, it causes a compilation error",
-                    "Yes, but you must use 'this' to distinguish them",
-                    "Yes, and they automatically refer to instance variables",
-                    "Only if they have different types"
-                ],
-                answerIndex: 1,
-                explanation: "Yes, they can have the same name, but you must use 'this.variableName' to refer to the instance variable, otherwise the parameter shadows the instance variable."
-            },
-            {
-                id: 17,
-                question: "What is constructor chaining?",
-                options: [
-                    "Creating multiple objects in a chain",
-                    "Calling one constructor from another using this()",
-                    "Linking multiple classes together",
-                    "A method calling pattern"
-                ],
-                answerIndex: 1,
-                explanation: "Constructor chaining is calling one constructor from another constructor of the same class using this(). It helps reduce code duplication."
-            },
-            {
-                id: 18,
-                question: "What is the output of: Car c; c.start();",
-                options: [
-                    "The car starts",
-                    "Compilation error",
-                    "NullPointerException",
-                    "No output"
-                ],
-                answerIndex: 2,
-                explanation: "This causes NullPointerException because 'c' is declared but not initialized (it's null). You must use 'new Car()' to create an object before calling methods."
-            },
-            {
-                id: 19,
-                question: "How many objects are created: Car c1 = new Car(); Car c2 = c1;",
-                options: [
-                    "0 objects",
-                    "1 object",
-                    "2 objects",
-                    "3 objects"
-                ],
-                answerIndex: 1,
-                explanation: "Only 1 object is created. 'new Car()' creates one object, and both c1 and c2 are references pointing to the SAME object."
-            },
-            {
-                id: 20,
-                question: "What is encapsulation in the context of classes?",
-                options: [
-                    "Creating multiple objects",
-                    "Hiding internal details and providing controlled access",
-                    "Inheriting from parent classes",
-                    "Overloading methods"
-                ],
-                answerIndex: 1,
-                explanation: "Encapsulation is hiding internal implementation details (making fields private) and providing controlled access through public methods (getters/setters)."
-            },
-            {
-                id: 21,
-                question: "What is the best practice for class field visibility?",
-                options: [
-                    "Make all fields public for easy access",
-                    "Make fields private and provide public methods",
-                    "Make all fields protected",
-                    "Never use access modifiers"
-                ],
-                answerIndex: 1,
-                explanation: "Best practice is to make fields private and provide public getter/setter methods. This ensures encapsulation and allows validation and controlled access."
-            },
-            {
-                id: 22,
-                question: "Can a constructor return a value?",
-                options: [
-                    "Yes, it returns the object",
-                    "No, constructors cannot have return types",
-                    "Yes, but only primitive types",
-                    "Yes, if you specify a return type"
-                ],
-                answerIndex: 1,
-                explanation: "Constructors cannot have return types, not even void. They implicitly return the newly created object reference, but you don't specify a return type."
-            },
-            {
-                id: 23,
-                question: "What happens if you write: this.name = name; where both are the same type?",
-                options: [
-                    "Compilation error",
-                    "this.name refers to instance variable, name refers to parameter",
-                    "Both refer to the parameter",
-                    "Both refer to the instance variable"
-                ],
-                answerIndex: 1,
-                explanation: "this.name refers to the instance variable (field), while name (without this) refers to the parameter. This is the correct way to assign parameter values to instance variables."
-            },
-            {
-                id: 24,
-                question: "Can you call a non-static method from a constructor?",
-                options: [
-                    "No, only static methods can be called",
-                    "Yes, instance methods can be called from constructors",
-                    "Only if the method is private",
-                    "Only if the method is final"
-                ],
-                answerIndex: 1,
-                explanation: "Yes, you can call instance (non-static) methods from constructors. The object is being constructed, so instance methods are available."
-            },
-            {
-                id: 25,
-                question: "What is the purpose of System.gc()?",
-                options: [
-                    "To force garbage collection immediately",
-                    "To suggest garbage collection (not guaranteed)",
-                    "To delete all objects",
-                    "To clear system memory"
-                ],
-                answerIndex: 1,
-                explanation: "System.gc() suggests that the JVM run garbage collection, but it's not guaranteed to run immediately. The JVM decides when to actually perform garbage collection."
-            },
-            {
-                id: 26,
-                question: "Which is true about object creation?",
-                options: [
-                    "Objects are created in stack memory",
-                    "Objects are created in heap memory",
-                    "Objects are created in method area",
-                    "Objects are created in cache memory"
-                ],
-                answerIndex: 1,
-                explanation: "Objects are created in heap memory. The reference variable (pointing to the object) is stored in stack memory, but the actual object resides in heap."
-            },
-            {
-                id: 27,
-                question: "What is the correct way to compare two objects for equality?",
-                options: [
-                    "Using == operator",
-                    "Using equals() method",
-                    "Using compareTo() method",
-                    "Using = operator"
-                ],
-                answerIndex: 1,
-                explanation: "Use equals() method to compare object content. The == operator compares references (memory addresses), not the actual content of objects."
-            }
-        ];
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-            window.quizManager = quizManager;
-        });
-    </script>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Classes &amp; Objects - Quiz - Java Mastery Hub</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Classes &amp; Objects - Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>Classes &amp; Objects - Quiz</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Test Your Knowledge</h2>
+                    <p>This quiz contains 27 questions covering all aspects of classes and objects including class
+                        structure, object creation, constructors, the 'this' keyword, memory management, and best
+                        practices.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Take your time and read each question carefully. After answering, you'll receive detailed
+                                explanations to reinforce your understanding. Aim for at least 80% to demonstrate
+                                mastery!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
+                    </div>
+                </div>
+                <div class="content-section" id="quizContainer">
+
+                    <!-- Question 1 -->
+                    <div class="question" data-correct-answer="class" data-question-id="q1">
+                        <p class="question-text">Q1. What is a blueprint for creating objects in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="object">object</button>
+                            <button class="option-btn" data-answer="class">class</button>
+                            <button class="option-btn" data-answer="method">method</button>
+                            <button class="option-btn" data-answer="interface">interface</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: class</div>
+                            <p>A class is a blueprint or template for creating objects. It defines the structure
+                                (fields) and behavior (methods) that objects of that class will have. Think of it like a
+                                cookie cutter - the class is the cutter, objects are the cookies.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="object" data-question-id="q2">
+                        <p class="question-text">Q2. What is an instance of a class called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="class">class</button>
+                            <button class="option-btn" data-answer="object">object</button>
+                            <button class="option-btn" data-answer="method">method</button>
+                            <button class="option-btn" data-answer="variable">variable</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: object</div>
+                            <p>An object is an instance of a class. When you create an object using the 'new' keyword,
+                                you're creating a specific instance with its own set of values for the class's fields.
+                                Multiple objects can be created from the same class.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="new" data-question-id="q3">
+                        <p class="question-text">Q3. Which keyword is used to create an object?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="create">create</button>
+                            <button class="option-btn" data-answer="new">new</button>
+                            <button class="option-btn" data-answer="object">object</button>
+                            <button class="option-btn" data-answer="instance">instance</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: new</div>
+                            <p>The 'new' keyword is used to create objects in Java. Example: Student s = new Student();
+                                This allocates memory on the heap for the object and calls the constructor to initialize
+                                it.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question" data-correct-answer="Constructor" data-question-id="q4">
+                        <p class="question-text">Q4. What is a special method that initializes an object when it's
+                            created?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Initializer">Initializer</button>
+                            <button class="option-btn" data-answer="Constructor">Constructor</button>
+                            <button class="option-btn" data-answer="Builder">Builder</button>
+                            <button class="option-btn" data-answer="Creator">Creator</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Constructor</div>
+                            <p>A constructor is a special method that has the same name as the class and no return type.
+                                It's automatically called when an object is created using 'new'. Constructors are used
+                                to initialize object state.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="It has the same name as the class" data-question-id="q5">
+                        <p class="question-text">Q5. What is true about a constructor?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="It must return void">It must return void</button>
+                            <button class="option-btn" data-answer="It has the same name as the class">It has the same
+                                name as the class</button>
+                            <button class="option-btn" data-answer="It must be static">It must be static</button>
+                            <button class="option-btn" data-answer="It cannot have parameters">It cannot have
+                                parameters</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: It has the same name as the class</div>
+                            <p>A constructor must have the exact same name as the class and has no return type (not even
+                                void). Constructors can have parameters (parameterized constructors) and are not static.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="A no-argument constructor provided by Java"
+                        data-question-id="q6">
+                        <p class="question-text">Q6. What is a default constructor?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="The first constructor in a class">The first
+                                constructor in a class</button>
+                            <button class="option-btn" data-answer="A no-argument constructor provided by Java">A
+                                no-argument constructor provided by Java</button>
+                            <button class="option-btn" data-answer="A constructor with default values">A constructor
+                                with default values</button>
+                            <button class="option-btn" data-answer="A static constructor">A static constructor</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: A no-argument constructor provided by Java
+                            </div>
+                            <p>If you don't define any constructor, Java automatically provides a default no-argument
+                                constructor. However, if you define any constructor (even with parameters), Java will
+                                NOT provide the default constructor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="this" data-question-id="q7">
+                        <p class="question-text">Q7. Which keyword refers to the current object instance?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="self">self</button>
+                            <button class="option-btn" data-answer="this">this</button>
+                            <button class="option-btn" data-answer="current">current</button>
+                            <button class="option-btn" data-answer="me">me</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: this</div>
+                            <p>The 'this' keyword is a reference to the current object. It's commonly used to
+                                distinguish between instance variables and parameters with the same name, and to call
+                                other constructors in the same class.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question"
+                        data-correct-answer="To differentiate between instance variables and parameters"
+                        data-question-id="q8">
+                        <p class="question-text">Q8. Why use 'this' keyword in a constructor?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="It's mandatory">It's mandatory</button>
+                            <button class="option-btn"
+                                data-answer="To differentiate between instance variables and parameters">To
+                                differentiate between instance variables and parameters</button>
+                            <button class="option-btn" data-answer="To make the code faster">To make the code
+                                faster</button>
+                            <button class="option-btn" data-answer="To create a new object">To create a new
+                                object</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: To differentiate between instance variables
+                                and parameters</div>
+                            <p>When parameter names match instance variable names, 'this' is used to refer to the
+                                instance variable. Example: this.name = name; Here, this.name is the instance variable,
+                                and name is the parameter.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="static" data-question-id="q9">
+                        <p class="question-text">Q9. Which keyword creates a class-level variable shared by all
+                            instances?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="shared">shared</button>
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="global">global</button>
+                            <button class="option-btn" data-answer="common">common</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: static</div>
+                            <p>Static variables belong to the class, not to individual objects. All instances share the
+                                same static variable. Static members can be accessed using the class name without
+                                creating an object.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="Instance variables" data-question-id="q10">
+                        <p class="question-text">Q10. What are variables declared inside a class but outside methods
+                            called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Local variables">Local variables</button>
+                            <button class="option-btn" data-answer="Instance variables">Instance variables</button>
+                            <button class="option-btn" data-answer="Static variables">Static variables</button>
+                            <button class="option-btn" data-answer="Global variables">Global variables</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Instance variables</div>
+                            <p>Instance variables (also called fields or member variables) are declared inside a class
+                                but outside methods. Each object has its own copy of instance variables. They're
+                                initialized to default values if not explicitly initialized.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer="Yes, through constructor overloading"
+                        data-question-id="q11">
+                        <p class="question-text">Q11. Can a class have multiple constructors?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="No, only one constructor allowed">No, only one
+                                constructor allowed</button>
+                            <button class="option-btn" data-answer="Yes, through constructor overloading">Yes, through
+                                constructor overloading</button>
+                            <button class="option-btn" data-answer="Yes, but only if they're static">Yes, but only if
+                                they're static</button>
+                            <button class="option-btn" data-answer="Only in abstract classes">Only in abstract
+                                classes</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Yes, through constructor overloading</div>
+                            <p>A class can have multiple constructors with different parameter lists (constructor
+                                overloading). This allows objects to be created in different ways. The constructors must
+                                differ in the number or type of parameters.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="this()" data-question-id="q12">
+                        <p class="question-text">Q12. How do you call another constructor from within a constructor?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="super()">super()</button>
+                            <button class="option-btn" data-answer="this()">this()</button>
+                            <button class="option-btn" data-answer="new()">new()</button>
+                            <button class="option-btn" data-answer="constructor()">constructor()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: this()</div>
+                            <p>Use this() to call another constructor in the same class. This is called constructor
+                                chaining. The this() call must be the first statement in the constructor. Example:
+                                this(defaultValue);</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="Heap" data-question-id="q13">
+                        <p class="question-text">Q13. Where are objects stored in memory?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Stack">Stack</button>
+                            <button class="option-btn" data-answer="Heap">Heap</button>
+                            <button class="option-btn" data-answer="Method Area">Method Area</button>
+                            <button class="option-btn" data-answer="Register">Register</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Heap</div>
+                            <p>Objects are stored in the heap memory. The reference variable (which points to the
+                                object) is stored on the stack. The heap is managed by the garbage collector, which
+                                automatically frees memory when objects are no longer referenced.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question" data-correct-answer="Stack" data-question-id="q14">
+                        <p class="question-text">Q14. Where are object reference variables stored?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Heap">Heap</button>
+                            <button class="option-btn" data-answer="Stack">Stack</button>
+                            <button class="option-btn" data-answer="Method Area">Method Area</button>
+                            <button class="option-btn" data-answer="Permanent Generation">Permanent Generation</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Stack</div>
+                            <p>Reference variables are stored on the stack. They hold the memory address (reference) of
+                                the actual object which is stored on the heap. When the method ends, the reference
+                                variable is removed from the stack.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="Garbage Collector" data-question-id="q15">
+                        <p class="question-text">Q15. What automatically manages memory and removes unused objects?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Memory Manager">Memory Manager</button>
+                            <button class="option-btn" data-answer="Garbage Collector">Garbage Collector</button>
+                            <button class="option-btn" data-answer="Object Cleaner">Object Cleaner</button>
+                            <button class="option-btn" data-answer="Heap Manager">Heap Manager</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Garbage Collector</div>
+                            <p>The Garbage Collector (GC) automatically frees memory by removing objects that are no
+                                longer referenced. This prevents memory leaks and eliminates the need for manual memory
+                                management like in C/C++.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="null" data-question-id="q16">
+                        <p class="question-text">Q16. What value does an uninitialized object reference have?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="0">0</button>
+                            <button class="option-btn" data-answer="null">null</button>
+                            <button class="option-btn" data-answer="undefined">undefined</button>
+                            <button class="option-btn" data-answer="empty">empty</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: null</div>
+                            <p>Uninitialized object references default to null. Attempting to use a null reference (like
+                                calling a method on it) throws a NullPointerException. Always check for null before
+                                using object references.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="NullPointerException" data-question-id="q17">
+                        <p class="question-text">Q17. What exception is thrown when you try to use a null object
+                            reference?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="NullObjectException">NullObjectException</button>
+                            <button class="option-btn" data-answer="NullPointerException">NullPointerException</button>
+                            <button class="option-btn"
+                                data-answer="NullReferenceException">NullReferenceException</button>
+                            <button class="option-btn"
+                                data-answer="ObjectNotFoundException">ObjectNotFoundException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: NullPointerException</div>
+                            <p>NullPointerException (NPE) is thrown when you try to access a member (field or method) of
+                                a null object. This is one of the most common runtime exceptions in Java. Always
+                                validate objects before use.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="ClassName.staticMethod()" data-question-id="q18">
+                        <p class="question-text">Q18. How do you call a static method?</p>
+                        <div class="options">
+                            <button class="option-btn"
+                                data-answer="objectName.staticMethod()">objectName.staticMethod()</button>
+                            <button class="option-btn"
+                                data-answer="ClassName.staticMethod()">ClassName.staticMethod()</button>
+                            <button class="option-btn" data-answer="new ClassName().staticMethod()">new
+                                ClassName().staticMethod()</button>
+                            <button class="option-btn" data-answer="static.method()">static.method()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ClassName.staticMethod()</div>
+                            <p>Static methods belong to the class, not to instances. They're called using the class
+                                name: ClassName.staticMethod(). While you can call them using an object reference, it's
+                                not recommended as it's misleading.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question" data-correct-answer="No, static methods cannot access instance members"
+                        data-question-id="q19">
+                        <p class="question-text">Q19. Can a static method access instance variables?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Yes, always">Yes, always</button>
+                            <button class="option-btn"
+                                data-answer="No, static methods cannot access instance members">No, static methods
+                                cannot access instance members</button>
+                            <button class="option-btn" data-answer="Yes, but only with this keyword">Yes, but only with
+                                this keyword</button>
+                            <button class="option-btn" data-answer="Yes, but only final variables">Yes, but only final
+                                variables</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: No, static methods cannot access instance
+                                members</div>
+                            <p>Static methods cannot directly access instance variables or call instance methods because
+                                they don't have access to 'this' (no specific object context). They can only access
+                                static members or create objects to access instance members.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="Yes, instance methods can access both"
+                        data-question-id="q20">
+                        <p class="question-text">Q20. Can an instance method access static variables?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="No, never">No, never</button>
+                            <button class="option-btn" data-answer="Yes, instance methods can access both">Yes, instance
+                                methods can access both</button>
+                            <button class="option-btn" data-answer="Only with super keyword">Only with super
+                                keyword</button>
+                            <button class="option-btn" data-answer="Only if the variable is final">Only if the variable
+                                is final</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Yes, instance methods can access both</div>
+                            <p>Instance methods can access both instance variables and static variables. They have
+                                access to the object context (this) and can also access class-level (static) members.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="A block of code that runs when the class is loaded"
+                        data-question-id="q21">
+                        <p class="question-text">Q21. What is a static block?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="A method that cannot be overridden">A method that
+                                cannot be overridden</button>
+                            <button class="option-btn"
+                                data-answer="A block of code that runs when the class is loaded">A block of code that
+                                runs when the class is loaded</button>
+                            <button class="option-btn" data-answer="A final variable">A final variable</button>
+                            <button class="option-btn" data-answer="A synchronized method">A synchronized
+                                method</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: A block of code that runs when the class is
+                                loaded</div>
+                            <p>A static block (static { }) is executed once when the class is first loaded into memory.
+                                It's used to initialize static variables or perform one-time setup. Static blocks
+                                execute before the constructor.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question" data-correct-answer="When the class is first loaded" data-question-id="q22">
+                        <p class="question-text">Q22. When is a static block executed?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Every time an object is created">Every time an
+                                object is created</button>
+                            <button class="option-btn" data-answer="When the class is first loaded">When the class is
+                                first loaded</button>
+                            <button class="option-btn" data-answer="When a static method is called">When a static method
+                                is called</button>
+                            <button class="option-btn" data-answer="At program termination">At program
+                                termination</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: When the class is first loaded</div>
+                            <p>Static blocks execute once when the class is loaded into memory by the JVM, before any
+                                object is created or any static method is called. This happens only once during the
+                                program's lifetime.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question" data-correct-answer="Instance block runs before constructor, for each object"
+                        data-question-id="q23">
+                        <p class="question-text">Q23. What is an instance initialization block?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Same as static block">Same as static block</button>
+                            <button class="option-btn"
+                                data-answer="Instance block runs before constructor, for each object">Instance block
+                                runs before constructor, for each object</button>
+                            <button class="option-btn" data-answer="A method that initializes variables">A method that
+                                initializes variables</button>
+                            <button class="option-btn" data-answer="A constructor with no parameters">A constructor with
+                                no parameters</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Instance block runs before constructor, for
+                                each object</div>
+                            <p>An instance initialization block ({ }) runs every time an object is created, just before
+                                the constructor. It's useful for common initialization code shared across multiple
+                                constructors.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question" data-correct-answer="Pass by value (reference value for objects)"
+                        data-question-id="q24">
+                        <p class="question-text">Q24. How are objects passed to methods in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Pass by reference">Pass by reference</button>
+                            <button class="option-btn" data-answer="Pass by value (reference value for objects)">Pass by
+                                value (reference value for objects)</button>
+                            <button class="option-btn" data-answer="Pass by copy">Pass by copy</button>
+                            <button class="option-btn" data-answer="Pass by pointer">Pass by pointer</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Pass by value (reference value for objects)
+                            </div>
+                            <p>Java is always pass-by-value. For objects, the value of the reference (memory address) is
+                                passed. This means you can modify the object's state, but you cannot change which object
+                                the original reference points to.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question" data-correct-answer="The reference is copied, not the object"
+                        data-question-id="q25">
+                        <p class="question-text">Q25. What happens when you assign one object reference to another?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="A new object is created">A new object is
+                                created</button>
+                            <button class="option-btn" data-answer="The reference is copied, not the object">The
+                                reference is copied, not the object</button>
+                            <button class="option-btn" data-answer="The object is cloned">The object is cloned</button>
+                            <button class="option-btn" data-answer="Compilation error">Compilation error</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: The reference is copied, not the object
+                            </div>
+                            <p>When you assign one reference to another (obj2 = obj1), both references point to the same
+                                object. Changes through either reference affect the same object. Only the reference is
+                                copied, not the actual object data.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 26 -->
+                    <div class="question" data-correct-answer="Comparing memory addresses" data-question-id="q26">
+                        <p class="question-text">Q26. What does the == operator do when comparing objects?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Comparing object content">Comparing object
+                                content</button>
+                            <button class="option-btn" data-answer="Comparing memory addresses">Comparing memory
+                                addresses</button>
+                            <button class="option-btn" data-answer="Comparing object types">Comparing object
+                                types</button>
+                            <button class="option-btn" data-answer="Comparing object names">Comparing object
+                                names</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Comparing memory addresses</div>
+                            <p>The == operator compares references (memory addresses), not object content. To compare
+                                object content, use the equals() method. Example: obj1.equals(obj2) compares content,
+                                obj1 == obj2 compares references.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 27 -->
+                    <div class="question" data-correct-answer="equals()" data-question-id="q27">
+                        <p class="question-text">Q27. Which method should be used to compare object content?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="==">==</button>
+                            <button class="option-btn" data-answer="equals()">equals()</button>
+                            <button class="option-btn" data-answer="compare()">compare()</button>
+                            <button class="option-btn" data-answer="compareTo()">compareTo()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: equals()</div>
+                            <p>The equals() method is used to compare object content. You should override equals() in
+                                your classes to define what "equal" means for your objects. The default implementation
+                                in Object class uses == (reference comparison).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 28 -->
+                    <div class="question" data-correct-answer="finalize()" data-question-id="q28">
+                        <p class="question-text">Q28. Which method is called by the garbage collector before destroying
+                            an object?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="destroy()">destroy()</button>
+                            <button class="option-btn" data-answer="finalize()">finalize()</button>
+                            <button class="option-btn" data-answer="cleanup()">cleanup()</button>
+                            <button class="option-btn" data-answer="dispose()">dispose()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: finalize()</div>
+                            <p>The finalize() method is called by the garbage collector before destroying an object.
+                                However, it's deprecated since Java 9 and should not be used. Use try-with-resources or
+                                explicit cleanup methods instead.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 29 -->
+                    <div class="question" data-correct-answer="Anonymous object" data-question-id="q29">
+                        <p class="question-text">Q29. What is an object created without a reference variable called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Temporary object">Temporary object</button>
+                            <button class="option-btn" data-answer="Anonymous object">Anonymous object</button>
+                            <button class="option-btn" data-answer="Unnamed object">Unnamed object</button>
+                            <button class="option-btn" data-answer="Orphan object">Orphan object</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Anonymous object</div>
+                            <p>An anonymous object is created without storing its reference. Example: new
+                                Student().display(); It's used when you need an object only once. After use, it becomes
+                                eligible for garbage collection immediately.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 30 -->
+                    <div class="question" data-correct-answer="Immutable object" data-question-id="q30">
+                        <p class="question-text">Q30. What is an object whose state cannot be changed after creation?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Final object">Final object</button>
+                            <button class="option-btn" data-answer="Immutable object">Immutable object</button>
+                            <button class="option-btn" data-answer="Constant object">Constant object</button>
+                            <button class="option-btn" data-answer="Static object">Static object</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Immutable object</div>
+                            <p>An immutable object's state cannot be modified after creation. String is a classic
+                                example. To create immutable classes: make fields final and private, don't provide
+                                setters, and don't allow subclasses (make class final).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 31 -->
+                    <div class="question" data-correct-answer="System.gc()" data-question-id="q31">
+                        <p class="question-text">Q31. How can you request garbage collection (though not guaranteed)?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="gc.run()">gc.run()</button>
+                            <button class="option-btn" data-answer="System.gc()">System.gc()</button>
+                            <button class="option-btn" data-answer="Runtime.collect()">Runtime.collect()</button>
+                            <button class="option-btn"
+                                data-answer="GarbageCollector.start()">GarbageCollector.start()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: System.gc()</div>
+                            <p>System.gc() or Runtime.getRuntime().gc() requests garbage collection, but it's not
+                                guaranteed to run immediately. The JVM decides when to actually perform GC. Relying on
+                                explicit GC calls is generally not recommended.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 32 -->
+                    <div class="question" data-correct-answer="Shallow copy copies references, deep copy copies objects"
+                        data-question-id="q32">
+                        <p class="question-text">Q32. What's the difference between shallow copy and deep copy?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="No difference">No difference</button>
+                            <button class="option-btn"
+                                data-answer="Shallow copy copies references, deep copy copies objects">Shallow copy
+                                copies references, deep copy copies objects</button>
+                            <button class="option-btn" data-answer="Shallow copy is faster">Shallow copy is
+                                faster</button>
+                            <button class="option-btn" data-answer="Deep copy uses less memory">Deep copy uses less
+                                memory</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Shallow copy copies references, deep copy
+                                copies objects</div>
+                            <p>Shallow copy creates a new object but copies references to nested objects (both point to
+                                same nested objects). Deep copy creates a new object and recursively copies all nested
+                                objects (completely independent copy).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 33 -->
+                    <div class="question" data-correct-answer="Cloneable" data-question-id="q33">
+                        <p class="question-text">Q33. Which interface must a class implement to be cloneable?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Copyable">Copyable</button>
+                            <button class="option-btn" data-answer="Cloneable">Cloneable</button>
+                            <button class="option-btn" data-answer="Duplicatable">Duplicatable</button>
+                            <button class="option-btn" data-answer="Replicable">Replicable</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Cloneable</div>
+                            <p>A class must implement the Cloneable interface and override the clone() method to support
+                                cloning. If Cloneable is not implemented, calling clone() throws
+                                CloneNotSupportedException. Note: Cloneable is a marker interface with no methods.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 34 -->
+                    <div class="question" data-correct-answer="Use meaningful class and variable names"
+                        data-question-id="q34">
+                        <p class="question-text">Q34. What is a best practice for class design?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Make all variables public">Make all variables
+                                public</button>
+                            <button class="option-btn" data-answer="Use meaningful class and variable names">Use
+                                meaningful class and variable names</button>
+                            <button class="option-btn" data-answer="Avoid using constructors">Avoid using
+                                constructors</button>
+                            <button class="option-btn" data-answer="Make everything static">Make everything
+                                static</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Use meaningful class and variable names
+                            </div>
+                            <p>Best practices include: use meaningful names, keep instance variables private
+                                (encapsulation), provide public getters/setters, follow single responsibility principle,
+                                and write constructors to ensure valid object state.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 35 -->
+                    <div class="question" data-correct-answer="Encapsulation" data-question-id="q35">
+                        <p class="question-text">Q35. What OOP principle involves hiding implementation details?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Inheritance">Inheritance</button>
+                            <button class="option-btn" data-answer="Encapsulation">Encapsulation</button>
+                            <button class="option-btn" data-answer="Polymorphism">Polymorphism</button>
+                            <button class="option-btn" data-answer="Abstraction">Abstraction</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Encapsulation</div>
+                            <p>Encapsulation is the practice of hiding implementation details and exposing only
+                                necessary interfaces. It's achieved by making fields private and providing public
+                                getter/setter methods. This protects object integrity and allows implementation changes
+                                without affecting users.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section" id="quizResults" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="results-summary">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
+                        </div>
+                        <div class="performance-message" id="performanceMessage"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake
+                            Quiz</button>
+                        <a class="md-button md-button--secondary" href="../theory/classes-and-objects.html">📚 Review
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/classes-and-objects.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                </div>
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/classes-and-objects.html">📚 Back to
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/classes-and-objects.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p><strong>Coming Soon:</strong> Methods - Declaration, Parameters, Return Types, and
+                                Overloading<br />Master method creation and advanced method concepts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+    <script src="../assets/js/mcq.js"></script>
 </body>
+
 </html>

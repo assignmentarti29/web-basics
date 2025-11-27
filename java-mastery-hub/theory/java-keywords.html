@@ -1,255 +1,673 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Java Keywords - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Java Keywords</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Theory</span>
-                <span>/</span>
-                <span>Java Keywords</span>
-            </div>
-        </div>
-
-        <!-- Section 1: Introduction to Java Keywords -->
-        <div class="content-section">
-            <h2>🔑 Introduction to Java Keywords</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
-            <p>
-                Imagine you're playing a game with special magic words. When you say "JUMP!", your character jumps.
-                When you say "RUN!", your character runs. These are special words that the game understands and does
-                something specific when you use them.
-            </p>
-            <p>
-                <strong>Java keywords</strong> are like those magic words, but for computers! They are special reserved
-                words that tell Java to do specific things. You can't use these words as names for your own stuff
-                (like variable names) because Java has already claimed them for special purposes! 🎮
-            </p>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE</div>
-                <p>Think of keywords as VIP words in Java - they have special privileges and meanings that you cannot
-                    change!</p>
-            </div>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of Java keywords like <strong>traffic signs</strong>:
-            </p>
-            <ul>
-                <li><strong>STOP sign:</strong> Everyone knows what it means - you must stop! You can't use "STOP" to
-                    mean "go faster"</li>
-                <li><strong>YIELD sign:</strong> Has a specific meaning - give way to other traffic</li>
-                <li><strong>ONE WAY sign:</strong> Clear instruction - traffic flows in one direction only</li>
-            </ul>
-            <p>
-                Similarly, Java keywords have fixed meanings. When Java sees the keyword <code>public</code>, it knows
-                you're making something accessible everywhere. When it sees <code>if</code>, it knows you're making a
-                decision.
-                You cannot redefine these meanings!
-            </p>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>
-                    Just like you can't name your street "STOP" because it would confuse everyone, you can't name a
-                    variable <code>class</code> or <code>public</code> because these are reserved keywords in Java!
-                </p>
-            </div>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                <strong>Keywords</strong> (also called reserved words) are predefined, reserved identifiers that have
-                special meaning in Java. They are part of the Java language syntax and cannot be used as identifiers
-                (variable names, method names, class names, etc.).
-            </p>
-
-            <h4>Key Characteristics of Keywords:</h4>
-            <ul>
-                <li><strong>Reserved:</strong> Cannot be used as identifiers</li>
-                <li><strong>Case-sensitive:</strong> Must be written in lowercase (except for special literals like
-                    true, false, null)</li>
-                <li><strong>Fixed meaning:</strong> Their purpose is defined by the Java language specification</li>
-                <li><strong>Total count:</strong> Java has approximately 50+ keywords (varies slightly by version)</li>
-            </ul>
-
-            <h4>Categories of Keywords:</h4>
-            <p>Java keywords can be broadly classified into 8 major categories:</p>
-            <ol>
-                <li>Access Modifiers (public, private, protected)</li>
-                <li>Non-Access Modifiers (static, final, abstract, synchronized, volatile, transient, native, strictfp)
-                </li>
-                <li>Control Flow (if, else, switch, case, default, for, while, do, break, continue, return)</li>
-                <li>Class and Object Related (class, interface, enum, extends, implements, new, this, super, instanceof)
-                </li>
-                <li>Exception Handling (try, catch, finally, throw, throws, assert)</li>
-                <li>Package Related (package, import)</li>
-                <li>Primitive Data Types (byte, short, int, long, float, double, char, boolean, void)</li>
-                <li>Other Special Keywords (const, goto - reserved but not used)</li>
-            </ol>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Interview Perspective</div>
-                <p>
-                    When asked "What are Java keywords?", say: <strong>"Keywords are reserved words in Java that have
-                        predefined meanings and cannot be used as identifiers. They are case-sensitive, must be written
-                        in
-                        lowercase, and form the fundamental syntax of the Java language."</strong>
-                </p>
-            </div>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ IMPORTANT - Reserved but Not Used</div>
-                <p>
-                    Java has two keywords that are reserved but not currently used: <code>const</code> and
-                    <code>goto</code>.
-                    They were reserved to prevent confusion with C/C++ programmers, but they don't have any
-                    functionality in Java.
-                    Using them will cause a compilation error!
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 2: Access Modifiers -->
-        <div class="content-section">
-            <h2>🔐 Access Modifiers</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Imagine you have different types of rooms in your house:
-            </p>
-            <ul>
-                <li><strong>Public room (living room):</strong> Anyone can enter - guests, family, everyone!</li>
-                <li><strong>Private room (bedroom):</strong> Only YOU can enter - it's your personal space</li>
-                <li><strong>Protected room (family room):</strong> Only family members can enter</li>
-            </ul>
-            <p>
-                Access modifiers in Java work the same way - they control who can "enter" or access your code!
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of access modifiers like <strong>security clearance levels</strong> in a company:
-            </p>
-            <ul>
-                <li><strong>public:</strong> Public information - anyone in the world can access</li>
-                <li><strong>protected:</strong> Internal company info - only employees and partners can access</li>
-                <li><strong>private:</strong> Confidential - only specific department can access</li>
-                <li><strong>default (no modifier):</strong> Department-level - only people in same department can access
-                </li>
-            </ul>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <h4>1. public</h4>
-            <p><strong>Accessibility:</strong> Everywhere - from any class, any package</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class MyClass {
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Java Keywords</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Theory</a></li>
+                        <li>Java Keywords</li>
+                    </ul>
+                </div>
+                <!-- Section 1: Introduction to Java Keywords -->
+                <div class="content-section">
+                    <h2>🔑 Introduction to Java Keywords</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+                    <p>
+                        Imagine you're playing a game with special magic words. When you say "JUMP!", your character
+                        jumps.
+                        When you say "RUN!", your character runs. These are special words that the game understands and
+                        does
+                        something specific when you use them.
+                    </p>
+                    <p>
+                        <strong>Java keywords</strong> are like those magic words, but for computers! They are special
+                        reserved
+                        words that tell Java to do specific things. You can't use these words as names for your own
+                        stuff
+                        (like variable names) because Java has already claimed them for special purposes! 🎮
+                    </p>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE</div>
+                        <div class="admonition-content">
+                            <p>Think of keywords as VIP words in Java - they have special privileges and meanings that
+                                you cannot
+                                change!</p>
+                        </div>
+                    </div>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of Java keywords like <strong>traffic signs</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>STOP sign:</strong> Everyone knows what it means - you must stop! You can't use
+                            "STOP" to
+                            mean "go faster"</li>
+                        <li><strong>YIELD sign:</strong> Has a specific meaning - give way to other traffic</li>
+                        <li><strong>ONE WAY sign:</strong> Clear instruction - traffic flows in one direction only</li>
+                    </ul>
+                    <p>
+                        Similarly, Java keywords have fixed meanings. When Java sees the keyword <code>public</code>, it
+                        knows
+                        you're making something accessible everywhere. When it sees <code>if</code>, it knows you're
+                        making a
+                        decision.
+                        You cannot redefine these meanings!
+                    </p>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                Just like you can't name your street "STOP" because it would confuse everyone, you can't
+                                name a
+                                variable <code>class</code> or <code>public</code> because these are reserved keywords
+                                in Java!
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        <strong>Keywords</strong> (also called reserved words) are predefined, reserved identifiers that
+                        have
+                        special meaning in Java. They are part of the Java language syntax and cannot be used as
+                        identifiers
+                        (variable names, method names, class names, etc.).
+                    </p>
+                    <h4>Key Characteristics of Keywords:</h4>
+                    <ul>
+                        <li><strong>Reserved:</strong> Cannot be used as identifiers</li>
+                        <li><strong>Case-sensitive:</strong> Must be written in lowercase (except for special literals
+                            like
+                            true, false, null)</li>
+                        <li><strong>Fixed meaning:</strong> Their purpose is defined by the Java language specification
+                        </li>
+                        <li><strong>Total count:</strong> Java has approximately 50+ keywords (varies slightly by
+                            version)</li>
+                    </ul>
+                    <h4>Categories of Keywords:</h4>
+                    <p>Java keywords can be broadly classified into 8 major categories:</p>
+                    <ol>
+                        <li>Access Modifiers (public, private, protected)</li>
+                        <li>Non-Access Modifiers (static, final, abstract, synchronized, volatile, transient, native,
+                            strictfp)
+                        </li>
+                        <li>Control Flow (if, else, switch, case, default, for, while, do, break, continue, return)</li>
+                        <li>Class and Object Related (class, interface, enum, extends, implements, new, this, super,
+                            instanceof)
+                        </li>
+                        <li>Exception Handling (try, catch, finally, throw, throws, assert)</li>
+                        <li>Package Related (package, import)</li>
+                        <li>Primitive Data Types (byte, short, int, long, float, double, char, boolean, void)</li>
+                        <li>Other Special Keywords (const, goto - reserved but not used)</li>
+                    </ol>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Interview Perspective</div>
+                        <div class="admonition-content">
+                            <p>
+                                When asked "What are Java keywords?", say: <strong>"Keywords are reserved words in Java
+                                    that have
+                                    predefined meanings and cannot be used as identifiers. They are case-sensitive, must
+                                    be written
+                                    in
+                                    lowercase, and form the fundamental syntax of the Java language."</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ IMPORTANT - Reserved but Not Used</div>
+                        <div class="admonition-content">
+                            <p>
+                                Java has two keywords that are reserved but not currently used: <code>const</code> and
+                                <code>goto</code>.
+                                They were reserved to prevent confusion with C/C++ programmers, but they don't have any
+                                functionality in Java.
+                                Using them will cause a compilation error!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2: Access Modifiers -->
+                <div class="content-section">
+                    <h2>🔐 Access Modifiers</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Imagine you have different types of rooms in your house:
+                    </p>
+                    <ul>
+                        <li><strong>Public room (living room):</strong> Anyone can enter - guests, family, everyone!
+                        </li>
+                        <li><strong>Private room (bedroom):</strong> Only YOU can enter - it's your personal space</li>
+                        <li><strong>Protected room (family room):</strong> Only family members can enter</li>
+                    </ul>
+                    <p>
+                        Access modifiers in Java work the same way - they control who can "enter" or access your code!
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of access modifiers like <strong>security clearance levels</strong> in a company:
+                    </p>
+                    <ul>
+                        <li><strong>public:</strong> Public information - anyone in the world can access</li>
+                        <li><strong>protected:</strong> Internal company info - only employees and partners can access
+                        </li>
+                        <li><strong>private:</strong> Confidential - only specific department can access</li>
+                        <li><strong>default (no modifier):</strong> Department-level - only people in same department
+                            can access
+                        </li>
+                    </ul>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <h4>1. public</h4>
+                    <p><strong>Accessibility:</strong> Everywhere - from any class, any package</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class MyClass {
     public int publicVariable = 10;
     
     public void publicMethod() {
         System.out.println("Accessible from anywhere!");
     }
 }</code></pre>
-
-            <h4>2. private</h4>
-            <p><strong>Accessibility:</strong> Only within the same class</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class BankAccount {
+                    <h4>2. private</h4>
+                    <p><strong>Accessibility:</strong> Only within the same class</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class BankAccount {
     private double balance = 1000.0;  // Only accessible inside BankAccount
     
     private void calculateInterest() {
         // Only this class can call this method
     }
 }</code></pre>
-
-            <h4>3. protected</h4>
-            <p><strong>Accessibility:</strong> Same package + subclasses (even in different packages)</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class Parent {
+                    <h4>3. protected</h4>
+                    <p><strong>Accessibility:</strong> Same package + subclasses (even in different packages)</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class Parent {
     protected int protectedValue = 50;
     
     protected void protectedMethod() {
         // Accessible in same package and child classes
     }
 }</code></pre>
-
-            <h4>4. default (no modifier)</h4>
-            <p><strong>Accessibility:</strong> Only within the same package (package-private)</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class DefaultClass {  // No modifier = default access
+                    <h4>4. default (no modifier)</h4>
+                    <p><strong>Accessibility:</strong> Only within the same package (package-private)</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>class DefaultClass {  // No modifier = default access
     int defaultVariable = 20;
     
     void defaultMethod() {
         // Only accessible within same package
     }
 }</code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Access Levels Summary</div>
-                <p>
-                    <strong>From most to least restrictive:</strong>
-                    <br>private → default → protected → public
-                    <br><br>
-                    <strong>Best Practice:</strong> Use the most restrictive access level that makes sense. Start with
-                    private and only make it more accessible if needed (principle of least privilege).
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 3: Non-Access Modifiers -->
-        <div class="content-section">
-            <h2>⚙️ Non-Access Modifiers</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                If access modifiers are like deciding WHO can enter a room, non-access modifiers are like deciding
-                WHAT RULES apply in that room. Can you change the furniture? Is the room shared? Is it permanent?
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of non-access modifiers like <strong>property characteristics</strong>:
-            </p>
-            <ul>
-                <li><strong>static:</strong> Shared community pool - everyone in the neighborhood uses the same one</li>
-                <li><strong>final:</strong> Permanent fixture - once installed, cannot be changed</li>
-                <li><strong>abstract:</strong> Blueprint - shows the design but not the actual building</li>
-                <li><strong>synchronized:</strong> One person at a time - like a single-occupancy restroom</li>
-            </ul>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <h4>1. static</h4>
-            <p><strong>Purpose:</strong> Belongs to the class, not instances. Shared across all objects.</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class Counter {
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Access Levels Summary</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>From most to least restrictive:</strong>
+                                <br />private → default → protected → public
+                                <br /><br />
+                                <strong>Best Practice:</strong> Use the most restrictive access level that makes sense.
+                                Start with
+                                private and only make it more accessible if needed (principle of least privilege).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 3: Non-Access Modifiers -->
+                <div class="content-section">
+                    <h2>⚙️ Non-Access Modifiers</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        If access modifiers are like deciding WHO can enter a room, non-access modifiers are like
+                        deciding
+                        WHAT RULES apply in that room. Can you change the furniture? Is the room shared? Is it
+                        permanent?
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of non-access modifiers like <strong>property characteristics</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>static:</strong> Shared community pool - everyone in the neighborhood uses the same
+                            one</li>
+                        <li><strong>final:</strong> Permanent fixture - once installed, cannot be changed</li>
+                        <li><strong>abstract:</strong> Blueprint - shows the design but not the actual building</li>
+                        <li><strong>synchronized:</strong> One person at a time - like a single-occupancy restroom</li>
+                    </ul>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <h4>1. static</h4>
+                    <p><strong>Purpose:</strong> Belongs to the class, not instances. Shared across all objects.</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class Counter {
     static int count = 0;  // Shared by all Counter objects
     
     static void displayCount() {
@@ -259,22 +677,23 @@
 
 // Usage: Counter.count (no object needed!)
 // Counter.displayCount();</code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Industry Usage</div>
-                <p>
-                    <strong>static</strong> is heavily used for:
-                    <br>• Utility methods: <code>Math.sqrt()</code>, <code>Arrays.sort()</code>
-                    <br>• Constants: <code>Math.PI</code>, <code>Integer.MAX_VALUE</code>
-                    <br>• Factory methods: <code>LocalDate.now()</code>
-                    <br>• Singleton pattern: Ensuring only one instance exists
-                </p>
-            </div>
-
-            <h4>2. final</h4>
-            <p><strong>Purpose:</strong> Makes variables constant, methods non-overridable, classes non-inheritable</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Final variable (constant)
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Industry Usage</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>static</strong> is heavily used for:
+                                <br />• Utility methods: <code>Math.sqrt()</code>, <code>Arrays.sort()</code>
+                                <br />• Constants: <code>Math.PI</code>, <code>Integer.MAX_VALUE</code>
+                                <br />• Factory methods: <code>LocalDate.now()</code>
+                                <br />• Singleton pattern: Ensuring only one instance exists
+                            </p>
+                        </div>
+                    </div>
+                    <h4>2. final</h4>
+                    <p><strong>Purpose:</strong> Makes variables constant, methods non-overridable, classes
+                        non-inheritable</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Final variable (constant)
 public static final double PI = 3.14159;
 
 // Final method (cannot be overridden)
@@ -286,11 +705,11 @@ public final void criticalMethod() {
 public final class ImmutableClass {
     // No class can inherit from this
 }</code></pre>
-
-            <h4>3. abstract</h4>
-            <p><strong>Purpose:</strong> Defines incomplete classes/methods that must be completed by subclasses</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public abstract class Animal {
+                    <h4>3. abstract</h4>
+                    <p><strong>Purpose:</strong> Defines incomplete classes/methods that must be completed by subclasses
+                    </p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public abstract class Animal {
     // Abstract method (no body)
     public abstract void makeSound();
     
@@ -306,25 +725,23 @@ class Dog extends Animal {
         System.out.println("Woof!");
     }
 }</code></pre>
-
-            <h4>4. synchronized</h4>
-            <p><strong>Purpose:</strong> Thread-safe - only one thread can execute at a time</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class BankAccount {
+                    <h4>4. synchronized</h4>
+                    <p><strong>Purpose:</strong> Thread-safe - only one thread can execute at a time</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class BankAccount {
     private double balance = 1000.0;
     
     // Only one thread can execute this at a time
     public synchronized void withdraw(double amount) {
-        if (balance >= amount) {
+        if (balance &gt;= amount) {
             balance -= amount;
         }
     }
 }</code></pre>
-
-            <h4>5. volatile</h4>
-            <p><strong>Purpose:</strong> Variable value is always read from main memory (thread visibility)</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class SharedFlag {
+                    <h4>5. volatile</h4>
+                    <p><strong>Purpose:</strong> Variable value is always read from main memory (thread visibility)</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class SharedFlag {
     // Ensures all threads see the latest value
     private volatile boolean running = true;
     
@@ -332,74 +749,72 @@ class Dog extends Animal {
         running = false;  // All threads see this immediately
     }
 }</code></pre>
-
-            <h4>6. transient</h4>
-            <p><strong>Purpose:</strong> Field is not serialized (not saved when object is saved to file)</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class User implements Serializable {
+                    <h4>6. transient</h4>
+                    <p><strong>Purpose:</strong> Field is not serialized (not saved when object is saved to file)</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class User implements Serializable {
     private String username;
     private transient String password;  // Not saved to file
 }</code></pre>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ IMPORTANT - Combining Modifiers</div>
+                        <div class="admonition-content">
+                            <p>
+                                You can combine modifiers, but some combinations are illegal:
+                                <br />✅ Valid: <code>public static final</code>
+                                <br />✅ Valid: <code>private final</code>
+                                <br />❌ Invalid: <code>abstract final</code> (contradictory - abstract needs override,
+                                final prevents
+                                it)
+                                <br />❌ Invalid: <code>abstract static</code> (static methods cannot be overridden)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 4: Control Flow Keywords -->
+                <div class="content-section">
+                    <h2>🔀 Control Flow Keywords</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Imagine you're following a recipe. Sometimes the recipe says "IF you like it spicy, add chili
+                        peppers"
+                        or "WHILE the sauce is not thick, keep stirring." These are instructions that control WHAT you
+                        do and
+                        WHEN.
+                    </p>
+                    <p>
+                        Control flow keywords in Java work the same way - they control the order and conditions under
+                        which
+                        your code runs!
+                    </p>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of control flow like <strong>GPS navigation</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>if/else:</strong> "IF there's traffic, take alternate route, ELSE continue on
+                            highway"</li>
+                        <li><strong>switch:</strong> "Based on destination (case), take different exit"</li>
+                        <li><strong>for/while:</strong> "Keep driving UNTIL you reach destination"</li>
+                        <li><strong>break:</strong> "Stop and exit the highway"</li>
+                        <li><strong>continue:</strong> "Skip this exit, continue to next one"</li>
+                    </ul>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <h4>Decision Making Keywords</h4>
+                    <h5>1. if, else, else if</h5>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>int age = 20;
 
-            <div class="callout warning">
-                <div class="callout-title">⚠️ IMPORTANT - Combining Modifiers</div>
-                <p>
-                    You can combine modifiers, but some combinations are illegal:
-                    <br>✅ Valid: <code>public static final</code>
-                    <br>✅ Valid: <code>private final</code>
-                    <br>❌ Invalid: <code>abstract final</code> (contradictory - abstract needs override, final prevents
-                    it)
-                    <br>❌ Invalid: <code>abstract static</code> (static methods cannot be overridden)
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 4: Control Flow Keywords -->
-        <div class="content-section">
-            <h2>🔀 Control Flow Keywords</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Imagine you're following a recipe. Sometimes the recipe says "IF you like it spicy, add chili peppers"
-                or "WHILE the sauce is not thick, keep stirring." These are instructions that control WHAT you do and
-                WHEN.
-            </p>
-            <p>
-                Control flow keywords in Java work the same way - they control the order and conditions under which
-                your code runs!
-            </p>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of control flow like <strong>GPS navigation</strong>:
-            </p>
-            <ul>
-                <li><strong>if/else:</strong> "IF there's traffic, take alternate route, ELSE continue on highway"</li>
-                <li><strong>switch:</strong> "Based on destination (case), take different exit"</li>
-                <li><strong>for/while:</strong> "Keep driving UNTIL you reach destination"</li>
-                <li><strong>break:</strong> "Stop and exit the highway"</li>
-                <li><strong>continue:</strong> "Skip this exit, continue to next one"</li>
-            </ul>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <h4>Decision Making Keywords</h4>
-
-            <h5>1. if, else, else if</h5>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>int age = 20;
-
-if (age >= 18) {
+if (age &gt;= 18) {
     System.out.println("Adult");
-} else if (age >= 13) {
+} else if (age &gt;= 13) {
     System.out.println("Teenager");
 } else {
     System.out.println("Child");
 }</code></pre>
-
-            <h5>2. switch, case, default</h5>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>int day = 3;
+                    <h5>2. switch, case, default</h5>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>int day = 3;
 
 switch (day) {
     case 1:
@@ -414,103 +829,92 @@ switch (day) {
     default:
         System.out.println("Other day");
 }</code></pre>
-
-            <h4>Loop Keywords</h4>
-
-            <h5>3. for</h5>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Print numbers 1 to 5
-for (int i = 1; i <= 5; i++) {
+                    <h4>Loop Keywords</h4>
+                    <h5>3. for</h5>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// Print numbers 1 to 5
+for (int i = 1; i &lt;= 5; i++) {
     System.out.println(i);
 }</code></pre>
-
-            <h5>4. while</h5>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>int count = 0;
-while (count < 5) {
+                    <h5>4. while</h5>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>int count = 0;
+while (count &lt; 5) {
     System.out.println(count);
     count++;
 }</code></pre>
-
-            <h5>5. do</h5>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>int num = 0;
+                    <h5>5. do</h5>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>int num = 0;
 do {
     System.out.println(num);
     num++;
-} while (num < 5);</code></pre>
-
-            <h4>Jump Keywords</h4>
-
-            <h5>6. break</h5>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>for (int i = 0; i < 10; i++) {
+} while (num &lt; 5);</code></pre>
+                    <h4>Jump Keywords</h4>
+                    <h5>6. break</h5>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>for (int i = 0; i &lt; 10; i++) {
     if (i == 5) {
         break;  // Exit loop when i is 5
     }
     System.out.println(i);
 }
 // Output: 0 1 2 3 4</code></pre>
-
-            <h5>7. continue</h5>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>for (int i = 0; i < 5; i++) {
+                    <h5>7. continue</h5>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>for (int i = 0; i &lt; 5; i++) {
     if (i == 2) {
         continue;  // Skip iteration when i is 2
     }
     System.out.println(i);
 }
 // Output: 0 1 3 4</code></pre>
-
-            <h5>8. return</h5>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public int add(int a, int b) {
+                    <h5>8. return</h5>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public int add(int a, int b) {
     return a + b;  // Exit method and return value
 }</code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - break vs continue vs return</div>
-                <p>
-                    <strong>break:</strong> Exits the entire loop
-                    <br><strong>continue:</strong> Skips current iteration, continues with next
-                    <br><strong>return:</strong> Exits the entire method
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 5: Class and Object Related Keywords -->
-        <div class="content-section">
-            <h2>🏗️ Class and Object Related Keywords</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Think of building with LEGO blocks. You have:
-            </p>
-            <ul>
-                <li><strong>class:</strong> The instruction manual that shows how to build something</li>
-                <li><strong>new:</strong> Actually building the LEGO model following the manual</li>
-                <li><strong>this:</strong> Pointing to "this specific model I'm building right now"</li>
-                <li><strong>super:</strong> Referring to the "parent design" that this model is based on</li>
-            </ul>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of object-oriented programming like <strong>car manufacturing</strong>:
-            </p>
-            <ul>
-                <li><strong>class:</strong> Blueprint/design of a car</li>
-                <li><strong>interface:</strong> List of features every car must have (steering, brakes, etc.)</li>
-                <li><strong>extends:</strong> Creating a sports car based on regular car design</li>
-                <li><strong>implements:</strong> Ensuring the car has all required features</li>
-                <li><strong>new:</strong> Manufacturing an actual car from the blueprint</li>
-            </ul>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <h4>1. class</h4>
-            <p>Defines a blueprint for objects</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class Car {
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - break vs continue vs return</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>break:</strong> Exits the entire loop
+                                <br /><strong>continue:</strong> Skips current iteration, continues with next
+                                <br /><strong>return:</strong> Exits the entire method
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 5: Class and Object Related Keywords -->
+                <div class="content-section">
+                    <h2>🏗️ Class and Object Related Keywords</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Think of building with LEGO blocks. You have:
+                    </p>
+                    <ul>
+                        <li><strong>class:</strong> The instruction manual that shows how to build something</li>
+                        <li><strong>new:</strong> Actually building the LEGO model following the manual</li>
+                        <li><strong>this:</strong> Pointing to "this specific model I'm building right now"</li>
+                        <li><strong>super:</strong> Referring to the "parent design" that this model is based on</li>
+                    </ul>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of object-oriented programming like <strong>car manufacturing</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>class:</strong> Blueprint/design of a car</li>
+                        <li><strong>interface:</strong> List of features every car must have (steering, brakes, etc.)
+                        </li>
+                        <li><strong>extends:</strong> Creating a sports car based on regular car design</li>
+                        <li><strong>implements:</strong> Ensuring the car has all required features</li>
+                        <li><strong>new:</strong> Manufacturing an actual car from the blueprint</li>
+                    </ul>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <h4>1. class</h4>
+                    <p>Defines a blueprint for objects</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class Car {
     String brand;
     int year;
     
@@ -518,40 +922,36 @@ do {
         System.out.println("Car starting...");
     }
 }</code></pre>
-
-            <h4>2. interface</h4>
-            <p>Defines a contract that classes must follow</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public interface Drivable {
+                    <h4>2. interface</h4>
+                    <p>Defines a contract that classes must follow</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public interface Drivable {
     void accelerate();
     void brake();
     void steer();
 }</code></pre>
-
-            <h4>3. enum</h4>
-            <p>Defines a fixed set of constants</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public enum Day {
+                    <h4>3. enum</h4>
+                    <p>Defines a fixed set of constants</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public enum Day {
     MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
 }
 
 Day today = Day.MONDAY;</code></pre>
-
-            <h4>4. extends</h4>
-            <p>Creates inheritance relationship (IS-A)</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class SportsCar extends Car {
+                    <h4>4. extends</h4>
+                    <p>Creates inheritance relationship (IS-A)</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class SportsCar extends Car {
     int topSpeed;
     
     void turboBoost() {
         System.out.println("Turbo activated!");
     }
 }</code></pre>
-
-            <h4>5. implements</h4>
-            <p>Implements an interface contract</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class Car implements Drivable {
+                    <h4>5. implements</h4>
+                    <p>Implements an interface contract</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class Car implements Drivable {
     @Override
     public void accelerate() {
         System.out.println("Accelerating...");
@@ -567,17 +967,15 @@ Day today = Day.MONDAY;</code></pre>
         System.out.println("Steering...");
     }
 }</code></pre>
-
-            <h4>6. new</h4>
-            <p>Creates new object instances</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>Car myCar = new Car();  // Creates new Car object
+                    <h4>6. new</h4>
+                    <p>Creates new object instances</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>Car myCar = new Car();  // Creates new Car object
 String name = new String("Alice");  // Creates new String object</code></pre>
-
-            <h4>7. this</h4>
-            <p>Refers to current object instance</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class Person {
+                    <h4>7. this</h4>
+                    <p>Refers to current object instance</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class Person {
     String name;
     
     public Person(String name) {
@@ -588,22 +986,22 @@ String name = new String("Alice");  // Creates new String object</code></pre>
         System.out.println(this.name);  // Refers to current object's name
     }
 }</code></pre>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Industry Usage of 'this'</div>
-                <p>
-                    <strong>this</strong> is commonly used for:
-                    <br>• Distinguishing instance variables from parameters
-                    <br>• Calling other constructors: <code>this()</code>
-                    <br>• Returning current object for method chaining
-                    <br>• Passing current object as parameter
-                </p>
-            </div>
-
-            <h4>8. super</h4>
-            <p>Refers to parent class</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class SportsCar extends Car {
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Industry Usage of 'this'</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>this</strong> is commonly used for:
+                                <br />• Distinguishing instance variables from parameters
+                                <br />• Calling other constructors: <code>this()</code>
+                                <br />• Returning current object for method chaining
+                                <br />• Passing current object as parameter
+                            </p>
+                        </div>
+                    </div>
+                    <h4>8. super</h4>
+                    <p>Refers to parent class</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class SportsCar extends Car {
     public SportsCar(String brand, int year) {
         super();  // Calls parent constructor
         this.brand = brand;
@@ -615,11 +1013,10 @@ String name = new String("Alice");  // Creates new String object</code></pre>
         System.out.println("Sports car engine roaring!");
     }
 }</code></pre>
-
-            <h4>9. instanceof</h4>
-            <p>Checks if object is instance of a class</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>Car myCar = new SportsCar();
+                    <h4>9. instanceof</h4>
+                    <p>Checks if object is instance of a class</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>Car myCar = new SportsCar();
 
 if (myCar instanceof SportsCar) {
     System.out.println("It's a sports car!");
@@ -628,51 +1025,48 @@ if (myCar instanceof SportsCar) {
 if (myCar instanceof Car) {
     System.out.println("It's a car!");  // Also true!
 }</code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - this vs super</div>
-                <p>
-                    <strong>this:</strong> Refers to current class (me, myself)
-                    <br><strong>super:</strong> Refers to parent class (my parent)
-                    <br><br>
-                    Use <code>this</code> to access current class members, <code>super</code> to access parent class
-                    members.
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 6: Exception Handling Keywords -->
-        <div class="content-section">
-            <h2>🚨 Exception Handling Keywords</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Imagine you're walking and you might trip on a rock. You have options:
-            </p>
-            <ul>
-                <li><strong>try:</strong> "I'll try to walk carefully"</li>
-                <li><strong>catch:</strong> "If I trip, I'll catch myself with my hands"</li>
-                <li><strong>finally:</strong> "No matter what happens, I'll keep walking forward"</li>
-                <li><strong>throw:</strong> "Oops! I'm falling!" (alerting others)</li>
-            </ul>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of exception handling like <strong>safety measures in a building</strong>:
-            </p>
-            <ul>
-                <li><strong>try:</strong> Normal operations - business as usual</li>
-                <li><strong>catch:</strong> Fire extinguisher - handles emergencies when they occur</li>
-                <li><strong>finally:</strong> Emergency exit sign - always there, always visible</li>
-                <li><strong>throw:</strong> Fire alarm - alerts everyone of a problem</li>
-                <li><strong>throws:</strong> Warning sign - "This area may have hazards"</li>
-            </ul>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <h4>1. try-catch-finally</h4>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>try {
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - this vs super</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>this:</strong> Refers to current class (me, myself)
+                                <br /><strong>super:</strong> Refers to parent class (my parent)
+                                <br /><br />
+                                Use <code>this</code> to access current class members, <code>super</code> to access
+                                parent class
+                                members.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 6: Exception Handling Keywords -->
+                <div class="content-section">
+                    <h2>🚨 Exception Handling Keywords</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Imagine you're walking and you might trip on a rock. You have options:
+                    </p>
+                    <ul>
+                        <li><strong>try:</strong> "I'll try to walk carefully"</li>
+                        <li><strong>catch:</strong> "If I trip, I'll catch myself with my hands"</li>
+                        <li><strong>finally:</strong> "No matter what happens, I'll keep walking forward"</li>
+                        <li><strong>throw:</strong> "Oops! I'm falling!" (alerting others)</li>
+                    </ul>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of exception handling like <strong>safety measures in a building</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>try:</strong> Normal operations - business as usual</li>
+                        <li><strong>catch:</strong> Fire extinguisher - handles emergencies when they occur</li>
+                        <li><strong>finally:</strong> Emergency exit sign - always there, always visible</li>
+                        <li><strong>throw:</strong> Fire alarm - alerts everyone of a problem</li>
+                        <li><strong>throws:</strong> Warning sign - "This area may have hazards"</li>
+                    </ul>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <h4>1. try-catch-finally</h4>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>try {
     // Code that might throw an exception
     int result = 10 / 0;  // ArithmeticException!
 } catch (ArithmeticException e) {
@@ -682,116 +1076,108 @@ if (myCar instanceof Car) {
     // Always executes, exception or not
     System.out.println("Cleanup code here");
 }</code></pre>
-
-            <h4>2. throw</h4>
-            <p>Explicitly throws an exception</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public void setAge(int age) {
-    if (age < 0) {
+                    <h4>2. throw</h4>
+                    <p>Explicitly throws an exception</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public void setAge(int age) {
+    if (age &lt; 0) {
         throw new IllegalArgumentException("Age cannot be negative!");
     }
     this.age = age;
 }</code></pre>
-
-            <h4>3. throws</h4>
-            <p>Declares that method might throw exceptions</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public void readFile(String filename) throws IOException {
+                    <h4>3. throws</h4>
+                    <p>Declares that method might throw exceptions</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public void readFile(String filename) throws IOException {
     FileReader file = new FileReader(filename);
     // File operations that might throw IOException
 }</code></pre>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ IMPORTANT - throw vs throws</div>
-                <p>
-                    <strong>throw:</strong> Actually throws an exception (used inside method body)
-                    <br><strong>throws:</strong> Declares potential exceptions (used in method signature)
-                    <br><br>
-                    Example: <code>public void method() throws IOException { throw new IOException(); }</code>
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 7: Package Related Keywords -->
-        <div class="content-section">
-            <h2>📦 Package Related Keywords</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                Imagine organizing your toys:
-            </p>
-            <ul>
-                <li><strong>package:</strong> The box where you keep similar toys together (all cars in one box, all
-                    dolls in another)</li>
-                <li><strong>import:</strong> Bringing a toy from another box to play with it</li>
-            </ul>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of packages like <strong>organizing a library</strong>:
-            </p>
-            <ul>
-                <li><strong>package:</strong> Different sections (Fiction, Science, History)</li>
-                <li><strong>import:</strong> Borrowing a book from a specific section to read</li>
-            </ul>
-
-            <h3>Level 3: Technical Explanation</h3>
-
-            <h4>1. package</h4>
-            <p>Groups related classes together</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>package com.company.project.utils;
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ IMPORTANT - throw vs throws</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>throw:</strong> Actually throws an exception (used inside method body)
+                                <br /><strong>throws:</strong> Declares potential exceptions (used in method signature)
+                                <br /><br />
+                                Example:
+                                <code>public void method() throws IOException { throw new IOException(); }</code>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 7: Package Related Keywords -->
+                <div class="content-section">
+                    <h2>📦 Package Related Keywords</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        Imagine organizing your toys:
+                    </p>
+                    <ul>
+                        <li><strong>package:</strong> The box where you keep similar toys together (all cars in one box,
+                            all
+                            dolls in another)</li>
+                        <li><strong>import:</strong> Bringing a toy from another box to play with it</li>
+                    </ul>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of packages like <strong>organizing a library</strong>:
+                    </p>
+                    <ul>
+                        <li><strong>package:</strong> Different sections (Fiction, Science, History)</li>
+                        <li><strong>import:</strong> Borrowing a book from a specific section to read</li>
+                    </ul>
+                    <h3>Level 3: Technical Explanation</h3>
+                    <h4>1. package</h4>
+                    <p>Groups related classes together</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>package com.company.project.utils;
 
 public class StringHelper {
     // Utility methods for strings
 }</code></pre>
-
-            <h4>2. import</h4>
-            <p>Makes classes from other packages available</p>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>import java.util.ArrayList;  // Import specific class
+                    <h4>2. import</h4>
+                    <p>Makes classes from other packages available</p>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>import java.util.ArrayList;  // Import specific class
 import java.util.*;          // Import all classes from package
 
 public class MyClass {
-    ArrayList<String> list = new ArrayList<>();
-}</code></pre>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Package Naming Convention</div>
-                <p>
-                    Packages use reverse domain naming: <code>com.company.project.module</code>
-                    <br>Example: <code>com.google.android.apps</code>
-                    <br><br>
-                    This ensures global uniqueness and prevents naming conflicts!
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 8: Common Mistakes Using Keywords -->
-        <div class="content-section">
-            <h2>❌ Common Mistakes Using Keywords</h2>
-
-            <h3>1. Using Keywords as Identifiers</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ WRONG
+    ArrayList<string> list = new ArrayList&lt;&gt;();
+}</string></code></pre>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Package Naming Convention</div>
+                        <div class="admonition-content">
+                            <p>
+                                Packages use reverse domain naming: <code>com.company.project.module</code>
+                                <br />Example: <code>com.google.android.apps</code>
+                                <br /><br />
+                                This ensures global uniqueness and prevents naming conflicts!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 8: Common Mistakes Using Keywords -->
+                <div class="content-section">
+                    <h2>❌ Common Mistakes Using Keywords</h2>
+                    <h3>1. Using Keywords as Identifiers</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ WRONG
 int class = 10;        // Compilation error!
 String public = "Hi";  // Compilation error!
 
 // ✅ CORRECT
 int className = 10;
 String publicMessage = "Hi";</code></pre>
-
-            <h3>2. Incorrect Access Modifiers</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ WRONG - Multiple access modifiers
+                    <h3>2. Incorrect Access Modifiers</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ WRONG - Multiple access modifiers
 public private class MyClass { }  // Error!
 
 // ✅ CORRECT - Only one access modifier
 public class MyClass { }</code></pre>
-
-            <h3>3. Misusing static and final</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ WRONG - Trying to change final variable
+                    <h3>3. Misusing static and final</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ WRONG - Trying to change final variable
 final int MAX = 100;
 MAX = 200;  // Compilation error!
 
@@ -803,10 +1189,9 @@ public class Test {
         System.out.println(instanceVar);  // Error!
     }
 }</code></pre>
-
-            <h3>4. Mixing this and super Incorrectly</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ WRONG - Using this() and super() together
+                    <h3>4. Mixing this and super Incorrectly</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ WRONG - Using this() and super() together
 public class Child extends Parent {
     public Child() {
         super();  // Must be first
@@ -820,10 +1205,9 @@ public class Child extends Parent {
         super();  // Calls parent constructor
     }
 }</code></pre>
-
-            <h3>5. Misusing break and continue</h3>
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ WRONG - break outside loop
+                    <h3>5. Misusing break and continue</h3>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--accent);"><code>// ❌ WRONG - break outside loop
 public void test() {
     if (true) {
         break;  // Error! break only works in loops/switch
@@ -831,36 +1215,34 @@ public void test() {
 }
 
 // ✅ CORRECT - break inside loop
-for (int i = 0; i < 10; i++) {
+for (int i = 0; i &lt; 10; i++) {
     if (i == 5) {
         break;  // Valid!
     }
 }</code></pre>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ COMMON PITFALL - Case Sensitivity</div>
-                <p>
-                    Keywords are case-sensitive and must be lowercase!
-                    <br>❌ <code>Public class MyClass</code> - Error!
-                    <br>✅ <code>public class MyClass</code> - Correct!
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 9: Best Practices -->
-        <div class="content-section">
-            <h2>✅ Best Practices</h2>
-
-            <h3>1. Access Modifier Best Practices</h3>
-            <ul>
-                <li>✅ Use <strong>private</strong> for fields by default (encapsulation)</li>
-                <li>✅ Use <strong>public</strong> for methods that form the class's API</li>
-                <li>✅ Use <strong>protected</strong> for methods intended for subclasses</li>
-                <li>✅ Avoid <strong>default</strong> access unless package-level access is intended</li>
-            </ul>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class BestPracticeExample {
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ COMMON PITFALL - Case Sensitivity</div>
+                        <div class="admonition-content">
+                            <p>
+                                Keywords are case-sensitive and must be lowercase!
+                                <br />❌ <code>Public class MyClass</code> - Error!
+                                <br />✅ <code>public class MyClass</code> - Correct!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 9: Best Practices -->
+                <div class="content-section">
+                    <h2>✅ Best Practices</h2>
+                    <h3>1. Access Modifier Best Practices</h3>
+                    <ul>
+                        <li>✅ Use <strong>private</strong> for fields by default (encapsulation)</li>
+                        <li>✅ Use <strong>public</strong> for methods that form the class's API</li>
+                        <li>✅ Use <strong>protected</strong> for methods intended for subclasses</li>
+                        <li>✅ Avoid <strong>default</strong> access unless package-level access is intended</li>
+                    </ul>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>public class BestPracticeExample {
     // ✅ Private fields
     private String name;
     private int age;
@@ -874,31 +1256,28 @@ for (int i = 0; i < 10; i++) {
         this.name = name;
     }
 }</code></pre>
-
-            <h3>2. static Keyword Best Practices</h3>
-            <ul>
-                <li>✅ Use <code>static</code> for utility methods that don't need object state</li>
-                <li>✅ Use <code>static final</code> for constants</li>
-                <li>❌ Avoid overusing <code>static</code> - it can make code harder to test</li>
-            </ul>
-
-            <h3>3. final Keyword Best Practices</h3>
-            <ul>
-                <li>✅ Use <code>final</code> for constants: <code>public static final int MAX_SIZE = 100;</code></li>
-                <li>✅ Use <code>final</code> for parameters that shouldn't change</li>
-                <li>✅ Use <code>final</code> for classes that shouldn't be extended (security)</li>
-            </ul>
-
-            <h3>4. Exception Handling Best Practices</h3>
-            <ul>
-                <li>✅ Catch specific exceptions, not generic <code>Exception</code></li>
-                <li>✅ Use <code>finally</code> for cleanup code (closing files, connections)</li>
-                <li>✅ Don't swallow exceptions - at least log them</li>
-                <li>❌ Don't use exceptions for flow control</li>
-            </ul>
-
-            <pre
-                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// ✅ GOOD - Specific exception handling
+                    <h3>2. static Keyword Best Practices</h3>
+                    <ul>
+                        <li>✅ Use <code>static</code> for utility methods that don't need object state</li>
+                        <li>✅ Use <code>static final</code> for constants</li>
+                        <li>❌ Avoid overusing <code>static</code> - it can make code harder to test</li>
+                    </ul>
+                    <h3>3. final Keyword Best Practices</h3>
+                    <ul>
+                        <li>✅ Use <code>final</code> for constants: <code>public static final int MAX_SIZE = 100;</code>
+                        </li>
+                        <li>✅ Use <code>final</code> for parameters that shouldn't change</li>
+                        <li>✅ Use <code>final</code> for classes that shouldn't be extended (security)</li>
+                    </ul>
+                    <h3>4. Exception Handling Best Practices</h3>
+                    <ul>
+                        <li>✅ Catch specific exceptions, not generic <code>Exception</code></li>
+                        <li>✅ Use <code>finally</code> for cleanup code (closing files, connections)</li>
+                        <li>✅ Don't swallow exceptions - at least log them</li>
+                        <li>❌ Don't use exceptions for flow control</li>
+                    </ul>
+                    <pre
+                        style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);"><code>// ✅ GOOD - Specific exception handling
 try {
     // Code
 } catch (FileNotFoundException e) {
@@ -908,51 +1287,55 @@ try {
 } finally {
     // Cleanup
 }</code></pre>
-
-            <h3>5. this and super Best Practices</h3>
-            <ul>
-                <li>✅ Use <code>this</code> to distinguish parameters from fields</li>
-                <li>✅ Use <code>super()</code> as first line in constructor if calling parent</li>
-                <li>✅ Use <code>super.method()</code> to call overridden parent methods</li>
-            </ul>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Clean Code Guidelines</div>
-                <p>
-                    <strong>Principle of Least Privilege:</strong> Use the most restrictive access modifier possible.
-                    <br><strong>Immutability:</strong> Use <code>final</code> when values shouldn't change.
-                    <br><strong>Single Responsibility:</strong> Each class should have one clear purpose.
-                    <br><strong>Fail Fast:</strong> Use exceptions to catch errors early.
-                </p>
+                    <h3>5. this and super Best Practices</h3>
+                    <ul>
+                        <li>✅ Use <code>this</code> to distinguish parameters from fields</li>
+                        <li>✅ Use <code>super()</code> as first line in constructor if calling parent</li>
+                        <li>✅ Use <code>super.method()</code> to call overridden parent methods</li>
+                    </ul>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Clean Code Guidelines</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Principle of Least Privilege:</strong> Use the most restrictive access modifier
+                                possible.
+                                <br /><strong>Immutability:</strong> Use <code>final</code> when values shouldn't
+                                change.
+                                <br /><strong>Single Responsibility:</strong> Each class should have one clear purpose.
+                                <br /><strong>Fail Fast:</strong> Use exceptions to catch errors early.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../programs/java-keywords.html">
+                            💻 View Programs
+                        </a>
+                        <a class="md-button md-button--primary" href="../mcq/java-keywords.html">
+                            ✅ Test Your Knowledge
+                        </a>
+                        <a class="md-button md-button--secondary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> Control Flow Statements &amp; Loops
+                                <br />Master if-else, switch, for, while, do-while loops, and control flow mechanisms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../programs/java-keywords.html" class="btn btn-primary">
-                    💻 View Programs
-                </a>
-                <a href="../mcq/java-keywords.html" class="btn btn-success">
-                    ✅ Test Your Knowledge
-                </a>
-                <a href="../index.html" class="btn btn-secondary">
-                    🏠 Back to Home
-                </a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> Control Flow Statements & Loops
-                    <br>Master if-else, switch, for, while, do-while loops, and control flow mechanisms.
-                </p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

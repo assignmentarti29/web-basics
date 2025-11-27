@@ -1,670 +1,1164 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>What is Java Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>What is Java - Knowledge Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>What is Java</span>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>What is Java - Knowledge Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>What is Java</li>
+                    </ul>
+                </div>
+                <!-- Quiz Container -->
+                <div class="quiz-container">
+                    <!-- Quiz Header -->
+                    <div class="quiz-header">
+                        <div class="quiz-progress">Question 0/32</div>
+                        <div class="quiz-score">Score: 0/32 (0%)</div>
+                    </div>
+                    <!-- Question 1 -->
+                    <div class="question"
+                        data-correct-answer="A high-level, object-oriented, platform-independent programming language"
+                        data-question-id="q1">
+                        <p class="question-text">Q1. What is Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="A low-level programming language">A low-level
+                                programming
+                                language</button>
+                            <button class="option-btn"
+                                data-answer="A high-level, object-oriented, platform-independent programming language">A
+                                high-level, object-oriented, platform-independent programming language</button>
+                            <button class="option-btn" data-answer="A database management system">A database management
+                                system</button>
+                            <button class="option-btn" data-answer="An operating system">An operating system</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: A high-level, object-oriented,
+                                platform-independent
+                                programming language</div>
+                            <p>Java is a high-level programming language (easy for humans to read/write),
+                                object-oriented (based
+                                on objects and classes), and platform-independent (runs on any system with JVM through
+                                bytecode).</p>
+                        </div>
+                    </div>
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="James Gosling" data-question-id="q2">
+                        <p class="question-text">Q2. Who created Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Dennis Ritchie">Dennis Ritchie</button>
+                            <button class="option-btn" data-answer="James Gosling">James Gosling</button>
+                            <button class="option-btn" data-answer="Bjarne Stroustrup">Bjarne Stroustrup</button>
+                            <button class="option-btn" data-answer="Guido van Rossum">Guido van Rossum</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: James Gosling</div>
+                            <p>James Gosling, along with Mike Sheridan and Patrick Naughton, created Java at Sun
+                                Microsystems in
+                                the early 1990s. Dennis Ritchie created C, Bjarne Stroustrup created C++, and Guido van
+                                Rossum
+                                created Python.</p>
+                        </div>
+                    </div>
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="1995" data-question-id="q3">
+                        <p class="question-text">Q3. In which year was Java officially released?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="1991">1991</button>
+                            <button class="option-btn" data-answer="1995">1995</button>
+                            <button class="option-btn" data-answer="2000">2000</button>
+                            <button class="option-btn" data-answer="2004">2004</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: 1995</div>
+                            <p>Java 1.0 was officially released in 1995. The project started in 1991 as "Project Green"
+                                and was
+                                initially named "Oak" before being renamed to Java in 1995.</p>
+                        </div>
+                    </div>
+                    <!-- Question 4 -->
+                    <div class="question" data-correct-answer="Oak" data-question-id="q4">
+                        <p class="question-text">Q4. What was Java originally called before being renamed?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Oak">Oak</button>
+                            <button class="option-btn" data-answer="Pine">Pine</button>
+                            <button class="option-btn" data-answer="Coffee">Coffee</button>
+                            <button class="option-btn" data-answer="Green">Green</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Oak</div>
+                            <p>Java was originally named "Oak" after an oak tree outside James Gosling's office. It was
+                                renamed
+                                to "Java" in 1995 due to trademark issues. Java is named after Java coffee, which the
+                                developers
+                                loved.</p>
+                        </div>
+                    </div>
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="Write Once, Run Anywhere" data-question-id="q5">
+                        <p class="question-text">Q5. What does WORA stand for in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Write Once, Read Anywhere">Write Once, Read
+                                Anywhere</button>
+                            <button class="option-btn" data-answer="Write Once, Run Anywhere">Write Once, Run
+                                Anywhere</button>
+                            <button class="option-btn" data-answer="Work Once, Repeat Always">Work Once, Repeat
+                                Always</button>
+                            <button class="option-btn" data-answer="Write Often, Run Anywhere">Write Often, Run
+                                Anywhere</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Write Once, Run Anywhere</div>
+                            <p>WORA (Write Once, Run Anywhere) is Java's core philosophy. You write Java code once,
+                                compile it
+                                to bytecode, and it runs on any platform that has a JVM without modification or
+                                recompilation.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="Java Virtual Machine" data-question-id="q6">
+                        <p class="question-text">Q6. What does JVM stand for?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Java Variable Manager">Java Variable
+                                Manager</button>
+                            <button class="option-btn" data-answer="Java Virtual Machine">Java Virtual Machine</button>
+                            <button class="option-btn" data-answer="Just Virtual Memory">Just Virtual Memory</button>
+                            <button class="option-btn" data-answer="Java Vendor Module">Java Vendor Module</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Java Virtual Machine</div>
+                            <p>JVM stands for Java Virtual Machine. It's an abstract computing machine that provides a
+                                runtime
+                                environment to execute Java bytecode. The JVM is what makes Java platform-independent.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="Java Runtime Environment" data-question-id="q7">
+                        <p class="question-text">Q7. What does JRE stand for?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Java Runtime Environment">Java Runtime
+                                Environment</button>
+                            <button class="option-btn" data-answer="Java Rapid Execution">Java Rapid Execution</button>
+                            <button class="option-btn" data-answer="Java Resource Engine">Java Resource Engine</button>
+                            <button class="option-btn" data-answer="Java Rendering Engine">Java Rendering
+                                Engine</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Java Runtime Environment</div>
+                            <p>JRE stands for Java Runtime Environment. It includes the JVM plus core libraries needed
+                                to run
+                                Java applications. You need JRE to run Java programs, but not to develop them.</p>
+                        </div>
+                    </div>
+                    <!-- Question 8 -->
+                    <div class="question" data-correct-answer="Java Development Kit" data-question-id="q8">
+                        <p class="question-text">Q8. What does JDK stand for?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Java Development Kit">Java Development Kit</button>
+                            <button class="option-btn" data-answer="Java Debugging Kit">Java Debugging Kit</button>
+                            <button class="option-btn" data-answer="Java Deployment Kit">Java Deployment Kit</button>
+                            <button class="option-btn" data-answer="Java Design Kit">Java Design Kit</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Java Development Kit</div>
+                            <p>JDK stands for Java Development Kit. It's a complete software development kit that
+                                includes JRE
+                                (which includes JVM) plus development tools like javac (compiler), javadoc, jar, and
+                                debugger.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="JDK contains JRE, which contains JVM"
+                        data-question-id="q9">
+                        <p class="question-text">Q9. What is the relationship between JDK, JRE, and JVM?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="They are all the same">They are all the
+                                same</button>
+                            <button class="option-btn" data-answer="JDK contains JRE, which contains JVM">JDK contains
+                                JRE,
+                                which contains JVM</button>
+                            <button class="option-btn" data-answer="JVM contains JRE, which contains JDK">JVM contains
+                                JRE,
+                                which contains JDK</button>
+                            <button class="option-btn" data-answer="They are completely independent">They are completely
+                                independent</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: JDK contains JRE, which contains JVM</div>
+                            <p>The relationship is hierarchical: JDK ⊃ JRE ⊃ JVM. JDK is the complete development kit
+                                containing
+                                JRE (runtime environment) which contains JVM (execution engine). To develop Java apps,
+                                you need
+                                JDK. To only run them, JRE is sufficient.</p>
+                        </div>
+                    </div>
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="To run Java applications" data-question-id="q10">
+                        <p class="question-text">Q10. What is the primary purpose of JRE?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="To compile Java code">To compile Java code</button>
+                            <button class="option-btn" data-answer="To run Java applications">To run Java
+                                applications</button>
+                            <button class="option-btn" data-answer="To debug Java programs">To debug Java
+                                programs</button>
+                            <button class="option-btn" data-answer="To create documentation">To create
+                                documentation</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: To run Java applications</div>
+                            <p>JRE (Java Runtime Environment) is designed to run Java applications. It includes the JVM
+                                and core
+                                libraries but NOT development tools like the compiler. If you only want to run Java
+                                programs
+                                (not develop them), JRE is what you need.</p>
+                        </div>
+                    </div>
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer=".class" data-question-id="q11">
+                        <p class="question-text">Q11. What is the file extension of Java bytecode?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer=".java">.java</button>
+                            <button class="option-btn" data-answer=".class">.class</button>
+                            <button class="option-btn" data-answer=".byte">.byte</button>
+                            <button class="option-btn" data-answer=".jvm">.jvm</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: .class</div>
+                            <p>Java bytecode files have the .class extension. When you compile a .java source file using
+                                javac,
+                                it creates a .class file containing platform-independent bytecode that the JVM can
+                                execute.</p>
+                        </div>
+                    </div>
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="javac" data-question-id="q12">
+                        <p class="question-text">Q12. Which command is used to compile Java source code?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="java">java</button>
+                            <button class="option-btn" data-answer="javac">javac</button>
+                            <button class="option-btn" data-answer="compile">compile</button>
+                            <button class="option-btn" data-answer="jvm">jvm</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: javac</div>
+                            <p>The javac command (Java Compiler) is used to compile Java source code (.java files) into
+                                bytecode
+                                (.class files). Example: javac HelloWorld.java creates HelloWorld.class.</p>
+                        </div>
+                    </div>
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="java" data-question-id="q13">
+                        <p class="question-text">Q13. Which command is used to run a compiled Java program?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="run">run</button>
+                            <button class="option-btn" data-answer="execute">execute</button>
+                            <button class="option-btn" data-answer="java">java</button>
+                            <button class="option-btn" data-answer="javac">javac</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: java</div>
+                            <p>The java command launches the JVM and runs the compiled bytecode. Example: java
+                                HelloWorld (note:
+                                no .class extension needed). The JVM loads the .class file and executes it.</p>
+                        </div>
+                    </div>
+                    <!-- Question 14 -->
+                    <div class="question" data-correct-answer="Platform-independent intermediate code"
+                        data-question-id="q14">
+                        <p class="question-text">Q14. What is Java bytecode?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Machine code for a specific processor">Machine code
+                                for a
+                                specific processor</button>
+                            <button class="option-btn"
+                                data-answer="Platform-independent intermediate code">Platform-independent
+                                intermediate code</button>
+                            <button class="option-btn" data-answer="Source code in binary format">Source code in binary
+                                format</button>
+                            <button class="option-btn" data-answer="Compressed Java source code">Compressed Java source
+                                code</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Platform-independent intermediate code
+                            </div>
+                            <p>Java bytecode is platform-independent intermediate code that sits between source code and
+                                machine
+                                code. It's not specific to any processor or OS. The JVM interprets/compiles this
+                                bytecode to
+                                native machine code for the specific platform it's running on.</p>
+                        </div>
+                    </div>
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="Bytecode is platform-independent" data-question-id="q15">
+                        <p class="question-text">Q15. How does Java achieve platform independence?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="By compiling to native code for each platform">By
+                                compiling
+                                to native code for each platform</button>
+                            <button class="option-btn" data-answer="Bytecode is platform-independent">Bytecode is
+                                platform-independent</button>
+                            <button class="option-btn" data-answer="Java code runs without compilation">Java code runs
+                                without
+                                compilation</button>
+                            <button class="option-btn" data-answer="By using a universal operating system">By using a
+                                universal
+                                operating system</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Bytecode is platform-independent</div>
+                            <p>Java achieves platform independence through bytecode. Source code compiles to bytecode
+                                (not
+                                native machine code). This bytecode runs on any platform with a JVM. The JVM is
+                                platform-specific, but bytecode is not. This is the "Write Once, Run Anywhere" magic!
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="Yes, different JVMs for different platforms"
+                        data-question-id="q16">
+                        <p class="question-text">Q16. Is the JVM platform-dependent?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="No, JVM is platform-independent">No, JVM is
+                                platform-independent</button>
+                            <button class="option-btn" data-answer="Yes, different JVMs for different platforms">Yes,
+                                different
+                                JVMs for different platforms</button>
+                            <button class="option-btn" data-answer="JVM only works on Windows">JVM only works on
+                                Windows</button>
+                            <button class="option-btn" data-answer="JVM is not needed for Java">JVM is not needed for
+                                Java</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Yes, different JVMs for different platforms
+                            </div>
+                            <p>The JVM itself IS platform-dependent! There's a Windows JVM, macOS JVM, Linux JVM, etc.
+                                Each is
+                                specifically designed for its platform. However, they all execute the SAME bytecode,
+                                which is
+                                why Java programs are platform-independent.</p>
+                        </div>
+                    </div>
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="Android applications" data-question-id="q17">
+                        <p class="question-text">Q17. Which of the following is a major use case for Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Device drivers">Device drivers</button>
+                            <button class="option-btn" data-answer="Android applications">Android applications</button>
+                            <button class="option-btn" data-answer="Operating system kernels">Operating system
+                                kernels</button>
+                            <button class="option-btn" data-answer="Assembly programming">Assembly programming</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Android applications</div>
+                            <p>Android applications are primarily written in Java (and Kotlin, which runs on JVM). Over
+                                3
+                                billion Android devices run Java-based applications. Java is also used for enterprise
+                                applications, web backends, and big data, but NOT for device drivers or OS kernels
+                                (which
+                                require low-level languages like C).</p>
+                        </div>
+                    </div>
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="Minecraft" data-question-id="q18">
+                        <p class="question-text">Q18. Which popular game is written in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Fortnite">Fortnite</button>
+                            <button class="option-btn" data-answer="Minecraft">Minecraft</button>
+                            <button class="option-btn" data-answer="Call of Duty">Call of Duty</button>
+                            <button class="option-btn" data-answer="Grand Theft Auto">Grand Theft Auto</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Minecraft</div>
+                            <p>Minecraft (Java Edition) is written in Java! This is why it runs on Windows, Mac, and
+                                Linux
+                                without modification. The game's platform independence is a perfect demonstration of
+                                Java's
+                                "Write Once, Run Anywhere" capability.</p>
+                        </div>
+                    </div>
+                    <!-- Question 19 -->
+                    <div class="question"
+                        data-correct-answer="Enterprise applications, web backends, Android apps, big data"
+                        data-question-id="q19">
+                        <p class="question-text">Q19. Where is Java commonly used in the industry?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Only in mobile apps">Only in mobile apps</button>
+                            <button class="option-btn" data-answer="Only in web development">Only in web
+                                development</button>
+                            <button class="option-btn"
+                                data-answer="Enterprise applications, web backends, Android apps, big data">Enterprise
+                                applications, web backends, Android apps, big data</button>
+                            <button class="option-btn" data-answer="Only in gaming">Only in gaming</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Enterprise applications, web backends,
+                                Android
+                                apps, big data</div>
+                            <p>Java is incredibly versatile! It's used in: (1) Enterprise applications (banking,
+                                insurance), (2)
+                                Web backends (Spring Boot), (3) Android apps, (4) Big data (Hadoop, Spark, Kafka), (5)
+                                Cloud
+                                applications, (6) Scientific applications, and more. 90% of Fortune 500 companies use
+                                Java.</p>
+                        </div>
+                    </div>
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="Apache Hadoop, Apache Spark, Apache Kafka"
+                        data-question-id="q20">
+                        <p class="question-text">Q20. Which big data technologies are written in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="None, big data uses Python only">None, big data uses
+                                Python
+                                only</button>
+                            <button class="option-btn" data-answer="Apache Hadoop, Apache Spark, Apache Kafka">Apache
+                                Hadoop,
+                                Apache Spark, Apache Kafka</button>
+                            <button class="option-btn" data-answer="Only MongoDB">Only MongoDB</button>
+                            <button class="option-btn" data-answer="Only MySQL">Only MySQL</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Apache Hadoop, Apache Spark, Apache Kafka
+                            </div>
+                            <p>Major big data frameworks are written in Java: Apache Hadoop (distributed data
+                                processing),
+                                Apache Spark (fast analytics), Apache Kafka (real-time streaming), and Elasticsearch
+                                (search
+                                engine). Java's performance and scalability make it ideal for processing massive
+                                datasets.</p>
+                        </div>
+                    </div>
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="Rich ecosystem of libraries and frameworks"
+                        data-question-id="q21">
+                        <p class="question-text">Q21. Why is Java still popular today despite being nearly 30 years old?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="It's the easiest language to learn">It's the easiest
+                                language to learn</button>
+                            <button class="option-btn" data-answer="Rich ecosystem of libraries and frameworks">Rich
+                                ecosystem
+                                of libraries and frameworks</button>
+                            <button class="option-btn" data-answer="It's the fastest language">It's the fastest
+                                language</button>
+                            <button class="option-btn" data-answer="It requires no learning">It requires no
+                                learning</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Rich ecosystem of libraries and frameworks
+                            </div>
+                            <p>Java remains popular due to: (1) Rich ecosystem (Spring, Hibernate, etc.), (2) Large
+                                community
+                                (9+ million developers), (3) Strong job market, (4) Backward compatibility, (5) LTS
+                                versions
+                                with long-term support, (6) Performance improvements (modern JVM is fast), and (7)
+                                Versatility
+                                (works everywhere).</p>
+                        </div>
+                    </div>
+                    <!-- Question 22 -->
+                    <div class="question" data-correct-answer="Long-Term Support" data-question-id="q22">
+                        <p class="question-text">Q22. What does LTS stand for in Java versions?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Latest Technology Stack">Latest Technology
+                                Stack</button>
+                            <button class="option-btn" data-answer="Long-Term Support">Long-Term Support</button>
+                            <button class="option-btn" data-answer="Limited Time Service">Limited Time Service</button>
+                            <button class="option-btn" data-answer="Low-Level Type System">Low-Level Type
+                                System</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Long-Term Support</div>
+                            <p>LTS stands for Long-Term Support. LTS versions (like Java 8, 11, 17, 21) receive extended
+                                support, security updates, and bug fixes for many years. Enterprises prefer LTS versions
+                                for
+                                production systems due to stability and guaranteed support.</p>
+                        </div>
+                    </div>
+                    <!-- Question 23 -->
+                    <div class="question" data-correct-answer="8, 11, 17, 21" data-question-id="q23">
+                        <p class="question-text">Q23. Which of the following are LTS (Long-Term Support) versions of
+                            Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="1, 2, 3, 4">1, 2, 3, 4</button>
+                            <button class="option-btn" data-answer="5, 6, 7, 9">5, 6, 7, 9</button>
+                            <button class="option-btn" data-answer="8, 11, 17, 21">8, 11, 17, 21</button>
+                            <button class="option-btn" data-answer="10, 12, 14, 16">10, 12, 14, 16</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: 8, 11, 17, 21</div>
+                            <p>The LTS versions are Java 8 (2014), Java 11 (2018), Java 17 (2021), and Java 21 (2023).
+                                These
+                                versions receive extended support and are recommended for production use. Non-LTS
+                                versions have
+                                shorter support periods.</p>
+                        </div>
+                    </div>
+                    <!-- Question 24 -->
+                    <div class="question" data-correct-answer="Lambda expressions and Stream API"
+                        data-question-id="q24">
+                        <p class="question-text">Q24. Which major feature was introduced in Java 8?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Generics">Generics</button>
+                            <button class="option-btn" data-answer="Lambda expressions and Stream API">Lambda
+                                expressions and
+                                Stream API</button>
+                            <button class="option-btn" data-answer="Module system">Module system</button>
+                            <button class="option-btn" data-answer="Virtual threads">Virtual threads</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Lambda expressions and Stream API</div>
+                            <p>Java 8 (2014) introduced lambda expressions and Stream API, bringing functional
+                                programming
+                                features to Java. This was one of the most significant updates. Generics came in Java 5,
+                                module
+                                system in Java 9, and virtual threads in Java 21.</p>
+                        </div>
+                    </div>
+                    <!-- Question 25 -->
+                    <div class="question" data-correct-answer="Just-In-Time compiler" data-question-id="q25">
+                        <p class="question-text">Q25. What does JIT stand for in the context of JVM?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Java Internet Technology">Java Internet
+                                Technology</button>
+                            <button class="option-btn" data-answer="Just-In-Time compiler">Just-In-Time
+                                compiler</button>
+                            <button class="option-btn" data-answer="Java Integration Tool">Java Integration
+                                Tool</button>
+                            <button class="option-btn" data-answer="Java Instruction Translator">Java Instruction
+                                Translator</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Just-In-Time compiler</div>
+                            <p>JIT (Just-In-Time) compiler is part of the JVM that compiles frequently executed bytecode
+                                into
+                                native machine code during runtime. This significantly improves performance by avoiding
+                                repeated
+                                interpretation of the same code.</p>
+                        </div>
+                    </div>
+                    <!-- Question 26 -->
+                    <div class="question" data-correct-answer="public static void main(String[] args)"
+                        data-question-id="q26">
+                        <p class="question-text">Q26. What is the correct signature of the main method in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="public void main(String[] args)">public void
+                                main(String[]
+                                args)</button>
+                            <button class="option-btn" data-answer="public static void main(String[] args)">public
+                                static void
+                                main(String[] args)</button>
+                            <button class="option-btn" data-answer="static void main(String[] args)">static void
+                                main(String[]
+                                args)</button>
+                            <button class="option-btn" data-answer="public static int main(String[] args)">public static
+                                int
+                                main(String[] args)</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: public static void main(String[] args)
+                            </div>
+                            <p>The main method must be: public (accessible from anywhere), static (can be called without
+                                creating an object), void (doesn't return a value), and named "main" with String[] args
+                                parameter. This is the entry point the JVM looks for.</p>
+                        </div>
+                    </div>
+                    <!-- Question 27 -->
+                    <div class="question" data-correct-answer="JVM can call it without creating an object"
+                        data-question-id="q27">
+                        <p class="question-text">Q27. Why is the main method static in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="To make it faster">To make it faster</button>
+                            <button class="option-btn" data-answer="JVM can call it without creating an object">JVM can
+                                call it
+                                without creating an object</button>
+                            <button class="option-btn" data-answer="To save memory">To save memory</button>
+                            <button class="option-btn" data-answer="It's a Java convention">It's a Java
+                                convention</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: JVM can call it without creating an object
+                            </div>
+                            <p>The main method is static because when the JVM starts your program, no objects exist yet!
+                                The JVM
+                                needs to call a method to start execution, and it can't create an object first. That's
+                                why
+                                main() must be static - it belongs to the class, not to instances.</p>
+                        </div>
+                    </div>
+                    <!-- Question 28 -->
+                    <div class="question" data-correct-answer="Strings are immutable in Java" data-question-id="q28">
+                        <p class="question-text">Q28. What does it mean that Strings are immutable in Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Strings cannot be created">Strings cannot be
+                                created</button>
+                            <button class="option-btn" data-answer="Strings are immutable in Java">Strings are immutable
+                                in
+                                Java</button>
+                            <button class="option-btn" data-answer="Strings can be changed freely">Strings can be
+                                changed
+                                freely</button>
+                            <button class="option-btn" data-answer="Strings are always empty">Strings are always
+                                empty</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Strings are immutable in Java</div>
+                            <p>String immutability means once a String object is created, its content cannot be changed.
+                                Methods
+                                like concat(), replace(), toUpperCase() don't modify the original string - they return
+                                NEW
+                                strings. This ensures thread safety and enables string pooling for memory optimization.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 29 -->
+                    <div class="question" data-correct-answer="Ultra-low-level hardware programming"
+                        data-question-id="q29">
+                        <p class="question-text">Q29. For which scenario is Java NOT the best choice?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Enterprise web applications">Enterprise web
+                                applications</button>
+                            <button class="option-btn" data-answer="Android mobile apps">Android mobile apps</button>
+                            <button class="option-btn"
+                                data-answer="Ultra-low-level hardware programming">Ultra-low-level
+                                hardware programming</button>
+                            <button class="option-btn" data-answer="Big data processing">Big data processing</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Ultra-low-level hardware programming</div>
+                            <p>Java is NOT ideal for ultra-low-level hardware programming (device drivers, OS kernels,
+                                tiny
+                                embedded systems) because the JVM overhead is too heavy. For these use cases, C, C++, or
+                                Assembly are better. Java excels at enterprise apps, Android, web backends, and big
+                                data.</p>
+                        </div>
+                    </div>
+                    <!-- Question 30 -->
+                    <div class="question" data-correct-answer="Garbage collection" data-question-id="q30">
+                        <p class="question-text">Q30. What is automatic memory management in Java called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Memory allocation">Memory allocation</button>
+                            <button class="option-btn" data-answer="Garbage collection">Garbage collection</button>
+                            <button class="option-btn" data-answer="Memory leak">Memory leak</button>
+                            <button class="option-btn" data-answer="Stack overflow">Stack overflow</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Garbage collection</div>
+                            <p>Garbage collection is Java's automatic memory management system. The JVM automatically
+                                identifies
+                                and frees memory occupied by objects that are no longer in use. This prevents memory
+                                leaks and
+                                makes Java programming safer and easier compared to manual memory management in C/C++.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Question 31 -->
+                    <div class="question" data-correct-answer="Over 9 million" data-question-id="q31">
+                        <p class="question-text">Q31. Approximately how many Java developers are there worldwide?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="About 1 million">About 1 million</button>
+                            <button class="option-btn" data-answer="About 3 million">About 3 million</button>
+                            <button class="option-btn" data-answer="Over 9 million">Over 9 million</button>
+                            <button class="option-btn" data-answer="About 100 thousand">About 100 thousand</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Over 9 million</div>
+                            <p>There are over 9 million Java developers worldwide, making it one of the largest
+                                programming
+                                communities. This massive community means extensive resources, libraries, frameworks,
+                                and
+                                support available for Java developers.</p>
+                        </div>
+                    </div>
+                    <!-- Question 32 -->
+                    <div class="question" data-correct-answer="90%" data-question-id="q32">
+                        <p class="question-text">Q32. What percentage of Fortune 500 companies use Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="30%">30%</button>
+                            <button class="option-btn" data-answer="50%">50%</button>
+                            <button class="option-btn" data-answer="70%">70%</button>
+                            <button class="option-btn" data-answer="90%">90%</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: 90%</div>
+                            <p>Approximately 90% of Fortune 500 companies use Java in their technology stack. This
+                                demonstrates
+                                Java's dominance in enterprise software development. Companies like Amazon, Google,
+                                Netflix,
+                                LinkedIn, and major banks rely heavily on Java.</p>
+                        </div>
+                    </div>
+                    <!-- Reset Button -->
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button class="md-button md-button--secondary" onclick="quizManager.reset()">
+                            🔄 Reset Quiz
+                        </button>
+                    </div>
+                    <!-- Navigation -->
+                    <div class="content-section text-center" style="margin-top: 2rem;">
+                        <h3>Continue Your Learning Journey</h3>
+                        <div
+                            style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                            <a class="md-button md-button--primary" href="../theory/what-is-java.html">
+                                📚 Review Theory
+                            </a>
+                            <a class="md-button md-button--secondary" href="../programs/what-is-java.html">
+                                💻 View Programs
+                            </a>
+                            <a class="md-button md-button--primary" href="../index.html">
+                                🏠 Back to Home
+                            </a>
+                        </div>
+                        <div class="admonition note" style="margin-top: 2rem;">
+                            <div class="admonition-title">📚 Next Topic</div>
+                            <div class="admonition-content">
+                                <p>
+                                    <strong>Coming Soon:</strong> Variables &amp; Data Types
+                                    <br />Master primitive types, reference types, type casting, literals, and variable
+                                    scope in Java.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Quiz Container -->
-        <div class="quiz-container">
-            <!-- Quiz Header -->
-            <div class="quiz-header">
-                <div class="quiz-progress">Question 0/32</div>
-                <div class="quiz-score">Score: 0/32 (0%)</div>
-            </div>
-
-            <!-- Question 1 -->
-            <div class="question" data-question-id="q1"
-                data-correct-answer="A high-level, object-oriented, platform-independent programming language">
-                <p class="question-text">Q1. What is Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="A low-level programming language">A low-level programming
-                        language</button>
-                    <button class="option-btn"
-                        data-answer="A high-level, object-oriented, platform-independent programming language">A
-                        high-level, object-oriented, platform-independent programming language</button>
-                    <button class="option-btn" data-answer="A database management system">A database management
-                        system</button>
-                    <button class="option-btn" data-answer="An operating system">An operating system</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: A high-level, object-oriented, platform-independent
-                        programming language</div>
-                    <p>Java is a high-level programming language (easy for humans to read/write), object-oriented (based
-                        on objects and classes), and platform-independent (runs on any system with JVM through
-                        bytecode).</p>
-                </div>
-            </div>
-
-            <!-- Question 2 -->
-            <div class="question" data-question-id="q2" data-correct-answer="James Gosling">
-                <p class="question-text">Q2. Who created Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Dennis Ritchie">Dennis Ritchie</button>
-                    <button class="option-btn" data-answer="James Gosling">James Gosling</button>
-                    <button class="option-btn" data-answer="Bjarne Stroustrup">Bjarne Stroustrup</button>
-                    <button class="option-btn" data-answer="Guido van Rossum">Guido van Rossum</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: James Gosling</div>
-                    <p>James Gosling, along with Mike Sheridan and Patrick Naughton, created Java at Sun Microsystems in
-                        the early 1990s. Dennis Ritchie created C, Bjarne Stroustrup created C++, and Guido van Rossum
-                        created Python.</p>
-                </div>
-            </div>
-
-            <!-- Question 3 -->
-            <div class="question" data-question-id="q3" data-correct-answer="1995">
-                <p class="question-text">Q3. In which year was Java officially released?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="1991">1991</button>
-                    <button class="option-btn" data-answer="1995">1995</button>
-                    <button class="option-btn" data-answer="2000">2000</button>
-                    <button class="option-btn" data-answer="2004">2004</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: 1995</div>
-                    <p>Java 1.0 was officially released in 1995. The project started in 1991 as "Project Green" and was
-                        initially named "Oak" before being renamed to Java in 1995.</p>
-                </div>
-            </div>
-
-            <!-- Question 4 -->
-            <div class="question" data-question-id="q4" data-correct-answer="Oak">
-                <p class="question-text">Q4. What was Java originally called before being renamed?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Oak">Oak</button>
-                    <button class="option-btn" data-answer="Pine">Pine</button>
-                    <button class="option-btn" data-answer="Coffee">Coffee</button>
-                    <button class="option-btn" data-answer="Green">Green</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Oak</div>
-                    <p>Java was originally named "Oak" after an oak tree outside James Gosling's office. It was renamed
-                        to "Java" in 1995 due to trademark issues. Java is named after Java coffee, which the developers
-                        loved.</p>
-                </div>
-            </div>
-
-            <!-- Question 5 -->
-            <div class="question" data-question-id="q5" data-correct-answer="Write Once, Run Anywhere">
-                <p class="question-text">Q5. What does WORA stand for in Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Write Once, Read Anywhere">Write Once, Read
-                        Anywhere</button>
-                    <button class="option-btn" data-answer="Write Once, Run Anywhere">Write Once, Run Anywhere</button>
-                    <button class="option-btn" data-answer="Work Once, Repeat Always">Work Once, Repeat Always</button>
-                    <button class="option-btn" data-answer="Write Often, Run Anywhere">Write Often, Run
-                        Anywhere</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Write Once, Run Anywhere</div>
-                    <p>WORA (Write Once, Run Anywhere) is Java's core philosophy. You write Java code once, compile it
-                        to bytecode, and it runs on any platform that has a JVM without modification or recompilation.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Question 6 -->
-            <div class="question" data-question-id="q6" data-correct-answer="Java Virtual Machine">
-                <p class="question-text">Q6. What does JVM stand for?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Java Variable Manager">Java Variable Manager</button>
-                    <button class="option-btn" data-answer="Java Virtual Machine">Java Virtual Machine</button>
-                    <button class="option-btn" data-answer="Just Virtual Memory">Just Virtual Memory</button>
-                    <button class="option-btn" data-answer="Java Vendor Module">Java Vendor Module</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Java Virtual Machine</div>
-                    <p>JVM stands for Java Virtual Machine. It's an abstract computing machine that provides a runtime
-                        environment to execute Java bytecode. The JVM is what makes Java platform-independent.</p>
-                </div>
-            </div>
-
-            <!-- Question 7 -->
-            <div class="question" data-question-id="q7" data-correct-answer="Java Runtime Environment">
-                <p class="question-text">Q7. What does JRE stand for?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Java Runtime Environment">Java Runtime Environment</button>
-                    <button class="option-btn" data-answer="Java Rapid Execution">Java Rapid Execution</button>
-                    <button class="option-btn" data-answer="Java Resource Engine">Java Resource Engine</button>
-                    <button class="option-btn" data-answer="Java Rendering Engine">Java Rendering Engine</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Java Runtime Environment</div>
-                    <p>JRE stands for Java Runtime Environment. It includes the JVM plus core libraries needed to run
-                        Java applications. You need JRE to run Java programs, but not to develop them.</p>
-                </div>
-            </div>
-
-            <!-- Question 8 -->
-            <div class="question" data-question-id="q8" data-correct-answer="Java Development Kit">
-                <p class="question-text">Q8. What does JDK stand for?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Java Development Kit">Java Development Kit</button>
-                    <button class="option-btn" data-answer="Java Debugging Kit">Java Debugging Kit</button>
-                    <button class="option-btn" data-answer="Java Deployment Kit">Java Deployment Kit</button>
-                    <button class="option-btn" data-answer="Java Design Kit">Java Design Kit</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Java Development Kit</div>
-                    <p>JDK stands for Java Development Kit. It's a complete software development kit that includes JRE
-                        (which includes JVM) plus development tools like javac (compiler), javadoc, jar, and debugger.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Question 9 -->
-            <div class="question" data-question-id="q9" data-correct-answer="JDK contains JRE, which contains JVM">
-                <p class="question-text">Q9. What is the relationship between JDK, JRE, and JVM?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="They are all the same">They are all the same</button>
-                    <button class="option-btn" data-answer="JDK contains JRE, which contains JVM">JDK contains JRE,
-                        which contains JVM</button>
-                    <button class="option-btn" data-answer="JVM contains JRE, which contains JDK">JVM contains JRE,
-                        which contains JDK</button>
-                    <button class="option-btn" data-answer="They are completely independent">They are completely
-                        independent</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: JDK contains JRE, which contains JVM</div>
-                    <p>The relationship is hierarchical: JDK ⊃ JRE ⊃ JVM. JDK is the complete development kit containing
-                        JRE (runtime environment) which contains JVM (execution engine). To develop Java apps, you need
-                        JDK. To only run them, JRE is sufficient.</p>
-                </div>
-            </div>
-
-            <!-- Question 10 -->
-            <div class="question" data-question-id="q10" data-correct-answer="To run Java applications">
-                <p class="question-text">Q10. What is the primary purpose of JRE?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="To compile Java code">To compile Java code</button>
-                    <button class="option-btn" data-answer="To run Java applications">To run Java applications</button>
-                    <button class="option-btn" data-answer="To debug Java programs">To debug Java programs</button>
-                    <button class="option-btn" data-answer="To create documentation">To create documentation</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: To run Java applications</div>
-                    <p>JRE (Java Runtime Environment) is designed to run Java applications. It includes the JVM and core
-                        libraries but NOT development tools like the compiler. If you only want to run Java programs
-                        (not develop them), JRE is what you need.</p>
-                </div>
-            </div>
-
-            <!-- Question 11 -->
-            <div class="question" data-question-id="q11" data-correct-answer=".class">
-                <p class="question-text">Q11. What is the file extension of Java bytecode?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer=".java">.java</button>
-                    <button class="option-btn" data-answer=".class">.class</button>
-                    <button class="option-btn" data-answer=".byte">.byte</button>
-                    <button class="option-btn" data-answer=".jvm">.jvm</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: .class</div>
-                    <p>Java bytecode files have the .class extension. When you compile a .java source file using javac,
-                        it creates a .class file containing platform-independent bytecode that the JVM can execute.</p>
-                </div>
-            </div>
-
-            <!-- Question 12 -->
-            <div class="question" data-question-id="q12" data-correct-answer="javac">
-                <p class="question-text">Q12. Which command is used to compile Java source code?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="java">java</button>
-                    <button class="option-btn" data-answer="javac">javac</button>
-                    <button class="option-btn" data-answer="compile">compile</button>
-                    <button class="option-btn" data-answer="jvm">jvm</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: javac</div>
-                    <p>The javac command (Java Compiler) is used to compile Java source code (.java files) into bytecode
-                        (.class files). Example: javac HelloWorld.java creates HelloWorld.class.</p>
-                </div>
-            </div>
-
-            <!-- Question 13 -->
-            <div class="question" data-question-id="q13" data-correct-answer="java">
-                <p class="question-text">Q13. Which command is used to run a compiled Java program?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="run">run</button>
-                    <button class="option-btn" data-answer="execute">execute</button>
-                    <button class="option-btn" data-answer="java">java</button>
-                    <button class="option-btn" data-answer="javac">javac</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: java</div>
-                    <p>The java command launches the JVM and runs the compiled bytecode. Example: java HelloWorld (note:
-                        no .class extension needed). The JVM loads the .class file and executes it.</p>
-                </div>
-            </div>
-
-            <!-- Question 14 -->
-            <div class="question" data-question-id="q14" data-correct-answer="Platform-independent intermediate code">
-                <p class="question-text">Q14. What is Java bytecode?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Machine code for a specific processor">Machine code for a
-                        specific processor</button>
-                    <button class="option-btn" data-answer="Platform-independent intermediate code">Platform-independent
-                        intermediate code</button>
-                    <button class="option-btn" data-answer="Source code in binary format">Source code in binary
-                        format</button>
-                    <button class="option-btn" data-answer="Compressed Java source code">Compressed Java source
-                        code</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Platform-independent intermediate code</div>
-                    <p>Java bytecode is platform-independent intermediate code that sits between source code and machine
-                        code. It's not specific to any processor or OS. The JVM interprets/compiles this bytecode to
-                        native machine code for the specific platform it's running on.</p>
-                </div>
-            </div>
-
-            <!-- Question 15 -->
-            <div class="question" data-question-id="q15" data-correct-answer="Bytecode is platform-independent">
-                <p class="question-text">Q15. How does Java achieve platform independence?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="By compiling to native code for each platform">By compiling
-                        to native code for each platform</button>
-                    <button class="option-btn" data-answer="Bytecode is platform-independent">Bytecode is
-                        platform-independent</button>
-                    <button class="option-btn" data-answer="Java code runs without compilation">Java code runs without
-                        compilation</button>
-                    <button class="option-btn" data-answer="By using a universal operating system">By using a universal
-                        operating system</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Bytecode is platform-independent</div>
-                    <p>Java achieves platform independence through bytecode. Source code compiles to bytecode (not
-                        native machine code). This bytecode runs on any platform with a JVM. The JVM is
-                        platform-specific, but bytecode is not. This is the "Write Once, Run Anywhere" magic!</p>
-                </div>
-            </div>
-
-            <!-- Question 16 -->
-            <div class="question" data-question-id="q16"
-                data-correct-answer="Yes, different JVMs for different platforms">
-                <p class="question-text">Q16. Is the JVM platform-dependent?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="No, JVM is platform-independent">No, JVM is
-                        platform-independent</button>
-                    <button class="option-btn" data-answer="Yes, different JVMs for different platforms">Yes, different
-                        JVMs for different platforms</button>
-                    <button class="option-btn" data-answer="JVM only works on Windows">JVM only works on
-                        Windows</button>
-                    <button class="option-btn" data-answer="JVM is not needed for Java">JVM is not needed for
-                        Java</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Yes, different JVMs for different platforms</div>
-                    <p>The JVM itself IS platform-dependent! There's a Windows JVM, macOS JVM, Linux JVM, etc. Each is
-                        specifically designed for its platform. However, they all execute the SAME bytecode, which is
-                        why Java programs are platform-independent.</p>
-                </div>
-            </div>
-
-            <!-- Question 17 -->
-            <div class="question" data-question-id="q17" data-correct-answer="Android applications">
-                <p class="question-text">Q17. Which of the following is a major use case for Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Device drivers">Device drivers</button>
-                    <button class="option-btn" data-answer="Android applications">Android applications</button>
-                    <button class="option-btn" data-answer="Operating system kernels">Operating system kernels</button>
-                    <button class="option-btn" data-answer="Assembly programming">Assembly programming</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Android applications</div>
-                    <p>Android applications are primarily written in Java (and Kotlin, which runs on JVM). Over 3
-                        billion Android devices run Java-based applications. Java is also used for enterprise
-                        applications, web backends, and big data, but NOT for device drivers or OS kernels (which
-                        require low-level languages like C).</p>
-                </div>
-            </div>
-
-            <!-- Question 18 -->
-            <div class="question" data-question-id="q18" data-correct-answer="Minecraft">
-                <p class="question-text">Q18. Which popular game is written in Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Fortnite">Fortnite</button>
-                    <button class="option-btn" data-answer="Minecraft">Minecraft</button>
-                    <button class="option-btn" data-answer="Call of Duty">Call of Duty</button>
-                    <button class="option-btn" data-answer="Grand Theft Auto">Grand Theft Auto</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Minecraft</div>
-                    <p>Minecraft (Java Edition) is written in Java! This is why it runs on Windows, Mac, and Linux
-                        without modification. The game's platform independence is a perfect demonstration of Java's
-                        "Write Once, Run Anywhere" capability.</p>
-                </div>
-            </div>
-
-            <!-- Question 19 -->
-            <div class="question" data-question-id="q19"
-                data-correct-answer="Enterprise applications, web backends, Android apps, big data">
-                <p class="question-text">Q19. Where is Java commonly used in the industry?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Only in mobile apps">Only in mobile apps</button>
-                    <button class="option-btn" data-answer="Only in web development">Only in web development</button>
-                    <button class="option-btn"
-                        data-answer="Enterprise applications, web backends, Android apps, big data">Enterprise
-                        applications, web backends, Android apps, big data</button>
-                    <button class="option-btn" data-answer="Only in gaming">Only in gaming</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Enterprise applications, web backends, Android
-                        apps, big data</div>
-                    <p>Java is incredibly versatile! It's used in: (1) Enterprise applications (banking, insurance), (2)
-                        Web backends (Spring Boot), (3) Android apps, (4) Big data (Hadoop, Spark, Kafka), (5) Cloud
-                        applications, (6) Scientific applications, and more. 90% of Fortune 500 companies use Java.</p>
-                </div>
-            </div>
-
-            <!-- Question 20 -->
-            <div class="question" data-question-id="q20"
-                data-correct-answer="Apache Hadoop, Apache Spark, Apache Kafka">
-                <p class="question-text">Q20. Which big data technologies are written in Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="None, big data uses Python only">None, big data uses Python
-                        only</button>
-                    <button class="option-btn" data-answer="Apache Hadoop, Apache Spark, Apache Kafka">Apache Hadoop,
-                        Apache Spark, Apache Kafka</button>
-                    <button class="option-btn" data-answer="Only MongoDB">Only MongoDB</button>
-                    <button class="option-btn" data-answer="Only MySQL">Only MySQL</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Apache Hadoop, Apache Spark, Apache Kafka</div>
-                    <p>Major big data frameworks are written in Java: Apache Hadoop (distributed data processing),
-                        Apache Spark (fast analytics), Apache Kafka (real-time streaming), and Elasticsearch (search
-                        engine). Java's performance and scalability make it ideal for processing massive datasets.</p>
-                </div>
-            </div>
-
-            <!-- Question 21 -->
-            <div class="question" data-question-id="q21"
-                data-correct-answer="Rich ecosystem of libraries and frameworks">
-                <p class="question-text">Q21. Why is Java still popular today despite being nearly 30 years old?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="It's the easiest language to learn">It's the easiest
-                        language to learn</button>
-                    <button class="option-btn" data-answer="Rich ecosystem of libraries and frameworks">Rich ecosystem
-                        of libraries and frameworks</button>
-                    <button class="option-btn" data-answer="It's the fastest language">It's the fastest
-                        language</button>
-                    <button class="option-btn" data-answer="It requires no learning">It requires no learning</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Rich ecosystem of libraries and frameworks</div>
-                    <p>Java remains popular due to: (1) Rich ecosystem (Spring, Hibernate, etc.), (2) Large community
-                        (9+ million developers), (3) Strong job market, (4) Backward compatibility, (5) LTS versions
-                        with long-term support, (6) Performance improvements (modern JVM is fast), and (7) Versatility
-                        (works everywhere).</p>
-                </div>
-            </div>
-
-            <!-- Question 22 -->
-            <div class="question" data-question-id="q22" data-correct-answer="Long-Term Support">
-                <p class="question-text">Q22. What does LTS stand for in Java versions?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Latest Technology Stack">Latest Technology Stack</button>
-                    <button class="option-btn" data-answer="Long-Term Support">Long-Term Support</button>
-                    <button class="option-btn" data-answer="Limited Time Service">Limited Time Service</button>
-                    <button class="option-btn" data-answer="Low-Level Type System">Low-Level Type System</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Long-Term Support</div>
-                    <p>LTS stands for Long-Term Support. LTS versions (like Java 8, 11, 17, 21) receive extended
-                        support, security updates, and bug fixes for many years. Enterprises prefer LTS versions for
-                        production systems due to stability and guaranteed support.</p>
-                </div>
-            </div>
-
-            <!-- Question 23 -->
-            <div class="question" data-question-id="q23" data-correct-answer="8, 11, 17, 21">
-                <p class="question-text">Q23. Which of the following are LTS (Long-Term Support) versions of Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="1, 2, 3, 4">1, 2, 3, 4</button>
-                    <button class="option-btn" data-answer="5, 6, 7, 9">5, 6, 7, 9</button>
-                    <button class="option-btn" data-answer="8, 11, 17, 21">8, 11, 17, 21</button>
-                    <button class="option-btn" data-answer="10, 12, 14, 16">10, 12, 14, 16</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: 8, 11, 17, 21</div>
-                    <p>The LTS versions are Java 8 (2014), Java 11 (2018), Java 17 (2021), and Java 21 (2023). These
-                        versions receive extended support and are recommended for production use. Non-LTS versions have
-                        shorter support periods.</p>
-                </div>
-            </div>
-
-            <!-- Question 24 -->
-            <div class="question" data-question-id="q24" data-correct-answer="Lambda expressions and Stream API">
-                <p class="question-text">Q24. Which major feature was introduced in Java 8?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Generics">Generics</button>
-                    <button class="option-btn" data-answer="Lambda expressions and Stream API">Lambda expressions and
-                        Stream API</button>
-                    <button class="option-btn" data-answer="Module system">Module system</button>
-                    <button class="option-btn" data-answer="Virtual threads">Virtual threads</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Lambda expressions and Stream API</div>
-                    <p>Java 8 (2014) introduced lambda expressions and Stream API, bringing functional programming
-                        features to Java. This was one of the most significant updates. Generics came in Java 5, module
-                        system in Java 9, and virtual threads in Java 21.</p>
-                </div>
-            </div>
-
-            <!-- Question 25 -->
-            <div class="question" data-question-id="q25" data-correct-answer="Just-In-Time compiler">
-                <p class="question-text">Q25. What does JIT stand for in the context of JVM?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Java Internet Technology">Java Internet Technology</button>
-                    <button class="option-btn" data-answer="Just-In-Time compiler">Just-In-Time compiler</button>
-                    <button class="option-btn" data-answer="Java Integration Tool">Java Integration Tool</button>
-                    <button class="option-btn" data-answer="Java Instruction Translator">Java Instruction
-                        Translator</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Just-In-Time compiler</div>
-                    <p>JIT (Just-In-Time) compiler is part of the JVM that compiles frequently executed bytecode into
-                        native machine code during runtime. This significantly improves performance by avoiding repeated
-                        interpretation of the same code.</p>
-                </div>
-            </div>
-
-            <!-- Question 26 -->
-            <div class="question" data-question-id="q26" data-correct-answer="public static void main(String[] args)">
-                <p class="question-text">Q26. What is the correct signature of the main method in Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="public void main(String[] args)">public void main(String[]
-                        args)</button>
-                    <button class="option-btn" data-answer="public static void main(String[] args)">public static void
-                        main(String[] args)</button>
-                    <button class="option-btn" data-answer="static void main(String[] args)">static void main(String[]
-                        args)</button>
-                    <button class="option-btn" data-answer="public static int main(String[] args)">public static int
-                        main(String[] args)</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: public static void main(String[] args)</div>
-                    <p>The main method must be: public (accessible from anywhere), static (can be called without
-                        creating an object), void (doesn't return a value), and named "main" with String[] args
-                        parameter. This is the entry point the JVM looks for.</p>
-                </div>
-            </div>
-
-            <!-- Question 27 -->
-            <div class="question" data-question-id="q27"
-                data-correct-answer="JVM can call it without creating an object">
-                <p class="question-text">Q27. Why is the main method static in Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="To make it faster">To make it faster</button>
-                    <button class="option-btn" data-answer="JVM can call it without creating an object">JVM can call it
-                        without creating an object</button>
-                    <button class="option-btn" data-answer="To save memory">To save memory</button>
-                    <button class="option-btn" data-answer="It's a Java convention">It's a Java convention</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: JVM can call it without creating an object</div>
-                    <p>The main method is static because when the JVM starts your program, no objects exist yet! The JVM
-                        needs to call a method to start execution, and it can't create an object first. That's why
-                        main() must be static - it belongs to the class, not to instances.</p>
-                </div>
-            </div>
-
-            <!-- Question 28 -->
-            <div class="question" data-question-id="q28" data-correct-answer="Strings are immutable in Java">
-                <p class="question-text">Q28. What does it mean that Strings are immutable in Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Strings cannot be created">Strings cannot be
-                        created</button>
-                    <button class="option-btn" data-answer="Strings are immutable in Java">Strings are immutable in
-                        Java</button>
-                    <button class="option-btn" data-answer="Strings can be changed freely">Strings can be changed
-                        freely</button>
-                    <button class="option-btn" data-answer="Strings are always empty">Strings are always empty</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Strings are immutable in Java</div>
-                    <p>String immutability means once a String object is created, its content cannot be changed. Methods
-                        like concat(), replace(), toUpperCase() don't modify the original string - they return NEW
-                        strings. This ensures thread safety and enables string pooling for memory optimization.</p>
-                </div>
-            </div>
-
-            <!-- Question 29 -->
-            <div class="question" data-question-id="q29" data-correct-answer="Ultra-low-level hardware programming">
-                <p class="question-text">Q29. For which scenario is Java NOT the best choice?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Enterprise web applications">Enterprise web
-                        applications</button>
-                    <button class="option-btn" data-answer="Android mobile apps">Android mobile apps</button>
-                    <button class="option-btn" data-answer="Ultra-low-level hardware programming">Ultra-low-level
-                        hardware programming</button>
-                    <button class="option-btn" data-answer="Big data processing">Big data processing</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Ultra-low-level hardware programming</div>
-                    <p>Java is NOT ideal for ultra-low-level hardware programming (device drivers, OS kernels, tiny
-                        embedded systems) because the JVM overhead is too heavy. For these use cases, C, C++, or
-                        Assembly are better. Java excels at enterprise apps, Android, web backends, and big data.</p>
-                </div>
-            </div>
-
-            <!-- Question 30 -->
-            <div class="question" data-question-id="q30" data-correct-answer="Garbage collection">
-                <p class="question-text">Q30. What is automatic memory management in Java called?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="Memory allocation">Memory allocation</button>
-                    <button class="option-btn" data-answer="Garbage collection">Garbage collection</button>
-                    <button class="option-btn" data-answer="Memory leak">Memory leak</button>
-                    <button class="option-btn" data-answer="Stack overflow">Stack overflow</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Garbage collection</div>
-                    <p>Garbage collection is Java's automatic memory management system. The JVM automatically identifies
-                        and frees memory occupied by objects that are no longer in use. This prevents memory leaks and
-                        makes Java programming safer and easier compared to manual memory management in C/C++.</p>
-                </div>
-            </div>
-
-            <!-- Question 31 -->
-            <div class="question" data-question-id="q31" data-correct-answer="Over 9 million">
-                <p class="question-text">Q31. Approximately how many Java developers are there worldwide?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="About 1 million">About 1 million</button>
-                    <button class="option-btn" data-answer="About 3 million">About 3 million</button>
-                    <button class="option-btn" data-answer="Over 9 million">Over 9 million</button>
-                    <button class="option-btn" data-answer="About 100 thousand">About 100 thousand</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: Over 9 million</div>
-                    <p>There are over 9 million Java developers worldwide, making it one of the largest programming
-                        communities. This massive community means extensive resources, libraries, frameworks, and
-                        support available for Java developers.</p>
-                </div>
-            </div>
-
-            <!-- Question 32 -->
-            <div class="question" data-question-id="q32" data-correct-answer="90%">
-                <p class="question-text">Q32. What percentage of Fortune 500 companies use Java?</p>
-                <div class="options">
-                    <button class="option-btn" data-answer="30%">30%</button>
-                    <button class="option-btn" data-answer="50%">50%</button>
-                    <button class="option-btn" data-answer="70%">70%</button>
-                    <button class="option-btn" data-answer="90%">90%</button>
-                </div>
-                <div class="explanation">
-                    <div class="explanation-title">✓ Correct Answer: 90%</div>
-                    <p>Approximately 90% of Fortune 500 companies use Java in their technology stack. This demonstrates
-                        Java's dominance in enterprise software development. Companies like Amazon, Google, Netflix,
-                        LinkedIn, and major banks rely heavily on Java.</p>
-                </div>
-            </div>
-
-            <!-- Reset Button -->
-            <div style="text-align: center; margin-top: 2rem;">
-                <button class="btn btn-secondary" onclick="quizManager.reset()">
-                    🔄 Reset Quiz
-                </button>
-            </div>
-
-            <!-- Navigation -->
-            <div class="content-section text-center" style="margin-top: 2rem;">
-                <h3>Continue Your Learning Journey</h3>
-                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                    <a href="../theory/what-is-java.html" class="btn btn-primary">
-                        📚 Review Theory
-                    </a>
-                    <a href="../programs/what-is-java.html" class="btn btn-secondary">
-                        💻 View Programs
-                    </a>
-                    <a href="../index.html" class="btn btn-success">
-                        🏠 Back to Home
-                    </a>
-                </div>
-
-                <div class="callout note" style="margin-top: 2rem;">
-                    <div class="callout-title">📚 Next Topic</div>
-                    <p>
-                        <strong>Coming Soon:</strong> Variables & Data Types
-                        <br>Master primitive types, reference types, type casting, literals, and variable scope in Java.
-                    </p>
-                </div>
-            </div>
-        </div>
+        </main>
     </div>
-
+    <script src="../assets/js/docs-style.js"></script>
     <script src="../assets/js/mcq.js"></script>
 </body>
 

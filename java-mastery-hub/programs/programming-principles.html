@@ -1,57 +1,466 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Programming Principles - Programs - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>Programming Principles - Code Examples</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Programs</span>
-                <span>/</span>
-                <span>Programming Principles</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Hands-On Java Programs</h2>
-            <p>Welcome to the practical section! These 12+ programs demonstrate programming principles, SOLID design,
-                and common design patterns with real-world examples.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>These principles are the foundation of professional software development. Practice these examples
-                    and apply them in your own projects!</p>
-            </div>
-        </div>
-
-        <!-- Program 1: DRY vs Repeated Code -->
-        <div class="content-section">
-            <h2>Program 1: DRY (Don't Repeat Yourself) Principle</h2>
-            <p>Demonstrates the difference between repeated code and DRY principle.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// BAD - Repeated code
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Programming Principles - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>Programming Principles</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Hands-On Java Programs</h2>
+                    <p>Welcome to the practical section! These 12+ programs demonstrate programming principles, SOLID
+                        design,
+                        and common design patterns with real-world examples.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>These principles are the foundation of professional software development. Practice these
+                                examples
+                                and apply them in your own projects!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 1: DRY vs Repeated Code -->
+                <div class="content-section">
+                    <h2>Program 1: DRY (Don't Repeat Yourself) Principle</h2>
+                    <p>Demonstrates the difference between repeated code and DRY principle.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// BAD - Repeated code
 class BadCalculator {
     public double calculateCircleArea(double radius) {
         return 3.14159 * radius * radius;
@@ -99,22 +508,24 @@ Circle Area: 78.53975
 Circle Circumference: 31.4159
 Sphere Volume: 523.5983333333334
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Instead of writing the same number (3.14159) many times, we write it once and
-                    use it everywhere!</p>
-                <p><strong>Real-world:</strong> Like having one phone number saved in your contacts instead of writing
-                    it down in multiple places.</p>
-                <p><strong>Technical:</strong> DRY eliminates code duplication. If PI needs to change, we update it in
-                    one place. This reduces errors and maintenance effort.</p>
-            </div>
-        </div>
-
-        <!-- Program 2: Single Responsibility Principle -->
-        <div class="content-section">
-            <h2>Program 2: Single Responsibility Principle (SRP)</h2>
-            <p>Demonstrates separating responsibilities into focused classes.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// BAD - Multiple responsibilities
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Instead of writing the same number (3.14159) many times, we write it
+                            once and
+                            use it everywhere!</p>
+                        <p><strong>Real-world:</strong> Like having one phone number saved in your contacts instead of
+                            writing
+                            it down in multiple places.</p>
+                        <p><strong>Technical:</strong> DRY eliminates code duplication. If PI needs to change, we update
+                            it in
+                            one place. This reduces errors and maintenance effort.</p>
+                    </div>
+                </div>
+                <!-- Program 2: Single Responsibility Principle -->
+                <div class="content-section">
+                    <h2>Program 2: Single Responsibility Principle (SRP)</h2>
+                    <p>Demonstrates separating responsibilities into focused classes.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// BAD - Multiple responsibilities
 class BadEmployee {
     private String name;
     private double salary;
@@ -192,21 +603,23 @@ Saving John Doe to database
 Generating report for John Doe
 Report for John Doe: $75000.0
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> One person does one job—chef cooks, waiter serves, cashier handles money!</p>
-                <p><strong>Real-world:</strong> Like having separate departments in a company—HR, Finance, IT—each with
-                    one clear purpose.</p>
-                <p><strong>Technical:</strong> Each class has one reason to change. Changes to payroll logic don't
-                    affect database or reporting code.</p>
-            </div>
-        </div>
-
-        <!-- Program 3: Open/Closed Principle -->
-        <div class="content-section">
-            <h2>Program 3: Open/Closed Principle (OCP)</h2>
-            <p>Demonstrates extending functionality without modifying existing code.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// Interface for shapes
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> One person does one job—chef cooks, waiter serves, cashier handles
+                            money!</p>
+                        <p><strong>Real-world:</strong> Like having separate departments in a company—HR, Finance,
+                            IT—each with
+                            one clear purpose.</p>
+                        <p><strong>Technical:</strong> Each class has one reason to change. Changes to payroll logic
+                            don't
+                            affect database or reporting code.</p>
+                    </div>
+                </div>
+                <!-- Program 3: Open/Closed Principle -->
+                <div class="content-section">
+                    <h2>Program 3: Open/Closed Principle (OCP)</h2>
+                    <p>Demonstrates extending functionality without modifying existing code.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// Interface for shapes
 interface Shape {
     double calculateArea();
 }
@@ -283,21 +696,23 @@ public class OCPDemo {
 /* Output:
 Total Area: 114.53981633974483
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> You can add new toys to your toy box without breaking the old ones!</p>
-                <p><strong>Real-world:</strong> Like adding new apps to your phone without changing the operating
-                    system.</p>
-                <p><strong>Technical:</strong> The AreaCalculator is closed for modification (we don't change it) but
-                    open for extension (we can add new shapes). This is achieved through polymorphism.</p>
-            </div>
-        </div>
-
-        <!-- Program 4: Liskov Substitution Principle -->
-        <div class="content-section">
-            <h2>Program 4: Liskov Substitution Principle (LSP)</h2>
-            <p>Demonstrates correct and incorrect use of inheritance.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// BAD - Violates LSP
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> You can add new toys to your toy box without breaking the old ones!
+                        </p>
+                        <p><strong>Real-world:</strong> Like adding new apps to your phone without changing the
+                            operating
+                            system.</p>
+                        <p><strong>Technical:</strong> The AreaCalculator is closed for modification (we don't change
+                            it) but
+                            open for extension (we can add new shapes). This is achieved through polymorphism.</p>
+                    </div>
+                </div>
+                <!-- Program 4: Liskov Substitution Principle -->
+                <div class="content-section">
+                    <h2>Program 4: Liskov Substitution Principle (LSP)</h2>
+                    <p>Demonstrates correct and incorrect use of inheritance.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// BAD - Violates LSP
 class BadBird {
     public void fly() {
         System.out.println("Flying...");
@@ -389,22 +804,23 @@ Penguin is eating
 Ostrich is running
 Ostrich is eating
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> All birds can move, but they move in different ways—some fly, some swim, some
-                    run!</p>
-                <p><strong>Real-world:</strong> Like different types of vehicles—all can transport, but cars drive,
-                    boats sail, planes fly.</p>
-                <p><strong>Technical:</strong> Subtypes (Sparrow, Penguin, Ostrich) can be used wherever Bird is
-                    expected without breaking the program. The contract (move method) is honored by all.</p>
-            </div>
-        </div>
-
-        <!-- Program 5: Interface Segregation Principle -->
-        <div class="content-section">
-            <h2>Program 5: Interface Segregation Principle (ISP)</h2>
-            <p>Demonstrates creating focused, specific interfaces.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// Segregated interfaces
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> All birds can move, but they move in different ways—some fly, some
+                            swim, some
+                            run!</p>
+                        <p><strong>Real-world:</strong> Like different types of vehicles—all can transport, but cars
+                            drive,
+                            boats sail, planes fly.</p>
+                        <p><strong>Technical:</strong> Subtypes (Sparrow, Penguin, Ostrich) can be used wherever Bird is
+                            expected without breaking the program. The contract (move method) is honored by all.</p>
+                    </div>
+                </div>
+                <!-- Program 5: Interface Segregation Principle -->
+                <div class="content-section">
+                    <h2>Program 5: Interface Segregation Principle (ISP)</h2>
+                    <p>Demonstrates creating focused, specific interfaces.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// Segregated interfaces
 interface Workable {
     void work();
 }
@@ -503,21 +919,23 @@ T-800 robot is working 24/7
 Buddy is eating dog food
 Buddy is sleeping
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Don't force everyone to do everything—robots don't eat, dogs don't work!</p>
-                <p><strong>Real-world:</strong> Like a restaurant menu with sections—you don't force vegetarians to
-                    order from the meat section.</p>
-                <p><strong>Technical:</strong> Classes implement only the interfaces they need. This prevents forcing
-                    implementations of irrelevant methods.</p>
-            </div>
-        </div>
-
-        <!-- Program 6: Dependency Inversion Principle -->
-        <div class="content-section">
-            <h2>Program 6: Dependency Inversion Principle (DIP)</h2>
-            <p>Demonstrates depending on abstractions, not concrete implementations.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// Abstraction
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Don't force everyone to do everything—robots don't eat, dogs don't
+                            work!</p>
+                        <p><strong>Real-world:</strong> Like a restaurant menu with sections—you don't force vegetarians
+                            to
+                            order from the meat section.</p>
+                        <p><strong>Technical:</strong> Classes implement only the interfaces they need. This prevents
+                            forcing
+                            implementations of irrelevant methods.</p>
+                    </div>
+                </div>
+                <!-- Program 6: Dependency Inversion Principle -->
+                <div class="content-section">
+                    <h2>Program 6: Dependency Inversion Principle (DIP)</h2>
+                    <p>Demonstrates depending on abstractions, not concrete implementations.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// Abstraction
 interface MessageService {
     void sendMessage(String message, String recipient);
 }
@@ -586,22 +1004,23 @@ SMS sent to +1234567890: Your OTP is 123456
 Using Push Notification:
 Push notification sent to user123: You have a new message!
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> You don't care if your toy car uses batteries or a wind-up key—you just want
-                    it to move!</p>
-                <p><strong>Real-world:</strong> Like a power outlet—any device that fits the plug standard can use it.
-                </p>
-                <p><strong>Technical:</strong> NotificationManager depends on the MessageService interface, not
-                    concrete implementations. This makes it flexible and testable.</p>
-            </div>
-        </div>
-
-        <!-- Program 7: Eager Singleton -->
-        <div class="content-section">
-            <h2>Program 7: Singleton Pattern - Eager Initialization</h2>
-            <p>Demonstrates eager singleton creation.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">class DatabaseConnection {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> You don't care if your toy car uses batteries or a wind-up key—you
+                            just want
+                            it to move!</p>
+                        <p><strong>Real-world:</strong> Like a power outlet—any device that fits the plug standard can
+                            use it.
+                        </p>
+                        <p><strong>Technical:</strong> NotificationManager depends on the MessageService interface, not
+                            concrete implementations. This makes it flexible and testable.</p>
+                    </div>
+                </div>
+                <!-- Program 7: Eager Singleton -->
+                <div class="content-section">
+                    <h2>Program 7: Singleton Pattern - Eager Initialization</h2>
+                    <p>Demonstrates eager singleton creation.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">class DatabaseConnection {
     // Instance created at class loading time
     private static final DatabaseConnection instance = new DatabaseConnection();
     
@@ -647,20 +1066,22 @@ Are both instances same? true
 db1 hashCode: 1234567890
 db2 hashCode: 1234567890
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like having only one TV remote in the house—everyone uses the same one!</p>
-                <p><strong>Real-world:</strong> Like a school having only one principal—not multiple principals.</p>
-                <p><strong>Technical:</strong> Eager initialization creates the instance at class loading. Thread-safe
-                    but instance is created even if never used.</p>
-            </div>
-        </div>
-
-        <!-- Program 8: Thread-Safe Singleton -->
-        <div class="content-section">
-            <h2>Program 8: Singleton Pattern - Thread-Safe (Double-Checked Locking)</h2>
-            <p>Demonstrates thread-safe lazy singleton with double-checked locking.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">class Logger {
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like having only one TV remote in the house—everyone uses the same
+                            one!</p>
+                        <p><strong>Real-world:</strong> Like a school having only one principal—not multiple principals.
+                        </p>
+                        <p><strong>Technical:</strong> Eager initialization creates the instance at class loading.
+                            Thread-safe
+                            but instance is created even if never used.</p>
+                    </div>
+                </div>
+                <!-- Program 8: Thread-Safe Singleton -->
+                <div class="content-section">
+                    <h2>Program 8: Singleton Pattern - Thread-Safe (Double-Checked Locking)</h2>
+                    <p>Demonstrates thread-safe lazy singleton with double-checked locking.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">class Logger {
     private static volatile Logger instance;
     private int logCount = 0;
     
@@ -692,17 +1113,17 @@ db2 hashCode: 1234567890
 public class ThreadSafeSingletonDemo {
     public static void main(String[] args) throws InterruptedException {
         // Create multiple threads trying to get Logger instance
-        Thread t1 = new Thread(() -> {
+        Thread t1 = new Thread(() -&gt; {
             Logger logger = Logger.getInstance();
             logger.log("Thread 1 message");
         });
         
-        Thread t2 = new Thread(() -> {
+        Thread t2 = new Thread(() -&gt; {
             Logger logger = Logger.getInstance();
             logger.log("Thread 2 message");
         });
         
-        Thread t3 = new Thread(() -> {
+        Thread t3 = new Thread(() -&gt; {
             Logger logger = Logger.getInstance();
             logger.log("Thread 3 message");
         });
@@ -727,22 +1148,23 @@ Logger initialized
 
 Total logs: 3
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Even if many kids try to grab the TV remote at the same time, there's still
-                    only one remote!</p>
-                <p><strong>Real-world:</strong> Like a ticket counter—many people can queue, but there's only one
-                    counter serving.</p>
-                <p><strong>Technical:</strong> Double-checked locking ensures thread safety while minimizing
-                    synchronization overhead. The volatile keyword prevents instruction reordering.</p>
-            </div>
-        </div>
-
-        <!-- Program 9: MVC Simulation -->
-        <div class="content-section">
-            <h2>Program 9: MVC Architecture (Console-Based Simulation)</h2>
-            <p>Demonstrates Model-View-Controller pattern.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// Model - Data and business logic
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Even if many kids try to grab the TV remote at the same time, there's
+                            still
+                            only one remote!</p>
+                        <p><strong>Real-world:</strong> Like a ticket counter—many people can queue, but there's only
+                            one
+                            counter serving.</p>
+                        <p><strong>Technical:</strong> Double-checked locking ensures thread safety while minimizing
+                            synchronization overhead. The volatile keyword prevents instruction reordering.</p>
+                    </div>
+                </div>
+                <!-- Program 9: MVC Simulation -->
+                <div class="content-section">
+                    <h2>Program 9: MVC Architecture (Console-Based Simulation)</h2>
+                    <p>Demonstrates Model-View-Controller pattern.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// Model - Data and business logic
 class Student {
     private String name;
     private String rollNo;
@@ -833,22 +1255,23 @@ Name: Jane Smith
 Roll No: S002
 ------------------------
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a restaurant: Chef (Model) makes food, Waiter (Controller) takes orders,
-                    Menu (View) shows options!</p>
-                <p><strong>Real-world:</strong> Like online shopping: Product data (Model), Product page (View),
-                    "Add to Cart" button (Controller).</p>
-                <p><strong>Technical:</strong> MVC separates concerns: Model holds data, View displays it, Controller
-                    manages the flow. Changes in one don't affect others.</p>
-            </div>
-        </div>
-
-        <!-- Program 10: Factory Pattern -->
-        <div class="content-section">
-            <h2>Program 10: Factory Pattern</h2>
-            <p>Demonstrates creating objects without specifying exact classes.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// Product interface
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a restaurant: Chef (Model) makes food, Waiter (Controller) takes
+                            orders,
+                            Menu (View) shows options!</p>
+                        <p><strong>Real-world:</strong> Like online shopping: Product data (Model), Product page (View),
+                            "Add to Cart" button (Controller).</p>
+                        <p><strong>Technical:</strong> MVC separates concerns: Model holds data, View displays it,
+                            Controller
+                            manages the flow. Changes in one don't affect others.</p>
+                    </div>
+                </div>
+                <!-- Program 10: Factory Pattern -->
+                <div class="content-section">
+                    <h2>Program 10: Factory Pattern</h2>
+                    <p>Demonstrates creating objects without specifying exact classes.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// Product interface
 interface Vehicle {
     void drive();
 }
@@ -914,22 +1337,24 @@ Driving a car on the road
 Riding a bike on the road
 Driving a truck for delivery
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like ordering a toy from a toy factory—you say what you want, they make it
-                    for you!</p>
-                <p><strong>Real-world:</strong> Like ordering pizza—you don't make it yourself, you ask the restaurant.
-                </p>
-                <p><strong>Technical:</strong> Factory pattern encapsulates object creation logic. Clients depend on
-                    the interface, not concrete classes. Easy to add new vehicle types.</p>
-            </div>
-        </div>
-
-        <!-- Program 11: Strategy Pattern -->
-        <div class="content-section">
-            <h2>Program 11: Strategy Pattern</h2>
-            <p>Demonstrates interchangeable algorithms at runtime.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// Strategy interface
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like ordering a toy from a toy factory—you say what you want, they
+                            make it
+                            for you!</p>
+                        <p><strong>Real-world:</strong> Like ordering pizza—you don't make it yourself, you ask the
+                            restaurant.
+                        </p>
+                        <p><strong>Technical:</strong> Factory pattern encapsulates object creation logic. Clients
+                            depend on
+                            the interface, not concrete classes. Easy to add new vehicle types.</p>
+                    </div>
+                </div>
+                <!-- Program 11: Strategy Pattern -->
+                <div class="content-section">
+                    <h2>Program 11: Strategy Pattern</h2>
+                    <p>Demonstrates interchangeable algorithms at runtime.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// Strategy interface
 interface PaymentStrategy {
     void pay(int amount);
 }
@@ -1015,22 +1440,23 @@ Paid $100 using Credit Card ending in 3456
 Paid $200 using PayPal account: user@example.com
 Paid $300 using Crypto wallet: 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like choosing different ways to go to school—walk, bike, or bus. Same goal,
-                    different methods!</p>
-                <p><strong>Real-world:</strong> Like choosing payment methods at checkout—credit card, PayPal, or cash.
-                </p>
-                <p><strong>Technical:</strong> Strategy pattern defines a family of algorithms and makes them
-                    interchangeable. The algorithm can vary independently from clients that use it.</p>
-            </div>
-        </div>
-
-        <!-- Program 12: Real-World SOLID Application -->
-        <div class="content-section">
-            <h2>Program 12: Real-World Application Combining SOLID Principles</h2>
-            <p>Demonstrates a complete e-commerce order processing system using multiple SOLID principles.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">// SRP - Each class has one responsibility
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like choosing different ways to go to school—walk, bike, or bus. Same
+                            goal,
+                            different methods!</p>
+                        <p><strong>Real-world:</strong> Like choosing payment methods at checkout—credit card, PayPal,
+                            or cash.
+                        </p>
+                        <p><strong>Technical:</strong> Strategy pattern defines a family of algorithms and makes them
+                            interchangeable. The algorithm can vary independently from clients that use it.</p>
+                    </div>
+                </div>
+                <!-- Program 12: Real-World SOLID Application -->
+                <div class="content-section">
+                    <h2>Program 12: Real-World Application Combining SOLID Principles</h2>
+                    <p>Demonstrates a complete e-commerce order processing system using multiple SOLID principles.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">// SRP - Each class has one responsibility
 class Order {
     private String orderId;
     private double amount;
@@ -1166,35 +1592,44 @@ Order processed successfully!
 ✓ Easy to maintain (each class has one job)
 ✓ Flexible (can swap implementations)
 */</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like an assembly line where each worker does one job—one takes payment, one
-                    packs the box, one sends it!</p>
-                <p><strong>Real-world:</strong> Like a restaurant where chef cooks, waiter serves, cashier handles
-                    payment—all working together smoothly.</p>
-                <p><strong>Technical:</strong> This design demonstrates SRP (each class has one job), DIP (depends on
-                    interfaces), and OCP (easy to add new payment/notification methods). It's testable, maintainable,
-                    and extensible.</p>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like an assembly line where each worker does one job—one takes
+                            payment, one
+                            packs the box, one sends it!</p>
+                        <p><strong>Real-world:</strong> Like a restaurant where chef cooks, waiter serves, cashier
+                            handles
+                            payment—all working together smoothly.</p>
+                        <p><strong>Technical:</strong> This design demonstrates SRP (each class has one job), DIP
+                            (depends on
+                            interfaces), and OCP (easy to add new payment/notification methods). It's testable,
+                            maintainable,
+                            and extensible.</p>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/programming-principles.html">📚 Back to
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../mcq/programming-principles.html">✅ Take
+                            Quiz</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">🎉 Congratulations!</div>
+                        <div class="admonition-content">
+                            <p>You've completed the Programming Principles programs! These principles are the foundation
+                                of
+                                professional software development.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/programming-principles.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../mcq/programming-principles.html" class="btn btn-secondary">✅ Take Quiz</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">🎉 Congratulations!</div>
-                <p>You've completed the Programming Principles programs! These principles are the foundation of
-                    professional software development.</p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

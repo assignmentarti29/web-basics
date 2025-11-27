@@ -1,57 +1,466 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>File Handling - Programs - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>File Handling - Code Examples</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Programs</span>
-                <span>/</span>
-                <span>File Handling</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Hands-On Java Programs</h2>
-            <p>Welcome to the practical section! These 15+ programs demonstrate file handling in Java, from basic file
-                operations to advanced NIO techniques.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>File handling is crucial for real-world applications. Practice these examples and experiment with
-                    different file operations!</p>
-            </div>
-        </div>
-
-        <!-- Program 1: Checking if file exists -->
-        <div class="content-section">
-            <h2>Program 1: Checking if File Exists</h2>
-            <p>Demonstrates how to check if a file exists before performing operations.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.File;
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>File Handling - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>File Handling</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Hands-On Java Programs</h2>
+                    <p>Welcome to the practical section! These 15+ programs demonstrate file handling in Java, from
+                        basic file
+                        operations to advanced NIO techniques.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>File handling is crucial for real-world applications. Practice these examples and
+                                experiment with
+                                different file operations!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 1: Checking if file exists -->
+                <div class="content-section">
+                    <h2>Program 1: Checking if File Exists</h2>
+                    <p>Demonstrates how to check if a file exists before performing operations.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.File;
 
 public class FileExistsCheck {
     public static void main(String[] args) {
@@ -67,22 +476,24 @@ public class FileExistsCheck {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like checking if your toy is in the toy box before playing with it.</p>
-                <p><strong>Real-world:</strong> Checking if a document exists in a filing cabinet before trying to read
-                    it.</p>
-                <p><strong>Technical:</strong> Always check file existence before reading to avoid
-                    FileNotFoundException. The File class provides metadata methods without actually opening the file.
-                </p>
-            </div>
-        </div>
-
-        <!-- Program 2: Creating a new file -->
-        <div class="content-section">
-            <h2>Program 2: Creating a New File</h2>
-            <p>Demonstrates how to create a new file programmatically.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.File;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like checking if your toy is in the toy box before playing with it.
+                        </p>
+                        <p><strong>Real-world:</strong> Checking if a document exists in a filing cabinet before trying
+                            to read
+                            it.</p>
+                        <p><strong>Technical:</strong> Always check file existence before reading to avoid
+                            FileNotFoundException. The File class provides metadata methods without actually opening the
+                            file.
+                        </p>
+                    </div>
+                </div>
+                <!-- Program 2: Creating a new file -->
+                <div class="content-section">
+                    <h2>Program 2: Creating a New File</h2>
+                    <p>Demonstrates how to create a new file programmatically.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.File;
 import java.io.IOException;
 
 public class CreateFile {
@@ -102,20 +513,20 @@ public class CreateFile {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like getting a new blank notebook to write in.</p>
-                <p><strong>Real-world:</strong> Creating a new document in your computer.</p>
-                <p><strong>Technical:</strong> createNewFile() returns true if file was created, false if it already
-                    exists. Throws IOException if creation fails due to permissions or disk issues.</p>
-            </div>
-        </div>
-
-        <!-- Program 3: Writing to a file using FileWriter -->
-        <div class="content-section">
-            <h2>Program 3: Writing to File using FileWriter</h2>
-            <p>Demonstrates basic file writing with FileWriter.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.FileWriter;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like getting a new blank notebook to write in.</p>
+                        <p><strong>Real-world:</strong> Creating a new document in your computer.</p>
+                        <p><strong>Technical:</strong> createNewFile() returns true if file was created, false if it
+                            already
+                            exists. Throws IOException if creation fails due to permissions or disk issues.</p>
+                    </div>
+                </div>
+                <!-- Program 3: Writing to a file using FileWriter -->
+                <div class="content-section">
+                    <h2>Program 3: Writing to File using FileWriter</h2>
+                    <p>Demonstrates basic file writing with FileWriter.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.FileWriter;
 import java.io.IOException;
 
 public class WriteFile {
@@ -133,20 +544,21 @@ public class WriteFile {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like writing your name in a notebook with a pencil.</p>
-                <p><strong>Real-world:</strong> Typing text into a document and saving it.</p>
-                <p><strong>Technical:</strong> FileWriter overwrites existing content by default. Always close the
-                    writer to flush data to disk. Without closing, data may remain in buffer and not be written.</p>
-            </div>
-        </div>
-
-        <!-- Program 4: Appending text to a file -->
-        <div class="content-section">
-            <h2>Program 4: Appending Text to File</h2>
-            <p>Demonstrates how to add content to the end of an existing file.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.FileWriter;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like writing your name in a notebook with a pencil.</p>
+                        <p><strong>Real-world:</strong> Typing text into a document and saving it.</p>
+                        <p><strong>Technical:</strong> FileWriter overwrites existing content by default. Always close
+                            the
+                            writer to flush data to disk. Without closing, data may remain in buffer and not be written.
+                        </p>
+                    </div>
+                </div>
+                <!-- Program 4: Appending text to a file -->
+                <div class="content-section">
+                    <h2>Program 4: Appending Text to File</h2>
+                    <p>Demonstrates how to add content to the end of an existing file.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.FileWriter;
 import java.io.IOException;
 
 public class AppendToFile {
@@ -164,21 +576,23 @@ public class AppendToFile {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like adding a new page to your storybook instead of erasing the old pages.
-                </p>
-                <p><strong>Real-world:</strong> Adding a new entry to a diary without deleting previous entries.</p>
-                <p><strong>Technical:</strong> The second parameter (true) in FileWriter constructor enables append
-                    mode. Without it, the file is overwritten. Useful for logs and incremental data.</p>
-            </div>
-        </div>
-
-        <!-- Program 5: Reading file using FileReader -->
-        <div class="content-section">
-            <h2>Program 5: Reading File using FileReader</h2>
-            <p>Demonstrates basic file reading character by character.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.FileReader;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like adding a new page to your storybook instead of erasing the old
+                            pages.
+                        </p>
+                        <p><strong>Real-world:</strong> Adding a new entry to a diary without deleting previous entries.
+                        </p>
+                        <p><strong>Technical:</strong> The second parameter (true) in FileWriter constructor enables
+                            append
+                            mode. Without it, the file is overwritten. Useful for logs and incremental data.</p>
+                    </div>
+                </div>
+                <!-- Program 5: Reading file using FileReader -->
+                <div class="content-section">
+                    <h2>Program 5: Reading File using FileReader</h2>
+                    <p>Demonstrates basic file reading character by character.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.FileReader;
 import java.io.IOException;
 
 public class ReadFile {
@@ -198,20 +612,20 @@ public class ReadFile {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like reading a book letter by letter.</p>
-                <p><strong>Real-world:</strong> Opening a text file and reading its contents.</p>
-                <p><strong>Technical:</strong> FileReader reads one character at a time. Returns -1 when end of file is
-                    reached. Inefficient for large files - use BufferedReader instead.</p>
-            </div>
-        </div>
-
-        <!-- Program 6: Reading using BufferedReader -->
-        <div class="content-section">
-            <h2>Program 6: Reading using BufferedReader (Recommended)</h2>
-            <p>Demonstrates efficient line-by-line reading with BufferedReader.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.BufferedReader;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like reading a book letter by letter.</p>
+                        <p><strong>Real-world:</strong> Opening a text file and reading its contents.</p>
+                        <p><strong>Technical:</strong> FileReader reads one character at a time. Returns -1 when end of
+                            file is
+                            reached. Inefficient for large files - use BufferedReader instead.</p>
+                    </div>
+                </div>
+                <!-- Program 6: Reading using BufferedReader -->
+                <div class="content-section">
+                    <h2>Program 6: Reading using BufferedReader (Recommended)</h2>
+                    <p>Demonstrates efficient line-by-line reading with BufferedReader.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -234,20 +648,21 @@ public class BufferedReaderExample {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like reading a book line by line instead of letter by letter.</p>
-                <p><strong>Real-world:</strong> Reading a document paragraph by paragraph.</p>
-                <p><strong>Technical:</strong> BufferedReader is much faster than FileReader for large files. It reads
-                    data in chunks (buffer) and provides readLine() method. Always prefer this for text files.</p>
-            </div>
-        </div>
-
-        <!-- Program 7: Writing binary data using FileOutputStream -->
-        <div class="content-section">
-            <h2>Program 7: Writing Binary Data using FileOutputStream</h2>
-            <p>Demonstrates writing raw bytes to a file.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.FileOutputStream;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like reading a book line by line instead of letter by letter.</p>
+                        <p><strong>Real-world:</strong> Reading a document paragraph by paragraph.</p>
+                        <p><strong>Technical:</strong> BufferedReader is much faster than FileReader for large files. It
+                            reads
+                            data in chunks (buffer) and provides readLine() method. Always prefer this for text files.
+                        </p>
+                    </div>
+                </div>
+                <!-- Program 7: Writing binary data using FileOutputStream -->
+                <div class="content-section">
+                    <h2>Program 7: Writing Binary Data using FileOutputStream</h2>
+                    <p>Demonstrates writing raw bytes to a file.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class WriteBinaryFile {
@@ -267,20 +682,20 @@ public class WriteBinaryFile {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like putting colored beads (bytes) in a jar.</p>
-                <p><strong>Real-world:</strong> Saving an image or audio file.</p>
-                <p><strong>Technical:</strong> FileOutputStream writes raw bytes. Used for binary files (images, audio,
-                    video, serialized objects). Not suitable for text files - use FileWriter instead.</p>
-            </div>
-        </div>
-
-        <!-- Program 8: Reading using FileInputStream -->
-        <div class="content-section">
-            <h2>Program 8: Reading Binary Data using FileInputStream</h2>
-            <p>Demonstrates reading raw bytes from a file.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.FileInputStream;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like putting colored beads (bytes) in a jar.</p>
+                        <p><strong>Real-world:</strong> Saving an image or audio file.</p>
+                        <p><strong>Technical:</strong> FileOutputStream writes raw bytes. Used for binary files (images,
+                            audio,
+                            video, serialized objects). Not suitable for text files - use FileWriter instead.</p>
+                    </div>
+                </div>
+                <!-- Program 8: Reading using FileInputStream -->
+                <div class="content-section">
+                    <h2>Program 8: Reading Binary Data using FileInputStream</h2>
+                    <p>Demonstrates reading raw bytes from a file.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.FileInputStream;
 import java.io.IOException;
 
 public class ReadBinaryFile {
@@ -301,20 +716,20 @@ public class ReadBinaryFile {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like taking beads out of a jar one by one.</p>
-                <p><strong>Real-world:</strong> Loading an image file into memory.</p>
-                <p><strong>Technical:</strong> FileInputStream reads raw bytes. Returns -1 at end of file. Use for
-                    binary files. For better performance with large files, wrap with BufferedInputStream.</p>
-            </div>
-        </div>
-
-        <!-- Program 9: Using try-with-resources -->
-        <div class="content-section">
-            <h2>Program 9: Using try-with-resources (Best Practice)</h2>
-            <p>Demonstrates automatic resource management with try-with-resources.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.BufferedReader;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like taking beads out of a jar one by one.</p>
+                        <p><strong>Real-world:</strong> Loading an image file into memory.</p>
+                        <p><strong>Technical:</strong> FileInputStream reads raw bytes. Returns -1 at end of file. Use
+                            for
+                            binary files. For better performance with large files, wrap with BufferedInputStream.</p>
+                    </div>
+                </div>
+                <!-- Program 9: Using try-with-resources -->
+                <div class="content-section">
+                    <h2>Program 9: Using try-with-resources (Best Practice)</h2>
+                    <p>Demonstrates automatic resource management with try-with-resources.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -333,21 +748,21 @@ public class TryWithResourcesExample {
         // No need to call reader.close() - it's automatic!
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a toy that puts itself back in the box when you're done.</p>
-                <p><strong>Real-world:</strong> Automatic doors that close themselves.</p>
-                <p><strong>Technical:</strong> try-with-resources (Java 7+) automatically closes resources that
-                    implement AutoCloseable. Prevents resource leaks even if exceptions occur. Always use this for file
-                    operations!</p>
-            </div>
-        </div>
-
-        <!-- Program 10: Using NIO Files.readAllLines -->
-        <div class="content-section">
-            <h2>Program 10: Using NIO Files.readAllLines (Modern Approach)</h2>
-            <p>Demonstrates reading entire file with one method call using NIO.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.nio.file.Files;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a toy that puts itself back in the box when you're done.</p>
+                        <p><strong>Real-world:</strong> Automatic doors that close themselves.</p>
+                        <p><strong>Technical:</strong> try-with-resources (Java 7+) automatically closes resources that
+                            implement AutoCloseable. Prevents resource leaks even if exceptions occur. Always use this
+                            for file
+                            operations!</p>
+                    </div>
+                </div>
+                <!-- Program 10: Using NIO Files.readAllLines -->
+                <div class="content-section">
+                    <h2>Program 10: Using NIO Files.readAllLines (Modern Approach)</h2>
+                    <p>Demonstrates reading entire file with one method call using NIO.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.charset.StandardCharsets;
 import java.io.IOException;
@@ -373,21 +788,22 @@ public class NIOReadFile {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like grabbing all your toys at once instead of one by one.</p>
-                <p><strong>Real-world:</strong> Downloading an entire document at once.</p>
-                <p><strong>Technical:</strong> NIO Files.readAllLines() reads entire file into a List. Very convenient
-                    but loads entire file into memory. Not suitable for very large files (GB+). Use BufferedReader for
-                    huge files.</p>
-            </div>
-        </div>
-
-        <!-- Program 11: Creating directories -->
-        <div class="content-section">
-            <h2>Program 11: Creating Directories</h2>
-            <p>Demonstrates how to create directories programmatically.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.File;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like grabbing all your toys at once instead of one by one.</p>
+                        <p><strong>Real-world:</strong> Downloading an entire document at once.</p>
+                        <p><strong>Technical:</strong> NIO Files.readAllLines() reads entire file into a List. Very
+                            convenient
+                            but loads entire file into memory. Not suitable for very large files (GB+). Use
+                            BufferedReader for
+                            huge files.</p>
+                    </div>
+                </div>
+                <!-- Program 11: Creating directories -->
+                <div class="content-section">
+                    <h2>Program 11: Creating Directories</h2>
+                    <p>Demonstrates how to create directories programmatically.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.File;
 
 public class CreateDirectory {
     public static void main(String[] args) {
@@ -408,20 +824,21 @@ public class CreateDirectory {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like making a new drawer in your toy box.</p>
-                <p><strong>Real-world:</strong> Creating a new folder on your desktop.</p>
-                <p><strong>Technical:</strong> mkdir() creates a single directory. mkdirs() creates the directory and
-                    all necessary parent directories. Returns false if directory already exists or creation fails.</p>
-            </div>
-        </div>
-
-        <!-- Program 12: Copying a file using NIO -->
-        <div class="content-section">
-            <h2>Program 12: Copying a File using NIO</h2>
-            <p>Demonstrates efficient file copying with NIO.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.nio.file.Files;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like making a new drawer in your toy box.</p>
+                        <p><strong>Real-world:</strong> Creating a new folder on your desktop.</p>
+                        <p><strong>Technical:</strong> mkdir() creates a single directory. mkdirs() creates the
+                            directory and
+                            all necessary parent directories. Returns false if directory already exists or creation
+                            fails.</p>
+                    </div>
+                </div>
+                <!-- Program 12: Copying a file using NIO -->
+                <div class="content-section">
+                    <h2>Program 12: Copying a File using NIO</h2>
+                    <p>Demonstrates efficient file copying with NIO.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.io.IOException;
@@ -441,21 +858,21 @@ public class CopyFile {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like making a photocopy of your drawing.</p>
-                <p><strong>Real-world:</strong> Copying a document to create a backup.</p>
-                <p><strong>Technical:</strong> NIO Files.copy() is efficient and handles large files well.
-                    REPLACE_EXISTING overwrites destination if it exists. Much simpler than manually reading and writing
-                    bytes.</p>
-            </div>
-        </div>
-
-        <!-- Program 13: Deleting a file -->
-        <div class="content-section">
-            <h2>Program 13: Deleting a File</h2>
-            <p>Demonstrates how to delete files safely.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.File;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like making a photocopy of your drawing.</p>
+                        <p><strong>Real-world:</strong> Copying a document to create a backup.</p>
+                        <p><strong>Technical:</strong> NIO Files.copy() is efficient and handles large files well.
+                            REPLACE_EXISTING overwrites destination if it exists. Much simpler than manually reading and
+                            writing
+                            bytes.</p>
+                    </div>
+                </div>
+                <!-- Program 13: Deleting a file -->
+                <div class="content-section">
+                    <h2>Program 13: Deleting a File</h2>
+                    <p>Demonstrates how to delete files safely.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.File;
 
 public class DeleteFile {
     public static void main(String[] args) {
@@ -472,20 +889,20 @@ public class DeleteFile {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like throwing away a piece of paper you don't need.</p>
-                <p><strong>Real-world:</strong> Deleting an old document from your computer.</p>
-                <p><strong>Technical:</strong> delete() returns true if successful, false otherwise. Always check
-                    existence before deleting. Deletion is permanent - no recycle bin! Use with caution.</p>
-            </div>
-        </div>
-
-        <!-- Program 14: Listing files in directory -->
-        <div class="content-section">
-            <h2>Program 14: Listing Files in a Directory</h2>
-            <p>Demonstrates how to list all files and folders in a directory.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.File;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like throwing away a piece of paper you don't need.</p>
+                        <p><strong>Real-world:</strong> Deleting an old document from your computer.</p>
+                        <p><strong>Technical:</strong> delete() returns true if successful, false otherwise. Always
+                            check
+                            existence before deleting. Deletion is permanent - no recycle bin! Use with caution.</p>
+                    </div>
+                </div>
+                <!-- Program 14: Listing files in directory -->
+                <div class="content-section">
+                    <h2>Program 14: Listing Files in a Directory</h2>
+                    <p>Demonstrates how to list all files and folders in a directory.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.File;
 
 public class ListFiles {
     public static void main(String[] args) {
@@ -505,21 +922,21 @@ public class ListFiles {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like looking at all the toys in your toy box.</p>
-                <p><strong>Real-world:</strong> Opening a folder to see what files are inside.</p>
-                <p><strong>Technical:</strong> list() returns array of file/directory names. listFiles() returns array
-                    of File objects (more useful). "." represents current directory. Can filter results using
-                    FilenameFilter.</p>
-            </div>
-        </div>
-
-        <!-- Program 15: Real-world example - Writing log file -->
-        <div class="content-section">
-            <h2>Program 15: Real-World Example - Writing Log File</h2>
-            <p>A practical application combining file operations for logging.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.io.BufferedWriter;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like looking at all the toys in your toy box.</p>
+                        <p><strong>Real-world:</strong> Opening a folder to see what files are inside.</p>
+                        <p><strong>Technical:</strong> list() returns array of file/directory names. listFiles() returns
+                            array
+                            of File objects (more useful). "." represents current directory. Can filter results using
+                            FilenameFilter.</p>
+                    </div>
+                </div>
+                <!-- Program 15: Real-world example - Writing log file -->
+                <div class="content-section">
+                    <h2>Program 15: Real-World Example - Writing Log File</h2>
+                    <p>A practical application combining file operations for logging.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -556,21 +973,23 @@ public class LogFileWriter {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like keeping a diary of everything that happens.</p>
-                <p><strong>Real-world:</strong> Recording all events in an application for debugging and monitoring.</p>
-                <p><strong>Technical:</strong> Combines BufferedWriter (performance), append mode (incremental logs),
-                    try-with-resources (safety), and timestamps. Real applications use logging frameworks (Log4j,
-                    SLF4J), but this demonstrates the underlying concept.</p>
-            </div>
-        </div>
-
-        <!-- Program 16: Writing and Reading with NIO -->
-        <div class="content-section">
-            <h2>Program 16: Writing and Reading with NIO (Complete Example)</h2>
-            <p>Demonstrates complete NIO workflow for writing and reading files.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.nio.file.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like keeping a diary of everything that happens.</p>
+                        <p><strong>Real-world:</strong> Recording all events in an application for debugging and
+                            monitoring.</p>
+                        <p><strong>Technical:</strong> Combines BufferedWriter (performance), append mode (incremental
+                            logs),
+                            try-with-resources (safety), and timestamps. Real applications use logging frameworks
+                            (Log4j,
+                            SLF4J), but this demonstrates the underlying concept.</p>
+                    </div>
+                </div>
+                <!-- Program 16: Writing and Reading with NIO -->
+                <div class="content-section">
+                    <h2>Program 16: Writing and Reading with NIO (Complete Example)</h2>
+                    <p>Demonstrates complete NIO workflow for writing and reading files.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.nio.file.*;
 import java.nio.charset.StandardCharsets;
 import java.io.IOException;
 import java.util.Arrays;
@@ -607,21 +1026,27 @@ public class NIOCompleteExample {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like using a magic wand to write and read from your notebook instantly.</p>
-                <p><strong>Real-world:</strong> Modern document management system.</p>
-                <p><strong>Technical:</strong> NIO provides clean, concise APIs. Files.write() and Files.readAllLines()
-                    handle all the complexity. Always specify charset (UTF-8) for consistency. Perfect for small to
-                    medium files.</p>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like using a magic wand to write and read from your notebook
+                            instantly.</p>
+                        <p><strong>Real-world:</strong> Modern document management system.</p>
+                        <p><strong>Technical:</strong> NIO provides clean, concise APIs. Files.write() and
+                            Files.readAllLines()
+                            handle all the complexity. Always specify charset (UTF-8) for consistency. Perfect for small
+                            to
+                            medium files.</p>
+                    </div>
+                </div>
+                <!-- Next Topic -->
+                <div class="next-topic">
+                    <a class="md-button md-button--primary" href="#" style="opacity: 0.5; cursor: not-allowed;">Next
+                        Topic Coming Soon:
+                        Java JDBC in Depth</a>
+                </div>
             </div>
-        </div>
-
-        <!-- Next Topic -->
-        <div class="next-topic">
-            <a href="#" class="btn btn-primary" style="opacity: 0.5; cursor: not-allowed;">Next Topic Coming Soon:
-                Java JDBC in Depth</a>
-        </div>
+        </main>
     </div>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

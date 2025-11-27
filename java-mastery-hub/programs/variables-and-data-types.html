@@ -1,70 +1,477 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Variables and Data Types - Programs - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Variables and Data Types - Code Examples</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Programs</span>
-                <span>/</span>
-                <span>Variables and Data Types</span>
-            </div>
-        </div>
-
-        <!-- Introduction -->
-        <div class="content-section">
-            <h2>Hands-On Java Programs</h2>
-            <p>
-                Welcome to the practical section! These 12 programs demonstrate every aspect of variables and data types
-                in Java.
-                Each program is heavily commented to explain not just WHAT the code does, but WHY it works that way.
-            </p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>
-                    Try running these programs yourself! Modify values, experiment with different data types, and
-                    observe the results.
-                    Hands-on practice is the best way to master these concepts.
-                </p>
-            </div>
-        </div>
-
-        <!-- Program 1: Variable Declaration -->
-        <div class="content-section">
-            <h2>Program 1: Variable Declaration and Initialization</h2>
-            <p>This program demonstrates the basics of declaring and initializing variables in Java.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Variables and Data Types - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>Variables and Data Types</li>
+                    </ul>
+                </div>
+                <!-- Introduction -->
+                <div class="content-section">
+                    <h2>Hands-On Java Programs</h2>
+                    <p>
+                        Welcome to the practical section! These 12 programs demonstrate every aspect of variables and
+                        data types
+                        in Java.
+                        Each program is heavily commented to explain not just WHAT the code does, but WHY it works that
+                        way.
+                    </p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>
+                                Try running these programs yourself! Modify values, experiment with different data
+                                types, and
+                                observe the results.
+                                Hands-on practice is the best way to master these concepts.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 1: Variable Declaration -->
+                <div class="content-section">
+                    <h2>Program 1: Variable Declaration and Initialization</h2>
+                    <p>This program demonstrates the basics of declaring and initializing variables in Java.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * VariableBasicsDemo - Understanding Variable Declaration and Initialization
  */
 public class VariableBasicsDemo {
@@ -87,22 +494,19 @@ public class VariableBasicsDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> This program covers variable fundamentals including declaration,
-                initialization, and naming rules.
-            </div>
-        </div>
-
-        <!-- Program 2: Primitive Types -->
-        <div class="content-section">
-            <h2>Program 2: All Primitive Data Types</h2>
-            <p>Demonstrates all 8 primitive types with ranges and default values.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This program covers variable fundamentals including declaration,
+                        initialization, and naming rules.
+                    </div>
+                </div>
+                <!-- Program 2: Primitive Types -->
+                <div class="content-section">
+                    <h2>Program 2: All Primitive Data Types</h2>
+                    <p>Demonstrates all 8 primitive types with ranges and default values.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * PrimitiveTypesDemo - All 8 Primitive Types
  */
 public class PrimitiveTypesDemo {
@@ -133,21 +537,19 @@ public class PrimitiveTypesDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Shows all 8 primitive types with their ranges, sizes, and use cases.
-            </div>
-        </div>
-
-        <!-- Program 3: Type Casting -->
-        <div class="content-section">
-            <h2>Program 3: Type Casting (Widening and Narrowing)</h2>
-            <p>Demonstrates implicit and explicit type casting.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Shows all 8 primitive types with their ranges, sizes, and use
+                        cases.
+                    </div>
+                </div>
+                <!-- Program 3: Type Casting -->
+                <div class="content-section">
+                    <h2>Program 3: Type Casting (Widening and Narrowing)</h2>
+                    <p>Demonstrates implicit and explicit type casting.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * TypeCastingDemo - Widening and Narrowing Conversions
  */
 public class TypeCastingDemo {
@@ -173,22 +575,20 @@ public class TypeCastingDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Widening is automatic (safe), narrowing requires explicit cast (may lose
-                data).
-            </div>
-        </div>
-
-        <!-- Program 4: Default Values -->
-        <div class="content-section">
-            <h2>Program 4: Default Values</h2>
-            <p>Shows default values for instance variables.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Widening is automatic (safe), narrowing requires explicit cast
+                        (may lose
+                        data).
+                    </div>
+                </div>
+                <!-- Program 4: Default Values -->
+                <div class="content-section">
+                    <h2>Program 4: Default Values</h2>
+                    <p>Shows default values for instance variables.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * DefaultValuesDemo - Instance vs Local Variables
  */
 public class DefaultValuesDemo {
@@ -212,22 +612,20 @@ public class DefaultValuesDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Instance variables have defaults (0, false, null). Local variables must be
-                initialized.
-            </div>
-        </div>
-
-        <!-- Program 5: Wrapper Classes -->
-        <div class="content-section">
-            <h2>Program 5: Wrapper Classes and Autoboxing</h2>
-            <p>Demonstrates wrapper classes and autoboxing/unboxing.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Instance variables have defaults (0, false, null). Local variables
+                        must be
+                        initialized.
+                    </div>
+                </div>
+                <!-- Program 5: Wrapper Classes -->
+                <div class="content-section">
+                    <h2>Program 5: Wrapper Classes and Autoboxing</h2>
+                    <p>Demonstrates wrapper classes and autoboxing/unboxing.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * WrapperClassesDemo - Autoboxing and Unboxing
  */
 import java.util.ArrayList;
@@ -246,7 +644,7 @@ public class WrapperClassesDemo {
         System.out.println("Unboxing: Integer " + wrapperNum + " → int " + primitiveNum);
         
         // Collections require wrappers
-        ArrayList<Integer> numbers = new ArrayList<>();
+        ArrayList<integer> numbers = new ArrayList&lt;&gt;();
         numbers.add(10);  // Autoboxing
         numbers.add(20);
         System.out.println("\nArrayList: " + numbers);
@@ -262,23 +660,21 @@ public class WrapperClassesDemo {
         System.out.println("Integer.MIN_VALUE: " + Integer.MIN_VALUE);
     }
 }
-</code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Wrappers enable primitives in collections, provide utility methods, and
-                can be null.
-            </div>
-        </div>
-
-        <!-- Program 6: Overflow -->
-        <div class="content-section">
-            <h2>Program 6: Integer Overflow</h2>
-            <p>Demonstrates what happens when numbers exceed type limits.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+</integer></code></pre>
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Wrappers enable primitives in collections, provide utility
+                        methods, and
+                        can be null.
+                    </div>
+                </div>
+                <!-- Program 6: Overflow -->
+                <div class="content-section">
+                    <h2>Program 6: Integer Overflow</h2>
+                    <p>Demonstrates what happens when numbers exceed type limits.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * OverflowDemo - Integer Overflow and Underflow
  */
 public class OverflowDemo {
@@ -308,22 +704,20 @@ public class OverflowDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Overflow wraps around to minimum value. Use appropriate types and validate
-                ranges.
-            </div>
-        </div>
-
-        <!-- Program 7: Precision Loss -->
-        <div class="content-section">
-            <h2>Program 7: Floating-Point Precision</h2>
-            <p>Demonstrates precision differences between float and double.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Overflow wraps around to minimum value. Use appropriate types and
+                        validate
+                        ranges.
+                    </div>
+                </div>
+                <!-- Program 7: Precision Loss -->
+                <div class="content-section">
+                    <h2>Program 7: Floating-Point Precision</h2>
+                    <p>Demonstrates precision differences between float and double.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * PrecisionDemo - Float vs Double Precision
  */
 public class PrecisionDemo {
@@ -351,22 +745,20 @@ public class PrecisionDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Double is more precise than float. Never use float/double for currency
-                (use BigDecimal).
-            </div>
-        </div>
-
-        <!-- Program 8: Character Demo -->
-        <div class="content-section">
-            <h2>Program 8: Character and ASCII</h2>
-            <p>Demonstrates char type and ASCII values.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Double is more precise than float. Never use float/double for
+                        currency
+                        (use BigDecimal).
+                    </div>
+                </div>
+                <!-- Program 8: Character Demo -->
+                <div class="content-section">
+                    <h2>Program 8: Character and ASCII</h2>
+                    <p>Demonstrates char type and ASCII values.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * CharDemo - Character and ASCII Demonstration
  */
 public class CharDemo {
@@ -402,22 +794,20 @@ public class CharDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> char stores Unicode characters. Can convert between char and int (ASCII
-                values).
-            </div>
-        </div>
-
-        <!-- Program 9: Boolean Demo -->
-        <div class="content-section">
-            <h2>Program 9: Boolean Operations</h2>
-            <p>Demonstrates boolean type and logical operations.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> char stores Unicode characters. Can convert between char and int
+                        (ASCII
+                        values).
+                    </div>
+                </div>
+                <!-- Program 9: Boolean Demo -->
+                <div class="content-section">
+                    <h2>Program 9: Boolean Operations</h2>
+                    <p>Demonstrates boolean type and logical operations.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * BooleanDemo - Boolean Type and Logical Operations
  */
 public class BooleanDemo {
@@ -432,8 +822,8 @@ public class BooleanDemo {
         
         // Comparison operators
         int age = 25;
-        boolean isAdult = age >= 18;
-        boolean isTeenager = age >= 13 && age <= 19;
+        boolean isAdult = age &gt;= 18;
+        boolean isTeenager = age &gt;= 13 &amp;&amp; age &lt;= 19;
         
         System.out.println("\nAge: " + age);
         System.out.println("Is adult? " + isAdult);
@@ -444,14 +834,14 @@ public class BooleanDemo {
         boolean b = false;
         
         System.out.println("\nLogical Operations:");
-        System.out.println("a AND b: " + (a && b));   // false
+        System.out.println("a AND b: " + (a &amp;&amp; b));   // false
         System.out.println("a OR b: " + (a || b));    // true
         System.out.println("NOT a: " + (!a));         // false
         
         // Practical example
         int score = 85;
-        boolean passed = score >= 60;
-        boolean excellentScore = score >= 90;
+        boolean passed = score &gt;= 60;
+        boolean excellentScore = score &gt;= 90;
         
         System.out.println("\nScore: " + score);
         System.out.println("Passed? " + passed);
@@ -459,22 +849,19 @@ public class BooleanDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Boolean stores true/false. Used in conditions, flags, and logical
-                operations.
-            </div>
-        </div>
-
-        <!-- Program 10: Final Variables -->
-        <div class="content-section">
-            <h2>Program 10: Final Variables (Constants)</h2>
-            <p>Demonstrates final keyword for constants.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Boolean stores true/false. Used in conditions, flags, and logical
+                        operations.
+                    </div>
+                </div>
+                <!-- Program 10: Final Variables -->
+                <div class="content-section">
+                    <h2>Program 10: Final Variables (Constants)</h2>
+                    <p>Demonstrates final keyword for constants.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * FinalVariablesDemo - Constants using final keyword
  */
 public class FinalVariablesDemo {
@@ -508,21 +895,19 @@ public class FinalVariablesDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> final makes variables immutable. Use UPPER_SNAKE_CASE for constants.
-            </div>
-        </div>
-
-        <!-- Program 11: Memory Demo -->
-        <div class="content-section">
-            <h2>Program 11: Stack vs Heap Memory</h2>
-            <p>Demonstrates memory allocation for primitives and objects.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> final makes variables immutable. Use UPPER_SNAKE_CASE for
+                        constants.
+                    </div>
+                </div>
+                <!-- Program 11: Memory Demo -->
+                <div class="content-section">
+                    <h2>Program 11: Stack vs Heap Memory</h2>
+                    <p>Demonstrates memory allocation for primitives and objects.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * MemoryDemo - Stack vs Heap Memory Allocation
  */
 public class MemoryDemo {
@@ -560,22 +945,19 @@ public class MemoryDemo {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Primitives store values on stack. Objects store data on heap with
-                references on stack.
-            </div>
-        </div>
-
-        <!-- Program 12: Practical Example -->
-        <div class="content-section">
-            <h2>Program 12: Practical Example - Temperature Converter</h2>
-            <p>A practical program using variables and data types.</p>
-
-            <div class="code-header">
-                <span class="code-language">☕ Java</span>
-            </div>
-            <pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Primitives store values on stack. Objects store data on heap with
+                        references on stack.
+                    </div>
+                </div>
+                <!-- Program 12: Practical Example -->
+                <div class="content-section">
+                    <h2>Program 12: Practical Example - Temperature Converter</h2>
+                    <p>A practical program using variables and data types.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * TemperatureConverter - Practical Application
  * Demonstrates variables, casting, and arithmetic
  */
@@ -612,9 +994,9 @@ public class TemperatureConverter {
         
         // Check temperature status
         double currentTemp = 25.0;
-        boolean isFreezing = currentTemp <= FREEZING_C;
-        boolean isBoiling = currentTemp >= BOILING_C;
-        boolean isComfortable = currentTemp >= 18 && currentTemp <= 25;
+        boolean isFreezing = currentTemp &lt;= FREEZING_C;
+        boolean isBoiling = currentTemp &gt;= BOILING_C;
+        boolean isComfortable = currentTemp &gt;= 18 &amp;&amp; currentTemp &lt;= 25;
         
         System.out.println("\nCurrent temperature: " + currentTemp + "°C");
         System.out.println("Is freezing? " + isFreezing);
@@ -623,40 +1005,43 @@ public class TemperatureConverter {
     }
 }
 </code></pre>
-
-            <div class="code-explanation">
-                <strong>Explanation:</strong> Practical application using double for precision, final for constants,
-                boolean for conditions, and proper variable naming.
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Practical application using double for precision, final for
+                        constants,
+                        boolean for conditions, and proper variable naming.
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/variables-and-data-types.html">
+                            📚 Back to Theory
+                        </a>
+                        <a class="md-button md-button--primary" href="../mcq/variables-and-data-types.html">
+                            ✅ Test Your Knowledge
+                        </a>
+                        <a class="md-button md-button--secondary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> Java Keywords
+                                <br />Learn all reserved keywords in Java and their specific purposes in program
+                                structure and
+                                control.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/variables-and-data-types.html" class="btn btn-primary">
-                    📚 Back to Theory
-                </a>
-                <a href="../mcq/variables-and-data-types.html" class="btn btn-success">
-                    ✅ Test Your Knowledge
-                </a>
-                <a href="../index.html" class="btn btn-secondary">
-                    🏠 Back to Home
-                </a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> Java Keywords
-                    <br>Learn all reserved keywords in Java and their specific purposes in program structure and
-                    control.
-                </p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

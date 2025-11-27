@@ -1,704 +1,1138 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Software Engineering Fundamentals - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Software Engineering Fundamentals</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Theory</span>
-                <span>/</span>
-                <span>Software Engineering</span>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Software Engineering Fundamentals</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Theory</a></li>
+                        <li>Software Engineering Fundamentals</li>
+                    </ul>
+                </div>
+                <!-- Section 1: What is Software Engineering? -->
+                <div class="content-section">
+                    <h2>🎯 What is Software Engineering?</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+                    <p>
+                        Imagine you want to build a big LEGO castle. You can't just throw all the pieces together
+                        randomly,
+                        right?
+                        You need a plan, you need to follow steps, and you need to make sure all the pieces fit together
+                        properly.
+                    </p>
+                    <p>
+                        <strong>Software Engineering</strong> is exactly like that, but instead of building a LEGO
+                        castle,
+                        we're building computer programs (like games, apps, or websites). We follow special steps to
+                        make sure
+                        the program works correctly, doesn't break easily, and does exactly what people need it to do.
+                    </p>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE</div>
+                        <div class="admonition-content">
+                            <p>Software Engineering is NOT just "coding" or "programming". It's the entire process of
+                                creating
+                                software in an organized, professional way.</p>
+                        </div>
+                    </div>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think about building a house. You don't just start putting bricks together randomly. Here's what
+                        happens:
+                    </p>
+                    <ol>
+                        <li><strong>Planning</strong>: An architect creates blueprints showing what the house will look
+                            like
+                        </li>
+                        <li><strong>Foundation</strong>: Workers build a strong foundation first</li>
+                        <li><strong>Construction</strong>: Walls, roof, plumbing, electricity are added step by step
+                        </li>
+                        <li><strong>Testing</strong>: Inspectors check if everything works safely</li>
+                        <li><strong>Maintenance</strong>: After people move in, repairs and updates are made</li>
+                    </ol>
+                    <p>
+                        Software Engineering follows the same systematic approach. We plan, design, build, test, and
+                        maintain
+                        software
+                        just like building a house. This ensures the software is reliable, efficient, and meets user
+                        needs.
+                    </p>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Building WhatsApp:</strong> Engineers didn't just write code randomly. They:
+                                <br />1. Understood what users need (send messages, photos, make calls)
+                                <br />2. Designed the system architecture (how messages travel from one phone to
+                                another)
+                                <br />3. Wrote the code in organized modules
+                                <br />4. Tested it with millions of users
+                                <br />5. Continuously update it with new features and bug fixes
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        <strong>Software Engineering</strong> is a systematic, disciplined, and quantifiable approach to
+                        the
+                        development,
+                        operation, and maintenance of software. It applies engineering principles to software creation
+                        to
+                        produce
+                        high-quality, reliable, and maintainable software systems within time and budget constraints.
+                    </p>
+                    <h4>Key Characteristics of Software Engineering:</h4>
+                    <ul>
+                        <li><strong>Systematic Approach</strong>: Follows well-defined processes and methodologies</li>
+                        <li><strong>Disciplined</strong>: Adheres to standards, best practices, and coding conventions
+                        </li>
+                        <li><strong>Quantifiable</strong>: Uses metrics to measure quality, performance, and progress
+                        </li>
+                        <li><strong>Engineering Principles</strong>: Applies scientific and mathematical foundations
+                        </li>
+                        <li><strong>Quality-Focused</strong>: Emphasizes reliability, efficiency, and maintainability
+                        </li>
+                    </ul>
+                    <h4>Software Engineering vs. Programming:</h4>
+                    <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                        <thead>
+                            <tr style="background: var(--bg-hover); border-bottom: 2px solid var(--primary);">
+                                <th style="padding: 1rem; text-align: left;">Programming</th>
+                                <th style="padding: 1rem; text-align: left;">Software Engineering</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem;">Writing code</td>
+                                <td style="padding: 1rem;">Complete software development lifecycle</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem;">Individual activity</td>
+                                <td style="padding: 1rem;">Team collaboration</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem;">Small-scale projects</td>
+                                <td style="padding: 1rem;">Large-scale systems</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem;">Limited documentation</td>
+                                <td style="padding: 1rem;">Comprehensive documentation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>In interviews, emphasize that Software Engineering is about building <strong>scalable,
+                                    maintainable,
+                                    and reliable systems</strong>, not just making code work.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2: Software Development Life Cycle (SDLC) -->
+                <div class="content-section">
+                    <h2>🔄 Software Development Life Cycle (SDLC)</h2>
+                    <p>
+                        The SDLC is a structured process that defines the stages involved in software development from
+                        conception to deployment and maintenance.
+                    </p>
+                    <h3>SDLC Phases:</h3>
+                    <h4>1. Planning &amp; Requirement Analysis</h4>
+                    <p>
+                        <strong>What happens:</strong> Gather and analyze what the software needs to do. Understand user
+                        requirements, business goals, and constraints.
+                    </p>
+                    <p>
+                        <strong>Deliverables:</strong> Requirement Specification Document (SRS - Software Requirements
+                        Specification)
+                    </p>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>For an e-commerce app: "Users should be able to search products, add to cart, make
+                                payments, and
+                                track orders."</p>
+                        </div>
+                    </div>
+                    <h4>2. System Design</h4>
+                    <p>
+                        <strong>What happens:</strong> Create the blueprint of the software. Define architecture,
+                        database
+                        schema, user interface, and system components.
+                    </p>
+                    <p>
+                        <strong>Deliverables:</strong> Design Document Specification (DDS), UML diagrams, database
+                        schemas
+                    </p>
+                    <h4>3. Implementation (Coding)</h4>
+                    <p>
+                        <strong>What happens:</strong> Developers write the actual code based on design specifications
+                        using
+                        programming languages like Java, Python, etc.
+                    </p>
+                    <p>
+                        <strong>Deliverables:</strong> Source code, code documentation
+                    </p>
+                    <h4>4. Testing</h4>
+                    <p>
+                        <strong>What happens:</strong> Test the software to find and fix bugs. Ensure it meets
+                        requirements and
+                        works correctly.
+                    </p>
+                    <p>
+                        <strong>Types:</strong> Unit testing, Integration testing, System testing, User Acceptance
+                        Testing (UAT)
+                    </p>
+                    <h4>5. Deployment</h4>
+                    <p>
+                        <strong>What happens:</strong> Release the software to production environment where end-users
+                        can access
+                        it.
+                    </p>
+                    <p>
+                        <strong>Activities:</strong> Installation, configuration, user training
+                    </p>
+                    <h4>6. Maintenance</h4>
+                    <p>
+                        <strong>What happens:</strong> Fix bugs, add new features, update for security, and improve
+                        performance
+                        based on user feedback.
+                    </p>
+                    <p>
+                        <strong>Types:</strong> Corrective, Adaptive, Perfective, Preventive maintenance
+                    </p>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING</div>
+                        <div class="admonition-content">
+                            <p>Skipping any SDLC phase can lead to project failure, budget overruns, and poor quality
+                                software. Each
+                                phase is critical!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 3: SDLC Models -->
+                <div class="content-section">
+                    <h2>📊 SDLC Models</h2>
+                    <p>Different projects require different approaches. Here are the most popular SDLC models:</p>
+                    <h3>1. Waterfall Model</h3>
+                    <p>
+                        A linear, sequential approach where each phase must be completed before the next begins.
+                    </p>
+                    <p><strong>Flow:</strong> Requirements → Design → Implementation → Testing → Deployment →
+                        Maintenance</p>
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Simple and easy to understand</li>
+                        <li>Well-documented at each stage</li>
+                        <li>Works well for small projects with clear requirements</li>
+                        <li>Easy to manage due to rigidity</li>
+                    </ul>
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>No going back to previous phases</li>
+                        <li>Not suitable for complex, long-term projects</li>
+                        <li>Customer sees the product only at the end</li>
+                        <li>High risk if requirements change</li>
+                    </ul>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p><strong>Best for:</strong> Government projects, banking systems where requirements are
+                                fixed and
+                                well-understood.</p>
+                        </div>
+                    </div>
+                    <h3>2. Agile Model</h3>
+                    <p>
+                        An iterative and incremental approach that emphasizes flexibility, collaboration, and customer
+                        feedback.
+                    </p>
+                    <p><strong>Core Principles:</strong></p>
+                    <ul>
+                        <li>Deliver working software frequently (2-4 week sprints)</li>
+                        <li>Welcome changing requirements, even late in development</li>
+                        <li>Continuous collaboration between developers and stakeholders</li>
+                        <li>Self-organizing teams</li>
+                    </ul>
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Highly flexible and adaptive to changes</li>
+                        <li>Customer involvement throughout the process</li>
+                        <li>Early and continuous delivery of valuable software</li>
+                        <li>Reduces risk through iterative development</li>
+                    </ul>
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Less predictable in terms of time and cost</li>
+                        <li>Requires experienced team members</li>
+                        <li>Documentation can be neglected</li>
+                        <li>Not suitable for projects with fixed requirements</li>
+                    </ul>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p><strong>Best for:</strong> Startups, mobile apps, web applications where requirements
+                                evolve (e.g.,
+                                Instagram, Spotify).</p>
+                        </div>
+                    </div>
+                    <h3>3. V-Model (Verification and Validation Model)</h3>
+                    <p>
+                        An extension of the Waterfall model where testing is planned in parallel with each development
+                        phase.
+                    </p>
+                    <p><strong>Key Concept:</strong> For every development phase, there's a corresponding testing phase.
+                    </p>
+                    <h4>Phases:</h4>
+                    <ul>
+                        <li>Requirements ↔ Acceptance Testing</li>
+                        <li>System Design ↔ System Testing</li>
+                        <li>Architecture Design ↔ Integration Testing</li>
+                        <li>Module Design ↔ Unit Testing</li>
+                    </ul>
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Testing is planned early, saving time</li>
+                        <li>High chance of success due to early defect detection</li>
+                        <li>Works well for small to medium projects</li>
+                    </ul>
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Very rigid, like Waterfall</li>
+                        <li>Not suitable for complex projects</li>
+                        <li>Expensive due to extensive testing</li>
+                    </ul>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p><strong>Best for:</strong> Medical software, embedded systems where quality is critical.
+                            </p>
+                        </div>
+                    </div>
+                    <h3>4. Spiral Model</h3>
+                    <p>
+                        Combines iterative development with systematic aspects of Waterfall. Emphasizes risk analysis.
+                    </p>
+                    <p><strong>Four Phases (repeated in spirals):</strong></p>
+                    <ol>
+                        <li><strong>Planning:</strong> Determine objectives and constraints</li>
+                        <li><strong>Risk Analysis:</strong> Identify and resolve risks</li>
+                        <li><strong>Engineering:</strong> Develop and test the product</li>
+                        <li><strong>Evaluation:</strong> Customer evaluates the output</li>
+                    </ol>
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Risk management is built-in</li>
+                        <li>Good for large, complex projects</li>
+                        <li>Customer feedback incorporated early</li>
+                    </ul>
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Expensive and time-consuming</li>
+                        <li>Requires expertise in risk analysis</li>
+                        <li>Not suitable for small projects</li>
+                    </ul>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p><strong>Best for:</strong> Large-scale projects like operating systems, aerospace
+                                systems.</p>
+                        </div>
+                    </div>
+                    <h3>5. Prototype Model</h3>
+                    <p>
+                        Build a working model (prototype) of the software to understand requirements better before
+                        actual
+                        development.
+                    </p>
+                    <p><strong>Process:</strong></p>
+                    <ol>
+                        <li>Gather initial requirements</li>
+                        <li>Build a quick prototype</li>
+                        <li>User evaluates and provides feedback</li>
+                        <li>Refine requirements based on feedback</li>
+                        <li>Develop the actual system</li>
+                    </ol>
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Users get a better understanding of the system</li>
+                        <li>Reduces risk of failure</li>
+                        <li>Identifies missing requirements early</li>
+                    </ul>
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Can lead to incomplete analysis</li>
+                        <li>Users may expect the prototype to be the final product</li>
+                        <li>Excessive development time for prototypes</li>
+                    </ul>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p><strong>Best for:</strong> UI/UX heavy applications, innovative products where
+                                requirements are
+                                unclear.</p>
+                        </div>
+                    </div>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Interview Perspective</div>
+                        <div class="admonition-content">
+                            <p>
+                                When asked "Which SDLC model is best?", the correct answer is: <strong>"It depends on
+                                    the
+                                    project."</strong>
+                                <br /><br />
+                                • Fixed requirements + Small project = Waterfall
+                                <br />• Changing requirements + Customer collaboration = Agile
+                                <br />• High risk + Large project = Spiral
+                                <br />• Quality-critical + Testing focus = V-Model
+                                <br />• Unclear requirements = Prototype
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 4: Software Architecture -->
+                <div class="content-section">
+                    <h2>🏗️ Software Architecture</h2>
+                    <p>
+                        Software Architecture defines the high-level structure of a software system, including
+                        components, their
+                        relationships, and principles governing their design and evolution.
+                    </p>
+                    <h3>1. Monolithic Architecture</h3>
+                    <p>
+                        A single, unified codebase where all components (UI, business logic, database access) are
+                        tightly
+                        coupled and deployed as one unit.
+                    </p>
+                    <h4>Characteristics:</h4>
+                    <ul>
+                        <li>Single executable or deployable unit</li>
+                        <li>All features in one codebase</li>
+                        <li>Shared database</li>
+                        <li>Tightly coupled components</li>
+                    </ul>
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Simple to develop and deploy initially</li>
+                        <li>Easy to test (everything in one place)</li>
+                        <li>Better performance (no network calls between components)</li>
+                        <li>Easier debugging</li>
+                    </ul>
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Difficult to scale (must scale entire application)</li>
+                        <li>Hard to maintain as codebase grows</li>
+                        <li>Deployment of small change requires redeploying entire app</li>
+                        <li>Technology stack is locked (can't use different languages for different parts)</li>
+                    </ul>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p><strong>Real-world:</strong> Traditional e-commerce websites, small business
+                                applications, WordPress
+                                sites.</p>
+                        </div>
+                    </div>
+                    <h3>2. Layered (N-Tier) Architecture</h3>
+                    <p>
+                        Organizes the system into layers, each with specific responsibilities. Most common is 3-tier
+                        architecture.
+                    </p>
+                    <h4>Typical Layers:</h4>
+                    <ol>
+                        <li><strong>Presentation Layer (UI):</strong> User interface, handles user interactions</li>
+                        <li><strong>Business Logic Layer (BLL):</strong> Core application logic, business rules</li>
+                        <li><strong>Data Access Layer (DAL):</strong> Database operations, data persistence</li>
+                        <li><strong>Database Layer:</strong> Actual database (MySQL, PostgreSQL, etc.)</li>
+                    </ol>
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Separation of concerns (each layer has one responsibility)</li>
+                        <li>Easy to maintain and update individual layers</li>
+                        <li>Reusability of layers</li>
+                        <li>Independent development of layers</li>
+                    </ul>
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Can become complex with too many layers</li>
+                        <li>Performance overhead due to layer communication</li>
+                        <li>Changes in one layer may affect others</li>
+                    </ul>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p><strong>Real-world:</strong> Enterprise applications, banking systems, Java EE
+                                applications.</p>
+                        </div>
+                    </div>
+                    <h3>3. Microservices Architecture</h3>
+                    <p>
+                        Breaks down the application into small, independent services that communicate via APIs. Each
+                        service
+                        handles a specific business capability.
+                    </p>
+                    <h4>Characteristics:</h4>
+                    <ul>
+                        <li>Each service is independently deployable</li>
+                        <li>Services communicate via REST APIs or message queues</li>
+                        <li>Each service can use different technology stacks</li>
+                        <li>Decentralized data management (each service has its own database)</li>
+                    </ul>
+                    <h4>Advantages:</h4>
+                    <ul>
+                        <li>Highly scalable (scale only the services that need it)</li>
+                        <li>Technology flexibility (use best tool for each service)</li>
+                        <li>Fault isolation (one service failure doesn't crash entire system)</li>
+                        <li>Faster deployment (deploy individual services independently)</li>
+                        <li>Better for large teams (each team owns a service)</li>
+                    </ul>
+                    <h4>Disadvantages:</h4>
+                    <ul>
+                        <li>Complex to design and manage</li>
+                        <li>Network latency (services communicate over network)</li>
+                        <li>Difficult to test (need to test service interactions)</li>
+                        <li>Requires DevOps expertise (containerization, orchestration)</li>
+                        <li>Data consistency challenges</li>
+                    </ul>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Real-world:</strong> Netflix, Amazon, Uber, Spotify
+                                <br /><br />
+                                <strong>Netflix example:</strong>
+                                <br />• User Service (handles user profiles)
+                                <br />• Recommendation Service (suggests movies)
+                                <br />• Streaming Service (delivers video content)
+                                <br />• Billing Service (handles payments)
+                                <br />Each operates independently!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING</div>
+                        <div class="admonition-content">
+                            <p>Don't use Microservices for small projects! The complexity overhead isn't worth it. Start
+                                with
+                                Monolithic or Layered, migrate to Microservices only when necessary.</p>
+                        </div>
+                    </div>
+                    <h3>Architecture Comparison Table:</h3>
+                    <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+                        <thead>
+                            <tr style="background: var(--bg-hover); border-bottom: 2px solid var(--primary);">
+                                <th style="padding: 1rem; text-align: left;">Aspect</th>
+                                <th style="padding: 1rem; text-align: left;">Monolithic</th>
+                                <th style="padding: 1rem; text-align: left;">Layered</th>
+                                <th style="padding: 1rem; text-align: left;">Microservices</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem;"><strong>Complexity</strong></td>
+                                <td style="padding: 1rem;">Low</td>
+                                <td style="padding: 1rem;">Medium</td>
+                                <td style="padding: 1rem;">High</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem;"><strong>Scalability</strong></td>
+                                <td style="padding: 1rem;">Limited</td>
+                                <td style="padding: 1rem;">Moderate</td>
+                                <td style="padding: 1rem;">Excellent</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem;"><strong>Deployment</strong></td>
+                                <td style="padding: 1rem;">Single unit</td>
+                                <td style="padding: 1rem;">Single unit</td>
+                                <td style="padding: 1rem;">Independent services</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid var(--border);">
+                                <td style="padding: 1rem;"><strong>Best For</strong></td>
+                                <td style="padding: 1rem;">Small apps</td>
+                                <td style="padding: 1rem;">Enterprise apps</td>
+                                <td style="padding: 1rem;">Large-scale systems</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Section 5: Industry Relevance & Interview Perspective -->
+                <div class="content-section">
+                    <h2>💼 Industry Relevance &amp; Interview Perspective</h2>
+                    <h3>Why Software Engineering Matters in Industry</h3>
+                    <p>
+                        In real-world software development, companies don't just want "coders" who can write code. They
+                        need
+                        <strong>Software Engineers</strong> who:
+                    </p>
+                    <ul>
+                        <li>Understand the complete software development lifecycle</li>
+                        <li>Can design scalable and maintainable systems</li>
+                        <li>Follow best practices and coding standards</li>
+                        <li>Collaborate effectively in teams</li>
+                        <li>Think about long-term maintenance, not just immediate solutions</li>
+                    </ul>
+                    <h3>Common Interview Questions</h3>
+                    <h4>Q1: What is the difference between Software Engineering and Programming?</h4>
+                    <div class="admonition example">
+                        <div class="admonition-title">✅ ANSWER</div>
+                        <div class="admonition-content">
+                            <p>
+                                Programming is the act of writing code to solve a specific problem. Software Engineering
+                                is a
+                                broader discipline that encompasses the entire software development process including
+                                requirements
+                                analysis, design, implementation, testing, deployment, and maintenance. It applies
+                                engineering
+                                principles to create high-quality, scalable, and maintainable software systems.
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Q2: Which SDLC model would you choose for a startup building a mobile app?</h4>
+                    <div class="admonition example">
+                        <div class="admonition-title">✅ ANSWER</div>
+                        <div class="admonition-content">
+                            <p>
+                                I would choose <strong>Agile</strong> because:
+                                <br />• Startups need to adapt quickly to market feedback
+                                <br />• Requirements often change based on user testing
+                                <br />• Iterative development allows early releases and continuous improvement
+                                <br />• Customer collaboration is crucial for product-market fit
+                                <br />• Sprints enable rapid feature delivery
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Q3: When would you use Microservices over Monolithic architecture?</h4>
+                    <div class="admonition example">
+                        <div class="admonition-title">✅ ANSWER</div>
+                        <div class="admonition-content">
+                            <p>
+                                I would use Microservices when:
+                                <br />• The application has grown too large to manage as a monolith
+                                <br />• Different parts of the system have different scaling requirements
+                                <br />• We have multiple teams working on different features
+                                <br />• We need technology flexibility (different services can use different tech
+                                stacks)
+                                <br />• Fault isolation is critical (one service failure shouldn't crash the entire
+                                system)
+                                <br /><br />
+                                However, I would NOT use Microservices for small projects or startups due to the added
+                                complexity
+                                and operational overhead.
+                            </p>
+                        </div>
+                    </div>
+                    <h4>Q4: What are the key principles of good software design?</h4>
+                    <div class="admonition example">
+                        <div class="admonition-title">✅ ANSWER</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>SOLID Principles:</strong>
+                                <br />• <strong>S</strong>ingle Responsibility: A class should have one reason to change
+                                <br />• <strong>O</strong>pen/Closed: Open for extension, closed for modification
+                                <br />• <strong>L</strong>iskov Substitution: Subtypes must be substitutable for their
+                                base types
+                                <br />• <strong>I</strong>nterface Segregation: Many specific interfaces are better than
+                                one general
+                                interface
+                                <br />• <strong>D</strong>ependency Inversion: Depend on abstractions, not concretions
+                                <br /><br />
+                                Additionally: DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid), and YAGNI (You
+                                Aren't
+                                Gonna Need It).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 INTERVIEW TIP</div>
+                        <div class="admonition-content">
+                            <p>
+                                Always relate your answers to real-world scenarios. Instead of just defining concepts,
+                                explain:
+                                <br />• <strong>What</strong> it is
+                                <br />• <strong>Why</strong> it's important
+                                <br />• <strong>When</strong> to use it
+                                <br />• <strong>How</strong> it's applied in industry
+                                <br /><br />
+                                This shows practical understanding, not just theoretical knowledge!
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Industry Trends (2024-2025)</h3>
+                    <ul>
+                        <li><strong>DevOps &amp; CI/CD:</strong> Continuous Integration and Deployment are standard
+                            practices</li>
+                        <li><strong>Cloud-Native Development:</strong> AWS, Azure, Google Cloud are essential</li>
+                        <li><strong>Containerization:</strong> Docker and Kubernetes are widely adopted</li>
+                        <li><strong>AI/ML Integration:</strong> Software systems increasingly incorporate AI
+                            capabilities</li>
+                        <li><strong>Security-First Approach:</strong> DevSecOps ensures security is built-in, not added
+                            later
+                        </li>
+                    </ul>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../programs/software-engineering.html">
+                            💻 View Code Examples
+                        </a>
+                        <a class="md-button md-button--primary" href="../mcq/software-engineering.html">
+                            ✅ Test Your Knowledge
+                        </a>
+                        <a class="md-button md-button--secondary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> What is Java and Why Java
+                                <br />Learn about Java's history, platform independence, JVM, and why it's one of the
+                                most popular
+                                programming languages in the world.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Section 1: What is Software Engineering? -->
-        <div class="content-section">
-            <h2>🎯 What is Software Engineering?</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
-            <p>
-                Imagine you want to build a big LEGO castle. You can't just throw all the pieces together randomly,
-                right?
-                You need a plan, you need to follow steps, and you need to make sure all the pieces fit together
-                properly.
-            </p>
-            <p>
-                <strong>Software Engineering</strong> is exactly like that, but instead of building a LEGO castle,
-                we're building computer programs (like games, apps, or websites). We follow special steps to make sure
-                the program works correctly, doesn't break easily, and does exactly what people need it to do.
-            </p>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE</div>
-                <p>Software Engineering is NOT just "coding" or "programming". It's the entire process of creating
-                    software in an organized, professional way.</p>
-            </div>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think about building a house. You don't just start putting bricks together randomly. Here's what
-                happens:
-            </p>
-            <ol>
-                <li><strong>Planning</strong>: An architect creates blueprints showing what the house will look like
-                </li>
-                <li><strong>Foundation</strong>: Workers build a strong foundation first</li>
-                <li><strong>Construction</strong>: Walls, roof, plumbing, electricity are added step by step</li>
-                <li><strong>Testing</strong>: Inspectors check if everything works safely</li>
-                <li><strong>Maintenance</strong>: After people move in, repairs and updates are made</li>
-            </ol>
-            <p>
-                Software Engineering follows the same systematic approach. We plan, design, build, test, and maintain
-                software
-                just like building a house. This ensures the software is reliable, efficient, and meets user needs.
-            </p>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>
-                    <strong>Building WhatsApp:</strong> Engineers didn't just write code randomly. They:
-                    <br>1. Understood what users need (send messages, photos, make calls)
-                    <br>2. Designed the system architecture (how messages travel from one phone to another)
-                    <br>3. Wrote the code in organized modules
-                    <br>4. Tested it with millions of users
-                    <br>5. Continuously update it with new features and bug fixes
-                </p>
-            </div>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                <strong>Software Engineering</strong> is a systematic, disciplined, and quantifiable approach to the
-                development,
-                operation, and maintenance of software. It applies engineering principles to software creation to
-                produce
-                high-quality, reliable, and maintainable software systems within time and budget constraints.
-            </p>
-
-            <h4>Key Characteristics of Software Engineering:</h4>
-            <ul>
-                <li><strong>Systematic Approach</strong>: Follows well-defined processes and methodologies</li>
-                <li><strong>Disciplined</strong>: Adheres to standards, best practices, and coding conventions</li>
-                <li><strong>Quantifiable</strong>: Uses metrics to measure quality, performance, and progress</li>
-                <li><strong>Engineering Principles</strong>: Applies scientific and mathematical foundations</li>
-                <li><strong>Quality-Focused</strong>: Emphasizes reliability, efficiency, and maintainability</li>
-            </ul>
-
-            <h4>Software Engineering vs. Programming:</h4>
-            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
-                <thead>
-                    <tr style="background: var(--bg-hover); border-bottom: 2px solid var(--primary);">
-                        <th style="padding: 1rem; text-align: left;">Programming</th>
-                        <th style="padding: 1rem; text-align: left;">Software Engineering</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 1rem;">Writing code</td>
-                        <td style="padding: 1rem;">Complete software development lifecycle</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 1rem;">Individual activity</td>
-                        <td style="padding: 1rem;">Team collaboration</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 1rem;">Small-scale projects</td>
-                        <td style="padding: 1rem;">Large-scale systems</td>
-                    </tr>
-                    <tr>
-                        <td style="padding: 1rem;">Limited documentation</td>
-                        <td style="padding: 1rem;">Comprehensive documentation</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>In interviews, emphasize that Software Engineering is about building <strong>scalable, maintainable,
-                        and reliable systems</strong>, not just making code work.</p>
-            </div>
-        </div>
-
-        <!-- Section 2: Software Development Life Cycle (SDLC) -->
-        <div class="content-section">
-            <h2>🔄 Software Development Life Cycle (SDLC)</h2>
-
-            <p>
-                The SDLC is a structured process that defines the stages involved in software development from
-                conception to deployment and maintenance.
-            </p>
-
-            <h3>SDLC Phases:</h3>
-
-            <h4>1. Planning & Requirement Analysis</h4>
-            <p>
-                <strong>What happens:</strong> Gather and analyze what the software needs to do. Understand user
-                requirements, business goals, and constraints.
-            </p>
-            <p>
-                <strong>Deliverables:</strong> Requirement Specification Document (SRS - Software Requirements
-                Specification)
-            </p>
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>For an e-commerce app: "Users should be able to search products, add to cart, make payments, and
-                    track orders."</p>
-            </div>
-
-            <h4>2. System Design</h4>
-            <p>
-                <strong>What happens:</strong> Create the blueprint of the software. Define architecture, database
-                schema, user interface, and system components.
-            </p>
-            <p>
-                <strong>Deliverables:</strong> Design Document Specification (DDS), UML diagrams, database schemas
-            </p>
-
-            <h4>3. Implementation (Coding)</h4>
-            <p>
-                <strong>What happens:</strong> Developers write the actual code based on design specifications using
-                programming languages like Java, Python, etc.
-            </p>
-            <p>
-                <strong>Deliverables:</strong> Source code, code documentation
-            </p>
-
-            <h4>4. Testing</h4>
-            <p>
-                <strong>What happens:</strong> Test the software to find and fix bugs. Ensure it meets requirements and
-                works correctly.
-            </p>
-            <p>
-                <strong>Types:</strong> Unit testing, Integration testing, System testing, User Acceptance Testing (UAT)
-            </p>
-
-            <h4>5. Deployment</h4>
-            <p>
-                <strong>What happens:</strong> Release the software to production environment where end-users can access
-                it.
-            </p>
-            <p>
-                <strong>Activities:</strong> Installation, configuration, user training
-            </p>
-
-            <h4>6. Maintenance</h4>
-            <p>
-                <strong>What happens:</strong> Fix bugs, add new features, update for security, and improve performance
-                based on user feedback.
-            </p>
-            <p>
-                <strong>Types:</strong> Corrective, Adaptive, Perfective, Preventive maintenance
-            </p>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING</div>
-                <p>Skipping any SDLC phase can lead to project failure, budget overruns, and poor quality software. Each
-                    phase is critical!</p>
-            </div>
-        </div>
-
-        <!-- Section 3: SDLC Models -->
-        <div class="content-section">
-            <h2>📊 SDLC Models</h2>
-
-            <p>Different projects require different approaches. Here are the most popular SDLC models:</p>
-
-            <h3>1. Waterfall Model</h3>
-            <p>
-                A linear, sequential approach where each phase must be completed before the next begins.
-            </p>
-            <p><strong>Flow:</strong> Requirements → Design → Implementation → Testing → Deployment → Maintenance</p>
-
-            <h4>Advantages:</h4>
-            <ul>
-                <li>Simple and easy to understand</li>
-                <li>Well-documented at each stage</li>
-                <li>Works well for small projects with clear requirements</li>
-                <li>Easy to manage due to rigidity</li>
-            </ul>
-
-            <h4>Disadvantages:</h4>
-            <ul>
-                <li>No going back to previous phases</li>
-                <li>Not suitable for complex, long-term projects</li>
-                <li>Customer sees the product only at the end</li>
-                <li>High risk if requirements change</li>
-            </ul>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p><strong>Best for:</strong> Government projects, banking systems where requirements are fixed and
-                    well-understood.</p>
-            </div>
-
-            <h3>2. Agile Model</h3>
-            <p>
-                An iterative and incremental approach that emphasizes flexibility, collaboration, and customer feedback.
-            </p>
-            <p><strong>Core Principles:</strong></p>
-            <ul>
-                <li>Deliver working software frequently (2-4 week sprints)</li>
-                <li>Welcome changing requirements, even late in development</li>
-                <li>Continuous collaboration between developers and stakeholders</li>
-                <li>Self-organizing teams</li>
-            </ul>
-
-            <h4>Advantages:</h4>
-            <ul>
-                <li>Highly flexible and adaptive to changes</li>
-                <li>Customer involvement throughout the process</li>
-                <li>Early and continuous delivery of valuable software</li>
-                <li>Reduces risk through iterative development</li>
-            </ul>
-
-            <h4>Disadvantages:</h4>
-            <ul>
-                <li>Less predictable in terms of time and cost</li>
-                <li>Requires experienced team members</li>
-                <li>Documentation can be neglected</li>
-                <li>Not suitable for projects with fixed requirements</li>
-            </ul>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p><strong>Best for:</strong> Startups, mobile apps, web applications where requirements evolve (e.g.,
-                    Instagram, Spotify).</p>
-            </div>
-
-            <h3>3. V-Model (Verification and Validation Model)</h3>
-            <p>
-                An extension of the Waterfall model where testing is planned in parallel with each development phase.
-            </p>
-            <p><strong>Key Concept:</strong> For every development phase, there's a corresponding testing phase.</p>
-
-            <h4>Phases:</h4>
-            <ul>
-                <li>Requirements ↔ Acceptance Testing</li>
-                <li>System Design ↔ System Testing</li>
-                <li>Architecture Design ↔ Integration Testing</li>
-                <li>Module Design ↔ Unit Testing</li>
-            </ul>
-
-            <h4>Advantages:</h4>
-            <ul>
-                <li>Testing is planned early, saving time</li>
-                <li>High chance of success due to early defect detection</li>
-                <li>Works well for small to medium projects</li>
-            </ul>
-
-            <h4>Disadvantages:</h4>
-            <ul>
-                <li>Very rigid, like Waterfall</li>
-                <li>Not suitable for complex projects</li>
-                <li>Expensive due to extensive testing</li>
-            </ul>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p><strong>Best for:</strong> Medical software, embedded systems where quality is critical.</p>
-            </div>
-
-            <h3>4. Spiral Model</h3>
-            <p>
-                Combines iterative development with systematic aspects of Waterfall. Emphasizes risk analysis.
-            </p>
-            <p><strong>Four Phases (repeated in spirals):</strong></p>
-            <ol>
-                <li><strong>Planning:</strong> Determine objectives and constraints</li>
-                <li><strong>Risk Analysis:</strong> Identify and resolve risks</li>
-                <li><strong>Engineering:</strong> Develop and test the product</li>
-                <li><strong>Evaluation:</strong> Customer evaluates the output</li>
-            </ol>
-
-            <h4>Advantages:</h4>
-            <ul>
-                <li>Risk management is built-in</li>
-                <li>Good for large, complex projects</li>
-                <li>Customer feedback incorporated early</li>
-            </ul>
-
-            <h4>Disadvantages:</h4>
-            <ul>
-                <li>Expensive and time-consuming</li>
-                <li>Requires expertise in risk analysis</li>
-                <li>Not suitable for small projects</li>
-            </ul>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p><strong>Best for:</strong> Large-scale projects like operating systems, aerospace systems.</p>
-            </div>
-
-            <h3>5. Prototype Model</h3>
-            <p>
-                Build a working model (prototype) of the software to understand requirements better before actual
-                development.
-            </p>
-            <p><strong>Process:</strong></p>
-            <ol>
-                <li>Gather initial requirements</li>
-                <li>Build a quick prototype</li>
-                <li>User evaluates and provides feedback</li>
-                <li>Refine requirements based on feedback</li>
-                <li>Develop the actual system</li>
-            </ol>
-
-            <h4>Advantages:</h4>
-            <ul>
-                <li>Users get a better understanding of the system</li>
-                <li>Reduces risk of failure</li>
-                <li>Identifies missing requirements early</li>
-            </ul>
-
-            <h4>Disadvantages:</h4>
-            <ul>
-                <li>Can lead to incomplete analysis</li>
-                <li>Users may expect the prototype to be the final product</li>
-                <li>Excessive development time for prototypes</li>
-            </ul>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p><strong>Best for:</strong> UI/UX heavy applications, innovative products where requirements are
-                    unclear.</p>
-            </div>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Interview Perspective</div>
-                <p>
-                    When asked "Which SDLC model is best?", the correct answer is: <strong>"It depends on the
-                        project."</strong>
-                    <br><br>
-                    • Fixed requirements + Small project = Waterfall
-                    <br>• Changing requirements + Customer collaboration = Agile
-                    <br>• High risk + Large project = Spiral
-                    <br>• Quality-critical + Testing focus = V-Model
-                    <br>• Unclear requirements = Prototype
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 4: Software Architecture -->
-        <div class="content-section">
-            <h2>🏗️ Software Architecture</h2>
-
-            <p>
-                Software Architecture defines the high-level structure of a software system, including components, their
-                relationships, and principles governing their design and evolution.
-            </p>
-
-            <h3>1. Monolithic Architecture</h3>
-            <p>
-                A single, unified codebase where all components (UI, business logic, database access) are tightly
-                coupled and deployed as one unit.
-            </p>
-
-            <h4>Characteristics:</h4>
-            <ul>
-                <li>Single executable or deployable unit</li>
-                <li>All features in one codebase</li>
-                <li>Shared database</li>
-                <li>Tightly coupled components</li>
-            </ul>
-
-            <h4>Advantages:</h4>
-            <ul>
-                <li>Simple to develop and deploy initially</li>
-                <li>Easy to test (everything in one place)</li>
-                <li>Better performance (no network calls between components)</li>
-                <li>Easier debugging</li>
-            </ul>
-
-            <h4>Disadvantages:</h4>
-            <ul>
-                <li>Difficult to scale (must scale entire application)</li>
-                <li>Hard to maintain as codebase grows</li>
-                <li>Deployment of small change requires redeploying entire app</li>
-                <li>Technology stack is locked (can't use different languages for different parts)</li>
-            </ul>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p><strong>Real-world:</strong> Traditional e-commerce websites, small business applications, WordPress
-                    sites.</p>
-            </div>
-
-            <h3>2. Layered (N-Tier) Architecture</h3>
-            <p>
-                Organizes the system into layers, each with specific responsibilities. Most common is 3-tier
-                architecture.
-            </p>
-
-            <h4>Typical Layers:</h4>
-            <ol>
-                <li><strong>Presentation Layer (UI):</strong> User interface, handles user interactions</li>
-                <li><strong>Business Logic Layer (BLL):</strong> Core application logic, business rules</li>
-                <li><strong>Data Access Layer (DAL):</strong> Database operations, data persistence</li>
-                <li><strong>Database Layer:</strong> Actual database (MySQL, PostgreSQL, etc.)</li>
-            </ol>
-
-            <h4>Advantages:</h4>
-            <ul>
-                <li>Separation of concerns (each layer has one responsibility)</li>
-                <li>Easy to maintain and update individual layers</li>
-                <li>Reusability of layers</li>
-                <li>Independent development of layers</li>
-            </ul>
-
-            <h4>Disadvantages:</h4>
-            <ul>
-                <li>Can become complex with too many layers</li>
-                <li>Performance overhead due to layer communication</li>
-                <li>Changes in one layer may affect others</li>
-            </ul>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p><strong>Real-world:</strong> Enterprise applications, banking systems, Java EE applications.</p>
-            </div>
-
-            <h3>3. Microservices Architecture</h3>
-            <p>
-                Breaks down the application into small, independent services that communicate via APIs. Each service
-                handles a specific business capability.
-            </p>
-
-            <h4>Characteristics:</h4>
-            <ul>
-                <li>Each service is independently deployable</li>
-                <li>Services communicate via REST APIs or message queues</li>
-                <li>Each service can use different technology stacks</li>
-                <li>Decentralized data management (each service has its own database)</li>
-            </ul>
-
-            <h4>Advantages:</h4>
-            <ul>
-                <li>Highly scalable (scale only the services that need it)</li>
-                <li>Technology flexibility (use best tool for each service)</li>
-                <li>Fault isolation (one service failure doesn't crash entire system)</li>
-                <li>Faster deployment (deploy individual services independently)</li>
-                <li>Better for large teams (each team owns a service)</li>
-            </ul>
-
-            <h4>Disadvantages:</h4>
-            <ul>
-                <li>Complex to design and manage</li>
-                <li>Network latency (services communicate over network)</li>
-                <li>Difficult to test (need to test service interactions)</li>
-                <li>Requires DevOps expertise (containerization, orchestration)</li>
-                <li>Data consistency challenges</li>
-            </ul>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>
-                    <strong>Real-world:</strong> Netflix, Amazon, Uber, Spotify
-                    <br><br>
-                    <strong>Netflix example:</strong>
-                    <br>• User Service (handles user profiles)
-                    <br>• Recommendation Service (suggests movies)
-                    <br>• Streaming Service (delivers video content)
-                    <br>• Billing Service (handles payments)
-                    <br>Each operates independently!
-                </p>
-            </div>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ WARNING</div>
-                <p>Don't use Microservices for small projects! The complexity overhead isn't worth it. Start with
-                    Monolithic or Layered, migrate to Microservices only when necessary.</p>
-            </div>
-
-            <h3>Architecture Comparison Table:</h3>
-            <table style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
-                <thead>
-                    <tr style="background: var(--bg-hover); border-bottom: 2px solid var(--primary);">
-                        <th style="padding: 1rem; text-align: left;">Aspect</th>
-                        <th style="padding: 1rem; text-align: left;">Monolithic</th>
-                        <th style="padding: 1rem; text-align: left;">Layered</th>
-                        <th style="padding: 1rem; text-align: left;">Microservices</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 1rem;"><strong>Complexity</strong></td>
-                        <td style="padding: 1rem;">Low</td>
-                        <td style="padding: 1rem;">Medium</td>
-                        <td style="padding: 1rem;">High</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 1rem;"><strong>Scalability</strong></td>
-                        <td style="padding: 1rem;">Limited</td>
-                        <td style="padding: 1rem;">Moderate</td>
-                        <td style="padding: 1rem;">Excellent</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 1rem;"><strong>Deployment</strong></td>
-                        <td style="padding: 1rem;">Single unit</td>
-                        <td style="padding: 1rem;">Single unit</td>
-                        <td style="padding: 1rem;">Independent services</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid var(--border);">
-                        <td style="padding: 1rem;"><strong>Best For</strong></td>
-                        <td style="padding: 1rem;">Small apps</td>
-                        <td style="padding: 1rem;">Enterprise apps</td>
-                        <td style="padding: 1rem;">Large-scale systems</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Section 5: Industry Relevance & Interview Perspective -->
-        <div class="content-section">
-            <h2>💼 Industry Relevance & Interview Perspective</h2>
-
-            <h3>Why Software Engineering Matters in Industry</h3>
-            <p>
-                In real-world software development, companies don't just want "coders" who can write code. They need
-                <strong>Software Engineers</strong> who:
-            </p>
-            <ul>
-                <li>Understand the complete software development lifecycle</li>
-                <li>Can design scalable and maintainable systems</li>
-                <li>Follow best practices and coding standards</li>
-                <li>Collaborate effectively in teams</li>
-                <li>Think about long-term maintenance, not just immediate solutions</li>
-            </ul>
-
-            <h3>Common Interview Questions</h3>
-
-            <h4>Q1: What is the difference between Software Engineering and Programming?</h4>
-            <div class="callout example">
-                <div class="callout-title">✅ ANSWER</div>
-                <p>
-                    Programming is the act of writing code to solve a specific problem. Software Engineering is a
-                    broader discipline that encompasses the entire software development process including requirements
-                    analysis, design, implementation, testing, deployment, and maintenance. It applies engineering
-                    principles to create high-quality, scalable, and maintainable software systems.
-                </p>
-            </div>
-
-            <h4>Q2: Which SDLC model would you choose for a startup building a mobile app?</h4>
-            <div class="callout example">
-                <div class="callout-title">✅ ANSWER</div>
-                <p>
-                    I would choose <strong>Agile</strong> because:
-                    <br>• Startups need to adapt quickly to market feedback
-                    <br>• Requirements often change based on user testing
-                    <br>• Iterative development allows early releases and continuous improvement
-                    <br>• Customer collaboration is crucial for product-market fit
-                    <br>• Sprints enable rapid feature delivery
-                </p>
-            </div>
-
-            <h4>Q3: When would you use Microservices over Monolithic architecture?</h4>
-            <div class="callout example">
-                <div class="callout-title">✅ ANSWER</div>
-                <p>
-                    I would use Microservices when:
-                    <br>• The application has grown too large to manage as a monolith
-                    <br>• Different parts of the system have different scaling requirements
-                    <br>• We have multiple teams working on different features
-                    <br>• We need technology flexibility (different services can use different tech stacks)
-                    <br>• Fault isolation is critical (one service failure shouldn't crash the entire system)
-                    <br><br>
-                    However, I would NOT use Microservices for small projects or startups due to the added complexity
-                    and operational overhead.
-                </p>
-            </div>
-
-            <h4>Q4: What are the key principles of good software design?</h4>
-            <div class="callout example">
-                <div class="callout-title">✅ ANSWER</div>
-                <p>
-                    <strong>SOLID Principles:</strong>
-                    <br>• <strong>S</strong>ingle Responsibility: A class should have one reason to change
-                    <br>• <strong>O</strong>pen/Closed: Open for extension, closed for modification
-                    <br>• <strong>L</strong>iskov Substitution: Subtypes must be substitutable for their base types
-                    <br>• <strong>I</strong>nterface Segregation: Many specific interfaces are better than one general
-                    interface
-                    <br>• <strong>D</strong>ependency Inversion: Depend on abstractions, not concretions
-                    <br><br>
-                    Additionally: DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid), and YAGNI (You Aren't
-                    Gonna Need It).
-                </p>
-            </div>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 INTERVIEW TIP</div>
-                <p>
-                    Always relate your answers to real-world scenarios. Instead of just defining concepts, explain:
-                    <br>• <strong>What</strong> it is
-                    <br>• <strong>Why</strong> it's important
-                    <br>• <strong>When</strong> to use it
-                    <br>• <strong>How</strong> it's applied in industry
-                    <br><br>
-                    This shows practical understanding, not just theoretical knowledge!
-                </p>
-            </div>
-
-            <h3>Industry Trends (2024-2025)</h3>
-            <ul>
-                <li><strong>DevOps & CI/CD:</strong> Continuous Integration and Deployment are standard practices</li>
-                <li><strong>Cloud-Native Development:</strong> AWS, Azure, Google Cloud are essential</li>
-                <li><strong>Containerization:</strong> Docker and Kubernetes are widely adopted</li>
-                <li><strong>AI/ML Integration:</strong> Software systems increasingly incorporate AI capabilities</li>
-                <li><strong>Security-First Approach:</strong> DevSecOps ensures security is built-in, not added later
-                </li>
-            </ul>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../programs/software-engineering.html" class="btn btn-primary">
-                    💻 View Code Examples
-                </a>
-                <a href="../mcq/software-engineering.html" class="btn btn-success">
-                    ✅ Test Your Knowledge
-                </a>
-                <a href="../index.html" class="btn btn-secondary">
-                    🏠 Back to Home
-                </a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> What is Java and Why Java
-                    <br>Learn about Java's history, platform independence, JVM, and why it's one of the most popular
-                    programming languages in the world.
-                </p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

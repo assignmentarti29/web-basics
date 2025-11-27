@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Strings Quiz - Java Mastery Hub</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <!-- Topic 1 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 2 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 3 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 4 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 5 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 6 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 7 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 8 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 9 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 10 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 11 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 12 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 13 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 14 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 15 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Strings Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>Strings</li>
+                    </ul>
+                </div>
+
+                <div class="content-section">
+                    <h2>Test Your Knowledge</h2>
+                    <p>This quiz contains 30 questions covering Java Strings, including immutability, methods, pool, and
+                        performance.</p>
+                </div>
+
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
+                    </div>
+                </div>
+
+                <div class="content-section" id="quizContainer">
+                    <div class="quiz-container">
+                        <div class="quiz-header">
+                            <div class="quiz-progress">Question 0/30</div>
+                            <div class="quiz-score">Score: 0/30 (0%)</div>
+                        </div>
+
+                        <!-- Q1 -->
+                        <div class="question" data-correct-answer="Immutable" data-question-id="q1">
+                            <p class="question-text">Q1. Are String objects mutable or immutable in Java?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Mutable">Mutable</button>
+                                <button class="option-btn" data-answer="Immutable">Immutable</button>
+                                <button class="option-btn" data-answer="Depends on creation">Depends on
+                                    creation</button>
+                                <button class="option-btn" data-answer="Semi-mutable">Semi-mutable</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Immutable</div>
+                                <p>Strings in Java are immutable, meaning once created, their values cannot be changed.
+                                    Any modification creates a new String object.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="question" data-correct-answer="String Pool" data-question-id="q2">
+                            <p class="question-text">Q2. Where are String literals stored in memory?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Stack">Stack</button>
+                                <button class="option-btn" data-answer="String Pool">String Pool</button>
+                                <button class="option-btn" data-answer="Register">Register</button>
+                                <button class="option-btn" data-answer="PermGen">PermGen</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: String Pool</div>
+                                <p>String literals are stored in a special area of the Heap memory called the String
+                                    Constant Pool to save memory by reusing identical strings.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="question" data-correct-answer="false" data-question-id="q3">
+                            <p class="question-text">Q3. What is the output?
+                                <br><code>String s1 = new String(&quot;Java&quot;);<br>String s2 = &quot;Java&quot;;<br>System.out.println(s1 == s2);</code>
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="true">true</button>
+                                <button class="option-btn" data-answer="false">false</button>
+                                <button class="option-btn" data-answer="Compilation Error">Compilation Error</button>
+                                <button class="option-btn" data-answer="Runtime Error">Runtime Error</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: false</div>
+                                <p><code>s1</code> is created in the Heap (outside the pool) due to <code>new</code>
+                                    keyword. <code>s2</code> is in the String Pool. They have different memory
+                                    addresses, so <code>==</code> returns false.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="question" data-correct-answer="true" data-question-id="q4">
+                            <p class="question-text">Q4. What is the output?
+                                <br><code>String s1 = &quot;Java&quot;;<br>String s2 = &quot;Java&quot;;<br>System.out.println(s1 == s2);</code>
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="true">true</button>
+                                <button class="option-btn" data-answer="false">false</button>
+                                <button class="option-btn" data-answer="null">null</button>
+                                <button class="option-btn" data-answer="Error">Error</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: true</div>
+                                <p>Both <code>s1</code> and <code>s2</code> refer to the same object in the String Pool
+                                    because they are identical literals.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="question" data-correct-answer="Compares content" data-question-id="q5">
+                            <p class="question-text">Q5. What does the <code>equals()</code> method do for Strings?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Compares memory address">Compares memory
+                                    address</button>
+                                <button class="option-btn" data-answer="Compares content">Compares content</button>
+                                <button class="option-btn" data-answer="Compares length">Compares length</button>
+                                <button class="option-btn" data-answer="Assigns value">Assigns value</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Compares content</div>
+                                <p>The <code>equals()</code> method in String class is overridden to compare the actual
+                                    character sequence (content) rather than the reference.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div class="question" data-correct-answer="StringBuilder" data-question-id="q6">
+                            <p class="question-text">Q6. Which class should be used for frequent String modifications?
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="String">String</button>
+                                <button class="option-btn" data-answer="StringBuilder">StringBuilder</button>
+                                <button class="option-btn" data-answer="StringReader">StringReader</button>
+                                <button class="option-btn" data-answer="CharBuffer">CharBuffer</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: StringBuilder</div>
+                                <p><code>StringBuilder</code> is mutable and efficient for modifications.
+                                    <code>String</code> creates a new object for every change, which is inefficient.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="question" data-correct-answer="StringBuffer is thread-safe" data-question-id="q7">
+                            <p class="question-text">Q7. What is the main difference between StringBuilder and
+                                StringBuffer?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="StringBuffer is faster">StringBuffer is
+                                    faster</button>
+                                <button class="option-btn" data-answer="StringBuilder is thread-safe">StringBuilder is
+                                    thread-safe</button>
+                                <button class="option-btn" data-answer="StringBuffer is thread-safe">StringBuffer is
+                                    thread-safe</button>
+                                <button class="option-btn" data-answer="No difference">No difference</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: StringBuffer is thread-safe</div>
+                                <p><code>StringBuffer</code> methods are synchronized (thread-safe), making it slower.
+                                    <code>StringBuilder</code> is not synchronized but faster.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="question" data-correct-answer="ell" data-question-id="q8">
+                            <p class="question-text">Q8. What is the result of
+                                <code>&quot;Hello&quot;.substring(1, 4)</code>?
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Hel">Hel</button>
+                                <button class="option-btn" data-answer="ell">ell</button>
+                                <button class="option-btn" data-answer="ello">ello</button>
+                                <button class="option-btn" data-answer="el">el</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: ell</div>
+                                <p><code>substring(start, end)</code> includes the start index (1 -> 'e') but excludes
+                                    the end index (4 -> 'o'). So indices 1, 2, 3 are returned: 'e', 'l', 'l'.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q9 -->
+                        <div class="question" data-correct-answer="length()" data-question-id="q9">
+                            <p class="question-text">Q9. How do you get the length of a String?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="length">length</button>
+                                <button class="option-btn" data-answer="length()">length()</button>
+                                <button class="option-btn" data-answer="size()">size()</button>
+                                <button class="option-btn" data-answer="getSize()">getSize()</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: length()</div>
+                                <p>For Strings, it is a method <code>length()</code>. For arrays, it is a property
+                                    <code>length</code>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q10 -->
+                        <div class="question" data-correct-answer="Removes leading and trailing whitespace"
+                            data-question-id="q10">
+                            <p class="question-text">Q10. What does <code>trim()</code> do?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Removes all spaces">Removes all spaces</button>
+                                <button class="option-btn" data-answer="Removes leading and trailing whitespace">Removes
+                                    leading and trailing whitespace</button>
+                                <button class="option-btn" data-answer="Removes spaces inside string">Removes spaces
+                                    inside string</button>
+                                <button class="option-btn" data-answer="Truncates string">Truncates string</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Removes leading and trailing whitespace
+                                </div>
+                                <p><code>trim()</code> removes whitespace from the beginning and end of the string, but
+                                    leaves spaces in the middle alone.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q11 -->
+                        <div class="question" data-correct-answer="Moves string to Pool" data-question-id="q11">
+                            <p class="question-text">Q11. What does the <code>intern()</code> method do?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Deletes string">Deletes string</button>
+                                <button class="option-btn" data-answer="Moves string to Pool">Moves string to
+                                    Pool</button>
+                                <button class="option-btn" data-answer="Encrypts string">Encrypts string</button>
+                                <button class="option-btn" data-answer="Formats string">Formats string</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Moves string to Pool</div>
+                                <p><code>intern()</code> returns the canonical representation of the string from the
+                                    String Pool. If it's not in the pool, it adds it.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q12 -->
+                        <div class="question" data-correct-answer="NullPointerException" data-question-id="q12">
+                            <p class="question-text">Q12. What happens if you call a method on a null String?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Returns null">Returns null</button>
+                                <button class="option-btn" data-answer="Returns empty string">Returns empty
+                                    string</button>
+                                <button class="option-btn"
+                                    data-answer="NullPointerException">NullPointerException</button>
+                                <button class="option-btn" data-answer="Compilation Error">Compilation Error</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: NullPointerException</div>
+                                <p>Calling any instance method (like <code>length()</code> or <code>equals()</code>) on
+                                    a null reference throws a <code>NullPointerException</code>.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q13 -->
+                        <div class="question" data-correct-answer="Splits string into array based on regex"
+                            data-question-id="q13">
+                            <p class="question-text">Q13. What does <code>split()</code> do?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Cuts string in half">Cuts string in
+                                    half</button>
+                                <button class="option-btn" data-answer="Splits string into array based on regex">Splits
+                                    string into array based on regex</button>
+                                <button class="option-btn" data-answer="Removes characters">Removes characters</button>
+                                <button class="option-btn" data-answer="Joins strings">Joins strings</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Splits string into array based on regex
+                                </div>
+                                <p><code>split(regex)</code> breaks a string into an array of substrings based on the
+                                    provided regular expression delimiter.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q14 -->
+                        <div class="question" data-correct-answer="J" data-question-id="q14">
+                            <p class="question-text">Q14. What is the result of <code>&quot;Java&quot;.charAt(0)</code>?
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="J">J</button>
+                                <button class="option-btn" data-answer="a">a</button>
+                                <button class="option-btn" data-answer="0">0</button>
+                                <button class="option-btn" data-answer="Error">Error</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: J</div>
+                                <p>String indices start at 0. The character at index 0 of "Java" is 'J'.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q15 -->
+                        <div class="question" data-correct-answer="StringIndexOutOfBoundsException"
+                            data-question-id="q15">
+                            <p class="question-text">Q15. What happens if you access an index outside the string length?
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Returns null">Returns null</button>
+                                <button class="option-btn" data-answer="Returns -1">Returns -1</button>
+                                <button class="option-btn"
+                                    data-answer="StringIndexOutOfBoundsException">StringIndexOutOfBoundsException</button>
+                                <button class="option-btn"
+                                    data-answer="ArrayIndexOutOfBoundsException">ArrayIndexOutOfBoundsException</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: StringIndexOutOfBoundsException</div>
+                                <p>Accessing an invalid index (e.g., <code>charAt(10)</code> on a 3-char string) throws
+                                    <code>StringIndexOutOfBoundsException</code>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q16 -->
+                        <div class="question" data-correct-answer="Checks if string matches regex"
+                            data-question-id="q16">
+                            <p class="question-text">Q16. What does <code>matches()</code> method do?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Checks if strings are equal">Checks if strings
+                                    are equal</button>
+                                <button class="option-btn" data-answer="Checks if string matches regex">Checks if string
+                                    matches regex</button>
+                                <button class="option-btn" data-answer="Finds substring">Finds substring</button>
+                                <button class="option-btn" data-answer="None of the above">None of the above</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Checks if string matches regex</div>
+                                <p><code>matches(regex)</code> returns true if the entire string matches the given
+                                    regular expression pattern.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q17 -->
+                        <div class="question" data-correct-answer="Replaces all regex matches" data-question-id="q17">
+                            <p class="question-text">Q17. What is the difference between <code>replace()</code> and
+                                <code>replaceAll()</code>?
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="No difference">No difference</button>
+                                <button class="option-btn"
+                                    data-answer="replace() uses regex, replaceAll() does not">replace() uses regex,
+                                    replaceAll() does not</button>
+                                <button class="option-btn"
+                                    data-answer="replaceAll() uses regex, replace() does not">replaceAll() uses regex,
+                                    replace() does not</button>
+                                <button class="option-btn" data-answer="Replaces all regex matches">Replaces all regex
+                                    matches</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: replaceAll() uses regex, replace() does
+                                    not</div>
+                                <p><code>replace()</code> works with literal chars/sequences. <code>replaceAll()</code>
+                                    works with regular expressions.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q18 -->
+                        <div class="question" data-correct-answer="Checks for empty string (length 0)"
+                            data-question-id="q18">
+                            <p class="question-text">Q18. What does <code>isEmpty()</code> check?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Checks for null">Checks for null</button>
+                                <button class="option-btn" data-answer="Checks for empty string (length 0)">Checks for
+                                    empty string (length 0)</button>
+                                <button class="option-btn" data-answer="Checks for whitespace">Checks for
+                                    whitespace</button>
+                                <button class="option-btn" data-answer="Checks for null or empty">Checks for null or
+                                    empty</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Checks for empty string (length 0)
+                                </div>
+                                <p><code>isEmpty()</code> returns true only if <code>length()</code> is 0. It throws NPE
+                                    if called on null.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q19 -->
+                        <div class="question" data-correct-answer="Checks for empty or whitespace-only string"
+                            data-question-id="q19">
+                            <p class="question-text">Q19. What does <code>isBlank()</code> (Java 11+) check?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Same as isEmpty()">Same as isEmpty()</button>
+                                <button class="option-btn"
+                                    data-answer="Checks for empty or whitespace-only string">Checks for empty or
+                                    whitespace-only string</button>
+                                <button class="option-btn" data-answer="Checks for null">Checks for null</button>
+                                <button class="option-btn" data-answer="Checks for blank lines">Checks for blank
+                                    lines</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Checks for empty or whitespace-only
+                                    string</div>
+                                <p><code>isBlank()</code> returns true if the string is empty or contains only
+                                    whitespace characters.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q20 -->
+                        <div class="question" data-correct-answer="Joins strings with a delimiter"
+                            data-question-id="q20">
+                            <p class="question-text">Q20. What does <code>String.join()</code> do?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Concatenates strings">Concatenates
+                                    strings</button>
+                                <button class="option-btn" data-answer="Joins strings with a delimiter">Joins strings
+                                    with a delimiter</button>
+                                <button class="option-btn" data-answer="Joins threads">Joins threads</button>
+                                <button class="option-btn" data-answer="Merges arrays">Merges arrays</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Joins strings with a delimiter</div>
+                                <p><code>String.join(&quot;-&quot;, &quot;A&quot;, &quot;B&quot;)</code> produces
+                                    &quot;A-B&quot;. It's a static method introduced in Java 8.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q21 -->
+                        <div class="question" data-correct-answer="Returns index of first occurrence"
+                            data-question-id="q21">
+                            <p class="question-text">Q21. What does <code>indexOf()</code> return?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Character at index">Character at index</button>
+                                <button class="option-btn" data-answer="Returns index of first occurrence">Returns index
+                                    of first occurrence</button>
+                                <button class="option-btn" data-answer="Returns boolean">Returns boolean</button>
+                                <button class="option-btn" data-answer="Returns last index">Returns last index</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Returns index of first occurrence</div>
+                                <p>It returns the index of the first occurrence of the specified character/substring, or
+                                    -1 if not found.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q22 -->
+                        <div class="question" data-correct-answer="Converts non-string to String"
+                            data-question-id="q22">
+                            <p class="question-text">Q22. What does <code>String.valueOf(10)</code> do?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Converts String to int">Converts String to
+                                    int</button>
+                                <button class="option-btn" data-answer="Converts non-string to String">Converts
+                                    non-string to String</button>
+                                <button class="option-btn" data-answer="Returns value of variable">Returns value of
+                                    variable</button>
+                                <button class="option-btn" data-answer="Parses integer">Parses integer</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Converts non-string to String</div>
+                                <p><code>String.valueOf()</code> is a static method that converts primitives or objects
+                                    into their String representation.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q23 -->
+                        <div class="question" data-correct-answer="Lexicographical comparison" data-question-id="q23">
+                            <p class="question-text">Q23. What does <code>compareTo()</code> return?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Boolean">Boolean</button>
+                                <button class="option-btn" data-answer="Lexicographical comparison">Lexicographical
+                                    comparison</button>
+                                <button class="option-btn" data-answer="Length difference">Length difference</button>
+                                <button class="option-btn" data-answer="Equality check">Equality check</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Lexicographical comparison</div>
+                                <p>It returns an integer: 0 if equal, negative if first string is lexicographically
+                                    smaller, positive if larger.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q24 -->
+                        <div class="question" data-correct-answer="Checks if string starts with prefix"
+                            data-question-id="q24">
+                            <p class="question-text">Q24. What does <code>startsWith()</code> do?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Checks if string starts with prefix">Checks if
+                                    string starts with prefix</button>
+                                <button class="option-btn" data-answer="Returns first char">Returns first char</button>
+                                <button class="option-btn" data-answer="Moves cursor to start">Moves cursor to
+                                    start</button>
+                                <button class="option-btn" data-answer="Trims start">Trims start</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Checks if string starts with prefix
+                                </div>
+                                <p>It returns true if the string begins with the specified prefix.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q25 -->
+                        <div class="question" data-correct-answer="Converts string to char array"
+                            data-question-id="q25">
+                            <p class="question-text">Q25. What does <code>toCharArray()</code> do?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Converts char to string">Converts char to
+                                    string</button>
+                                <button class="option-btn" data-answer="Converts string to char array">Converts string
+                                    to char array</button>
+                                <button class="option-btn" data-answer="Returns char at index">Returns char at
+                                    index</button>
+                                <button class="option-btn" data-answer="Splits string">Splits string</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Converts string to char array</div>
+                                <p>It creates a new character array containing the characters of the string.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q26 -->
+                        <div class="question" data-correct-answer="Escape sequence for newline" data-question-id="q26">
+                            <p class="question-text">Q26. What is <code>\n</code> in a String?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Letter n">Letter n</button>
+                                <button class="option-btn" data-answer="Escape sequence for newline">Escape sequence for
+                                    newline</button>
+                                <button class="option-btn" data-answer="Null character">Null character</button>
+                                <button class="option-btn" data-answer="Number">Number</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Escape sequence for newline</div>
+                                <p><code>\n</code> is an escape sequence representing a newline character.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q27 -->
+                        <div class="question" data-correct-answer="java.lang" data-question-id="q27">
+                            <p class="question-text">Q27. Which package contains the String class?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="java.util">java.util</button>
+                                <button class="option-btn" data-answer="java.io">java.io</button>
+                                <button class="option-btn" data-answer="java.lang">java.lang</button>
+                                <button class="option-btn" data-answer="java.text">java.text</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: java.lang</div>
+                                <p>String is in <code>java.lang</code> package, which is imported automatically in every
+                                    Java program.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q28 -->
+                        <div class="question" data-correct-answer="final" data-question-id="q28">
+                            <p class="question-text">Q28. Is the String class final?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Yes">Yes</button>
+                                <button class="option-btn" data-answer="No">No</button>
+                                <button class="option-btn" data-answer="Sometimes">Sometimes</button>
+                                <button class="option-btn" data-answer="Only in Java 8">Only in Java 8</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Yes</div>
+                                <p>The String class is marked <code>final</code>, meaning it cannot be subclassed. This
+                                    ensures security and immutability guarantees.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q29 -->
+                        <div class="question" data-correct-answer="Formats a string using placeholders"
+                            data-question-id="q29">
+                            <p class="question-text">Q29. What does <code>String.format()</code> do?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Clears string">Clears string</button>
+                                <button class="option-btn" data-answer="Formats a string using placeholders">Formats a
+                                    string using placeholders</button>
+                                <button class="option-btn" data-answer="Prints to console">Prints to console</button>
+                                <button class="option-btn" data-answer="Changes font">Changes font</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Formats a string using placeholders
+                                </div>
+                                <p>It returns a formatted string using format specifiers like <code>%s</code>,
+                                    <code>%d</code>, similar to <code>printf</code>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q30 -->
+                        <div class="question" data-correct-answer="Creates garbage objects" data-question-id="q30">
+                            <p class="question-text">Q30. Why is string concatenation in a loop bad?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="It is too fast">It is too fast</button>
+                                <button class="option-btn" data-answer="Creates garbage objects">Creates garbage
+                                    objects</button>
+                                <button class="option-btn" data-answer="Syntax error">Syntax error</button>
+                                <button class="option-btn" data-answer="It is not allowed">It is not allowed</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Creates garbage objects</div>
+                                <p>Since Strings are immutable, every concatenation in a loop creates a new String
+                                    object, leading to high memory usage and GC overhead.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="content-section" id="quizResults" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="results-summary">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+                        </div>
+                        <div class="performance-message" id="performanceMessage"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake
+                            Quiz</button>
+                        <a class="md-button md-button--secondary" href="../theory/strings.html">📚 Review Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/strings.html">💻 View Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Java Arrays - Java Mastery Hub</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <!-- Topic 1 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 2 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 3 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 4 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 5 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 6 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 7 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 8 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 9 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 10 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 11 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 12 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 13 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 14 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 15 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 16 -->
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--active"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+
+                    <!-- Topic 17 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+
+                    <!-- Topic 18 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="md-main">
+            <div class="md-content">
+                <div class="content-header">
+                    <h1>Topic 16: Java Arrays</h1>
+                    <p class="content-subtitle">Mastering Fixed-Size Data Structures in Java</p>
+                </div>
+
+                <!-- 1. What are Arrays? -->
+                <div class="content-section">
+                    <h2>1. What are Arrays?</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>Imagine you have a list of students in a class. Instead of creating a separate variable for each
+                        student (student1, student2, student3...), you can use a single list called "students" where
+                        each student has a specific seat number. An array is exactly like that list—it's a container
+                        that holds multiple values of the same type in a single variable.</p>
+
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>Think of an array like a pill organizer box with 7 compartments for the days of the week. You
+                        can't add an 8th compartment (fixed size), and each compartment holds the same type of thing
+                        (pills). You access the pills by knowing which day (index) you want.</p>
+
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>An array in Java is an object that contains elements of a similar data type. It is a fixed-size
+                        data structure, meaning once you define its length, it cannot be changed. Arrays are stored in
+                        contiguous memory locations, which makes accessing elements very fast using their index.</p>
+
+                    <div class="admonition note">
+                        <div class="admonition-title">📚 NOTE</div>
+                        <div class="admonition-content">
+                            <p>In Java, arrays are objects, generated dynamically. Even an array of primitives (like
+                                <code>int[]</code>) is an object.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Array Types -->
+                <div class="content-section">
+                    <h2>2. Array Types</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>Arrays can be simple lists (1D) or tables (2D). A 1D array is like a single row of lockers. A 2D
+                        array is like a wall of lockers with rows and columns.</p>
+
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p><strong>1D Array:</strong> A street with houses numbered 0, 1, 2, 3.<br>
+                        <strong>2D Array:</strong> A spreadsheet with rows and columns.<br>
+                        <strong>Jagged Array:</strong> A cinema hall where different rows have different numbers of
+                        seats.
+                    </p>
+
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p><strong>1D Arrays:</strong> Linear collection of elements.<br>
+                        <strong>Multi-dimensional Arrays:</strong> Arrays of arrays. A 2D array is technically an array
+                        where each element is a 1D array.<br>
+                        <strong>Jagged Arrays:</strong> Multi-dimensional arrays where member arrays are of different
+                        sizes.
+                    </p>
+
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <pre><code class="language-java">// 1D Array
+int[] nums = {1, 2, 3};
+
+// 2D Array
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6}
+};
+
+// Jagged Array
+int[][] jagged = new int[2][];
+jagged[0] = new int[3];
+jagged[1] = new int[5];</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Array Declaration & Initialization -->
+                <div class="content-section">
+                    <h2>3. Array Declaration & Initialization</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>To use an array, you first have to tell Java what type of data it will hold (Declaration) and how
+                        many items it will hold (Initialization).</p>
+
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p><strong>Declaration:</strong> "I'm going to buy a carton of eggs." (You haven't bought it yet,
+                        just decided).<br>
+                        <strong>Initialization:</strong> "Here is a carton that holds 12 eggs." (Now you have the actual
+                        container).
+                    </p>
+
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>Declaration does not allocate memory for the elements; it only creates a reference.
+                        Initialization allocates memory.</p>
+                    <ul>
+                        <li><strong>Declaration:</strong> <code>int[] arr;</code></li>
+                        <li><strong>Instantiation:</strong> <code>arr = new int[5];</code> (Allocates memory,
+                            initializes with default values like 0)</li>
+                        <li><strong>Initialization with values:</strong> <code>int[] arr = {1, 2, 3, 4, 5};</code></li>
+                    </ul>
+
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING</div>
+                        <div class="admonition-content">
+                            <p>Once initialized, the size of an array cannot be changed. If you need a resizable array,
+                                use <code>ArrayList</code>.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Array Operations -->
+                <div class="content-section">
+                    <h2>4. Array Operations</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>You can put things into the array, take things out, or look at everything inside it one by one.
+                    </p>
+
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p><strong>Accessing:</strong> Opening locker #5 to get your bag.<br>
+                        <strong>Updating:</strong> Replacing the old bag in locker #5 with a new one.<br>
+                        <strong>Iterating:</strong> Walking down the hallway and checking every locker.
+                    </p>
+
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>Common operations include:</p>
+                    <ul>
+                        <li><strong>Access:</strong> <code>arr[index]</code> (O(1) time complexity)</li>
+                        <li><strong>Update:</strong> <code>arr[index] = value;</code></li>
+                        <li><strong>Length:</strong> <code>arr.length</code> (It's a property, not a method!)</li>
+                        <li><strong>Iteration:</strong> Using for-loop or enhanced for-loop (for-each).</li>
+                    </ul>
+
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Use the enhanced for-loop (<code>for (int x : arr)</code>) when you just need to read
+                                elements and don't care about the index.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Important Methods from java.util.Arrays -->
+                <div class="content-section">
+                    <h2>5. Important Methods from java.util.Arrays</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>Java provides a helper called <code>Arrays</code> that has many tools to work with arrays, like
+                        sorting them or searching for an item.</p>
+
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>Think of <code>java.util.Arrays</code> as a Swiss Army Knife for arrays. Instead of writing your
+                        own code to sort a deck of cards, you just use the "sort" tool from the knife.</p>
+
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>Key methods in <code>java.util.Arrays</code> class:</p>
+                    <ul>
+                        <li><code>sort(arr)</code>: Sorts the array (Dual-Pivot Quicksort for primitives, Timsort for
+                            objects).</li>
+                        <li><code>toString(arr)</code>: Returns a string representation of the array contents.</li>
+                        <li><code>equals(arr1, arr2)</code>: Checks if two arrays contain the same elements.</li>
+                        <li><code>binarySearch(arr, key)</code>: Searches for a key in a <strong>sorted</strong> array
+                            (O(log n)).</li>
+                        <li><code>copyOf(arr, newLength)</code>: Copies the array to a new array of specified length.
+                        </li>
+                        <li><code>fill(arr, value)</code>: Fills the entire array with a specific value.</li>
+                        <li><code>stream(arr)</code>: Returns a sequential Stream with the specified array as its
+                            source.</li>
+                    </ul>
+
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <pre><code class="language-java">int[] arr = {5, 2, 9, 1};
+Arrays.sort(arr); // {1, 2, 5, 9}
+System.out.println(Arrays.toString(arr)); // "[1, 2, 5, 9]"</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Memory Usage (Stack vs Heap) -->
+                <div class="content-section">
+                    <h2>6. Memory Usage (Stack vs Heap)</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>Java keeps track of the array's name in one place (Stack) and the actual array content in another
+                        place (Heap).</p>
+
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>The <strong>Stack</strong> is like your pocket where you keep a slip of paper with an address.
+                        The <strong>Heap</strong> is the actual house at that address where your stuff is stored.</p>
+
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>In Java:</p>
+                    <ul>
+                        <li>The reference variable (e.g., <code>int[] arr</code>) is stored in the
+                            <strong>Stack</strong> memory.
+                        </li>
+                        <li>The actual array object (new int[5]) is stored in the <strong>Heap</strong> memory.</li>
+                        <li>If you reassign the reference (<code>arr = new int[10]</code>), the old array object in the
+                            Heap becomes eligible for Garbage Collection.</li>
+                    </ul>
+                </div>
+
+                <!-- 7. Performance -->
+                <div class="content-section">
+                    <h2>7. Performance</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>Arrays are super fast if you know exactly where to look. But if you have to search for something,
+                        it can take time.</p>
+
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p><strong>Access (O(1)):</strong> Like going directly to house #5 because you know the address.<br>
+                        <strong>Search (O(n)):</strong> Like knocking on every door on the street to find your friend.
+                    </p>
+
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <ul>
+                        <li><strong>Access:</strong> O(1) - Constant time because of contiguous memory allocation.</li>
+                        <li><strong>Search (Unsorted):</strong> O(n) - Linear time.</li>
+                        <li><strong>Search (Sorted + Binary Search):</strong> O(log n).</li>
+                        <li><strong>Insertion/Deletion:</strong> Expensive (O(n)) because arrays are fixed size; you
+                            often have to create a new array and copy elements.</li>
+                    </ul>
+                </div>
+
+                <!-- 8. Common Mistakes -->
+                <div class="content-section">
+                    <h2>8. Common Mistakes</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>Watch out for trying to access a seat that doesn't exist or forgetting to create the array before
+                        using it.</p>
+
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>Trying to put something in the 11th slot of a 10-slot egg carton will cause a mess (Exception).
+                    </p>
+
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <ul>
+                        <li><strong>ArrayIndexOutOfBoundsException:</strong> Accessing an index &lt; 0 or &gt;= length.
+                        </li>
+                        <li><strong>NullPointerException:</strong> Trying to access an array that hasn't been
+                            initialized (is null).</li>
+                        <li><strong>Confusing length vs length():</strong> Arrays use <code>.length</code> (property),
+                            Strings use <code>.length()</code> (method).</li>
+                        <li><strong>Printing array directly:</strong> <code>System.out.println(arr)</code> prints the
+                            memory address hash, not the content. Use <code>Arrays.toString(arr)</code>.</li>
+                    </ul>
+
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ WARNING</div>
+                        <div class="admonition-content">
+                            <p>Always check if an array is null before accessing its length or elements to avoid
+                                NullPointerException.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Best Practices -->
+                <div class="content-section">
+                    <h2>9. Best Practices</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>Use arrays when you know exactly how many items you have. If the number changes, use a List
+                        instead.</p>
+
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>Use an egg carton (Array) for a dozen eggs. Use a shopping bag (ArrayList) if you don't know how
+                        many items you'll buy.</p>
+
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <ul>
+                        <li><strong>Prefer Collections for dynamic data:</strong> Use <code>ArrayList</code> if size
+                            varies.</li>
+                        <li><strong>Use Enhanced For-Loop:</strong> Cleaner syntax for iteration.</li>
+                        <li><strong>Use Arrays.copyOf:</strong> For cloning or resizing (creating a new larger array).
+                        </li>
+                        <li><strong>Type Safety:</strong> Arrays are covariant (String[] is Object[]), which can lead to
+                            runtime ArrayStoreException. Generics (List&lt;String&gt;) are invariant and safer.</li>
+                    </ul>
+
+                    <div class="admonition best-practice">
+                        <div class="admonition-title">✅ BEST PRACTICE</div>
+                        <div class="admonition-content">
+                            <p>For performance-critical code with fixed sizes, arrays are faster than ArrayLists due to
+                                less overhead and better cache locality.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>

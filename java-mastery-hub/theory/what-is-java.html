@@ -1,329 +1,765 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>What is Java and Why Java - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>What is Java and Why Java</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Theory</span>
-                <span>/</span>
-                <span>What is Java</span>
-            </div>
-        </div>
-
-        <!-- Section 1: Introduction to Java -->
-        <div class="content-section">
-            <h2>🎯 Introduction to Java</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
-            <p>
-                Imagine you have a magic toy that can work in ANY playroom - your friend's house, grandma's house, or
-                even at school.
-                You don't need different toys for different places - this ONE toy works everywhere!
-            </p>
-            <p>
-                <strong>Java</strong> is like that magic toy, but for computers. It's a special language that lets you
-                write instructions
-                for computers, and those instructions can work on ANY computer - Windows, Mac, phones, tablets, even
-                smart TVs!
-                You write it once, and it works everywhere. That's the magic of Java! ✨
-            </p>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE</div>
-                <p>Java is named after Java coffee ☕, which the creators loved to drink while programming!</p>
-            </div>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of Java as a <strong>universal translator</strong> like in science fiction movies. When people
-                from different
-                countries meet, they need a common language to communicate. Similarly, different computers (Windows,
-                Mac, Linux, Android)
-                are like different countries speaking different languages.
-            </p>
-            <p>
-                Java acts as that universal translator. When you write a program in Java, it doesn't speak directly to
-                Windows or Mac.
-                Instead, it speaks to a special "translator" called the <strong>Java Virtual Machine (JVM)</strong>,
-                which then translates
-                your instructions to whatever computer you're using. This is why the same Java program can run on your
-                Windows laptop,
-                your friend's Mac, and your Android phone without any changes!
-            </p>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>
-                    <strong>Minecraft</strong> is written in Java! That's why you can play Minecraft on Windows, Mac,
-                    Linux, and many other platforms.
-                    The game developers wrote it once in Java, and it runs everywhere. That's the power of "Write Once,
-                    Run Anywhere"!
-                </p>
-            </div>
-
-            <h3>Level 3: Technical Deep-Dive</h3>
-            <p>
-                <strong>Java</strong> is a high-level, object-oriented, platform-independent programming language
-                developed by Sun Microsystems
-                (now owned by Oracle Corporation). It follows the principle of <strong>WORA (Write Once, Run
-                    Anywhere)</strong>, meaning compiled
-                Java code can run on any platform that has a Java Virtual Machine (JVM) without the need for
-                recompilation.
-            </p>
-
-            <h4>Key Characteristics of Java:</h4>
-            <ul>
-                <li><strong>Object-Oriented</strong>: Everything in Java is an object with properties and behaviors</li>
-                <li><strong>Platform-Independent</strong>: Bytecode runs on any platform with JVM</li>
-                <li><strong>Robust</strong>: Strong memory management, exception handling, and type checking</li>
-                <li><strong>Secure</strong>: No explicit pointers, runs inside JVM sandbox</li>
-                <li><strong>Multithreaded</strong>: Built-in support for concurrent programming</li>
-                <li><strong>Architecture-Neutral</strong>: Bytecode is not specific to any processor architecture</li>
-                <li><strong>High Performance</strong>: Just-In-Time (JIT) compilation improves execution speed</li>
-                <li><strong>Distributed</strong>: Designed for networked/distributed environments</li>
-            </ul>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Interview Perspective</div>
-                <p>
-                    When asked "What is Java?", don't just say "a programming language." Say: <strong>"Java is a
-                        high-level, object-oriented,
-                        platform-independent programming language that follows the WORA principle through the use of
-                        bytecode and JVM."</strong>
-                    This shows deeper understanding!
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 2: History and Origins of Java -->
-        <div class="content-section">
-            <h2>📜 History and Origins of Java</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                A long time ago (in 1991), some smart people at a company called Sun Microsystems wanted to create a
-                language that could
-                control TVs, toasters, and other home devices. They called it "Oak" (named after a tree outside their
-                office window).
-            </p>
-            <p>
-                But then the internet became popular! They realized their language would be PERFECT for the internet
-                because it could run
-                on any computer. So they renamed it "Java" and released it in 1995. People LOVED it, and it became super
-                popular!
-            </p>
-
-            <h3>Level 2: Real-World Context</h3>
-            <p>
-                In the early 1990s, the tech world was fragmented. Programs written for Windows wouldn't work on Mac,
-                and vice versa.
-                This was a huge problem for developers who had to write the same program multiple times for different
-                systems.
-            </p>
-            <p>
-                James Gosling and his team at Sun Microsystems saw this problem and created Java with one revolutionary
-                goal:
-                <strong>"Write Once, Run Anywhere."</strong> Initially designed for interactive television and consumer
-                electronics,
-                Java found its true calling with the rise of the internet in the mid-1990s.
-            </p>
-
-            <h3>Level 3: Technical History</h3>
-
-            <h4>Timeline of Java Evolution:</h4>
-            <ul>
-                <li><strong>1991</strong>: Project "Green" started by James Gosling, Mike Sheridan, and Patrick Naughton
-                </li>
-                <li><strong>1992</strong>: Language initially named "Oak" (later renamed due to trademark issues)</li>
-                <li><strong>1995</strong>: Java 1.0 officially released - "Write Once, Run Anywhere"</li>
-                <li><strong>1996</strong>: Java 1.1 - Inner classes, JavaBeans, JDBC, RMI</li>
-                <li><strong>1998</strong>: Java 2 (J2SE 1.2) - Swing, Collections Framework</li>
-                <li><strong>2004</strong>: Java 5 - Generics, Annotations, Enums, Autoboxing</li>
-                <li><strong>2006</strong>: Java 6 - Performance improvements, scripting support</li>
-                <li><strong>2011</strong>: Java 7 - Try-with-resources, diamond operator</li>
-                <li><strong>2014</strong>: Java 8 - Lambda expressions, Stream API, functional programming</li>
-                <li><strong>2017</strong>: Java 9 - Module system (Project Jigsaw)</li>
-                <li><strong>2018</strong>: Java 10, 11 - Local variable type inference, LTS version</li>
-                <li><strong>2021</strong>: Java 17 (LTS) - Sealed classes, pattern matching</li>
-                <li><strong>2023+</strong>: Java 21 (LTS) - Virtual threads, pattern matching enhancements</li>
-            </ul>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - LTS Versions</div>
-                <p>
-                    LTS (Long-Term Support) versions like Java 8, 11, 17, and 21 receive extended support and updates.
-                    Most enterprises use LTS versions for production systems due to stability and long-term support
-                    guarantees.
-                </p>
-            </div>
-
-            <h4>The "Write Once, Run Anywhere" Philosophy</h4>
-            <p>
-                Java's core philosophy is platform independence. Unlike C or C++ where you compile code for a specific
-                operating system
-                (Windows .exe, Linux binary, etc.), Java compiles to an intermediate format called
-                <strong>bytecode</strong>. This bytecode
-                can run on any system that has a JVM, regardless of the underlying hardware or operating system.
-            </p>
-
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE - Real-World Impact</div>
-                <p>
-                    <strong>Android</strong> (the world's most popular mobile OS) is built on Java! When Google needed a
-                    language for Android,
-                    they chose Java because of its platform independence, security, and robust ecosystem. Today,
-                    billions of Android devices
-                    run Java-based applications.
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 3: JVM, JRE, and JDK -->
-        <div class="content-section">
-            <h2>⚙️ JVM, JRE, and JDK - The Java Ecosystem</h2>
-
-            <p>
-                Understanding the relationship between JVM, JRE, and JDK is crucial for every Java developer. Let's
-                break them down:
-            </p>
-
-            <h3>1. JVM (Java Virtual Machine)</h3>
-
-            <h4>Level 1: Beginner-Friendly Explanation</h4>
-            <p>
-                Imagine you have a robot that can understand your instructions and do tasks for you. But this robot
-                doesn't understand English -
-                it only understands a special robot language. The JVM is like that robot! It takes your Java
-                instructions (which are translated
-                into "bytecode") and makes the computer do what you want.
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Think of JVM as a <strong>virtual computer inside your real computer</strong>. Just like you can run a
-                Windows computer inside
-                a Mac using virtualization software, JVM creates a "virtual Java computer" that works the same way on
-                every real computer.
-                This is why Java programs are portable!
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                The <strong>Java Virtual Machine (JVM)</strong> is an abstract computing machine that provides a runtime
-                environment to execute
-                Java bytecode. It's the core component that enables Java's platform independence. The JVM:
-            </p>
-            <ul>
-                <li>Loads bytecode (.class files)</li>
-                <li>Verifies bytecode for security</li>
-                <li>Executes bytecode using interpretation or JIT compilation</li>
-                <li>Manages memory (heap, stack) and garbage collection</li>
-                <li>Provides runtime environment and security</li>
-            </ul>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE</div>
-                <p>
-                    JVM is platform-dependent! There's a different JVM for Windows, Mac, Linux, etc. But they all
-                    execute the same bytecode,
-                    which is why your Java program is platform-independent.
-                </p>
-            </div>
-
-            <h3>2. JRE (Java Runtime Environment)</h3>
-
-            <h4>Level 1: Beginner-Friendly Explanation</h4>
-            <p>
-                If JVM is the robot, then JRE is the robot plus all the tools and toys it needs to work. It's like a
-                complete playset!
-                When you want to RUN a Java program (not create one, just run it), you need JRE.
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Think of JRE as a <strong>media player</strong>. Just like you need VLC or Windows Media Player to watch
-                videos (but you don't
-                need video editing software), you need JRE to run Java programs. It includes the JVM plus all the
-                libraries needed to run Java applications.
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                The <strong>Java Runtime Environment (JRE)</strong> is a software package that provides the minimum
-                requirements to run Java applications. It includes:
-            </p>
-            <ul>
-                <li><strong>JVM</strong> - The execution engine</li>
-                <li><strong>Core Libraries</strong> - Java class libraries (java.lang, java.util, java.io, etc.)</li>
-                <li><strong>Supporting Files</strong> - Configuration files, property files</li>
-            </ul>
-            <p>
-                <strong>Important:</strong> JRE is for running Java programs. It does NOT include development tools like
-                compilers or debuggers.
-            </p>
-
-            <h3>3. JDK (Java Development Kit)</h3>
-
-            <h4>Level 1: Beginner-Friendly Explanation</h4>
-            <p>
-                JDK is the COMPLETE package! It has everything - the robot (JVM), the playset (JRE), PLUS special tools
-                to CREATE new programs.
-                It's like having the media player AND the video editing software. If you want to write Java programs,
-                you need JDK!
-            </p>
-
-            <h4>Level 2: Real-World Analogy</h4>
-            <p>
-                Think of JDK as a <strong>complete workshop</strong>. If JRE is like having a car to drive, JDK is like
-                having a car PLUS all
-                the tools to build and repair cars. It includes everything in JRE plus development tools.
-            </p>
-
-            <h4>Level 3: Technical Explanation</h4>
-            <p>
-                The <strong>Java Development Kit (JDK)</strong> is a full-featured software development kit for Java
-                developers. It includes:
-            </p>
-            <ul>
-                <li><strong>JRE</strong> - Complete runtime environment (which includes JVM)</li>
-                <li><strong>javac</strong> - Java compiler (converts .java to .class bytecode)</li>
-                <li><strong>java</strong> - Java application launcher</li>
-                <li><strong>javadoc</strong> - Documentation generator</li>
-                <li><strong>jar</strong> - Archive tool for packaging</li>
-                <li><strong>jdb</strong> - Java debugger</li>
-                <li><strong>Other tools</strong> - javap (disassembler), jconsole (monitoring), etc.</li>
-            </ul>
-
-            <h3>Relationship Diagram (Conceptual)</h3>
-            <div
-                style="background: var(--bg-hover); border: 2px solid var(--primary); border-radius: var(--radius-md); padding: var(--spacing-lg); margin: var(--spacing-md) 0;">
-                <pre style="background: transparent; border: none; color: var(--text-primary); font-size: 0.9rem;">
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>What is Java and Why Java</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Theory</a></li>
+                        <li>What is Java and Why Java</li>
+                    </ul>
+                </div>
+                <!-- Section 1: Introduction to Java -->
+                <div class="content-section">
+                    <h2>🎯 Introduction to Java</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+                    <p>
+                        Imagine you have a magic toy that can work in ANY playroom - your friend's house, grandma's
+                        house, or
+                        even at school.
+                        You don't need different toys for different places - this ONE toy works everywhere!
+                    </p>
+                    <p>
+                        <strong>Java</strong> is like that magic toy, but for computers. It's a special language that
+                        lets you
+                        write instructions
+                        for computers, and those instructions can work on ANY computer - Windows, Mac, phones, tablets,
+                        even
+                        smart TVs!
+                        You write it once, and it works everywhere. That's the magic of Java! ✨
+                    </p>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE</div>
+                        <div class="admonition-content">
+                            <p>Java is named after Java coffee ☕, which the creators loved to drink while programming!
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of Java as a <strong>universal translator</strong> like in science fiction movies. When
+                        people
+                        from different
+                        countries meet, they need a common language to communicate. Similarly, different computers
+                        (Windows,
+                        Mac, Linux, Android)
+                        are like different countries speaking different languages.
+                    </p>
+                    <p>
+                        Java acts as that universal translator. When you write a program in Java, it doesn't speak
+                        directly to
+                        Windows or Mac.
+                        Instead, it speaks to a special "translator" called the <strong>Java Virtual Machine
+                            (JVM)</strong>,
+                        which then translates
+                        your instructions to whatever computer you're using. This is why the same Java program can run
+                        on your
+                        Windows laptop,
+                        your friend's Mac, and your Android phone without any changes!
+                    </p>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Minecraft</strong> is written in Java! That's why you can play Minecraft on
+                                Windows, Mac,
+                                Linux, and many other platforms.
+                                The game developers wrote it once in Java, and it runs everywhere. That's the power of
+                                "Write Once,
+                                Run Anywhere"!
+                            </p>
+                        </div>
+                    </div>
+                    <h3>Level 3: Technical Deep-Dive</h3>
+                    <p>
+                        <strong>Java</strong> is a high-level, object-oriented, platform-independent programming
+                        language
+                        developed by Sun Microsystems
+                        (now owned by Oracle Corporation). It follows the principle of <strong>WORA (Write Once, Run
+                            Anywhere)</strong>, meaning compiled
+                        Java code can run on any platform that has a Java Virtual Machine (JVM) without the need for
+                        recompilation.
+                    </p>
+                    <h4>Key Characteristics of Java:</h4>
+                    <ul>
+                        <li><strong>Object-Oriented</strong>: Everything in Java is an object with properties and
+                            behaviors</li>
+                        <li><strong>Platform-Independent</strong>: Bytecode runs on any platform with JVM</li>
+                        <li><strong>Robust</strong>: Strong memory management, exception handling, and type checking
+                        </li>
+                        <li><strong>Secure</strong>: No explicit pointers, runs inside JVM sandbox</li>
+                        <li><strong>Multithreaded</strong>: Built-in support for concurrent programming</li>
+                        <li><strong>Architecture-Neutral</strong>: Bytecode is not specific to any processor
+                            architecture</li>
+                        <li><strong>High Performance</strong>: Just-In-Time (JIT) compilation improves execution speed
+                        </li>
+                        <li><strong>Distributed</strong>: Designed for networked/distributed environments</li>
+                    </ul>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Interview Perspective</div>
+                        <div class="admonition-content">
+                            <p>
+                                When asked "What is Java?", don't just say "a programming language." Say: <strong>"Java
+                                    is a
+                                    high-level, object-oriented,
+                                    platform-independent programming language that follows the WORA principle through
+                                    the use of
+                                    bytecode and JVM."</strong>
+                                This shows deeper understanding!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 2: History and Origins of Java -->
+                <div class="content-section">
+                    <h2>📜 History and Origins of Java</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        A long time ago (in 1991), some smart people at a company called Sun Microsystems wanted to
+                        create a
+                        language that could
+                        control TVs, toasters, and other home devices. They called it "Oak" (named after a tree outside
+                        their
+                        office window).
+                    </p>
+                    <p>
+                        But then the internet became popular! They realized their language would be PERFECT for the
+                        internet
+                        because it could run
+                        on any computer. So they renamed it "Java" and released it in 1995. People LOVED it, and it
+                        became super
+                        popular!
+                    </p>
+                    <h3>Level 2: Real-World Context</h3>
+                    <p>
+                        In the early 1990s, the tech world was fragmented. Programs written for Windows wouldn't work on
+                        Mac,
+                        and vice versa.
+                        This was a huge problem for developers who had to write the same program multiple times for
+                        different
+                        systems.
+                    </p>
+                    <p>
+                        James Gosling and his team at Sun Microsystems saw this problem and created Java with one
+                        revolutionary
+                        goal:
+                        <strong>"Write Once, Run Anywhere."</strong> Initially designed for interactive television and
+                        consumer
+                        electronics,
+                        Java found its true calling with the rise of the internet in the mid-1990s.
+                    </p>
+                    <h3>Level 3: Technical History</h3>
+                    <h4>Timeline of Java Evolution:</h4>
+                    <ul>
+                        <li><strong>1991</strong>: Project "Green" started by James Gosling, Mike Sheridan, and Patrick
+                            Naughton
+                        </li>
+                        <li><strong>1992</strong>: Language initially named "Oak" (later renamed due to trademark
+                            issues)</li>
+                        <li><strong>1995</strong>: Java 1.0 officially released - "Write Once, Run Anywhere"</li>
+                        <li><strong>1996</strong>: Java 1.1 - Inner classes, JavaBeans, JDBC, RMI</li>
+                        <li><strong>1998</strong>: Java 2 (J2SE 1.2) - Swing, Collections Framework</li>
+                        <li><strong>2004</strong>: Java 5 - Generics, Annotations, Enums, Autoboxing</li>
+                        <li><strong>2006</strong>: Java 6 - Performance improvements, scripting support</li>
+                        <li><strong>2011</strong>: Java 7 - Try-with-resources, diamond operator</li>
+                        <li><strong>2014</strong>: Java 8 - Lambda expressions, Stream API, functional programming</li>
+                        <li><strong>2017</strong>: Java 9 - Module system (Project Jigsaw)</li>
+                        <li><strong>2018</strong>: Java 10, 11 - Local variable type inference, LTS version</li>
+                        <li><strong>2021</strong>: Java 17 (LTS) - Sealed classes, pattern matching</li>
+                        <li><strong>2023+</strong>: Java 21 (LTS) - Virtual threads, pattern matching enhancements</li>
+                    </ul>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - LTS Versions</div>
+                        <div class="admonition-content">
+                            <p>
+                                LTS (Long-Term Support) versions like Java 8, 11, 17, and 21 receive extended support
+                                and updates.
+                                Most enterprises use LTS versions for production systems due to stability and long-term
+                                support
+                                guarantees.
+                            </p>
+                        </div>
+                    </div>
+                    <h4>The "Write Once, Run Anywhere" Philosophy</h4>
+                    <p>
+                        Java's core philosophy is platform independence. Unlike C or C++ where you compile code for a
+                        specific
+                        operating system
+                        (Windows .exe, Linux binary, etc.), Java compiles to an intermediate format called
+                        <strong>bytecode</strong>. This bytecode
+                        can run on any system that has a JVM, regardless of the underlying hardware or operating system.
+                    </p>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE - Real-World Impact</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Android</strong> (the world's most popular mobile OS) is built on Java! When
+                                Google needed a
+                                language for Android,
+                                they chose Java because of its platform independence, security, and robust ecosystem.
+                                Today,
+                                billions of Android devices
+                                run Java-based applications.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 3: JVM, JRE, and JDK -->
+                <div class="content-section">
+                    <h2>⚙️ JVM, JRE, and JDK - The Java Ecosystem</h2>
+                    <p>
+                        Understanding the relationship between JVM, JRE, and JDK is crucial for every Java developer.
+                        Let's
+                        break them down:
+                    </p>
+                    <h3>1. JVM (Java Virtual Machine)</h3>
+                    <h4>Level 1: Beginner-Friendly Explanation</h4>
+                    <p>
+                        Imagine you have a robot that can understand your instructions and do tasks for you. But this
+                        robot
+                        doesn't understand English -
+                        it only understands a special robot language. The JVM is like that robot! It takes your Java
+                        instructions (which are translated
+                        into "bytecode") and makes the computer do what you want.
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Think of JVM as a <strong>virtual computer inside your real computer</strong>. Just like you can
+                        run a
+                        Windows computer inside
+                        a Mac using virtualization software, JVM creates a "virtual Java computer" that works the same
+                        way on
+                        every real computer.
+                        This is why Java programs are portable!
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        The <strong>Java Virtual Machine (JVM)</strong> is an abstract computing machine that provides a
+                        runtime
+                        environment to execute
+                        Java bytecode. It's the core component that enables Java's platform independence. The JVM:
+                    </p>
+                    <ul>
+                        <li>Loads bytecode (.class files)</li>
+                        <li>Verifies bytecode for security</li>
+                        <li>Executes bytecode using interpretation or JIT compilation</li>
+                        <li>Manages memory (heap, stack) and garbage collection</li>
+                        <li>Provides runtime environment and security</li>
+                    </ul>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE</div>
+                        <div class="admonition-content">
+                            <p>
+                                JVM is platform-dependent! There's a different JVM for Windows, Mac, Linux, etc. But
+                                they all
+                                execute the same bytecode,
+                                which is why your Java program is platform-independent.
+                            </p>
+                        </div>
+                    </div>
+                    <h3>2. JRE (Java Runtime Environment)</h3>
+                    <h4>Level 1: Beginner-Friendly Explanation</h4>
+                    <p>
+                        If JVM is the robot, then JRE is the robot plus all the tools and toys it needs to work. It's
+                        like a
+                        complete playset!
+                        When you want to RUN a Java program (not create one, just run it), you need JRE.
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Think of JRE as a <strong>media player</strong>. Just like you need VLC or Windows Media Player
+                        to watch
+                        videos (but you don't
+                        need video editing software), you need JRE to run Java programs. It includes the JVM plus all
+                        the
+                        libraries needed to run Java applications.
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        The <strong>Java Runtime Environment (JRE)</strong> is a software package that provides the
+                        minimum
+                        requirements to run Java applications. It includes:
+                    </p>
+                    <ul>
+                        <li><strong>JVM</strong> - The execution engine</li>
+                        <li><strong>Core Libraries</strong> - Java class libraries (java.lang, java.util, java.io, etc.)
+                        </li>
+                        <li><strong>Supporting Files</strong> - Configuration files, property files</li>
+                    </ul>
+                    <p>
+                        <strong>Important:</strong> JRE is for running Java programs. It does NOT include development
+                        tools like
+                        compilers or debuggers.
+                    </p>
+                    <h3>3. JDK (Java Development Kit)</h3>
+                    <h4>Level 1: Beginner-Friendly Explanation</h4>
+                    <p>
+                        JDK is the COMPLETE package! It has everything - the robot (JVM), the playset (JRE), PLUS
+                        special tools
+                        to CREATE new programs.
+                        It's like having the media player AND the video editing software. If you want to write Java
+                        programs,
+                        you need JDK!
+                    </p>
+                    <h4>Level 2: Real-World Analogy</h4>
+                    <p>
+                        Think of JDK as a <strong>complete workshop</strong>. If JRE is like having a car to drive, JDK
+                        is like
+                        having a car PLUS all
+                        the tools to build and repair cars. It includes everything in JRE plus development tools.
+                    </p>
+                    <h4>Level 3: Technical Explanation</h4>
+                    <p>
+                        The <strong>Java Development Kit (JDK)</strong> is a full-featured software development kit for
+                        Java
+                        developers. It includes:
+                    </p>
+                    <ul>
+                        <li><strong>JRE</strong> - Complete runtime environment (which includes JVM)</li>
+                        <li><strong>javac</strong> - Java compiler (converts .java to .class bytecode)</li>
+                        <li><strong>java</strong> - Java application launcher</li>
+                        <li><strong>javadoc</strong> - Documentation generator</li>
+                        <li><strong>jar</strong> - Archive tool for packaging</li>
+                        <li><strong>jdb</strong> - Java debugger</li>
+                        <li><strong>Other tools</strong> - javap (disassembler), jconsole (monitoring), etc.</li>
+                    </ul>
+                    <h3>Relationship Diagram (Conceptual)</h3>
+                    <div
+                        style="background: var(--bg-hover); border: 2px solid var(--primary); border-radius: var(--radius-md); padding: var(--spacing-lg); margin: var(--spacing-md) 0;">
+                        <pre
+                            style="background: transparent; border: none; color: var(--text-primary); font-size: 0.9rem;">
 ┌─────────────────────────────────────────────────┐
 │                     JDK                         │
 │  (Java Development Kit - For Developers)        │
@@ -352,127 +788,125 @@
 │    - jdb (Debugger)                             │
 └─────────────────────────────────────────────────┘
                 </pre>
-            </div>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - What Do You Need?</div>
-                <p>
-                    <strong>To RUN Java programs:</strong> Install JRE
-                    <br><strong>To DEVELOP Java programs:</strong> Install JDK (which includes JRE and JVM)
-                    <br><br>
-                    <strong>Interview Tip:</strong> Remember: JDK ⊃ JRE ⊃ JVM (JDK contains JRE, which contains JVM)
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 4: How Java Code Runs -->
-        <div class="content-section">
-            <h2>🔄 How Java Code Runs - Step by Step</h2>
-
-            <h3>Level 1: Beginner-Friendly Explanation</h3>
-            <p>
-                When you write a Java program, it's like writing a recipe in English. But computers don't understand
-                English! So we need to:
-            </p>
-            <ol>
-                <li>Translate your recipe into a special "computer language" (this is called <strong>compiling</strong>)
-                </li>
-                <li>Give that special language to the JVM robot</li>
-                <li>The JVM robot reads it and makes the computer do what you want!</li>
-            </ol>
-
-            <h3>Level 2: Real-World Analogy</h3>
-            <p>
-                Think of it like ordering food at an international restaurant:
-            </p>
-            <ol>
-                <li><strong>You write your order</strong> in English (Your .java file)</li>
-                <li><strong>The waiter translates</strong> it to the chef's language (Compiler creates .class bytecode)
-                </li>
-                <li><strong>The chef cooks</strong> based on the translated order (JVM executes bytecode)</li>
-                <li><strong>You get your food</strong> (Program output)</li>
-            </ol>
-            <p>
-                The beauty? The same translated order (bytecode) works with chefs from different countries (different
-                operating systems)!
-            </p>
-
-            <h3>Level 3: Technical Execution Flow</h3>
-
-            <h4>Step-by-Step Execution Process:</h4>
-
-            <div
-                style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
-                <p><strong>Step 1: Write Source Code (.java file)</strong></p>
-                <p>Developer writes Java code in a text file with .java extension (e.g., HelloWorld.java)</p>
-            </div>
-
-            <div
-                style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
-                <p><strong>Step 2: Compilation (javac compiler)</strong></p>
-                <p>
-                    The Java compiler (javac) converts source code into bytecode:
-                    <br><code>javac HelloWorld.java</code>
-                    <br>This creates HelloWorld.class (bytecode file)
-                </p>
-            </div>
-
-            <div
-                style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
-                <p><strong>Step 3: Bytecode (.class file)</strong></p>
-                <p>
-                    Bytecode is an intermediate, platform-independent code. It's not machine code (0s and 1s for a
-                    specific CPU),
-                    but a set of instructions for the JVM. This is the key to Java's "Write Once, Run Anywhere"
-                    capability.
-                </p>
-            </div>
-
-            <div
-                style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
-                <p><strong>Step 4: Class Loader</strong></p>
-                <p>
-                    JVM's class loader loads the .class file into memory. It also loads all required Java libraries.
-                </p>
-            </div>
-
-            <div
-                style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
-                <p><strong>Step 5: Bytecode Verifier</strong></p>
-                <p>
-                    JVM verifies the bytecode for security and correctness. It ensures:
-                    <br>• No illegal type casts
-                    <br>• No stack overflow/underflow
-                    <br>• No unauthorized memory access
-                </p>
-            </div>
-
-            <div
-                style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
-                <p><strong>Step 6: Execution Engine</strong></p>
-                <p>
-                    The JVM execution engine runs the bytecode using:
-                    <br>• <strong>Interpreter:</strong> Executes bytecode line by line (slower)
-                    <br>• <strong>JIT Compiler:</strong> Compiles frequently used bytecode to native machine code for
-                    faster execution
-                </p>
-            </div>
-
-            <div
-                style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
-                <p><strong>Step 7: Runtime</strong></p>
-                <p>
-                    Program executes, JVM manages:
-                    <br>• Memory allocation (heap and stack)
-                    <br>• Garbage collection (automatic memory cleanup)
-                    <br>• Thread management
-                </p>
-            </div>
-
-            <h4>Visual Flow:</h4>
-            <div
-                style="background: var(--bg-hover); border: 2px solid var(--primary); border-radius: var(--radius-md); padding: var(--spacing-lg); margin: var(--spacing-md) 0;">
-                <pre style="background: transparent; border: none; color: var(--text-primary); font-size: 0.85rem;">
+                    </div>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - What Do You Need?</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>To RUN Java programs:</strong> Install JRE
+                                <br /><strong>To DEVELOP Java programs:</strong> Install JDK (which includes JRE and
+                                JVM)
+                                <br /><br />
+                                <strong>Interview Tip:</strong> Remember: JDK ⊃ JRE ⊃ JVM (JDK contains JRE, which
+                                contains JVM)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 4: How Java Code Runs -->
+                <div class="content-section">
+                    <h2>🔄 How Java Code Runs - Step by Step</h2>
+                    <h3>Level 1: Beginner-Friendly Explanation</h3>
+                    <p>
+                        When you write a Java program, it's like writing a recipe in English. But computers don't
+                        understand
+                        English! So we need to:
+                    </p>
+                    <ol>
+                        <li>Translate your recipe into a special "computer language" (this is called
+                            <strong>compiling</strong>)
+                        </li>
+                        <li>Give that special language to the JVM robot</li>
+                        <li>The JVM robot reads it and makes the computer do what you want!</li>
+                    </ol>
+                    <h3>Level 2: Real-World Analogy</h3>
+                    <p>
+                        Think of it like ordering food at an international restaurant:
+                    </p>
+                    <ol>
+                        <li><strong>You write your order</strong> in English (Your .java file)</li>
+                        <li><strong>The waiter translates</strong> it to the chef's language (Compiler creates .class
+                            bytecode)
+                        </li>
+                        <li><strong>The chef cooks</strong> based on the translated order (JVM executes bytecode)</li>
+                        <li><strong>You get your food</strong> (Program output)</li>
+                    </ol>
+                    <p>
+                        The beauty? The same translated order (bytecode) works with chefs from different countries
+                        (different
+                        operating systems)!
+                    </p>
+                    <h3>Level 3: Technical Execution Flow</h3>
+                    <h4>Step-by-Step Execution Process:</h4>
+                    <div
+                        style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
+                        <p><strong>Step 1: Write Source Code (.java file)</strong></p>
+                        <p>Developer writes Java code in a text file with .java extension (e.g., HelloWorld.java)</p>
+                    </div>
+                    <div
+                        style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
+                        <p><strong>Step 2: Compilation (javac compiler)</strong></p>
+                        <p>
+                            The Java compiler (javac) converts source code into bytecode:
+                            <br /><code>javac HelloWorld.java</code>
+                            <br />This creates HelloWorld.class (bytecode file)
+                        </p>
+                    </div>
+                    <div
+                        style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
+                        <p><strong>Step 3: Bytecode (.class file)</strong></p>
+                        <p>
+                            Bytecode is an intermediate, platform-independent code. It's not machine code (0s and 1s for
+                            a
+                            specific CPU),
+                            but a set of instructions for the JVM. This is the key to Java's "Write Once, Run Anywhere"
+                            capability.
+                        </p>
+                    </div>
+                    <div
+                        style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
+                        <p><strong>Step 4: Class Loader</strong></p>
+                        <p>
+                            JVM's class loader loads the .class file into memory. It also loads all required Java
+                            libraries.
+                        </p>
+                    </div>
+                    <div
+                        style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
+                        <p><strong>Step 5: Bytecode Verifier</strong></p>
+                        <p>
+                            JVM verifies the bytecode for security and correctness. It ensures:
+                            <br />• No illegal type casts
+                            <br />• No stack overflow/underflow
+                            <br />• No unauthorized memory access
+                        </p>
+                    </div>
+                    <div
+                        style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
+                        <p><strong>Step 6: Execution Engine</strong></p>
+                        <p>
+                            The JVM execution engine runs the bytecode using:
+                            <br />• <strong>Interpreter:</strong> Executes bytecode line by line (slower)
+                            <br />• <strong>JIT Compiler:</strong> Compiles frequently used bytecode to native machine
+                            code for
+                            faster execution
+                        </p>
+                    </div>
+                    <div
+                        style="background: var(--bg-hover); border-left: 4px solid var(--accent); padding: var(--spacing-md); margin: var(--spacing-md) 0;">
+                        <p><strong>Step 7: Runtime</strong></p>
+                        <p>
+                            Program executes, JVM manages:
+                            <br />• Memory allocation (heap and stack)
+                            <br />• Garbage collection (automatic memory cleanup)
+                            <br />• Thread management
+                        </p>
+                    </div>
+                    <h4>Visual Flow:</h4>
+                    <div
+                        style="background: var(--bg-hover); border: 2px solid var(--primary); border-radius: var(--radius-md); padding: var(--spacing-lg); margin: var(--spacing-md) 0;">
+                        <pre
+                            style="background: transparent; border: none; color: var(--text-primary); font-size: 0.85rem;">
 HelloWorld.java  ──────────────────────────────────────────────────────────────┐
 (Source Code)                                                                  │
                                                                                │
@@ -519,307 +953,304 @@ This is "Write Once, Run Anywhere"! ──────────────�
                                                                               │
 One source code works everywhere! ────────────────────────────────────────────┘
                 </pre>
-            </div>
-
-            <div class="callout warning">
-                <div class="callout-title">⚠️ IMPORTANT - Compilation vs Interpretation</div>
-                <p>
-                    Java is both compiled AND interpreted:
-                    <br>• <strong>Compiled:</strong> .java → .class (bytecode) by javac
-                    <br>• <strong>Interpreted:</strong> bytecode → execution by JVM
-                    <br><br>
-                    This hybrid approach gives Java the best of both worlds: platform independence (from bytecode) and
-                    performance
-                    (from JIT compilation of hot code paths).
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 5: Where is Java Used -->
-        <div class="content-section">
-            <h2>🌍 Where is Java Used in Real Life?</h2>
-
-            <p>
-                Java is everywhere! Let's explore the major domains where Java dominates:
-            </p>
-
-            <h3>1. Android Applications</h3>
-            <p>
-                <strong>Beginner:</strong> Almost every app on your Android phone is written in Java (or Kotlin, which
-                runs on JVM)!
-            </p>
-            <p>
-                <strong>Technical:</strong> Android SDK is built on Java. Apps like WhatsApp, Instagram, Spotify
-                (Android versions),
-                and millions of others use Java. Google chose Java for Android because of its maturity, security, and
-                vast ecosystem.
-            </p>
-            <div class="callout example">
-                <div class="callout-title">💡 EXAMPLE</div>
-                <p>Over 3 billion Android devices run Java-based applications daily!</p>
-            </div>
-
-            <h3>2. Enterprise Applications</h3>
-            <p>
-                <strong>Beginner:</strong> Big companies like banks, insurance companies, and hospitals use Java for
-                their important systems.
-            </p>
-            <p>
-                <strong>Technical:</strong> Java Enterprise Edition (Java EE, now Jakarta EE) provides robust frameworks
-                for building
-                large-scale, distributed, multi-tier enterprise applications. Companies like:
-            </p>
-            <ul>
-                <li><strong>Banking:</strong> JPMorgan Chase, Goldman Sachs, Citibank</li>
-                <li><strong>E-commerce:</strong> Amazon, eBay, Alibaba</li>
-                <li><strong>Insurance:</strong> State Farm, Allstate</li>
-                <li><strong>Healthcare:</strong> Epic Systems, Cerner</li>
-            </ul>
-
-            <h3>3. Web Applications</h3>
-            <p>
-                <strong>Beginner:</strong> Many websites you visit are powered by Java behind the scenes.
-            </p>
-            <p>
-                <strong>Technical:</strong> Java frameworks like Spring Boot, Spring MVC, Hibernate, and Struts power
-                millions of web applications.
-                Popular sites using Java:
-            </p>
-            <ul>
-                <li>LinkedIn (backend services)</li>
-                <li>Twitter (originally Ruby, migrated to Java for performance)</li>
-                <li>Netflix (streaming infrastructure)</li>
-                <li>Airbnb (parts of backend)</li>
-            </ul>
-
-            <h3>4. Big Data Technologies</h3>
-            <p>
-                <strong>Beginner:</strong> When companies need to process HUGE amounts of data (like billions of
-                records), they use Java.
-            </p>
-            <p>
-                <strong>Technical:</strong> Major big data frameworks are written in Java:
-            </p>
-            <ul>
-                <li><strong>Apache Hadoop:</strong> Distributed data processing</li>
-                <li><strong>Apache Spark:</strong> Fast data analytics</li>
-                <li><strong>Apache Kafka:</strong> Real-time data streaming</li>
-                <li><strong>Elasticsearch:</strong> Search and analytics engine</li>
-            </ul>
-
-            <h3>5. Cloud Applications</h3>
-            <p>
-                <strong>Technical:</strong> Java is a first-class citizen in cloud platforms:
-            </p>
-            <ul>
-                <li>AWS Lambda (Java runtime)</li>
-                <li>Google Cloud Platform (Java support)</li>
-                <li>Microsoft Azure (Java SDKs)</li>
-                <li>Microservices with Spring Cloud</li>
-            </ul>
-
-            <h3>6. Scientific Applications</h3>
-            <p>
-                <strong>Technical:</strong> Java is used in scientific computing, mathematical operations, and
-                simulations due to its
-                precision and portability. MATLAB uses JVM for its computational engine.
-            </p>
-
-            <h3>7. Gaming</h3>
-            <p>
-                <strong>Beginner:</strong> Minecraft, one of the most popular games ever, is written in Java!
-            </p>
-            <p>
-                <strong>Technical:</strong> While not as common as C++ for AAA games, Java is used for:
-            </p>
-            <ul>
-                <li>Mobile games (Android)</li>
-                <li>Indie games (Minecraft, Runescape)</li>
-                <li>Game servers and backends</li>
-            </ul>
-
-            <h3>8. IoT (Internet of Things)</h3>
-            <p>
-                <strong>Technical:</strong> Java ME (Micro Edition) is designed for embedded systems and IoT devices.
-                Smart TVs,
-                set-top boxes, and many IoT devices run Java.
-            </p>
-
-            <div class="callout note">
-                <div class="callout-title">📝 NOTE - Industry Statistics</div>
-                <p>
-                    • Over 9 million Java developers worldwide
-                    <br>• Java runs on 3 billion devices
-                    <br>• 90% of Fortune 500 companies use Java
-                    <br>• #1 language for enterprise backend development
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 6: Why Java is Still Important Today -->
-        <div class="content-section">
-            <h2>💪 Why Java is Still Important Today</h2>
-
-            <p>
-                Despite being nearly 30 years old, Java remains one of the most popular and important programming
-                languages. Here's why:
-            </p>
-
-            <h3>1. Strong Ecosystem and Libraries</h3>
-            <p>
-                <strong>Beginner:</strong> Java has TONS of ready-made tools and libraries. It's like having a huge LEGO
-                collection -
-                you don't have to build everything from scratch!
-            </p>
-            <p>
-                <strong>Technical:</strong> Java has one of the richest ecosystems:
-            </p>
-            <ul>
-                <li><strong>Frameworks:</strong> Spring, Hibernate, Apache Struts, JSF</li>
-                <li><strong>Build Tools:</strong> Maven, Gradle, Ant</li>
-                <li><strong>Testing:</strong> JUnit, TestNG, Mockito</li>
-                <li><strong>IDEs:</strong> IntelliJ IDEA, Eclipse, NetBeans</li>
-                <li><strong>Libraries:</strong> Apache Commons, Google Guava, Jackson</li>
-            </ul>
-
-            <h3>2. Large Community and Support</h3>
-            <p>
-                <strong>Beginner:</strong> Millions of people use Java, so if you have a problem, someone has probably
-                solved it before!
-            </p>
-            <p>
-                <strong>Technical:</strong> Java has:
-            </p>
-            <ul>
-                <li>9+ million developers worldwide</li>
-                <li>Massive Stack Overflow community</li>
-                <li>Extensive documentation and tutorials</li>
-                <li>Active open-source community</li>
-                <li>Regular conferences (JavaOne, Devoxx, etc.)</li>
-            </ul>
-
-            <h3>3. Job Market and Career Opportunities</h3>
-            <p>
-                <strong>Beginner:</strong> Learning Java can help you get a good job! Many companies are looking for
-                Java developers.
-            </p>
-            <p>
-                <strong>Technical:</strong> Java consistently ranks in top 3 programming languages for:
-            </p>
-            <ul>
-                <li>Number of job postings</li>
-                <li>Average salary (competitive with other top languages)</li>
-                <li>Enterprise adoption</li>
-                <li>Long-term career stability</li>
-            </ul>
-
-            <h3>4. Stability and Backward Compatibility</h3>
-            <p>
-                <strong>Beginner:</strong> Programs written in old Java still work in new Java! Your code won't break
-                when Java updates.
-            </p>
-            <p>
-                <strong>Technical:</strong> Oracle maintains strong backward compatibility. Code written in Java 8
-                (2014) still runs
-                on Java 21 (2023). This is crucial for enterprises with legacy systems.
-            </p>
-
-            <h3>5. Long-Term Support (LTS) Versions</h3>
-            <p>
-                <strong>Technical:</strong> LTS versions (8, 11, 17, 21) receive:
-            </p>
-            <ul>
-                <li>Security updates for years</li>
-                <li>Bug fixes and patches</li>
-                <li>Performance improvements</li>
-                <li>Enterprise-grade support</li>
-            </ul>
-
-            <h3>6. Performance Improvements</h3>
-            <p>
-                <strong>Technical:</strong> Modern Java is FAST:
-            </p>
-            <ul>
-                <li>JIT compiler optimizations</li>
-                <li>Improved garbage collectors (G1, ZGC, Shenandoah)</li>
-                <li>Project Loom (virtual threads for massive concurrency)</li>
-                <li>Project Panama (native code integration)</li>
-            </ul>
-
-            <h3>7. Modern Language Features</h3>
-            <p>
-                <strong>Technical:</strong> Java continues to evolve:
-            </p>
-            <ul>
-                <li>Lambda expressions and functional programming (Java 8)</li>
-                <li>Stream API for data processing</li>
-                <li>Pattern matching (Java 16+)</li>
-                <li>Records for data classes (Java 14+)</li>
-                <li>Sealed classes (Java 17)</li>
-                <li>Virtual threads (Java 21)</li>
-            </ul>
-
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP - Interview Perspective</div>
-                <p>
-                    When asked "Why should we use Java?", mention:
-                    <br>• <strong>Maturity:</strong> Battle-tested for 30 years
-                    <br>• <strong>Ecosystem:</strong> Rich libraries and frameworks
-                    <br>• <strong>Community:</strong> Large support network
-                    <br>• <strong>Stability:</strong> Backward compatibility
-                    <br>• <strong>Performance:</strong> Modern JVM is highly optimized
-                    <br>• <strong>Versatility:</strong> Web, mobile, enterprise, big data
-                </p>
-            </div>
-        </div>
-
-        <!-- Section 7: When Not to Use Java -->
-        <div class="content-section">
-            <h2>🚫 When Not to Use Java</h2>
-
-            <p>
-                While Java is versatile, it's not always the best choice. Here are scenarios where other languages might
-                be better:
-            </p>
-
-            <h3>1. Ultra-Low-Level Hardware Programming</h3>
-            <p>
-                <strong>Why not Java:</strong> For device drivers, operating system kernels, or embedded systems with
-                severe memory constraints,
-                C or C++ are better choices. Java's JVM overhead is too heavy for these use cases.
-            </p>
-            <p>
-                <strong>Better alternatives:</strong> C, C++, Rust
-            </p>
-
-            <h3>2. Quick Scripting and Automation</h3>
-            <p>
-                <strong>Why not Java:</strong> Java requires compilation and has more boilerplate code. For quick
-                scripts and automation tasks,
-                interpreted languages are faster to write and execute.
-            </p>
-            <p>
-                <strong>Better alternatives:</strong> Python, Bash, PowerShell
-            </p>
-
-            <h3>3. High-Performance Gaming Graphics</h3>
-            <p>
-                <strong>Why not Java:</strong> AAA game engines require direct hardware access and maximum performance.
-                While Java can do gaming
-                (Minecraft!), it's not ideal for graphics-intensive 3D games.
-            </p>
-            <p>
-                <strong>Better alternatives:</strong> C++, C# (Unity), Unreal Engine
-            </p>
-
-            <h3>4. Tiny Embedded Systems</h3>
-            <p>
-                <strong>Why not Java:</strong> Microcontrollers with very limited RAM (< 1MB) can't run JVM efficiently.
+                    </div>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ IMPORTANT - Compilation vs Interpretation</div>
+                        <div class="admonition-content">
+                            <p>
+                                Java is both compiled AND interpreted:
+                                <br />• <strong>Compiled:</strong> .java → .class (bytecode) by javac
+                                <br />• <strong>Interpreted:</strong> bytecode → execution by JVM
+                                <br /><br />
+                                This hybrid approach gives Java the best of both worlds: platform independence (from
+                                bytecode) and
+                                performance
+                                (from JIT compilation of hot code paths).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 5: Where is Java Used -->
+                <div class="content-section">
+                    <h2>🌍 Where is Java Used in Real Life?</h2>
+                    <p>
+                        Java is everywhere! Let's explore the major domains where Java dominates:
+                    </p>
+                    <h3>1. Android Applications</h3>
+                    <p>
+                        <strong>Beginner:</strong> Almost every app on your Android phone is written in Java (or Kotlin,
+                        which
+                        runs on JVM)!
+                    </p>
+                    <p>
+                        <strong>Technical:</strong> Android SDK is built on Java. Apps like WhatsApp, Instagram, Spotify
+                        (Android versions),
+                        and millions of others use Java. Google chose Java for Android because of its maturity,
+                        security, and
+                        vast ecosystem.
+                    </p>
+                    <div class="admonition example">
+                        <div class="admonition-title">💡 EXAMPLE</div>
+                        <div class="admonition-content">
+                            <p>Over 3 billion Android devices run Java-based applications daily!</p>
+                        </div>
+                    </div>
+                    <h3>2. Enterprise Applications</h3>
+                    <p>
+                        <strong>Beginner:</strong> Big companies like banks, insurance companies, and hospitals use Java
+                        for
+                        their important systems.
+                    </p>
+                    <p>
+                        <strong>Technical:</strong> Java Enterprise Edition (Java EE, now Jakarta EE) provides robust
+                        frameworks
+                        for building
+                        large-scale, distributed, multi-tier enterprise applications. Companies like:
+                    </p>
+                    <ul>
+                        <li><strong>Banking:</strong> JPMorgan Chase, Goldman Sachs, Citibank</li>
+                        <li><strong>E-commerce:</strong> Amazon, eBay, Alibaba</li>
+                        <li><strong>Insurance:</strong> State Farm, Allstate</li>
+                        <li><strong>Healthcare:</strong> Epic Systems, Cerner</li>
+                    </ul>
+                    <h3>3. Web Applications</h3>
+                    <p>
+                        <strong>Beginner:</strong> Many websites you visit are powered by Java behind the scenes.
+                    </p>
+                    <p>
+                        <strong>Technical:</strong> Java frameworks like Spring Boot, Spring MVC, Hibernate, and Struts
+                        power
+                        millions of web applications.
+                        Popular sites using Java:
+                    </p>
+                    <ul>
+                        <li>LinkedIn (backend services)</li>
+                        <li>Twitter (originally Ruby, migrated to Java for performance)</li>
+                        <li>Netflix (streaming infrastructure)</li>
+                        <li>Airbnb (parts of backend)</li>
+                    </ul>
+                    <h3>4. Big Data Technologies</h3>
+                    <p>
+                        <strong>Beginner:</strong> When companies need to process HUGE amounts of data (like billions of
+                        records), they use Java.
+                    </p>
+                    <p>
+                        <strong>Technical:</strong> Major big data frameworks are written in Java:
+                    </p>
+                    <ul>
+                        <li><strong>Apache Hadoop:</strong> Distributed data processing</li>
+                        <li><strong>Apache Spark:</strong> Fast data analytics</li>
+                        <li><strong>Apache Kafka:</strong> Real-time data streaming</li>
+                        <li><strong>Elasticsearch:</strong> Search and analytics engine</li>
+                    </ul>
+                    <h3>5. Cloud Applications</h3>
+                    <p>
+                        <strong>Technical:</strong> Java is a first-class citizen in cloud platforms:
+                    </p>
+                    <ul>
+                        <li>AWS Lambda (Java runtime)</li>
+                        <li>Google Cloud Platform (Java support)</li>
+                        <li>Microsoft Azure (Java SDKs)</li>
+                        <li>Microservices with Spring Cloud</li>
+                    </ul>
+                    <h3>6. Scientific Applications</h3>
+                    <p>
+                        <strong>Technical:</strong> Java is used in scientific computing, mathematical operations, and
+                        simulations due to its
+                        precision and portability. MATLAB uses JVM for its computational engine.
+                    </p>
+                    <h3>7. Gaming</h3>
+                    <p>
+                        <strong>Beginner:</strong> Minecraft, one of the most popular games ever, is written in Java!
+                    </p>
+                    <p>
+                        <strong>Technical:</strong> While not as common as C++ for AAA games, Java is used for:
+                    </p>
+                    <ul>
+                        <li>Mobile games (Android)</li>
+                        <li>Indie games (Minecraft, Runescape)</li>
+                        <li>Game servers and backends</li>
+                    </ul>
+                    <h3>8. IoT (Internet of Things)</h3>
+                    <p>
+                        <strong>Technical:</strong> Java ME (Micro Edition) is designed for embedded systems and IoT
+                        devices.
+                        Smart TVs,
+                        set-top boxes, and many IoT devices run Java.
+                    </p>
+                    <div class="admonition note">
+                        <div class="admonition-title">📝 NOTE - Industry Statistics</div>
+                        <div class="admonition-content">
+                            <p>
+                                • Over 9 million Java developers worldwide
+                                <br />• Java runs on 3 billion devices
+                                <br />• 90% of Fortune 500 companies use Java
+                                <br />• #1 language for enterprise backend development
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 6: Why Java is Still Important Today -->
+                <div class="content-section">
+                    <h2>💪 Why Java is Still Important Today</h2>
+                    <p>
+                        Despite being nearly 30 years old, Java remains one of the most popular and important
+                        programming
+                        languages. Here's why:
+                    </p>
+                    <h3>1. Strong Ecosystem and Libraries</h3>
+                    <p>
+                        <strong>Beginner:</strong> Java has TONS of ready-made tools and libraries. It's like having a
+                        huge LEGO
+                        collection -
+                        you don't have to build everything from scratch!
+                    </p>
+                    <p>
+                        <strong>Technical:</strong> Java has one of the richest ecosystems:
+                    </p>
+                    <ul>
+                        <li><strong>Frameworks:</strong> Spring, Hibernate, Apache Struts, JSF</li>
+                        <li><strong>Build Tools:</strong> Maven, Gradle, Ant</li>
+                        <li><strong>Testing:</strong> JUnit, TestNG, Mockito</li>
+                        <li><strong>IDEs:</strong> IntelliJ IDEA, Eclipse, NetBeans</li>
+                        <li><strong>Libraries:</strong> Apache Commons, Google Guava, Jackson</li>
+                    </ul>
+                    <h3>2. Large Community and Support</h3>
+                    <p>
+                        <strong>Beginner:</strong> Millions of people use Java, so if you have a problem, someone has
+                        probably
+                        solved it before!
+                    </p>
+                    <p>
+                        <strong>Technical:</strong> Java has:
+                    </p>
+                    <ul>
+                        <li>9+ million developers worldwide</li>
+                        <li>Massive Stack Overflow community</li>
+                        <li>Extensive documentation and tutorials</li>
+                        <li>Active open-source community</li>
+                        <li>Regular conferences (JavaOne, Devoxx, etc.)</li>
+                    </ul>
+                    <h3>3. Job Market and Career Opportunities</h3>
+                    <p>
+                        <strong>Beginner:</strong> Learning Java can help you get a good job! Many companies are looking
+                        for
+                        Java developers.
+                    </p>
+                    <p>
+                        <strong>Technical:</strong> Java consistently ranks in top 3 programming languages for:
+                    </p>
+                    <ul>
+                        <li>Number of job postings</li>
+                        <li>Average salary (competitive with other top languages)</li>
+                        <li>Enterprise adoption</li>
+                        <li>Long-term career stability</li>
+                    </ul>
+                    <h3>4. Stability and Backward Compatibility</h3>
+                    <p>
+                        <strong>Beginner:</strong> Programs written in old Java still work in new Java! Your code won't
+                        break
+                        when Java updates.
+                    </p>
+                    <p>
+                        <strong>Technical:</strong> Oracle maintains strong backward compatibility. Code written in Java
+                        8
+                        (2014) still runs
+                        on Java 21 (2023). This is crucial for enterprises with legacy systems.
+                    </p>
+                    <h3>5. Long-Term Support (LTS) Versions</h3>
+                    <p>
+                        <strong>Technical:</strong> LTS versions (8, 11, 17, 21) receive:
+                    </p>
+                    <ul>
+                        <li>Security updates for years</li>
+                        <li>Bug fixes and patches</li>
+                        <li>Performance improvements</li>
+                        <li>Enterprise-grade support</li>
+                    </ul>
+                    <h3>6. Performance Improvements</h3>
+                    <p>
+                        <strong>Technical:</strong> Modern Java is FAST:
+                    </p>
+                    <ul>
+                        <li>JIT compiler optimizations</li>
+                        <li>Improved garbage collectors (G1, ZGC, Shenandoah)</li>
+                        <li>Project Loom (virtual threads for massive concurrency)</li>
+                        <li>Project Panama (native code integration)</li>
+                    </ul>
+                    <h3>7. Modern Language Features</h3>
+                    <p>
+                        <strong>Technical:</strong> Java continues to evolve:
+                    </p>
+                    <ul>
+                        <li>Lambda expressions and functional programming (Java 8)</li>
+                        <li>Stream API for data processing</li>
+                        <li>Pattern matching (Java 16+)</li>
+                        <li>Records for data classes (Java 14+)</li>
+                        <li>Sealed classes (Java 17)</li>
+                        <li>Virtual threads (Java 21)</li>
+                    </ul>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP - Interview Perspective</div>
+                        <div class="admonition-content">
+                            <p>
+                                When asked "Why should we use Java?", mention:
+                                <br />• <strong>Maturity:</strong> Battle-tested for 30 years
+                                <br />• <strong>Ecosystem:</strong> Rich libraries and frameworks
+                                <br />• <strong>Community:</strong> Large support network
+                                <br />• <strong>Stability:</strong> Backward compatibility
+                                <br />• <strong>Performance:</strong> Modern JVM is highly optimized
+                                <br />• <strong>Versatility:</strong> Web, mobile, enterprise, big data
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section 7: When Not to Use Java -->
+                <div class="content-section">
+                    <h2>🚫 When Not to Use Java</h2>
+                    <p>
+                        While Java is versatile, it's not always the best choice. Here are scenarios where other
+                        languages might
+                        be better:
+                    </p>
+                    <h3>1. Ultra-Low-Level Hardware Programming</h3>
+                    <p>
+                        <strong>Why not Java:</strong> For device drivers, operating system kernels, or embedded systems
+                        with
+                        severe memory constraints,
+                        C or C++ are better choices. Java's JVM overhead is too heavy for these use cases.
+                    </p>
+                    <p>
+                        <strong>Better alternatives:</strong> C, C++, Rust
+                    </p>
+                    <h3>2. Quick Scripting and Automation</h3>
+                    <p>
+                        <strong>Why not Java:</strong> Java requires compilation and has more boilerplate code. For
+                        quick
+                        scripts and automation tasks,
+                        interpreted languages are faster to write and execute.
+                    </p>
+                    <p>
+                        <strong>Better alternatives:</strong> Python, Bash, PowerShell
+                    </p>
+                    <h3>3. High-Performance Gaming Graphics</h3>
+                    <p>
+                        <strong>Why not Java:</strong> AAA game engines require direct hardware access and maximum
+                        performance.
+                        While Java can do gaming
+                        (Minecraft!), it's not ideal for graphics-intensive 3D games.
+                    </p>
+                    <p>
+                        <strong>Better alternatives:</strong> C++, C# (Unity), Unreal Engine
+                    </p>
+                    <h3>4. Tiny Embedded Systems</h3>
+                    <p>
+                        <strong>Why not Java:</strong> Microcontrollers with very limited RAM (&lt; 1MB) can't run JVM
+                        efficiently.
                     </p>
                     <p>
                         <strong>Better alternatives:</strong> C, Assembly
                     </p>
-
                     <h3>5. Simple Static Websites</h3>
                     <p>
                         <strong>Why not Java:</strong> For simple content websites, Java is overkill. Simpler
@@ -828,47 +1259,53 @@ One source code works everywhere! ───────────────�
                     <p>
                         <strong>Better alternatives:</strong> HTML/CSS/JavaScript, WordPress, Static Site Generators
                     </p>
-
-                    <div class="callout warning">
-                        <div class="callout-title">⚠️ IMPORTANT</div>
-                        <p>
-                            This doesn't mean Java CAN'T do these things - it means other languages are MORE SUITABLE.
-                            Choose the right tool for the job!
-                            <br><br>
-                            <strong>Java excels at:</strong> Enterprise applications, Android apps, web backends, big
-                            data, cloud services, and systems
-                            requiring stability, scalability, and long-term maintenance.
-                        </p>
+                    <div class="admonition warning">
+                        <div class="admonition-title">⚠️ IMPORTANT</div>
+                        <div class="admonition-content">
+                            <p>
+                                This doesn't mean Java CAN'T do these things - it means other languages are MORE
+                                SUITABLE.
+                                Choose the right tool for the job!
+                                <br /><br />
+                                <strong>Java excels at:</strong> Enterprise applications, Android apps, web backends,
+                                big
+                                data, cloud services, and systems
+                                requiring stability, scalability, and long-term maintenance.
+                            </p>
+                        </div>
                     </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../programs/what-is-java.html" class="btn btn-primary">
-                    💻 View Code Examples
-                </a>
-                <a href="../mcq/what-is-java.html" class="btn btn-success">
-                    ✅ Test Your Knowledge
-                </a>
-                <a href="../index.html" class="btn btn-secondary">
-                    🏠 Back to Home
-                </a>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../programs/what-is-java.html">
+                            💻 View Code Examples
+                        </a>
+                        <a class="md-button md-button--primary" href="../mcq/what-is-java.html">
+                            ✅ Test Your Knowledge
+                        </a>
+                        <a class="md-button md-button--secondary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> Variables &amp; Data Types
+                                <br />Learn about primitive types, reference types, type casting, literals, and variable
+                                scope in
+                                Java.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> Variables & Data Types
-                    <br>Learn about primitive types, reference types, type casting, literals, and variable scope in
-                    Java.
-                </p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

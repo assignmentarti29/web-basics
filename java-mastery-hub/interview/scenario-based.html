@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Interview Questions - Scenario Based (Q601-Q670) - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style-mkdocs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    <header class="md-header" data-md-component="header">
+        <nav class="md-header__inner md-grid" aria-label="Header">
+            <a href="../index.html" title="Java Mastery Hub" class="md-header__button md-logo"
+                aria-label="Java Mastery Hub" data-md-component="logo">
+                <i class="fa-brands fa-java fa-2x"></i>
+            </a>
+            <label class="md-header__button md-icon" for="__drawer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z" />
+                </svg>
+            </label>
+            <div class="md-header__title" data-md-component="header-title">
+                <div class="md-header__ellipsis">
+                    <div class="md-header__topic">
+                        <span class="md-ellipsis">Java Mastery Hub</span>
+                    </div>
+                    <div class="md-header__topic" data-md-component="header-topic">
+                        <span class="md-ellipsis">Topic 18: Scenario Based Questions</span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="md-container" data-md-component="container">
+        <main class="md-main" data-md-component="main">
+            <div class="md-main__inner md-grid">
+                <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                    <div class="md-sidebar__scrollwrap">
+                        <div class="md-sidebar__inner">
+                            <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                                <label class="md-nav__title" for="__drawer">
+                                    <a href="../index.html" title="Java Mastery Hub" class="md-nav__button md-logo"
+                                        aria-label="Java Mastery Hub" data-md-component="logo">
+                                        <i class="fa-brands fa-java"></i>
+                                    </a>
+                                    Java Mastery Hub
+                                </label>
+                                <ul class="md-nav__list" data-md-scrollfix>
+                                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">1. Software Engineering</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/software-engineering.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/software-engineering.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">2. What is Java</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/what-is-java.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/what-is-java.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/variables-and-data-types.html">Programs</a>
+                                                </li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">4. Java Keywords</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/java-keywords.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/java-keywords.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">7. Methods</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/methods.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/methods.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/methods.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">8. OOP Concepts</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/oops.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/oops.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/oops.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">9. Collections Framework</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/collections.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/collections.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/collections.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">10. Exception Handling</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/exception-handling.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/exception-handling.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">11. File Handling</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/handling-files.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/handling-files.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/handling-files.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">12. JDBC</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/jdbc.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/jdbc.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/jdbc.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">13. Multithreading</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/multithreading.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/multithreading.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/multithreading.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">14. Java 8+ Features</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/java8features.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/java8features.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/java8features.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">15. Programming Principles</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/programming-principles.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/programming-principles.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/arrays.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/arrays.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/arrays.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../theory/strings.html">Theory</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../programs/strings.html">Programs</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../mcq/strings.html">Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                                        <button class="md-nav__link md-nav__toggle">
+                                            <span class="md-nav__text">18. Java Interview Questions</span>
+                                            <svg class="md-nav__icon" fill="none" stroke="currentColor"
+                                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <polyline points="9 18 15 12 9 6"></polyline>
+                                            </svg>
+                                        </button>
+                                        <nav class="md-nav__group">
+                                            <ul class="md-nav__list">
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/introduction.html">Introduction</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/intermediate.html">Intermediate (151-350)</a>
+                                                </li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                                <li class="md-nav__item"><a
+                                                        class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/hr.html">HR Questions</a></li>
+                                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                                            </ul>
+                                        </nav>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md-content" data-md-component="content">
+                    <div class="md-content__inner md-typeset">
+
+                        <div class="content-header">
+                            <h1>Scenario Based Questions (Q601 - Q670)</h1>
+                            <p style="margin-top: 0.5rem; opacity: 0.9;">Real-world problems, debugging scenarios, and
+                                architectural decisions.</p>
+                        </div>
+
+                        <div class="content-section">
+                            <p>These questions test your ability to apply your knowledge to solve practical problems.
+                                They often start with "How would you..." or "What happens if...".</p>
+                        </div>
+
+                        <!-- Q601 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q601. You have a list of 1 million integers. How do you find
+                                the top 10 largest
+                                numbers efficiently? <span class="tag-most-asked">🔥 Most Asked</span></div>
+                            <div class="admonition-content">
+                                <p>Use a <strong>Min-Heap</strong> (PriorityQueue) of size 10.
+                                <ul>
+                                    <li>Iterate through the list.</li>
+                                    <li>Add element to heap.</li>
+                                    <li>If heap size > 10, remove the smallest element (head).</li>
+                                    <li>At the end, the heap contains the top 10 largest elements.</li>
+                                    <li>Time Complexity: O(N log K), where K=10. Better than sorting O(N log N).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q602 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q602. Your application is throwing OutOfMemoryError. How do
+                                you debug
+                                it?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ol>
+                                    <li>Analyze the <strong>Heap Dump</strong> using tools like Eclipse Memory Analyzer
+                                        (MAT) or VisualVM.</li>
+                                    <li>Check for <strong>Memory Leaks</strong> (objects that are no longer needed but
+                                        referenced).</li>
+                                    <li>Check if the Heap Size (`-Xmx`) is too small for the data volume.</li>
+                                    <li>Look for large objects or static collections growing indefinitely.</li>
+                                </ol>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q603 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q603. How would you design a URL Shortener (like Bit.ly)?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Database:</strong> Key-Value store (e.g., Redis/Cassandra) mapping
+                                        ShortID
+                                        -> LongURL.</li>
+                                    <li><strong>ShortID Generation:</strong> Base62 encoding (A-Z, a-z, 0-9) of a unique
+                                        auto-incrementing ID or a hash.</li>
+                                    <li><strong>Collision Handling:</strong> Ensure uniqueness of IDs (e.g., using
+                                        Zookeeper
+                                        for distributed ID generation).</li>
+                                    <li><strong>Redirection:</strong> HTTP 301 (Permanent) or 302 (Temporary) redirect.
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q604 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q604. You have a slow SQL query. How do you optimize it?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Check <strong>Execution Plan</strong> (EXPLAIN).</li>
+                                    <li>Ensure proper <strong>Indexing</strong> on columns used in WHERE, JOIN, and
+                                        ORDER
+                                        BY.</li>
+                                    <li>Avoid `SELECT *`, fetch only needed columns.</li>
+                                    <li>Avoid wildcards at the start of LIKE (`%value`).</li>
+                                    <li>Check for N+1 problems if using ORM.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q605 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q605. How do you handle transactions across multiple
+                                microservices?</div>
+                            <div class="admonition-content">
+                                <p>Distributed transactions are hard (CAP theorem).
+                                <ul>
+                                    <li><strong>SAGA Pattern:</strong> Sequence of local transactions. If one fails,
+                                        execute
+                                        compensating transactions to undo previous steps.</li>
+                                    <li><strong>Two-Phase Commit (2PC):</strong> Strict consistency but poor
+                                        performance/availability. (Avoid if possible).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q606 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q606. How would you implement a Rate Limiter?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Token Bucket Algorithm:</strong> User gets tokens at a fixed rate.
+                                        Request
+                                        consumes a token. If no tokens, reject.</li>
+                                    <li><strong>Leaky Bucket:</strong> Requests enter a queue and are processed at a
+                                        constant rate.</li>
+                                    <li>Use Redis to store counters with expiration for distributed rate limiting.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q607 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q607. Your production server CPU is spiking to 100%. What do
+                                you do?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ol>
+                                    <li>Use `top` or `htop` to identify the process.</li>
+                                    <li>Use `jstack <pid>` to take a <strong>Thread Dump</strong>.</li>
+                                    <li>Analyze the thread dump to find threads in `RUNNABLE` state.</li>
+                                    <li>Check if they are stuck in infinite loops or heavy computation.</li>
+                                    <li>Check GC logs (frequent Full GCs can cause high CPU).</li>
+                                </ol>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q608 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q608. How do you design a system to handle millions of
+                                requests per
+                                second?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Load Balancing:</strong> Distribute traffic.</li>
+                                    <li><strong>Caching:</strong> Redis/Memcached for hot data.</li>
+                                    <li><strong>Asynchronous Processing:</strong> Use Message Queues (Kafka) for
+                                        non-blocking tasks.</li>
+                                    <li><strong>Database Scaling:</strong> Sharding, Read Replicas.</li>
+                                    <li><strong>CDN:</strong> For static assets.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q609 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q609. How would you prevent a user from logging in from two
+                                different devices
+                                simultaneously?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Store the `sessionId` or `jwtToken` in the database against the `userId`.</li>
+                                    <li>When a user logs in, invalidate the previous session/token in the DB.</li>
+                                    <li>On every request, validate the token against the DB (or a fast cache like
+                                        Redis).
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q610 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q610. You need to store passwords in the database. How do you
+                                do it
+                                securely?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>NEVER</strong> store plain text.</li>
+                                    <li>Use a strong hashing algorithm like <strong>BCrypt</strong>,
+                                        <strong>SCrypt</strong>, or <strong>Argon2</strong>.
+                                    </li>
+                                    <li>Always use a unique <strong>Salt</strong> for each user to prevent Rainbow Table
+                                        attacks.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q611 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q611. How do you handle duplicate form submissions (e.g., user
+                                clicks 'Pay'
+                                twice)?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Frontend:</strong> Disable the button after the first click.</li>
+                                    <li><strong>Backend:</strong> Use an <strong>Idempotency Key</strong> (unique
+                                        request
+                                        ID). If the server receives a request with an ID it has already processed, it
+                                        returns the cached response instead of processing it again.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q612 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q612. How would you implement a "Remember Me" feature?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Generate a long-lived, random, unique token.</li>
+                                    <li>Store it in a secure, HTTP-only cookie on the client.</li>
+                                    <li>Store the hash of the token in the database.</li>
+                                    <li>Validate the token from the cookie when the session expires.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q613 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q613. You have a scheduled job that runs every 5 minutes. What
+                                if the previous
+                                job hasn't finished yet?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Use a lock (e.g., database lock or Redis lock) to ensure only one instance runs.
+                                    </li>
+                                    <li>Or, configure the scheduler to skip execution if the previous task is still
+                                        running
+                                        (e.g., `@Scheduled` with fixedDelay instead of fixedRate).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q614 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q614. How do you migrate a legacy Monolith to Microservices?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Strangler Fig Pattern:</strong> Gradually replace specific
+                                        functionalities
+                                        with new microservices.</li>
+                                    <li>Route traffic for new features to the microservice.</li>
+                                    <li>Keep the monolith for remaining features.</li>
+                                    <li>Repeat until the monolith is gone.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q615 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q615. How do you handle configuration changes without
+                                restarting the
+                                application?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Use <strong>Spring Cloud Config Server</strong> with `@RefreshScope`.</li>
+                                    <li>Trigger a `/actuator/refresh` endpoint to reload properties.</li>
+                                    <li>Or use a dynamic configuration system like Consul or Etcd.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q616 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q616. How would you design a notification system
+                                (Email/SMS/Push)?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Decouple the sender from the notifier using a <strong>Message Queue</strong>
+                                        (Kafka/RabbitMQ).</li>
+                                    <li>Producer pushes "Send Notification" event.</li>
+                                    <li>Consumer reads event and calls 3rd party API (SendGrid, Twilio).</li>
+                                    <li>Implement retry logic for failed deliveries.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q617 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q617. How do you ensure data consistency between Database and
+                                Cache
+                                (Redis)?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Cache-Aside:</strong> Read from cache. If miss, read from DB and update
+                                        cache.</li>
+                                    <li><strong>Write-Through:</strong> Write to cache and DB synchronously.</li>
+                                    <li><strong>Write-Behind:</strong> Write to cache, update DB asynchronously (risk of
+                                        data loss).</li>
+                                    <li><strong>Invalidation:</strong> Delete from cache on DB update. Next read will
+                                        re-populate.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q618 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q618. How do you handle large file uploads (e.g., 1GB video)?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Do not buffer the whole file in memory. Use <strong>Streaming</strong>.</li>
+                                    <li>Upload directly to Cloud Storage (S3) using a <strong>Presigned URL</strong>
+                                        generated by the backend. This saves backend bandwidth.</li>
+                                    <li>Use Multipart upload for reliability.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q619 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q619. How do you secure a REST API?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Use <strong>HTTPS</strong> (TLS).</li>
+                                    <li><strong>Authentication:</strong> JWT / OAuth2.</li>
+                                    <li><strong>Rate Limiting:</strong> Prevent abuse.</li>
+                                    <li><strong>Input Validation:</strong> Prevent Injection attacks.</li>
+                                    <li><strong>CORS:</strong> Restrict origins.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q620 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q620. A user reports that the website is loading very slowly.
+                                How do you
+                                investigate?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Check <strong>Network Tab</strong> in browser (Frontend issue? Large assets?).
+                                    </li>
+                                    <li>Check <strong>Server Logs</strong> for errors or slow queries.</li>
+                                    <li>Check <strong>APM tools</strong> (New Relic, Datadog) for latency breakdown (DB
+                                        vs
+                                        Code vs External API).</li>
+                                    <li>Check Database CPU/Memory usage.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q621 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q621. How do you implement pagination in a REST API?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Accept `page` and `size` parameters.</li>
+                                    <li>Use database `LIMIT` and `OFFSET`.</li>
+                                    <li>Return metadata: `totalElements`, `totalPages`, `currentPage`.</li>
+                                    <li>For large datasets, use <strong>Keyset Pagination</strong> (Seek Method) instead
+                                        of
+                                        Offset for better performance. (`WHERE id > last_seen_id LIMIT 10`).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q622 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q622. How do you handle versioning of REST APIs?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>URI Versioning:</strong> `/v1/users` (Most common).</li>
+                                    <li><strong>Header Versioning:</strong> `Accept: application/vnd.company.v1+json`.
+                                    </li>
+                                    <li><strong>Parameter Versioning:</strong> `/users?version=1`.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q623 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q623. How do you generate a unique ID in a distributed system?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>UUID:</strong> Simple, but large (128-bit) and not sortable.</li>
+                                    <li><strong>Twitter Snowflake:</strong> 64-bit ID containing Timestamp + Machine ID
+                                        +
+                                        Sequence. Sortable by time.</li>
+                                    <li><strong>Database Sequence:</strong> Centralized (bottleneck).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q624 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q624. How do you implement a "Like" feature (Counter)?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Direct DB update is slow (`UPDATE posts SET likes = likes + 1`).</li>
+                                    <li>Use <strong>Redis</strong> `INCR` command (Atomic, Fast).</li>
+                                    <li>Persist to DB asynchronously (Write-Behind) or periodically.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q625 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q625. How do you design a Leaderboard (Top Players)?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Use <strong>Redis Sorted Set</strong> (`ZADD`, `ZRANGE`).</li>
+                                    <li>It maintains order automatically based on score.</li>
+                                    <li>Retrieving top 10 is extremely fast (`ZREVRANGE 0 9`).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q626 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q626. How do you handle "Lost Update" problem in concurrency?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Optimistic Locking:</strong> Use a `version` column. Update only if
+                                        version
+                                        matches.</li>
+                                    <li><strong>Pessimistic Locking:</strong> `SELECT ... FOR UPDATE`. Lock the row
+                                        until
+                                        transaction finishes.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q627 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q627. How do you implement a Shopping Cart?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Session/Cookie:</strong> Good for guest users, lost if browser
+                                        closed/cleared.</li>
+                                    <li><strong>Database:</strong> Persistent, good for logged-in users.</li>
+                                    <li><strong>Redis:</strong> Fast, persistent enough, good compromise. Key:
+                                        `cart:userId`, Value: List of items.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q628 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q628. How do you handle failed payments?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Do not fulfill the order immediately.</li>
+                                    <li>Listen to <strong>Webhooks</strong> from the Payment Gateway.</li>
+                                    <li>If success, update order status to "PAID".</li>
+                                    <li>If failed, notify user and allow retry.</li>
+                                    <li>Use a reconciliation job to check status of "PENDING" orders.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q629 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q629. How do you implement Autocomplete / Typeahead?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Trie Data Structure:</strong> Efficient prefix search.</li>
+                                    <li><strong>Elasticsearch:</strong> Use Edge N-gram tokenizer.</li>
+                                    <li><strong>Redis:</strong> `ZPOS` (Lexicographical search).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q630 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q630. How do you design a Chat Application (WhatsApp clone)?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Protocol:</strong> WebSocket (for real-time bi-directional
+                                        communication).
+                                    </li>
+                                    <li><strong>Message Storage:</strong> Cassandra or HBase (High write throughput).
+                                    </li>
+                                    <li><strong>Status:</strong> Redis (Online/Offline).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q631 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q631. What if your external API call times out?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Set a reasonable <strong>Timeout</strong>.</li>
+                                    <li>Implement <strong>Retries</strong> with Exponential Backoff.</li>
+                                    <li>Use <strong>Circuit Breaker</strong> to fail fast if the service is down.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q632 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q632. How do you handle logging in a distributed system?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Centralized Logging (ELK Stack: Elasticsearch, Logstash, Kibana).</li>
+                                    <li>Use a <strong>Correlation ID</strong> (Trace ID) to link logs across services
+                                        for a
+                                        single request.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q633 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q633. How do you test a microservice in isolation?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Unit Tests:</strong> Mock dependencies (Mockito).</li>
+                                    <li><strong>Integration Tests:</strong> Use `Testcontainers` (spin up real DB/Kafka
+                                        in
+                                        Docker).</li>
+                                    <li><strong>Contract Testing:</strong> (Pact) Ensure API contract is respected by
+                                        consumer and provider.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q634 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q634. How do you deploy a new feature with zero downtime?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Rolling Update:</strong> Update one instance at a time.</li>
+                                    <li><strong>Blue-Green Deployment:</strong> Switch traffic to new environment.</li>
+                                    <li>Ensure database changes are backward compatible.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q635 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q635. How do you handle "Hot Keys" (one item accessed very
+                                frequently)?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Local Cache:</strong> Cache the hot key in the application memory
+                                        (EhCache/Guava) to avoid network calls to Redis.</li>
+                                    <li><strong>Replication:</strong> Create more read replicas.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q636 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q636. How do you design a system to upload images and generate
+                                thumbnails?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>User uploads image to S3 (via Presigned URL).</li>
+                                    <li>S3 triggers an event (Lambda / SQS).</li>
+                                    <li>Worker service picks up the event, downloads image, resizes it (ImageMagick),
+                                        uploads thumbnail back to S3.</li>
+                                    <li>Update DB with thumbnail URL.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q637 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q637. How do you handle "Thundering Herd" problem?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Occurs when many clients try to reconnect or fetch data simultaneously (e.g.,
+                                        after
+                                        cache expiry).</li>
+                                    <li><strong>Solution:</strong> Add <strong>Jitter</strong> (random delay) to the
+                                        retry/request interval so that requests are spread out.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q638 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q638. How do you design a "Typeahead" search for a large
+                                dataset (e.g., Google
+                                Search)?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Use a <strong>Trie</strong> (Prefix Tree) data structure.</li>
+                                    <li>Store top K most searched queries at each node for fast retrieval.</li>
+                                    <li>Cache results in Redis.</li>
+                                    <li>Use a search engine like Elasticsearch for fuzzy matching.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q639 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q639. How do you handle "Double Spending" in a payment system?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Use a unique <strong>Transaction ID</strong> (Idempotency Key).</li>
+                                    <li>Check if the transaction ID already exists in the database before processing.
+                                    </li>
+                                    <li>Use database transactions with <strong>Pessimistic Locking</strong> or
+                                        <strong>Optimistic Locking</strong> (versioning) to ensure atomic updates.
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q640 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q640. How do you design a "News Feed" (e.g.,
+                                Facebook/Twitter)?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Pull Model (Fan-out on Load):</strong> Fetch tweets from all followees
+                                        and
+                                        sort by time. Good for small scale.</li>
+                                    <li><strong>Push Model (Fan-out on Write):</strong> When a user tweets, push the ID
+                                        to
+                                        all followers' pre-computed feed lists (Redis). Good for read-heavy.</li>
+                                    <li><strong>Hybrid:</strong> Push for normal users, Pull for celebrities (millions
+                                        of
+                                        followers).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q641 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q641. How do you handle "Data Migration" with zero downtime?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Dual Write:</strong> Write to both old and new DB.</li>
+                                    <li><strong>Backfill:</strong> Migrate old data in background.</li>
+                                    <li><strong>Verify:</strong> Check consistency.</li>
+                                    <li><strong>Switch Read:</strong> Read from new DB.</li>
+                                    <li><strong>Stop Write:</strong> Stop writing to old DB.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q642 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q642. How do you design a "Rate Limiter" for an API?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Use <strong>Redis</strong> to store request counts per user/IP.</li>
+                                    <li><strong>Fixed Window:</strong> Reset counter every minute. (Edge case: burst at
+                                        boundary).</li>
+                                    <li><strong>Sliding Window Log:</strong> More accurate but memory intensive.</li>
+                                    <li><strong>Token Bucket:</strong> Best for allowing bursts but enforcing average
+                                        rate.
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q643 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q643. How do you handle "Distributed Locking"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Use <strong>Redis (Redlock)</strong>: Set a key with expiry (TTL) and a unique
+                                        owner
+                                        ID.</li>
+                                    <li>Use <strong>Zookeeper/Etcd</strong>: Create ephemeral nodes. If node exists,
+                                        lock is
+                                        taken.</li>
+                                    <li>Always have a timeout to prevent deadlocks if the holder crashes.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q644 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q644. How do you design a "Notification System" that supports
+                                millions of
+                                users?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Use a <strong>Message Queue</strong> (Kafka) to buffer notifications.</li>
+                                    <li>Workers consume messages and send via 3rd party providers (FCM, APNS, SendGrid).
+                                    </li>
+                                    <li>Store user preferences (email vs push) in DB.</li>
+                                    <li>Handle retries and dead-letter queues for failures.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q645 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q645. How do you handle "Consistent Hashing"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Used in distributed caching to minimize data movement when adding/removing
+                                        nodes.
+                                    </li>
+                                    <li>Map nodes and keys to a ring (0-2^32).</li>
+                                    <li>Key is assigned to the next node on the ring in clockwise direction.</li>
+                                    <li>Use <strong>Virtual Nodes</strong> to balance load evenly.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q646 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q646. How do you design a "Web Crawler"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>URL Frontier:</strong> Queue of URLs to visit (Kafka/Redis).</li>
+                                    <li><strong>Fetcher:</strong> Downloads page content.</li>
+                                    <li><strong>Parser:</strong> Extracts links and data.</li>
+                                    <li><strong>Dedup:</strong> Check if URL visited (Bloom Filter).</li>
+                                    <li><strong>Politeness:</strong> Respect `robots.txt` and rate limits.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q647 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q647. How do you handle "Database Sharding"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Split data across multiple DB instances based on a Shard Key (e.g., UserID).
+                                    </li>
+                                    <li><strong>Horizontal Partitioning:</strong> Rows are distributed.</li>
+                                    <li><strong>Challenges:</strong> Joins across shards are hard. Resharding is
+                                        complex.
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q648 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q648. How do you design a "Ticket Booking System" (e.g.,
+                                BookMyShow)?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Concurrency:</strong> Multiple users trying to book same seat.</li>
+                                    <li>Use <strong>Database Transaction</strong> with `SELECT ... FOR UPDATE` to lock
+                                        the
+                                        seat row.</li>
+                                    <li>Or use Redis to hold the seat for 5 mins (TTL). If payment fails, release it.
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q649 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q649. How do you handle "API Versioning"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>URI Path:</strong> `/v1/resource` (Easy to see).</li>
+                                    <li><strong>Query Param:</strong> `?version=1` (Easy to default).</li>
+                                    <li><strong>Header:</strong> `Accept: application/vnd.myapi.v1+json` (RESTful).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q650 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q650. How do you design a "TinyURL" system?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Shortening:</strong> Base62 encoding of a unique ID.</li>
+                                    <li><strong>ID Generation:</strong> Distributed ID generator (Snowflake) or DB
+                                        auto-increment (with ranges).</li>
+                                    <li><strong>Storage:</strong> Key-Value store (NoSQL) for fast lookups.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q651 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q651. How do you handle "Circuit Breaker" pattern?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Prevents cascading failures.</li>
+                                    <li><strong>Closed:</strong> Requests flow normally.</li>
+                                    <li><strong>Open:</strong> Requests fail immediately (after threshold errors).</li>
+                                    <li><strong>Half-Open:</strong> Allow few requests to test if service recovered.
+                                    </li>
+                                    <li>Library: Resilience4j, Hystrix.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q652 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q652. How do you design a "Leaderboard"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Use <strong>Redis Sorted Sets</strong> (ZSET).</li>
+                                    <li>`ZADD leaderboard score user`</li>
+                                    <li>`ZREVRANGE leaderboard 0 9` (Top 10).</li>
+                                    <li>Extremely fast O(log N).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q653 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q653. How do you handle "Idempotency" in API?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Client sends a unique `Idempotency-Key` header.</li>
+                                    <li>Server checks if key exists in DB/Cache.</li>
+                                    <li>If yes, return stored response.</li>
+                                    <li>If no, process and store response.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q654 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q654. How do you design a "Chat System" (WhatsApp)?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Real-time:</strong> WebSockets / MQTT.</li>
+                                    <li><strong>Storage:</strong> Cassandra / HBase (Write heavy).</li>
+                                    <li><strong>Ordering:</strong> Timestamp / Sequence ID.</li>
+                                    <li><strong>Status:</strong> Redis (Online/Last Seen).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q655 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q655. How do you handle "Distributed Transactions"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Avoid if possible.</li>
+                                    <li><strong>Saga Pattern:</strong> Sequence of local transactions with compensating
+                                        actions.</li>
+                                    <li><strong>2PC (Two-Phase Commit):</strong> Strong consistency but blocking (XA
+                                        Transactions).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q656 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q656. How do you design a "Autocomplete" system?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Trie:</strong> Prefix tree for fast lookups.</li>
+                                    <li><strong>Caching:</strong> Cache top queries.</li>
+                                    <li><strong>Pre-computation:</strong> Store results for common prefixes.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q657 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q657. How do you handle "Session Management" in distributed
+                                systems?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Sticky Sessions:</strong> Load balancer routes to same server (Bad for
+                                        scaling).</li>
+                                    <li><strong>Distributed Cache:</strong> Store sessions in Redis/Memcached (Best).
+                                    </li>
+                                    <li><strong>Stateless (JWT):</strong> Store data in token on client side (No server
+                                        state).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q658 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q658. How do you design a "Job Scheduler"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Quartz Scheduler:</strong> Java library.</li>
+                                    <li><strong>Distributed:</strong> Use DB/Zookeeper for leader election to ensure
+                                        only
+                                        one node runs the job.</li>
+                                    <li><strong>Message Queue:</strong> Push jobs to queue, workers consume.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q659 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q659. How do you handle "Logging" in Microservices?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Centralized:</strong> ELK Stack (Elasticsearch, Logstash, Kibana).</li>
+                                    <li><strong>Correlation ID:</strong> Pass a unique ID across service calls to trace
+                                        requests.</li>
+                                    <li><strong>Structured Logging:</strong> JSON format for easy parsing.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q660 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q660. How do you design a "Metrics & Monitoring" system?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Pull Model:</strong> Prometheus scrapes metrics endpoints.</li>
+                                    <li><strong>Push Model:</strong> App pushes to StatsD / Datadog.</li>
+                                    <li><strong>Visualization:</strong> Grafana.</li>
+                                    <li><strong>Alerting:</strong> PagerDuty / Slack.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q661 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q661. How do you handle "Security" in Microservices?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Gateway:</strong> Auth at entry point (API Gateway).</li>
+                                    <li><strong>mTLS:</strong> Mutual TLS for service-to-service encryption.</li>
+                                    <li><strong>OAuth2/OIDC:</strong> Token propagation.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q662 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q662. How do you design a "File Storage Service" (Dropbox)?
+                            </div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Chunking:</strong> Split large files into chunks.</li>
+                                    <li><strong>Deduplication:</strong> Store unique chunks only (hash).</li>
+                                    <li><strong>Metadata DB:</strong> Store file hierarchy and chunk mapping.</li>
+                                    <li><strong>Blob Storage:</strong> S3 for chunks.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q663 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q663. How do you handle "Database Indexing"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>B-Tree:</strong> Default, good for range queries.</li>
+                                    <li><strong>Hash Index:</strong> Good for exact match.</li>
+                                    <li><strong>Composite Index:</strong> Multi-column index (order matters).</li>
+                                    <li><strong>Trade-off:</strong> Faster reads, slower writes.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q664 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q664. How do you design a "Recommendation System"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Collaborative Filtering:</strong> "Users like you liked this".</li>
+                                    <li><strong>Content-Based:</strong> "You liked X, so you might like Y".</li>
+                                    <li><strong>Hybrid:</strong> Combine both.</li>
+                                    <li>Use Graph DB (Neo4j) or ML models.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q665 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q665. How do you handle "Cache Stampede"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Locking:</strong> Only one thread recomputes cache.</li>
+                                    <li><strong>Probabilistic Early Expiration:</strong> Refresh before actual expiry.
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q666 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q666. How do you design a "Payment Gateway"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>ACID:</strong> Strict consistency (Relational DB).</li>
+                                    <li><strong>Idempotency:</strong> Prevent double charge.</li>
+                                    <li><strong>Security:</strong> PCI-DSS compliance.</li>
+                                    <li><strong>Reconciliation:</strong> Daily checks with bank.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q667 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q667. How do you handle "High Availability"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Redundancy:</strong> Multiple instances.</li>
+                                    <li><strong>Failover:</strong> Auto-switch to standby.</li>
+                                    <li><strong>Load Balancing:</strong> Health checks.</li>
+                                    <li><strong>Multi-Region:</strong> Disaster recovery.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q668 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q668. How do you design a "Gaming Leaderboard"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Redis ZSET.</li>
+                                    <li>Score = Points.</li>
+                                    <li>Rank = Index.</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q669 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q669. How do you handle "Event Sourcing"?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li>Store state changes as a sequence of events.</li>
+                                    <li>Replay events to reconstruct state.</li>
+                                    <li>Audit trail is built-in.</li>
+                                    <li>Complex to query (CQRS often needed).</li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q670 -->
+                        <div class="admonition note">
+                            <div class="admonition-title">Q670. How do you design a "Ride Sharing App" (Uber)?</div>
+                            <div class="admonition-content">
+                                <p>
+                                <ul>
+                                    <li><strong>Geo-hashing:</strong> Grid system (S2/Geohash) to find nearby drivers.
+                                    </li>
+                                    <li><strong>WebSocket:</strong> Real-time location updates.</li>
+                                    <li><strong>Matching Service:</strong> Match rider with driver.</li>
+                                    <li><strong>State Machine:</strong> Trip status (Requested, Accepted, Started,
+                                        Ended).
+                                    </li>
+                                </ul>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Navigation -->
+                        <div class="content-section text-center" style="margin-top: 3rem;">
+                            <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
+                                <a class="md-button md-button--secondary" href="tricky.html">
+                                    ⬅️ Tricky Questions
+                                </a>
+                                <a class="md-button md-button--primary" href="hr.html">
+                                    Next: HR Questions ➡️
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>

@@ -1,477 +1,1083 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control Flow & Loops - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Control Flow &amp; Loops - Quiz - Java Mastery Hub</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Control Flow & Loops - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>Control Flow & Loops</span>
-            </div>
-        </div>
-
-        <!-- Quiz Introduction -->
-        <div class="content-section">
-            <h2>Test Your Knowledge</h2>
-            <p>
-                This quiz contains 27 questions covering all aspects of control flow statements and loops including
-                if-else, switch-case, for, while, do-while, break, continue, and best practices.
-            </p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>
-                    Take your time and read each question carefully. Pay attention to code output questions and
-                    trace through the logic step by step. Aim for at least 80% to demonstrate mastery!
-                </p>
-            </div>
-        </div>
-
-        <!-- Quiz Progress -->
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
-            </div>
-        </div>
-
-        <!-- Quiz Container -->
-        <div id="quizContainer" class="content-section">
-            <!-- Questions will be dynamically loaded here -->
-        </div>
-
-        <!-- Quiz Results -->
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
                 </div>
-                <div id="performanceMessage" class="performance-message"></div>
             </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Control Flow &amp; Loops - Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>Control Flow &amp; Loops - Quiz</li>
+                    </ul>
+                </div>
+                <!-- Quiz Introduction -->
+                <div class="content-section">
+                    <h2>Test Your Knowledge</h2>
+                    <p>
+                        This quiz contains 27 questions covering all aspects of control flow statements and loops
+                        including
+                        if-else, switch-case, for, while, do-while, break, continue, and best practices.
+                    </p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>
+                                Take your time and read each question carefully. Pay attention to code output questions
+                                and
+                                trace through the logic step by step. Aim for at least 80% to demonstrate mastery!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quiz Progress -->
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
+                    </div>
+                </div>
+                <!-- Quiz Container -->
+                <div class="content-section" id="quizContainer">
 
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/control-flow-loops.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/control-flow-loops.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
+                    <!-- Question 1 -->
+                    <div class="question" data-correct-answer="if-else" data-question-id="q1">
+                        <p class="question-text">Q1. Which control flow statement is used for conditional execution?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="for">for</button>
+                            <button class="option-btn" data-answer="if-else">if-else</button>
+                            <button class="option-btn" data-answer="while">while</button>
+                            <button class="option-btn" data-answer="do-while">do-while</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: if-else</div>
+                            <p>The if-else statement is used for conditional execution. It evaluates a boolean condition
+                                and executes different code blocks based on whether the condition is true or false. It's
+                                the most basic decision-making structure in Java.</p>
+                        </div>
+                    </div>
 
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/control-flow-loops.html" class="btn btn-primary">
-                    📚 Back to Theory
-                </a>
-                <a href="../programs/control-flow-loops.html" class="btn btn-secondary">
-                    💻 View Programs
-                </a>
-                <a href="../index.html" class="btn btn-success">
-                    🏠 Back to Home
-                </a>
-            </div>
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="switch" data-question-id="q2">
+                        <p class="question-text">Q2. Which statement is best for multi-way branching based on a single
+                            variable?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="if-else">if-else</button>
+                            <button class="option-btn" data-answer="switch">switch</button>
+                            <button class="option-btn" data-answer="for">for</button>
+                            <button class="option-btn" data-answer="while">while</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: switch</div>
+                            <p>The switch statement is ideal for multi-way branching when you need to compare a single
+                                variable against multiple constant values. It's more readable and efficient than
+                                multiple if-else statements for this purpose.</p>
+                        </div>
+                    </div>
 
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> Classes and Objects
-                    <br>Learn object-oriented programming fundamentals, creating classes, objects, constructors, and
-                    methods.
-                </p>
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="for" data-question-id="q3">
+                        <p class="question-text">Q3. Which loop is best when you know the exact number of iterations?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="for">for</button>
+                            <button class="option-btn" data-answer="while">while</button>
+                            <button class="option-btn" data-answer="do-while">do-while</button>
+                            <button class="option-btn" data-answer="All are equally good">All are equally good</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: for</div>
+                            <p>The for loop is best when you know the exact number of iterations. It combines
+                                initialization, condition, and increment/decrement in one line, making it compact and
+                                readable for counter-based loops.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question" data-correct-answer="while" data-question-id="q4">
+                        <p class="question-text">Q4. Which loop checks the condition before executing the loop body?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="do-while">do-while</button>
+                            <button class="option-btn" data-answer="while">while</button>
+                            <button class="option-btn" data-answer="for">for</button>
+                            <button class="option-btn" data-answer="Both while and for">Both while and for</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Both while and for</div>
+                            <p>Both while and for loops check the condition before executing the loop body
+                                (entry-controlled loops). If the condition is false initially, the loop body never
+                                executes. The do-while loop is an exit-controlled loop.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="do-while" data-question-id="q5">
+                        <p class="question-text">Q5. Which loop guarantees at least one execution of the loop body?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="for">for</button>
+                            <button class="option-btn" data-answer="while">while</button>
+                            <button class="option-btn" data-answer="do-while">do-while</button>
+                            <button class="option-btn" data-answer="All loops">All loops</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: do-while</div>
+                            <p>The do-while loop guarantees at least one execution because it checks the condition after
+                                executing the loop body (exit-controlled). This is useful when you need to execute code
+                                at least once, like showing a menu.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="break" data-question-id="q6">
+                        <p class="question-text">Q6. Which keyword is used to exit a loop prematurely?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="exit">exit</button>
+                            <button class="option-btn" data-answer="break">break</button>
+                            <button class="option-btn" data-answer="stop">stop</button>
+                            <button class="option-btn" data-answer="return">return</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: break</div>
+                            <p>The break keyword immediately exits the loop, transferring control to the statement after
+                                the loop. It's commonly used to exit when a specific condition is met or in switch
+                                statements to prevent fall-through.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="continue" data-question-id="q7">
+                        <p class="question-text">Q7. Which keyword skips the current iteration and moves to the next?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="skip">skip</button>
+                            <button class="option-btn" data-answer="continue">continue</button>
+                            <button class="option-btn" data-answer="next">next</button>
+                            <button class="option-btn" data-answer="pass">pass</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: continue</div>
+                            <p>The continue keyword skips the remaining code in the current iteration and jumps to the
+                                next iteration. It's useful when you want to skip processing for certain values without
+                                exiting the entire loop.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question" data-correct-answer="Enhanced for loop (for-each)" data-question-id="q8">
+                        <p class="question-text">Q8. What is the best way to iterate through all elements of an array?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Traditional for loop">Traditional for loop</button>
+                            <button class="option-btn" data-answer="Enhanced for loop (for-each)">Enhanced for loop
+                                (for-each)</button>
+                            <button class="option-btn" data-answer="while loop">while loop</button>
+                            <button class="option-btn" data-answer="do-while loop">do-while loop</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Enhanced for loop (for-each)</div>
+                            <p>The enhanced for loop (for-each) is the best way to iterate through all elements when you
+                                don't need the index. Syntax: for (Type element : array). It's more readable and less
+                                error-prone than traditional loops.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="default" data-question-id="q9">
+                        <p class="question-text">Q9. Which keyword in a switch statement handles all unmatched cases?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="else">else</button>
+                            <button class="option-btn" data-answer="default">default</button>
+                            <button class="option-btn" data-answer="other">other</button>
+                            <button class="option-btn" data-answer="catch">catch</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: default</div>
+                            <p>The default keyword in a switch statement handles all cases that don't match any case
+                                label. It's optional but recommended for handling unexpected values. The default case
+                                can appear anywhere but is typically placed last.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="break" data-question-id="q10">
+                        <p class="question-text">Q10. What prevents fall-through in switch statements?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="return">return</button>
+                            <button class="option-btn" data-answer="break">break</button>
+                            <button class="option-btn" data-answer="continue">continue</button>
+                            <button class="option-btn" data-answer="exit">exit</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: break</div>
+                            <p>The break statement prevents fall-through in switch statements. Without break, execution
+                                continues to the next case (fall-through behavior). While sometimes intentional, it's
+                                usually a bug, so always use break unless you specifically want fall-through.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer="int, char, String, enum" data-question-id="q11">
+                        <p class="question-text">Q11. Which data types can be used in a switch statement?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Only int">Only int</button>
+                            <button class="option-btn" data-answer="int, char, String, enum">int, char, String,
+                                enum</button>
+                            <button class="option-btn" data-answer="All primitive types">All primitive types</button>
+                            <button class="option-btn" data-answer="Any object type">Any object type</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: int, char, String, enum</div>
+                            <p>Switch statements support: byte, short, char, int (and their wrapper classes), String
+                                (since Java 7), and enum types. They do NOT support long, float, double, or boolean. Use
+                                if-else for these types.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="Infinite loop" data-question-id="q12">
+                        <p class="question-text">Q12. What happens if the condition in a while loop is always true?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Compilation error">Compilation error</button>
+                            <button class="option-btn" data-answer="Infinite loop">Infinite loop</button>
+                            <button class="option-btn" data-answer="Loop executes once">Loop executes once</button>
+                            <button class="option-btn" data-answer="Runtime exception">Runtime exception</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Infinite loop</div>
+                            <p>If the condition is always true, the loop runs infinitely (infinite loop). This is
+                                sometimes intentional (like while(true) with break inside), but usually it's a bug. The
+                                program will hang unless you use break or return to exit.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="0" data-question-id="q13">
+                        <p class="question-text">Q13. How many times will this loop execute? for(int i = 5; i < 5; i++)
+                                { }</p>
+                                <div class="options">
+                                    <button class="option-btn" data-answer="0">0</button>
+                                    <button class="option-btn" data-answer="1">1</button>
+                                    <button class="option-btn" data-answer="5">5</button>
+                                    <button class="option-btn" data-answer="Infinite">Infinite</button>
+                                </div>
+                                <div class="explanation">
+                                    <div class="explanation-title">✓ Correct Answer: 0</div>
+                                    <p>The loop executes 0 times because the condition (i < 5) is false from the start
+                                            (i is initialized to 5). For loops check the condition before the first
+                                            iteration, so if it's false initially, the body never executes.</p>
+                                </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question" data-correct-answer="5" data-question-id="q14">
+                        <p class="question-text">Q14. How many times will this loop execute? for(int i = 0; i < 5; i++)
+                                { }</p>
+                                <div class="options">
+                                    <button class="option-btn" data-answer="4">4</button>
+                                    <button class="option-btn" data-answer="5">5</button>
+                                    <button class="option-btn" data-answer="6">6</button>
+                                    <button class="option-btn" data-answer="Infinite">Infinite</button>
+                                </div>
+                                <div class="explanation">
+                                    <div class="explanation-title">✓ Correct Answer: 5</div>
+                                    <p>The loop executes 5 times (i = 0, 1, 2, 3, 4). When i becomes 5, the condition (i
+                                        < 5) is false, so the loop stops. Remember: the condition is checked before each
+                                            iteration, including the first.</p>
+                                </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="Nested loops" data-question-id="q15">
+                        <p class="question-text">Q15. What are loops inside loops called?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Inner loops">Inner loops</button>
+                            <button class="option-btn" data-answer="Nested loops">Nested loops</button>
+                            <button class="option-btn" data-answer="Compound loops">Compound loops</button>
+                            <button class="option-btn" data-answer="Recursive loops">Recursive loops</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Nested loops</div>
+                            <p>Loops inside loops are called nested loops. The inner loop completes all its iterations
+                                for each iteration of the outer loop. They're commonly used for 2D arrays, matrices, and
+                                generating patterns.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="The outer loop only" data-question-id="q16">
+                        <p class="question-text">Q16. In nested loops, which loop does a break statement exit?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="The innermost loop">The innermost loop</button>
+                            <button class="option-btn" data-answer="The outer loop only">The outer loop only</button>
+                            <button class="option-btn" data-answer="All loops">All loops</button>
+                            <button class="option-btn" data-answer="None, it causes an error">None, it causes an
+                                error</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: The innermost loop</div>
+                            <p>A break statement exits only the innermost loop containing it. To break out of outer
+                                loops, you can use labeled break statements. Example: outerLoop: for(...) { for(...) {
+                                break outerLoop; } }</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="Labeled break" data-question-id="q17">
+                        <p class="question-text">Q17. How can you break out of multiple nested loops at once?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Multiple break statements">Multiple break
+                                statements</button>
+                            <button class="option-btn" data-answer="Labeled break">Labeled break</button>
+                            <button class="option-btn" data-answer="return statement">return statement</button>
+                            <button class="option-btn" data-answer="Both labeled break and return">Both labeled break
+                                and return</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Both labeled break and return</div>
+                            <p>You can use either a labeled break (break labelName;) to exit specific outer loops, or a
+                                return statement to exit the entire method. Labeled break is cleaner when you only want
+                                to exit loops, not the method.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="else if" data-question-id="q18">
+                        <p class="question-text">Q18. What is used to check multiple conditions in sequence?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="if if if">if if if</button>
+                            <button class="option-btn" data-answer="else if">else if</button>
+                            <button class="option-btn" data-answer="switch">switch</button>
+                            <button class="option-btn" data-answer="while">while</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: else if</div>
+                            <p>The else if clause checks multiple conditions in sequence. Once a condition is true, its
+                                block executes and the rest are skipped. This is more efficient than separate if
+                                statements, which all get evaluated.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question" data-correct-answer="Ternary operator (?:)" data-question-id="q19">
+                        <p class="question-text">Q19. What is a shorthand for simple if-else statements?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="switch statement">switch statement</button>
+                            <button class="option-btn" data-answer="Ternary operator (?:)">Ternary operator
+                                (?:)</button>
+                            <button class="option-btn" data-answer="while loop">while loop</button>
+                            <button class="option-btn" data-answer="for loop">for loop</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Ternary operator (?:)</div>
+                            <p>The ternary operator (condition ? valueIfTrue : valueIfFalse) is a shorthand for simple
+                                if-else statements. Example: int max = (a > b) ? a : b; It's concise but should only be
+                                used for simple cases to maintain readability.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="1" data-question-id="q20">
+                        <p class="question-text">Q20. How many times does a do-while loop execute if the condition is
+                            false initially?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="0">0</button>
+                            <button class="option-btn" data-answer="1">1</button>
+                            <button class="option-btn" data-answer="2">2</button>
+                            <button class="option-btn" data-answer="Infinite">Infinite</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: 1</div>
+                            <p>A do-while loop executes at least once even if the condition is false initially, because
+                                it checks the condition after the first execution. This is the key difference from while
+                                and for loops.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="Compilation error" data-question-id="q21">
+                        <p class="question-text">Q21. What happens if you forget the semicolon after a do-while loop?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Nothing, it's optional">Nothing, it's
+                                optional</button>
+                            <button class="option-btn" data-answer="Compilation error">Compilation error</button>
+                            <button class="option-btn" data-answer="Runtime error">Runtime error</button>
+                            <button class="option-btn" data-answer="Warning only">Warning only</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Compilation error</div>
+                            <p>The semicolon after a do-while loop is mandatory. Syntax: do { } while (condition);
+                                Forgetting it causes a compilation error. This is unique to do-while; other loops don't
+                                have a semicolon after the closing brace.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question" data-correct-answer="All parts are optional" data-question-id="q22">
+                        <p class="question-text">Q22. What is true about the for loop syntax: for(init; condition;
+                            update)?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="All parts are required">All parts are
+                                required</button>
+                            <button class="option-btn" data-answer="All parts are optional">All parts are
+                                optional</button>
+                            <button class="option-btn" data-answer="Only condition is required">Only condition is
+                                required</button>
+                            <button class="option-btn" data-answer="Init and condition are required">Init and condition
+                                are required</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: All parts are optional</div>
+                            <p>All three parts of a for loop are optional. for(;;) creates an infinite loop (equivalent
+                                to while(true)). You can initialize variables outside, check conditions inside the loop,
+                                and update manually. However, using all three parts is more readable.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question" data-correct-answer="You cannot modify the loop variable"
+                        data-question-id="q23">
+                        <p class="question-text">Q23. What is a limitation of the enhanced for loop (for-each)?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="It's slower than traditional for">It's slower than
+                                traditional for</button>
+                            <button class="option-btn" data-answer="You cannot modify the loop variable">You cannot
+                                modify the loop variable</button>
+                            <button class="option-btn" data-answer="It only works with arrays">It only works with
+                                arrays</button>
+                            <button class="option-btn" data-answer="It requires Java 8+">It requires Java 8+</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: You cannot modify the loop variable</div>
+                            <p>In an enhanced for loop, the loop variable is a copy. Modifying it doesn't change the
+                                original array/collection element. Also, you don't have access to the index. For these
+                                cases, use a traditional for loop.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question" data-correct-answer="switch expression (Java 12+)" data-question-id="q24">
+                        <p class="question-text">Q24. What feature allows switch to return a value directly?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="switch statement">switch statement</button>
+                            <button class="option-btn" data-answer="switch expression (Java 12+)">switch expression
+                                (Java 12+)</button>
+                            <button class="option-btn" data-answer="return in switch">return in switch</button>
+                            <button class="option-btn" data-answer="This is not possible">This is not possible</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: switch expression (Java 12+)</div>
+                            <p>Java 12+ introduced switch expressions that can return values directly using arrow syntax
+                                (->). Example: int day = switch(num) { case 1 -> 7; case 2 -> 6; default -> 0; }; This
+                                is more concise than traditional switch statements.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question" data-correct-answer="Infinite loop" data-question-id="q25">
+                        <p class="question-text">Q25. What is for(;;) equivalent to?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Compilation error">Compilation error</button>
+                            <button class="option-btn" data-answer="Infinite loop">Infinite loop</button>
+                            <button class="option-btn" data-answer="Loop that never executes">Loop that never
+                                executes</button>
+                            <button class="option-btn" data-answer="Loop that executes once">Loop that executes
+                                once</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Infinite loop</div>
+                            <p>for(;;) creates an infinite loop, equivalent to while(true). Since the condition is
+                                empty, it's treated as true. This is sometimes used intentionally with break statements
+                                inside for server loops or continuous processing.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 26 -->
+                    <div class="question" data-correct-answer="It exits the current method" data-question-id="q26">
+                        <p class="question-text">Q26. What does return do inside a loop?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="It exits the loop only">It exits the loop
+                                only</button>
+                            <button class="option-btn" data-answer="It exits the current method">It exits the current
+                                method</button>
+                            <button class="option-btn" data-answer="It skips to next iteration">It skips to next
+                                iteration</button>
+                            <button class="option-btn" data-answer="It causes an error">It causes an error</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: It exits the current method</div>
+                            <p>The return statement exits the entire method, not just the loop. If you only want to exit
+                                the loop, use break. If you want to skip the current iteration, use continue. Return is
+                                used when you've found your answer and want to exit the method.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 27 -->
+                    <div class="question" data-correct-answer="i++" data-question-id="q27">
+                        <p class="question-text">Q27. What is the most common update expression in a for loop?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="i++">i++</button>
+                            <button class="option-btn" data-answer="++i">++i</button>
+                            <button class="option-btn" data-answer="i = i + 1">i = i + 1</button>
+                            <button class="option-btn" data-answer="All are equally common">All are equally
+                                common</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: i++</div>
+                            <p>i++ (post-increment) is the most common update expression. While i++, ++i, and i = i + 1
+                                all increment i, i++ is conventional. In a for loop update section, there's no practical
+                                difference between i++ and ++i.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 28 -->
+                    <div class="question" data-correct-answer="boolean" data-question-id="q28">
+                        <p class="question-text">Q28. What type must the condition in an if statement evaluate to?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="int">int</button>
+                            <button class="option-btn" data-answer="boolean">boolean</button>
+                            <button class="option-btn" data-answer="String">String</button>
+                            <button class="option-btn" data-answer="Any type">Any type</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: boolean</div>
+                            <p>The condition in an if statement must evaluate to a boolean (true or false). Unlike
+                                C/C++, you cannot use integers (0 or 1). This prevents common bugs where assignment (=)
+                                is mistaken for comparison (==).</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 29 -->
+                    <div class="question" data-correct-answer="Use if-else for better readability"
+                        data-question-id="q29">
+                        <p class="question-text">Q29. What is the best practice when you have only two cases in a
+                            switch?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Always use switch">Always use switch</button>
+                            <button class="option-btn" data-answer="Use if-else for better readability">Use if-else for
+                                better readability</button>
+                            <button class="option-btn" data-answer="Use ternary operator">Use ternary operator</button>
+                            <button class="option-btn" data-answer="Use nested loops">Use nested loops</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Use if-else for better readability</div>
+                            <p>For only two cases, if-else is more readable than switch. Switch is best for 3+ cases.
+                                For simple value assignment with two cases, consider the ternary operator. Choose the
+                                construct that makes your intent clearest.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 30 -->
+                    <div class="question" data-correct-answer="Avoid deep nesting; extract to methods"
+                        data-question-id="q30">
+                        <p class="question-text">Q30. What is the best practice for nested loops?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Nest as many as needed">Nest as many as
+                                needed</button>
+                            <button class="option-btn" data-answer="Avoid deep nesting; extract to methods">Avoid deep
+                                nesting; extract to methods</button>
+                            <button class="option-btn" data-answer="Always use while instead">Always use while
+                                instead</button>
+                            <button class="option-btn" data-answer="Never use nested loops">Never use nested
+                                loops</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Avoid deep nesting; extract to methods
+                            </div>
+                            <p>Avoid deep nesting (more than 2-3 levels) as it reduces readability and increases
+                                complexity. Extract inner loops into separate methods with descriptive names. This makes
+                                code more maintainable and testable.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quiz Results -->
+                <div class="content-section" id="quizResults" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="results-summary">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
+                        </div>
+                        <div class="performance-message" id="performanceMessage"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake
+                            Quiz</button>
+                        <a class="md-button md-button--secondary" href="../theory/control-flow-loops.html">📚 Review
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/control-flow-loops.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/control-flow-loops.html">
+                            📚 Back to Theory
+                        </a>
+                        <a class="md-button md-button--secondary" href="../programs/control-flow-loops.html">
+                            💻 View Programs
+                        </a>
+                        <a class="md-button md-button--primary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> Classes and Objects
+                                <br />Learn object-oriented programming fundamentals, creating classes, objects,
+                                constructors, and
+                                methods.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </main>
     </div>
-
+    <script src="../assets/js/docs-style.js"></script>
     <script src="../assets/js/mcq.js"></script>
-    <script>
-        // Quiz questions for Control Flow & Loops
-        const quizQuestions = [
-            // Section 1: if Statement (Questions 1-3)
-            {
-                id: 1,
-                question: "What is the purpose of an if statement in Java?",
-                options: [
-                    "To repeat code multiple times",
-                    "To execute code only when a condition is true",
-                    "To define a method",
-                    "To declare variables"
-                ],
-                answerIndex: 1,
-                explanation: "The if statement executes a block of code only when the specified boolean condition evaluates to true. It's used for conditional execution based on runtime conditions."
-            },
-            {
-                id: 2,
-                question: "What will be printed? int x = 10; if (x > 5) System.out.println('A'); System.out.println('B');",
-                options: [
-                    "A",
-                    "B",
-                    "A B",
-                    "Nothing"
-                ],
-                answerIndex: 2,
-                explanation: "Both 'A' and 'B' will print. The if statement executes 'A' because x > 5 is true. Then 'B' prints because it's outside the if block and always executes."
-            },
-            {
-                id: 3,
-                question: "Which operator should be used to compare two values in an if condition?",
-                options: [
-                    "= (single equals)",
-                    "== (double equals)",
-                    ":= (colon equals)",
-                    "=> (arrow)"
-                ],
-                answerIndex: 1,
-                explanation: "Use == (double equals) for comparison. Single equals (=) is for assignment, not comparison. Using = in an if condition will assign the value instead of comparing it, which is usually a bug."
-            },
-
-            // Section 2: if-else (Questions 4-6)
-            {
-                id: 4,
-                question: "What is the difference between if and if-else?",
-                options: [
-                    "if-else is faster",
-                    "if-else provides an alternative path when condition is false",
-                    "if-else can only be used with numbers",
-                    "There is no difference"
-                ],
-                answerIndex: 1,
-                explanation: "if-else provides two execution paths: one when the condition is true, another when it's false. With just if, nothing happens when the condition is false. if-else ensures exactly one block executes."
-            },
-            {
-                id: 5,
-                question: "What will be printed? int age = 15; if (age >= 18) { System.out.println('Adult'); } else { System.out.println('Minor'); }",
-                options: [
-                    "Adult",
-                    "Minor",
-                    "Both Adult and Minor",
-                    "Nothing"
-                ],
-                answerIndex: 1,
-                explanation: "Minor will be printed because age (15) is not >= 18, so the condition is false. When the if condition is false, the else block executes."
-            },
-            {
-                id: 6,
-                question: "Can you have an if statement without an else?",
-                options: [
-                    "No, else is mandatory",
-                    "Yes, else is optional",
-                    "Only in methods",
-                    "Only with boolean variables"
-                ],
-                answerIndex: 1,
-                explanation: "The else block is optional. You can have just an if statement. If the condition is false and there's no else, the program simply skips the if block and continues."
-            },
-
-            // Section 3: if-else-if Ladder (Questions 7-9)
-            {
-                id: 7,
-                question: "In an if-else-if ladder, what happens after the first true condition is found?",
-                options: [
-                    "All remaining conditions are still checked",
-                    "Execution stops and remaining conditions are skipped",
-                    "Only the next condition is checked",
-                    "The program terminates"
-                ],
-                answerIndex: 1,
-                explanation: "Once a condition evaluates to true in an if-else-if ladder, its block executes and all remaining conditions are skipped. This is why order matters - put most specific conditions first."
-            },
-            {
-                id: 8,
-                question: "What will be printed? int score = 85; if (score >= 60) { System.out.println('D'); } else if (score >= 90) { System.out.println('A'); }",
-                options: [
-                    "D",
-                    "A",
-                    "Both D and A",
-                    "Nothing"
-                ],
-                answerIndex: 0,
-                explanation: "Only 'D' will print. Even though score >= 90 would be false, the first condition (score >= 60) is true, so 'D' prints and the else-if is never checked. This shows why order matters!"
-            },
-            {
-                id: 9,
-                question: "What is the best practice for ordering conditions in an if-else-if ladder?",
-                options: [
-                    "Random order doesn't matter",
-                    "Most specific to least specific",
-                    "Least specific to most specific",
-                    "Alphabetical order"
-                ],
-                answerIndex: 1,
-                explanation: "Order from most specific to least specific. For example, check >= 90 before >= 60. If you check >= 60 first, a score of 95 would match that condition and never reach the >= 90 check."
-            },
-
-            // Section 4: switch-case (Questions 10-13)
-            {
-                id: 10,
-                question: "What is the purpose of the break statement in a switch-case?",
-                options: [
-                    "To start the switch",
-                    "To exit the switch and prevent fall-through",
-                    "To check the next case",
-                    "To declare variables"
-                ],
-                answerIndex: 1,
-                explanation: "break exits the switch statement immediately, preventing fall-through to the next case. Without break, execution continues to the next case even if it doesn't match, which is usually unintended."
-            },
-            {
-                id: 11,
-                question: "What will be printed? int day = 1; switch(day) { case 1: System.out.print('Mon'); case 2: System.out.print('Tue'); break; }",
-                options: [
-                    "Mon",
-                    "Tue",
-                    "MonTue",
-                    "Nothing"
-                ],
-                answerIndex: 2,
-                explanation: "MonTue will print due to fall-through. case 1 matches and prints 'Mon', but there's no break, so execution falls through to case 2, printing 'Tue', then breaks. This demonstrates why break is important!"
-            },
-            {
-                id: 12,
-                question: "When should you use switch-case instead of if-else?",
-                options: [
-                    "For range checks like age > 18",
-                    "For checking exact constant values",
-                    "For complex boolean conditions",
-                    "switch and if-else are always interchangeable"
-                ],
-                answerIndex: 1,
-                explanation: "Use switch-case for checking a variable against multiple exact constant values (like 1, 2, 3 or 'A', 'B', 'C'). Use if-else for range checks, boolean conditions, or complex logic. switch is more efficient and readable for constant value checks."
-            },
-            {
-                id: 13,
-                question: "What is the purpose of the default case in a switch statement?",
-                options: [
-                    "It must be the first case",
-                    "It handles values that don't match any case",
-                    "It's mandatory in every switch",
-                    "It repeats all cases"
-                ],
-                answerIndex: 1,
-                explanation: "The default case handles values that don't match any other case. It's like the 'else' in if-else. While optional, it's good practice to include default for handling unexpected values."
-            },
-
-            // Section 5: for Loop (Questions 14-16)
-            {
-                id: 14,
-                question: "What are the three parts of a for loop?",
-                options: [
-                    "start, stop, step",
-                    "initialization, condition, update",
-                    "begin, middle, end",
-                    "declare, check, increment"
-                ],
-                answerIndex: 1,
-                explanation: "A for loop has three parts: initialization (runs once at start), condition (checked before each iteration), and update (runs after each iteration). Example: for (int i = 0; i < 10; i++)"
-            },
-            {
-                id: 15,
-                question: "How many times will this loop execute? for (int i = 1; i <= 5; i++)",
-                options: [
-                    "4 times",
-                    "5 times",
-                    "6 times",
-                    "Infinite times"
-                ],
-                answerIndex: 1,
-                explanation: "The loop executes 5 times (i = 1, 2, 3, 4, 5). It starts at 1, continues while i <= 5, and increments by 1 each time. When i becomes 6, the condition i <= 5 is false, so the loop stops."
-            },
-            {
-                id: 16,
-                question: "What will be printed? for (int i = 0; i < 3; i++) { System.out.print(i + ' '); }",
-                options: [
-                    "0 1 2",
-                    "1 2 3",
-                    "0 1 2 3",
-                    "1 2"
-                ],
-                answerIndex: 0,
-                explanation: "0 1 2 will be printed. The loop starts at 0, continues while i < 3 (so 0, 1, 2), and prints each value. When i becomes 3, the condition i < 3 is false, so the loop stops."
-            },
-
-            // Section 6: while Loop (Questions 17-19)
-            {
-                id: 17,
-                question: "What is the key difference between for and while loops?",
-                options: [
-                    "for is faster than while",
-                    "for is used when iteration count is known, while for unknown count",
-                    "while cannot use break",
-                    "for can only count up"
-                ],
-                answerIndex: 1,
-                explanation: "Use for when you know exactly how many iterations (like looping through an array). Use while when the iteration count depends on a condition (like reading user input until they enter 'quit'). Both can achieve the same results, but one is more natural for each scenario."
-            },
-            {
-                id: 18,
-                question: "What is the most common mistake with while loops?",
-                options: [
-                    "Using the wrong condition",
-                    "Forgetting to update the loop variable, causing infinite loop",
-                    "Using break",
-                    "Declaring variables inside the loop"
-                ],
-                answerIndex: 1,
-                explanation: "The most common mistake is forgetting to update the loop variable inside the loop body. This causes an infinite loop because the condition never becomes false. Example: int i = 0; while (i < 5) { print(i); } // forgot i++!"
-            },
-            {
-                id: 19,
-                question: "When does a while loop check its condition?",
-                options: [
-                    "After each iteration",
-                    "Before each iteration",
-                    "Only at the start",
-                    "Only at the end"
-                ],
-                answerIndex: 1,
-                explanation: "A while loop checks the condition BEFORE each iteration. If the condition is initially false, the loop body never executes (0 times). This is different from do-while, which checks after."
-            },
-
-            // Section 7: do-while Loop (Questions 20-22)
-            {
-                id: 20,
-                question: "Which loop guarantees at least one execution?",
-                options: [
-                    "for loop",
-                    "while loop",
-                    "do-while loop",
-                    "All loops execute at least once"
-                ],
-                answerIndex: 2,
-                explanation: "do-while guarantees at least one execution because it checks the condition AFTER the loop body. Even if the condition is initially false, the body executes once. for and while check before, so they may execute 0 times."
-            },
-            {
-                id: 21,
-                question: "What will be printed? int x = 10; do { System.out.print(x + ' '); x++; } while (x < 5);",
-                options: [
-                    "Nothing",
-                    "10",
-                    "10 11 12 13 14",
-                    "Infinite loop"
-                ],
-                answerIndex: 1,
-                explanation: "10 will be printed. The do-while executes the body first (prints 10, x becomes 11), then checks the condition (11 < 5 is false), so it stops. This demonstrates that do-while always executes at least once."
-            },
-            {
-                id: 22,
-                question: "What is a common use case for do-while loops?",
-                options: [
-                    "Counting from 1 to 100",
-                    "Menu systems that must display at least once",
-                    "Iterating through arrays",
-                    "Mathematical calculations"
-                ],
-                answerIndex: 1,
-                explanation: "do-while is perfect for menus and input validation where you must execute at least once. For example, showing a menu to the user at least once, or asking for input and validating it (must ask at least once)."
-            },
-
-            // Section 8: Enhanced for Loop (Questions 23-24)
-            {
-                id: 23,
-                question: "What is the enhanced for loop (for-each) best used for?",
-                options: [
-                    "Modifying array elements",
-                    "Reading all elements without needing the index",
-                    "Iterating in reverse",
-                    "Counting iterations"
-                ],
-                answerIndex: 1,
-                explanation: "Enhanced for loop is best for reading all elements when you don't need the index. It's cleaner and less error-prone. However, you cannot modify array elements, access the index, or iterate in reverse with for-each."
-            },
-            {
-                id: 24,
-                question: "What will be printed? int[] nums = {1, 2, 3}; for (int n : nums) { n = n * 2; } System.out.print(nums[0]);",
-                options: [
-                    "1",
-                    "2",
-                    "3",
-                    "6"
-                ],
-                answerIndex: 0,
-                explanation: "1 will be printed. The enhanced for loop creates a COPY of each element in variable n. Modifying n doesn't change the array. To modify array elements, use a regular for loop with index: nums[i] = nums[i] * 2;"
-            },
-
-            // Section 9: break and continue (Questions 25-27)
-            {
-                id: 25,
-                question: "What does the break statement do in a loop?",
-                options: [
-                    "Skips the current iteration",
-                    "Exits the loop immediately",
-                    "Pauses the loop",
-                    "Restarts the loop"
-                ],
-                answerIndex: 1,
-                explanation: "break exits the loop immediately and execution continues after the loop. It's used for early termination when a condition is met, like finding a value in a search or detecting an error."
-            },
-            {
-                id: 26,
-                question: "What does the continue statement do in a loop?",
-                options: [
-                    "Exits the loop",
-                    "Skips the rest of current iteration and moves to next",
-                    "Repeats the current iteration",
-                    "Stops the program"
-                ],
-                answerIndex: 1,
-                explanation: "continue skips the rest of the current iteration and moves to the next iteration. The loop continues running. It's used for filtering or skipping certain values, like skipping negative numbers or invalid data."
-            },
-            {
-                id: 27,
-                question: "What will be printed? for (int i = 1; i <= 5; i++) { if (i == 3) continue; System.out.print(i + ' '); }",
-                options: [
-                    "1 2 3 4 5",
-                    "1 2 4 5",
-                    "1 2",
-                    "3"
-                ],
-                answerIndex: 1,
-                explanation: "1 2 4 5 will be printed. When i equals 3, continue skips the print statement and moves to the next iteration (i = 4). So 3 is never printed, but the loop continues for 4 and 5."
-            }
-        ];
-
-        // Initialize the quiz when page loads
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-
-            // Make quizManager globally accessible for retake button
-            window.quizManager = quizManager;
-        });
-    </script>
 </body>
 
 </html>

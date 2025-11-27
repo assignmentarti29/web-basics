@@ -1,58 +1,468 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>JDBC - Programs - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>JDBC - Code Examples</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Programs</span>
-                <span>/</span>
-                <span>JDBC</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Hands-On JDBC Programs</h2>
-            <p>Welcome to the practical section! These 15+ programs demonstrate how to work with databases using JDBC.
-                From basic connections to advanced transactions, these examples cover everything you need to master
-                database programming in Java.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Make sure you have a database (MySQL, PostgreSQL, etc.) installed and running before trying these
-                    examples. Update the connection URL, username, and password accordingly!</p>
-            </div>
-        </div>
-
-        <!-- Program 1: Load JDBC Driver -->
-        <div class="content-section">
-            <h2>Program 1: Load JDBC Driver</h2>
-            <p>Demonstrates how to load a JDBC driver (though auto-loading happens in JDBC 4.0+).</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">public class LoadDriver {
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>JDBC - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>JDBC</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Hands-On JDBC Programs</h2>
+                    <p>Welcome to the practical section! These 15+ programs demonstrate how to work with databases using
+                        JDBC.
+                        From basic connections to advanced transactions, these examples cover everything you need to
+                        master
+                        database programming in Java.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Make sure you have a database (MySQL, PostgreSQL, etc.) installed and running before
+                                trying these
+                                examples. Update the connection URL, username, and password accordingly!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 1: Load JDBC Driver -->
+                <div class="content-section">
+                    <h2>Program 1: Load JDBC Driver</h2>
+                    <p>Demonstrates how to load a JDBC driver (though auto-loading happens in JDBC 4.0+).</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">public class LoadDriver {
     public static void main(String[] args) {
         try {
             // Load MySQL JDBC Driver
@@ -64,20 +474,20 @@
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like checking if you have the right key before opening a door.</p>
-                <p><strong>Real-world:</strong> Installing the correct software before using a device.</p>
-                <p><strong>Technical:</strong> Class.forName() loads the driver class. In JDBC 4.0+, this is automatic
-                    if the JAR is in classpath.</p>
-            </div>
-        </div>
-
-        <!-- Program 2: Establish Connection -->
-        <div class="content-section">
-            <h2>Program 2: Establish Database Connection</h2>
-            <p>Shows how to create a connection to a MySQL database.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.Connection;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like checking if you have the right key before opening a door.</p>
+                        <p><strong>Real-world:</strong> Installing the correct software before using a device.</p>
+                        <p><strong>Technical:</strong> Class.forName() loads the driver class. In JDBC 4.0+, this is
+                            automatic
+                            if the JAR is in classpath.</p>
+                    </div>
+                </div>
+                <!-- Program 2: Establish Connection -->
+                <div class="content-section">
+                    <h2>Program 2: Establish Database Connection</h2>
+                    <p>Shows how to create a connection to a MySQL database.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
@@ -97,20 +507,20 @@ public class EstablishConnection {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like calling your friend on the phone to start talking.</p>
-                <p><strong>Real-world:</strong> Logging into your online banking app.</p>
-                <p><strong>Technical:</strong> DriverManager.getConnection() creates a connection using the JDBC URL,
-                    username, and password.</p>
-            </div>
-        </div>
-
-        <!-- Program 3: SELECT Query using Statement -->
-        <div class="content-section">
-            <h2>Program 3: SELECT Query using Statement</h2>
-            <p>Retrieves data from a database table using Statement.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like calling your friend on the phone to start talking.</p>
+                        <p><strong>Real-world:</strong> Logging into your online banking app.</p>
+                        <p><strong>Technical:</strong> DriverManager.getConnection() creates a connection using the JDBC
+                            URL,
+                            username, and password.</p>
+                    </div>
+                </div>
+                <!-- Program 3: SELECT Query using Statement -->
+                <div class="content-section">
+                    <h2>Program 3: SELECT Query using Statement</h2>
+                    <p>Retrieves data from a database table using Statement.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class SelectUsingStatement {
     public static void main(String[] args) {
@@ -134,20 +544,20 @@ public class SelectUsingStatement {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like asking "Show me all the toys in the box."</p>
-                <p><strong>Real-world:</strong> Viewing all contacts in your phone.</p>
-                <p><strong>Technical:</strong> Statement.executeQuery() executes SELECT and returns a ResultSet. We
-                    iterate using rs.next().</p>
-            </div>
-        </div>
-
-        <!-- Program 4: INSERT with PreparedStatement -->
-        <div class="content-section">
-            <h2>Program 4: INSERT using PreparedStatement</h2>
-            <p>Safely inserts data using parameterized queries.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like asking "Show me all the toys in the box."</p>
+                        <p><strong>Real-world:</strong> Viewing all contacts in your phone.</p>
+                        <p><strong>Technical:</strong> Statement.executeQuery() executes SELECT and returns a ResultSet.
+                            We
+                            iterate using rs.next().</p>
+                    </div>
+                </div>
+                <!-- Program 4: INSERT with PreparedStatement -->
+                <div class="content-section">
+                    <h2>Program 4: INSERT using PreparedStatement</h2>
+                    <p>Safely inserts data using parameterized queries.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class InsertData {
     public static void main(String[] args) {
@@ -171,20 +581,19 @@ public class InsertData {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like adding a new toy to your toy box.</p>
-                <p><strong>Real-world:</strong> Registering a new user in an app.</p>
-                <p><strong>Technical:</strong> PreparedStatement with placeholders (?) prevents SQL injection.
-                    executeUpdate() returns number of affected rows.</p>
-            </div>
-        </div>
-
-        <!-- Program 5: UPDATE Query -->
-        <div class="content-section">
-            <h2>Program 5: UPDATE Data</h2>
-            <p>Updates existing records in the database.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like adding a new toy to your toy box.</p>
+                        <p><strong>Real-world:</strong> Registering a new user in an app.</p>
+                        <p><strong>Technical:</strong> PreparedStatement with placeholders (?) prevents SQL injection.
+                            executeUpdate() returns number of affected rows.</p>
+                    </div>
+                </div>
+                <!-- Program 5: UPDATE Query -->
+                <div class="content-section">
+                    <h2>Program 5: UPDATE Data</h2>
+                    <p>Updates existing records in the database.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class UpdateData {
     public static void main(String[] args) {
@@ -208,20 +617,20 @@ public class UpdateData {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like changing the color of your toy.</p>
-                <p><strong>Real-world:</strong> Updating your profile information.</p>
-                <p><strong>Technical:</strong> UPDATE statement modifies existing records. Use WHERE clause to target
-                    specific rows.</p>
-            </div>
-        </div>
-
-        <!-- Program 6: DELETE Query -->
-        <div class="content-section">
-            <h2>Program 6: DELETE Data</h2>
-            <p>Removes records from the database.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like changing the color of your toy.</p>
+                        <p><strong>Real-world:</strong> Updating your profile information.</p>
+                        <p><strong>Technical:</strong> UPDATE statement modifies existing records. Use WHERE clause to
+                            target
+                            specific rows.</p>
+                    </div>
+                </div>
+                <!-- Program 6: DELETE Query -->
+                <div class="content-section">
+                    <h2>Program 6: DELETE Data</h2>
+                    <p>Removes records from the database.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class DeleteData {
     public static void main(String[] args) {
@@ -244,20 +653,20 @@ public class DeleteData {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like throwing away a broken toy.</p>
-                <p><strong>Real-world:</strong> Deleting a contact from your phone.</p>
-                <p><strong>Technical:</strong> DELETE removes rows matching the WHERE condition. Without WHERE, it
-                    deletes ALL rows!</p>
-            </div>
-        </div>
-
-        <!-- Program 7: Try-with-resources -->
-        <div class="content-section">
-            <h2>Program 7: Using try-with-resources</h2>
-            <p>Demonstrates automatic resource management.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like throwing away a broken toy.</p>
+                        <p><strong>Real-world:</strong> Deleting a contact from your phone.</p>
+                        <p><strong>Technical:</strong> DELETE removes rows matching the WHERE condition. Without WHERE,
+                            it
+                            deletes ALL rows!</p>
+                    </div>
+                </div>
+                <!-- Program 7: Try-with-resources -->
+                <div class="content-section">
+                    <h2>Program 7: Using try-with-resources</h2>
+                    <p>Demonstrates automatic resource management.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class TryWithResources {
     public static void main(String[] args) {
@@ -267,7 +676,7 @@ public class TryWithResources {
         
         // Resources automatically closed after try block
         try (Connection con = DriverManager.getConnection(url, user, password);
-             PreparedStatement pstmt = con.prepareStatement("SELECT * FROM users WHERE age > ?");) {
+             PreparedStatement pstmt = con.prepareStatement("SELECT * FROM users WHERE age &gt; ?");) {
             
             pstmt.setInt(1, 18);
             
@@ -283,20 +692,19 @@ public class TryWithResources {
         // No need for finally block to close resources!
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a toy that puts itself back in the box when you're done.</p>
-                <p><strong>Real-world:</strong> Auto-save feature in apps.</p>
-                <p><strong>Technical:</strong> try-with-resources (Java 7+) automatically closes AutoCloseable
-                    resources, preventing leaks.</p>
-            </div>
-        </div>
-
-        <!-- Program 8: Handle SQLException -->
-        <div class="content-section">
-            <h2>Program 8: Proper SQLException Handling</h2>
-            <p>Shows how to handle database exceptions properly.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a toy that puts itself back in the box when you're done.</p>
+                        <p><strong>Real-world:</strong> Auto-save feature in apps.</p>
+                        <p><strong>Technical:</strong> try-with-resources (Java 7+) automatically closes AutoCloseable
+                            resources, preventing leaks.</p>
+                    </div>
+                </div>
+                <!-- Program 8: Handle SQLException -->
+                <div class="content-section">
+                    <h2>Program 8: Proper SQLException Handling</h2>
+                    <p>Shows how to handle database exceptions properly.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class HandleException {
     public static void main(String[] args) {
@@ -314,20 +722,20 @@ public class HandleException {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like knowing what went wrong when a toy doesn't work.</p>
-                <p><strong>Real-world:</strong> Getting a specific error message when login fails.</p>
-                <p><strong>Technical:</strong> SQLException provides error code, SQL state, and message for debugging.
-                </p>
-            </div>
-        </div>
-
-        <!-- Program 9: Transactions -->
-        <div class="content-section">
-            <h2>Program 9: Transaction Management (commit & rollback)</h2>
-            <p>Demonstrates how to use transactions for atomic operations.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like knowing what went wrong when a toy doesn't work.</p>
+                        <p><strong>Real-world:</strong> Getting a specific error message when login fails.</p>
+                        <p><strong>Technical:</strong> SQLException provides error code, SQL state, and message for
+                            debugging.
+                        </p>
+                    </div>
+                </div>
+                <!-- Program 9: Transactions -->
+                <div class="content-section">
+                    <h2>Program 9: Transaction Management (commit &amp; rollback)</h2>
+                    <p>Demonstrates how to use transactions for atomic operations.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class TransactionDemo {
     public static void main(String[] args) {
@@ -381,20 +789,19 @@ public class TransactionDemo {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like building a tower—if one block falls, rebuild from scratch.</p>
-                <p><strong>Real-world:</strong> Money transfer—both debit and credit must succeed together.</p>
-                <p><strong>Technical:</strong> setAutoCommit(false) starts transaction. commit() saves changes,
-                    rollback() undoes them.</p>
-            </div>
-        </div>
-
-        <!-- Program 10: Prevent SQL Injection -->
-        <div class="content-section">
-            <h2>Program 10: Preventing SQL Injection</h2>
-            <p>Compares vulnerable vs safe code.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like building a tower—if one block falls, rebuild from scratch.</p>
+                        <p><strong>Real-world:</strong> Money transfer—both debit and credit must succeed together.</p>
+                        <p><strong>Technical:</strong> setAutoCommit(false) starts transaction. commit() saves changes,
+                            rollback() undoes them.</p>
+                    </div>
+                </div>
+                <!-- Program 10: Prevent SQL Injection -->
+                <div class="content-section">
+                    <h2>Program 10: Preventing SQL Injection</h2>
+                    <p>Compares vulnerable vs safe code.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class PreventSQLInjection {
     public static void main(String[] args) {
@@ -429,20 +836,20 @@ public class PreventSQLInjection {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like having a guard check if someone is allowed to enter.</p>
-                <p><strong>Real-world:</strong> Security screening at an airport.</p>
-                <p><strong>Technical:</strong> PreparedStatement treats user input as data, not SQL code, preventing
-                    injection attacks.</p>
-            </div>
-        </div>
-
-        <!-- Program 11: CallableStatement -->
-        <div class="content-section">
-            <h2>Program 11: Calling Stored Procedure</h2>
-            <p>Executes a stored procedure using CallableStatement.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like having a guard check if someone is allowed to enter.</p>
+                        <p><strong>Real-world:</strong> Security screening at an airport.</p>
+                        <p><strong>Technical:</strong> PreparedStatement treats user input as data, not SQL code,
+                            preventing
+                            injection attacks.</p>
+                    </div>
+                </div>
+                <!-- Program 11: CallableStatement -->
+                <div class="content-section">
+                    <h2>Program 11: Calling Stored Procedure</h2>
+                    <p>Executes a stored procedure using CallableStatement.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class CallStoredProcedure {
     public static void main(String[] args) {
@@ -469,20 +876,20 @@ public class CallStoredProcedure {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like asking a helper to do a special job for you.</p>
-                <p><strong>Real-world:</strong> Calling customer service to perform a complex task.</p>
-                <p><strong>Technical:</strong> CallableStatement executes stored procedures. Use {call procName(?)}
-                    syntax.</p>
-            </div>
-        </div>
-
-        <!-- Program 12: Retrieve ResultSet Metadata -->
-        <div class="content-section">
-            <h2>Program 12: ResultSet Metadata</h2>
-            <p>Retrieves information about the result set structure.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like asking a helper to do a special job for you.</p>
+                        <p><strong>Real-world:</strong> Calling customer service to perform a complex task.</p>
+                        <p><strong>Technical:</strong> CallableStatement executes stored procedures. Use {call
+                            procName(?)}
+                            syntax.</p>
+                    </div>
+                </div>
+                <!-- Program 12: Retrieve ResultSet Metadata -->
+                <div class="content-section">
+                    <h2>Program 12: ResultSet Metadata</h2>
+                    <p>Retrieves information about the result set structure.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class ResultSetMetaDataDemo {
     public static void main(String[] args) {
@@ -499,7 +906,7 @@ public class ResultSetMetaDataDemo {
             int columnCount = rsmd.getColumnCount();
             System.out.println("Number of columns: " + columnCount);
             
-            for (int i = 1; i <= columnCount; i++) {
+            for (int i = 1; i &lt;= columnCount; i++) {
                 System.out.println("Column " + i + ": " + rsmd.getColumnName(i) + 
                                    " (" + rsmd.getColumnTypeName(i) + ")");
             }
@@ -509,20 +916,20 @@ public class ResultSetMetaDataDemo {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like reading the labels on toy boxes to know what's inside.</p>
-                <p><strong>Real-world:</strong> Checking the headers in a spreadsheet.</p>
-                <p><strong>Technical:</strong> ResultSetMetaData provides information about columns (name, type, count,
-                    etc.).</p>
-            </div>
-        </div>
-
-        <!-- Program 13: Batch Processing -->
-        <div class="content-section">
-            <h2>Program 13: Batch Processing</h2>
-            <p>Inserts multiple records efficiently using batch processing.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like reading the labels on toy boxes to know what's inside.</p>
+                        <p><strong>Real-world:</strong> Checking the headers in a spreadsheet.</p>
+                        <p><strong>Technical:</strong> ResultSetMetaData provides information about columns (name, type,
+                            count,
+                            etc.).</p>
+                    </div>
+                </div>
+                <!-- Program 13: Batch Processing -->
+                <div class="content-section">
+                    <h2>Program 13: Batch Processing</h2>
+                    <p>Inserts multiple records efficiently using batch processing.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class BatchProcessing {
     public static void main(String[] args) {
@@ -562,20 +969,20 @@ public class BatchProcessing {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like putting many toys in a box at once instead of one by one.</p>
-                <p><strong>Real-world:</strong> Uploading multiple files at once.</p>
-                <p><strong>Technical:</strong> Batch processing groups multiple SQL statements and sends them in one
-                    network call, improving performance.</p>
-            </div>
-        </div>
-
-        <!-- Program 14: Close Connection Properly -->
-        <div class="content-section">
-            <h2>Program 14: Proper Resource Closing</h2>
-            <p>Demonstrates closing resources in the correct order.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like putting many toys in a box at once instead of one by one.</p>
+                        <p><strong>Real-world:</strong> Uploading multiple files at once.</p>
+                        <p><strong>Technical:</strong> Batch processing groups multiple SQL statements and sends them in
+                            one
+                            network call, improving performance.</p>
+                    </div>
+                </div>
+                <!-- Program 14: Close Connection Properly -->
+                <div class="content-section">
+                    <h2>Program 14: Proper Resource Closing</h2>
+                    <p>Demonstrates closing resources in the correct order.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 
 public class ProperClosing {
     public static void main(String[] args) {
@@ -595,7 +1002,7 @@ public class ProperClosing {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            // Close in reverse order: ResultSet -> Statement -> Connection
+            // Close in reverse order: ResultSet -&gt; Statement -&gt; Connection
             try {
                 if (rs != null) rs.close();
             } catch (SQLException e) {
@@ -618,20 +1025,21 @@ public class ProperClosing {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like putting toys back in order—smallest box first, then bigger ones.</p>
-                <p><strong>Real-world:</strong> Logging out of apps in the right sequence.</p>
-                <p><strong>Technical:</strong> Always close resources in reverse order of creation to avoid resource
-                    leaks.</p>
-            </div>
-        </div>
-
-        <!-- Program 15: Real-world Student Registration System -->
-        <div class="content-section">
-            <h2>Program 15: Student Registration System</h2>
-            <p>A complete real-world example combining multiple JDBC concepts.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.sql.*;
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like putting toys back in order—smallest box first, then bigger ones.
+                        </p>
+                        <p><strong>Real-world:</strong> Logging out of apps in the right sequence.</p>
+                        <p><strong>Technical:</strong> Always close resources in reverse order of creation to avoid
+                            resource
+                            leaks.</p>
+                    </div>
+                </div>
+                <!-- Program 15: Real-world Student Registration System -->
+                <div class="content-section">
+                    <h2>Program 15: Student Registration System</h2>
+                    <p>A complete real-world example combining multiple JDBC concepts.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.sql.*;
 import java.util.Scanner;
 
 public class StudentRegistrationSystem {
@@ -740,7 +1148,7 @@ public class StudentRegistrationSystem {
             pstmt.setInt(2, id);
             
             int rows = pstmt.executeUpdate();
-            if (rows > 0) {
+            if (rows &gt; 0) {
                 System.out.println("Student updated successfully!");
             } else {
                 System.out.println("No student found with ID: " + id);
@@ -764,7 +1172,7 @@ public class StudentRegistrationSystem {
             pstmt.setInt(1, id);
             
             int rows = pstmt.executeUpdate();
-            if (rows > 0) {
+            if (rows &gt; 0) {
                 System.out.println("Student deleted successfully!");
             } else {
                 System.out.println("No student found with ID: " + id);
@@ -776,30 +1184,34 @@ public class StudentRegistrationSystem {
         }
     }
 }</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a complete toy management system—add, view, update, remove toys.</p>
-                <p><strong>Real-world:</strong> A school management system for student records.</p>
-                <p><strong>Technical:</strong> Combines all CRUD operations with proper exception handling,
-                    PreparedStatement usage, and resource management.</p>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a complete toy management system—add, view, update, remove toys.
+                        </p>
+                        <p><strong>Real-world:</strong> A school management system for student records.</p>
+                        <p><strong>Technical:</strong> Combines all CRUD operations with proper exception handling,
+                            PreparedStatement usage, and resource management.</p>
+                    </div>
+                </div>
+                <!-- Next Topic -->
+                <div class="next-topic">
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a class="md-button md-button--primary" href="../theory/jdbc.html">📚 Back to Theory</a>
+                        <a class="md-button md-button--primary" href="../mcq/jdbc.html">✅ Take Quiz</a>
+                        <a class="md-button md-button--secondary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">🎉 End of Core Java Tutorials</div>
+                        <div class="admonition-content">
+                            <p><strong>Congratulations!</strong> You've completed all JDBC programs. Advanced topics
+                                coming soon!
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <!-- Next Topic -->
-        <div class="next-topic">
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="../theory/jdbc.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../mcq/jdbc.html" class="btn btn-success">✅ Take Quiz</a>
-                <a href="../index.html" class="btn btn-secondary">🏠 Back to Home</a>
-            </div>
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">🎉 End of Core Java Tutorials</div>
-                <p><strong>Congratulations!</strong> You've completed all JDBC programs. Advanced topics coming soon!
-                </p>
-            </div>
-        </div>
+        </main>
     </div>
-
-    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>

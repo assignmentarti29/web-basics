@@ -1,0 +1,1472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Intermediate Java Assignments - Java Mastery Hub</title>
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Assignments & Practice</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">⬅ Back to Home</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="overview.html">Overview</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="basic.html">Basic Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link md-nav__link--active"
+                            href="intermediate.html">Intermediate Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="advanced.html">Advanced Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="tricky.html">Tricky Questions</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="real-world.html">Real World Scenarios</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <h1>🟡 Intermediate Java Assignments (1-60)</h1>
+                <p>Level up your skills with Arrays, Strings, Methods, OOPs, and Exception Handling.</p>
+
+                <hr>
+
+                <!-- Q1 -->
+                <div class="assignment">
+                    <h4>Q1. Write a program to find the sum of all elements in an array.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 1 2 3 4 5
+                    // Sample Output:
+                    // Sum: 15
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int[] arr = {1, 2, 3, 4, 5};
+int sum = 0;
+for (int num : arr) {
+    sum += num;
+}
+System.out.println("Sum: " + sum);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Iterates through the array using an enhanced for loop.</p>
+                    </details>
+                </div>
+
+                <!-- Q2 -->
+                <div class="assignment">
+                    <h4>Q2. Write a program to find the largest element in an array.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10 50 30 90 20
+                    // Sample Output:
+                    // Largest: 90
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int[] arr = {10, 50, 30, 90, 20};
+int max = arr[0];
+for (int i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+        max = arr[i];
+    }
+}
+System.out.println("Largest: " + max);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Compares each element with the current maximum.</p>
+                    </details>
+                </div>
+
+                <!-- Q3 -->
+                <div class="assignment">
+                    <h4>Q3. Write a program to find the second largest number in an array.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10 50 30 90 20
+                    // Sample Output:
+                    // Second Largest: 50
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int[] arr = {10, 50, 30, 90, 20};
+int max = Integer.MIN_VALUE, secondMax = Integer.MIN_VALUE;
+for (int num : arr) {
+    if (num > max) {
+        secondMax = max;
+        max = num;
+    } else if (num > secondMax && num != max) {
+        secondMax = num;
+    }
+}
+System.out.println("Second Largest: " + secondMax);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Maintains two variables for largest and second largest.</p>
+                    </details>
+                </div>
+
+                <!-- Q4 -->
+                <div class="assignment">
+                    <h4>Q4. Write a program to sort an array in ascending order.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 5 2 8 1 9
+                    // Sample Output:
+                    // Sorted: [1, 2, 5, 8, 9]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Arrays;
+int[] arr = {5, 2, 8, 1, 9};
+Arrays.sort(arr);
+System.out.println("Sorted: " + Arrays.toString(arr));
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses <code>Arrays.sort()</code> for efficient sorting.</p>
+                    </details>
+                </div>
+
+                <!-- Q5 -->
+                <div class="assignment">
+                    <h4>Q5. Write a program to remove duplicates from an array.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 1 2 2 3 4 4 5
+                    // Sample Output:
+                    // Unique: [1, 2, 3, 4, 5]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Arrays;
+import java.util.LinkedHashSet;
+Integer[] arr = {1, 2, 2, 3, 4, 4, 5};
+LinkedHashSet<Integer> set = new LinkedHashSet<>(Arrays.asList(arr));
+System.out.println("Unique: " + set);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses <code>LinkedHashSet</code> to remove duplicates while
+                            preserving order.</p>
+                    </details>
+                </div>
+
+                <!-- Q6 -->
+                <div class="assignment">
+                    <h4>Q6. Write a program to reverse an array.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 1 2 3 4 5
+                    // Sample Output:
+                    // [5, 4, 3, 2, 1]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int[] arr = {1, 2, 3, 4, 5};
+int start = 0, end = arr.length - 1;
+while (start < end) {
+    int temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+    start++;
+    end--;
+}
+System.out.println(java.util.Arrays.toString(arr));
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Swaps elements from both ends moving towards center.</p>
+                    </details>
+                </div>
+
+                <!-- Q7 -->
+                <div class="assignment">
+                    <h4>Q7. Write a program to check if two arrays are equal.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Arr1: [1, 2, 3], Arr2: [1, 2, 3]
+                    // Sample Output:
+                    // true
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Arrays;
+int[] arr1 = {1, 2, 3};
+int[] arr2 = {1, 2, 3};
+System.out.println(Arrays.equals(arr1, arr2));
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses <code>Arrays.equals()</code> to compare contents.</p>
+                    </details>
+                </div>
+
+                <!-- Q8 -->
+                <div class="assignment">
+                    <h4>Q8. Write a program to find the frequency of each element in an array.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 1 2 2 3 1 4
+                    // Sample Output:
+                    // {1=2, 2=2, 3=1, 4=1}
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.HashMap;
+int[] arr = {1, 2, 2, 3, 1, 4};
+HashMap<Integer, Integer> map = new HashMap<>();
+for (int num : arr) {
+    map.put(num, map.getOrDefault(num, 0) + 1);
+}
+System.out.println(map);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses a HashMap to store element counts.</p>
+                    </details>
+                </div>
+
+                <!-- Q9 -->
+                <div class="assignment">
+                    <h4>Q9. Write a program to find the missing number in an array of 1 to N.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 1 2 4 5 (N=5)
+                    // Sample Output:
+                    // Missing: 3
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int[] arr = {1, 2, 4, 5}; // Missing 3
+int n = 5;
+int expectedSum = n * (n + 1) / 2;
+int actualSum = 0;
+for (int num : arr) actualSum += num;
+System.out.println("Missing: " + (expectedSum - actualSum));
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses sum formula n*(n+1)/2.</p>
+                    </details>
+                </div>
+
+                <!-- Q10 -->
+                <div class="assignment">
+                    <h4>Q10. Write a program to merge two arrays.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // [1, 2, 3], [4, 5, 6]
+                    // Sample Output:
+                    // [1, 2, 3, 4, 5, 6]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Arrays;
+int[] arr1 = {1, 2, 3};
+int[] arr2 = {4, 5, 6};
+int[] result = new int[arr1.length + arr2.length];
+System.arraycopy(arr1, 0, result, 0, arr1.length);
+System.arraycopy(arr2, 0, result, arr1.length, arr2.length);
+System.out.println(Arrays.toString(result));
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses <code>System.arraycopy()</code>.</p>
+                    </details>
+                </div>
+
+                <!-- Q11 -->
+                <div class="assignment">
+                    <h4>Q11. Write a program to count vowels and consonants in a String.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Hello World
+                    // Sample Output:
+                    // Vowels: 3, Consonants: 7
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String str = "Hello World";
+int v = 0, c = 0;
+str = str.toLowerCase();
+for (int i = 0; i < str.length(); i++) {
+    char ch = str.charAt(i);
+    if (ch >= 'a' && ch <= 'z') {
+        if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') v++;
+        else c++;
+    }
+}
+System.out.println("Vowels: " + v + ", Consonants: " + c);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Iterates through string checking characters.</p>
+                    </details>
+                </div>
+
+                <!-- Q12 -->
+                <div class="assignment">
+                    <h4>Q12. Write a program to check if two Strings are Anagrams.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // listen, silent
+                    // Sample Output:
+                    // Anagrams
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Arrays;
+String s1 = "listen", s2 = "silent";
+char[] c1 = s1.toCharArray();
+char[] c2 = s2.toCharArray();
+Arrays.sort(c1);
+Arrays.sort(c2);
+System.out.println(Arrays.equals(c1, c2) ? "Anagrams" : "Not Anagrams");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Sorts both strings and compares them.</p>
+                    </details>
+                </div>
+
+                <!-- Q13 -->
+                <div class="assignment">
+                    <h4>Q13. Write a program to count words in a String.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Java is awesome
+                    // Sample Output:
+                    // Words: 3
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String str = "Java is awesome";
+String[] words = str.split("\\s+");
+System.out.println("Words: " + words.length);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Splits string by whitespace.</p>
+                    </details>
+                </div>
+
+                <!-- Q14 -->
+                <div class="assignment">
+                    <h4>Q14. Write a program to reverse each word in a String.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // Java is fun
+                    // Sample Output:
+                    // avaJ si nuf
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String str = "Java is fun";
+String[] words = str.split(" ");
+String reversedString = "";
+for (String w : words) {
+    StringBuilder sb = new StringBuilder(w);
+    reversedString += sb.reverse().toString() + " ";
+}
+System.out.println(reversedString.trim());
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Splits into words, reverses each using StringBuilder.</p>
+                    </details>
+                </div>
+
+                <!-- Q15 -->
+                <div class="assignment">
+                    <h4>Q15. Write a program to find the first non-repeating character in a String.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // swiss
+                    // Sample Output:
+                    // First non-repeating: w
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String str = "swiss";
+for (char c : str.toCharArray()) {
+    if (str.indexOf(c) == str.lastIndexOf(c)) {
+        System.out.println("First non-repeating: " + c);
+        break;
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Checks if first and last index of char are same.</p>
+                    </details>
+                </div>
+
+                <!-- Q16 -->
+                <div class="assignment">
+                    <h4>Q16. Write a program to check if a String contains only digits.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 12345
+                    // Sample Output:
+                    // Only Digits
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String str = "12345";
+System.out.println(str.matches("\\d+") ? "Only Digits" : "Contains other chars");
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses Regex <code>\\d+</code>.</p>
+                    </details>
+                </div>
+
+                <!-- Q17 -->
+                <div class="assignment">
+                    <h4>Q17. Write a program to convert String to Integer and vice-versa.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // "100"
+                    // Sample Output:
+                    // 100
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String s = "100";
+int i = Integer.parseInt(s);
+String s2 = String.valueOf(i);
+System.out.println(i + " " + s2);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses <code>Integer.parseInt()</code> and
+                            <code>String.valueOf()</code>.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- Q18 -->
+                <div class="assignment">
+                    <h4>Q18. Write a program to remove all white spaces from a String.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // J a v a
+                    // Sample Output:
+                    // Java
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String str = "J a v a";
+System.out.println(str.replaceAll("\\s", ""));
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Uses <code>replaceAll()</code> with regex.</p>
+                    </details>
+                </div>
+
+                <!-- Q19 -->
+                <div class="assignment">
+                    <h4>Q19. Write a program to find duplicate characters in a String.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // programming
+                    // Sample Output:
+                    // Duplicates: r g m
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String str = "programming";
+char[] chars = str.toCharArray();
+System.out.print("Duplicates: ");
+for (int i = 0; i < str.length(); i++) {
+    for (int j = i + 1; j < str.length(); j++) {
+        if (chars[i] == chars[j]) {
+            System.out.print(chars[j] + " ");
+            break;
+        }
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Nested loop to compare characters.</p>
+                    </details>
+                </div>
+
+                <!-- Q20 -->
+                <div class="assignment">
+                    <h4>Q20. Write a program to create a class 'Student' with ID and Name.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 1: John
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Student {
+    int id;
+    String name;
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+    void display() {
+        System.out.println(id + ": " + name);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student(1, "John");
+        s1.display();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Basic class definition with constructor and method.</p>
+                    </details>
+                </div>
+
+                <!-- Q21 -->
+                <div class="assignment">
+                    <h4>Q21. Write a program to demonstrate Method Overloading.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Demonstration of add(a,b) and add(a,b,c))
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Calculator {
+    int add(int a, int b) { return a + b; }
+    int add(int a, int b, int c) { return a + b + c; }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Same method name, different parameters.</p>
+                    </details>
+                </div>
+
+                <!-- Q22 -->
+                <div class="assignment">
+                    <h4>Q22. Write a program to demonstrate Method Overriding.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Dog barks
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Animal {
+    void sound() { System.out.println("Animal makes sound"); }
+}
+class Dog extends Animal {
+    @Override
+    void sound() { System.out.println("Dog barks"); }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Subclass provides specific implementation of parent method.</p>
+                    </details>
+                </div>
+
+                <!-- Q23 -->
+                <div class="assignment">
+                    <h4>Q23. Write a program to demonstrate Single Inheritance.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Parent
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Parent { void show() { System.out.println("Parent"); } }
+class Child extends Parent { }
+public class Main {
+    public static void main(String[] args) {
+        new Child().show();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Child class inherits from Parent class.</p>
+                    </details>
+                </div>
+
+                <!-- Q24 -->
+                <div class="assignment">
+                    <h4>Q24. Write a program to demonstrate Multilevel Inheritance.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // A
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class A { void msg() { System.out.println("A"); } }
+class B extends A { }
+class C extends B { }
+public class Main {
+    public static void main(String[] args) { new C().msg(); }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Chain of inheritance A -> B -> C.</p>
+                    </details>
+                </div>
+
+                <!-- Q25 -->
+                <div class="assignment">
+                    <h4>Q25. Write a program to demonstrate Hierarchical Inheritance.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Demonstration)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Animal { }
+class Dog extends Animal { }
+class Cat extends Animal { }
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Multiple classes inherit from one parent.</p>
+                    </details>
+                </div>
+
+                <!-- Q26 -->
+                <div class="assignment">
+                    <h4>Q26. Write a program to demonstrate Encapsulation.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Demonstration of getter/setter)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Employee {
+    private int id;
+    public void setId(int id) { this.id = id; }
+    public int getId() { return id; }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Private fields with public getters and setters.</p>
+                    </details>
+                </div>
+
+                <!-- Q27 -->
+                <div class="assignment">
+                    <h4>Q27. Write a program to demonstrate Abstraction using Abstract Class.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Drawing Circle
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+abstract class Shape { abstract void draw(); }
+class Circle extends Shape {
+    void draw() { System.out.println("Drawing Circle"); }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Abstract class defines structure, subclass implements it.</p>
+                    </details>
+                </div>
+
+                <!-- Q28 -->
+                <div class="assignment">
+                    <h4>Q28. Write a program to demonstrate Interface.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Printing...
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+interface Printable { void print(); }
+class Doc implements Printable {
+    public void print() { System.out.println("Printing..."); }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Interface defines contract, class implements it.</p>
+                    </details>
+                </div>
+
+                <!-- Q29 -->
+                <div class="assignment">
+                    <h4>Q29. Write a program to demonstrate 'this' keyword.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Demonstration)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Student {
+    int id;
+    Student(int id) { this.id = id; } // Disambiguates field and param
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Refers to current object instance.</p>
+                    </details>
+                </div>
+
+                <!-- Q30 -->
+                <div class="assignment">
+                    <h4>Q30. Write a program to demonstrate 'super' keyword.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 10
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Parent { int x = 10; }
+class Child extends Parent {
+    int x = 20;
+    void show() {
+        System.out.println(super.x); // Access parent's x
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Refers to parent class instance.</p>
+                    </details>
+                </div>
+
+                <!-- Q31 -->
+                <div class="assignment">
+                    <h4>Q31. Write a program to demonstrate Static Variable.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 2
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Counter {
+    static int count = 0;
+    Counter() { count++; }
+}
+public class Main {
+    public static void main(String[] args) {
+        new Counter(); new Counter();
+        System.out.println(Counter.count); // Output: 2
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Static variable is shared among all instances.</p>
+                    </details>
+                </div>
+
+                <!-- Q32 -->
+                <div class="assignment">
+                    <h4>Q32. Write a program to demonstrate Static Method.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 25
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class MathUtil {
+    static int square(int x) { return x * x; }
+}
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(MathUtil.square(5));
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Static method can be called without creating an object.</p>
+                    </details>
+                </div>
+
+                <!-- Q33 -->
+                <div class="assignment">
+                    <h4>Q33. Write a program to demonstrate Static Block.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Static Block
+                    // Main Method
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Test {
+    static { System.out.println("Static Block"); }
+    public static void main(String[] args) {
+        System.out.println("Main Method");
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Static block executes before main method.</p>
+                    </details>
+                </div>
+
+                <!-- Q34 -->
+                <div class="assignment">
+                    <h4>Q34. Write a program to demonstrate Final Variable.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Demonstration of compilation error if modified)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Test {
+    final int MAX = 100;
+    void change() {
+        // MAX = 200; // Error: cannot assign a value to final variable
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Final variable value cannot be changed once assigned.</p>
+                    </details>
+                </div>
+
+                <!-- Q35 -->
+                <div class="assignment">
+                    <h4>Q35. Write a program to demonstrate Final Method.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Demonstration of compilation error if overridden)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Parent { final void show() {} }
+class Child extends Parent {
+    // void show() {} // Error: cannot override final method
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Final method cannot be overridden.</p>
+                    </details>
+                </div>
+
+                <!-- Q36 -->
+                <div class="assignment">
+                    <h4>Q36. Write a program to demonstrate Final Class.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Demonstration of compilation error if inherited)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+final class A {}
+// class B extends A {} // Error: cannot inherit from final class
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Final class cannot be inherited.</p>
+                    </details>
+                </div>
+
+                <!-- Q37 -->
+                <div class="assignment">
+                    <h4>Q37. Write a program to handle ArithmeticException.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // java.lang.ArithmeticException: / by zero
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+try {
+    int data = 50 / 0;
+} catch (ArithmeticException e) {
+    System.out.println(e);
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Catches division by zero error.</p>
+                    </details>
+                </div>
+
+                <!-- Q38 -->
+                <div class="assignment">
+                    <h4>Q38. Write a program to handle ArrayIndexOutOfBoundsException.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Array index out of bounds
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+try {
+    int[] a = new int[5];
+    a[10] = 50;
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Array index out of bounds");
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Catches invalid array index access.</p>
+                    </details>
+                </div>
+
+                <!-- Q39 -->
+                <div class="assignment">
+                    <h4>Q39. Write a program to handle NullPointerException.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // String is null
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String s = null;
+try {
+    System.out.println(s.length());
+} catch (NullPointerException e) {
+    System.out.println("String is null");
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Catches operations on null objects.</p>
+                    </details>
+                </div>
+
+                <!-- Q40 -->
+                <div class="assignment">
+                    <h4>Q40. Write a program to demonstrate 'finally' block.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // java.lang.NullPointerException
+                    // Finally block is always executed
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+try {
+    int data = 25 / 5;
+    System.out.println(data);
+} catch (NullPointerException e) {
+    System.out.println(e);
+} finally {
+    System.out.println("Finally block is always executed");
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Finally block executes regardless of exception occurrence.</p>
+                    </details>
+                </div>
+
+                <!-- Q41 -->
+                <div class="assignment">
+                    <h4>Q41. Write a program to demonstrate 'throw' keyword.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 15
+                    // Sample Output:
+                    // Exception in thread "main" java.lang.ArithmeticException: Not valid
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+void validate(int age) {
+    if (age < 18)
+        throw new ArithmeticException("Not valid");
+    else
+        System.out.println("Welcome to vote");
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Used to explicitly throw an exception.</p>
+                    </details>
+                </div>
+
+                <!-- Q42 -->
+                <div class="assignment">
+                    <h4>Q42. Write a program to demonstrate 'throws' keyword.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Exception in thread "main" java.io.IOException: Device error
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.io.IOException;
+void m() throws IOException {
+    throw new IOException("Device error");
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Declares that a method might throw an exception.</p>
+                    </details>
+                </div>
+
+                <!-- Q43 -->
+                <div class="assignment">
+                    <h4>Q43. Write a program to create a Custom Exception.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 15
+                    // Sample Output:
+                    // Exception in thread "main" InvalidAgeException: Not valid
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class InvalidAgeException extends Exception {
+    InvalidAgeException(String s) { super(s); }
+}
+class Test {
+    static void validate(int age) throws InvalidAgeException {
+        if (age < 18) throw new InvalidAgeException("Not valid");
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Extending Exception class to create custom exception.</p>
+                    </details>
+                </div>
+
+                <!-- Q44 -->
+                <div class="assignment">
+                    <h4>Q44. Write a program to demonstrate Multiple Catch blocks.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Arithmetic Exception
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+try {
+    int a[] = new int[5];
+    a[5] = 30 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Arithmetic Exception");
+} catch (ArrayIndexOutOfBoundsException e) {
+    System.out.println("Array Index Out Of Bounds");
+} catch (Exception e) {
+    System.out.println("Parent Exception");
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Handling specific exceptions before general ones.</p>
+                    </details>
+                </div>
+
+                <!-- Q45 -->
+                <div class="assignment">
+                    <h4>Q45. Write a program to demonstrate Nested Try block.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // java.lang.ArithmeticException: / by zero
+                    // java.lang.ArrayIndexOutOfBoundsException: 5
+                    // Handled
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+try {
+    try {
+        int b = 39 / 0;
+    } catch (ArithmeticException e) { System.out.println(e); }
+    try {
+        int a[] = new int[5];
+        a[5] = 4;
+    } catch (ArrayIndexOutOfBoundsException e) { System.out.println(e); }
+} catch (Exception e) { System.out.println("Handled"); }
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Try block inside another try block.</p>
+                    </details>
+                </div>
+
+                <!-- Q46 -->
+                <div class="assignment">
+                    <h4>Q46. Write a program to demonstrate String Pool.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // true
+                    // false
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String s1 = "Java";
+String s2 = "Java";
+String s3 = new String("Java");
+System.out.println(s1 == s2); // true (Pool)
+System.out.println(s1 == s3); // false (Heap)
+                        </code></pre>
+                        <p><strong>Explanation:</strong> String literals are stored in String Pool.</p>
+                    </details>
+                </div>
+
+                <!-- Q47 -->
+                <div class="assignment">
+                    <h4>Q47. Write a program to demonstrate StringBuilder.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Hello Java
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" Java");
+System.out.println(sb); // Hello Java
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Mutable sequence of characters.</p>
+                    </details>
+                </div>
+
+                <!-- Q48 -->
+                <div class="assignment">
+                    <h4>Q48. Write a program to demonstrate StringBuffer.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Hello World
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+StringBuffer sb = new StringBuffer("Hello");
+sb.append(" World");
+System.out.println(sb);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Thread-safe mutable sequence of characters.</p>
+                    </details>
+                </div>
+
+                <!-- Q49 -->
+                <div class="assignment">
+                    <h4>Q49. Write a program to compare two objects using equals() method.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // true (if IDs match)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Student {
+    int id;
+    Student(int id) { this.id = id; }
+    public boolean equals(Object obj) {
+        Student s = (Student) obj;
+        return this.id == s.id;
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Overriding equals method for content comparison.</p>
+                    </details>
+                </div>
+
+                <!-- Q50 -->
+                <div class="assignment">
+                    <h4>Q50. Write a program to demonstrate toString() method.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 101 John
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Student {
+    int id;
+    String name;
+    Student(int id, String name) { this.id = id; this.name = name; }
+    public String toString() { return id + " " + name; }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Returns string representation of object.</p>
+                    </details>
+                </div>
+
+                <!-- Q51 -->
+                <div class="assignment">
+                    <h4>Q51. Write a program to demonstrate Wrapper Classes.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 20 20 20
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+int a = 20;
+Integer i = Integer.valueOf(a); // Boxing
+int j = i.intValue(); // Unboxing
+System.out.println(a + " " + i + " " + j);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Converting primitives to objects and vice versa.</p>
+                    </details>
+                </div>
+
+                <!-- Q52 -->
+                <div class="assignment">
+                    <h4>Q52. Write a program to demonstrate Autoboxing and Unboxing.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 100 100
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+Integer a = 100; // Autoboxing
+int b = a; // Unboxing
+System.out.println(a + " " + b);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Automatic conversion by compiler.</p>
+                    </details>
+                </div>
+
+                <!-- Q53 -->
+                <div class="assignment">
+                    <h4>Q53. Write a program to demonstrate Enum.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // MEDIUM
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+enum Level { LOW, MEDIUM, HIGH }
+public class Main {
+    public static void main(String[] args) {
+        Level myVar = Level.MEDIUM;
+        System.out.println(myVar);
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Enum defines a collection of constants.</p>
+                    </details>
+                </div>
+
+                <!-- Q54 -->
+                <div class="assignment">
+                    <h4>Q54. Write a program to demonstrate Inner Class.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Inner
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Outer {
+    class Inner { void msg() { System.out.println("Inner"); } }
+}
+public class Main {
+    public static void main(String[] args) {
+        Outer.Inner in = new Outer().new Inner();
+        in.msg();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Class defined within another class.</p>
+                    </details>
+                </div>
+
+                <!-- Q55 -->
+                <div class="assignment">
+                    <h4>Q55. Write a program to demonstrate Anonymous Inner Class.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Nice fruits
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+abstract class Person { abstract void eat(); }
+class Test {
+    public static void main(String args[]) {
+        Person p = new Person() {
+            void eat() { System.out.println("Nice fruits"); }
+        };
+        p.eat();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Inner class without a name.</p>
+                    </details>
+                </div>
+
+                <!-- Q56 -->
+                <div class="assignment">
+                    <h4>Q56. Write a program to demonstrate Static Nested Class.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Static Inner
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Outer {
+    static class Inner { void msg() { System.out.println("Static Inner"); } }
+}
+public class Main {
+    public static void main(String[] args) {
+        Outer.Inner obj = new Outer.Inner();
+        obj.msg();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Static class inside another class.</p>
+                    </details>
+                </div>
+
+                <!-- Q57 -->
+                <div class="assignment">
+                    <h4>Q57. Write a program to demonstrate Varargs.</h4>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // "A", "B", "C"
+                    // Sample Output:
+                    // A
+                    // B
+                    // C
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+void display(String... values) {
+    for (String s : values) System.out.println(s);
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Variable arguments allow passing arbitrary number of arguments.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- Q58 -->
+                <div class="assignment">
+                    <h4>Q58. Write a program to demonstrate Garbage Collection.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Garbage Collected
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+public class Test {
+    public void finalize() { System.out.println("Garbage Collected"); }
+    public static void main(String[] args) {
+        Test t1 = new Test();
+        t1 = null;
+        System.gc();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Requesting JVM to run Garbage Collector.</p>
+                    </details>
+                </div>
+
+                <!-- Q59 -->
+                <div class="assignment">
+                    <h4>Q59. Write a program to demonstrate Cloning.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Cloned object details)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Student implements Cloneable {
+    int rollno; String name;
+    Student(int rollno, String name) { this.rollno = rollno; this.name = name; }
+    public Object clone() throws CloneNotSupportedException { return super.clone(); }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Creating exact copy of an object.</p>
+                    </details>
+                </div>
+
+                <!-- Q60 -->
+                <div class="assignment">
+                    <h4>Q60. Write a program to demonstrate Serialization.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Serialized file created)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.io.*;
+class Student implements Serializable { int id; String name; }
+// Serialization code omitted for brevity
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Converting object state to byte stream.</p>
+                    </details>
+                </div>
+
+                <div class="content-section text-center" style="margin-top: 3rem;">
+                    <h3>🎉 Intermediate Section Completed!</h3>
+                    <p>Excellent! You have mastered 60 intermediate programs. Ready for the Advanced challenge?</p>
+                    <a class="md-button md-button--primary" href="advanced.html">Go to Advanced ➡</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>

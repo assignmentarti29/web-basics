@@ -1,0 +1,2119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Java Interview Questions - Beginner (Q1-Q50) - Java Mastery Hub</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <!-- CSS -->
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <!-- Header -->
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <!-- Main Layout -->
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Beginner Interview Questions (Q1 - Q50)</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="introduction.html">Interview</a></li>
+                        <li>Beginner</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <p>This section covers the fundamental concepts of Java, including JVM architecture, variables, data
+                        types, and basic OOP principles. Perfect for freshers and those brushing up on basics.</p>
+                </div>
+                <!-- Q1 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q1. What is Java? <span class="tag-most-asked">🔥 Most Asked</span>
+                    </div>
+                    <div class="admonition-content">
+                        <p>Java is a high-level, object-oriented, robust, secure, and
+                            platform-independent programming language. It was developed by Sun Microsystems (now Oracle)
+                            in
+                            1995. Its core philosophy is "Write Once, Run Anywhere" (WORA).</p>
+                    </div>
+                </div>
+                <!-- Q2 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q2. What are the main features of Java?</div>
+                    <div class="admonition-content">
+                        <p>The key features of Java are:
+                        <ul>
+                            <li><strong>Simple:</strong> Easy to learn, no pointers.</li>
+                            <li><strong>Object-Oriented:</strong> Everything is an object.</li>
+                            <li><strong>Platform Independent:</strong> Bytecode runs on any JVM.</li>
+                            <li><strong>Robust:</strong> Strong memory management, exception handling.</li>
+                            <li><strong>Secure:</strong> No explicit pointers, runs inside sandbox.</li>
+                            <li><strong>Multithreaded:</strong> Supports concurrent execution.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q3 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q3. What is the difference between JDK, JRE, and JVM? <span
+                            class="tag-most-asked">🔥 Most Asked</span></div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>JVM (Java Virtual Machine):</strong> An abstract machine that executes Java
+                                bytecode. It is platform-dependent.</li>
+                            <li><strong>JRE (Java Runtime Environment):</strong> Contains JVM + Class Libraries. It is
+                                used
+                                to <em>run</em> Java applications.</li>
+                            <li><strong>JDK (Java Development Kit):</strong> Contains JRE + Development Tools (javac,
+                                debugger). It is used to <em>develop</em> Java applications.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q4 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q4. Why is Java platform independent?</div>
+                    <div class="admonition-content">
+                        <p>Java is platform independent because the compiler (`javac`) converts
+                            source code into <strong>bytecode</strong> (`.class` file), which is not specific to any
+                            machine. This bytecode can be executed by the JVM on any operating system (Windows, Mac,
+                            Linux),
+                            making the code portable.</p>
+                    </div>
+                </div>
+                <!-- Q5 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q5. Is JVM platform independent?</div>
+                    <div class="admonition-content">
+                        <p>No, the <strong>JVM is platform-dependent</strong>. You need a different
+                            JVM for Windows, Linux, and macOS because it acts as an interface between the bytecode and
+                            the
+                            specific underlying hardware/OS.</p>
+                    </div>
+                </div>
+                <!-- Q6 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q6. What is the JIT compiler?</div>
+                    <div class="admonition-content">
+                        <p>JIT (Just-In-Time) compiler is a component of the JVM that improves
+                            performance. It compiles bytecode into native machine code <em>at runtime</em> for
+                            frequently
+                            executed methods ("hotspots"), so the JVM doesn't have to interpret them every time.</p>
+                    </div>
+                </div>
+                <!-- Q7 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q7. What are the memory areas in JVM?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Heap Area:</strong> Stores objects and instance variables.</li>
+                            <li><strong>Stack Area:</strong> Stores method calls, local variables, and reference
+                                variables.
+                            </li>
+                            <li><strong>Method Area:</strong> Stores class structures (metadata), static variables,
+                                constants.</li>
+                            <li><strong>PC Register:</strong> Stores the address of the current instruction.</li>
+                            <li><strong>Native Method Stack:</strong> Stores native method information.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q8 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q8. What is a ClassLoader?</div>
+                    <div class="admonition-content">
+                        <p>The ClassLoader is a subsystem of JVM responsible for loading class
+                            files (`.class`) into memory dynamically when needed. There are three built-in class
+                            loaders:
+                            Bootstrap, Extension (Platform), and System (Application).</p>
+                    </div>
+                </div>
+                <!-- Q9 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q9. What is the difference between C++ and Java?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Platform:</strong> C++ is platform-dependent; Java is platform-independent.</li>
+                            <li><strong>Pointers:</strong> C++ supports pointers; Java does not (for security).</li>
+                            <li><strong>Inheritance:</strong> C++ supports multiple inheritance; Java does not (supports
+                                via
+                                Interfaces).</li>
+                            <li><strong>Memory:</strong> C++ requires manual memory management; Java has automatic
+                                Garbage
+                                Collection.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q10 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q10. What is `public static void main(String[] args)`? <span
+                            class="tag-most-asked">🔥 Most Asked</span></div>
+                    <div class="admonition-content">
+                        <p>It is the entry point of any Java application.
+                        <ul>
+                            <li><strong>public:</strong> Accessible by JVM from anywhere.</li>
+                            <li><strong>static:</strong> Can be called without creating an object of the class.</li>
+                            <li><strong>void:</strong> Returns nothing.</li>
+                            <li><strong>main:</strong> Name of the method JVM looks for.</li>
+                            <li><strong>String[] args:</strong> Accepts command-line arguments.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q11 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q11. Can we execute a Java program without a main method?</div>
+                    <div class="admonition-content">
+                        <p>Prior to JDK 7, it was possible using a static block. However, from JDK
+                            7 onwards, the JVM explicitly checks for the `main` method before initializing the class, so
+                            it
+                            is <strong>not possible</strong> to execute a standard application without `main`.</p>
+                    </div>
+                </div>
+                <!-- Q12 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q12. What happens if we declare main method as private?</div>
+                    <div class="admonition-content">
+                        <p>The code will compile successfully, but it will throw a runtime error:
+                            `Main method not found in class...`, because the JVM cannot access a private method.</p>
+                    </div>
+                </div>
+                <!-- Q13 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q13. Can we overload the main method?</div>
+                    <div class="admonition-content">
+                        <p>Yes, we can overload the main method by defining other methods named
+                            `main` with different parameters. However, the JVM will always call the one with `String[]
+                            args`
+                            signature as the entry point.</p>
+                    </div>
+                </div>
+                <!-- Q14 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q14. What are Java identifiers?</div>
+                    <div class="admonition-content">
+                        <p>Identifiers are names given to classes, methods, variables, and
+                            packages. They must start with a letter, `$`, or `_`, and are case-sensitive. They cannot be
+                            keywords.</p>
+                    </div>
+                </div>
+                <!-- Q15 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q15. What are the primitive data types in Java?</div>
+                    <div class="admonition-content">
+                        <p>There are 8 primitive data types:
+                        <ul>
+                            <li><strong>byte</strong> (8-bit)</li>
+                            <li><strong>short</strong> (16-bit)</li>
+                            <li><strong>int</strong> (32-bit)</li>
+                            <li><strong>long</strong> (64-bit)</li>
+                            <li><strong>float</strong> (32-bit)</li>
+                            <li><strong>double</strong> (64-bit)</li>
+                            <li><strong>char</strong> (16-bit, Unicode)</li>
+                            <li><strong>boolean</strong> (true/false)</li>
+                        </ul>
+                        <pre><code class="language-java">int age = 25;
+double price = 99.99;
+boolean isJavaFun = true;
+char grade = 'A';</code></pre>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q16 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q16. What is the default value of local variables? <span
+                            class="tag-most-asked">🔥 Most Asked</span></div>
+                    <div class="admonition-content">
+                        <p>Local variables (declared inside methods) do <strong>not</strong> have a
+                            default value. They must be initialized before use, otherwise, the compiler will throw an
+                            error
+                            (`variable might not have been initialized`).</p>
+                    </div>
+                </div>
+                <!-- Q17 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q17. What is the difference between instance and static variables?
+                    </div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Instance Variable:</strong> Belongs to an object. Each object has its own copy.
+                                Created when object is created.</li>
+                            <li><strong>Static Variable:</strong> Belongs to the class. Shared among all objects.
+                                Created
+                                when class is loaded.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q18 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q18. What is type casting?</div>
+                    <div class="admonition-content">
+                        <p>Converting one data type into another.
+                        <ul>
+                            <li><strong>Implicit (Widening):</strong> Automatic, smaller to larger type (e.g., `int` to
+                                `double`).</li>
+                            <li><strong>Explicit (Narrowing):</strong> Manual, larger to smaller type (e.g., `double` to
+                                `int`), may lose data.</li>
+                        </ul>
+                        <pre><code class="language-java">// Implicit
+int num = 10;
+double d = num; // 10.0
+
+// Explicit
+double pi = 3.14;
+int p = (int) pi; // 3</code></pre>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q19 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q19. What is a wrapper class?</div>
+                    <div class="admonition-content">
+                        <p>A class that wraps a primitive data type into an object. Examples:
+                            `Integer` for `int`, `Double` for `double`. They are used in Collections (which store
+                            objects
+                            only) and provide utility methods.</p>
+                    </div>
+                </div>
+                <!-- Q20 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q20. What is Autoboxing and Unboxing?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Autoboxing:</strong> Automatic conversion of primitive to wrapper object (e.g.,
+                                `int` to `Integer`).</li>
+                            <li><strong>Unboxing:</strong> Automatic conversion of wrapper object to primitive (e.g.,
+                                `Integer` to `int`).</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q21 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q21. What is the difference between `==` and `equals()`? <span
+                            class="tag-most-asked">🔥 Most Asked</span></div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>`==` Operator:</strong> Compares <strong>references</strong> (memory addresses)
+                                for
+                                objects, and <strong>values</strong> for primitives.</li>
+                            <li><strong>`equals()` Method:</strong> Compares <strong>content</strong> (values) of
+                                objects
+                                (if overridden). Default implementation in `Object` class behaves like `==`.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q22 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q22. Why are Strings immutable in Java?</div>
+                    <div class="admonition-content">
+                        <p>String immutability ensures:
+                        <ul>
+                            <li><strong>Security:</strong> Strings are used for passwords, URLs, db connections.
+                                Changing
+                                them could compromise security.</li>
+                            <li><strong>Thread Safety:</strong> Immutable objects are inherently thread-safe.</li>
+                            <li><strong>String Constant Pool:</strong> Saves memory by sharing identical strings.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q23 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q23. What is the String Constant Pool?</div>
+                    <div class="admonition-content">
+                        <p>A special memory area in the Heap where String literals are stored. If a
+                            string literal is created that already exists in the pool, the reference to the existing
+                            string
+                            is returned instead of creating a new object.</p>
+                    </div>
+                </div>
+                <!-- Q24 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q24. What is the difference between String, StringBuffer, and
+                        StringBuilder?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>String:</strong> Immutable, slow for concatenation.</li>
+                            <li><strong>StringBuffer:</strong> Mutable, synchronized (thread-safe), slower than
+                                StringBuilder.</li>
+                            <li><strong>StringBuilder:</strong> Mutable, not synchronized (not thread-safe), fastest.
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q25 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q25. What is an Array?</div>
+                    <div class="admonition-content">
+                        <p>An object that stores a fixed-size collection of elements of the same
+                            type. Arrays are index-based (starting from 0) and stored in contiguous memory locations.
+                        </p>
+                        <pre><code class="language-java">int[] numbers = {1, 2, 3, 4, 5};
+String[] names = new String[5];
+names[0] = "Alice";</code></pre>
+                    </div>
+                </div>
+                <!-- Q26 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q26. How do you find the length of an array vs a string?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Array:</strong> Use the `.length` <em>property</em> (e.g., `arr.length`).</li>
+                            <li><strong>String:</strong> Use the `.length()` <em>method</em> (e.g., `str.length()`).
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q27 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q27. What is a multi-dimensional array?</div>
+                    <div class="admonition-content">
+                        <p>An array of arrays. The most common is a 2D array (matrix). Example:
+                            `int[][] matrix = new int[3][3];`.</p>
+                    </div>
+                </div>
+                <!-- Q28 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q28. What is Object-Oriented Programming (OOP)?</div>
+                    <div class="admonition-content">
+                        <p>A programming paradigm based on "objects" containing data (fields) and
+                            code (methods). The four main pillars are:
+                        <ul>
+                            <li>Encapsulation</li>
+                            <li>Inheritance</li>
+                            <li>Polymorphism</li>
+                            <li>Abstraction</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q29 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q29. What is a Class and an Object?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Class:</strong> A blueprint or template that defines the properties and
+                                behaviors.
+                            </li>
+                            <li><strong>Object:</strong> An instance of a class. It has state (variables) and behavior
+                                (methods).</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q30 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q30. What is a Constructor?</div>
+                    <div class="admonition-content">
+                        <p>A special method used to initialize objects. It has the same name as the
+                            class and no return type. It is called automatically when an object is created.</p>
+                        <pre><code class="language-java">class Car {
+    Car() {
+        System.out.println("Car created");
+    }
+}
+Car myCar = new Car(); // Output: Car created</code></pre>
+                    </div>
+                </div>
+                <!-- Q31 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q31. What are the types of constructors?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Default Constructor:</strong> No-args constructor created by compiler if none is
+                                defined.</li>
+                            <li><strong>No-Arg Constructor:</strong> Explicitly defined with no arguments.</li>
+                            <li><strong>Parameterized Constructor:</strong> Accepts arguments to initialize fields with
+                                specific values.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q32 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q32. Can a constructor be private?</div>
+                    <div class="admonition-content">
+                        <p>Yes. If a constructor is private, you cannot create an instance of the
+                            class from outside. This is used in the <strong>Singleton Design Pattern</strong>.</p>
+                    </div>
+                </div>
+                <!-- Q33 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q33. What is the `this` keyword?</div>
+                    <div class="admonition-content">
+                        <p>`this` is a reference variable that refers to the <strong>current
+                                object</strong>. It is used to resolve naming conflicts between instance variables and
+                            parameters, or to call another constructor (`this()`).</p>
+                    </div>
+                </div>
+                <!-- Q34 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q34. What is Inheritance?</div>
+                    <div class="admonition-content">
+                        <p>A mechanism where one class (Child/Subclass) acquires the properties and
+                            behaviors of another class (Parent/Superclass). It promotes code reusability. Used via
+                            `extends`
+                            keyword.</p>
+                    </div>
+                </div>
+                <!-- Q35 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q35. Does Java support multiple inheritance? <span
+                            class="tag-most-asked">🔥
+                            Most Asked</span></div>
+                    <div class="admonition-content">
+                        <p>Java does <strong>not</strong> support multiple inheritance with classes
+                            (to avoid the "Diamond Problem"). However, it supports multiple inheritance through
+                            <strong>Interfaces</strong>.
+                        </p>
+                    </div>
+                </div>
+                <!-- Q36 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q36. What is the `super` keyword?</div>
+                    <div class="admonition-content">
+                        <p>`super` is a reference variable used to refer to the <strong>immediate
+                                parent class</strong> object. It is used to access parent class methods, variables, or
+                            constructors (`super()`).</p>
+                    </div>
+                </div>
+                <!-- Q37 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q37. What is Polymorphism?</div>
+                    <div class="admonition-content">
+                        <p>Polymorphism means "many forms". It allows a single action to behave
+                            differently based on the object performing it.
+                        <ul>
+                            <li><strong>Compile-time (Static):</strong> Method Overloading.</li>
+                            <li><strong>Run-time (Dynamic):</strong> Method Overriding.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q38 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q38. What is Method Overloading?</div>
+                    <div class="admonition-content">
+                        <p>Defining multiple methods in the same class with the <strong>same
+                                name</strong> but <strong>different parameters</strong> (type, number, or order). Return
+                            type doesn't matter.</p>
+                    </div>
+                </div>
+                <!-- Q39 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q39. What is Method Overriding?</div>
+                    <div class="admonition-content">
+                        <p>Defining a method in the child class that already exists in the parent
+                            class with the <strong>same signature</strong> (name, parameters, return type). Used to
+                            provide
+                            specific implementation.</p>
+                    </div>
+                </div>
+                <!-- Q40 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q40. Can we override static methods?</div>
+                    <div class="admonition-content">
+                        <p>No. Static methods belong to the class, not the object. If you define a
+                            static method with the same signature in the child class, it is called <strong>Method
+                                Hiding</strong>, not overriding.</p>
+                    </div>
+                </div>
+                <!-- Q41 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q41. What is Encapsulation?</div>
+                    <div class="admonition-content">
+                        <p>Encapsulation is wrapping data (variables) and code (methods) together
+                            into a single unit (class). It is achieved by making variables <strong>private</strong> and
+                            providing public <strong>getter and setter</strong> methods.</p>
+                    </div>
+                </div>
+                <!-- Q42 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q42. What is Abstraction?</div>
+                    <div class="admonition-content">
+                        <p>Abstraction is hiding internal implementation details and showing only
+                            the functionality to the user. It is achieved using <strong>Abstract Classes</strong>
+                            (0-100%
+                            abstraction) and <strong>Interfaces</strong> (100% abstraction).</p>
+                    </div>
+                </div>
+                <!-- Q43 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q43. What is an Abstract Class?</div>
+                    <div class="admonition-content">
+                        <p>A class declared with `abstract` keyword. It can have both abstract (no
+                            body) and non-abstract methods. It cannot be instantiated.</p>
+                    </div>
+                </div>
+                <!-- Q44 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q44. What is an Interface?</div>
+                    <div class="admonition-content">
+                        <p>A blueprint of a class that contains static constants and abstract
+                            methods (before Java 8). It supports multiple inheritance and 100% abstraction. From Java 8,
+                            it
+                            can have default and static methods.</p>
+                    </div>
+                </div>
+                <!-- Q45 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q45. Difference between Abstract Class and Interface? <span
+                            class="tag-most-asked">🔥 Most Asked</span></div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Abstract Class:</strong> Can have state (instance variables), constructors, and
+                                non-abstract methods. Used for "is-a" relationship.</li>
+                            <li><strong>Interface:</strong> Cannot have state (only constants), no constructors. Used
+                                for
+                                "can-do" capability and multiple inheritance.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q46 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q46. What is the `final` keyword?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Variable:</strong> Value cannot be changed (constant).</li>
+                            <li><strong>Method:</strong> Cannot be overridden.</li>
+                            <li><strong>Class:</strong> Cannot be inherited (e.g., String class).</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q47 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q47. What is the `static` keyword?</div>
+                    <div class="admonition-content">
+                        <p>Used to manage memory. It belongs to the class rather than an instance.
+                            We can have static variables, methods, blocks, and nested classes.</p>
+                    </div>
+                </div>
+                <!-- Q48 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q48. What is a Package?</div>
+                    <div class="admonition-content">
+                        <p>A namespace that organizes a set of related classes and interfaces. It
+                            prevents naming conflicts and controls access. Built-in packages include `java.lang`,
+                            `java.util`, etc.</p>
+                    </div>
+                </div>
+                <!-- Q49 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q49. What are Access Modifiers?</div>
+                    <div class="admonition-content">
+                        <p>They control the visibility of classes, methods, and variables.
+                        <ul>
+                            <li><strong>private:</strong> Within class only.</li>
+                            <li><strong>default:</strong> Within package only.</li>
+                            <li><strong>protected:</strong> Within package + subclasses outside package.</li>
+                            <li><strong>public:</strong> Everywhere.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q50 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q50. What is the `instanceof` operator?</div>
+                    <div class="admonition-content">
+                        <p>It is used to test whether an object is an instance of a specific class
+                            or interface. It returns `true` or `false`. Example: `if (s instanceof String) ...`</p>
+                    </div>
+                </div>
+                <!-- Q51 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q51. Is Java Pass-by-Value or Pass-by-Reference? <span
+                            class="tag-most-asked">🔥
+                            Most Asked</span></div>
+                    <div class="admonition-content">
+                        <p>Java is <strong>strictly Pass-by-Value</strong>.
+                        <ul>
+                            <li>For <strong>primitives</strong>, the actual value is passed.</li>
+                            <li>For <strong>objects</strong>, the <em>value of the reference</em> (memory address) is
+                                passed, not the object itself.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q52 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q52. What is the `Object` class?</div>
+                    <div class="admonition-content">
+                        <p>The `Object` class is the root class of the Java class hierarchy. Every
+                            class in Java directly or indirectly inherits from the `Object` class.</p>
+                    </div>
+                </div>
+                <!-- Q53 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q53. What are the important methods of the Object class?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li>`toString()`: Returns string representation.</li>
+                            <li>`equals(Object obj)`: Compares objects.</li>
+                            <li>`hashCode()`: Returns hash code.</li>
+                            <li>`getClass()`: Returns runtime class.</li>
+                            <li>`clone()`: Creates object copy.</li>
+                            <li>`finalize()`: Called by GC (deprecated).</li>
+                            <li>`wait()`, `notify()`, `notifyAll()`: For threading.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q54 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q54. What is the purpose of `toString()` method?</div>
+                    <div class="admonition-content">
+                        <p>It returns a string representation of the object. By default, it returns
+                            `ClassName@HashCode`. We override it to provide a meaningful string representation (e.g.,
+                            printing object state).</p>
+                    </div>
+                </div>
+                <!-- Q55 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q55. What is the contract between `equals()` and `hashCode()`?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li>If two objects are equal according to `equals()`, they <strong>must</strong> have the
+                                same
+                                `hashCode()`.</li>
+                            <li>If two objects have the same `hashCode()`, they are <strong>not necessarily</strong>
+                                equal.
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q56 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q56. What is a Marker Interface?</div>
+                    <div class="admonition-content">
+                        <p>An interface with <strong>no methods or constants</strong>. It provides
+                            run-time type information to the JVM. Examples: `Serializable`, `Cloneable`, `Remote`.</p>
+                    </div>
+                </div>
+                <!-- Q57 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q57. What is the difference between `break` and `continue`?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>break:</strong> Terminates the loop or switch statement immediately.</li>
+                            <li><strong>continue:</strong> Skips the current iteration and jumps to the next iteration
+                                of
+                                the loop.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q58 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q58. What is the `return` keyword?</div>
+                    <div class="admonition-content">
+                        <p>It is used to exit from a method, with or without a value. If the method
+                            has a return type, it must return a value of that type.</p>
+                    </div>
+                </div>
+                <!-- Q59 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q59. What is an Exception?</div>
+                    <div class="admonition-content">
+                        <p>An event that disrupts the normal flow of the program's execution. It is
+                            an object thrown at runtime.</p>
+                    </div>
+                </div>
+                <!-- Q60 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q60. What is the difference between Error and Exception?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Error:</strong> Serious problems that a reasonable application should not try to
+                                catch (e.g., `OutOfMemoryError`, `StackOverflowError`). Usually caused by the
+                                environment.
+                            </li>
+                            <li><strong>Exception:</strong> Conditions that a reasonable application might want to catch
+                                (e.g., `NullPointerException`, `IOException`).</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q61 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q61. What are Checked and Unchecked Exceptions? <span
+                            class="tag-most-asked">🔥
+                            Most Asked</span></div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Checked:</strong> Checked at compile-time. Must be handled using try-catch or
+                                throws
+                                (e.g., `IOException`, `SQLException`).</li>
+                            <li><strong>Unchecked (Runtime):</strong> Checked at runtime. Handling is optional (e.g.,
+                                `NullPointerException`, `ArrayIndexOutOfBoundsException`).</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q62 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q62. What are the keywords used in Exception Handling?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>try:</strong> Block of code to monitor for exceptions.</li>
+                            <li><strong>catch:</strong> Block to handle the exception.</li>
+                            <li><strong>finally:</strong> Block that always executes (cleanup code).</li>
+                            <li><strong>throw:</strong> Used to throw an exception explicitly.</li>
+                            <li><strong>throws:</strong> Declares exceptions a method can throw.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q63 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q63. Can we have a try block without catch?</div>
+                    <div class="admonition-content">
+                        <p>Yes, but it must be followed by a `finally` block. A `try` block cannot
+                            exist alone.</p>
+                    </div>
+                </div>
+                <!-- Q64 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q64. What is the difference between `throw` and `throws`?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>throw:</strong> Used <em>inside</em> a method to throw an exception object
+                                explicitly.</li>
+                            <li><strong>throws:</strong> Used in <em>method signature</em> to declare that the method
+                                might
+                                throw exceptions.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q65 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q65. What is `finally` block?</div>
+                    <div class="admonition-content">
+                        <p>A block that executes regardless of whether an exception is handled or
+                            not. It is typically used for resource cleanup (closing files, DB connections).</p>
+                    </div>
+                </div>
+                <!-- Q66 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q66. Does `finally` block always execute? <span
+                            class="tag-most-asked">🔥 Most
+                            Asked</span></div>
+                    <div class="admonition-content">
+                        <p>Yes, except in a few cases:
+                        <ul>
+                            <li>If `System.exit()` is called.</li>
+                            <li>If the JVM crashes.</li>
+                            <li>If the thread executing the code is killed.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q67 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q67. What is a Collection in Java?</div>
+                    <div class="admonition-content">
+                        <p>A framework that provides an architecture to store and manipulate a
+                            group of objects. It includes interfaces (List, Set, Map) and classes (ArrayList, HashSet,
+                            HashMap).</p>
+                    </div>
+                </div>
+                <!-- Q68 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q68. What is the difference between Array and ArrayList?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>Array:</strong> Fixed size, supports primitives and objects, faster.</li>
+                            <li><strong>ArrayList:</strong> Dynamic size, supports only objects, slower (due to
+                                resizing).
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q69 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q69. What is the difference between List and Set?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>List:</strong> Ordered collection, allows duplicates (e.g., ArrayList,
+                                LinkedList).
+                            </li>
+                            <li><strong>Set:</strong> Unordered collection, does <strong>not</strong> allow duplicates
+                                (e.g., HashSet, TreeSet).</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q70 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q70. What is a Map?</div>
+                    <div class="admonition-content">
+                        <p>An object that maps keys to values. It cannot contain duplicate keys.
+                            Each key can map to at most one value. It is <strong>not</strong> a subtype of the
+                            `Collection`
+                            interface.</p>
+                    </div>
+                </div>
+                <!-- Q71 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q71. What is `static` block?</div>
+                    <div class="admonition-content">
+                        <p>A block of code used to initialize static variables. It is executed
+                            <strong>once</strong> when the class is loaded into memory, even before the main method.
+                        </p>
+                    </div>
+                </div>
+                <!-- Q72 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q72. Can we execute code before main method?</div>
+                    <div class="admonition-content">
+                        <p>Yes, using a <strong>static block</strong>. The static block executes
+                            when the class is loaded, which happens before the JVM calls the `main` method.</p>
+                    </div>
+                </div>
+                <!-- Q73 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q73. What is an Inner Class?</div>
+                    <div class="admonition-content">
+                        <p>A class defined inside another class. It can access private members of
+                            the outer class. Used to logically group classes used in one place.</p>
+                    </div>
+                </div>
+                <!-- Q74 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q74. What is an Anonymous Inner Class?</div>
+                    <div class="admonition-content">
+                        <p>An inner class without a name, used to instantiate an object with
+                            certain "extras" (like overriding methods) in a single step. Often used for event handling
+                            or
+                            listeners.</p>
+                    </div>
+                </div>
+                <!-- Q75 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q75. What is the `final` class?</div>
+                    <div class="admonition-content">
+                        <p>A class that cannot be subclassed (inherited). Example:
+                            `java.lang.String`, `java.lang.Math`. This is done for security and immutability.</p>
+                    </div>
+                </div>
+                <!-- Q76 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q76. What is the `transient` keyword?</div>
+                    <div class="admonition-content">
+                        <p>Used in serialization. If a variable is declared as `transient`, it is
+                            <strong>not serialized</strong> (its value is not saved). During deserialization, it gets
+                            the
+                            default value.
+                        </p>
+                    </div>
+                </div>
+                <!-- Q77 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q77. What is the `volatile` keyword?</div>
+                    <div class="admonition-content">
+                        <p>Indicates that a variable's value will be modified by different threads.
+                            It ensures that the value is always read from the <strong>main memory</strong>, not from the
+                            thread's local cache, guaranteeing visibility.</p>
+                    </div>
+                </div>
+                <!-- Q78 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q78. What is Serialization?</div>
+                    <div class="admonition-content">
+                        <p>The process of converting the state of an object into a byte stream to
+                            save it to a file or send it over a network. The reverse process is called Deserialization.
+                        </p>
+                    </div>
+                </div>
+                <!-- Q79 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q79. How do you make a class Serializable?</div>
+                    <div class="admonition-content">
+                        <p>By implementing the `java.io.Serializable` interface. It is a marker
+                            interface (no methods).</p>
+                    </div>
+                </div>
+                <!-- Q80 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q80. What is Garbage Collection (GC)?</div>
+                    <div class="admonition-content">
+                        <p>The process of automatically reclaiming memory occupied by objects that
+                            are no longer reachable (referenced) in the program. It prevents memory leaks.</p>
+                    </div>
+                </div>
+                <!-- Q81 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q81. Can we force Garbage Collection?</div>
+                    <div class="admonition-content">
+                        <p>No. We can <em>request</em> it using `System.gc()` or
+                            `Runtime.getRuntime().gc()`, but the JVM does not guarantee that GC will run immediately.
+                        </p>
+                    </div>
+                </div>
+                <!-- Q82 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q82. What is the `finalize()` method?</div>
+                    <div class="admonition-content">
+                        <p>A method in the `Object` class called by the Garbage Collector before an
+                            object is destroyed. It is used for cleanup code. (Note: Deprecated in Java 9).</p>
+                    </div>
+                </div>
+                <!-- Q83 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q83. What is a Constructor Chaining?</div>
+                    <div class="admonition-content">
+                        <p>Calling one constructor from another constructor within the same class
+                            (using `this()`) or from the parent class (using `super()`).</p>
+                    </div>
+                </div>
+                <!-- Q84 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q84. What is the default value of a boolean?</div>
+                    <div class="admonition-content">
+                        <p>`false`.</p>
+                    </div>
+                </div>
+                <!-- Q85 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q85. What is the default value of an object reference?</div>
+                    <div class="admonition-content">
+                        <p>`null`.</p>
+                    </div>
+                </div>
+                <!-- Q86 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q86. What is a Literal?</div>
+                    <div class="admonition-content">
+                        <p>A source code representation of a fixed value. Examples: `100` (int
+                            literal), `'A'` (char literal), `"Hello"` (String literal), `true` (boolean literal).</p>
+                    </div>
+                </div>
+                <!-- Q87 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q87. What is Type Promotion?</div>
+                    <div class="admonition-content">
+                        <p>When evaluating an expression, Java automatically promotes smaller data
+                            types to larger ones (e.g., `byte`, `short`, `char` are promoted to `int`).</p>
+                    </div>
+                </div>
+                <!-- Q88 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q88. What is the difference between `while` and `do-while` loop?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>while:</strong> Entry-controlled. Condition checked <em>before</em> execution.
+                                May
+                                run 0 times.</li>
+                            <li><strong>do-while:</strong> Exit-controlled. Condition checked <em>after</em> execution.
+                                Runs
+                                at least once.</li>
+                        </ul>
+                        <pre><code class="language-java">// while
+while(x > 0) { x--; }
+
+// do-while
+do {
+    System.out.println("Runs at least once");
+} while(false);</code></pre>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q89 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q89. What is an Enhanced for-loop (for-each)?</div>
+                    <div class="admonition-content">
+                        <p>A simplified loop used to iterate over arrays or collections. Syntax:
+                            `for (Type var : array) { ... }`. It is cleaner but cannot access the index.</p>
+                    </div>
+                </div>
+                <!-- Q90 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q90. What is a Switch statement?</div>
+                    <div class="admonition-content">
+                        <p>A control flow statement that executes one block of code from multiple
+                            options based on a variable's value. Supports `int`, `char`, `String`, `enum`.</p>
+                        <pre><code class="language-java">int day = 3;
+switch(day) {
+    case 1: System.out.println("Monday"); break;
+    case 2: System.out.println("Tuesday"); break;
+    default: System.out.println("Other");
+}</code></pre>
+                    </div>
+                </div>
+                <!-- Q91 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q91. What is the `default` case in switch?</div>
+                    <div class="admonition-content">
+                        <p>The block of code executed if none of the `case` values match the switch
+                            expression. It is optional.</p>
+                    </div>
+                </div>
+                <!-- Q92 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q92. Can we use Strings in switch case?</div>
+                    <div class="admonition-content">
+                        <p>Yes, starting from Java 7, we can use String objects in switch
+                            statements.</p>
+                    </div>
+                </div>
+                <!-- Q93 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q93. What is the `Math` class?</div>
+                    <div class="admonition-content">
+                        <p>A utility class in `java.lang` containing static methods for
+                            mathematical operations like `Math.max()`, `Math.sqrt()`, `Math.random()`, etc.</p>
+                    </div>
+                </div>
+                <!-- Q94 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q94. How to generate a random number?</div>
+                    <div class="admonition-content">
+                        <p>Using `Math.random()` (returns double between 0.0 and 1.0) or
+                            `java.util.Random` class.</p>
+                    </div>
+                </div>
+                <!-- Q95 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q95. What is a recursive method?</div>
+                    <div class="admonition-content">
+                        <p>A method that calls itself. It must have a base condition to stop the
+                            recursion, otherwise it leads to `StackOverflowError`.</p>
+                    </div>
+                </div>
+                <!-- Q96 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q96. What is the difference between `void` and `null`?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>void:</strong> A return type indicating the method returns nothing.</li>
+                            <li><strong>null:</strong> A literal representing the absence of an object reference.</li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q97 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q97. What is Command Line Argument?</div>
+                    <div class="admonition-content">
+                        <p>Arguments passed to the `main` method at the time of running the
+                            application. They are stored in the `String[] args` array.</p>
+                    </div>
+                </div>
+                <!-- Q98 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q98. What is the `Scanner` class?</div>
+                    <div class="admonition-content">
+                        <p>A class in `java.util` used to parse primitive types and strings using
+                            regular expressions. Commonly used for reading input from the console (`System.in`).</p>
+                    </div>
+                </div>
+                <!-- Q99 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q99. What is `System.out.println()`?</div>
+                    <div class="admonition-content">
+                        <p>
+                        <ul>
+                            <li><strong>System:</strong> A class in `java.lang`.</li>
+                            <li><strong>out:</strong> A static final variable (PrintStream) in System class.</li>
+                            <li><strong>println():</strong> A method of PrintStream class to print text with a newline.
+                            </li>
+                        </ul>
+                        </p>
+                    </div>
+                </div>
+                <!-- Q100 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q100. What is the difference between `print()` and `println()`?</div>
+                    <div class="admonition-content">
+                        <p>`print()` outputs text and keeps the cursor on the same line.
+                            `println()` outputs text and moves the cursor to the next line.</p>
+                    </div>
+                </div>
+                <!-- Q101 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q101. What is an Array?</div>
+                    <div class="admonition-content">
+                        <p>An object that stores a collection of elements of the same type. It has a fixed size.</p>
+                        <pre><code class="language-java">int[] numbers = {1, 2, 3, 4, 5};
+String[] names = new String[5];</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q102 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q102. What is ArrayIndexOutOfBoundsException?</div>
+                    <div class="admonition-content">
+                        <p>A runtime exception thrown when trying to access an array index that is negative or greater
+                            than or equal to the array size.</p>
+                        <pre><code class="language-java">int[] arr = {1, 2, 3};
+System.out.println(arr[5]); // Throws Exception</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q103 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q103. Can we change the size of an array after creation?</div>
+                    <div class="admonition-content">
+                        <p>No, arrays have a fixed size once initialized. To have a dynamic size, use
+                            <code>ArrayList</code>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q104 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q104. What is a Multi-dimensional Array?</div>
+                    <div class="admonition-content">
+                        <p>An array of arrays. The most common is a 2D array (matrix).</p>
+                        <pre><code class="language-java">int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6}
+};</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q105 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q105. What is a String in Java?</div>
+                    <div class="admonition-content">
+                        <p>An object that represents a sequence of characters. It is immutable and stored in the String
+                            Constant Pool (if created as a literal).</p>
+                    </div>
+                </div>
+
+                <!-- Q106 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q106. Why is String immutable?</div>
+                    <div class="admonition-content">
+                        <p>For security, synchronization, caching (hashcode), and performance (String Pool).</p>
+                    </div>
+                </div>
+
+                <!-- Q107 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q107. What is the String Pool?</div>
+                    <div class="admonition-content">
+                        <p>A special memory region in the Heap where String literals are stored. If a string already
+                            exists, the reference is returned instead of creating a new object.</p>
+                        <pre><code class="language-java">String s1 = "Hello";
+String s2 = "Hello";
+// s1 == s2 is true (same reference)</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q108 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q108. Difference between String, StringBuilder, and StringBuffer?
+                    </div>
+                    <div class="admonition-content">
+                        <ul>
+                            <li><strong>String:</strong> Immutable.</li>
+                            <li><strong>StringBuilder:</strong> Mutable, not thread-safe (Fast).</li>
+                            <li><strong>StringBuffer:</strong> Mutable, thread-safe (Slow).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Q109 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q109. How to compare two Strings?</div>
+                    <div class="admonition-content">
+                        <p>Use <code>.equals()</code> for content comparison. Do NOT use <code>==</code> as it checks
+                            reference equality.</p>
+                        <pre><code class="language-java">String s1 = new String("Hello");
+String s2 = new String("Hello");
+System.out.println(s1 == s2);       // false
+System.out.println(s1.equals(s2));  // true</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q110 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q110. What is the `toString()` method?</div>
+                    <div class="admonition-content">
+                        <p>A method in <code>Object</code> class that returns the string representation of an object.
+                            Default implementation returns <code>ClassName@HashCode</code>.</p>
+                    </div>
+                </div>
+
+                <!-- Q111 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q111. What is a Wrapper Class?</div>
+                    <div class="admonition-content">
+                        <p>A class that wraps a primitive data type into an object. Example: <code>Integer</code> for
+                            <code>int</code>, <code>Double</code> for <code>double</code>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q112 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q112. What is Autoboxing and Unboxing?</div>
+                    <div class="admonition-content">
+                        <p><strong>Autoboxing:</strong> Automatic conversion of primitive to wrapper (e.g.,
+                            <code>int</code> to <code>Integer</code>).
+                        </p>
+                        <p><strong>Unboxing:</strong> Automatic conversion of wrapper to primitive.</p>
+                        <pre><code class="language-java">Integer num = 10; // Autoboxing
+int n = num;      // Unboxing</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q113 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q113. What is the `super` keyword?</div>
+                    <div class="admonition-content">
+                        <p>A reference variable used to refer to the immediate parent class object. Used to call parent
+                            constructor or methods.</p>
+                        <pre><code class="language-java">super(); // Calls parent constructor
+super.display(); // Calls parent method</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q114 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q114. What is the `this` keyword?</div>
+                    <div class="admonition-content">
+                        <p>A reference variable that refers to the current object.</p>
+                        <pre><code class="language-java">this.x = x; // Distinguishes instance variable from parameter</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q115 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q115. Can `this` be used in a static context?</div>
+                    <div class="admonition-content">
+                        <p>No, because static methods belong to the class, not an instance. <code>this</code> refers to
+                            an instance.</p>
+                    </div>
+                </div>
+
+                <!-- Q116 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q116. What is Method Overloading?</div>
+                    <div class="admonition-content">
+                        <p>Multiple methods with the same name but different parameters (compile-time polymorphism).</p>
+                        <pre><code class="language-java">void add(int a, int b) { ... }
+void add(double a, double b) { ... }</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q117 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q117. What is Method Overriding?</div>
+                    <div class="admonition-content">
+                        <p>Providing a specific implementation in the subclass for a method already defined in the
+                            parent class (runtime polymorphism).</p>
+                    </div>
+                </div>
+
+                <!-- Q118 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q118. Can we override a static method?</div>
+                    <div class="admonition-content">
+                        <p>No. If a subclass defines a static method with the same signature, it is called
+                            <strong>Method Hiding</strong>, not overriding.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Q119 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q119. Can we override a private method?</div>
+                    <div class="admonition-content">
+                        <p>No, private methods are not visible to subclasses, so they cannot be overridden.</p>
+                    </div>
+                </div>
+
+                <!-- Q120 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q120. What is Covariant Return Type?</div>
+                    <div class="admonition-content">
+                        <p>Since Java 5, an overriding method can return a subtype of the return type declared in the
+                            parent class method.</p>
+                        <pre><code class="language-java">class Parent { Object get() { ... } }
+class Child extends Parent { String get() { ... } } // Valid</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q121 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q121. What is an Abstract Class?</div>
+                    <div class="admonition-content">
+                        <p>A class declared with `abstract` keyword. It cannot be instantiated and can have both
+                            abstract (no body) and concrete methods.</p>
+                    </div>
+                </div>
+
+                <!-- Q122 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q122. What is an Interface?</div>
+                    <div class="admonition-content">
+                        <p>A blueprint of a class that contains only abstract methods (before Java 8) and constants. It
+                            supports multiple inheritance.</p>
+                    </div>
+                </div>
+
+                <!-- Q123 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q123. Difference between Abstract Class and Interface?</div>
+                    <div class="admonition-content">
+                        <ul>
+                            <li><strong>Abstract Class:</strong> Can have state (fields), constructors, and non-abstract
+                                methods.</li>
+                            <li><strong>Interface:</strong> Only constants (public static final), no constructors.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Q124 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q124. Can an interface have a constructor?</div>
+                    <div class="admonition-content">
+                        <p>No, because interfaces cannot be instantiated.</p>
+                    </div>
+                </div>
+
+                <!-- Q125 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q125. Can an interface have fields?</div>
+                    <div class="admonition-content">
+                        <p>Yes, but they are implicitly <code>public static final</code> (constants).</p>
+                    </div>
+                </div>
+
+                <!-- Q126 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q126. What are Default Methods in Interface?</div>
+                    <div class="admonition-content">
+                        <p>Methods in an interface with a body, marked with the <code>default</code> keyword. Introduced
+                            in Java 8 to allow adding new methods without breaking existing implementations.</p>
+                        <pre><code class="language-java">interface MyInterface {
+    default void show() {
+        System.out.println("Default Method");
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q127 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q127. What are Static Methods in Interface?</div>
+                    <div class="admonition-content">
+                        <p>Static methods in interfaces (Java 8+) are utility methods that belong to the interface, not
+                            the implementation class.</p>
+                        <pre><code class="language-java">interface MathUtil {
+    static int add(int a, int b) {
+        return a + b;
+    }
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q128 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q128. What is Multiple Inheritance? Does Java support it?</div>
+                    <div class="admonition-content">
+                        <p>Inheriting from more than one class. Java does <strong>not</strong> support multiple
+                            inheritance with classes to avoid ambiguity (Diamond Problem), but supports it through
+                            interfaces.</p>
+                    </div>
+                </div>
+
+                <!-- Q129 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q129. What is the Diamond Problem?</div>
+                    <div class="admonition-content">
+                        <p>Ambiguity that arises when two parent classes have a method with the same name, and a child
+                            class inherits from both. Java avoids this by not allowing multiple class inheritance.</p>
+                    </div>
+                </div>
+
+                <!-- Q130 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q130. What is a Package?</div>
+                    <div class="admonition-content">
+                        <p>A namespace that organizes a set of related classes and interfaces. It helps avoid name
+                            collisions and provides access control.</p>
+                    </div>
+                </div>
+
+                <!-- Q131 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q131. What are Access Modifiers?</div>
+                    <div class="admonition-content">
+                        <p>Keywords that set the accessibility of classes, methods, and variables.</p>
+                        <ul>
+                            <li><code>public</code>: Accessible everywhere.</li>
+                            <li><code>protected</code>: Accessible in same package and subclasses.</li>
+                            <li><code>default</code> (no keyword): Accessible only in same package.</li>
+                            <li><code>private</code>: Accessible only in same class.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Q132 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q132. What is the default access modifier?</div>
+                    <div class="admonition-content">
+                        <p>If no modifier is specified, it is <strong>package-private</strong> (default). Accessible
+                            only within the same package.</p>
+                    </div>
+                </div>
+
+                <!-- Q133 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q133. What is `protected` access modifier?</div>
+                    <div class="admonition-content">
+                        <p>Accessible within the same package and by subclasses in other packages.</p>
+                    </div>
+                </div>
+
+                <!-- Q134 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q134. What is Encapsulation?</div>
+                    <div class="admonition-content">
+                        <p>Wrapping data (variables) and code (methods) together as a single unit. It restricts direct
+                            access to some components.</p>
+                    </div>
+                </div>
+
+                <!-- Q135 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q135. How to achieve Encapsulation?</div>
+                    <div class="admonition-content">
+                        <p>By declaring variables as <code>private</code> and providing public <code>getter</code> and
+                            <code>setter</code> methods.
+                        </p>
+                        <pre><code class="language-java">class Person {
+    private String name;
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q136 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q136. What is Polymorphism?</div>
+                    <div class="admonition-content">
+                        <p>The ability of an object to take on many forms. "Poly" means many, "morph" means forms.</p>
+                    </div>
+                </div>
+
+                <!-- Q137 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q137. What is Compile-time Polymorphism?</div>
+                    <div class="admonition-content">
+                        <p>Achieved through <strong>Method Overloading</strong>. The compiler determines which method to
+                            call based on method signature.</p>
+                    </div>
+                </div>
+
+                <!-- Q138 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q138. What is Runtime Polymorphism?</div>
+                    <div class="admonition-content">
+                        <p>Achieved through <strong>Method Overriding</strong>. The JVM determines which method to call
+                            at runtime based on the actual object type.</p>
+                    </div>
+                </div>
+
+                <!-- Q139 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q139. What is Dynamic Method Dispatch?</div>
+                    <div class="admonition-content">
+                        <p>The mechanism by which a call to an overridden method is resolved at runtime rather than
+                            compile-time.</p>
+                        <pre><code class="language-java">Parent obj = new Child();
+obj.show(); // Calls Child's show()</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q140 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q140. What is `instanceof` operator?</div>
+                    <div class="admonition-content">
+                        <p>Used to test if an object is an instance of a specific class or interface.</p>
+                        <pre><code class="language-java">if (obj instanceof String) { ... }</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q141 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q141. What is Casting? (Upcasting vs Downcasting)</div>
+                    <div class="admonition-content">
+                        <p><strong>Upcasting:</strong> Casting a subclass object to a superclass reference (Implicit).
+                        </p>
+                        <p><strong>Downcasting:</strong> Casting a superclass reference to a subclass object (Explicit).
+                        </p>
+                        <pre><code class="language-java">Parent p = new Child(); // Upcasting
+Child c = (Child) p;    // Downcasting</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q142 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q142. What is ClassCastException?</div>
+                    <div class="admonition-content">
+                        <p>Thrown when trying to cast an object to a subclass of which it is not an instance.</p>
+                    </div>
+                </div>
+
+                <!-- Q143 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q143. What is Object Cloning?</div>
+                    <div class="admonition-content">
+                        <p>Creating an exact copy of an object using the <code>clone()</code> method.</p>
+                    </div>
+                </div>
+
+                <!-- Q144 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q144. What is Deep Copy vs Shallow Copy?</div>
+                    <div class="admonition-content">
+                        <ul>
+                            <li><strong>Shallow Copy:</strong> Copies references. Changes to the new object affect the
+                                old one.</li>
+                            <li><strong>Deep Copy:</strong> Copies values (creates new objects). Changes do not affect
+                                the original.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Q145 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q145. What is the `Cloneable` interface?</div>
+                    <div class="admonition-content">
+                        <p>A marker interface that indicates a class allows its objects to be cloned. If not
+                            implemented, <code>clone()</code> throws <code>CloneNotSupportedException</code>.</p>
+                    </div>
+                </div>
+
+                <!-- Q146 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q146. What is Singleton Pattern?</div>
+                    <div class="admonition-content">
+                        <p>A design pattern that ensures a class has only one instance and provides a global point of
+                            access to it.</p>
+                    </div>
+                </div>
+
+                <!-- Q147 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q147. How to create a Singleton class?</div>
+                    <div class="admonition-content">
+                        <p>Make the constructor private and provide a public static method to return the instance.</p>
+                        <pre><code class="language-java">class Singleton {
+    private static Singleton instance = new Singleton();
+    private Singleton() {}
+    public static Singleton getInstance() { return instance; }
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Q148 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q148. Difference between `==` and `.equals()`?</div>
+                    <div class="admonition-content">
+                        <ul>
+                            <li><code>==</code> compares references (memory address).</li>
+                            <li><code>.equals()</code> compares content (if overridden).</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Q149 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q149. What is the `final` keyword?</div>
+                    <div class="admonition-content">
+                        <ul>
+                            <li><strong>Variable:</strong> Constant (cannot be changed).</li>
+                            <li><strong>Method:</strong> Cannot be overridden.</li>
+                            <li><strong>Class:</strong> Cannot be inherited.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Q150 -->
+                <div class="admonition note">
+                    <div class="admonition-title">Q150. What is the difference between `throw` and `throws`?</div>
+                    <div class="admonition-content">
+                        <ul>
+                            <li><code>throw</code>: Used to explicitly throw an exception.</li>
+                            <li><code>throws</code>: Used in method signature to declare exceptions.</li>
+                        </ul>
+                        <pre><code class="language-java">void method() throws Exception {
+    throw new Exception("Error");
+}</code></pre>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="content-section text-center" style="margin-top: 3rem;">
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
+                        <a class="md-button md-button--secondary" href="introduction.html">
+                            ⬅️ Introduction
+                        </a>
+                        <a class="md-button md-button--primary" href="intermediate.html">
+                            Next: Intermediate Questions ➡️
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Scripts -->
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>

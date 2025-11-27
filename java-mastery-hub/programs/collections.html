@@ -1,63 +1,470 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Collections - Programs - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
 </head>
 
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-        </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
     </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>Collections - Code Examples</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Programs</span>
-                <span>/</span>
-                <span>Collections</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Hands-On Java Programs</h2>
-            <p>Welcome to the practical section! These 15+ programs demonstrate the power of the Java Collection
-                Framework.
-                From simple lists to complex maps, these examples cover it all.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Collections are the heart of Java programming. Practice these examples thoroughly!</p>
-            </div>
-        </div>
-
-        <!-- Program 1: ArrayList -->
-        <div class="content-section">
-            <h2>Program 1: ArrayList Basic Usage</h2>
-            <p>Demonstrates adding, accessing, and removing elements in an ArrayList.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.ArrayList;
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Collections - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>Collections</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Hands-On Java Programs</h2>
+                    <p>Welcome to the practical section! These 15+ programs demonstrate the power of the Java Collection
+                        Framework.
+                        From simple lists to complex maps, these examples cover it all.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Collections are the heart of Java programming. Practice these examples thoroughly!</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 1: ArrayList -->
+                <div class="content-section">
+                    <h2>Program 1: ArrayList Basic Usage</h2>
+                    <p>Demonstrates adding, accessing, and removing elements in an ArrayList.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.ArrayList;
 import java.util.List;
 
 public class ArrayListDemo {
     public static void main(String[] args) {
         // Create an ArrayList
-        List<String> fruits = new ArrayList<>();
+        List<string> fruits = new ArrayList&lt;&gt;();
 
         // Add elements
         fruits.add("Apple");
@@ -78,28 +485,29 @@ public class ArrayListDemo {
         // Check size
         System.out.println("Total fruits: " + fruits.size());
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like adding toys to a toy box. You can put the same toy twice!</p>
-                <p><strong>Real-world:</strong> A dynamic shopping list where you can add items as you remember them.
-                </p>
-                <p><strong>Technical:</strong> ArrayList is a resizable array. It maintains insertion order and allows
-                    duplicates. Access is O(1), but removal can be O(n).</p>
-            </div>
-        </div>
-
-        <!-- Program 2: LinkedList -->
-        <div class="content-section">
-            <h2>Program 2: LinkedList Usage</h2>
-            <p>Demonstrates LinkedList for efficient insertion and deletion.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.LinkedList;
+}</string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like adding toys to a toy box. You can put the same toy twice!</p>
+                        <p><strong>Real-world:</strong> A dynamic shopping list where you can add items as you remember
+                            them.
+                        </p>
+                        <p><strong>Technical:</strong> ArrayList is a resizable array. It maintains insertion order and
+                            allows
+                            duplicates. Access is O(1), but removal can be O(n).</p>
+                    </div>
+                </div>
+                <!-- Program 2: LinkedList -->
+                <div class="content-section">
+                    <h2>Program 2: LinkedList Usage</h2>
+                    <p>Demonstrates LinkedList for efficient insertion and deletion.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.LinkedList;
 import java.util.List;
 
 public class LinkedListDemo {
     public static void main(String[] args) {
         // Create a LinkedList
-        LinkedList<String> train = new LinkedList<>();
+        LinkedList<string> train = new LinkedList&lt;&gt;();
 
         // Add elements
         train.add("Engine");
@@ -118,26 +526,27 @@ public class LinkedListDemo {
 
         System.out.println("Train after removal: " + train);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a train where cars are hooked together.</p>
-                <p><strong>Real-world:</strong> A playlist where you can easily add a song next to the current one.</p>
-                <p><strong>Technical:</strong> Doubly-linked list. Good for frequent insertions/deletions. Implements
-                    both List and Deque interfaces.</p>
-            </div>
-        </div>
-
-        <!-- Program 3: HashSet -->
-        <div class="content-section">
-            <h2>Program 3: HashSet Demonstration</h2>
-            <p>Demonstrates storing unique elements using HashSet.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.HashSet;
+}</string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a train where cars are hooked together.</p>
+                        <p><strong>Real-world:</strong> A playlist where you can easily add a song next to the current
+                            one.</p>
+                        <p><strong>Technical:</strong> Doubly-linked list. Good for frequent insertions/deletions.
+                            Implements
+                            both List and Deque interfaces.</p>
+                    </div>
+                </div>
+                <!-- Program 3: HashSet -->
+                <div class="content-section">
+                    <h2>Program 3: HashSet Demonstration</h2>
+                    <p>Demonstrates storing unique elements using HashSet.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.HashSet;
 import java.util.Set;
 
 public class HashSetDemo {
     public static void main(String[] args) {
-        Set<String> uniqueNames = new HashSet<>();
+        Set<string> uniqueNames = new HashSet&lt;&gt;();
 
         uniqueNames.add("Alice");
         uniqueNames.add("Bob");
@@ -148,26 +557,25 @@ public class HashSetDemo {
         System.out.println("Unique Names: " + uniqueNames);
         // Note: Order is not guaranteed!
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A magic bag that spits out duplicate toys.</p>
-                <p><strong>Real-world:</strong> A guest list for a party (no one can be invited twice).</p>
-                <p><strong>Technical:</strong> Uses hashing. No duplicates. No ordering guarantee. O(1) for
-                    add/remove/contains.</p>
-            </div>
-        </div>
-
-        <!-- Program 4: TreeSet -->
-        <div class="content-section">
-            <h2>Program 4: TreeSet with Sorting</h2>
-            <p>Demonstrates automatic sorting of elements.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.TreeSet;
+}</string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A magic bag that spits out duplicate toys.</p>
+                        <p><strong>Real-world:</strong> A guest list for a party (no one can be invited twice).</p>
+                        <p><strong>Technical:</strong> Uses hashing. No duplicates. No ordering guarantee. O(1) for
+                            add/remove/contains.</p>
+                    </div>
+                </div>
+                <!-- Program 4: TreeSet -->
+                <div class="content-section">
+                    <h2>Program 4: TreeSet with Sorting</h2>
+                    <p>Demonstrates automatic sorting of elements.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.TreeSet;
 import java.util.Set;
 
 public class TreeSetDemo {
     public static void main(String[] args) {
-        Set<Integer> numbers = new TreeSet<>();
+        Set<integer> numbers = new TreeSet&lt;&gt;();
 
         numbers.add(50);
         numbers.add(10);
@@ -178,26 +586,26 @@ public class TreeSetDemo {
         System.out.println("Sorted Numbers: " + numbers);
         // Output will be [10, 20, 30, 40, 50]
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A shelf where books arrange themselves in order automatically.</p>
-                <p><strong>Real-world:</strong> A dictionary or phone directory.</p>
-                <p><strong>Technical:</strong> Implements SortedSet. Uses Red-Black tree. Elements are sorted naturally
-                    or by Comparator. O(log n).</p>
-            </div>
-        </div>
-
-        <!-- Program 5: HashMap -->
-        <div class="content-section">
-            <h2>Program 5: HashMap Basic Example</h2>
-            <p>Demonstrates Key-Value pair storage.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.HashMap;
+}</integer></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A shelf where books arrange themselves in order automatically.</p>
+                        <p><strong>Real-world:</strong> A dictionary or phone directory.</p>
+                        <p><strong>Technical:</strong> Implements SortedSet. Uses Red-Black tree. Elements are sorted
+                            naturally
+                            or by Comparator. O(log n).</p>
+                    </div>
+                </div>
+                <!-- Program 5: HashMap -->
+                <div class="content-section">
+                    <h2>Program 5: HashMap Basic Example</h2>
+                    <p>Demonstrates Key-Value pair storage.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.HashMap;
 import java.util.Map;
 
 public class HashMapDemo {
     public static void main(String[] args) {
-        Map<String, Integer> scores = new HashMap<>();
+        Map<string, integer=""> scores = new HashMap&lt;&gt;();
 
         scores.put("Alice", 95);
         scores.put("Bob", 80);
@@ -209,26 +617,26 @@ public class HashMapDemo {
         System.out.println("Alice's Score: " + scores.get("Alice"));
         System.out.println("All Scores: " + scores);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Lockers with names on them.</p>
-                <p><strong>Real-world:</strong> A phone book (Name -> Number).</p>
-                <p><strong>Technical:</strong> Stores Key-Value pairs. Keys must be unique. Null keys/values allowed.
-                    O(1) operations.</p>
-            </div>
-        </div>
-
-        <!-- Program 6: LinkedHashMap -->
-        <div class="content-section">
-            <h2>Program 6: LinkedHashMap Insertion Order</h2>
-            <p>Demonstrates maintaining insertion order in a Map.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.LinkedHashMap;
+}</string,></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Lockers with names on them.</p>
+                        <p><strong>Real-world:</strong> A phone book (Name -&gt; Number).</p>
+                        <p><strong>Technical:</strong> Stores Key-Value pairs. Keys must be unique. Null keys/values
+                            allowed.
+                            O(1) operations.</p>
+                    </div>
+                </div>
+                <!-- Program 6: LinkedHashMap -->
+                <div class="content-section">
+                    <h2>Program 6: LinkedHashMap Insertion Order</h2>
+                    <p>Demonstrates maintaining insertion order in a Map.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class LinkedHashMapDemo {
     public static void main(String[] args) {
-        Map<String, String> history = new LinkedHashMap<>();
+        Map<string, string=""> history = new LinkedHashMap&lt;&gt;();
 
         history.put("Monday", "Math");
         history.put("Tuesday", "Science");
@@ -237,26 +645,26 @@ public class LinkedHashMapDemo {
         System.out.println("Class Schedule (In Order): " + history);
         // Output maintains the order: Monday, Tuesday, Wednesday
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Like a diary where entries stay in the order you wrote them.</p>
-                <p><strong>Real-world:</strong> Browser history.</p>
-                <p><strong>Technical:</strong> Extends HashMap but maintains a doubly-linked list of entries. Preserves
-                    insertion order.</p>
-            </div>
-        </div>
-
-        <!-- Program 7: TreeMap -->
-        <div class="content-section">
-            <h2>Program 7: TreeMap Key Sorting</h2>
-            <p>Demonstrates a Map sorted by keys.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.TreeMap;
+}</string,></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Like a diary where entries stay in the order you wrote them.</p>
+                        <p><strong>Real-world:</strong> Browser history.</p>
+                        <p><strong>Technical:</strong> Extends HashMap but maintains a doubly-linked list of entries.
+                            Preserves
+                            insertion order.</p>
+                    </div>
+                </div>
+                <!-- Program 7: TreeMap -->
+                <div class="content-section">
+                    <h2>Program 7: TreeMap Key Sorting</h2>
+                    <p>Demonstrates a Map sorted by keys.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.TreeMap;
 import java.util.Map;
 
 public class TreeMapDemo {
     public static void main(String[] args) {
-        Map<Integer, String> employees = new TreeMap<>();
+        Map<integer, string=""> employees = new TreeMap&lt;&gt;();
 
         employees.put(103, "Charlie");
         employees.put(101, "Alice");
@@ -265,25 +673,25 @@ public class TreeMapDemo {
         System.out.println("Employees Sorted by ID: " + employees);
         // Output: {101=Alice, 102=Bob, 103=Charlie}
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> An address book sorted by house number.</p>
-                <p><strong>Real-world:</strong> A library catalog sorted by book ID.</p>
-                <p><strong>Technical:</strong> Implements SortedMap. Keys are sorted. O(log n) for operations.</p>
-            </div>
-        </div>
-
-        <!-- Program 8: PriorityQueue -->
-        <div class="content-section">
-            <h2>Program 8: Using Queue (PriorityQueue)</h2>
-            <p>Demonstrates processing elements based on priority.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.PriorityQueue;
+}</integer,></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> An address book sorted by house number.</p>
+                        <p><strong>Real-world:</strong> A library catalog sorted by book ID.</p>
+                        <p><strong>Technical:</strong> Implements SortedMap. Keys are sorted. O(log n) for operations.
+                        </p>
+                    </div>
+                </div>
+                <!-- Program 8: PriorityQueue -->
+                <div class="content-section">
+                    <h2>Program 8: Using Queue (PriorityQueue)</h2>
+                    <p>Demonstrates processing elements based on priority.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class PriorityQueueDemo {
     public static void main(String[] args) {
-        Queue<Integer> pq = new PriorityQueue<>();
+        Queue<integer> pq = new PriorityQueue&lt;&gt;();
 
         pq.add(30);
         pq.add(10);
@@ -297,25 +705,25 @@ public class PriorityQueueDemo {
         }
         // Output: 10, 20, 30
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A line where the smallest kid always goes first.</p>
-                <p><strong>Real-world:</strong> Hospital emergency room triage (most critical first).</p>
-                <p><strong>Technical:</strong> Unbounded priority queue based on a priority heap. Elements ordered by
-                    natural ordering or Comparator.</p>
-            </div>
-        </div>
-
-        <!-- Program 9: Stack -->
-        <div class="content-section">
-            <h2>Program 9: Stack Implementation</h2>
-            <p>Demonstrates LIFO (Last-In-First-Out) behavior.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.Stack;
+}</integer></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A line where the smallest kid always goes first.</p>
+                        <p><strong>Real-world:</strong> Hospital emergency room triage (most critical first).</p>
+                        <p><strong>Technical:</strong> Unbounded priority queue based on a priority heap. Elements
+                            ordered by
+                            natural ordering or Comparator.</p>
+                    </div>
+                </div>
+                <!-- Program 9: Stack -->
+                <div class="content-section">
+                    <h2>Program 9: Stack Implementation</h2>
+                    <p>Demonstrates LIFO (Last-In-First-Out) behavior.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.Stack;
 
 public class StackDemo {
     public static void main(String[] args) {
-        Stack<String> books = new Stack<>();
+        Stack<string> books = new Stack&lt;&gt;();
 
         books.push("Book 1");
         books.push("Book 2");
@@ -328,32 +736,32 @@ public class StackDemo {
         }
         // Output: Book 3, Book 2, Book 1
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A stack of plates. You take the top one first.</p>
-                <p><strong>Real-world:</strong> Undo button in a text editor.</p>
-                <p><strong>Technical:</strong> Extends Vector. LIFO structure. Synchronized (thread-safe) but often
-                    ArrayDeque is preferred for single-threaded use.</p>
-            </div>
-        </div>
-
-        <!-- Program 10: Iterator -->
-        <div class="content-section">
-            <h2>Program 10: Iterator Loop</h2>
-            <p>Demonstrates safe removal of elements while iterating.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.ArrayList;
+}</string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A stack of plates. You take the top one first.</p>
+                        <p><strong>Real-world:</strong> Undo button in a text editor.</p>
+                        <p><strong>Technical:</strong> Extends Vector. LIFO structure. Synchronized (thread-safe) but
+                            often
+                            ArrayDeque is preferred for single-threaded use.</p>
+                    </div>
+                </div>
+                <!-- Program 10: Iterator -->
+                <div class="content-section">
+                    <h2>Program 10: Iterator Loop</h2>
+                    <p>Demonstrates safe removal of elements while iterating.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class IteratorDemo {
     public static void main(String[] args) {
-        List<String> names = new ArrayList<>();
+        List<string> names = new ArrayList&lt;&gt;();
         names.add("Alice");
         names.add("Bob");
         names.add("Charlie");
 
-        Iterator<String> it = names.iterator();
+        Iterator<string> it = names.iterator();
         while (it.hasNext()) {
             String name = it.next();
             if (name.equals("Bob")) {
@@ -363,32 +771,31 @@ public class IteratorDemo {
 
         System.out.println("List after removal: " + names);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> A finger pointing to each item one by one.</p>
-                <p><strong>Real-world:</strong> Checking items off a checklist.</p>
-                <p><strong>Technical:</strong> Universal cursor. Allows safe removal during iteration (avoids
-                    ConcurrentModificationException).</p>
-            </div>
-        </div>
-
-        <!-- Program 11: ListIterator -->
-        <div class="content-section">
-            <h2>Program 11: ListIterator Bidirectional</h2>
-            <p>Demonstrates traversing a list in both directions.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.ArrayList;
+}</string></string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> A finger pointing to each item one by one.</p>
+                        <p><strong>Real-world:</strong> Checking items off a checklist.</p>
+                        <p><strong>Technical:</strong> Universal cursor. Allows safe removal during iteration (avoids
+                            ConcurrentModificationException).</p>
+                    </div>
+                </div>
+                <!-- Program 11: ListIterator -->
+                <div class="content-section">
+                    <h2>Program 11: ListIterator Bidirectional</h2>
+                    <p>Demonstrates traversing a list in both directions.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
 public class ListIteratorDemo {
     public static void main(String[] args) {
-        List<String> cities = new ArrayList<>();
+        List<string> cities = new ArrayList&lt;&gt;();
         cities.add("New York");
         cities.add("London");
         cities.add("Tokyo");
 
-        ListIterator<String> it = cities.listIterator();
+        ListIterator<string> it = cities.listIterator();
 
         System.out.println("Forward:");
         while (it.hasNext()) {
@@ -400,26 +807,26 @@ public class ListIteratorDemo {
             System.out.println(it.previous());
         }
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Walking forward and backward on a path.</p>
-                <p><strong>Real-world:</strong> Browser Back and Forward buttons.</p>
-                <p><strong>Technical:</strong> Only for Lists. Can traverse in both directions and modify elements.</p>
-            </div>
-        </div>
-
-        <!-- Program 12: Collections.sort() -->
-        <div class="content-section">
-            <h2>Program 12: Sorting using Collections.sort()</h2>
-            <p>Demonstrates sorting a list.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.ArrayList;
+}</string></string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Walking forward and backward on a path.</p>
+                        <p><strong>Real-world:</strong> Browser Back and Forward buttons.</p>
+                        <p><strong>Technical:</strong> Only for Lists. Can traverse in both directions and modify
+                            elements.</p>
+                    </div>
+                </div>
+                <!-- Program 12: Collections.sort() -->
+                <div class="content-section">
+                    <h2>Program 12: Sorting using Collections.sort()</h2>
+                    <p>Demonstrates sorting a list.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class SortingDemo {
     public static void main(String[] args) {
-        List<Integer> nums = new ArrayList<>();
+        List<integer> nums = new ArrayList&lt;&gt;();
         nums.add(5);
         nums.add(2);
         nums.add(9);
@@ -431,33 +838,32 @@ public class SortingDemo {
 
         System.out.println("After Sort: " + nums);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Arranging toys from smallest to biggest.</p>
-                <p><strong>Real-world:</strong> Sorting playing cards in your hand.</p>
-                <p><strong>Technical:</strong> Uses Merge Sort (TimSort). Sorts the list in place.</p>
-            </div>
-        </div>
-
-        <!-- Program 13: Comparator -->
-        <div class="content-section">
-            <h2>Program 13: Comparator Example</h2>
-            <p>Demonstrates custom sorting logic.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.ArrayList;
+}</integer></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Arranging toys from smallest to biggest.</p>
+                        <p><strong>Real-world:</strong> Sorting playing cards in your hand.</p>
+                        <p><strong>Technical:</strong> Uses Merge Sort (TimSort). Sorts the list in place.</p>
+                    </div>
+                </div>
+                <!-- Program 13: Comparator -->
+                <div class="content-section">
+                    <h2>Program 13: Comparator Example</h2>
+                    <p>Demonstrates custom sorting logic.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
 public class ComparatorDemo {
     public static void main(String[] args) {
-        List<String> words = new ArrayList<>();
+        List<string> words = new ArrayList&lt;&gt;();
         words.add("Banana");
         words.add("Apple");
         words.add("Cherry");
 
         // Sort by length (custom logic)
-        Collections.sort(words, new Comparator<String>() {
+        Collections.sort(words, new Comparator<string>() {
             @Override
             public int compare(String s1, String s2) {
                 return s1.length() - s2.length();
@@ -466,26 +872,26 @@ public class ComparatorDemo {
 
         System.out.println("Sorted by length: " + words);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Sorting toys by color instead of size.</p>
-                <p><strong>Real-world:</strong> Sorting students by height instead of grades.</p>
-                <p><strong>Technical:</strong> Defines custom ordering logic external to the class. Useful when you
-                    can't modify the class or need multiple sorting ways.</p>
-            </div>
-        </div>
-
-        <!-- Program 14: ConcurrentHashMap -->
-        <div class="content-section">
-            <h2>Program 14: ConcurrentHashMap Demo</h2>
-            <p>Demonstrates thread-safe map operations.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.concurrent.ConcurrentHashMap;
+}</string></string></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Sorting toys by color instead of size.</p>
+                        <p><strong>Real-world:</strong> Sorting students by height instead of grades.</p>
+                        <p><strong>Technical:</strong> Defines custom ordering logic external to the class. Useful when
+                            you
+                            can't modify the class or need multiple sorting ways.</p>
+                    </div>
+                </div>
+                <!-- Program 14: ConcurrentHashMap -->
+                <div class="content-section">
+                    <h2>Program 14: ConcurrentHashMap Demo</h2>
+                    <p>Demonstrates thread-safe map operations.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.concurrent.ConcurrentHashMap;
 import java.util.Map;
 
 public class ConcurrentMapDemo {
     public static void main(String[] args) {
-        Map<String, Integer> map = new ConcurrentHashMap<>();
+        Map<string, integer=""> map = new ConcurrentHashMap&lt;&gt;();
 
         map.put("A", 1);
         map.put("B", 2);
@@ -499,21 +905,21 @@ public class ConcurrentMapDemo {
 
         System.out.println("Map: " + map);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Many people writing in a notebook at the same time without fighting.</p>
-                <p><strong>Real-world:</strong> A shared google doc.</p>
-                <p><strong>Technical:</strong> Thread-safe map. Uses segment locking (bucket-level) for high
-                    concurrency. Does not throw ConcurrentModificationException.</p>
-            </div>
-        </div>
-
-        <!-- Program 15: Real-world Example -->
-        <div class="content-section">
-            <h2>Program 15: Student Record Manager</h2>
-            <p>A real-world application combining multiple collections.</p>
-            <div class="code-header"><span class="code-language">☕ Java</span></div>
-            <pre><code class="language-java">import java.util.*;
+}</string,></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Many people writing in a notebook at the same time without fighting.
+                        </p>
+                        <p><strong>Real-world:</strong> A shared google doc.</p>
+                        <p><strong>Technical:</strong> Thread-safe map. Uses segment locking (bucket-level) for high
+                            concurrency. Does not throw ConcurrentModificationException.</p>
+                    </div>
+                </div>
+                <!-- Program 15: Real-world Example -->
+                <div class="content-section">
+                    <h2>Program 15: Student Record Manager</h2>
+                    <p>A real-world application combining multiple collections.</p>
+                    <div class="code-header"><span class="code-language">☕ Java</span></div>
+                    <pre><code class="language-java">import java.util.*;
 
 class Student {
     String id;
@@ -530,13 +936,13 @@ class Student {
 public class StudentManager {
     public static void main(String[] args) {
         // Map to store students by ID (Fast lookup)
-        Map<String, Student> studentMap = new HashMap<>();
+        Map<string, student=""> studentMap = new HashMap&lt;&gt;();
         
         // List to maintain order of registration
-        List<Student> registrationList = new ArrayList<>();
+        List<student> registrationList = new ArrayList&lt;&gt;();
         
         // Set to ensure no duplicate IDs
-        Set<String> existingIds = new HashSet<>();
+        Set<string> existingIds = new HashSet&lt;&gt;();
         
         // Add Student Logic
         addStudent("S01", "Alice", studentMap, registrationList, existingIds);
@@ -547,8 +953,8 @@ public class StudentManager {
         System.out.println("Registration Order: " + registrationList);
     }
     
-    static void addStudent(String id, String name, Map<String, Student> map, 
-                          List<Student> list, Set<String> ids) {
+    static void addStudent(String id, String name, Map<string, student=""> map, 
+                          List<student> list, Set<string> ids) {
         if (ids.contains(id)) {
             System.out.println("Error: Student ID " + id + " already exists!");
             return;
@@ -560,21 +966,25 @@ public class StudentManager {
         ids.add(id);
         System.out.println("Added: " + s);
     }
-}</code></pre>
-            <div class="code-explanation">
-                <p><strong>Baby:</strong> Managing a classroom.</p>
-                <p><strong>Real-world:</strong> School database system.</p>
-                <p><strong>Technical:</strong> Combines Map (lookup), List (history), and Set (uniqueness) to build a
-                    robust system.</p>
+}</string></student></string,></string></student></string,></code></pre>
+                    <div class="code-explanation">
+                        <p><strong>Baby:</strong> Managing a classroom.</p>
+                        <p><strong>Real-world:</strong> School database system.</p>
+                        <p><strong>Technical:</strong> Combines Map (lookup), List (history), and Set (uniqueness) to
+                            build a
+                            robust system.</p>
+                    </div>
+                </div>
+                <!-- Next Topic -->
+                <div class="next-topic">
+                    <a class="md-button md-button--primary" href="#" style="opacity: 0.5; cursor: not-allowed;">Next
+                        Topic Coming Soon: Java
+                        Exception Handling in Depth</a>
+                </div>
             </div>
-        </div>
-
-        <!-- Next Topic -->
-        <div class="next-topic">
-            <a href="#" class="btn btn-primary" style="opacity: 0.5; cursor: not-allowed;">Next Topic Coming Soon: Java
-                Exception Handling in Depth</a>
-        </div>
+        </main>
     </div>
+    <script src="../assets/js/docs-style.js"></script>
 </body>
 
 </html>
