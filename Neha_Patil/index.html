@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Neha Patil — Software Developer Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+          --gradient-neon: linear-gradient(135deg,#667eea 0%,#764ba2 100%);
+          --gradient-cyber: linear-gradient(135deg,#00d2ff 0%,#3a7bd5 100%);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; transition: background-color .25s, color .25s; }
+        .code-font { font-family: "JetBrains Mono", monospace; }
+        .glass { background: rgba(255,255,255,0.04); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.04); }
+        .dark { background: #071028; color: #e6eef8; }
+        .neon-text { background: var(--gradient-neon); -webkit-background-clip: text; background-clip: text; color: transparent; text-shadow: 0 0 30px rgba(102,126,234,0.45); }
+        .gradient-text { background: var(--gradient-cyber); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .skill-badge { background: linear-gradient(135deg, rgba(102,126,234,0.06), rgba(118,75,162,0.04)); padding: .25rem .6rem; border-radius: 9999px; border: 1px solid rgba(102,126,234,0.08); font-size: .85rem; }
+        .project-card { transition: transform .25s, box-shadow .25s; }
+        .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.35); }
+        .section-separator { height: 2px; background: linear-gradient(90deg, transparent, rgba(102,126,234,0.35), transparent); margin: 2rem 0; }
+        .typing-effect { display: inline-block; overflow: hidden; border-right: 3px solid; white-space: nowrap; animation: typing 3s steps(40,end), blink .75s step-end infinite; }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink { 50% { border-color: transparent } }
+        .timeline-dot::before { content: ''; position: absolute; width: 14px; height: 14px; border-radius: 9999px; background: linear-gradient(135deg,#667eea,#764ba2); left: -8px; top: 8px; }
+        .timeline-line { position: absolute; left: 0; top: 34px; width: 2px; background: linear-gradient(#667eea,#764ba2); bottom: 0; }
+        .form-input { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); transition: all .2s ease; padding: .75rem; border-radius: .5rem; color: inherit; }
+        .form-input:focus { outline: none; box-shadow: 0 0 0 4px rgba(102,126,234,0.12); border-color: rgba(102,126,234,0.5); background: rgba(255,255,255,0.04); }
+    </style>
+</head>
+
+<body class="dark">
+<!-- NAV -->
+<nav class="fixed top-0 left-0 right-0 z-50 glass px-6 py-4">
+    <div class="container mx-auto flex items-center justify-between">
+        <div class="text-xl font-bold neon-text">Neha P</div>
+
+        <div class="hidden md:flex space-x-8 text-sm">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div id="theme-toggle" class="toggle-switch" style="width:56px;height:30px;background:rgba(102,126,234,0.18);border-radius:9999px;cursor:pointer;position:relative;">
+                <span style="position:absolute;left:3px;top:2px;width:26px;height:26px;border-radius:9999px;background:white;display:block;transition:transform .25s;"></span>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden p-2">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- mobile -->
+    <div id="mobile-menu" class="hidden md:hidden mt-3 pb-4">
+        <div class="flex flex-col gap-3">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pb-20" style="background:linear-gradient(180deg, rgba(7,16,40,0.95), rgba(6,12,24,0.98))">
+    <div class="container mx-auto px-6 text-center z-10">
+        <h1 class="text-4xl md:text-6xl font-bold mb-3">
+            <span class="neon-text">Neha Patil</span>
+        </h1>
+
+        <div class="text-lg md:text-2xl mb-6 code-font typing-effect">Software Developer</div>
+
+        <p class="max-w-2xl mx-auto mb-8 text-lg opacity-90">
+            Detail-oriented and highly motivated BE graduate in Computer Science and Engineering with strong knowledge in object-oriented programming and expert-level experience in Java development.
+            Proficient in designing, developing and deploying scalable applications with Java, Spring Boot and related frameworks.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#contact" class="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium">Get in Touch</a>
+
+            <!-- Resume button opens uploaded PDF -->
+            <a id="download-resume" href="Neha_Patil_Resume_Fresher.pdf" target="_blank"
+               class="px-6 py-3 rounded-full glass font-medium">Download Resume</a>
+        </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-white/60">
+        <i class="fas fa-chevron-down text-2xl"></i>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- ABOUT -->
+<section id="about" class="py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">About</h2>
+
+        <div class="max-w-4xl mx-auto glass rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
+            <div class="w-44 h-44 rounded-full overflow-hidden border-4 border-purple-500/30">
+                <!-- profile photo (uploaded) -->
+                <img src="Neha_Photo2.png"
+                     alt="Neha Patil"
+                     class="w-full h-full object-cover">
+            </div>
+
+            <div class="flex-1">
+                <p class="mb-4">
+                    <strong>Neha Patil</strong> — BE (Computer Science and Engineering). I have strong experience in Java, Spring Boot, Hibernate (JPA), and building RESTful APIs. I enjoy solving problems, writing clean code, and learning new technologies related to backend and full-stack development.
+                </p>
+
+                <p class="mb-4">
+                    Based in Pune, Maharashtra. Passionate about contributing to innovative projects and collaborating in agile teams.
+                </p>
+
+                <div class="flex flex-wrap gap-4 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-map-marker-alt text-purple-500"></i>
+                        <span>Pune, Maharashtra</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-envelope text-purple-500"></i>
+                        <span>nehadhoran498@gmail.com</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-phone text-purple-500"></i>
+                        <span>9356730663</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fab fa-linkedin-in text-purple-500"></i>
+                        <a href="https://www.linkedin.com/in/neha-patil-61908b39b" class="underline">linkedin.com/in/neha-patil-61908b39b</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- SKILLS -->
+<section id="skills" class="py-12">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">Skills & Expertise</h2>
+
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-4 flex items-center gap-3"><i class="fas fa-code text-purple-500"></i> Languages & Frameworks</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-badge">Core Java</span>
+                    <span class="skill-badge">J2EE</span>
+                    <span class="skill-badge">Spring Boot</span>
+                    <span class="skill-badge">Hibernate / JPA</span>
+                    <span class="skill-badge">HTML & CSS</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">React.js</span>
+                </div>
+            </div>
+
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-4 flex items-center gap-3"><i class="fas fa-database text-purple-500"></i> Databases & Tools</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-badge">MySQL</span>
+                    <span class="skill-badge">Postman</span>
+                    <span class="skill-badge">Git / GitHub</span>
+                    <span class="skill-badge">Eclipse / STS</span>
+                    <span class="skill-badge">VS Code</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- EXPERIENCE / PROJECTS -->
+<section id="experience" class="py-12">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">Projects & Experience</h2>
+
+        <div class="max-w-4xl mx-auto space-y-6">
+            <!-- Project: Student Registration -->
+            <div class="relative pl-10 pb-6">
+                <div class="timeline-line"></div>
+                <div class="timeline-dot"></div>
+                <div class="glass rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-lg font-semibold">Student Registration System</h3>
+                        <span class="text-purple-400 text-sm">Java, Spring Boot, Hibernate, MySQL</span>
+                    </div>
+                    <p>
+                        Developed a student registration system to enroll students in courses, track progress, and manage student/course records using RESTful APIs and MySQL persistence.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project: Hospital Management -->
+            <div class="relative pl-10 pb-6">
+                <div class="timeline-line"></div>
+                <div class="timeline-dot"></div>
+                <div class="glass rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-lg font-semibold">Hospital Management System</h3>
+                        <span class="text-purple-400 text-sm">Java, Spring Boot, Hibernate, MySQL</span>
+                    </div>
+                    <p>
+                        Designed and implemented CRUD REST APIs for appointment scheduling, patient records, and staff management — improving data accessibility and reducing manual record handling.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Project: Crowd Funding -->
+            <div class="relative pl-10 pb-6">
+                <div class="timeline-line"></div>
+                <div class="timeline-dot"></div>
+                <div class="glass rounded-xl p-6">
+                    <div class="flex items-center justify-between mb-3">
+                        <h3 class="text-lg font-semibold">Crowd Funding (Blockchain)</h3>
+                        <span class="text-purple-400 text-sm">HTML, CSS, JS, React.js</span>
+                    </div>
+                    <p>
+                        Built a modern frontend with React.js and implemented CRUD operations to streamline the fundraising workflow.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- EDUCATION -->
+<section id="education" class="py-12">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">Education</h2>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+            <div class="glass rounded-xl p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Bachelors of Engineering — Computer Science</h3>
+                    <span class="text-purple-400">2020 – 2024</span>
+                </div>
+                <div>Padm. Dr. V. B. Kolte College of Engineering, Malkapur - Buldhana</div>
+                <div class="text-sm mt-1">CGPA: 7.02 / 10</div>
+            </div>
+
+            <div class="glass rounded-xl p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Intermediate Education</h3>
+                    <span class="text-purple-400">2018 – 2020</span>
+                </div>
+                <div>D.E.S College Datala</div>
+                <div class="text-sm mt-1">Percentage: 77.69%</div>
+            </div>
+
+            <div class="glass rounded-xl p-6">
+                <div class="flex items-center justify-between mb-2">
+                    <h3 class="font-semibold">Secondary School</h3>
+                    <span class="text-purple-400">2017 – 2018</span>
+                </div>
+                <div>D.E.S High School Datala</div>
+                <div class="text-sm mt-1">Percentage: 72%</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- CERTIFICATES -->
+<section class="py-12">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">Certificates & Awards</h2>
+
+        <div class="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="glass rounded-xl p-6">
+                <div class="font-semibold">Java Full Stack Development</div>
+                <div class="text-sm mt-1">Vibrant Minds Technology, Pune</div>
+            </div>
+
+            <div class="glass rounded-xl p-6">
+                <div class="font-semibold">3rd Winner — Tech Tantra (National level)</div>
+                <div class="text-sm mt-1">2024</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- CONTACT -->
+<section id="contact" class="py-12">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 gradient-text">Get in Touch</h2>
+
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-4">Contact</h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex items-center gap-3"><i class="fas fa-envelope text-purple-500"></i> nehadhoran498@gmail.com</div>
+                    <div class="flex items-center gap-3"><i class="fas fa-phone text-purple-500"></i> 9356730663</div>
+                    <div class="flex items-center gap-3"><i class="fas fa-map-marker-alt text-purple-500"></i> Pune, Maharashtra</div>
+                    <div class="flex items-center gap-3"><i class="fab fa-linkedin-in text-purple-500"></i>
+                        <a href="https://www.linkedin.com/in/neha-patil-61908b39b" class="underline">linkedin.com/in/neha-patil-61908b39b</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-4">Send a message</h3>
+                <form id="contact-form">
+                    <input class="form-input w-full mb-3" placeholder="Your Name" required>
+                    <input type="email" class="form-input w-full mb-3" placeholder="Your Email" required>
+                    <input class="form-input w-full mb-3" placeholder="Subject">
+                    <textarea class="form-input w-full mb-3" rows="4" placeholder="Message"></textarea>
+                    <button type="submit" class="w-full py-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-6 glass mt-8">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center">
+        <div>&copy; 2025 Neha Patil</div>
+        <div class="flex gap-4">
+            <a href="https://www.linkedin.com/in/neha-patil-61908b39b" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    themeToggle?.addEventListener('click', () => {
+      body.classList.toggle('dark');
+      body.classList.toggle('light');
+      // toggle knob
+      const knob = themeToggle.querySelector('span');
+      if (body.classList.contains('dark')) {
+        knob.style.transform = 'translateX(0px)';
+      } else {
+        knob.style.transform = 'translateX(26px)';
+      }
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn?.addEventListener('click', () => mobileMenu?.classList.toggle('hidden'));
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e){
+        if (this.getAttribute('href').startsWith('#')) {
+          e.preventDefault();
+          const el = document.querySelector(this.getAttribute('href'));
+          if (el) el.scrollIntoView({behavior:'smooth'});
+          if (mobileMenu && !mobileMenu.classList.contains('hidden')) mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+
+    // Contact form demo behaviour
+    document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.textContent = 'Message Sent!';
+      btn.classList.add('bg-green-500');
+      setTimeout(()=>{ btn.textContent = original; btn.classList.remove('bg-green-500'); e.target.reset(); }, 2500);
+    });
+
+    // Open resume PDF when clicking the button
+    document.getElementById('download-resume')?.addEventListener('click', (e) => {
+      // default behavior already opens the file (href). This prevents navigation if JavaScript is used instead.
+      // The link points to the uploaded PDF on the system:
+      // /mnt/data/Neha_Patil_Resume_Fresher.pdf
+    });
+</script>
+</body>
+</html>
