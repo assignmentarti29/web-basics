@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java 8+ Features - Quiz - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Java 8+ Features - Quiz</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Quiz</span>
+                <span>/</span>
+                <span>Java 8+ Features</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Test Your Java 8+ Knowledge</h2>
+            <p>This quiz contains 35 questions covering all aspects of modern Java features including Lambda
+                expressions, Streams API, Optional, Records, Sealed Classes, Pattern Matching, and more.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Take your time and read each question carefully. Pay special attention to code output questions and
+                    feature comparison topics. Aim for at least 80% to demonstrate mastery!</p>
+            </div>
+        </div>
+
+        <div class="quiz-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-text">
+                <span id="currentQuestion">0</span> / <span id="totalQuestions">35</span> Questions
+            </div>
+        </div>
+
+        <div id="quizContainer" class="content-section"></div>
+
+        <div id="quizResults" class="content-section" style="display: none;">
+            <h2>Quiz Complete! 🎉</h2>
+            <div class="results-summary">
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="scorePercentage">0%</span>
+                    </div>
+                    <p class="score-text">Your Score: <span id="scoreText">0/35</span></p>
+                </div>
+                <div id="performanceMessage" class="performance-message"></div>
+            </div>
+
+            <div class="results-actions">
+                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
+                <a href="../theory/java8features.html" class="btn btn-secondary">📚 Review Theory</a>
+                <a href="../programs/java8features.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+        </div>
+
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/java8features.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../programs/java8features.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">🚀 Next Topic Coming Soon</div>
+                <p><strong>Programming Principles & Design (SOLID, MVC, Design Patterns)</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+    <script>
+        const quizQuestions = [
+            {
+                id: 1,
+                question: "What is a Lambda expression in Java?",
+                options: ["A loop construct", "An anonymous function", "A class declaration", "A variable type"],
+                answerIndex: 1,
+                explanation: "A Lambda expression is an anonymous function that can be passed as an argument or stored in a variable. It enables functional programming in Java."
+            },
+            {
+                id: 2,
+                question: "Which Java version introduced Lambda expressions?",
+                options: ["Java 7", "Java 8", "Java 11", "Java 17"],
+                answerIndex: 1,
+                explanation: "Lambda expressions were introduced in Java 8 (March 2014), marking a major shift toward functional programming."
+            },
+            {
+                id: 3,
+                question: "What is a functional interface?",
+                options: ["An interface with multiple methods", "An interface with exactly one abstract method", "An interface with no methods", "An interface with only static methods"],
+                answerIndex: 1,
+                explanation: "A functional interface has exactly one abstract method. It can have default and static methods, but only one abstract method."
+            },
+            {
+                id: 4,
+                question: "Which annotation marks a functional interface?",
+                options: ["@Functional", "@FunctionalInterface", "@Lambda", "@SingleMethod"],
+                answerIndex: 1,
+                explanation: "@FunctionalInterface annotation ensures the interface has exactly one abstract method. It's optional but recommended."
+            },
+            {
+                id: 5,
+                question: "What is the output?\n\nList<Integer> nums = Arrays.asList(1, 2, 3);\nnums.forEach(n -> System.out.print(n * 2 + \" \"));",
+                options: ["1 2 3", "2 4 6", "3 6 9", "Compile error"],
+                answerIndex: 1,
+                explanation: "The Lambda multiplies each number by 2. Output: 2 4 6"
+            },
+            {
+                id: 6,
+                question: "Which is a valid method reference syntax?",
+                options: ["System.out.println()", "System.out::println", "System.out->println", "System.out.println::"],
+                answerIndex: 1,
+                explanation: "Method references use :: syntax. System.out::println is a method reference to the println method."
+            },
+            {
+                id: 7,
+                question: "What does the Stream API provide?",
+                options: ["File I/O operations", "Sequential and parallel aggregate operations", "Network streaming", "Audio streaming"],
+                answerIndex: 1,
+                explanation: "The Stream API provides a way to process sequences of elements with operations like filter, map, and reduce."
+            },
+            {
+                id: 8,
+                question: "Which is an intermediate operation in Streams?",
+                options: ["forEach()", "collect()", "filter()", "count()"],
+                answerIndex: 2,
+                explanation: "filter() is an intermediate operation (lazy). forEach(), collect(), and count() are terminal operations (eager)."
+            },
+            {
+                id: 9,
+                question: "Which is a terminal operation in Streams?",
+                options: ["map()", "filter()", "sorted()", "collect()"],
+                answerIndex: 3,
+                explanation: "collect() is a terminal operation that triggers stream processing. map(), filter(), and sorted() are intermediate operations."
+            },
+            {
+                id: 10,
+                question: "What is the output?\n\nList<Integer> nums = Arrays.asList(1, 2, 3, 4, 5);\nint sum = nums.stream().filter(n -> n % 2 == 0).mapToInt(n -> n).sum();\nSystem.out.println(sum);",
+                options: ["6", "9", "15", "10"],
+                answerIndex: 0,
+                explanation: "Filters even numbers (2, 4) and sums them: 2 + 4 = 6"
+            },
+            {
+                id: 11,
+                question: "What is Optional used for?",
+                options: ["Optional parameters", "Avoiding NullPointerException", "Optional methods", "Optional classes"],
+                answerIndex: 1,
+                explanation: "Optional is a container that may or may not contain a non-null value. It helps avoid NullPointerException."
+            },
+            {
+                id: 12,
+                question: "Which method checks if Optional has a value?",
+                options: ["hasValue()", "isPresent()", "exists()", "contains()"],
+                answerIndex: 1,
+                explanation: "isPresent() returns true if Optional contains a value, false otherwise."
+            },
+            {
+                id: 13,
+                question: "What happens if you call get() on an empty Optional?",
+                options: ["Returns null", "Returns empty string", "Throws NoSuchElementException", "Returns default value"],
+                answerIndex: 2,
+                explanation: "Calling get() on an empty Optional throws NoSuchElementException. Use orElse() or orElseGet() instead."
+            },
+            {
+                id: 14,
+                question: "Which built-in functional interface tests a condition?",
+                options: ["Function", "Predicate", "Consumer", "Supplier"],
+                answerIndex: 1,
+                explanation: "Predicate<T> has a test(T t) method that returns boolean. It's used for testing conditions."
+            },
+            {
+                id: 15,
+                question: "Which functional interface transforms data?",
+                options: ["Predicate", "Function", "Consumer", "Supplier"],
+                answerIndex: 1,
+                explanation: "Function<T, R> has an apply(T t) method that transforms T to R. It's used for data transformation."
+            },
+            {
+                id: 16,
+                question: "What does Consumer do?",
+                options: ["Returns a value", "Tests a condition", "Accepts input and performs action", "Supplies a value"],
+                answerIndex: 2,
+                explanation: "Consumer<T> has an accept(T t) method that takes input and performs an action without returning anything."
+            },
+            {
+                id: 17,
+                question: "What does Supplier do?",
+                options: ["Accepts input", "Tests condition", "Supplies/generates a value", "Transforms data"],
+                answerIndex: 2,
+                explanation: "Supplier<T> has a get() method that supplies/generates a value without taking any input."
+            },
+            {
+                id: 18,
+                question: "When were default methods in interfaces introduced?",
+                options: ["Java 7", "Java 8", "Java 11", "Java 17"],
+                answerIndex: 1,
+                explanation: "Default methods in interfaces were introduced in Java 8 to allow interface evolution without breaking existing implementations."
+            },
+            {
+                id: 19,
+                question: "Can an interface have static methods?",
+                options: ["No, never", "Yes, since Java 8", "Yes, since Java 11", "Only in abstract classes"],
+                answerIndex: 1,
+                explanation: "Interfaces can have static methods since Java 8. They belong to the interface, not implementing classes."
+            },
+            {
+                id: 20,
+                question: "What is type erasure in Generics?",
+                options: ["Deleting types", "Runtime removal of generic type information", "Compile-time type checking", "Type conversion"],
+                answerIndex: 1,
+                explanation: "Type erasure removes generic type information at runtime. List<String> and List<Integer> become just List at runtime."
+            },
+            {
+                id: 21,
+                question: "What is auto-boxing?",
+                options: ["Automatic package creation", "Primitive to wrapper conversion", "Wrapper to primitive conversion", "Automatic casting"],
+                answerIndex: 1,
+                explanation: "Auto-boxing is automatic conversion from primitive types to their wrapper classes (e.g., int to Integer)."
+            },
+            {
+                id: 22,
+                question: "What is unboxing?",
+                options: ["Opening packages", "Wrapper to primitive conversion", "Primitive to wrapper conversion", "Type casting"],
+                answerIndex: 1,
+                explanation: "Unboxing is automatic conversion from wrapper classes to primitive types (e.g., Integer to int)."
+            },
+            {
+                id: 23,
+                question: "Which Java version introduced Records?",
+                options: ["Java 8", "Java 11", "Java 14", "Java 17"],
+                answerIndex: 2,
+                explanation: "Records were introduced as a preview feature in Java 14 and became standard in Java 16."
+            },
+            {
+                id: 24,
+                question: "Are Records mutable or immutable?",
+                options: ["Mutable", "Immutable", "Depends on declaration", "Can be both"],
+                answerIndex: 1,
+                explanation: "Records are immutable by design. All fields are final and cannot be changed after creation."
+            },
+            {
+                id: 25,
+                question: "What does a Record automatically generate?",
+                options: ["Only constructor", "Only getters", "Constructor, accessors, equals, hashCode, toString", "Nothing"],
+                answerIndex: 2,
+                explanation: "Records automatically generate constructor, accessor methods, equals(), hashCode(), and toString()."
+            },
+            {
+                id: 26,
+                question: "Which Java version introduced switch expressions?",
+                options: ["Java 8", "Java 11", "Java 14", "Java 17"],
+                answerIndex: 2,
+                explanation: "Switch expressions were introduced as a preview in Java 12 and became standard in Java 14."
+            },
+            {
+                id: 27,
+                question: "What keyword is used in switch expressions for complex blocks?",
+                options: ["return", "yield", "break", "give"],
+                answerIndex: 1,
+                explanation: "The yield keyword is used in switch expressions to return a value from a block."
+            },
+            {
+                id: 28,
+                question: "What is pattern matching for instanceof?",
+                options: ["String matching", "Combining type check and cast", "Pattern recognition", "Regular expressions"],
+                answerIndex: 1,
+                explanation: "Pattern matching for instanceof combines type checking and casting in one step, eliminating explicit casts."
+            },
+            {
+                id: 29,
+                question: "Which Java version introduced sealed classes?",
+                options: ["Java 8", "Java 11", "Java 14", "Java 17"],
+                answerIndex: 3,
+                explanation: "Sealed classes were introduced as a preview in Java 15 and became standard in Java 17."
+            },
+            {
+                id: 30,
+                question: "What do sealed classes restrict?",
+                options: ["Method access", "Field access", "Which classes can extend them", "Object creation"],
+                answerIndex: 2,
+                explanation: "Sealed classes restrict which other classes can extend them using the permits clause."
+            },
+            {
+                id: 31,
+                question: "What are text blocks delimited by?",
+                options: ["Single quotes", "Double quotes", "Triple quotes", "Backticks"],
+                answerIndex: 2,
+                explanation: "Text blocks use triple double quotes (\"\"\") as delimiters for multi-line string literals."
+            },
+            {
+                id: 32,
+                question: "Which Java version introduced the var keyword?",
+                options: ["Java 8", "Java 9", "Java 10", "Java 11"],
+                answerIndex: 2,
+                explanation: "Local variable type inference (var keyword) was introduced in Java 10."
+            },
+            {
+                id: 33,
+                question: "Can var be used for method parameters?",
+                options: ["Yes, always", "No, only for local variables", "Yes, since Java 11", "Only for Lambda parameters"],
+                answerIndex: 1,
+                explanation: "var can only be used for local variables with initializers. It cannot be used for method parameters, return types, or fields."
+            },
+            {
+                id: 34,
+                question: "What is CompletableFuture used for?",
+                options: ["Synchronous operations", "Asynchronous programming", "File operations", "Network operations"],
+                answerIndex: 1,
+                explanation: "CompletableFuture is used for asynchronous programming, allowing non-blocking operations and composable async tasks."
+            },
+            {
+                id: 35,
+                question: "What is the output?\n\nOptional<String> opt = Optional.of(\"Java\");\nString result = opt.map(String::toUpperCase).orElse(\"Default\");\nSystem.out.println(result);",
+                options: ["Java", "JAVA", "Default", "null"],
+                answerIndex: 1,
+                explanation: "Optional contains 'Java', map() transforms it to 'JAVA', orElse() is not needed. Output: JAVA"
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
+            quizManager.startQuiz();
+            window.quizManager = quizManager;
+        });
+    </script>
+</body>
+
+</html>

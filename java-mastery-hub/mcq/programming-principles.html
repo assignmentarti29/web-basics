@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Principles - Quiz - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Programming Principles - Quiz</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Quiz</span>
+                <span>/</span>
+                <span>Programming Principles</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Test Your Knowledge</h2>
+            <p>This quiz contains 38 questions covering all aspects of Programming Principles including DRY, KISS,
+                YAGNI, SOLID principles, Singleton pattern, MVC architecture, and design patterns.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Take your time and think about real-world applications of these principles. Aim for at least 80% to
+                    demonstrate mastery!</p>
+            </div>
+        </div>
+
+        <div class="quiz-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-text">
+                <span id="currentQuestion">0</span> / <span id="totalQuestions">38</span> Questions
+            </div>
+        </div>
+
+        <div id="quizContainer" class="content-section"></div>
+
+        <div id="quizResults" class="content-section" style="display: none;">
+            <h2>Quiz Complete! 🎉</h2>
+            <div class="results-summary">
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="scorePercentage">0%</span>
+                    </div>
+                    <p class="score-text">Your Score: <span id="scoreText">0/38</span></p>
+                </div>
+                <div id="performanceMessage" class="performance-message"></div>
+            </div>
+
+            <div class="results-actions">
+                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
+                <a href="../theory/programming-principles.html" class="btn btn-secondary">📚 Review Theory</a>
+                <a href="../programs/programming-principles.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+        </div>
+
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/programming-principles.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../programs/programming-principles.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">🎉 Congratulations!</div>
+                <p>You've completed the Java Mastery Series! You now have a solid foundation in Java programming and
+                    software engineering principles.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+    <script>
+        const quizQuestions = [
+            {
+                id: 1,
+                question: "What does DRY stand for in programming principles?",
+                options: ["Don't Repeat Yourself", "Do Repeat Yourself", "Don't Reuse Yourself", "Data Reuse Yearly"],
+                answerIndex: 0,
+                explanation: "DRY stands for 'Don't Repeat Yourself' - a principle that states every piece of knowledge should have a single, unambiguous representation in the system."
+            },
+            {
+                id: 2,
+                question: "What does KISS stand for?",
+                options: ["Keep It Simple, Stupid", "Keep It Super Simple", "Keep Implementing Simple Solutions", "Keep It Secure and Safe"],
+                answerIndex: 0,
+                explanation: "KISS stands for 'Keep It Simple, Stupid' - a principle that emphasizes simplicity in design and avoiding unnecessary complexity."
+            },
+            {
+                id: 3,
+                question: "What does YAGNI mean?",
+                options: ["You Always Get New Ideas", "You Aren't Gonna Need It", "You Are Getting New Implementations", "Your Application Gets New Iterations"],
+                answerIndex: 1,
+                explanation: "YAGNI stands for 'You Aren't Gonna Need It' - don't add functionality until it's actually needed. Avoid speculative generality."
+            },
+            {
+                id: 4,
+                question: "What is the Single Responsibility Principle (SRP)?",
+                options: ["A class should have multiple responsibilities", "A class should have only one reason to change", "A class should handle all operations", "A class should be responsible for everything"],
+                answerIndex: 1,
+                explanation: "SRP states that a class should have only one reason to change, meaning it should have only one job or responsibility."
+            },
+            {
+                id: 5,
+                question: "Which SOLID principle states 'Software entities should be open for extension but closed for modification'?",
+                options: ["Single Responsibility", "Open/Closed Principle", "Liskov Substitution", "Interface Segregation"],
+                answerIndex: 1,
+                explanation: "The Open/Closed Principle (OCP) states that you should be able to extend functionality without modifying existing code, typically achieved through polymorphism and abstraction."
+            },
+            {
+                id: 6,
+                question: "What does the Liskov Substitution Principle state?",
+                options: ["Subtypes must be substitutable for their base types", "Base types must be substitutable for subtypes", "All classes must be substitutable", "No substitution is allowed"],
+                answerIndex: 0,
+                explanation: "LSP states that objects of a superclass should be replaceable with objects of a subclass without breaking the application. Subtypes must honor the contract of their base type."
+            },
+            {
+                id: 7,
+                question: "Which principle states 'Clients should not be forced to depend on interfaces they don't use'?",
+                options: ["Single Responsibility", "Open/Closed", "Liskov Substitution", "Interface Segregation"],
+                answerIndex: 3,
+                explanation: "The Interface Segregation Principle (ISP) states that clients should not be forced to implement interfaces they don't use. Create specific, focused interfaces instead of one large interface."
+            },
+            {
+                id: 8,
+                question: "What does the Dependency Inversion Principle state?",
+                options: ["Depend on concrete implementations", "High-level modules should depend on low-level modules", "Both high and low-level modules should depend on abstractions", "Dependencies should be inverted randomly"],
+                answerIndex: 2,
+                explanation: "DIP states that high-level modules should not depend on low-level modules. Both should depend on abstractions (interfaces/abstract classes)."
+            },
+            {
+                id: 9,
+                question: "What is the main purpose of the Singleton pattern?",
+                options: ["Create multiple instances", "Ensure a class has only one instance", "Create instances lazily", "Destroy instances"],
+                answerIndex: 1,
+                explanation: "The Singleton pattern ensures that a class has only one instance and provides a global point of access to it."
+            },
+            {
+                id: 10,
+                question: "Which Singleton implementation creates the instance at class loading time?",
+                options: ["Lazy Singleton", "Eager Singleton", "Thread-safe Singleton", "Bill Pugh Singleton"],
+                answerIndex: 1,
+                explanation: "Eager Singleton creates the instance at class loading time using static final initialization. It's thread-safe but creates the instance even if never used."
+            },
+            {
+                id: 11,
+                question: "What is the main disadvantage of using synchronized method for Singleton?",
+                options: ["Not thread-safe", "Performance overhead on every call", "Creates multiple instances", "Doesn't work"],
+                answerIndex: 1,
+                explanation: "Synchronizing the entire getInstance() method is thread-safe but causes performance overhead on every call, even after the instance is created."
+            },
+            {
+                id: 12,
+                question: "What does MVC stand for?",
+                options: ["Model-View-Controller", "Model-Variable-Controller", "Module-View-Class", "Model-View-Class"],
+                answerIndex: 0,
+                explanation: "MVC stands for Model-View-Controller, an architectural pattern that separates an application into three interconnected components."
+            },
+            {
+                id: 13,
+                question: "In MVC, which component handles user input?",
+                options: ["Model", "View", "Controller", "All of them"],
+                answerIndex: 2,
+                explanation: "The Controller handles user input and requests, updates the model, and selects the appropriate view to display."
+            },
+            {
+                id: 14,
+                question: "In MVC, which component is responsible for business logic and data?",
+                options: ["Model", "View", "Controller", "Service"],
+                answerIndex: 0,
+                explanation: "The Model represents the data and business logic. It manages the state of the application and is independent of the user interface."
+            },
+            {
+                id: 15,
+                question: "What is the primary purpose of the Factory pattern?",
+                options: ["Create objects without specifying exact class", "Destroy objects", "Clone objects", "Modify objects"],
+                answerIndex: 0,
+                explanation: "The Factory pattern provides an interface for creating objects without specifying their exact classes, encapsulating object creation logic."
+            },
+            {
+                id: 16,
+                question: "What is the Strategy pattern used for?",
+                options: ["Creating objects", "Defining interchangeable algorithms", "Observing changes", "Building complex objects"],
+                answerIndex: 1,
+                explanation: "The Strategy pattern defines a family of algorithms, encapsulates each one, and makes them interchangeable. The algorithm can vary independently from clients."
+            },
+            {
+                id: 17,
+                question: "What is the Observer pattern used for?",
+                options: ["Creating objects", "Defining algorithms", "Notifying dependents of state changes", "Building objects"],
+                answerIndex: 2,
+                explanation: "The Observer pattern defines a one-to-many dependency so that when one object changes state, all its dependents are notified and updated automatically."
+            },
+            {
+                id: 18,
+                question: "What is the Builder pattern used for?",
+                options: ["Simple object creation", "Constructing complex objects step by step", "Destroying objects", "Cloning objects"],
+                answerIndex: 1,
+                explanation: "The Builder pattern is used to construct complex objects step by step, especially useful when an object has many optional parameters."
+            },
+            {
+                id: 19,
+                question: "In layered architecture, which layer should contain business rules?",
+                options: ["Presentation Layer", "Business Logic Layer", "Data Access Layer", "All layers"],
+                answerIndex: 1,
+                explanation: "The Business Logic Layer (Service Layer) contains business rules, validation, and workflows. It coordinates between presentation and data layers."
+            },
+            {
+                id: 20,
+                question: "Should the Presentation Layer directly access the database?",
+                options: ["Yes, always", "No, it should go through business layer", "Only for simple queries", "Only in emergencies"],
+                answerIndex: 1,
+                explanation: "No, the Presentation Layer should never directly access the database. It should always go through the Business Logic Layer to maintain separation of concerns."
+            },
+            {
+                id: 21,
+                question: "What is high coupling in software design?",
+                options: ["Good - classes are independent", "Bad - classes are tightly dependent", "Neutral - doesn't matter", "Only for interfaces"],
+                answerIndex: 1,
+                explanation: "High coupling is bad - it means classes are tightly dependent on each other. Changes in one class can break others. We want low coupling (loose dependencies)."
+            },
+            {
+                id: 22,
+                question: "What is high cohesion in software design?",
+                options: ["Bad - class does many things", "Good - class is focused on one purpose", "Neutral - doesn't matter", "Only for methods"],
+                answerIndex: 1,
+                explanation: "High cohesion is good - it means a class is focused on a single, well-defined purpose. All methods work toward the same goal."
+            },
+            {
+                id: 23,
+                question: "Which is better: composition or inheritance?",
+                options: ["Always inheritance", "Always composition", "Composition is generally preferred", "They're exactly the same"],
+                answerIndex: 2,
+                explanation: "Composition is generally preferred over inheritance ('favor composition over inheritance'). It provides more flexibility and avoids tight coupling."
+            },
+            {
+                id: 24,
+                question: "What is a 'God class' anti-pattern?",
+                options: ["A very good class", "A class that does too many things", "A class with no methods", "A singleton class"],
+                answerIndex: 1,
+                explanation: "A 'God class' is an anti-pattern where a class does too many things, violating the Single Responsibility Principle. It becomes a maintenance nightmare."
+            },
+            {
+                id: 25,
+                question: "What does 'program to interfaces, not implementations' mean?",
+                options: ["Never use concrete classes", "Depend on abstractions for flexibility", "Only use interfaces", "Avoid all implementations"],
+                answerIndex: 1,
+                explanation: "It means depending on abstractions (interfaces/abstract classes) rather than concrete implementations. This makes code flexible and testable."
+            },
+            {
+                id: 26,
+                question: "Which SOLID principle does dependency injection primarily support?",
+                options: ["Single Responsibility", "Open/Closed", "Liskov Substitution", "Dependency Inversion"],
+                answerIndex: 3,
+                explanation: "Dependency Injection is a technique that implements the Dependency Inversion Principle by injecting dependencies rather than creating them internally."
+            },
+            {
+                id: 27,
+                question: "What is the main benefit of following SOLID principles?",
+                options: ["Faster code execution", "Maintainable, flexible, testable code", "Smaller file sizes", "Fewer lines of code"],
+                answerIndex: 1,
+                explanation: "SOLID principles lead to maintainable, flexible, and testable code. They don't necessarily make code faster or smaller, but make it better designed."
+            },
+            {
+                id: 28,
+                question: "When should you use the Singleton pattern?",
+                options: ["For every class", "When you need exactly one instance", "Never", "Only for databases"],
+                answerIndex: 1,
+                explanation: "Use Singleton when you need exactly one instance of a class (like configuration, logger, connection pool). Don't overuse it - it can make testing difficult."
+            },
+            {
+                id: 29,
+                question: "What is the 'volatile' keyword used for in double-checked locking Singleton?",
+                options: ["Make it faster", "Prevent instruction reordering", "Make it thread-safe", "Save memory"],
+                answerIndex: 1,
+                explanation: "The 'volatile' keyword prevents instruction reordering that could cause problems in multi-threaded environments with double-checked locking."
+            },
+            {
+                id: 30,
+                question: "Which is NOT a benefit of the MVC pattern?",
+                options: ["Separation of concerns", "Parallel development", "Faster execution", "Testability"],
+                answerIndex: 2,
+                explanation: "MVC provides separation of concerns, enables parallel development, and improves testability. It doesn't necessarily make code execute faster."
+            },
+            {
+                id: 31,
+                question: "What is the main problem with this code: if (age >= 18) { return true; } else { return false; }",
+                options: ["Syntax error", "Overcomplicated - can be simplified", "Logic error", "Nothing wrong"],
+                answerIndex: 1,
+                explanation: "This violates KISS principle. It can be simplified to: return age >= 18; The if-else is unnecessary complexity."
+            },
+            {
+                id: 32,
+                question: "What is premature optimization?",
+                options: ["Optimizing before identifying performance problems", "Optimizing too late", "Never optimizing", "Always optimizing"],
+                answerIndex: 0,
+                explanation: "Premature optimization is optimizing code before you have evidence of performance problems. 'Premature optimization is the root of all evil' - Donald Knuth."
+            },
+            {
+                id: 33,
+                question: "Which violates the Open/Closed Principle?",
+                options: ["Adding a new class that implements an interface", "Modifying existing class to add new functionality", "Creating a new subclass", "Using polymorphism"],
+                answerIndex: 1,
+                explanation: "Modifying an existing class to add new functionality violates OCP. You should extend (add new classes) rather than modify existing ones."
+            },
+            {
+                id: 34,
+                question: "What is the Repository pattern used for?",
+                options: ["UI logic", "Business logic", "Data access abstraction", "Network calls"],
+                answerIndex: 2,
+                explanation: "The Repository pattern abstracts data access logic, providing a collection-like interface for accessing domain objects. It belongs to the Data Access Layer."
+            },
+            {
+                id: 35,
+                question: "What makes code 'testable'?",
+                options: ["Many lines of code", "Low coupling and dependency injection", "No interfaces", "Complex logic"],
+                answerIndex: 1,
+                explanation: "Testable code has low coupling and uses dependency injection, allowing dependencies to be mocked. Following SOLID principles naturally leads to testable code."
+            },
+            {
+                id: 36,
+                question: "What is the main purpose of the Service layer in layered architecture?",
+                options: ["Display UI", "Contain business logic", "Direct database access", "Handle HTTP requests"],
+                answerIndex: 1,
+                explanation: "The Service layer (Business Logic Layer) contains business logic, validation, and workflows. It orchestrates operations between presentation and data layers."
+            },
+            {
+                id: 37,
+                question: "Which is an example of violating DRY principle?",
+                options: ["Using a constant for repeated values", "Copy-pasting the same code in multiple places", "Creating reusable methods", "Using inheritance"],
+                answerIndex: 1,
+                explanation: "Copy-pasting code violates DRY. If you find yourself copying code, extract it into a reusable method or class."
+            },
+            {
+                id: 38,
+                question: "What is the Bill Pugh Singleton implementation advantage?",
+                options: ["Simplest code", "Thread-safe, lazy, no synchronization overhead", "Fastest creation", "Uses less memory"],
+                answerIndex: 1,
+                explanation: "Bill Pugh Singleton (using static inner helper class) is thread-safe, lazy initialized, and has no synchronization overhead. It's the recommended approach for most cases."
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
+            quizManager.startQuiz();
+            window.quizManager = quizManager;
+        });
+    </script>
+</body>
+
+</html>

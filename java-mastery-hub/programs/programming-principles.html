@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Principles - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Programming Principles - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>Programming Principles</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Hands-On Java Programs</h2>
+            <p>Welcome to the practical section! These 12+ programs demonstrate programming principles, SOLID design,
+                and common design patterns with real-world examples.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>These principles are the foundation of professional software development. Practice these examples
+                    and apply them in your own projects!</p>
+            </div>
+        </div>
+
+        <!-- Program 1: DRY vs Repeated Code -->
+        <div class="content-section">
+            <h2>Program 1: DRY (Don't Repeat Yourself) Principle</h2>
+            <p>Demonstrates the difference between repeated code and DRY principle.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// BAD - Repeated code
+class BadCalculator {
+    public double calculateCircleArea(double radius) {
+        return 3.14159 * radius * radius;
+    }
+    
+    public double calculateCircleCircumference(double radius) {
+        return 2 * 3.14159 * radius;
+    }
+    
+    public double calculateSphereVolume(double radius) {
+        return (4.0/3.0) * 3.14159 * radius * radius * radius;
+    }
+}
+
+// GOOD - DRY principle
+class GoodCalculator {
+    private static final double PI = 3.14159;
+    
+    public double calculateCircleArea(double radius) {
+        return PI * radius * radius;
+    }
+    
+    public double calculateCircleCircumference(double radius) {
+        return 2 * PI * radius;
+    }
+    
+    public double calculateSphereVolume(double radius) {
+        return (4.0/3.0) * PI * Math.pow(radius, 3);
+    }
+}
+
+public class DRYPrincipleDemo {
+    public static void main(String[] args) {
+        GoodCalculator calc = new GoodCalculator();
+        
+        double radius = 5.0;
+        System.out.println("Circle Area: " + calc.calculateCircleArea(radius));
+        System.out.println("Circle Circumference: " + calc.calculateCircleCircumference(radius));
+        System.out.println("Sphere Volume: " + calc.calculateSphereVolume(radius));
+    }
+}
+
+/* Output:
+Circle Area: 78.53975
+Circle Circumference: 31.4159
+Sphere Volume: 523.5983333333334
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Instead of writing the same number (3.14159) many times, we write it once and
+                    use it everywhere!</p>
+                <p><strong>Real-world:</strong> Like having one phone number saved in your contacts instead of writing
+                    it down in multiple places.</p>
+                <p><strong>Technical:</strong> DRY eliminates code duplication. If PI needs to change, we update it in
+                    one place. This reduces errors and maintenance effort.</p>
+            </div>
+        </div>
+
+        <!-- Program 2: Single Responsibility Principle -->
+        <div class="content-section">
+            <h2>Program 2: Single Responsibility Principle (SRP)</h2>
+            <p>Demonstrates separating responsibilities into focused classes.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// BAD - Multiple responsibilities
+class BadEmployee {
+    private String name;
+    private double salary;
+    
+    public void calculatePay() {
+        System.out.println("Calculating pay for " + name);
+        // Complex payroll logic
+    }
+    
+    public void saveToDatabase() {
+        System.out.println("Saving " + name + " to database");
+        // Database logic
+    }
+    
+    public void generateReport() {
+        System.out.println("Generating report for " + name);
+        // Reporting logic
+    }
+}
+
+// GOOD - Single Responsibility
+class Employee {
+    private String name;
+    private double salary;
+    
+    public Employee(String name, double salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+    
+    public String getName() { return name; }
+    public double getSalary() { return salary; }
+}
+
+class PayrollCalculator {
+    public double calculatePay(Employee employee) {
+        System.out.println("Calculating pay for " + employee.getName());
+        return employee.getSalary();
+    }
+}
+
+class EmployeeRepository {
+    public void save(Employee employee) {
+        System.out.println("Saving " + employee.getName() + " to database");
+        // Database operations
+    }
+}
+
+class EmployeeReportGenerator {
+    public String generateReport(Employee employee) {
+        System.out.println("Generating report for " + employee.getName());
+        return "Report for " + employee.getName() + ": $" + employee.getSalary();
+    }
+}
+
+public class SRPDemo {
+    public static void main(String[] args) {
+        Employee emp = new Employee("John Doe", 75000);
+        
+        PayrollCalculator payroll = new PayrollCalculator();
+        payroll.calculatePay(emp);
+        
+        EmployeeRepository repo = new EmployeeRepository();
+        repo.save(emp);
+        
+        EmployeeReportGenerator reportGen = new EmployeeReportGenerator();
+        String report = reportGen.generateReport(emp);
+        System.out.println(report);
+    }
+}
+
+/* Output:
+Calculating pay for John Doe
+Saving John Doe to database
+Generating report for John Doe
+Report for John Doe: $75000.0
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> One person does one job—chef cooks, waiter serves, cashier handles money!</p>
+                <p><strong>Real-world:</strong> Like having separate departments in a company—HR, Finance, IT—each with
+                    one clear purpose.</p>
+                <p><strong>Technical:</strong> Each class has one reason to change. Changes to payroll logic don't
+                    affect database or reporting code.</p>
+            </div>
+        </div>
+
+        <!-- Program 3: Open/Closed Principle -->
+        <div class="content-section">
+            <h2>Program 3: Open/Closed Principle (OCP)</h2>
+            <p>Demonstrates extending functionality without modifying existing code.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// Interface for shapes
+interface Shape {
+    double calculateArea();
+}
+
+class Circle implements Shape {
+    private double radius;
+    
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+class Rectangle implements Shape {
+    private double width;
+    private double height;
+    
+    public Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+    
+    @Override
+    public double calculateArea() {
+        return width * height;
+    }
+}
+
+// NEW shape added without modifying existing code!
+class Triangle implements Shape {
+    private double base;
+    private double height;
+    
+    public Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+    
+    @Override
+    public double calculateArea() {
+        return 0.5 * base * height;
+    }
+}
+
+class AreaCalculator {
+    public double calculateTotalArea(Shape[] shapes) {
+        double total = 0;
+        for (Shape shape : shapes) {
+            total += shape.calculateArea();
+        }
+        return total;
+    }
+}
+
+public class OCPDemo {
+    public static void main(String[] args) {
+        Shape[] shapes = {
+            new Circle(5),
+            new Rectangle(4, 6),
+            new Triangle(3, 8)
+        };
+        
+        AreaCalculator calculator = new AreaCalculator();
+        double totalArea = calculator.calculateTotalArea(shapes);
+        
+        System.out.println("Total Area: " + totalArea);
+    }
+}
+
+/* Output:
+Total Area: 114.53981633974483
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> You can add new toys to your toy box without breaking the old ones!</p>
+                <p><strong>Real-world:</strong> Like adding new apps to your phone without changing the operating
+                    system.</p>
+                <p><strong>Technical:</strong> The AreaCalculator is closed for modification (we don't change it) but
+                    open for extension (we can add new shapes). This is achieved through polymorphism.</p>
+            </div>
+        </div>
+
+        <!-- Program 4: Liskov Substitution Principle -->
+        <div class="content-section">
+            <h2>Program 4: Liskov Substitution Principle (LSP)</h2>
+            <p>Demonstrates correct and incorrect use of inheritance.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// BAD - Violates LSP
+class BadBird {
+    public void fly() {
+        System.out.println("Flying...");
+    }
+}
+
+class BadPenguin extends BadBird {
+    @Override
+    public void fly() {
+        throw new UnsupportedOperationException("Penguins can't fly!");
+    }
+}
+
+// GOOD - Respects LSP
+abstract class Bird {
+    protected String name;
+    
+    public Bird(String name) {
+        this.name = name;
+    }
+    
+    public abstract void move();
+    
+    public void eat() {
+        System.out.println(name + " is eating");
+    }
+}
+
+class Sparrow extends Bird {
+    public Sparrow() {
+        super("Sparrow");
+    }
+    
+    @Override
+    public void move() {
+        System.out.println(name + " is flying");
+    }
+}
+
+class Penguin extends Bird {
+    public Penguin() {
+        super("Penguin");
+    }
+    
+    @Override
+    public void move() {
+        System.out.println(name + " is swimming");
+    }
+}
+
+class Ostrich extends Bird {
+    public Ostrich() {
+        super("Ostrich");
+    }
+    
+    @Override
+    public void move() {
+        System.out.println(name + " is running");
+    }
+}
+
+public class LSPDemo {
+    public static void makeBirdMove(Bird bird) {
+        bird.move(); // Works for ALL birds!
+        bird.eat();
+    }
+    
+    public static void main(String[] args) {
+        Bird[] birds = {
+            new Sparrow(),
+            new Penguin(),
+            new Ostrich()
+        };
+        
+        for (Bird bird : birds) {
+            makeBirdMove(bird);
+            System.out.println();
+        }
+    }
+}
+
+/* Output:
+Sparrow is flying
+Sparrow is eating
+
+Penguin is swimming
+Penguin is eating
+
+Ostrich is running
+Ostrich is eating
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> All birds can move, but they move in different ways—some fly, some swim, some
+                    run!</p>
+                <p><strong>Real-world:</strong> Like different types of vehicles—all can transport, but cars drive,
+                    boats sail, planes fly.</p>
+                <p><strong>Technical:</strong> Subtypes (Sparrow, Penguin, Ostrich) can be used wherever Bird is
+                    expected without breaking the program. The contract (move method) is honored by all.</p>
+            </div>
+        </div>
+
+        <!-- Program 5: Interface Segregation Principle -->
+        <div class="content-section">
+            <h2>Program 5: Interface Segregation Principle (ISP)</h2>
+            <p>Demonstrates creating focused, specific interfaces.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// Segregated interfaces
+interface Workable {
+    void work();
+}
+
+interface Eatable {
+    void eat();
+}
+
+interface Sleepable {
+    void sleep();
+}
+
+class Human implements Workable, Eatable, Sleepable {
+    private String name;
+    
+    public Human(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public void work() {
+        System.out.println(name + " is working");
+    }
+    
+    @Override
+    public void eat() {
+        System.out.println(name + " is eating");
+    }
+    
+    @Override
+    public void sleep() {
+        System.out.println(name + " is sleeping");
+    }
+}
+
+class Robot implements Workable {
+    private String model;
+    
+    public Robot(String model) {
+        this.model = model;
+    }
+    
+    @Override
+    public void work() {
+        System.out.println(model + " robot is working 24/7");
+    }
+    // Robot doesn't need to implement eat() or sleep()!
+}
+
+class Dog implements Eatable, Sleepable {
+    private String name;
+    
+    public Dog(String name) {
+        this.name = name;
+    }
+    
+    @Override
+    public void eat() {
+        System.out.println(name + " is eating dog food");
+    }
+    
+    @Override
+    public void sleep() {
+        System.out.println(name + " is sleeping");
+    }
+    // Dog doesn't need to implement work()!
+}
+
+public class ISPDemo {
+    public static void main(String[] args) {
+        Human human = new Human("Alice");
+        human.work();
+        human.eat();
+        human.sleep();
+        
+        System.out.println();
+        
+        Robot robot = new Robot("T-800");
+        robot.work();
+        
+        System.out.println();
+        
+        Dog dog = new Dog("Buddy");
+        dog.eat();
+        dog.sleep();
+    }
+}
+
+/* Output:
+Alice is working
+Alice is eating
+Alice is sleeping
+
+T-800 robot is working 24/7
+
+Buddy is eating dog food
+Buddy is sleeping
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Don't force everyone to do everything—robots don't eat, dogs don't work!</p>
+                <p><strong>Real-world:</strong> Like a restaurant menu with sections—you don't force vegetarians to
+                    order from the meat section.</p>
+                <p><strong>Technical:</strong> Classes implement only the interfaces they need. This prevents forcing
+                    implementations of irrelevant methods.</p>
+            </div>
+        </div>
+
+        <!-- Program 6: Dependency Inversion Principle -->
+        <div class="content-section">
+            <h2>Program 6: Dependency Inversion Principle (DIP)</h2>
+            <p>Demonstrates depending on abstractions, not concrete implementations.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// Abstraction
+interface MessageService {
+    void sendMessage(String message, String recipient);
+}
+
+// Concrete implementations
+class EmailService implements MessageService {
+    @Override
+    public void sendMessage(String message, String recipient) {
+        System.out.println("Email sent to " + recipient + ": " + message);
+    }
+}
+
+class SMSService implements MessageService {
+    @Override
+    public void sendMessage(String message, String recipient) {
+        System.out.println("SMS sent to " + recipient + ": " + message);
+    }
+}
+
+class PushNotificationService implements MessageService {
+    @Override
+    public void sendMessage(String message, String recipient) {
+        System.out.println("Push notification sent to " + recipient + ": " + message);
+    }
+}
+
+// High-level module depends on abstraction
+class NotificationManager {
+    private MessageService messageService;
+    
+    // Dependency injection via constructor
+    public NotificationManager(MessageService service) {
+        this.messageService = service;
+    }
+    
+    public void notifyUser(String user, String message) {
+        messageService.sendMessage(message, user);
+    }
+}
+
+public class DIPDemo {
+    public static void main(String[] args) {
+        // Can easily switch implementations!
+        
+        System.out.println("Using Email Service:");
+        NotificationManager emailManager = new NotificationManager(new EmailService());
+        emailManager.notifyUser("john@example.com", "Welcome to our platform!");
+        
+        System.out.println("\nUsing SMS Service:");
+        NotificationManager smsManager = new NotificationManager(new SMSService());
+        smsManager.notifyUser("+1234567890", "Your OTP is 123456");
+        
+        System.out.println("\nUsing Push Notification:");
+        NotificationManager pushManager = new NotificationManager(new PushNotificationService());
+        pushManager.notifyUser("user123", "You have a new message!");
+    }
+}
+
+/* Output:
+Using Email Service:
+Email sent to john@example.com: Welcome to our platform!
+
+Using SMS Service:
+SMS sent to +1234567890: Your OTP is 123456
+
+Using Push Notification:
+Push notification sent to user123: You have a new message!
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> You don't care if your toy car uses batteries or a wind-up key—you just want
+                    it to move!</p>
+                <p><strong>Real-world:</strong> Like a power outlet—any device that fits the plug standard can use it.
+                </p>
+                <p><strong>Technical:</strong> NotificationManager depends on the MessageService interface, not
+                    concrete implementations. This makes it flexible and testable.</p>
+            </div>
+        </div>
+
+        <!-- Program 7: Eager Singleton -->
+        <div class="content-section">
+            <h2>Program 7: Singleton Pattern - Eager Initialization</h2>
+            <p>Demonstrates eager singleton creation.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">class DatabaseConnection {
+    // Instance created at class loading time
+    private static final DatabaseConnection instance = new DatabaseConnection();
+    
+    private DatabaseConnection() {
+        System.out.println("Database connection established");
+    }
+    
+    public static DatabaseConnection getInstance() {
+        return instance;
+    }
+    
+    public void executeQuery(String query) {
+        System.out.println("Executing: " + query);
+    }
+}
+
+public class EagerSingletonDemo {
+    public static void main(String[] args) {
+        System.out.println("Program started");
+        
+        // Get the singleton instance
+        DatabaseConnection db1 = DatabaseConnection.getInstance();
+        db1.executeQuery("SELECT * FROM users");
+        
+        // Get the same instance again
+        DatabaseConnection db2 = DatabaseConnection.getInstance();
+        db2.executeQuery("INSERT INTO users VALUES (1, 'John')");
+        
+        // Verify both are the same instance
+        System.out.println("\nAre both instances same? " + (db1 == db2));
+        System.out.println("db1 hashCode: " + System.identityHashCode(db1));
+        System.out.println("db2 hashCode: " + System.identityHashCode(db2));
+    }
+}
+
+/* Output:
+Database connection established
+Program started
+Executing: SELECT * FROM users
+Executing: INSERT INTO users VALUES (1, 'John')
+
+Are both instances same? true
+db1 hashCode: 1234567890
+db2 hashCode: 1234567890
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like having only one TV remote in the house—everyone uses the same one!</p>
+                <p><strong>Real-world:</strong> Like a school having only one principal—not multiple principals.</p>
+                <p><strong>Technical:</strong> Eager initialization creates the instance at class loading. Thread-safe
+                    but instance is created even if never used.</p>
+            </div>
+        </div>
+
+        <!-- Program 8: Thread-Safe Singleton -->
+        <div class="content-section">
+            <h2>Program 8: Singleton Pattern - Thread-Safe (Double-Checked Locking)</h2>
+            <p>Demonstrates thread-safe lazy singleton with double-checked locking.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">class Logger {
+    private static volatile Logger instance;
+    private int logCount = 0;
+    
+    private Logger() {
+        System.out.println("Logger initialized");
+    }
+    
+    public static Logger getInstance() {
+        if (instance == null) { // First check (no locking)
+            synchronized (Logger.class) {
+                if (instance == null) { // Second check (with locking)
+                    instance = new Logger();
+                }
+            }
+        }
+        return instance;
+    }
+    
+    public void log(String message) {
+        logCount++;
+        System.out.println("[Log #" + logCount + "] " + message);
+    }
+    
+    public int getLogCount() {
+        return logCount;
+    }
+}
+
+public class ThreadSafeSingletonDemo {
+    public static void main(String[] args) throws InterruptedException {
+        // Create multiple threads trying to get Logger instance
+        Thread t1 = new Thread(() -> {
+            Logger logger = Logger.getInstance();
+            logger.log("Thread 1 message");
+        });
+        
+        Thread t2 = new Thread(() -> {
+            Logger logger = Logger.getInstance();
+            logger.log("Thread 2 message");
+        });
+        
+        Thread t3 = new Thread(() -> {
+            Logger logger = Logger.getInstance();
+            logger.log("Thread 3 message");
+        });
+        
+        t1.start();
+        t2.start();
+        t3.start();
+        
+        t1.join();
+        t2.join();
+        t3.join();
+        
+        System.out.println("\nTotal logs: " + Logger.getInstance().getLogCount());
+    }
+}
+
+/* Output:
+Logger initialized
+[Log #1] Thread 1 message
+[Log #2] Thread 2 message
+[Log #3] Thread 3 message
+
+Total logs: 3
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Even if many kids try to grab the TV remote at the same time, there's still
+                    only one remote!</p>
+                <p><strong>Real-world:</strong> Like a ticket counter—many people can queue, but there's only one
+                    counter serving.</p>
+                <p><strong>Technical:</strong> Double-checked locking ensures thread safety while minimizing
+                    synchronization overhead. The volatile keyword prevents instruction reordering.</p>
+            </div>
+        </div>
+
+        <!-- Program 9: MVC Simulation -->
+        <div class="content-section">
+            <h2>Program 9: MVC Architecture (Console-Based Simulation)</h2>
+            <p>Demonstrates Model-View-Controller pattern.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// Model - Data and business logic
+class Student {
+    private String name;
+    private String rollNo;
+    
+    public Student(String name, String rollNo) {
+        this.name = name;
+        this.rollNo = rollNo;
+    }
+    
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    
+    public String getRollNo() { return rollNo; }
+    public void setRollNo(String rollNo) { this.rollNo = rollNo; }
+}
+
+// View - Presentation layer
+class StudentView {
+    public void displayStudentDetails(String studentName, String studentRollNo) {
+        System.out.println("Student Details:");
+        System.out.println("Name: " + studentName);
+        System.out.println("Roll No: " + studentRollNo);
+        System.out.println("------------------------");
+    }
+}
+
+// Controller - Handles user input and updates
+class StudentController {
+    private Student model;
+    private StudentView view;
+    
+    public StudentController(Student model, StudentView view) {
+        this.model = model;
+        this.view = view;
+    }
+    
+    public void setStudentName(String name) {
+        model.setName(name);
+    }
+    
+    public String getStudentName() {
+        return model.getName();
+    }
+    
+    public void setStudentRollNo(String rollNo) {
+        model.setRollNo(rollNo);
+    }
+    
+    public String getStudentRollNo() {
+        return model.getRollNo();
+    }
+    
+    public void updateView() {
+        view.displayStudentDetails(model.getName(), model.getRollNo());
+    }
+}
+
+public class MVCDemo {
+    public static void main(String[] args) {
+        // Create model
+        Student model = new Student("John Doe", "S001");
+        
+        // Create view
+        StudentView view = new StudentView();
+        
+        // Create controller
+        StudentController controller = new StudentController(model, view);
+        
+        // Display initial data
+        controller.updateView();
+        
+        // Update model data via controller
+        controller.setStudentName("Jane Smith");
+        controller.setStudentRollNo("S002");
+        
+        // Display updated data
+        controller.updateView();
+    }
+}
+
+/* Output:
+Student Details:
+Name: John Doe
+Roll No: S001
+------------------------
+Student Details:
+Name: Jane Smith
+Roll No: S002
+------------------------
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a restaurant: Chef (Model) makes food, Waiter (Controller) takes orders,
+                    Menu (View) shows options!</p>
+                <p><strong>Real-world:</strong> Like online shopping: Product data (Model), Product page (View),
+                    "Add to Cart" button (Controller).</p>
+                <p><strong>Technical:</strong> MVC separates concerns: Model holds data, View displays it, Controller
+                    manages the flow. Changes in one don't affect others.</p>
+            </div>
+        </div>
+
+        <!-- Program 10: Factory Pattern -->
+        <div class="content-section">
+            <h2>Program 10: Factory Pattern</h2>
+            <p>Demonstrates creating objects without specifying exact classes.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// Product interface
+interface Vehicle {
+    void drive();
+}
+
+// Concrete products
+class Car implements Vehicle {
+    @Override
+    public void drive() {
+        System.out.println("Driving a car on the road");
+    }
+}
+
+class Bike implements Vehicle {
+    @Override
+    public void drive() {
+        System.out.println("Riding a bike on the road");
+    }
+}
+
+class Truck implements Vehicle {
+    @Override
+    public void drive() {
+        System.out.println("Driving a truck for delivery");
+    }
+}
+
+// Factory class
+class VehicleFactory {
+    public static Vehicle getVehicle(String type) {
+        if (type == null) {
+            return null;
+        }
+        
+        switch (type.toUpperCase()) {
+            case "CAR":
+                return new Car();
+            case "BIKE":
+                return new Bike();
+            case "TRUCK":
+                return new Truck();
+            default:
+                throw new IllegalArgumentException("Unknown vehicle type: " + type);
+        }
+    }
+}
+
+public class FactoryPatternDemo {
+    public static void main(String[] args) {
+        // Client doesn't need to know about concrete classes
+        Vehicle vehicle1 = VehicleFactory.getVehicle("CAR");
+        vehicle1.drive();
+        
+        Vehicle vehicle2 = VehicleFactory.getVehicle("BIKE");
+        vehicle2.drive();
+        
+        Vehicle vehicle3 = VehicleFactory.getVehicle("TRUCK");
+        vehicle3.drive();
+    }
+}
+
+/* Output:
+Driving a car on the road
+Riding a bike on the road
+Driving a truck for delivery
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like ordering a toy from a toy factory—you say what you want, they make it
+                    for you!</p>
+                <p><strong>Real-world:</strong> Like ordering pizza—you don't make it yourself, you ask the restaurant.
+                </p>
+                <p><strong>Technical:</strong> Factory pattern encapsulates object creation logic. Clients depend on
+                    the interface, not concrete classes. Easy to add new vehicle types.</p>
+            </div>
+        </div>
+
+        <!-- Program 11: Strategy Pattern -->
+        <div class="content-section">
+            <h2>Program 11: Strategy Pattern</h2>
+            <p>Demonstrates interchangeable algorithms at runtime.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// Strategy interface
+interface PaymentStrategy {
+    void pay(int amount);
+}
+
+// Concrete strategies
+class CreditCardPayment implements PaymentStrategy {
+    private String cardNumber;
+    
+    public CreditCardPayment(String cardNumber) {
+        this.cardNumber = cardNumber;
+    }
+    
+    @Override
+    public void pay(int amount) {
+        System.out.println("Paid $" + amount + " using Credit Card ending in " + 
+                          cardNumber.substring(cardNumber.length() - 4));
+    }
+}
+
+class PayPalPayment implements PaymentStrategy {
+    private String email;
+    
+    public PayPalPayment(String email) {
+        this.email = email;
+    }
+    
+    @Override
+    public void pay(int amount) {
+        System.out.println("Paid $" + amount + " using PayPal account: " + email);
+    }
+}
+
+class CryptoPayment implements PaymentStrategy {
+    private String walletAddress;
+    
+    public CryptoPayment(String walletAddress) {
+        this.walletAddress = walletAddress;
+    }
+    
+    @Override
+    public void pay(int amount) {
+        System.out.println("Paid $" + amount + " using Crypto wallet: " + walletAddress);
+    }
+}
+
+// Context
+class ShoppingCart {
+    private PaymentStrategy paymentStrategy;
+    
+    public void setPaymentStrategy(PaymentStrategy strategy) {
+        this.paymentStrategy = strategy;
+    }
+    
+    public void checkout(int amount) {
+        if (paymentStrategy == null) {
+            System.out.println("Please select a payment method!");
+            return;
+        }
+        paymentStrategy.pay(amount);
+    }
+}
+
+public class StrategyPatternDemo {
+    public static void main(String[] args) {
+        ShoppingCart cart = new ShoppingCart();
+        
+        // Pay with credit card
+        cart.setPaymentStrategy(new CreditCardPayment("1234-5678-9012-3456"));
+        cart.checkout(100);
+        
+        // Pay with PayPal
+        cart.setPaymentStrategy(new PayPalPayment("user@example.com"));
+        cart.checkout(200);
+        
+        // Pay with Crypto
+        cart.setPaymentStrategy(new CryptoPayment("0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb"));
+        cart.checkout(300);
+    }
+}
+
+/* Output:
+Paid $100 using Credit Card ending in 3456
+Paid $200 using PayPal account: user@example.com
+Paid $300 using Crypto wallet: 0x742d35Cc6634C0532925a3b844Bc9e7595f0bEb
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like choosing different ways to go to school—walk, bike, or bus. Same goal,
+                    different methods!</p>
+                <p><strong>Real-world:</strong> Like choosing payment methods at checkout—credit card, PayPal, or cash.
+                </p>
+                <p><strong>Technical:</strong> Strategy pattern defines a family of algorithms and makes them
+                    interchangeable. The algorithm can vary independently from clients that use it.</p>
+            </div>
+        </div>
+
+        <!-- Program 12: Real-World SOLID Application -->
+        <div class="content-section">
+            <h2>Program 12: Real-World Application Combining SOLID Principles</h2>
+            <p>Demonstrates a complete e-commerce order processing system using multiple SOLID principles.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// SRP - Each class has one responsibility
+class Order {
+    private String orderId;
+    private double amount;
+    
+    public Order(String orderId, double amount) {
+        this.orderId = orderId;
+        this.amount = amount;
+    }
+    
+    public String getOrderId() { return orderId; }
+    public double getAmount() { return amount; }
+}
+
+// DIP - Depend on abstraction
+interface PaymentProcessor {
+    boolean processPayment(double amount);
+}
+
+interface NotificationService {
+    void sendNotification(String message);
+}
+
+interface OrderRepository {
+    void save(Order order);
+}
+
+// Concrete implementations
+class StripePaymentProcessor implements PaymentProcessor {
+    @Override
+    public boolean processPayment(double amount) {
+        System.out.println("Processing $" + amount + " via Stripe");
+        return true;
+    }
+}
+
+class EmailNotificationService implements NotificationService {
+    @Override
+    public void sendNotification(String message) {
+        System.out.println("Email sent: " + message);
+    }
+}
+
+class DatabaseOrderRepository implements OrderRepository {
+    @Override
+    public void save(Order order) {
+        System.out.println("Order " + order.getOrderId() + " saved to database");
+    }
+}
+
+// SRP - OrderService has single responsibility: orchestrating order processing
+// DIP - Depends on abstractions, not concrete classes
+class OrderService {
+    private PaymentProcessor paymentProcessor;
+    private NotificationService notificationService;
+    private OrderRepository orderRepository;
+    
+    // Dependency Injection
+    public OrderService(PaymentProcessor payment, 
+                       NotificationService notification,
+                       OrderRepository repository) {
+        this.paymentProcessor = payment;
+        this.notificationService = notification;
+        this.orderRepository = repository;
+    }
+    
+    public void processOrder(Order order) {
+        System.out.println("\n=== Processing Order " + order.getOrderId() + " ===");
+        
+        // Process payment
+        boolean paymentSuccess = paymentProcessor.processPayment(order.getAmount());
+        
+        if (paymentSuccess) {
+            // Save order
+            orderRepository.save(order);
+            
+            // Send notification
+            notificationService.sendNotification(
+                "Order " + order.getOrderId() + " confirmed! Amount: $" + order.getAmount()
+            );
+            
+            System.out.println("Order processed successfully!\n");
+        } else {
+            System.out.println("Payment failed!\n");
+        }
+    }
+}
+
+public class SOLIDRealWorldDemo {
+    public static void main(String[] args) {
+        // Create dependencies
+        PaymentProcessor paymentProcessor = new StripePaymentProcessor();
+        NotificationService notificationService = new EmailNotificationService();
+        OrderRepository orderRepository = new DatabaseOrderRepository();
+        
+        // Inject dependencies (DIP in action)
+        OrderService orderService = new OrderService(
+            paymentProcessor,
+            notificationService,
+            orderRepository
+        );
+        
+        // Process orders
+        Order order1 = new Order("ORD-001", 99.99);
+        orderService.processOrder(order1);
+        
+        Order order2 = new Order("ORD-002", 149.50);
+        orderService.processOrder(order2);
+        
+        System.out.println("=== Benefits of this design ===");
+        System.out.println("✓ Easy to test (can mock dependencies)");
+        System.out.println("✓ Easy to extend (add new payment methods)");
+        System.out.println("✓ Easy to maintain (each class has one job)");
+        System.out.println("✓ Flexible (can swap implementations)");
+    }
+}
+
+/* Output:
+=== Processing Order ORD-001 ===
+Processing $99.99 via Stripe
+Order ORD-001 saved to database
+Email sent: Order ORD-001 confirmed! Amount: $99.99
+Order processed successfully!
+
+=== Processing Order ORD-002 ===
+Processing $149.5 via Stripe
+Order ORD-002 saved to database
+Email sent: Order ORD-002 confirmed! Amount: $149.5
+Order processed successfully!
+
+=== Benefits of this design ===
+✓ Easy to test (can mock dependencies)
+✓ Easy to extend (add new payment methods)
+✓ Easy to maintain (each class has one job)
+✓ Flexible (can swap implementations)
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like an assembly line where each worker does one job—one takes payment, one
+                    packs the box, one sends it!</p>
+                <p><strong>Real-world:</strong> Like a restaurant where chef cooks, waiter serves, cashier handles
+                    payment—all working together smoothly.</p>
+                <p><strong>Technical:</strong> This design demonstrates SRP (each class has one job), DIP (depends on
+                    interfaces), and OCP (easy to add new payment/notification methods). It's testable, maintainable,
+                    and extensible.</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/programming-principles.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../mcq/programming-principles.html" class="btn btn-secondary">✅ Take Quiz</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">🎉 Congratulations!</div>
+                <p>You've completed the Programming Principles programs! These principles are the foundation of
+                    professional software development.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Multithreading in Depth - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Header -->
+        <div class="content-header">
+            <h1>Java Multithreading in Depth</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Theory</span>
+                <span>/</span>
+                <span>Multithreading</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Introduction to Multithreading -->
+        <div class="content-section">
+            <h2>🧵 Introduction to Multithreading</h2>
+
+            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+            <p>
+                Imagine you're doing your <strong>homework while listening to music</strong>. You're doing two things
+                at the same time! That's what multithreading is—your computer doing multiple tasks at once.
+            </p>
+            <p>
+                Without multithreading, your computer would have to finish playing one song completely before you could
+                start writing your homework. That would be boring!
+            </p>
+
+            <h3>Level 2: Real-World Analogy</h3>
+            <p>
+                Think of a <strong>restaurant kitchen</strong>:
+            </p>
+            <ul>
+                <li><strong>Single-threaded:</strong> One chef cooks one dish completely, then starts the next. Very
+                    slow!</li>
+                <li><strong>Multi-threaded:</strong> Multiple chefs work on different dishes at the same time. Much
+                    faster!</li>
+            </ul>
+            <p>
+                Each chef is like a <strong>thread</strong>—an independent worker doing a specific task. The kitchen is
+                like your <strong>program</strong>, and all chefs work together to serve customers quickly.
+            </p>
+
+            <h3>Level 3: Technical Deep-Dive</h3>
+            <p>
+                <strong>Multithreading</strong> is a Java feature that allows concurrent execution of two or more parts
+                of a program for maximum utilization of CPU. Each part of such a program is called a
+                <strong>thread</strong>.
+            </p>
+
+            <h3>Process vs Thread</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspect</th>
+                        <th>Process</th>
+                        <th>Thread</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Definition</strong></td>
+                        <td>Independent program in execution</td>
+                        <td>Lightweight subprocess, smallest unit of processing</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Memory</strong></td>
+                        <td>Separate memory space</td>
+                        <td>Shares memory with other threads</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Communication</strong></td>
+                        <td>Inter-process communication (expensive)</td>
+                        <td>Direct communication (cheap)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Context Switching</strong></td>
+                        <td>Slower</td>
+                        <td>Faster</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Example</strong></td>
+                        <td>Chrome browser (one process)</td>
+                        <td>Multiple tabs in Chrome (multiple threads)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout note">
+                <div class="callout-title">📚 NOTE</div>
+                <p>Java supports multithreading through the java.lang.Thread class and java.lang.Runnable interface.
+                    Threads share the same memory space, making communication easier but requiring synchronization.</p>
+            </div>
+        </div>
+
+        <!-- Section 2: Life Cycle of a Thread -->
+        <div class="content-section">
+            <h2>🔄 Life Cycle of a Thread</h2>
+
+            <h3>Thread States</h3>
+            <p>A thread in Java can be in one of the following states:</p>
+
+            <pre
+                style="background: var(--bg-hover); padding: var(--spacing-md); border-radius: var(--radius-sm); border-left: 4px solid var(--primary);">
+NEW
+  ↓ (start() called)
+RUNNABLE
+  ↓ (Thread scheduler picks it)
+RUNNING
+  ↓ (sleep(), wait(), I/O)
+WAITING / TIMED_WAITING / BLOCKED
+  ↓ (notify(), time expires, lock available)
+RUNNABLE
+  ↓ (run() completes)
+TERMINATED
+            </pre>
+
+            <h3>State Descriptions</h3>
+            <ul>
+                <li><strong>NEW:</strong> Thread is created but not yet started. Like a car that's built but engine not
+                    started.</li>
+                <li><strong>RUNNABLE:</strong> Thread is ready to run and waiting for CPU time. Like a car with engine
+                    running, waiting for green light.</li>
+                <li><strong>RUNNING:</strong> Thread is currently executing. Like a car moving on the road.</li>
+                <li><strong>WAITING:</strong> Thread is waiting indefinitely for another thread. Like a car waiting for
+                    a passenger.</li>
+                <li><strong>TIMED_WAITING:</strong> Thread is waiting for a specified time. Like a car waiting at a red
+                    light.</li>
+                <li><strong>BLOCKED:</strong> Thread is waiting to acquire a lock. Like a car waiting for a parking
+                    spot.</li>
+                <li><strong>TERMINATED:</strong> Thread has completed execution. Like a car that has reached its
+                    destination.</li>
+            </ul>
+
+            <div class="callout example">
+                <div class="callout-title">📖 EXAMPLE</div>
+                <p><strong>Baby:</strong> Like a toy robot—OFF (NEW) → Ready (RUNNABLE) → Moving (RUNNING) → Paused
+                    (WAITING) → Stopped (TERMINATED).</p>
+            </div>
+        </div>
+
+        <!-- Section 3: Creating Threads -->
+        <div class="content-section">
+            <h2>⚙️ Creating Threads</h2>
+
+            <h3>Method 1: Extending Thread Class</h3>
+            <p>
+                <strong>Baby:</strong> Like making your own special toy that can move by itself.<br>
+                <strong>Real-world:</strong> Creating a custom robot with specific instructions.<br>
+                <strong>Technical:</strong> Create a class that extends Thread and override the run() method.
+            </p>
+            <pre><code class="language-java">class MyThread extends Thread {
+    public void run() {
+        System.out.println("Thread is running: " + Thread.currentThread().getName());
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start();  // Starts the thread
+    }
+}</code></pre>
+
+            <h3>Method 2: Implementing Runnable Interface</h3>
+            <p>
+                <strong>Baby:</strong> Like giving instructions to an existing toy.<br>
+                <strong>Real-world:</strong> Writing a script for an actor to perform.<br>
+                <strong>Technical:</strong> Implement Runnable interface and pass it to Thread constructor. This is
+                preferred as it allows extending other classes.
+            </p>
+            <pre><code class="language-java">class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("Runnable is running: " + Thread.currentThread().getName());
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        MyRunnable runnable = new MyRunnable();
+        Thread t1 = new Thread(runnable);
+        t1.start();
+    }
+}</code></pre>
+
+            <h3>start() vs run()</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>start()</th>
+                        <th>run()</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Creates a new thread</td>
+                        <td>Does NOT create a new thread</td>
+                    </tr>
+                    <tr>
+                        <td>Calls run() method internally</td>
+                        <td>Executes like a normal method call</td>
+                    </tr>
+                    <tr>
+                        <td>Can be called only once</td>
+                        <td>Can be called multiple times</td>
+                    </tr>
+                    <tr>
+                        <td>Throws IllegalThreadStateException if called twice</td>
+                        <td>No exception</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING</div>
+                <p>Always call start() to begin thread execution, NOT run(). Calling run() directly will execute the
+                    code in the same thread, defeating the purpose of multithreading!</p>
+            </div>
+        </div>
+
+        <!-- Section 4: Thread Priorities -->
+        <div class="content-section">
+            <h2>🎯 Thread Priorities</h2>
+
+            <h3>What are Thread Priorities?</h3>
+            <p>
+                <strong>Baby:</strong> Like choosing which toy to play with first—your favorite gets priority!<br>
+                <strong>Real-world:</strong> Emergency vehicles get priority on roads over regular cars.<br>
+                <strong>Technical:</strong> Thread priority is a number between 1 (MIN_PRIORITY) and 10 (MAX_PRIORITY)
+                that suggests to the thread scheduler which threads should get CPU time first.
+            </p>
+
+            <h3>Priority Constants</h3>
+            <ul>
+                <li><strong>Thread.MIN_PRIORITY:</strong> 1</li>
+                <li><strong>Thread.NORM_PRIORITY:</strong> 5 (default)</li>
+                <li><strong>Thread.MAX_PRIORITY:</strong> 10</li>
+            </ul>
+
+            <pre><code class="language-java">Thread t1 = new Thread(() -> System.out.println("Low priority"));
+Thread t2 = new Thread(() -> System.out.println("High priority"));
+
+t1.setPriority(Thread.MIN_PRIORITY);  // Priority 1
+t2.setPriority(Thread.MAX_PRIORITY);  // Priority 10
+
+t1.start();
+t2.start();</code></pre>
+
+            <div class="callout note">
+                <div class="callout-title">📚 NOTE</div>
+                <p>Thread priority is just a hint to the thread scheduler. It does NOT guarantee execution order. The
+                    actual behavior depends on the JVM and operating system.</p>
+            </div>
+        </div>
+
+        <!-- Section 5: Synchronization -->
+        <div class="content-section">
+            <h2>🔒 Synchronization</h2>
+
+            <h3>What is a Race Condition?</h3>
+            <p>
+                <strong>Baby:</strong> Like two kids trying to grab the same toy at the same time—chaos!<br>
+                <strong>Real-world:</strong> Two people trying to withdraw money from the same bank account
+                simultaneously.<br>
+                <strong>Technical:</strong> A race condition occurs when two or more threads access shared data
+                concurrently and try to change it, leading to inconsistent results.
+            </p>
+
+            <h3>The synchronized Keyword</h3>
+            <p>
+                <strong>Baby:</strong> Like a rule that says "only one person can use the bathroom at a time."<br>
+                <strong>Real-world:</strong> A turnstile that allows only one person to pass at a time.<br>
+                <strong>Technical:</strong> The synchronized keyword ensures that only one thread can execute a block of
+                code or method at a time, preventing race conditions.
+            </p>
+
+            <h3>Synchronized Method</h3>
+            <pre><code class="language-java">class Counter {
+    private int count = 0;
+    
+    // Synchronized method
+    public synchronized void increment() {
+        count++;
+    }
+    
+    public int getCount() {
+        return count;
+    }
+}</code></pre>
+
+            <h3>Synchronized Block</h3>
+            <pre><code class="language-java">class Counter {
+    private int count = 0;
+    private Object lock = new Object();
+    
+    public void increment() {
+        // Synchronized block
+        synchronized(lock) {
+            count++;
+        }
+    }
+}</code></pre>
+
+            <h3>Monitor Lock</h3>
+            <p>
+                Every object in Java has an intrinsic lock (monitor lock). When a thread enters a synchronized method or
+                block, it acquires the lock. Other threads must wait until the lock is released.
+            </p>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Use synchronized blocks instead of synchronized methods when you only need to synchronize a small
+                    portion of code. This improves performance by reducing lock contention.</p>
+            </div>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING</div>
+                <p>Over-synchronization can lead to performance issues and deadlocks. Only synchronize when necessary
+                    and keep synchronized blocks as small as possible.</p>
+            </div>
+        </div>
+
+        <!-- Section 6: Inter-thread Communication -->
+        <div class="content-section">
+            <h2>💬 Inter-thread Communication</h2>
+
+            <h3>What is Inter-thread Communication?</h3>
+            <p>
+                <strong>Baby:</strong> Like two friends taking turns on a swing—one waits while the other plays.<br>
+                <strong>Real-world:</strong> A producer-consumer scenario where a baker (producer) makes bread and a
+                customer (consumer) buys it.<br>
+                <strong>Technical:</strong> Inter-thread communication allows synchronized threads to communicate with
+                each other using wait(), notify(), and notifyAll() methods.
+            </p>
+
+            <h3>Key Methods</h3>
+            <ul>
+                <li><strong>wait():</strong> Causes the current thread to wait until another thread calls notify() or
+                    notifyAll().</li>
+                <li><strong>notify():</strong> Wakes up a single thread that is waiting on the object's monitor.</li>
+                <li><strong>notifyAll():</strong> Wakes up all threads that are waiting on the object's monitor.</li>
+            </ul>
+
+            <pre><code class="language-java">class SharedResource {
+    private boolean available = false;
+    
+    public synchronized void produce() {
+        while (available) {
+            try {
+                wait();  // Wait until consumed
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Produced");
+        available = true;
+        notify();  // Notify consumer
+    }
+    
+    public synchronized void consume() {
+        while (!available) {
+            try {
+                wait();  // Wait until produced
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println("Consumed");
+        available = false;
+        notify();  // Notify producer
+    }
+}</code></pre>
+
+            <div class="callout note">
+                <div class="callout-title">📚 NOTE</div>
+                <p>wait(), notify(), and notifyAll() must be called from within a synchronized context (method or
+                    block). Otherwise, they throw IllegalMonitorStateException.</p>
+            </div>
+        </div>
+
+        <!-- Section 7: Thread States & Methods -->
+        <div class="content-section">
+            <h2>⏱️ Thread States & Methods</h2>
+
+            <h3>sleep() Method</h3>
+            <p>
+                <strong>Baby:</strong> Like taking a nap for a specific time.<br>
+                <strong>Real-world:</strong> Setting an alarm to wake up after 30 minutes.<br>
+                <strong>Technical:</strong> Causes the current thread to pause execution for a specified time in
+                milliseconds.
+            </p>
+            <pre><code class="language-java">try {
+    Thread.sleep(2000);  // Sleep for 2 seconds
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}</code></pre>
+
+            <h3>join() Method</h3>
+            <p>
+                <strong>Baby:</strong> Like waiting for your friend to finish their homework before playing
+                together.<br>
+                <strong>Real-world:</strong> Waiting for a delivery before starting to cook.<br>
+                <strong>Technical:</strong> Waits for a thread to die (complete execution) before continuing.
+            </p>
+            <pre><code class="language-java">Thread t1 = new Thread(() -> {
+    System.out.println("Task 1");
+});
+
+t1.start();
+t1.join();  // Wait for t1 to complete
+System.out.println("Task 2");  // Executes after t1 finishes</code></pre>
+
+            <h3>yield() Method</h3>
+            <p>
+                <strong>Baby:</strong> Like saying "you go first" to your friend.<br>
+                <strong>Real-world:</strong> Letting someone else speak in a meeting.<br>
+                <strong>Technical:</strong> Hints to the scheduler that the current thread is willing to yield its
+                current use of CPU. The scheduler may ignore this hint.
+            </p>
+            <pre><code class="language-java">Thread.yield();  // Give other threads a chance</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Use sleep() when you need a guaranteed pause. Use yield() when you want to be cooperative but don't
+                    need a guaranteed pause.</p>
+            </div>
+        </div>
+
+        <!-- Section 8: Daemon vs User Threads -->
+        <div class="content-section">
+            <h2>👻 Daemon vs User Threads</h2>
+
+            <h3>What are Daemon Threads?</h3>
+            <p>
+                <strong>Baby:</strong> Like a helper that works in the background and stops when you're done.<br>
+                <strong>Real-world:</strong> Background music in a game—it stops when you close the game.<br>
+                <strong>Technical:</strong> Daemon threads are low-priority threads that run in the background to
+                perform tasks like garbage collection. JVM exits when only daemon threads remain.
+            </p>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>User Thread</th>
+                        <th>Daemon Thread</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>High priority</td>
+                        <td>Low priority</td>
+                    </tr>
+                    <tr>
+                        <td>JVM waits for user threads to finish</td>
+                        <td>JVM doesn't wait for daemon threads</td>
+                    </tr>
+                    <tr>
+                        <td>Created by application</td>
+                        <td>Usually created by JVM (e.g., GC)</td>
+                    </tr>
+                    <tr>
+                        <td>Default type</td>
+                        <td>Must be explicitly set</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <pre><code class="language-java">Thread t1 = new Thread(() -> {
+    System.out.println("Daemon thread running");
+});
+
+t1.setDaemon(true);  // Set as daemon before starting
+t1.start();</code></pre>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING</div>
+                <p>You must call setDaemon(true) BEFORE calling start(). Calling it after start() throws
+                    IllegalThreadStateException.</p>
+            </div>
+        </div>
+
+        <!-- Section 9: Executor Framework -->
+        <div class="content-section">
+            <h2>🏭 Executor Framework</h2>
+
+            <h3>Why Executor Framework?</h3>
+            <p>
+                <strong>Baby:</strong> Instead of making a new toy every time, use a toy box with ready toys!<br>
+                <strong>Real-world:</strong> A company hiring from a pool of employees instead of recruiting for each
+                task.<br>
+                <strong>Technical:</strong> The Executor framework provides a higher-level replacement for working with
+                threads directly. It manages thread creation, pooling, and lifecycle.
+            </p>
+
+            <h3>ThreadPoolExecutor</h3>
+            <pre><code class="language-java">import java.util.concurrent.*;
+
+ExecutorService executor = Executors.newFixedThreadPool(3);
+
+for (int i = 0; i < 10; i++) {
+    executor.submit(() -> {
+        System.out.println("Task executed by: " + Thread.currentThread().getName());
+    });
+}
+
+executor.shutdown();  // Stop accepting new tasks</code></pre>
+
+            <h3>Types of Thread Pools</h3>
+            <ul>
+                <li><strong>newFixedThreadPool(n):</strong> Fixed number of threads</li>
+                <li><strong>newCachedThreadPool():</strong> Creates threads as needed, reuses idle threads</li>
+                <li><strong>newSingleThreadExecutor():</strong> Single worker thread</li>
+                <li><strong>newScheduledThreadPool(n):</strong> For scheduled/periodic tasks</li>
+            </ul>
+
+            <h3>Callable & Future</h3>
+            <p>
+                <strong>Baby:</strong> Like asking someone to do a task and they promise to give you the result
+                later.<br>
+                <strong>Real-world:</strong> Ordering food online—you get a tracking number (Future) and food arrives
+                later.<br>
+                <strong>Technical:</strong> Callable is like Runnable but can return a result. Future represents the
+                result of an asynchronous computation.
+            </p>
+            <pre><code class="language-java">ExecutorService executor = Executors.newSingleThreadExecutor();
+
+Callable<Integer> task = () -> {
+    Thread.sleep(1000);
+    return 42;
+};
+
+Future<Integer> future = executor.submit(task);
+System.out.println("Result: " + future.get());  // Blocks until result is available
+
+executor.shutdown();</code></pre>
+
+            <h3>ScheduledExecutorService</h3>
+            <pre><code class="language-java">ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
+// Execute after 5 seconds delay
+scheduler.schedule(() -> System.out.println("Delayed task"), 5, TimeUnit.SECONDS);
+
+// Execute every 3 seconds
+scheduler.scheduleAtFixedRate(() -> System.out.println("Periodic task"), 0, 3, TimeUnit.SECONDS);</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 BEST PRACTICE</div>
+                <p>Always use the Executor framework instead of creating threads manually. It provides better resource
+                    management, thread pooling, and easier task scheduling.</p>
+            </div>
+        </div>
+
+        <!-- Section 10: Concurrency Utilities -->
+        <div class="content-section">
+            <h2>🛠️ Concurrency Utilities (java.util.concurrent)</h2>
+
+            <h3>Atomic Variables</h3>
+            <p>
+                <strong>Baby:</strong> Like a special counter that can't be interrupted while counting.<br>
+                <strong>Real-world:</strong> A ticket counter that ensures no two people get the same ticket
+                number.<br>
+                <strong>Technical:</strong> Atomic classes provide lock-free thread-safe operations on single variables.
+            </p>
+            <pre><code class="language-java">import java.util.concurrent.atomic.AtomicInteger;
+
+AtomicInteger counter = new AtomicInteger(0);
+counter.incrementAndGet();  // Thread-safe increment
+counter.addAndGet(5);       // Thread-safe addition</code></pre>
+
+            <h3>CountDownLatch</h3>
+            <p>
+                <strong>Baby:</strong> Like waiting for all your friends to arrive before starting a game.<br>
+                <strong>Real-world:</strong> A race that starts only when all runners are ready.<br>
+                <strong>Technical:</strong> Allows one or more threads to wait until a set of operations being performed
+                in other threads completes.
+            </p>
+            <pre><code class="language-java">CountDownLatch latch = new CountDownLatch(3);
+
+for (int i = 0; i < 3; i++) {
+    new Thread(() -> {
+        System.out.println("Task completed");
+        latch.countDown();
+    }).start();
+}
+
+latch.await();  // Wait for all 3 tasks to complete
+System.out.println("All tasks done!");</code></pre>
+
+            <h3>Semaphore</h3>
+            <p>
+                <strong>Baby:</strong> Like having only 3 swings—only 3 kids can play at a time.<br>
+                <strong>Real-world:</strong> A parking lot with limited spaces.<br>
+                <strong>Technical:</strong> Controls access to a shared resource through the use of permits.
+            </p>
+            <pre><code class="language-java">Semaphore semaphore = new Semaphore(3);  // 3 permits
+
+semaphore.acquire();  // Get permit
+try {
+    // Access shared resource
+} finally {
+    semaphore.release();  // Return permit
+}</code></pre>
+
+            <h3>CyclicBarrier</h3>
+            <p>
+                <strong>Baby:</strong> Like waiting at a door until all friends arrive, then everyone enters
+                together.<br>
+                <strong>Real-world:</strong> A team meeting that starts only when all members join.<br>
+                <strong>Technical:</strong> Allows a set of threads to wait for each other to reach a common barrier
+                point.
+            </p>
+            <pre><code class="language-java">CyclicBarrier barrier = new CyclicBarrier(3, () -> {
+    System.out.println("All threads reached barrier!");
+});
+
+for (int i = 0; i < 3; i++) {
+    new Thread(() -> {
+        try {
+            System.out.println("Waiting at barrier");
+            barrier.await();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }).start();
+}</code></pre>
+
+            <h3>ConcurrentHashMap</h3>
+            <p>
+                <strong>Baby:</strong> Like a shared toy box where multiple kids can take/put toys safely.<br>
+                <strong>Real-world:</strong> A shared database that multiple users can update simultaneously.<br>
+                <strong>Technical:</strong> A thread-safe version of HashMap that allows concurrent reads and writes
+                without locking the entire map.
+            </p>
+            <pre><code class="language-java">ConcurrentHashMap<String, Integer> map = new ConcurrentHashMap<>();
+map.put("key1", 100);
+map.putIfAbsent("key2", 200);
+map.computeIfPresent("key1", (k, v) -> v + 10);</code></pre>
+
+            <div class="callout note">
+                <div class="callout-title">📚 NOTE</div>
+                <p>The java.util.concurrent package provides many high-level concurrency utilities that are safer and
+                    more efficient than using low-level synchronization.</p>
+            </div>
+        </div>
+
+        <!-- Section 11: Deadlock, Livelock, Starvation -->
+        <div class="content-section">
+            <h2>💀 Deadlock, Livelock, Starvation</h2>
+
+            <h3>Deadlock</h3>
+            <p>
+                <strong>Baby:</strong> Two kids each holding one toy and wanting the other's toy—nobody can play!<br>
+                <strong>Real-world:</strong> Two cars facing each other on a narrow road, both waiting for the other to
+                move.<br>
+                <strong>Technical:</strong> A situation where two or more threads are blocked forever, waiting for each
+                other to release locks.
+            </p>
+            <pre><code class="language-java">// Deadlock example
+Object lock1 = new Object();
+Object lock2 = new Object();
+
+Thread t1 = new Thread(() -> {
+    synchronized(lock1) {
+        System.out.println("Thread 1: Holding lock1");
+        try { Thread.sleep(100); } catch (Exception e) {}
+        synchronized(lock2) {
+            System.out.println("Thread 1: Holding lock1 & lock2");
+        }
+    }
+});
+
+Thread t2 = new Thread(() -> {
+    synchronized(lock2) {
+        System.out.println("Thread 2: Holding lock2");
+        try { Thread.sleep(100); } catch (Exception e) {}
+        synchronized(lock1) {
+            System.out.println("Thread 2: Holding lock2 & lock1");
+        }
+    }
+});
+
+t1.start();
+t2.start();</code></pre>
+
+            <h3>Preventing Deadlock</h3>
+            <ul>
+                <li><strong>Lock Ordering:</strong> Always acquire locks in the same order</li>
+                <li><strong>Lock Timeout:</strong> Use tryLock() with timeout</li>
+                <li><strong>Deadlock Detection:</strong> Use tools to detect and break deadlocks</li>
+                <li><strong>Avoid Nested Locks:</strong> Minimize nested synchronized blocks</li>
+            </ul>
+
+            <h3>Livelock</h3>
+            <p>
+                <strong>Baby:</strong> Two kids trying to pass each other in a hallway, both moving the same
+                direction.<br>
+                <strong>Real-world:</strong> Two people meeting in a corridor, both stepping aside in the same
+                direction repeatedly.<br>
+                <strong>Technical:</strong> Threads are not blocked but keep changing states in response to each other
+                without making progress.
+            </p>
+
+            <h3>Starvation</h3>
+            <p>
+                <strong>Baby:</strong> One kid always gets picked first, another never gets a turn.<br>
+                <strong>Real-world:</strong> Low-priority tasks never getting CPU time because high-priority tasks keep
+                coming.<br>
+                <strong>Technical:</strong> A thread is unable to gain regular access to shared resources and is unable
+                to make progress.
+            </p>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING</div>
+                <p>Deadlocks are serious issues that can freeze your application. Always design your locking strategy
+                    carefully and test thoroughly with concurrent loads.</p>
+            </div>
+        </div>
+
+        <!-- Section 12: Best Practices -->
+        <div class="content-section">
+            <h2>✅ Best Practices</h2>
+
+            <ul>
+                <li><strong>Use Executor Framework:</strong> Prefer ExecutorService over manual thread creation for
+                    better resource management.</li>
+                <li><strong>Minimize Synchronization:</strong> Only synchronize when necessary. Keep synchronized blocks
+                    small.</li>
+                <li><strong>Use Concurrent Collections:</strong> Use ConcurrentHashMap, CopyOnWriteArrayList instead of
+                    synchronized collections.</li>
+                <li><strong>Prefer Atomic Variables:</strong> Use AtomicInteger, AtomicBoolean for simple counters
+                    instead of synchronization.</li>
+                <li><strong>Name Your Threads:</strong> Always give meaningful names to threads for easier debugging.
+                </li>
+                <li><strong>Use volatile for Flags:</strong> Use volatile keyword for boolean flags accessed by multiple
+                    threads.</li>
+                <li><strong>Avoid Thread.stop():</strong> Never use deprecated methods like stop(), suspend(), resume().
+                </li>
+                <li><strong>Handle InterruptedException:</strong> Properly handle interruptions, don't just swallow
+                    them.</li>
+                <li><strong>Use ThreadLocal for Thread-Specific Data:</strong> When each thread needs its own copy of a
+                    variable.</li>
+                <li><strong>Test with Different Thread Counts:</strong> Concurrency bugs may only appear under specific
+                    conditions.</li>
+            </ul>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <pre><code class="language-java">// Good practice: Name your threads
+Thread t = new Thread(() -> {
+    // task
+}, "Worker-Thread-1");
+
+// Good practice: Use volatile for flags
+private volatile boolean running = true;
+
+// Good practice: Proper exception handling
+try {
+    Thread.sleep(1000);
+} catch (InterruptedException e) {
+    Thread.currentThread().interrupt();  // Restore interrupt status
+    // Handle interruption
+}</code></pre>
+            </div>
+        </div>
+
+        <!-- Section 13: Common Mistakes -->
+        <div class="content-section">
+            <h2>❌ Common Mistakes</h2>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ Calling run() instead of start()</div>
+                <pre><code class="language-java">// WRONG - No new thread created
+Thread t = new Thread(() -> System.out.println("Task"));
+t.run();  // Executes in main thread
+
+// CORRECT - New thread created
+t.start();  // Executes in new thread</code></pre>
+            </div>
+
+            <ul>
+                <li><strong>Not Synchronizing Shared Data:</strong> Leads to race conditions and inconsistent state.
+                </li>
+                <li><strong>Over-Synchronization:</strong> Synchronizing everything reduces performance and can cause
+                    deadlocks.</li>
+                <li><strong>Forgetting to Close ExecutorService:</strong> Leads to resource leaks. Always call
+                    shutdown().</li>
+                <li><strong>Using synchronized on String Literals:</strong> Can cause unexpected deadlocks as strings
+                    are interned.</li>
+                <li><strong>Modifying Collections While Iterating:</strong> Use ConcurrentModificationException-safe
+                    collections or synchronize properly.</li>
+                <li><strong>Not Handling Exceptions in Threads:</strong> Uncaught exceptions in threads can silently
+                    terminate them.</li>
+                <li><strong>UI Freezing:</strong> Performing long-running tasks on UI thread (in GUI applications).
+                    Always use background threads.</li>
+                <li><strong>Ignoring Thread Interruption:</strong> Not checking interrupted status or handling
+                    InterruptedException.</li>
+                <li><strong>Creating Too Many Threads:</strong> Each thread consumes memory. Use thread pools instead.
+                </li>
+            </ul>
+
+            <div class="callout example">
+                <div class="callout-title">📖 EXAMPLE: Common Mistake</div>
+                <pre><code class="language-java">// WRONG - Synchronizing on String literal
+synchronized("lock") {  // Bad practice
+    // critical section
+}
+
+// CORRECT - Synchronizing on dedicated object
+private final Object lock = new Object();
+synchronized(lock) {
+    // critical section
+}</code></pre>
+            </div>
+        </div>
+
+        <!-- Final Note -->
+        <div class="content-section">
+            <div class="callout note">
+                <div class="callout-title">🎉 Congratulations!</div>
+                <p>You've completed the theory for Java Multithreading in Depth! You now understand threads, thread
+                    lifecycle, synchronization, executor framework, concurrency utilities, and best practices for
+                    concurrent programming.</p>
+                <p><strong>Next Step:</strong> Practice with real code examples in the Programs section!</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="next-topic">
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../programs/multithreading.html" class="btn btn-primary">💻 View Programs</a>
+                <a href="../mcq/multithreading.html" class="btn btn-success">✅ Take Quiz</a>
+                <a href="../index.html" class="btn btn-secondary">🏠 Back to Home</a>
+            </div>
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">🚀 Next Topic Coming Soon</div>
+                <p><strong>Topic 14:</strong> Java 8+ Advanced Features & Enhancements</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

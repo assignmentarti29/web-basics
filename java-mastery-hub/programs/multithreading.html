@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multithreading - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Multithreading - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>Multithreading</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Hands-On Multithreading Programs</h2>
+            <p>Welcome to the practical section! These 15+ programs demonstrate concurrent programming in Java, from
+                basic thread creation to advanced concurrency utilities. Each example includes complete working code
+                with three-level explanations.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Run these programs multiple times to observe different thread execution orders. Multithreading
+                    behavior can vary between runs!</p>
+            </div>
+        </div>
+
+        <!-- Program 1: Basic Thread using Thread class -->
+        <div class="content-section">
+            <h2>Program 1: Basic Thread using Thread Class</h2>
+            <p>Demonstrates creating and starting a thread by extending the Thread class.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(Thread.currentThread().getName() + " - Count: " + i);
+            try {
+                Thread.sleep(500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+public class BasicThreadExample {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        MyThread t2 = new MyThread();
+        
+        t1.setName("Thread-1");
+        t2.setName("Thread-2");
+        
+        t1.start();  // Start first thread
+        t2.start();  // Start second thread
+        
+        System.out.println("Main thread continues...");
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like having two toy robots that move at the same time independently.</p>
+                <p><strong>Real-world:</strong> Two cashiers serving customers simultaneously at a store.</p>
+                <p><strong>Technical:</strong> Extending Thread class and overriding run() method. start() creates a new
+                    thread and calls run() internally. Both threads execute concurrently with the main thread.</p>
+            </div>
+        </div>
+
+        <!-- Program 2: Thread using Runnable interface -->
+        <div class="content-section">
+            <h2>Program 2: Thread using Runnable Interface</h2>
+            <p>Demonstrates creating threads using the Runnable interface (preferred approach).</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">class MyRunnable implements Runnable {
+    private String taskName;
+    
+    public MyRunnable(String taskName) {
+        this.taskName = taskName;
+    }
+    
+    public void run() {
+        for (int i = 1; i <= 3; i++) {
+            System.out.println(taskName + " executing step " + i);
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.out.println(taskName + " completed!");
+    }
+}
+
+public class RunnableExample {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable("Download Task"));
+        Thread t2 = new Thread(new MyRunnable("Upload Task"));
+        Thread t3 = new Thread(new MyRunnable("Processing Task"));
+        
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like giving different instruction cards to the same type of robot.</p>
+                <p><strong>Real-world:</strong> Assigning different tasks to workers using the same job template.</p>
+                <p><strong>Technical:</strong> Implementing Runnable is preferred over extending Thread because it
+                    allows
+                    the class to extend other classes and promotes better separation of task and thread management.</p>
+            </div>
+        </div>
+
+        <!-- Program 3: Using sleep() -->
+        <div class="content-section">
+            <h2>Program 3: Thread sleep() Method</h2>
+            <p>Demonstrates pausing thread execution using sleep().</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class SleepExample {
+    public static void main(String[] args) {
+        Thread timer = new Thread(() -> {
+            System.out.println("Timer started!");
+            
+            for (int i = 5; i >= 1; i--) {
+                System.out.println("Countdown: " + i);
+                try {
+                    Thread.sleep(1000);  // Sleep for 1 second
+                } catch (InterruptedException e) {
+                    System.out.println("Timer interrupted!");
+                    return;
+                }
+            }
+            
+            System.out.println("Time's up! 🔔");
+        });
+        
+        timer.start();
+        
+        // Main thread continues
+        System.out.println("Main thread doing other work...");
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a toy that pauses for a few seconds before moving again.</p>
+                <p><strong>Real-world:</strong> A traffic light that stays red for a specific time before turning green.
+                </p>
+                <p><strong>Technical:</strong> Thread.sleep(milliseconds) pauses the current thread for the specified
+                    duration. It throws InterruptedException which must be handled. The thread enters TIMED_WAITING
+                    state.</p>
+            </div>
+        </div>
+
+        <!-- Program 4: Using join() -->
+        <div class="content-section">
+            <h2>Program 4: Thread join() Method</h2>
+            <p>Demonstrates waiting for a thread to complete using join().</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class JoinExample {
+    public static void main(String[] args) {
+        Thread dataLoader = new Thread(() -> {
+            System.out.println("Loading data...");
+            try {
+                Thread.sleep(2000);  // Simulate data loading
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Data loaded successfully!");
+        });
+        
+        dataLoader.start();
+        
+        System.out.println("Waiting for data to load...");
+        
+        try {
+            dataLoader.join();  // Wait for dataLoader to complete
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("Now processing data...");
+        System.out.println("Application ready!");
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like waiting for your friend to finish their homework before playing together.
+                </p>
+                <p><strong>Real-world:</strong> Waiting for a file download to complete before opening it.</p>
+                <p><strong>Technical:</strong> join() makes the calling thread wait until the thread on which join() is
+                    called terminates. Useful for ensuring sequential execution when needed.</p>
+            </div>
+        </div>
+
+        <!-- Program 5: Thread Priority -->
+        <div class="content-section">
+            <h2>Program 5: Thread Priority Demonstration</h2>
+            <p>Shows how thread priorities affect execution (results may vary by JVM).</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class PriorityExample {
+    public static void main(String[] args) {
+        Thread lowPriority = new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("Low Priority Thread: " + i);
+            }
+        });
+        
+        Thread highPriority = new Thread(() -> {
+            for (int i = 0; i < 5; i++) {
+                System.out.println("High Priority Thread: " + i);
+            }
+        });
+        
+        // Set priorities
+        lowPriority.setPriority(Thread.MIN_PRIORITY);   // 1
+        highPriority.setPriority(Thread.MAX_PRIORITY);  // 10
+        
+        System.out.println("Low Priority: " + lowPriority.getPriority());
+        System.out.println("High Priority: " + highPriority.getPriority());
+        
+        lowPriority.start();
+        highPriority.start();
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like choosing which toy to play with first—your favorite gets picked more
+                    often.</p>
+                <p><strong>Real-world:</strong> Emergency vehicles get priority on roads over regular cars.</p>
+                <p><strong>Technical:</strong> Thread priority (1-10) is a hint to the thread scheduler. Higher priority
+                    threads are more likely to be executed first, but it's not guaranteed. Actual behavior depends on OS
+                    and JVM.</p>
+            </div>
+        </div>
+
+        <!-- Program 6: Synchronized Method -->
+        <div class="content-section">
+            <h2>Program 6: Synchronized Method</h2>
+            <p>Demonstrates preventing race conditions using synchronized methods.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">class Counter {
+    private int count = 0;
+    
+    // Synchronized method
+    public synchronized void increment() {
+        count++;
+    }
+    
+    public int getCount() {
+        return count;
+    }
+}
+
+public class SynchronizedMethodExample {
+    public static void main(String[] args) throws InterruptedException {
+        Counter counter = new Counter();
+        
+        // Create 1000 threads that increment the counter
+        Thread[] threads = new Thread[1000];
+        for (int i = 0; i < 1000; i++) {
+            threads[i] = new Thread(() -> {
+                for (int j = 0; j < 100; j++) {
+                    counter.increment();
+                }
+            });
+            threads[i].start();
+        }
+        
+        // Wait for all threads to complete
+        for (Thread thread : threads) {
+            thread.join();
+        }
+        
+        System.out.println("Final count: " + counter.getCount());
+        System.out.println("Expected: 100000");
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a rule that only one person can use the bathroom at a time.</p>
+                <p><strong>Real-world:</strong> A bank ATM that allows only one transaction at a time.</p>
+                <p><strong>Technical:</strong> The synchronized keyword ensures that only one thread can execute the
+                    increment() method at a time, preventing race conditions. Without it, the final count would be less
+                    than 100000.</p>
+            </div>
+        </div>
+
+        <!-- Program 7: Synchronized Block -->
+        <div class="content-section">
+            <h2>Program 7: Synchronized Block</h2>
+            <p>Demonstrates fine-grained synchronization using synchronized blocks.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">class BankAccount {
+    private double balance = 1000.0;
+    private final Object lock = new Object();
+    
+    public void withdraw(double amount) {
+        System.out.println(Thread.currentThread().getName() + " attempting to withdraw " + amount);
+        
+        // Only critical section is synchronized
+        synchronized(lock) {
+            if (balance >= amount) {
+                try {
+                    Thread.sleep(100);  // Simulate processing time
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                balance -= amount;
+                System.out.println(Thread.currentThread().getName() + " withdrew " + amount + 
+                                   ". Balance: " + balance);
+            } else {
+                System.out.println(Thread.currentThread().getName() + " - Insufficient funds!");
+            }
+        }
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class SynchronizedBlockExample {
+    public static void main(String[] args) throws InterruptedException {
+        BankAccount account = new BankAccount();
+        
+        Thread t1 = new Thread(() -> account.withdraw(600), "User-1");
+        Thread t2 = new Thread(() -> account.withdraw(500), "User-2");
+        Thread t3 = new Thread(() -> account.withdraw(400), "User-3");
+        
+        t1.start();
+        t2.start();
+        t3.start();
+        
+        t1.join();
+        t2.join();
+        t3.join();
+        
+        System.out.println("Final balance: " + account.getBalance());
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like locking only the cookie jar, not the entire kitchen.</p>
+                <p><strong>Real-world:</strong> Protecting only the cash register, not the entire store.</p>
+                <p><strong>Technical:</strong> Synchronized blocks provide finer control than synchronized methods. Only
+                    the critical section is locked, improving performance by reducing lock contention.</p>
+            </div>
+        </div>
+
+        <!-- Program 8: Wait and Notify -->
+        <div class="content-section">
+            <h2>Program 8: Inter-thread Communication (wait/notify)</h2>
+            <p>Demonstrates producer-consumer pattern using wait() and notify().</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">class SharedQueue {
+    private int data;
+    private boolean available = false;
+    
+    public synchronized void produce(int value) {
+        while (available) {
+            try {
+                wait();  // Wait until consumed
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        data = value;
+        System.out.println("Produced: " + data);
+        available = true;
+        notify();  // Notify consumer
+    }
+    
+    public synchronized int consume() {
+        while (!available) {
+            try {
+                wait();  // Wait until produced
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        
+        System.out.println("Consumed: " + data);
+        available = false;
+        notify();  // Notify producer
+        return data;
+    }
+}
+
+public class WaitNotifyExample {
+    public static void main(String[] args) {
+        SharedQueue queue = new SharedQueue();
+        
+        // Producer thread
+        Thread producer = new Thread(() -> {
+            for (int i = 1; i <= 5; i++) {
+                queue.produce(i);
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        
+        // Consumer thread
+        Thread consumer = new Thread(() -> {
+            for (int i = 1; i <= 5; i++) {
+                queue.consume();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+        
+        producer.start();
+        consumer.start();
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like taking turns on a swing—one waits while the other plays.</p>
+                <p><strong>Real-world:</strong> A baker making bread and a customer buying it—they coordinate timing.
+                </p>
+                <p><strong>Technical:</strong> wait() releases the lock and waits. notify() wakes up one waiting thread.
+                    This implements the producer-consumer pattern where producer and consumer coordinate access to
+                    shared data.</p>
+            </div>
+        </div>
+
+        <!-- Program 9: Deadlock Demonstration -->
+        <div class="content-section">
+            <h2>Program 9: Deadlock Demonstration</h2>
+            <p>Shows how deadlock occurs when threads wait for each other's locks.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class DeadlockExample {
+    private static final Object lock1 = new Object();
+    private static final Object lock2 = new Object();
+    
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(() -> {
+            synchronized (lock1) {
+                System.out.println("Thread 1: Holding lock1...");
+                
+                try { Thread.sleep(100); } catch (InterruptedException e) {}
+                
+                System.out.println("Thread 1: Waiting for lock2...");
+                synchronized (lock2) {
+                    System.out.println("Thread 1: Holding lock1 & lock2");
+                }
+            }
+        });
+        
+        Thread thread2 = new Thread(() -> {
+            synchronized (lock2) {
+                System.out.println("Thread 2: Holding lock2...");
+                
+                try { Thread.sleep(100); } catch (InterruptedException e) {}
+                
+                System.out.println("Thread 2: Waiting for lock1...");
+                synchronized (lock1) {
+                    System.out.println("Thread 2: Holding lock2 & lock1");
+                }
+            }
+        });
+        
+        thread1.start();
+        thread2.start();
+        
+        // Program will hang here - deadlock!
+        System.out.println("If you see this immediately, no deadlock occurred");
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Two kids each holding one toy and wanting the other's toy—nobody can play!</p>
+                <p><strong>Real-world:</strong> Two cars on a narrow bridge, each waiting for the other to reverse.</p>
+                <p><strong>Technical:</strong> Deadlock occurs when Thread 1 holds lock1 and waits for lock2, while
+                    Thread
+                    2 holds lock2 and waits for lock1. Both wait forever. Solution: Always acquire locks in the same
+                    order.</p>
+            </div>
+        </div>
+
+        <!-- Program 10: ThreadPoolExecutor -->
+        <div class="content-section">
+            <h2>Program 10: Using ThreadPoolExecutor</h2>
+            <p>Demonstrates efficient thread management using thread pools.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.concurrent.*;
+
+public class ThreadPoolExample {
+    public static void main(String[] args) {
+        // Create a thread pool with 3 threads
+        ExecutorService executor = Executors.newFixedThreadPool(3);
+        
+        // Submit 10 tasks
+        for (int i = 1; i <= 10; i++) {
+            final int taskId = i;
+            executor.submit(() -> {
+                System.out.println("Task " + taskId + " started by " + 
+                                   Thread.currentThread().getName());
+                try {
+                    Thread.sleep(2000);  // Simulate work
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                System.out.println("Task " + taskId + " completed by " + 
+                                   Thread.currentThread().getName());
+            });
+        }
+        
+        executor.shutdown();  // Stop accepting new tasks
+        
+        try {
+            // Wait for all tasks to complete
+            if (!executor.awaitTermination(60, TimeUnit.SECONDS)) {
+                executor.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executor.shutdownNow();
+        }
+        
+        System.out.println("All tasks completed!");
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like having 3 workers who take turns doing 10 jobs from a list.</p>
+                <p><strong>Real-world:</strong> A company with 3 employees handling 10 customer requests in queue.</p>
+                <p><strong>Technical:</strong> Thread pools reuse threads instead of creating new ones for each task,
+                    improving performance and resource management. The pool size limits concurrent threads.</p>
+            </div>
+        </div>
+
+        <!-- Program 11: Callable and Future -->
+        <div class="content-section">
+            <h2>Program 11: Callable and Future</h2>
+            <p>Demonstrates getting return values from threads using Callable and Future.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.concurrent.*;
+
+public class CallableFutureExample {
+    public static void main(String[] args) {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+        
+        // Callable that returns a value
+        Callable<Integer> task1 = () -> {
+            System.out.println("Task 1: Calculating sum...");
+            Thread.sleep(2000);
+            return 100 + 200;
+        };
+        
+        Callable<String> task2 = () -> {
+            System.out.println("Task 2: Fetching data...");
+            Thread.sleep(1500);
+            return "Hello from Task 2";
+        };
+        
+        try {
+            // Submit tasks and get Future objects
+            Future<Integer> future1 = executor.submit(task1);
+            Future<String> future2 = executor.submit(task2);
+            
+            System.out.println("Tasks submitted. Doing other work...");
+            
+            // Get results (blocks until ready)
+            Integer result1 = future1.get();
+            String result2 = future2.get();
+            
+            System.out.println("Task 1 result: " + result1);
+            System.out.println("Task 2 result: " + result2);
+            
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        } finally {
+            executor.shutdown();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like asking someone to do a task and they promise to give you the answer
+                    later.</p>
+                <p><strong>Real-world:</strong> Ordering food online—you get a tracking number (Future) and food arrives
+                    later.</p>
+                <p><strong>Technical:</strong> Callable is like Runnable but can return a value and throw checked
+                    exceptions. Future represents the result of an asynchronous computation. get() blocks until result
+                    is available.</p>
+            </div>
+        </div>
+
+        <!-- Program 12: ScheduledExecutorService -->
+        <div class="content-section">
+            <h2>Program 12: ScheduledExecutorService</h2>
+            <p>Demonstrates scheduling tasks to run after a delay or periodically.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.concurrent.*;
+import java.time.LocalTime;
+
+public class ScheduledExecutorExample {
+    public static void main(String[] args) throws InterruptedException {
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(2);
+        
+        // Task 1: Execute once after 3 seconds delay
+        scheduler.schedule(() -> {
+            System.out.println("Delayed task executed at " + LocalTime.now());
+        }, 3, TimeUnit.SECONDS);
+        
+        // Task 2: Execute every 2 seconds
+        scheduler.scheduleAtFixedRate(() -> {
+            System.out.println("Periodic task executed at " + LocalTime.now());
+        }, 1, 2, TimeUnit.SECONDS);  // Initial delay: 1s, Period: 2s
+        
+        System.out.println("Scheduler started at " + LocalTime.now());
+        
+        // Let it run for 10 seconds
+        Thread.sleep(10000);
+        
+        scheduler.shutdown();
+        System.out.println("Scheduler stopped");
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like setting an alarm clock to ring at specific times.</p>
+                <p><strong>Real-world:</strong> Scheduling automatic backups every night at midnight.</p>
+                <p><strong>Technical:</strong> ScheduledExecutorService allows scheduling tasks with delays or at fixed
+                    rates. schedule() runs once, scheduleAtFixedRate() runs periodically. Useful for recurring tasks.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program 13: Volatile Keyword -->
+        <div class="content-section">
+            <h2>Program 13: Volatile Keyword Usage</h2>
+            <p>Demonstrates using volatile for thread-safe flag variables.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class VolatileExample {
+    private volatile boolean running = true;  // volatile ensures visibility
+    
+    public void startTask() {
+        Thread worker = new Thread(() -> {
+            int count = 0;
+            while (running) {
+                count++;
+            }
+            System.out.println("Thread stopped. Count: " + count);
+        });
+        
+        worker.start();
+        
+        // Main thread
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("Stopping thread...");
+        running = false;  // Worker thread will see this change
+    }
+    
+    public static void main(String[] args) {
+        new VolatileExample().startTask();
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a flag that everyone can see immediately when it changes.</p>
+                <p><strong>Real-world:</strong> A traffic light that all drivers see change at the same time.</p>
+                <p><strong>Technical:</strong> volatile ensures that changes to a variable are immediately visible to
+                    all
+                    threads. Without volatile, threads might cache the variable and not see updates. Use for simple
+                    flags, not for compound operations.</p>
+            </div>
+        </div>
+
+        <!-- Program 14: CountDownLatch -->
+        <div class="content-section">
+            <h2>Program 14: CountDownLatch Example</h2>
+            <p>Demonstrates coordinating multiple threads using CountDownLatch.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.concurrent.CountDownLatch;
+
+public class CountDownLatchExample {
+    public static void main(String[] args) {
+        int numberOfServices = 3;
+        CountDownLatch latch = new CountDownLatch(numberOfServices);
+        
+        // Service 1: Database
+        Thread dbService = new Thread(() -> {
+            System.out.println("Database service starting...");
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Database service started!");
+            latch.countDown();
+        });
+        
+        // Service 2: Cache
+        Thread cacheService = new Thread(() -> {
+            System.out.println("Cache service starting...");
+            try {
+                Thread.sleep(1500);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Cache service started!");
+            latch.countDown();
+        });
+        
+        // Service 3: API
+        Thread apiService = new Thread(() -> {
+            System.out.println("API service starting...");
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("API service started!");
+            latch.countDown();
+        });
+        
+        dbService.start();
+        cacheService.start();
+        apiService.start();
+        
+        System.out.println("Waiting for all services to start...");
+        
+        try {
+            latch.await();  // Wait for all services
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        System.out.println("All services started! Application ready! 🚀");
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like waiting for all your friends to arrive before starting a game.</p>
+                <p><strong>Real-world:</strong> A race that starts only when all runners are at the starting line.</p>
+                <p><strong>Technical:</strong> CountDownLatch allows threads to wait until a set of operations
+                    completes.
+                    countDown() decrements the count, await() blocks until count reaches zero. Useful for startup
+                    coordination.</p>
+            </div>
+        </div>
+
+        <!-- Program 15: Real-world Bank Transaction System -->
+        <div class="content-section">
+            <h2>Program 15: Real-world Bank Transaction System</h2>
+            <p>A complete example combining multiple threading concepts for a concurrent banking system.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.concurrent.*;
+import java.util.concurrent.atomic.AtomicInteger;
+
+class BankingSystem {
+    private double balance = 10000.0;
+    private final Object lock = new Object();
+    private AtomicInteger transactionCount = new AtomicInteger(0);
+    
+    public void deposit(String customer, double amount) {
+        synchronized(lock) {
+            System.out.println(customer + " depositing $" + amount);
+            balance += amount;
+            transactionCount.incrementAndGet();
+            System.out.println(customer + " deposit successful. Balance: $" + balance);
+        }
+    }
+    
+    public void withdraw(String customer, double amount) {
+        synchronized(lock) {
+            System.out.println(customer + " attempting to withdraw $" + amount);
+            if (balance >= amount) {
+                try {
+                    Thread.sleep(100);  // Simulate processing
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                balance -= amount;
+                transactionCount.incrementAndGet();
+                System.out.println(customer + " withdrawal successful. Balance: $" + balance);
+            } else {
+                System.out.println(customer + " - Insufficient funds! Balance: $" + balance);
+            }
+        }
+    }
+    
+    public void transfer(String from, String to, double amount) {
+        synchronized(lock) {
+            System.out.println("Transfer: " + from + " -> " + to + " ($" + amount + ")");
+            if (balance >= amount) {
+                balance -= amount;
+                // In real system, would credit to another account
+                transactionCount.incrementAndGet();
+                System.out.println("Transfer successful. Balance: $" + balance);
+            } else {
+                System.out.println("Transfer failed - Insufficient funds!");
+            }
+        }
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+    
+    public int getTransactionCount() {
+        return transactionCount.get();
+    }
+}
+
+public class BankTransactionSystem {
+    public static void main(String[] args) throws InterruptedException {
+        BankingSystem bank = new BankingSystem();
+        ExecutorService executor = Executors.newFixedThreadPool(5);
+        CountDownLatch latch = new CountDownLatch(10);
+        
+        // Submit various transactions
+        executor.submit(() -> {
+            bank.deposit("Alice", 1000);
+            latch.countDown();
+        });
+        
+        executor.submit(() -> {
+            bank.withdraw("Bob", 500);
+            latch.countDown();
+        });
+        
+        executor.submit(() -> {
+            bank.deposit("Charlie", 2000);
+            latch.countDown();
+        });
+        
+        executor.submit(() -> {
+            bank.withdraw("David", 3000);
+            latch.countDown();
+        });
+        
+        executor.submit(() -> {
+            bank.transfer("Alice", "Bob", 500);
+            latch.countDown();
+        });
+        
+        executor.submit(() -> {
+            bank.withdraw("Eve", 1000);
+            latch.countDown();
+        });
+        
+        executor.submit(() -> {
+            bank.deposit("Frank", 1500);
+            latch.countDown();
+        });
+        
+        executor.submit(() -> {
+            bank.withdraw("Grace", 2000);
+            latch.countDown();
+        });
+        
+        executor.submit(() -> {
+            bank.deposit("Henry", 3000);
+            latch.countDown();
+        });
+        
+        executor.submit(() -> {
+            bank.withdraw("Ivy", 500);
+            latch.countDown();
+        });
+        
+        // Wait for all transactions
+        latch.await();
+        
+        executor.shutdown();
+        executor.awaitTermination(1, TimeUnit.MINUTES);
+        
+        System.out.println("\n=== Transaction Summary ===");
+        System.out.println("Final Balance: $" + bank.getBalance());
+        System.out.println("Total Transactions: " + bank.getTransactionCount());
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a piggy bank where multiple people can add or take money, but only one at
+                    a time.</p>
+                <p><strong>Real-world:</strong> A real banking system handling multiple customer transactions
+                    concurrently.</p>
+                <p><strong>Technical:</strong> This example combines ExecutorService for thread management, synchronized
+                    blocks for thread safety, AtomicInteger for lock-free counters, and CountDownLatch for coordination.
+                    Demonstrates real-world concurrent programming patterns.</p>
+            </div>
+        </div>
+
+        <!-- Next Topic -->
+        <div class="next-topic">
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../theory/multithreading.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../mcq/multithreading.html" class="btn btn-success">✅ Take Quiz</a>
+                <a href="../index.html" class="btn btn-secondary">🏠 Back to Home</a>
+            </div>
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">🚀 Next Topic Coming Soon</div>
+                <p><strong>Topic 14:</strong> Java 8+ Advanced Features & Enhancements</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

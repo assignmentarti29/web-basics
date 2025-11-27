@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java 8+ Features - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Java 8+ Features - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>Java 8+ Features</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Hands-On Java 8+ Programs</h2>
+            <p>Welcome to the practical section! These 20+ programs demonstrate modern Java features from Java 8
+                through Java 21. From Lambda expressions to Sealed Classes, these examples cover everything you need to
+                master modern Java development.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Try running these examples in your IDE. Experiment by modifying the code to see how different
+                    features work together!</p>
+            </div>
+        </div>
+
+        <!-- Program 1: Basic Lambda -->
+        <div class="content-section">
+            <h2>Program 1: Basic Lambda Expression</h2>
+            <p>Demonstrates the simplest form of Lambda expressions.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+
+public class BasicLambda {
+    public static void main(String[] args) {
+        // Traditional way
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        
+        System.out.println("Traditional approach:");
+        for (String name : names) {
+            System.out.println(name);
+        }
+        
+        System.out.println("\nLambda approach:");
+        names.forEach(name -> System.out.println(name));
+        
+        // Even shorter with method reference
+        System.out.println("\nMethod reference:");
+        names.forEach(System.out::println);
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Instead of writing a long instruction, we use a shortcut.</p>
+                <p><strong>Real-world:</strong> Like saying "print each" instead of writing detailed steps.</p>
+                <p><strong>Technical:</strong> Lambda expression `name -> System.out.println(name)` is a concise way
+                    to define an anonymous function. Method reference `System.out::println` is even shorter.</p>
+            </div>
+        </div>
+
+        <!-- Program 2: Functional Interface -->
+        <div class="content-section">
+            <h2>Program 2: Custom Functional Interface</h2>
+            <p>Creating and using a custom functional interface.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">@FunctionalInterface
+interface Calculator {
+    int calculate(int a, int b);
+}
+
+public class FunctionalInterfaceDemo {
+    public static void main(String[] args) {
+        // Lambda for addition
+        Calculator add = (a, b) -> a + b;
+        System.out.println("5 + 3 = " + add.calculate(5, 3));
+        
+        // Lambda for multiplication
+        Calculator multiply = (a, b) -> a * b;
+        System.out.println("5 * 3 = " + multiply.calculate(5, 3));
+        
+        // Lambda with block body
+        Calculator power = (a, b) -> {
+            int result = 1;
+            for (int i = 0; i < b; i++) {
+                result *= a;
+            }
+            return result;
+        };
+        System.out.println("2 ^ 3 = " + power.calculate(2, 3));
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A tool that does one specific job, and we tell it how to do it.</p>
+                <p><strong>Real-world:</strong> A calculator app where you define different operations.</p>
+                <p><strong>Technical:</strong> @FunctionalInterface ensures the interface has exactly one abstract
+                    method. Lambdas provide different implementations.</p>
+            </div>
+        </div>
+
+        <!-- Program 3: Method Reference -->
+        <div class="content-section">
+            <h2>Program 3: Method Reference Types</h2>
+            <p>Demonstrates all types of method references.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+import java.util.function.*;
+
+public class MethodReferenceDemo {
+    
+    // Static method
+    public static int multiply(int a, int b) {
+        return a * b;
+    }
+    
+    // Instance method
+    public int add(int a, int b) {
+        return a + b;
+    }
+    
+    public static void main(String[] args) {
+        // 1. Static method reference
+        BiFunction<Integer, Integer, Integer> multiplyRef = MethodReferenceDemo::multiply;
+        System.out.println("Static: 5 * 3 = " + multiplyRef.apply(5, 3));
+        
+        // 2. Instance method reference
+        MethodReferenceDemo demo = new MethodReferenceDemo();
+        BiFunction<Integer, Integer, Integer> addRef = demo::add;
+        System.out.println("Instance: 5 + 3 = " + addRef.apply(5, 3));
+        
+        // 3. Instance method of arbitrary object
+        List<String> words = Arrays.asList("apple", "banana", "cherry");
+        words.stream()
+             .map(String::toUpperCase)
+             .forEach(System.out::println);
+        
+        // 4. Constructor reference
+        Supplier<List<String>> listSupplier = ArrayList::new;
+        List<String> newList = listSupplier.get();
+        System.out.println("Created list: " + newList);
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Pointing to someone who already knows how to do the job.</p>
+                <p><strong>Real-world:</strong> Instead of explaining, you say "Ask the expert."</p>
+                <p><strong>Technical:</strong> Method references are shorthand for Lambdas that call existing methods.
+                    Four types: static, instance, arbitrary object, and constructor.</p>
+            </div>
+        </div>
+
+        <!-- Program 4: Stream Filter and Map -->
+        <div class="content-section">
+            <h2>Program 4: Stream Filter and Map Operations</h2>
+            <p>Using intermediate operations to process data.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+import java.util.stream.*;
+
+public class StreamFilterMap {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        
+        // Filter even numbers and square them
+        List<Integer> evenSquares = numbers.stream()
+            .filter(n -> n % 2 == 0)           // Keep only even numbers
+            .map(n -> n * n)                    // Square each number
+            .collect(Collectors.toList());      // Collect to list
+        
+        System.out.println("Even squares: " + evenSquares);
+        
+        // Chain multiple operations
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David", "Eve");
+        
+        List<String> result = names.stream()
+            .filter(name -> name.length() > 3)  // Names longer than 3 chars
+            .map(String::toUpperCase)           // Convert to uppercase
+            .sorted()                            // Sort alphabetically
+            .collect(Collectors.toList());
+        
+        System.out.println("Filtered names: " + result);
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a factory line—filter out bad items, then paint the good ones.</p>
+                <p><strong>Real-world:</strong> Sorting emails—filter spam, then mark important ones.</p>
+                <p><strong>Technical:</strong> filter() selects elements, map() transforms them. These are
+                    intermediate operations (lazy) that return a new stream.</p>
+            </div>
+        </div>
+
+        <!-- Program 5: Parallel Streams -->
+        <div class="content-section">
+            <h2>Program 5: Parallel Streams for Performance</h2>
+            <p>Demonstrates parallel processing with streams.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+import java.util.stream.*;
+
+public class ParallelStreamDemo {
+    public static void main(String[] args) {
+        List<Integer> numbers = IntStream.rangeClosed(1, 1000000)
+                                         .boxed()
+                                         .collect(Collectors.toList());
+        
+        // Sequential stream
+        long startSeq = System.currentTimeMillis();
+        long sumSeq = numbers.stream()
+                             .mapToLong(Integer::longValue)
+                             .sum();
+        long endSeq = System.currentTimeMillis();
+        
+        System.out.println("Sequential Sum: " + sumSeq);
+        System.out.println("Sequential Time: " + (endSeq - startSeq) + "ms");
+        
+        // Parallel stream
+        long startPar = System.currentTimeMillis();
+        long sumPar = numbers.parallelStream()
+                             .mapToLong(Integer::longValue)
+                             .sum();
+        long endPar = System.currentTimeMillis();
+        
+        System.out.println("\nParallel Sum: " + sumPar);
+        System.out.println("Parallel Time: " + (endPar - startPar) + "ms");
+        
+        // Demonstrating parallel processing
+        System.out.println("\nThreads used in parallel stream:");
+        numbers.parallelStream()
+               .limit(10)
+               .forEach(n -> System.out.println(n + " - " + Thread.currentThread().getName()));
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Getting many friends to help you count instead of counting alone.</p>
+                <p><strong>Real-world:</strong> Multiple cashiers at a store vs one cashier.</p>
+                <p><strong>Technical:</strong> parallelStream() uses ForkJoinPool to process elements concurrently.
+                    Best for CPU-intensive operations on large datasets.</p>
+            </div>
+        </div>
+
+        <!-- Program 6: Sorting with Streams -->
+        <div class="content-section">
+            <h2>Program 6: Sorting with Streams and Comparator</h2>
+            <p>Advanced sorting using streams.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+import java.util.stream.*;
+
+class Person {
+    String name;
+    int age;
+    
+    Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    @Override
+    public String toString() {
+        return name + " (" + age + ")";
+    }
+}
+
+public class StreamSorting {
+    public static void main(String[] args) {
+        List<Person> people = Arrays.asList(
+            new Person("Alice", 25),
+            new Person("Bob", 30),
+            new Person("Charlie", 20),
+            new Person("David", 25)
+        );
+        
+        // Sort by age
+        System.out.println("Sorted by age:");
+        people.stream()
+              .sorted(Comparator.comparingInt(p -> p.age))
+              .forEach(System.out::println);
+        
+        // Sort by name
+        System.out.println("\nSorted by name:");
+        people.stream()
+              .sorted(Comparator.comparing(p -> p.name))
+              .forEach(System.out::println);
+        
+        // Sort by age descending, then by name
+        System.out.println("\nSorted by age (desc), then name:");
+        people.stream()
+              .sorted(Comparator.comparingInt((Person p) -> p.age)
+                               .reversed()
+                               .thenComparing(p -> p.name))
+              .forEach(System.out::println);
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Arranging toys by size or color.</p>
+                <p><strong>Real-world:</strong> Sorting contacts by name or sorting products by price.</p>
+                <p><strong>Technical:</strong> Comparator.comparing() creates comparators using method references.
+                    reversed() and thenComparing() allow complex sorting.</p>
+            </div>
+        </div>
+
+        <!-- Program 7: Optional Usage -->
+        <div class="content-section">
+            <h2>Program 7: Optional to Avoid Null Checks</h2>
+            <p>Using Optional to handle potentially null values safely.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+
+public class OptionalDemo {
+    
+    public static Optional<String> findName(String search) {
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+        return names.stream()
+                    .filter(name -> name.equalsIgnoreCase(search))
+                    .findFirst();
+    }
+    
+    public static void main(String[] args) {
+        // Using ifPresent
+        Optional<String> name1 = findName("Alice");
+        name1.ifPresent(n -> System.out.println("Found: " + n));
+        
+        // Using orElse
+        String name2 = findName("David").orElse("Not Found");
+        System.out.println("Result: " + name2);
+        
+        // Using orElseGet (lazy evaluation)
+        String name3 = findName("Bob").orElseGet(() -> {
+            System.out.println("Generating default...");
+            return "Default Name";
+        });
+        System.out.println("Result: " + name3);
+        
+        // Using map
+        Optional<Integer> length = findName("Charlie")
+            .map(String::length);
+        System.out.println("Length: " + length.orElse(0));
+        
+        // Using filter
+        findName("Alice")
+            .filter(n -> n.length() > 3)
+            .ifPresent(n -> System.out.println("Long name: " + n));
+        
+        // Chaining operations
+        String result = findName("Bob")
+            .map(String::toUpperCase)
+            .map(s -> "Hello, " + s)
+            .orElse("No greeting");
+        System.out.println(result);
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A box that might have a toy—check before opening!</p>
+                <p><strong>Real-world:</strong> A gift box—you check if there's something inside first.</p>
+                <p><strong>Technical:</strong> Optional wraps potentially null values. Use ifPresent(), orElse(),
+                    map(), and filter() instead of null checks.</p>
+            </div>
+        </div>
+
+        <!-- Program 8: Generic Method -->
+        <div class="content-section">
+            <h2>Program 8: Generic Method with Type Parameters</h2>
+            <p>Creating type-safe generic methods.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+
+public class GenericMethodDemo {
+    
+    // Generic method to print array
+    public static <T> void printArray(T[] array) {
+        for (T element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+    
+    // Generic method with bounded type
+    public static <T extends Number> double sum(T[] numbers) {
+        double total = 0;
+        for (T num : numbers) {
+            total += num.doubleValue();
+        }
+        return total;
+    }
+    
+    // Generic method with multiple type parameters
+    public static <K, V> void printMap(Map<K, V> map) {
+        map.forEach((key, value) -> 
+            System.out.println(key + " -> " + value));
+    }
+    
+    public static void main(String[] args) {
+        // Print different types of arrays
+        Integer[] intArray = {1, 2, 3, 4, 5};
+        String[] strArray = {"Hello", "World", "Java"};
+        Double[] doubleArray = {1.1, 2.2, 3.3};
+        
+        System.out.println("Integer array:");
+        printArray(intArray);
+        
+        System.out.println("String array:");
+        printArray(strArray);
+        
+        // Sum numbers
+        System.out.println("Sum of integers: " + sum(intArray));
+        System.out.println("Sum of doubles: " + sum(doubleArray));
+        
+        // Print map
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put("Alice", 95);
+        scores.put("Bob", 87);
+        System.out.println("\nScores:");
+        printMap(scores);
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A magic box that works with any type of toy.</p>
+                <p><strong>Real-world:</strong> A universal remote that works with any TV brand.</p>
+                <p><strong>Technical:</strong> Generic methods use type parameters &lt;T&gt; for compile-time type
+                    safety. Bounded types (&lt;T extends Number&gt;) restrict allowed types.</p>
+            </div>
+        </div>
+
+        <!-- Program 9: Wrapper Class Auto-boxing -->
+        <div class="content-section">
+            <h2>Program 9: Wrapper Class Auto-boxing and Unboxing</h2>
+            <p>Demonstrates automatic conversion between primitives and wrappers.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+
+public class WrapperClassDemo {
+    public static void main(String[] args) {
+        // Auto-boxing: primitive to wrapper
+        int primitive = 10;
+        Integer wrapper = primitive; // Automatic boxing
+        System.out.println("Wrapper: " + wrapper);
+        
+        // Unboxing: wrapper to primitive
+        Integer wrapper2 = 20;
+        int primitive2 = wrapper2; // Automatic unboxing
+        System.out.println("Primitive: " + primitive2);
+        
+        // Collections require wrappers
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(1);      // Auto-boxing
+        numbers.add(2);
+        numbers.add(3);
+        
+        int sum = 0;
+        for (Integer num : numbers) {
+            sum += num;      // Auto-unboxing
+        }
+        System.out.println("Sum: " + sum);
+        
+        // Wrapper utility methods
+        String numStr = "123";
+        int parsed = Integer.parseInt(numStr);
+        System.out.println("Parsed: " + parsed);
+        
+        String binary = Integer.toBinaryString(10);
+        System.out.println("Binary of 10: " + binary);
+        
+        String hex = Integer.toHexString(255);
+        System.out.println("Hex of 255: " + hex);
+        
+        // Comparison
+        Integer a = 100;
+        Integer b = 200;
+        System.out.println("Compare: " + Integer.compare(a, b));
+        
+        // Cache demonstration
+        Integer x1 = 127;
+        Integer x2 = 127;
+        System.out.println("x1 == x2: " + (x1 == x2)); // true (cached)
+        
+        Integer y1 = 128;
+        Integer y2 = 128;
+        System.out.println("y1 == y2: " + (y1 == y2)); // false (not cached)
+        System.out.println("y1.equals(y2): " + y1.equals(y2)); // true
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Wrapping a toy in a box and unwrapping it automatically.</p>
+                <p><strong>Real-world:</strong> Gift wrapping service that wraps and unwraps automatically.</p>
+                <p><strong>Technical:</strong> Auto-boxing converts primitives to wrappers, unboxing does the reverse.
+                    Java caches Integer values -128 to 127 for performance.</p>
+            </div>
+        </div>
+
+        <!-- Program 10: CompletableFuture -->
+        <div class="content-section">
+            <h2>Program 10: CompletableFuture Async Operations</h2>
+            <p>Asynchronous programming with CompletableFuture.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.concurrent.*;
+
+public class CompletableFutureDemo {
+    
+    public static CompletableFuture<String> fetchUserData(int userId) {
+        return CompletableFuture.supplyAsync(() -> {
+            System.out.println("Fetching user " + userId + " in: " + 
+                Thread.currentThread().getName());
+            sleep(1000); // Simulate API call
+            return "User" + userId;
+        });
+    }
+    
+    public static CompletableFuture<String> fetchUserOrders(String user) {
+        return CompletableFuture.supplyAsync(() -> {
+            System.out.println("Fetching orders for " + user + " in: " + 
+                Thread.currentThread().getName());
+            sleep(1000); // Simulate API call
+            return user + "'s orders: [Order1, Order2]";
+        });
+    }
+    
+    private static void sleep(int ms) {
+        try { Thread.sleep(ms); } catch (InterruptedException e) {}
+    }
+    
+    public static void main(String[] args) throws Exception {
+        System.out.println("Main thread: " + Thread.currentThread().getName());
+        
+        // Simple async task
+        CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> {
+            sleep(1000);
+            return "Hello from async task";
+        });
+        
+        System.out.println("Doing other work...");
+        System.out.println("Result: " + future1.get()); // Blocks until complete
+        
+        // Chaining operations
+        CompletableFuture<String> chain = CompletableFuture
+            .supplyAsync(() -> "Hello")
+            .thenApply(s -> s + " World")
+            .thenApply(String::toUpperCase);
+        
+        System.out.println("Chained result: " + chain.get());
+        
+        // Combining futures
+        CompletableFuture<String> userData = fetchUserData(123);
+        CompletableFuture<String> orders = userData.thenCompose(user -> fetchUserOrders(user));
+        
+        System.out.println("Orders: " + orders.get());
+        
+        // Exception handling
+        CompletableFuture<String> withError = CompletableFuture.supplyAsync(() -> {
+            if (Math.random() > 0.5) {
+                throw new RuntimeException("Random error!");
+            }
+            return "Success";
+        }).exceptionally(ex -> {
+            System.out.println("Caught: " + ex.getMessage());
+            return "Default value";
+        });
+        
+        System.out.println("Result with error handling: " + withError.get());
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Asking someone to do something while you play with other toys.</p>
+                <p><strong>Real-world:</strong> Ordering food delivery and continuing your work.</p>
+                <p><strong>Technical:</strong> CompletableFuture enables non-blocking async operations. thenApply()
+                    transforms results, thenCompose() chains futures, exceptionally() handles errors.</p>
+            </div>
+        </div>
+
+        <!-- Program 11: Default Interface Methods -->
+        <div class="content-section">
+            <h2>Program 11: Default Methods in Interfaces</h2>
+            <p>Using default and static methods in interfaces.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">interface Vehicle {
+    // Abstract method
+    void start();
+    
+    // Default method
+    default void stop() {
+        System.out.println("Vehicle stopped");
+    }
+    
+    default void honk() {
+        System.out.println("Beep beep!");
+    }
+    
+    // Static method
+    static void checkLicense() {
+        System.out.println("License verified");
+    }
+}
+
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car engine started");
+    }
+    
+    // Override default method
+    @Override
+    public void stop() {
+        System.out.println("Car stopped with brakes");
+    }
+    // honk() uses default implementation
+}
+
+class Bike implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Bike started");
+    }
+    // Uses both default methods
+}
+
+public class DefaultMethodDemo {
+    public static void main(String[] args) {
+        Car car = new Car();
+        car.start();
+        car.stop();  // Overridden
+        car.honk();  // Default
+        
+        System.out.println();
+        
+        Bike bike = new Bike();
+        bike.start();
+        bike.stop();  // Default
+        bike.honk();  // Default
+        
+        System.out.println();
+        
+        // Static method
+        Vehicle.checkLicense();
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A toy that comes with batteries—you can use it right away!</p>
+                <p><strong>Real-world:</strong> A contract with standard clauses you can customize.</p>
+                <p><strong>Technical:</strong> Default methods provide implementations in interfaces. Classes can
+                    override them or use the default. Static methods belong to the interface.</p>
+            </div>
+        </div>
+
+        <!-- Program 12: Record Class -->
+        <div class="content-section">
+            <h2>Program 12: Record Class Example</h2>
+            <p>Using Records for immutable data carriers.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// Simple record
+record Person(String name, int age) {}
+
+// Record with validation
+record Employee(String name, int age, double salary) {
+    // Compact constructor for validation
+    public Employee {
+        if (age < 18) {
+            throw new IllegalArgumentException("Age must be >= 18");
+        }
+        if (salary < 0) {
+            throw new IllegalArgumentException("Salary must be positive");
+        }
+    }
+    
+    // Custom methods
+    public boolean isHighEarner() {
+        return salary > 100000;
+    }
+    
+    // Static factory method
+    public static Employee of(String name, int age, double salary) {
+        return new Employee(name, age, salary);
+    }
+}
+
+public class RecordDemo {
+    public static void main(String[] args) {
+        // Create record
+        Person person = new Person("Alice", 25);
+        
+        // Accessors (not getters!)
+        System.out.println("Name: " + person.name());
+        System.out.println("Age: " + person.age());
+        
+        // Auto-generated toString()
+        System.out.println(person);
+        
+        // Auto-generated equals() and hashCode()
+        Person person2 = new Person("Alice", 25);
+        System.out.println("Equal: " + person.equals(person2));
+        
+        // Employee record
+        Employee emp = new Employee("Bob", 30, 75000);
+        System.out.println(emp);
+        System.out.println("High earner: " + emp.isHighEarner());
+        
+        // Using static factory
+        Employee emp2 = Employee.of("Charlie", 35, 120000);
+        System.out.println(emp2);
+        System.out.println("High earner: " + emp2.isHighEarner());
+        
+        // Records are immutable
+        // emp.salary = 80000; // Compile error!
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A pre-made toy box with everything included—no assembly!</p>
+                <p><strong>Real-world:</strong> A form that's already filled out and can't be changed.</p>
+                <p><strong>Technical:</strong> Records automatically generate constructor, accessors, equals(),
+                    hashCode(), and toString(). They're final and immutable.</p>
+            </div>
+        </div>
+
+        <!-- Program 13: Switch Expression -->
+        <div class="content-section">
+            <h2>Program 13: Switch Expression with yield</h2>
+            <p>Modern switch expressions for cleaner code.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class SwitchExpressionDemo {
+    
+    public static String getDayType(String day) {
+        // Switch expression (returns value)
+        return switch (day) {
+            case "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY" -> "Weekday";
+            case "SATURDAY", "SUNDAY" -> "Weekend";
+            default -> "Invalid day";
+        };
+    }
+    
+    public static int getQuarter(int month) {
+        return switch (month) {
+            case 1, 2, 3 -> 1;
+            case 4, 5, 6 -> 2;
+            case 7, 8, 9 -> 3;
+            case 10, 11, 12 -> 4;
+            default -> throw new IllegalArgumentException("Invalid month: " + month);
+        };
+    }
+    
+    public static String getGrade(int score) {
+        // Using yield for complex logic
+        return switch (score / 10) {
+            case 10, 9 -> "A";
+            case 8 -> "B";
+            case 7 -> "C";
+            case 6 -> "D";
+            default -> {
+                if (score < 0 || score > 100) {
+                    yield "Invalid";
+                }
+                yield "F";
+            }
+        };
+    }
+    
+    public static void main(String[] args) {
+        // Day type
+        System.out.println("MONDAY is: " + getDayType("MONDAY"));
+        System.out.println("SATURDAY is: " + getDayType("SATURDAY"));
+        
+        // Quarter
+        System.out.println("Month 3 is in Q" + getQuarter(3));
+        System.out.println("Month 7 is in Q" + getQuarter(7));
+        
+        // Grade
+        System.out.println("Score 95: " + getGrade(95));
+        System.out.println("Score 75: " + getGrade(75));
+        System.out.println("Score 55: " + getGrade(55));
+        
+        // Enum switch
+        enum Size { SMALL, MEDIUM, LARGE }
+        Size size = Size.MEDIUM;
+        
+        String description = switch (size) {
+            case SMALL -> "S";
+            case MEDIUM -> "M";
+            case LARGE -> "L";
+        };
+        System.out.println("Size: " + description);
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A better way to choose—cleaner and safer.</p>
+                <p><strong>Real-world:</strong> A menu where you pick one item and get exactly what you want.</p>
+                <p><strong>Technical:</strong> Switch expressions can return values, use arrow syntax, support
+                    multiple labels, and use yield for complex blocks. No fall-through!</p>
+            </div>
+        </div>
+
+        <!-- Program 14: Pattern Matching -->
+        <div class="content-section">
+            <h2>Program 14: Pattern Matching with instanceof</h2>
+            <p>Simplified type checking and casting.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+
+public class PatternMatchingDemo {
+    
+    public static int getLength(Object obj) {
+        // Pattern matching for instanceof
+        if (obj instanceof String str) {
+            return str.length(); // No cast needed!
+        } else if (obj instanceof List<?> list) {
+            return list.size();
+        } else if (obj instanceof int[] array) {
+            return array.length;
+        }
+        return 0;
+    }
+    
+    public static void printType(Object obj) {
+        // With complex conditions
+        if (obj instanceof String str && str.length() > 5) {
+            System.out.println("Long string: " + str.toUpperCase());
+        } else if (obj instanceof Integer num && num > 100) {
+            System.out.println("Large number: " + num);
+        } else if (obj instanceof List<?> list && !list.isEmpty()) {
+            System.out.println("Non-empty list with " + list.size() + " elements");
+        } else {
+            System.out.println("Other type: " + obj);
+        }
+    }
+    
+    public static String format(Object obj) {
+        // Pattern matching in expressions
+        return switch (obj) {
+            case Integer i -> String.format("int %d", i);
+            case Long l -> String.format("long %d", l);
+            case Double d -> String.format("double %.2f", d);
+            case String s -> String.format("String '%s'", s);
+            case null -> "null value";
+            default -> obj.toString();
+        };
+    }
+    
+    public static void main(String[] args) {
+        // Test getLength
+        System.out.println("Length of 'Hello': " + getLength("Hello"));
+        System.out.println("Size of list: " + getLength(Arrays.asList(1, 2, 3)));
+        System.out.println("Length of array: " + getLength(new int[]{1, 2, 3, 4}));
+        
+        System.out.println();
+        
+        // Test printType
+        printType("Hello World");
+        printType("Hi");
+        printType(150);
+        printType(50);
+        printType(Arrays.asList("a", "b", "c"));
+        
+        System.out.println();
+        
+        // Test format
+        System.out.println(format(42));
+        System.out.println(format(3.14159));
+        System.out.println(format("Java"));
+        System.out.println(format(null));
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Checking what's in a box and using it right away.</p>
+                <p><strong>Real-world:</strong> Opening a package and immediately using what's inside.</p>
+                <p><strong>Technical:</strong> Pattern matching combines instanceof check and cast in one step. The
+                    pattern variable is scoped to the if block.</p>
+            </div>
+        </div>
+
+        <!-- Program 15: Sealed Classes -->
+        <div class="content-section">
+            <h2>Program 15: Sealed Class Implementation</h2>
+            <p>Restricting class hierarchies with sealed classes.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// Sealed class with permitted subclasses
+sealed class Shape permits Circle, Rectangle, Triangle {
+    abstract double area();
+}
+
+final class Circle extends Shape {
+    double radius;
+    
+    Circle(double radius) {
+        this.radius = radius;
+    }
+    
+    @Override
+    double area() {
+        return Math.PI * radius * radius;
+    }
+}
+
+final class Rectangle extends Shape {
+    double width, height;
+    
+    Rectangle(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+    
+    @Override
+    double area() {
+        return width * height;
+    }
+}
+
+final class Triangle extends Shape {
+    double base, height;
+    
+    Triangle(double base, double height) {
+        this.base = base;
+        this.height = height;
+    }
+    
+    @Override
+    double area() {
+        return 0.5 * base * height;
+    }
+}
+
+public class SealedClassDemo {
+    
+    // Exhaustive switch - compiler knows all subtypes
+    public static String describe(Shape shape) {
+        return switch (shape) {
+            case Circle c -> "Circle with radius " + c.radius;
+            case Rectangle r -> "Rectangle " + r.width + "x" + r.height;
+            case Triangle t -> "Triangle with base " + t.base;
+            // No default needed!
+        };
+    }
+    
+    public static void main(String[] args) {
+        Shape circle = new Circle(5.0);
+        Shape rectangle = new Rectangle(4.0, 6.0);
+        Shape triangle = new Triangle(3.0, 4.0);
+        
+        System.out.println(describe(circle));
+        System.out.println("Area: " + circle.area());
+        
+        System.out.println(describe(rectangle));
+        System.out.println("Area: " + rectangle.area());
+        
+        System.out.println(describe(triangle));
+        System.out.println("Area: " + triangle.area());
+    }
+}
+
+// This would be a compile error:
+// class Square extends Shape {} // Not in permits list!</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A family where you decide exactly who can join.</p>
+                <p><strong>Real-world:</strong> A VIP club with a fixed member list.</p>
+                <p><strong>Technical:</strong> Sealed classes restrict which classes can extend them. Compiler can
+                    verify exhaustiveness in switch expressions. Subclasses must be final, sealed, or non-sealed.</p>
+            </div>
+        </div>
+
+        <!-- Program 16: Text Blocks -->
+        <div class="content-section">
+            <h2>Program 16: Text Block for Multi-line Strings</h2>
+            <p>Clean multi-line string literals.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class TextBlockDemo {
+    public static void main(String[] args) {
+        // JSON example
+        String json = """
+            {
+              "name": "Alice",
+              "age": 25,
+              "city": "New York",
+              "hobbies": ["reading", "coding", "gaming"]
+            }
+            """;
+        System.out.println("JSON:");
+        System.out.println(json);
+        
+        // HTML example
+        String html = """
+            <!DOCTYPE html>
+            <html>
+              <head>
+                <title>My Page</title>
+              </head>
+              <body>
+                <h1>Hello World</h1>
+                <p>Welcome to Java text blocks!</p>
+              </body>
+            </html>
+            """;
+        System.out.println("HTML:");
+        System.out.println(html);
+        
+        // SQL example
+        String sql = """
+            SELECT u.id, u.name, u.email, o.order_id
+            FROM users u
+            INNER JOIN orders o ON u.id = o.user_id
+            WHERE u.age > 18
+            ORDER BY u.name
+            """;
+        System.out.println("SQL:");
+        System.out.println(sql);
+        
+        // With variables using formatted()
+        String name = "Bob";
+        int age = 30;
+        String message = """
+            Hello, %s!
+            You are %d years old.
+            Welcome to our system.
+            """.formatted(name, age);
+        System.out.println("Formatted:");
+        System.out.println(message);
+        
+        // Escaping quotes
+        String quote = """
+            He said, "Java text blocks are awesome!"
+            No need to escape "quotes" anymore.
+            """;
+        System.out.println("Quote:");
+        System.out.println(quote);
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Writing a story on multiple lines without worrying about quotes.</p>
+                <p><strong>Real-world:</strong> Typing an email with line breaks—natural and easy.</p>
+                <p><strong>Technical:</strong> Text blocks use triple quotes (""") for multi-line strings. They
+                    preserve formatting, remove common indentation, and eliminate escape sequences.</p>
+            </div>
+        </div>
+
+        <!-- Program 17: var Keyword -->
+        <div class="content-section">
+            <h2>Program 17: var Keyword for Type Inference</h2>
+            <p>Using var for cleaner local variable declarations.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+import java.util.stream.*;
+
+public class VarKeywordDemo {
+    public static void main(String[] args) {
+        // Simple types
+        var name = "Alice";              // String
+        var age = 25;                    // int
+        var salary = 75000.50;           // double
+        var isActive = true;             // boolean
+        
+        System.out.println(name + ", " + age + ", " + salary + ", " + isActive);
+        
+        // Collections
+        var names = new ArrayList<String>();
+        names.add("Bob");
+        names.add("Charlie");
+        
+        var scores = new HashMap<String, Integer>();
+        scores.put("Math", 95);
+        scores.put("Science", 87);
+        
+        // In loops
+        for (var i = 0; i < 5; i++) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        
+        for (var item : names) {
+            System.out.println(item);
+        }
+        
+        // With streams
+        var result = names.stream()
+            .filter(n -> n.length() > 3)
+            .map(String::toUpperCase)
+            .collect(Collectors.toList());
+        System.out.println("Filtered: " + result);
+        
+        // Try-with-resources
+        var numbers = List.of(1, 2, 3, 4, 5);
+        var sum = numbers.stream()
+            .mapToInt(Integer::intValue)
+            .sum();
+        System.out.println("Sum: " + sum);
+        
+        // Complex generic types (where var shines)
+        var complexMap = new HashMap<String, List<Map<String, Integer>>>();
+        // Much better than:
+        // HashMap<String, List<Map<String, Integer>>> complexMap = new HashMap<>();
+        
+        // Lambda with var (Java 11+)
+        BiFunction<Integer, Integer, Integer> add = (var a, var b) -> a + b;
+        System.out.println("5 + 3 = " + add.apply(5, 3));
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Letting Java figure out what type of toy you have.</p>
+                <p><strong>Real-world:</strong> Saying "give me that" instead of "give me that red plastic ball".</p>
+                <p><strong>Technical:</strong> var enables local variable type inference. The compiler infers the type
+                    from the initializer. It's NOT dynamic typing—the type is fixed at compile time.</p>
+            </div>
+        </div>
+
+        <!-- Program 18: Stream to List/Map Conversion -->
+        <div class="content-section">
+            <h2>Program 18: Stream to List and Map Conversion</h2>
+            <p>Converting streams to different collection types.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+import java.util.stream.*;
+
+class Student {
+    String name;
+    int rollNo;
+    int marks;
+    
+    Student(String name, int rollNo, int marks) {
+        this.name = name;
+        this.rollNo = rollNo;
+        this.marks = marks;
+    }
+    
+    @Override
+    public String toString() {
+        return name + "(" + rollNo + "): " + marks;
+    }
+}
+
+public class StreamCollectionDemo {
+    public static void main(String[] args) {
+        List<Student> students = Arrays.asList(
+            new Student("Alice", 101, 85),
+            new Student("Bob", 102, 92),
+            new Student("Charlie", 103, 78),
+            new Student("David", 104, 95),
+            new Student("Eve", 105, 88)
+        );
+        
+        // Stream to List
+        List<String> names = students.stream()
+            .map(s -> s.name)
+            .collect(Collectors.toList());
+        System.out.println("Names: " + names);
+        
+        // Stream to Set (removes duplicates)
+        Set<Integer> marksSet = students.stream()
+            .map(s -> s.marks / 10 * 10) // Round to nearest 10
+            .collect(Collectors.toSet());
+        System.out.println("Marks ranges: " + marksSet);
+        
+        // Stream to Map (rollNo -> name)
+        Map<Integer, String> rollNoToName = students.stream()
+            .collect(Collectors.toMap(
+                s -> s.rollNo,
+                s -> s.name
+            ));
+        System.out.println("Roll No to Name: " + rollNoToName);
+        
+        // Stream to Map (name -> Student)
+        Map<String, Student> nameToStudent = students.stream()
+            .collect(Collectors.toMap(
+                s -> s.name,
+                s -> s
+            ));
+        System.out.println("Name to Student: " + nameToStudent);
+        
+        // Grouping by grade
+        Map<String, List<Student>> byGrade = students.stream()
+            .collect(Collectors.groupingBy(s -> {
+                if (s.marks >= 90) return "A";
+                else if (s.marks >= 80) return "B";
+                else return "C";
+            }));
+        System.out.println("\nGrouped by grade:");
+        byGrade.forEach((grade, list) -> {
+            System.out.println(grade + ": " + list);
+        });
+        
+        // Partitioning (passed/failed)
+        Map<Boolean, List<Student>> passedFailed = students.stream()
+            .collect(Collectors.partitioningBy(s -> s.marks >= 80));
+        System.out.println("\nPassed: " + passedFailed.get(true));
+        System.out.println("Failed: " + passedFailed.get(false));
+        
+        // Joining strings
+        String allNames = students.stream()
+            .map(s -> s.name)
+            .collect(Collectors.joining(", "));
+        System.out.println("\nAll names: " + allNames);
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Putting toys into different boxes based on their type.</p>
+                <p><strong>Real-world:</strong> Organizing contacts by first letter or grouping products by category.</p>
+                <p><strong>Technical:</strong> Collectors.toList(), toSet(), toMap() convert streams to collections.
+                    groupingBy() and partitioningBy() create maps based on criteria.</p>
+            </div>
+        </div>
+
+        <!-- Program 19: Filter + Reduce -->
+        <div class="content-section">
+            <h2>Program 19: Filter and Reduce Combination</h2>
+            <p>Combining filter and reduce for data aggregation.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+import java.util.stream.*;
+
+public class FilterReduceDemo {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        
+        // Sum of even numbers
+        int sumEven = numbers.stream()
+            .filter(n -> n % 2 == 0)
+            .reduce(0, Integer::sum);
+        System.out.println("Sum of even numbers: " + sumEven);
+        
+        // Product of odd numbers
+        int productOdd = numbers.stream()
+            .filter(n -> n % 2 != 0)
+            .reduce(1, (a, b) -> a * b);
+        System.out.println("Product of odd numbers: " + productOdd);
+        
+        // Max of numbers > 5
+        Optional<Integer> maxAbove5 = numbers.stream()
+            .filter(n -> n > 5)
+            .reduce(Integer::max);
+        maxAbove5.ifPresent(max -> System.out.println("Max above 5: " + max));
+        
+        // Concatenate strings
+        List<String> words = Arrays.asList("Java", "is", "awesome");
+        String sentence = words.stream()
+            .reduce("", (a, b) -> a + " " + b)
+            .trim();
+        System.out.println("Sentence: " + sentence);
+        
+        // Count elements (using reduce)
+        long count = numbers.stream()
+            .filter(n -> n > 5)
+            .reduce(0L, (acc, n) -> acc + 1, Long::sum);
+        System.out.println("Count > 5: " + count);
+        
+        // Sum of squares of even numbers
+        int sumOfSquares = numbers.stream()
+            .filter(n -> n % 2 == 0)
+            .map(n -> n * n)
+            .reduce(0, Integer::sum);
+        System.out.println("Sum of squares of even: " + sumOfSquares);
+        
+        // Complex reduction
+        List<String> names = Arrays.asList("Alice", "Bob", "Charlie", "David");
+        String initials = names.stream()
+            .map(name -> String.valueOf(name.charAt(0)))
+            .reduce("", (a, b) -> a + b);
+        System.out.println("Initials: " + initials);
+        
+        // Using reduce with Optional
+        Optional<Integer> min = numbers.stream()
+            .reduce((a, b) -> a < b ? a : b);
+        System.out.println("Min: " + min.orElse(0));
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Picking specific toys and combining them into one pile.</p>
+                <p><strong>Real-world:</strong> Filtering emails and counting unread ones.</p>
+                <p><strong>Technical:</strong> filter() selects elements, reduce() combines them into a single value.
+                    reduce() takes an identity value and a combining function.</p>
+            </div>
+        </div>
+
+        <!-- Program 20: Real-world Employee Salary Processing -->
+        <div class="content-section">
+            <h2>Program 20: Real-World Employee Salary Processing</h2>
+            <p>Complete example using multiple Java 8+ features together.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.*;
+import java.util.stream.*;
+
+record Employee(String name, String department, double salary, int experience) {
+    public double getBonus() {
+        return salary * (experience >= 5 ? 0.15 : 0.10);
+    }
+}
+
+public class EmployeeSalaryProcessing {
+    public static void main(String[] args) {
+        List<Employee> employees = Arrays.asList(
+            new Employee("Alice", "IT", 75000, 6),
+            new Employee("Bob", "HR", 55000, 3),
+            new Employee("Charlie", "IT", 85000, 8),
+            new Employee("David", "Finance", 70000, 5),
+            new Employee("Eve", "IT", 65000, 4),
+            new Employee("Frank", "HR", 60000, 7),
+            new Employee("Grace", "Finance", 80000, 6)
+        );
+        
+        System.out.println("=== Employee Salary Processing ===\n");
+        
+        // 1. Total salary expense
+        double totalSalary = employees.stream()
+            .mapToDouble(Employee::salary)
+            .sum();
+        System.out.println("Total Salary Expense: $" + String.format("%.2f", totalSalary));
+        
+        // 2. Average salary
+        double avgSalary = employees.stream()
+            .mapToDouble(Employee::salary)
+            .average()
+            .orElse(0);
+        System.out.println("Average Salary: $" + String.format("%.2f", avgSalary));
+        
+        // 3. Highest paid employee
+        Optional<Employee> highestPaid = employees.stream()
+            .max(Comparator.comparingDouble(Employee::salary));
+        highestPaid.ifPresent(emp -> 
+            System.out.println("Highest Paid: " + emp.name() + " - $" + emp.salary()));
+        
+        // 4. Employees earning above average
+        System.out.println("\nEmployees above average salary:");
+        employees.stream()
+            .filter(emp -> emp.salary() > avgSalary)
+            .forEach(emp -> System.out.println("  " + emp.name() + " - $" + emp.salary()));
+        
+        // 5. Group by department
+        System.out.println("\nEmployees by Department:");
+        Map<String, List<Employee>> byDept = employees.stream()
+            .collect(Collectors.groupingBy(Employee::department));
+        byDept.forEach((dept, empList) -> {
+            System.out.println("  " + dept + ":");
+            empList.forEach(emp -> System.out.println("    - " + emp.name()));
+        });
+        
+        // 6. Average salary by department
+        System.out.println("\nAverage Salary by Department:");
+        Map<String, Double> avgByDept = employees.stream()
+            .collect(Collectors.groupingBy(
+                Employee::department,
+                Collectors.averagingDouble(Employee::salary)
+            ));
+        avgByDept.forEach((dept, avg) -> 
+            System.out.println("  " + dept + ": $" + String.format("%.2f", avg)));
+        
+        // 7. Total bonus payout
+        double totalBonus = employees.stream()
+            .mapToDouble(Employee::getBonus)
+            .sum();
+        System.out.println("\nTotal Bonus Payout: $" + String.format("%.2f", totalBonus));
+        
+        // 8. Senior employees (experience >= 5)
+        System.out.println("\nSenior Employees (5+ years):");
+        employees.stream()
+            .filter(emp -> emp.experience() >= 5)
+            .sorted(Comparator.comparingInt(Employee::experience).reversed())
+            .forEach(emp -> System.out.println("  " + emp.name() + 
+                " (" + emp.experience() + " years) - Bonus: $" + 
+                String.format("%.2f", emp.getBonus())));
+        
+        // 9. Department with highest total salary
+        Map.Entry<String, Double> highestDept = employees.stream()
+            .collect(Collectors.groupingBy(
+                Employee::department,
+                Collectors.summingDouble(Employee::salary)
+            ))
+            .entrySet().stream()
+            .max(Map.Entry.comparingByValue())
+            .orElse(null);
+        
+        if (highestDept != null) {
+            System.out.println("\nDepartment with highest total salary:");
+            System.out.println("  " + highestDept.getKey() + ": $" + 
+                String.format("%.2f", highestDept.getValue()));
+        }
+        
+        // 10. Salary statistics
+        DoubleSummaryStatistics stats = employees.stream()
+            .mapToDouble(Employee::salary)
+            .summaryStatistics();
+        
+        System.out.println("\nSalary Statistics:");
+        System.out.println("  Count: " + stats.getCount());
+        System.out.println("  Min: $" + String.format("%.2f", stats.getMin()));
+        System.out.println("  Max: $" + String.format("%.2f", stats.getMax()));
+        System.out.println("  Average: $" + String.format("%.2f", stats.getAverage()));
+        System.out.println("  Sum: $" + String.format("%.2f", stats.getSum()));
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Managing a toy store—counting toys, grouping by type, finding the most
+                    expensive.</p>
+                <p><strong>Real-world:</strong> HR system processing employee data for reports and analytics.</p>
+                <p><strong>Technical:</strong> Combines Records, Streams, Collectors, Optional, and method references
+                    for a complete data processing pipeline. Demonstrates real-world usage of Java 8+ features.</p>
+            </div>
+        </div>
+
+        <!-- Next Topic -->
+        <div class="next-topic">
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../theory/java8features.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../mcq/java8features.html" class="btn btn-success">✅ Take Quiz</a>
+                <a href="../index.html" class="btn btn-secondary">🏠 Back to Home</a>
+            </div>
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">🚀 Next Topic Coming Soon</div>
+                <p><strong>Programming Principles & Design (SOLID, MVC, Design Patterns)</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

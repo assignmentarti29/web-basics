@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDBC - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>JDBC - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>JDBC</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Hands-On JDBC Programs</h2>
+            <p>Welcome to the practical section! These 15+ programs demonstrate how to work with databases using JDBC.
+                From basic connections to advanced transactions, these examples cover everything you need to master
+                database programming in Java.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Make sure you have a database (MySQL, PostgreSQL, etc.) installed and running before trying these
+                    examples. Update the connection URL, username, and password accordingly!</p>
+            </div>
+        </div>
+
+        <!-- Program 1: Load JDBC Driver -->
+        <div class="content-section">
+            <h2>Program 1: Load JDBC Driver</h2>
+            <p>Demonstrates how to load a JDBC driver (though auto-loading happens in JDBC 4.0+).</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class LoadDriver {
+    public static void main(String[] args) {
+        try {
+            // Load MySQL JDBC Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            System.out.println("Driver loaded successfully!");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Driver not found!");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like checking if you have the right key before opening a door.</p>
+                <p><strong>Real-world:</strong> Installing the correct software before using a device.</p>
+                <p><strong>Technical:</strong> Class.forName() loads the driver class. In JDBC 4.0+, this is automatic
+                    if the JAR is in classpath.</p>
+            </div>
+        </div>
+
+        <!-- Program 2: Establish Connection -->
+        <div class="content-section">
+            <h2>Program 2: Establish Database Connection</h2>
+            <p>Shows how to create a connection to a MySQL database.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class EstablishConnection {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        try {
+            Connection con = DriverManager.getConnection(url, user, password);
+            System.out.println("Connection established successfully!");
+            con.close();
+        } catch (SQLException e) {
+            System.out.println("Connection failed!");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like calling your friend on the phone to start talking.</p>
+                <p><strong>Real-world:</strong> Logging into your online banking app.</p>
+                <p><strong>Technical:</strong> DriverManager.getConnection() creates a connection using the JDBC URL,
+                    username, and password.</p>
+            </div>
+        </div>
+
+        <!-- Program 3: SELECT Query using Statement -->
+        <div class="content-section">
+            <h2>Program 3: SELECT Query using Statement</h2>
+            <p>Retrieves data from a database table using Statement.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class SelectUsingStatement {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             Statement stmt = con.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM users")) {
+            
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                int age = rs.getInt("age");
+                System.out.println(id + " | " + name + " | " + age);
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like asking "Show me all the toys in the box."</p>
+                <p><strong>Real-world:</strong> Viewing all contacts in your phone.</p>
+                <p><strong>Technical:</strong> Statement.executeQuery() executes SELECT and returns a ResultSet. We
+                    iterate using rs.next().</p>
+            </div>
+        </div>
+
+        <!-- Program 4: INSERT with PreparedStatement -->
+        <div class="content-section">
+            <h2>Program 4: INSERT using PreparedStatement</h2>
+            <p>Safely inserts data using parameterized queries.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class InsertData {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        String sql = "INSERT INTO users(name, age) VALUES (?, ?)";
+        
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            
+            pstmt.setString(1, "Alice");
+            pstmt.setInt(2, 25);
+            
+            int rowsInserted = pstmt.executeUpdate();
+            System.out.println(rowsInserted + " row(s) inserted successfully!");
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like adding a new toy to your toy box.</p>
+                <p><strong>Real-world:</strong> Registering a new user in an app.</p>
+                <p><strong>Technical:</strong> PreparedStatement with placeholders (?) prevents SQL injection.
+                    executeUpdate() returns number of affected rows.</p>
+            </div>
+        </div>
+
+        <!-- Program 5: UPDATE Query -->
+        <div class="content-section">
+            <h2>Program 5: UPDATE Data</h2>
+            <p>Updates existing records in the database.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class UpdateData {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        String sql = "UPDATE users SET age = ? WHERE name = ?";
+        
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            
+            pstmt.setInt(1, 26);
+            pstmt.setString(2, "Alice");
+            
+            int rowsUpdated = pstmt.executeUpdate();
+            System.out.println(rowsUpdated + " row(s) updated!");
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like changing the color of your toy.</p>
+                <p><strong>Real-world:</strong> Updating your profile information.</p>
+                <p><strong>Technical:</strong> UPDATE statement modifies existing records. Use WHERE clause to target
+                    specific rows.</p>
+            </div>
+        </div>
+
+        <!-- Program 6: DELETE Query -->
+        <div class="content-section">
+            <h2>Program 6: DELETE Data</h2>
+            <p>Removes records from the database.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class DeleteData {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        String sql = "DELETE FROM users WHERE id = ?";
+        
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            
+            pstmt.setInt(1, 5);
+            
+            int rowsDeleted = pstmt.executeUpdate();
+            System.out.println(rowsDeleted + " row(s) deleted!");
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like throwing away a broken toy.</p>
+                <p><strong>Real-world:</strong> Deleting a contact from your phone.</p>
+                <p><strong>Technical:</strong> DELETE removes rows matching the WHERE condition. Without WHERE, it
+                    deletes ALL rows!</p>
+            </div>
+        </div>
+
+        <!-- Program 7: Try-with-resources -->
+        <div class="content-section">
+            <h2>Program 7: Using try-with-resources</h2>
+            <p>Demonstrates automatic resource management.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class TryWithResources {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        // Resources automatically closed after try block
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pstmt = con.prepareStatement("SELECT * FROM users WHERE age > ?");) {
+            
+            pstmt.setInt(1, 18);
+            
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    System.out.println(rs.getString("name") + " - " + rs.getInt("age"));
+                }
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        // No need for finally block to close resources!
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a toy that puts itself back in the box when you're done.</p>
+                <p><strong>Real-world:</strong> Auto-save feature in apps.</p>
+                <p><strong>Technical:</strong> try-with-resources (Java 7+) automatically closes AutoCloseable
+                    resources, preventing leaks.</p>
+            </div>
+        </div>
+
+        <!-- Program 8: Handle SQLException -->
+        <div class="content-section">
+            <h2>Program 8: Proper SQLException Handling</h2>
+            <p>Shows how to handle database exceptions properly.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class HandleException {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "wrongpassword"; // Intentional error
+        
+        try (Connection con = DriverManager.getConnection(url, user, password)) {
+            System.out.println("Connected!");
+        } catch (SQLException e) {
+            System.out.println("Error Code: " + e.getErrorCode());
+            System.out.println("SQL State: " + e.getSQLState());
+            System.out.println("Message: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like knowing what went wrong when a toy doesn't work.</p>
+                <p><strong>Real-world:</strong> Getting a specific error message when login fails.</p>
+                <p><strong>Technical:</strong> SQLException provides error code, SQL state, and message for debugging.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program 9: Transactions -->
+        <div class="content-section">
+            <h2>Program 9: Transaction Management (commit & rollback)</h2>
+            <p>Demonstrates how to use transactions for atomic operations.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class TransactionDemo {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        Connection con = null;
+        
+        try {
+            con = DriverManager.getConnection(url, user, password);
+            con.setAutoCommit(false); // Start transaction
+            
+            // Transfer money: Debit from Account 1
+            PreparedStatement pstmt1 = con.prepareStatement("UPDATE accounts SET balance = balance - ? WHERE id = ?");
+            pstmt1.setDouble(1, 500.0);
+            pstmt1.setInt(2, 1);
+            pstmt1.executeUpdate();
+            
+            // Simulate error (uncomment to test rollback)
+            // if (true) throw new SQLException("Simulated error");
+            
+            // Credit to Account 2
+            PreparedStatement pstmt2 = con.prepareStatement("UPDATE accounts SET balance = balance + ? WHERE id = ?");
+            pstmt2.setDouble(1, 500.0);
+            pstmt2.setInt(2, 2);
+            pstmt2.executeUpdate();
+            
+            con.commit(); // Commit transaction
+            System.out.println("Transaction successful!");
+            
+        } catch (SQLException e) {
+            try {
+                if (con != null) {
+                    con.rollback(); // Rollback on error
+                    System.out.println("Transaction rolled back!");
+                }
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            e.printStackTrace();
+        } finally {
+            try {
+                if (con != null) {
+                    con.setAutoCommit(true);
+                    con.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like building a tower—if one block falls, rebuild from scratch.</p>
+                <p><strong>Real-world:</strong> Money transfer—both debit and credit must succeed together.</p>
+                <p><strong>Technical:</strong> setAutoCommit(false) starts transaction. commit() saves changes,
+                    rollback() undoes them.</p>
+            </div>
+        </div>
+
+        <!-- Program 10: Prevent SQL Injection -->
+        <div class="content-section">
+            <h2>Program 10: Preventing SQL Injection</h2>
+            <p>Compares vulnerable vs safe code.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class PreventSQLInjection {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        String userInput = "admin' OR '1'='1"; // Malicious input
+        
+        // VULNERABLE CODE (Don't use!)
+        // String query = "SELECT * FROM users WHERE username = '" + userInput + "'";
+        // This becomes: SELECT * FROM users WHERE username = 'admin' OR '1'='1'
+        
+        // SAFE CODE (Use this!)
+        String query = "SELECT * FROM users WHERE username = ?";
+        
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pstmt = con.prepareStatement(query)) {
+            
+            pstmt.setString(1, userInput); // Safely escaped
+            
+            ResultSet rs = pstmt.executeQuery();
+            
+            if (rs.next()) {
+                System.out.println("User found: " + rs.getString("username"));
+            } else {
+                System.out.println("No user found");
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like having a guard check if someone is allowed to enter.</p>
+                <p><strong>Real-world:</strong> Security screening at an airport.</p>
+                <p><strong>Technical:</strong> PreparedStatement treats user input as data, not SQL code, preventing
+                    injection attacks.</p>
+            </div>
+        </div>
+
+        <!-- Program 11: CallableStatement -->
+        <div class="content-section">
+            <h2>Program 11: Calling Stored Procedure</h2>
+            <p>Executes a stored procedure using CallableStatement.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class CallStoredProcedure {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        // Assume stored procedure: CREATE PROCEDURE getUserById(IN userId INT)
+        
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             CallableStatement cstmt = con.prepareCall("{call getUserById(?)}")) {
+            
+            cstmt.setInt(1, 101);
+            
+            ResultSet rs = cstmt.executeQuery();
+            
+            while (rs.next()) {
+                System.out.println("Name: " + rs.getString("name"));
+                System.out.println("Age: " + rs.getInt("age"));
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like asking a helper to do a special job for you.</p>
+                <p><strong>Real-world:</strong> Calling customer service to perform a complex task.</p>
+                <p><strong>Technical:</strong> CallableStatement executes stored procedures. Use {call procName(?)}
+                    syntax.</p>
+            </div>
+        </div>
+
+        <!-- Program 12: Retrieve ResultSet Metadata -->
+        <div class="content-section">
+            <h2>Program 12: ResultSet Metadata</h2>
+            <p>Retrieves information about the result set structure.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class ResultSetMetaDataDemo {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             Statement stmt = con.createStatement();
+             ResultSet rs = stmt.executeQuery("SELECT * FROM users")) {
+            
+            ResultSetMetaData rsmd = rs.getMetaData();
+            
+            int columnCount = rsmd.getColumnCount();
+            System.out.println("Number of columns: " + columnCount);
+            
+            for (int i = 1; i <= columnCount; i++) {
+                System.out.println("Column " + i + ": " + rsmd.getColumnName(i) + 
+                                   " (" + rsmd.getColumnTypeName(i) + ")");
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like reading the labels on toy boxes to know what's inside.</p>
+                <p><strong>Real-world:</strong> Checking the headers in a spreadsheet.</p>
+                <p><strong>Technical:</strong> ResultSetMetaData provides information about columns (name, type, count,
+                    etc.).</p>
+            </div>
+        </div>
+
+        <!-- Program 13: Batch Processing -->
+        <div class="content-section">
+            <h2>Program 13: Batch Processing</h2>
+            <p>Inserts multiple records efficiently using batch processing.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class BatchProcessing {
+    public static void main(String[] args) {
+        String url = "jdbc:mysql://localhost:3306/testdb";
+        String user = "root";
+        String password = "password";
+        
+        String sql = "INSERT INTO students(name, age) VALUES (?, ?)";
+        
+        try (Connection con = DriverManager.getConnection(url, user, password);
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            
+            // Add multiple batches
+            pstmt.setString(1, "Alice");
+            pstmt.setInt(2, 20);
+            pstmt.addBatch();
+            
+            pstmt.setString(1, "Bob");
+            pstmt.setInt(2, 22);
+            pstmt.addBatch();
+            
+            pstmt.setString(1, "Charlie");
+            pstmt.setInt(2, 21);
+            pstmt.addBatch();
+            
+            pstmt.setString(1, "Diana");
+            pstmt.setInt(2, 23);
+            pstmt.addBatch();
+            
+            // Execute all batches at once
+            int[] results = pstmt.executeBatch();
+            
+            System.out.println("Inserted " + results.length + " records in batch!");
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like putting many toys in a box at once instead of one by one.</p>
+                <p><strong>Real-world:</strong> Uploading multiple files at once.</p>
+                <p><strong>Technical:</strong> Batch processing groups multiple SQL statements and sends them in one
+                    network call, improving performance.</p>
+            </div>
+        </div>
+
+        <!-- Program 14: Close Connection Properly -->
+        <div class="content-section">
+            <h2>Program 14: Proper Resource Closing</h2>
+            <p>Demonstrates closing resources in the correct order.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+
+public class ProperClosing {
+    public static void main(String[] args) {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        
+        try {
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/testdb", "root", "password");
+            pstmt = con.prepareStatement("SELECT * FROM users");
+            rs = pstmt.executeQuery();
+            
+            while (rs.next()) {
+                System.out.println(rs.getString("name"));
+            }
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            // Close in reverse order: ResultSet -> Statement -> Connection
+            try {
+                if (rs != null) rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            
+            try {
+                if (pstmt != null) pstmt.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            
+            try {
+                if (con != null) con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            
+            System.out.println("Resources closed properly!");
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like putting toys back in order—smallest box first, then bigger ones.</p>
+                <p><strong>Real-world:</strong> Logging out of apps in the right sequence.</p>
+                <p><strong>Technical:</strong> Always close resources in reverse order of creation to avoid resource
+                    leaks.</p>
+            </div>
+        </div>
+
+        <!-- Program 15: Real-world Student Registration System -->
+        <div class="content-section">
+            <h2>Program 15: Student Registration System</h2>
+            <p>A complete real-world example combining multiple JDBC concepts.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.sql.*;
+import java.util.Scanner;
+
+public class StudentRegistrationSystem {
+    
+    private static final String URL = "jdbc:mysql://localhost:3306/schooldb";
+    private static final String USER = "root";
+    private static final String PASSWORD = "password";
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        while (true) {
+            System.out.println("\n=== Student Registration System ===");
+            System.out.println("1. Register New Student");
+            System.out.println("2. View All Students");
+            System.out.println("3. Update Student Age");
+            System.out.println("4. Delete Student");
+            System.out.println("5. Exit");
+            System.out.print("Choose option: ");
+            
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
+            
+            switch (choice) {
+                case 1:
+                    registerStudent(scanner);
+                    break;
+                case 2:
+                    viewAllStudents();
+                    break;
+                case 3:
+                    updateStudent(scanner);
+                    break;
+                case 4:
+                    deleteStudent(scanner);
+                    break;
+                case 5:
+                    System.out.println("Goodbye!");
+                    scanner.close();
+                    return;
+                default:
+                    System.out.println("Invalid choice!");
+            }
+        }
+    }
+    
+    private static void registerStudent(Scanner scanner) {
+        System.out.print("Enter student name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter student age: ");
+        int age = scanner.nextInt();
+        
+        String sql = "INSERT INTO students(name, age) VALUES (?, ?)";
+        
+        try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            
+            pstmt.setString(1, name);
+            pstmt.setInt(2, age);
+            
+            int rows = pstmt.executeUpdate();
+            System.out.println("Student registered successfully! (" + rows + " row inserted)");
+            
+        } catch (SQLException e) {
+            System.out.println("Error registering student!");
+            e.printStackTrace();
+        }
+    }
+    
+    private static void viewAllStudents() {
+        String sql = "SELECT * FROM students";
+        
+        try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+             Statement stmt = con.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+            
+            System.out.println("\n=== All Students ===");
+            System.out.printf("%-5s %-20s %-5s%n", "ID", "Name", "Age");
+            System.out.println("--------------------------------");
+            
+            while (rs.next()) {
+                System.out.printf("%-5d %-20s %-5d%n", 
+                    rs.getInt("id"), 
+                    rs.getString("name"), 
+                    rs.getInt("age"));
+            }
+            
+        } catch (SQLException e) {
+            System.out.println("Error fetching students!");
+            e.printStackTrace();
+        }
+    }
+    
+    private static void updateStudent(Scanner scanner) {
+        System.out.print("Enter student ID: ");
+        int id = scanner.nextInt();
+        System.out.print("Enter new age: ");
+        int age = scanner.nextInt();
+        
+        String sql = "UPDATE students SET age = ? WHERE id = ?";
+        
+        try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            
+            pstmt.setInt(1, age);
+            pstmt.setInt(2, id);
+            
+            int rows = pstmt.executeUpdate();
+            if (rows > 0) {
+                System.out.println("Student updated successfully!");
+            } else {
+                System.out.println("No student found with ID: " + id);
+            }
+            
+        } catch (SQLException e) {
+            System.out.println("Error updating student!");
+            e.printStackTrace();
+        }
+    }
+    
+    private static void deleteStudent(Scanner scanner) {
+        System.out.print("Enter student ID to delete: ");
+        int id = scanner.nextInt();
+        
+        String sql = "DELETE FROM students WHERE id = ?";
+        
+        try (Connection con = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = con.prepareStatement(sql)) {
+            
+            pstmt.setInt(1, id);
+            
+            int rows = pstmt.executeUpdate();
+            if (rows > 0) {
+                System.out.println("Student deleted successfully!");
+            } else {
+                System.out.println("No student found with ID: " + id);
+            }
+            
+        } catch (SQLException e) {
+            System.out.println("Error deleting student!");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a complete toy management system—add, view, update, remove toys.</p>
+                <p><strong>Real-world:</strong> A school management system for student records.</p>
+                <p><strong>Technical:</strong> Combines all CRUD operations with proper exception handling,
+                    PreparedStatement usage, and resource management.</p>
+            </div>
+        </div>
+
+        <!-- Next Topic -->
+        <div class="next-topic">
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../theory/jdbc.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../mcq/jdbc.html" class="btn btn-success">✅ Take Quiz</a>
+                <a href="../index.html" class="btn btn-secondary">🏠 Back to Home</a>
+            </div>
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">🎉 End of Core Java Tutorials</div>
+                <p><strong>Congratulations!</strong> You've completed all JDBC programs. Advanced topics coming soon!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java 8+ Features - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Header -->
+        <div class="content-header">
+            <h1>Java 8+ Features (Advanced Modern Java)</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Theory</span>
+                <span>/</span>
+                <span>Java 8+ Features</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Introduction -->
+        <div class="content-section">
+            <h2>🚀 Introduction to Modern Java Evolution</h2>
+
+            <h3>Level 1: Beginner-Friendly Explanation</h3>
+            <p>
+                Imagine Java as a smartphone that gets better with every update! Java 8 was like getting a brand new
+                phone with amazing features. Each version after that (Java 11, 17, 21) added even cooler stuff—like
+                better cameras, faster processors, and new apps.
+            </p>
+
+            <h3>Level 2: Real-World Analogy</h3>
+            <p>
+                Think of Java versions like car models:
+            </p>
+            <ul>
+                <li><strong>Java 7 and earlier:</strong> Classic cars—reliable but basic</li>
+                <li><strong>Java 8:</strong> The revolution—electric cars with autopilot (Lambda, Streams)</li>
+                <li><strong>Java 11:</strong> Better fuel efficiency and safety features</li>
+                <li><strong>Java 17:</strong> Advanced AI features (Sealed Classes, Pattern Matching)</li>
+                <li><strong>Java 21:</strong> Latest model with all the bells and whistles</li>
+            </ul>
+
+            <h3>Level 3: Technical Deep-Dive</h3>
+            <p>
+                <strong>Java 8 (March 2014)</strong> was the most significant release since Java 5, introducing
+                functional programming paradigms to Java. It brought Lambda expressions, Streams API, Optional, and
+                default methods in interfaces.
+            </p>
+            <p>
+                <strong>Java 11 (September 2018)</strong> was the first LTS (Long-Term Support) release after Java 8,
+                introducing local variable type inference (var), new String methods, and HTTP Client API.
+            </p>
+            <p>
+                <strong>Java 17 (September 2021)</strong> is the latest LTS release, adding Sealed Classes, Pattern
+                Matching enhancements, and Text Blocks.
+            </p>
+            <p>
+                <strong>Java 21 (September 2023)</strong> is the newest LTS, bringing Virtual Threads, Record
+                Patterns, and more pattern matching features.
+            </p>
+
+            <div class="callout note">
+                <div class="callout-title">📚 NOTE</div>
+                <p>LTS (Long-Term Support) versions receive updates for several years, making them ideal for
+                    production applications. Java 8, 11, 17, and 21 are LTS versions.</p>
+            </div>
+
+            <h3>Why Upgrade?</h3>
+            <ul>
+                <li><strong>Performance:</strong> Each version brings JVM improvements and optimizations</li>
+                <li><strong>Productivity:</strong> Modern features reduce boilerplate code significantly</li>
+                <li><strong>Security:</strong> Newer versions patch vulnerabilities</li>
+                <li><strong>Maintainability:</strong> Cleaner, more expressive code</li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Lambda Expressions -->
+        <div class="content-section">
+            <h2>λ Lambda Expressions</h2>
+
+            <h3>Level 1: Beginner-Friendly Explanation</h3>
+            <p>
+                A Lambda is like a <strong>shortcut recipe</strong>. Instead of writing a whole cookbook page, you
+                write: "Mix eggs + milk → Scrambled eggs". It's a quick way to say what to do!
+            </p>
+
+            <h3>Level 2: Real-World Analogy</h3>
+            <p>
+                Imagine you're ordering food:
+            </p>
+            <ul>
+                <li><strong>Old way:</strong> Fill out a long form with your name, address, phone, then write what you
+                    want</li>
+                <li><strong>Lambda way:</strong> Just say "Pizza with extra cheese" → Done!</li>
+            </ul>
+
+            <h3>Level 3: Technical Deep-Dive</h3>
+            <p>
+                A <strong>Lambda expression</strong> is an anonymous function (a function without a name) that can be
+                passed as an argument or stored in a variable. It enables functional programming in Java.
+            </p>
+
+            <h3>Syntax</h3>
+            <pre><code class="language-java">// Basic syntax
+(parameters) -> expression
+
+// With body
+(parameters) -> {
+    statements;
+    return value;
+}</code></pre>
+
+            <h3>Examples</h3>
+            <pre><code class="language-java">// No parameters
+() -> System.out.println("Hello")
+
+// One parameter (parentheses optional)
+x -> x * x
+
+// Multiple parameters
+(a, b) -> a + b
+
+// With block body
+(x, y) -> {
+    int sum = x + y;
+    return sum * 2;
+}</code></pre>
+
+            <h3>Before vs After Lambda</h3>
+            <pre><code class="language-java">// OLD WAY: Anonymous inner class
+Runnable r1 = new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("Hello World");
+    }
+};
+
+// NEW WAY: Lambda expression
+Runnable r2 = () -> System.out.println("Hello World");</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Lambdas work only with functional interfaces (interfaces with exactly one abstract method). They
+                    make code more concise and readable!</p>
+            </div>
+        </div>
+
+        <!-- Section 3: Functional Interfaces -->
+        <div class="content-section">
+            <h2>🔧 Functional Interfaces</h2>
+
+            <h3>What is a Functional Interface?</h3>
+            <p>
+                <strong>Baby:</strong> A tool that does exactly ONE job.<br>
+                <strong>Real-world:</strong> A TV remote with only one button—simple and clear.<br>
+                <strong>Technical:</strong> An interface with exactly one abstract method. Can have default and static
+                methods.
+            </p>
+
+            <h3>@FunctionalInterface Annotation</h3>
+            <pre><code class="language-java">@FunctionalInterface
+public interface Calculator {
+    int calculate(int a, int b);
+    
+    // Default methods are allowed
+    default void printResult(int result) {
+        System.out.println("Result: " + result);
+    }
+}</code></pre>
+
+            <h3>Built-in Functional Interfaces</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Interface</th>
+                        <th>Method</th>
+                        <th>Use Case</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Predicate&lt;T&gt;</strong></td>
+                        <td>boolean test(T t)</td>
+                        <td>Testing conditions</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Function&lt;T,R&gt;</strong></td>
+                        <td>R apply(T t)</td>
+                        <td>Transforming data</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Consumer&lt;T&gt;</strong></td>
+                        <td>void accept(T t)</td>
+                        <td>Consuming/processing data</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Supplier&lt;T&gt;</strong></td>
+                        <td>T get()</td>
+                        <td>Supplying/generating data</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Examples</h3>
+            <pre><code class="language-java">// Predicate - test condition
+Predicate<Integer> isEven = n -> n % 2 == 0;
+System.out.println(isEven.test(4)); // true
+
+// Function - transform
+Function<String, Integer> length = s -> s.length();
+System.out.println(length.apply("Hello")); // 5
+
+// Consumer - process
+Consumer<String> print = s -> System.out.println(s);
+print.accept("Hello World");
+
+// Supplier - generate
+Supplier<Double> random = () -> Math.random();
+System.out.println(random.get());</code></pre>
+
+            <div class="callout example">
+                <div class="callout-title">📖 EXAMPLE</div>
+                <p>Functional interfaces are the foundation of Lambda expressions. They define the contract that
+                    Lambdas must follow.</p>
+            </div>
+        </div>
+
+        <!-- Section 4: Method References -->
+        <div class="content-section">
+            <h2>➡️ Method References</h2>
+
+            <h3>What are Method References?</h3>
+            <p>
+                <strong>Baby:</strong> Instead of saying "do this thing", you point to someone who already knows how
+                to do it.<br>
+                <strong>Real-world:</strong> Instead of explaining how to fix a car, you say "Ask the mechanic".<br>
+                <strong>Technical:</strong> A shorthand notation for Lambda expressions that call an existing method.
+            </p>
+
+            <h3>Types of Method References</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Syntax</th>
+                        <th>Lambda Equivalent</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Static Method</td>
+                        <td>ClassName::staticMethod</td>
+                        <td>x -> ClassName.staticMethod(x)</td>
+                    </tr>
+                    <tr>
+                        <td>Instance Method</td>
+                        <td>instance::instanceMethod</td>
+                        <td>x -> instance.instanceMethod(x)</td>
+                    </tr>
+                    <tr>
+                        <td>Instance Method (arbitrary object)</td>
+                        <td>ClassName::instanceMethod</td>
+                        <td>(obj, args) -> obj.instanceMethod(args)</td>
+                    </tr>
+                    <tr>
+                        <td>Constructor</td>
+                        <td>ClassName::new</td>
+                        <td>x -> new ClassName(x)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Examples</h3>
+            <pre><code class="language-java">// Static method reference
+List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
+names.forEach(System.out::println); // System.out.println is a static method
+
+// Instance method reference
+String str = "Hello";
+Supplier<Integer> lengthSupplier = str::length;
+
+// Constructor reference
+Supplier<List<String>> listSupplier = ArrayList::new;
+List<String> list = listSupplier.get();
+
+// Method reference on arbitrary object
+List<String> words = Arrays.asList("apple", "banana", "cherry");
+words.stream()
+     .map(String::toUpperCase) // Calls toUpperCase on each string
+     .forEach(System.out::println);</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Use method references when your Lambda simply calls an existing method. It makes code more concise
+                    and readable!</p>
+            </div>
+        </div>
+
+        <!-- Section 5: Streams API -->
+        <div class="content-section">
+            <h2>🌊 Streams API</h2>
+
+            <h3>What is a Stream?</h3>
+            <p>
+                <strong>Baby:</strong> Like a conveyor belt in a factory—items move through and get processed.<br>
+                <strong>Real-world:</strong> An assembly line where each station does one job (wash, paint, dry).<br>
+                <strong>Technical:</strong> A sequence of elements supporting sequential and parallel aggregate
+                operations.
+            </p>
+
+            <h3>Stream vs Collection</h3>
+            <ul>
+                <li><strong>Collection:</strong> Stores data (like a warehouse)</li>
+                <li><strong>Stream:</strong> Processes data (like a pipeline)</li>
+                <li>Streams are <strong>lazy</strong>—they don't process until a terminal operation is called</li>
+                <li>Streams can be <strong>infinite</strong></li>
+            </ul>
+
+            <h3>Creating Streams</h3>
+            <pre><code class="language-java">// From collection
+List<String> list = Arrays.asList("a", "b", "c");
+Stream<String> stream1 = list.stream();
+
+// From array
+String[] array = {"a", "b", "c"};
+Stream<String> stream2 = Arrays.stream(array);
+
+// Using Stream.of()
+Stream<String> stream3 = Stream.of("a", "b", "c");
+
+// Infinite stream
+Stream<Integer> infiniteStream = Stream.iterate(0, n -> n + 1);</code></pre>
+
+            <h3>Intermediate Operations (Lazy)</h3>
+            <p>These return a new stream and don't execute until a terminal operation is called:</p>
+            <ul>
+                <li><strong>filter()</strong> - Select elements matching a condition</li>
+                <li><strong>map()</strong> - Transform each element</li>
+                <li><strong>flatMap()</strong> - Flatten nested structures</li>
+                <li><strong>distinct()</strong> - Remove duplicates</li>
+                <li><strong>sorted()</strong> - Sort elements</li>
+                <li><strong>limit()</strong> - Limit to n elements</li>
+                <li><strong>skip()</strong> - Skip first n elements</li>
+            </ul>
+
+            <h3>Terminal Operations (Eager)</h3>
+            <p>These trigger stream processing and return a result:</p>
+            <ul>
+                <li><strong>forEach()</strong> - Perform action on each element</li>
+                <li><strong>collect()</strong> - Collect into a collection</li>
+                <li><strong>reduce()</strong> - Reduce to a single value</li>
+                <li><strong>count()</strong> - Count elements</li>
+                <li><strong>anyMatch()</strong> - Check if any element matches</li>
+                <li><strong>allMatch()</strong> - Check if all elements match</li>
+                <li><strong>findFirst()</strong> - Get first element</li>
+            </ul>
+
+            <h3>Example Pipeline</h3>
+            <pre><code class="language-java">List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+int sumOfEvenSquares = numbers.stream()
+    .filter(n -> n % 2 == 0)           // Intermediate: Keep even numbers
+    .map(n -> n * n)                    // Intermediate: Square each
+    .reduce(0, Integer::sum);           // Terminal: Sum all
+    
+System.out.println(sumOfEvenSquares);   // Output: 220 (4+16+36+64+100)</code></pre>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING</div>
+                <p>Streams can only be used once! After a terminal operation, the stream is consumed and cannot be
+                    reused.</p>
+            </div>
+
+            <h3>Parallel Streams</h3>
+            <pre><code class="language-java">// Sequential stream
+long count1 = list.stream().filter(s -> s.length() > 5).count();
+
+// Parallel stream (uses multiple threads)
+long count2 = list.parallelStream().filter(s -> s.length() > 5).count();</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Use parallel streams for large datasets and CPU-intensive operations. For small datasets, the
+                    overhead of parallelization may outweigh the benefits.</p>
+            </div>
+        </div>
+
+        <!-- Section 6: Optional Class -->
+        <div class="content-section">
+            <h2>🎁 Optional Class</h2>
+
+            <h3>What is Optional?</h3>
+            <p>
+                <strong>Baby:</strong> A box that might have a toy inside, or might be empty.<br>
+                <strong>Real-world:</strong> A gift box—you check if there's something inside before opening.<br>
+                <strong>Technical:</strong> A container object that may or may not contain a non-null value. Helps
+                avoid NullPointerException.
+            </p>
+
+            <h3>Why Optional?</h3>
+            <pre><code class="language-java">// OLD WAY: Null checks everywhere
+String name = getName();
+if (name != null) {
+    System.out.println(name.toUpperCase());
+}
+
+// NEW WAY: Optional
+Optional<String> optionalName = getOptionalName();
+optionalName.ifPresent(n -> System.out.println(n.toUpperCase()));</code></pre>
+
+            <h3>Creating Optional</h3>
+            <pre><code class="language-java">// Empty Optional
+Optional<String> empty = Optional.empty();
+
+// Optional with value
+Optional<String> name = Optional.of("Alice"); // Throws NPE if null
+
+// Optional that might be null
+Optional<String> maybeName = Optional.ofNullable(getName()); // Safe</code></pre>
+
+            <h3>Common Methods</h3>
+            <pre><code class="language-java">Optional<String> opt = Optional.of("Hello");
+
+// Check if present
+if (opt.isPresent()) {
+    System.out.println(opt.get());
+}
+
+// Better way: ifPresent
+opt.ifPresent(System.out::println);
+
+// Get with default
+String value = opt.orElse("Default");
+
+// Get with supplier
+String value2 = opt.orElseGet(() -> "Generated Default");
+
+// Throw exception if empty
+String value3 = opt.orElseThrow(() -> new RuntimeException("No value"));
+
+// Transform value
+Optional<Integer> length = opt.map(String::length);
+
+// Filter
+Optional<String> filtered = opt.filter(s -> s.length() > 3);</code></pre>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING</div>
+                <p>Never use <code>optional.get()</code> without checking <code>isPresent()</code> first! Use
+                    <code>orElse()</code>, <code>orElseGet()</code>, or <code>ifPresent()</code> instead.
+                </p>
+            </div>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li>Use Optional as a return type, not as a parameter</li>
+                <li>Don't use Optional for fields in classes</li>
+                <li>Never return null from a method that returns Optional</li>
+                <li>Use <code>orElseGet()</code> instead of <code>orElse()</code> when the default is expensive to
+                    compute</li>
+            </ul>
+        </div>
+
+        <!-- Section 7: Default and Static Methods in Interfaces -->
+        <div class="content-section">
+            <h2>🔌 Default & Static Methods in Interfaces</h2>
+
+            <h3>What are Default Methods?</h3>
+            <p>
+                <strong>Baby:</strong> A toy that comes with batteries included—you can use it right away!<br>
+                <strong>Real-world:</strong> A contract with a standard clause that you can use or change.<br>
+                <strong>Technical:</strong> Methods in interfaces with a default implementation. Implementing classes
+                can override them or use the default.
+            </p>
+
+            <h3>Default Methods</h3>
+            <pre><code class="language-java">public interface Vehicle {
+    // Abstract method
+    void start();
+    
+    // Default method
+    default void stop() {
+        System.out.println("Vehicle stopped");
+    }
+    
+    default void honk() {
+        System.out.println("Beep beep!");
+    }
+}
+
+class Car implements Vehicle {
+    @Override
+    public void start() {
+        System.out.println("Car started");
+    }
+    
+    // Can override default method
+    @Override
+    public void stop() {
+        System.out.println("Car stopped with brakes");
+    }
+    // honk() uses default implementation
+}</code></pre>
+
+            <h3>Static Methods in Interfaces</h3>
+            <pre><code class="language-java">public interface MathUtils {
+    static int add(int a, int b) {
+        return a + b;
+    }
+    
+    static int multiply(int a, int b) {
+        return a * b;
+    }
+}
+
+// Usage
+int sum = MathUtils.add(5, 3); // No need to implement interface</code></pre>
+
+            <h3>Why Were They Added?</h3>
+            <ul>
+                <li><strong>Backward Compatibility:</strong> Add new methods to interfaces without breaking existing
+                    implementations</li>
+                <li><strong>Code Reuse:</strong> Share common functionality across implementations</li>
+                <li><strong>Evolution:</strong> Interfaces can evolve over time</li>
+            </ul>
+
+            <div class="callout example">
+                <div class="callout-title">📖 EXAMPLE</div>
+                <p>The <code>List</code> interface added <code>sort()</code> as a default method in Java 8. All
+                    existing List implementations (ArrayList, LinkedList) got this method for free!</p>
+            </div>
+        </div>
+
+        <!-- Section 8: Generics -->
+        <div class="content-section">
+            <h2>🎯 Generics (Deep Explanation)</h2>
+
+            <h3>What are Generics?</h3>
+            <p>
+                <strong>Baby:</strong> A box that can hold any type of toy, but you decide which type when you get
+                it.<br>
+                <strong>Real-world:</strong> A container labeled "Holds: ___" where you fill in what goes inside.<br>
+                <strong>Technical:</strong> Parameterized types that provide compile-time type safety and eliminate
+                casting.
+            </p>
+
+            <h3>Generic Classes</h3>
+            <pre><code class="language-java">// Generic class with type parameter T
+public class Box<T> {
+    private T content;
+    
+    public void set(T content) {
+        this.content = content;
+    }
+    
+    public T get() {
+        return content;
+    }
+}
+
+// Usage
+Box<String> stringBox = new Box<>();
+stringBox.set("Hello");
+String value = stringBox.get(); // No casting needed!
+
+Box<Integer> intBox = new Box<>();
+intBox.set(42);</code></pre>
+
+            <h3>Generic Methods</h3>
+            <pre><code class="language-java">public class Utils {
+    // Generic method
+    public static <T> void printArray(T[] array) {
+        for (T element : array) {
+            System.out.println(element);
+        }
+    }
+}
+
+// Usage
+String[] names = {"Alice", "Bob"};
+Integer[] numbers = {1, 2, 3};
+Utils.printArray(names);
+Utils.printArray(numbers);</code></pre>
+
+            <h3>Bounded Type Parameters</h3>
+            <pre><code class="language-java">// Upper bound: T must be Number or its subclass
+public class NumberBox<T extends Number> {
+    private T number;
+    
+    public double getDoubleValue() {
+        return number.doubleValue(); // Can call Number methods
+    }
+}
+
+// Usage
+NumberBox<Integer> intBox = new NumberBox<>(); // OK
+NumberBox<Double> doubleBox = new NumberBox<>(); // OK
+// NumberBox<String> stringBox = new NumberBox<>(); // Compile error!</code></pre>
+
+            <h3>Wildcards</h3>
+            <pre><code class="language-java">// Unbounded wildcard
+public void printList(List<?> list) {
+    for (Object obj : list) {
+        System.out.println(obj);
+    }
+}
+
+// Upper bounded wildcard
+public double sumNumbers(List<? extends Number> list) {
+    double sum = 0;
+    for (Number num : list) {
+        sum += num.doubleValue();
+    }
+    return sum;
+}
+
+// Lower bounded wildcard
+public void addIntegers(List<? super Integer> list) {
+    list.add(1);
+    list.add(2);
+}</code></pre>
+
+            <h3>Type Erasure</h3>
+            <p>
+                Java uses <strong>type erasure</strong> to implement generics. At runtime, generic type information is
+                removed:
+            </p>
+            <pre><code class="language-java">List<String> strings = new ArrayList<>();
+List<Integer> integers = new ArrayList<>();
+
+// At runtime, both are just List (type information erased)
+System.out.println(strings.getClass() == integers.getClass()); // true</code></pre>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING</div>
+                <p>Due to type erasure, you cannot create arrays of generic types or use instanceof with generic
+                    types.</p>
+            </div>
+        </div>
+
+        <!-- Section 9: Wrapper Classes -->
+        <div class="content-section">
+            <h2>📦 Wrapper Classes</h2>
+
+            <h3>What are Wrapper Classes?</h3>
+            <p>
+                <strong>Baby:</strong> Putting a toy in a box so it can be stored with other boxed items.<br>
+                <strong>Real-world:</strong> Wrapping a gift—the gift is the same, but now it's in a nice package.<br>
+                <strong>Technical:</strong> Object representations of primitive types. Allow primitives to be used
+                where objects are required.
+            </p>
+
+            <h3>Primitive vs Wrapper</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Primitive</th>
+                        <th>Wrapper Class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>byte</td>
+                        <td>Byte</td>
+                    </tr>
+                    <tr>
+                        <td>short</td>
+                        <td>Short</td>
+                    </tr>
+                    <tr>
+                        <td>int</td>
+                        <td>Integer</td>
+                    </tr>
+                    <tr>
+                        <td>long</td>
+                        <td>Long</td>
+                    </tr>
+                    <tr>
+                        <td>float</td>
+                        <td>Float</td>
+                    </tr>
+                    <tr>
+                        <td>double</td>
+                        <td>Double</td>
+                    </tr>
+                    <tr>
+                        <td>char</td>
+                        <td>Character</td>
+                    </tr>
+                    <tr>
+                        <td>boolean</td>
+                        <td>Boolean</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Auto-boxing and Unboxing</h3>
+            <pre><code class="language-java">// Auto-boxing: primitive -> wrapper (automatic)
+int primitive = 10;
+Integer wrapper = primitive; // Auto-boxing
+
+// Unboxing: wrapper -> primitive (automatic)
+Integer wrapper2 = 20;
+int primitive2 = wrapper2; // Unboxing
+
+// Before Java 5 (manual)
+Integer wrapper3 = Integer.valueOf(30); // Boxing
+int primitive3 = wrapper3.intValue(); // Unboxing</code></pre>
+
+            <h3>Why Use Wrappers?</h3>
+            <ul>
+                <li><strong>Collections:</strong> Collections can only store objects, not primitives</li>
+                <li><strong>Generics:</strong> Generic types require objects</li>
+                <li><strong>Null values:</strong> Wrappers can be null, primitives cannot</li>
+                <li><strong>Utility methods:</strong> Wrappers provide useful methods (parseInt, toString, etc.)</li>
+            </ul>
+
+            <h3>Useful Methods</h3>
+            <pre><code class="language-java">// Parsing
+int num = Integer.parseInt("123");
+double d = Double.parseDouble("3.14");
+
+// Conversion
+String str = Integer.toString(42);
+String binary = Integer.toBinaryString(10); // "1010"
+
+// Comparison
+Integer a = 10;
+Integer b = 20;
+int result = Integer.compare(a, b); // -1 (a < b)</code></pre>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ PERFORMANCE</div>
+                <p>Auto-boxing/unboxing has a performance cost. In performance-critical code with many operations,
+                    prefer primitives over wrappers.</p>
+            </div>
+        </div>
+
+        <!-- Section 10: CompletableFuture -->
+        <div class="content-section">
+            <h2>⚡ CompletableFuture & Asynchronous Programming</h2>
+
+            <h3>What is CompletableFuture?</h3>
+            <p>
+                <strong>Baby:</strong> Asking someone to do something while you do other things, then checking the
+                result later.<br>
+                <strong>Real-world:</strong> Ordering food delivery—you place the order and continue your work. When
+                it arrives, you eat.<br>
+                <strong>Technical:</strong> A Future that can be explicitly completed and supports composable
+                asynchronous programming.
+            </p>
+
+            <h3>Basic Usage</h3>
+            <pre><code class="language-java">// Run task asynchronously
+CompletableFuture<Void> future = CompletableFuture.runAsync(() -> {
+    System.out.println("Running in: " + Thread.currentThread().getName());
+    // Do some work
+});
+
+// Supply a result asynchronously
+CompletableFuture<String> futureResult = CompletableFuture.supplyAsync(() -> {
+    return "Hello from async task";
+});
+
+// Get the result (blocks until complete)
+String result = futureResult.get();</code></pre>
+
+            <h3>Chaining Operations</h3>
+            <pre><code class="language-java">CompletableFuture.supplyAsync(() -> "Hello")
+    .thenApply(s -> s + " World")           // Transform result
+    .thenApply(String::toUpperCase)         // Transform again
+    .thenAccept(System.out::println)        // Consume result
+    .thenRun(() -> System.out.println("Done")); // Run after completion</code></pre>
+
+            <h3>Combining Futures</h3>
+            <pre><code class="language-java">CompletableFuture<String> future1 = CompletableFuture.supplyAsync(() -> "Hello");
+CompletableFuture<String> future2 = CompletableFuture.supplyAsync(() -> "World");
+
+// Combine two futures
+CompletableFuture<String> combined = future1.thenCombine(future2, 
+    (s1, s2) -> s1 + " " + s2);
+
+System.out.println(combined.get()); // "Hello World"</code></pre>
+
+            <h3>Exception Handling</h3>
+            <pre><code class="language-java">CompletableFuture.supplyAsync(() -> {
+    if (Math.random() > 0.5) {
+        throw new RuntimeException("Error!");
+    }
+    return "Success";
+})
+.exceptionally(ex -> {
+    System.out.println("Exception: " + ex.getMessage());
+    return "Default Value";
+})
+.thenAccept(System.out::println);</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>CompletableFuture is perfect for I/O-bound operations like API calls, database queries, or file
+                    operations where you don't want to block the main thread.</p>
+            </div>
+        </div>
+
+        <!-- Section 11: Records -->
+        <div class="content-section">
+            <h2>📝 Records (Java 14+)</h2>
+
+            <h3>What are Records?</h3>
+            <p>
+                <strong>Baby:</strong> A pre-made toy box with everything you need—no assembly required!<br>
+                <strong>Real-world:</strong> A form that's already filled out—you just read the information.<br>
+                <strong>Technical:</strong> Immutable data carriers that automatically generate constructor, getters,
+                equals(), hashCode(), and toString().
+            </p>
+
+            <h3>Before Records</h3>
+            <pre><code class="language-java">// Traditional class for data
+public class Person {
+    private final String name;
+    private final int age;
+    
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
+    public String getName() { return name; }
+    public int getAge() { return age; }
+    
+    @Override
+    public boolean equals(Object o) {
+        // ... 10+ lines of boilerplate
+    }
+    
+    @Override
+    public int hashCode() {
+        // ... more boilerplate
+    }
+    
+    @Override
+    public String toString() {
+        return "Person[name=" + name + ", age=" + age + "]";
+    }
+}</code></pre>
+
+            <h3>With Records</h3>
+            <pre><code class="language-java">// Same functionality in one line!
+public record Person(String name, int age) { }
+
+// Usage
+Person person = new Person("Alice", 25);
+System.out.println(person.name());    // Accessor method
+System.out.println(person.age());
+System.out.println(person);           // Auto-generated toString()</code></pre>
+
+            <h3>Custom Methods in Records</h3>
+            <pre><code class="language-java">public record Person(String name, int age) {
+    // Compact constructor for validation
+    public Person {
+        if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be negative");
+        }
+    }
+    
+    // Custom methods
+    public boolean isAdult() {
+        return age >= 18;
+    }
+    
+    // Static methods
+    public static Person of(String name, int age) {
+        return new Person(name, age);
+    }
+}</code></pre>
+
+            <h3>When to Use Records?</h3>
+            <ul>
+                <li>DTOs (Data Transfer Objects)</li>
+                <li>Configuration objects</li>
+                <li>Return values from methods</li>
+                <li>Keys in maps</li>
+                <li>Any immutable data holder</li>
+            </ul>
+
+            <div class="callout note">
+                <div class="callout-title">📚 NOTE</div>
+                <p>Records are final and cannot be extended. All fields are final and immutable. Use records when you
+                    need simple, immutable data carriers.</p>
+            </div>
+        </div>
+
+        <!-- Section 12: Switch Expressions -->
+        <div class="content-section">
+            <h2>🔀 Switch Expressions (Java 14+)</h2>
+
+            <h3>What are Switch Expressions?</h3>
+            <p>
+                <strong>Baby:</strong> A better way to choose between options—cleaner and safer.<br>
+                <strong>Real-world:</strong> A menu where you pick one item and get exactly what you ordered.<br>
+                <strong>Technical:</strong> Enhanced switch that can return values, uses arrow syntax, and prevents
+                fall-through bugs.
+            </p>
+
+            <h3>Traditional Switch</h3>
+            <pre><code class="language-java">// Old way
+String day = "MONDAY";
+String type;
+switch (day) {
+    case "MONDAY":
+    case "TUESDAY":
+    case "WEDNESDAY":
+    case "THURSDAY":
+    case "FRIDAY":
+        type = "Weekday";
+        break;
+    case "SATURDAY":
+    case "SUNDAY":
+        type = "Weekend";
+        break;
+    default:
+        type = "Invalid";
+        break;
+}</code></pre>
+
+            <h3>Switch Expression</h3>
+            <pre><code class="language-java">// New way
+String day = "MONDAY";
+String type = switch (day) {
+    case "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY" -> "Weekday";
+    case "SATURDAY", "SUNDAY" -> "Weekend";
+    default -> "Invalid";
+};</code></pre>
+
+            <h3>Using yield</h3>
+            <pre><code class="language-java">int numLetters = switch (day) {
+    case "MONDAY", "FRIDAY", "SUNDAY" -> 6;
+    case "TUESDAY" -> 7;
+    case "THURSDAY", "SATURDAY" -> 8;
+    case "WEDNESDAY" -> 9;
+    default -> {
+        System.out.println("Invalid day");
+        yield 0; // yield returns a value from a block
+    }
+};</code></pre>
+
+            <h3>Benefits</h3>
+            <ul>
+                <li><strong>No fall-through:</strong> No need for break statements</li>
+                <li><strong>Exhaustiveness:</strong> Compiler ensures all cases are covered</li>
+                <li><strong>Expression:</strong> Can return values directly</li>
+                <li><strong>Multiple labels:</strong> Comma-separated cases</li>
+            </ul>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Switch expressions are perfect for mapping values or making decisions based on enums or strings.
+                    They're more concise and less error-prone than traditional switch statements.</p>
+            </div>
+        </div>
+
+        <!-- Section 13: Pattern Matching -->
+        <div class="content-section">
+            <h2>🎭 Pattern Matching</h2>
+
+            <h3>Pattern Matching for instanceof</h3>
+            <p>
+                <strong>Baby:</strong> Checking what's in a box and using it right away.<br>
+                <strong>Real-world:</strong> Opening a package and immediately using what's inside.<br>
+                <strong>Technical:</strong> Combines type checking and casting in one step, reducing boilerplate.
+            </p>
+
+            <h3>Before Pattern Matching</h3>
+            <pre><code class="language-java">// Old way
+Object obj = "Hello";
+if (obj instanceof String) {
+    String str = (String) obj; // Explicit cast
+    System.out.println(str.toUpperCase());
+}</code></pre>
+
+            <h3>With Pattern Matching</h3>
+            <pre><code class="language-java">// New way
+Object obj = "Hello";
+if (obj instanceof String str) { // Pattern variable 'str'
+    System.out.println(str.toUpperCase()); // No cast needed!
+}</code></pre>
+
+            <h3>More Examples</h3>
+            <pre><code class="language-java">// With complex conditions
+if (obj instanceof String str && str.length() > 5) {
+    System.out.println("Long string: " + str);
+}
+
+// In methods
+public static int getLength(Object obj) {
+    if (obj instanceof String str) {
+        return str.length();
+    } else if (obj instanceof List<?> list) {
+        return list.size();
+    }
+    return 0;
+}</code></pre>
+
+            <h3>Pattern Matching in Switch (Preview)</h3>
+            <pre><code class="language-java">// Java 17+ (preview feature)
+static String format(Object obj) {
+    return switch (obj) {
+        case Integer i -> String.format("int %d", i);
+        case Long l -> String.format("long %d", l);
+        case Double d -> String.format("double %f", d);
+        case String s -> String.format("String %s", s);
+        default -> obj.toString();
+    };
+}</code></pre>
+
+            <div class="callout example">
+                <div class="callout-title">📖 EXAMPLE</div>
+                <p>Pattern matching eliminates the common pattern of check-cast-use, making code more readable and
+                    less error-prone.</p>
+            </div>
+        </div>
+
+        <!-- Section 14: Sealed Classes -->
+        <div class="content-section">
+            <h2>🔒 Sealed Classes (Java 17+)</h2>
+
+            <h3>What are Sealed Classes?</h3>
+            <p>
+                <strong>Baby:</strong> A family where you decide exactly who can be part of it.<br>
+                <strong>Real-world:</strong> A VIP club with a fixed member list—no random people can join.<br>
+                <strong>Technical:</strong> Classes that restrict which other classes can extend them, providing more
+                control over inheritance.
+            </p>
+
+            <h3>Syntax</h3>
+            <pre><code class="language-java">// Sealed class with permitted subclasses
+public sealed class Shape 
+    permits Circle, Rectangle, Triangle {
+    // Common shape methods
+}
+
+// Permitted subclasses must be final, sealed, or non-sealed
+public final class Circle extends Shape {
+    private double radius;
+}
+
+public final class Rectangle extends Shape {
+    private double width, height;
+}
+
+public non-sealed class Triangle extends Shape {
+    // non-sealed allows further extension
+}</code></pre>
+
+            <h3>Why Use Sealed Classes?</h3>
+            <ul>
+                <li><strong>Domain Modeling:</strong> Model closed sets of types (e.g., payment methods, shapes)</li>
+                <li><strong>Exhaustiveness:</strong> Compiler can check if all cases are handled</li>
+                <li><strong>Security:</strong> Prevent unauthorized extensions</li>
+                <li><strong>API Design:</strong> Clearly communicate which classes can be extended</li>
+            </ul>
+
+            <h3>With Pattern Matching</h3>
+            <pre><code class="language-java">// Compiler knows all possible subtypes
+public static double getArea(Shape shape) {
+    return switch (shape) {
+        case Circle c -> Math.PI * c.radius * c.radius;
+        case Rectangle r -> r.width * r.height;
+        case Triangle t -> 0.5 * t.base * t.height;
+        // No default needed - compiler knows these are all cases!
+    };
+}</code></pre>
+
+            <div class="callout note">
+                <div class="callout-title">📚 NOTE</div>
+                <p>Sealed classes are perfect for representing a fixed set of alternatives, like algebraic data types
+                    in functional programming languages.</p>
+            </div>
+        </div>
+
+        <!-- Section 15: Text Blocks -->
+        <div class="content-section">
+            <h2>📄 Text Blocks (Java 15+)</h2>
+
+            <h3>What are Text Blocks?</h3>
+            <p>
+                <strong>Baby:</strong> Writing a story on multiple lines without worrying about quotes.<br>
+                <strong>Real-world:</strong> Typing an email with line breaks—natural and easy to read.<br>
+                <strong>Technical:</strong> Multi-line string literals that preserve formatting and eliminate escape
+                sequences.
+            </p>
+
+            <h3>Before Text Blocks</h3>
+            <pre><code class="language-java">// Old way - messy and hard to read
+String json = "{\n" +
+              "  \"name\": \"Alice\",\n" +
+              "  \"age\": 25,\n" +
+              "  \"city\": \"New York\"\n" +
+              "}";</code></pre>
+
+            <h3>With Text Blocks</h3>
+            <pre><code class="language-java">// New way - clean and readable
+String json = """
+    {
+      "name": "Alice",
+      "age": 25,
+      "city": "New York"
+    }
+    """;</code></pre>
+
+            <h3>More Examples</h3>
+            <pre><code class="language-java">// HTML
+String html = """
+    <html>
+        <body>
+            <h1>Hello World</h1>
+        </body>
+    </html>
+    """;
+
+// SQL
+String query = """
+    SELECT id, name, email
+    FROM users
+    WHERE age > 18
+    ORDER BY name
+    """;
+
+// With variables (using formatted())
+String name = "Alice";
+int age = 25;
+String message = """
+    Hello, %s!
+    You are %d years old.
+    """.formatted(name, age);</code></pre>
+
+            <h3>Incidental Whitespace</h3>
+            <p>Text blocks automatically remove common leading whitespace:</p>
+            <pre><code class="language-java">String text = """
+        Line 1
+        Line 2
+            Indented Line 3
+        """;
+// Leading spaces before "Line 1" are removed from all lines</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Text blocks are perfect for embedding JSON, XML, HTML, SQL, or any multi-line text. They make code
+                    much more readable!</p>
+            </div>
+        </div>
+
+        <!-- Section 16: var keyword -->
+        <div class="content-section">
+            <h2>🔤 Local Variable Type Inference (var)</h2>
+
+            <h3>What is var?</h3>
+            <p>
+                <strong>Baby:</strong> Letting Java figure out what type of toy you have.<br>
+                <strong>Real-world:</strong> Saying "give me that thing" instead of "give me that red plastic
+                ball".<br>
+                <strong>Technical:</strong> Local variable type inference where the compiler infers the type from the
+                initializer.
+            </p>
+
+            <h3>Basic Usage</h3>
+            <pre><code class="language-java">// Instead of
+String name = "Alice";
+List<String> names = new ArrayList<>();
+Map<String, Integer> scores = new HashMap<>();
+
+// You can write
+var name = "Alice";                    // Inferred as String
+var names = new ArrayList<String>();   // Inferred as ArrayList<String>
+var scores = new HashMap<String, Integer>(); // Inferred as HashMap<String, Integer></code></pre>
+
+            <h3>Where var Can Be Used</h3>
+            <ul>
+                <li>Local variables with initializers</li>
+                <li>Enhanced for-loop variables</li>
+                <li>Traditional for-loop variables</li>
+                <li>Try-with-resources variables</li>
+            </ul>
+
+            <h3>Examples</h3>
+            <pre><code class="language-java">// In loops
+for (var i = 0; i < 10; i++) {
+    System.out.println(i);
+}
+
+for (var name : names) {
+    System.out.println(name);
+}
+
+// With streams
+var result = list.stream()
+    .filter(s -> s.length() > 5)
+    .collect(Collectors.toList());
+
+// Try-with-resources
+try (var reader = new BufferedReader(new FileReader("file.txt"))) {
+    // Use reader
+}</code></pre>
+
+            <h3>Where var CANNOT Be Used</h3>
+            <pre><code class="language-java">// ❌ Method parameters
+public void method(var param) { } // Compile error
+
+// ❌ Method return types
+public var method() { } // Compile error
+
+// ❌ Fields
+class MyClass {
+    var field = "value"; // Compile error
+}
+
+// ❌ Without initializer
+var x; // Compile error
+x = 10;</code></pre>
+
+            <h3>Best Practices</h3>
+            <ul>
+                <li>Use var when the type is obvious from the right-hand side</li>
+                <li>Don't use var if it reduces readability</li>
+                <li>Prefer var for complex generic types</li>
+                <li>Use descriptive variable names when using var</li>
+            </ul>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING</div>
+                <p>var is NOT dynamic typing! The type is still determined at compile time and cannot change. It's
+                    just syntactic sugar for type inference.</p>
+            </div>
+        </div>
+
+        <!-- Section 17: Multi-Release JARs -->
+        <div class="content-section">
+            <h2>📦 Multi-Release JARs and Modern Improvements</h2>
+
+            <h3>What are Multi-Release JARs?</h3>
+            <p>
+                <strong>Baby:</strong> A toy that works differently depending on your age.<br>
+                <strong>Real-world:</strong> A video game with different graphics settings for different
+                computers.<br>
+                <strong>Technical:</strong> JAR files that contain different versions of classes for different Java
+                versions.
+            </p>
+
+            <h3>Structure</h3>
+            <pre>my-library.jar
+├── com/example/MyClass.class (Java 8 version)
+├── META-INF/
+│   ├── MANIFEST.MF (Multi-Release: true)
+│   └── versions/
+│       ├── 11/
+│       │   └── com/example/MyClass.class (Java 11 version)
+│       └── 17/
+│           └── com/example/MyClass.class (Java 17 version)</pre>
+
+            <h3>Other Modern Improvements</h3>
+
+            <h4>HTTP Client API (Java 11)</h4>
+            <pre><code class="language-java">HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+    .uri(URI.create("https://api.example.com/data"))
+    .build();
+    
+HttpResponse<String> response = client.send(request, 
+    HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());</code></pre>
+
+            <h4>String Methods (Java 11+)</h4>
+            <pre><code class="language-java">// isBlank()
+"   ".isBlank(); // true
+
+// lines()
+"Line1\nLine2\nLine3".lines()
+    .forEach(System.out::println);
+
+// repeat()
+"Java ".repeat(3); // "Java Java Java "
+
+// strip() - Unicode-aware
+"  Hello  ".strip(); // "Hello"</code></pre>
+
+            <h4>Collection Factory Methods (Java 9)</h4>
+            <pre><code class="language-java">// Immutable collections
+List<String> list = List.of("a", "b", "c");
+Set<Integer> set = Set.of(1, 2, 3);
+Map<String, Integer> map = Map.of("a", 1, "b", 2);</code></pre>
+        </div>
+
+        <!-- Section 18: Best Practices -->
+        <div class="content-section">
+            <h2>✅ Best Practices & Real-World Usage</h2>
+
+            <h3>When to Use Each Feature</h3>
+
+            <h4>Lambda Expressions</h4>
+            <ul>
+                <li>✅ Use for short, simple operations</li>
+                <li>✅ Use with collections and streams</li>
+                <li>❌ Avoid for complex logic (use methods instead)</li>
+                <li>❌ Don't use if it reduces readability</li>
+            </ul>
+
+            <h4>Streams API</h4>
+            <ul>
+                <li>✅ Use for data processing pipelines</li>
+                <li>✅ Use for filtering, mapping, reducing collections</li>
+                <li>❌ Avoid for simple iterations (use for-each)</li>
+                <li>❌ Don't use parallel streams for small datasets</li>
+            </ul>
+
+            <h4>Optional</h4>
+            <ul>
+                <li>✅ Use as return type for methods that might not have a value</li>
+                <li>✅ Use to avoid null checks</li>
+                <li>❌ Don't use as method parameters</li>
+                <li>❌ Don't use for fields in classes</li>
+            </ul>
+
+            <h4>Records</h4>
+            <ul>
+                <li>✅ Use for DTOs and immutable data holders</li>
+                <li>✅ Use for return values from methods</li>
+                <li>❌ Don't use if you need mutable fields</li>
+                <li>❌ Don't use if you need inheritance</li>
+            </ul>
+
+            <h4>var Keyword</h4>
+            <ul>
+                <li>✅ Use when type is obvious from right-hand side</li>
+                <li>✅ Use for complex generic types</li>
+                <li>❌ Don't use if it reduces readability</li>
+                <li>❌ Don't overuse—explicit types can improve clarity</li>
+            </ul>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 BEST PRACTICE</div>
+                <p>Combine features for maximum benefit: Use Streams with Lambdas, Optional with method references,
+                    Records with Sealed Classes, etc.</p>
+            </div>
+        </div>
+
+        <!-- Section 19: Common Mistakes -->
+        <div class="content-section">
+            <h2>❌ Common Mistakes & Migration Issues</h2>
+
+            <h3>Lambda Pitfalls</h3>
+            <div class="callout warning">
+                <div class="callout-title">⚠️ Capturing Mutable Variables</div>
+                <pre><code class="language-java">// ❌ Wrong - compile error
+int count = 0;
+list.forEach(item -> count++); // count must be final or effectively final
+
+// ✅ Correct - use wrapper or stream
+AtomicInteger count = new AtomicInteger(0);
+list.forEach(item -> count.incrementAndGet());</code></pre>
+            </div>
+
+            <h3>Stream Mistakes</h3>
+            <div class="callout warning">
+                <div class="callout-title">⚠️ Reusing Streams</div>
+                <pre><code class="language-java">// ❌ Wrong - stream already consumed
+Stream<String> stream = list.stream();
+stream.forEach(System.out::println);
+stream.count(); // IllegalStateException!
+
+// ✅ Correct - create new stream
+list.stream().forEach(System.out::println);
+long count = list.stream().count();</code></pre>
+            </div>
+
+            <h3>Optional Mistakes</h3>
+            <div class="callout warning">
+                <div class="callout-title">⚠️ Using get() Without Checking</div>
+                <pre><code class="language-java">// ❌ Wrong - can throw NoSuchElementException
+Optional<String> opt = Optional.empty();
+String value = opt.get(); // Exception!
+
+// ✅ Correct - use orElse or ifPresent
+String value = opt.orElse("default");
+opt.ifPresent(System.out::println);</code></pre>
+            </div>
+
+            <h3>Migration Issues</h3>
+            <ul>
+                <li><strong>Java 8 → 11:</strong> Removed modules (java.xml.bind, java.activation). Add as
+                    dependencies if needed.</li>
+                <li><strong>Java 11 → 17:</strong> Stronger encapsulation of JDK internals. Avoid using internal APIs.
+                </li>
+                <li><strong>Performance:</strong> Test parallel streams—they're not always faster!</li>
+                <li><strong>Compatibility:</strong> Check third-party libraries for Java version support</li>
+            </ul>
+
+            <div class="callout note">
+                <div class="callout-title">📚 MIGRATION TIP</div>
+                <p>Upgrade incrementally: 8 → 11 → 17 → 21. Test thoroughly at each step. Use tools like jdeps to
+                    identify dependencies on internal APIs.</p>
+            </div>
+        </div>
+
+        <!-- Final Note -->
+        <div class="content-section">
+            <div class="callout note">
+                <div class="callout-title">🎉 Congratulations!</div>
+                <p>You've completed the theory for Java 8+ Features! You now understand modern Java programming
+                    including Lambda expressions, Streams, Optional, Records, Sealed Classes, Pattern Matching, and
+                    much more.</p>
+                <p><strong>Next Step:</strong> Practice with real code examples in the Programs section!</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="next-topic">
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="../programs/java8features.html" class="btn btn-primary">💻 View Programs</a>
+                <a href="../mcq/java8features.html" class="btn btn-success">✅ Take Quiz</a>
+                <a href="../index.html" class="btn btn-secondary">🏠 Back to Home</a>
+            </div>
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">🚀 Next Topic Coming Soon</div>
+                <p><strong>Programming Principles & Design (SOLID, MVC, Design Patterns)</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

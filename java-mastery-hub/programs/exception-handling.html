@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception Handling - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>Exception Handling - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>Exception Handling</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Hands-On Java Programs</h2>
+            <p>Welcome to the practical section! These 15+ programs demonstrate exception handling from basic try-catch
+                to advanced custom exceptions and real-world scenarios.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Exception handling is crucial for building robust applications. Practice these examples and
+                    understand when to catch vs when to propagate exceptions!</p>
+            </div>
+        </div>
+
+        <!-- Program 1: Basic try-catch -->
+        <div class="content-section">
+            <h2>Program 1: Basic try-catch Example</h2>
+            <p>Demonstrates handling ArithmeticException when dividing by zero.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class BasicTryCatch {
+    public static void main(String[] args) {
+        try {
+            int a = 10;
+            int b = 0;
+            int result = a / b; // This will throw ArithmeticException
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.out.println("Error: Cannot divide by zero!");
+            System.out.println("Exception message: " + e.getMessage());
+        }
+        
+        System.out.println("Program continues after exception handling");
+    }
+}
+
+/* Output:
+Error: Cannot divide by zero!
+Exception message: / by zero
+Program continues after exception handling
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like trying to share 10 cookies with 0 friends—it doesn't make sense!</p>
+                <p><strong>Real-world:</strong> Like a calculator showing "Error" when you divide by zero instead of
+                    crashing.</p>
+                <p><strong>Technical:</strong> The try block contains risky code. When ArithmeticException is thrown,
+                    control jumps to the catch block. The program continues normally after handling the exception.</p>
+            </div>
+        </div>
+
+        <!-- Program 2: Try-finally without catch -->
+        <div class="content-section">
+            <h2>Program 2: Try-finally Without catch</h2>
+            <p>Demonstrates that finally executes even without a catch block.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class TryFinally {
+    public static void main(String[] args) {
+        try {
+            System.out.println("Inside try block");
+            int result = 10 / 2;
+            System.out.println("Result: " + result);
+        } finally {
+            System.out.println("Finally block always executes!");
+        }
+        
+        System.out.println("After try-finally");
+    }
+}
+
+/* Output:
+Inside try block
+Result: 5
+Finally block always executes!
+After try-finally
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like always washing your hands after eating, whether you spilled or not.</p>
+                <p><strong>Real-world:</strong> Like closing a door when you leave a room, no matter what happened
+                    inside.</p>
+                <p><strong>Technical:</strong> The finally block is guaranteed to execute whether an exception occurs or
+                    not. It's typically used for cleanup operations like closing files or database connections.</p>
+            </div>
+        </div>
+
+        <!-- Program 3: Multiple catch blocks -->
+        <div class="content-section">
+            <h2>Program 3: Multiple catch Blocks</h2>
+            <p>Demonstrates handling different exception types with separate catch blocks.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class MultipleCatch {
+    public static void main(String[] args) {
+        try {
+            String str = null;
+            System.out.println(str.length()); // NullPointerException
+            
+            int[] arr = new int[5];
+            arr[10] = 50; // ArrayIndexOutOfBoundsException
+            
+            int result = 10 / 0; // ArithmeticException
+            
+        } catch (NullPointerException e) {
+            System.out.println("Null pointer error: " + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array index error: " + e.getMessage());
+        } catch (ArithmeticException e) {
+            System.out.println("Arithmetic error: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("General error: " + e.getMessage());
+        }
+        
+        System.out.println("Program continues...");
+    }
+}
+
+/* Output:
+Null pointer error: null
+Program continues...
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like having different solutions for different problems—bandaid for cuts,
+                    ice for bumps.</p>
+                <p><strong>Real-world:</strong> Like a hospital with different departments for different health issues.
+                </p>
+                <p><strong>Technical:</strong> Multiple catch blocks allow handling different exceptions differently.
+                    Only the first matching catch executes. Order from specific to general is mandatory.</p>
+            </div>
+        </div>
+
+        <!-- Program 4: Nested try-catch -->
+        <div class="content-section">
+            <h2>Program 4: Nested try-catch</h2>
+            <p>Demonstrates try-catch blocks inside other try-catch blocks.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class NestedTryCatch {
+    public static void main(String[] args) {
+        try {
+            System.out.println("Outer try block");
+            
+            try {
+                System.out.println("Inner try block");
+                int result = 10 / 0; // Inner exception
+            } catch (ArithmeticException e) {
+                System.out.println("Inner catch: Division by zero");
+            }
+            
+            System.out.println("Between inner and outer");
+            
+            String str = null;
+            System.out.println(str.length()); // Outer exception
+            
+        } catch (NullPointerException e) {
+            System.out.println("Outer catch: Null pointer");
+        }
+        
+        System.out.println("Program ends");
+    }
+}
+
+/* Output:
+Outer try block
+Inner try block
+Inner catch: Division by zero
+Between inner and outer
+Outer catch: Null pointer
+Program ends
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like having a small safety net inside a bigger safety net.</p>
+                <p><strong>Real-world:</strong> Like wearing knee pads and elbow pads while skateboarding.</p>
+                <p><strong>Technical:</strong> Nested try-catch allows different exception handling strategies for
+                    different code sections. Inner exceptions are caught by inner catch, outer by outer catch.</p>
+            </div>
+        </div>
+
+        <!-- Program 5: throw keyword -->
+        <div class="content-section">
+            <h2>Program 5: Using throw Keyword</h2>
+            <p>Demonstrates explicitly throwing an exception.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class ThrowExample {
+    
+    static void checkAge(int age) {
+        if (age < 18) {
+            throw new IllegalArgumentException("Age must be 18 or above. Got: " + age);
+        }
+        System.out.println("Access granted. Age: " + age);
+    }
+    
+    public static void main(String[] args) {
+        try {
+            checkAge(20); // Valid
+            checkAge(15); // Invalid - will throw exception
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+
+/* Output:
+Access granted. Age: 20
+Error: Age must be 18 or above. Got: 15
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a bouncer at a party saying "You're too young to enter!"</p>
+                <p><strong>Real-world:</strong> Like an ATM rejecting a transaction if you don't have enough balance.
+                </p>
+                <p><strong>Technical:</strong> The throw keyword explicitly creates and throws an exception object. Used
+                    for validation and enforcing business rules.</p>
+            </div>
+        </div>
+
+        <!-- Program 6: throws keyword -->
+        <div class="content-section">
+            <h2>Program 6: Using throws Keyword</h2>
+            <p>Demonstrates declaring exceptions with throws in method signature.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.IOException;
+
+public class ThrowsExample {
+    
+    // Method declares it might throw IOException
+    static void riskyMethod() throws IOException {
+        System.out.println("Risky operation starting...");
+        // Simulating an I/O error
+        throw new IOException("File not found!");
+    }
+    
+    public static void main(String[] args) {
+        try {
+            riskyMethod(); // Caller must handle or declare
+        } catch (IOException e) {
+            System.out.println("Caught exception: " + e.getMessage());
+        }
+    }
+}
+
+/* Output:
+Risky operation starting...
+Caught exception: File not found!
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a warning sign that says "Slippery floor ahead!"</p>
+                <p><strong>Real-world:</strong> Like a medicine bottle warning "May cause drowsiness."</p>
+                <p><strong>Technical:</strong> The throws keyword declares that a method might throw certain checked
+                    exceptions. Callers must either catch these exceptions or declare them too.</p>
+            </div>
+        </div>
+
+        <!-- Program 7: Custom exception creation -->
+        <div class="content-section">
+            <h2>Program 7: Creating Custom Exception</h2>
+            <p>Demonstrates creating a custom exception class.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">// Custom checked exception
+class InvalidAgeException extends Exception {
+    private int age;
+    
+    public InvalidAgeException(int age) {
+        super("Invalid age: " + age + ". Age must be between 0 and 150.");
+        this.age = age;
+    }
+    
+    public int getAge() {
+        return age;
+    }
+}
+
+public class CustomExceptionDemo {
+    
+    static void validateAge(int age) throws InvalidAgeException {
+        if (age < 0 || age > 150) {
+            throw new InvalidAgeException(age);
+        }
+        System.out.println("Valid age: " + age);
+    }
+    
+    public static void main(String[] args) {
+        try {
+            validateAge(25);
+            validateAge(200); // Invalid
+        } catch (InvalidAgeException e) {
+            System.out.println("Error: " + e.getMessage());
+            System.out.println("Invalid age was: " + e.getAge());
+        }
+    }
+}
+
+/* Output:
+Valid age: 25
+Error: Invalid age: 200. Age must be between 0 and 150.
+Invalid age was: 200
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like making your own special rule for your game.</p>
+                <p><strong>Real-world:</strong> Like a company creating specific error codes for their products.</p>
+                <p><strong>Technical:</strong> Custom exceptions extend Exception (checked) or RuntimeException
+                    (unchecked). They can include additional fields and methods for context-specific information.</p>
+            </div>
+        </div>
+
+        <!-- Program 8: Custom exception handling -->
+        <div class="content-section">
+            <h2>Program 8: Handling Custom Exceptions</h2>
+            <p>Demonstrates using custom exceptions in a practical scenario.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">class InsufficientBalanceException extends Exception {
+    private double balance;
+    private double amount;
+    
+    public InsufficientBalanceException(double balance, double amount) {
+        super("Insufficient balance. Available: " + balance + ", Requested: " + amount);
+        this.balance = balance;
+        this.amount = amount;
+    }
+    
+    public double getShortfall() {
+        return amount - balance;
+    }
+}
+
+class BankAccount {
+    private double balance;
+    
+    public BankAccount(double balance) {
+        this.balance = balance;
+    }
+    
+    public void withdraw(double amount) throws InsufficientBalanceException {
+        if (amount > balance) {
+            throw new InsufficientBalanceException(balance, amount);
+        }
+        balance -= amount;
+        System.out.println("Withdrawn: " + amount + ", Remaining: " + balance);
+    }
+}
+
+public class CustomExceptionHandling {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(1000);
+        
+        try {
+            account.withdraw(500);  // Success
+            account.withdraw(700);  // Fail
+        } catch (InsufficientBalanceException e) {
+            System.out.println("Transaction failed: " + e.getMessage());
+            System.out.println("You need " + e.getShortfall() + " more.");
+        }
+    }
+}
+
+/* Output:
+Withdrawn: 500, Remaining: 500.0
+Transaction failed: Insufficient balance. Available: 500.0, Requested: 700.0
+You need 200.0 more.
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like trying to buy a toy that costs more than your piggy bank money.</p>
+                <p><strong>Real-world:</strong> Like an ATM declining your withdrawal when you don't have enough funds.
+                </p>
+                <p><strong>Technical:</strong> Custom exceptions provide domain-specific error handling with additional
+                    context. They make code more readable and maintainable.</p>
+            </div>
+        </div>
+
+        <!-- Program 9: User input validation -->
+        <div class="content-section">
+            <h2>Program 9: User Input Validation with Exceptions</h2>
+            <p>Demonstrates validating user input and handling NumberFormatException.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.util.Scanner;
+
+public class InputValidation {
+    
+    static int getValidAge(String input) throws NumberFormatException, IllegalArgumentException {
+        int age = Integer.parseInt(input); // May throw NumberFormatException
+        
+        if (age < 0 || age > 120) {
+            throw new IllegalArgumentException("Age must be between 0 and 120");
+        }
+        
+        return age;
+    }
+    
+    public static void main(String[] args) {
+        String[] testInputs = {"25", "abc", "150", "-5"};
+        
+        for (String input : testInputs) {
+            try {
+                int age = getValidAge(input);
+                System.out.println("Valid age: " + age);
+            } catch (NumberFormatException e) {
+                System.out.println("Error: '" + input + "' is not a valid number");
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
+    }
+}
+
+/* Output:
+Valid age: 25
+Error: 'abc' is not a valid number
+Error: Age must be between 0 and 120
+Error: Age must be between 0 and 120
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like checking if puzzle pieces fit before forcing them in.</p>
+                <p><strong>Real-world:</strong> Like a form that checks if you entered a valid email address.</p>
+                <p><strong>Technical:</strong> Input validation prevents invalid data from entering the system.
+                    NumberFormatException handles non-numeric input, IllegalArgumentException handles out-of-range
+                    values.</p>
+            </div>
+        </div>
+
+        <!-- Program 10: Exception propagation -->
+        <div class="content-section">
+            <h2>Program 10: Exception Propagation</h2>
+            <p>Demonstrates how exceptions propagate up the call stack.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class ExceptionPropagation {
+    
+    static void method3() {
+        System.out.println("Method 3: About to throw exception");
+        int result = 10 / 0; // Exception thrown here
+    }
+    
+    static void method2() {
+        System.out.println("Method 2: Calling method 3");
+        method3(); // Exception propagates from here
+        System.out.println("Method 2: This won't print");
+    }
+    
+    static void method1() {
+        System.out.println("Method 1: Calling method 2");
+        method2(); // Exception propagates from here
+        System.out.println("Method 1: This won't print");
+    }
+    
+    public static void main(String[] args) {
+        try {
+            System.out.println("Main: Calling method 1");
+            method1(); // Exception caught here
+        } catch (ArithmeticException e) {
+            System.out.println("Main: Caught exception - " + e.getMessage());
+        }
+        System.out.println("Main: Program continues");
+    }
+}
+
+/* Output:
+Main: Calling method 1
+Method 1: Calling method 2
+Method 2: Calling method 3
+Method 3: About to throw exception
+Main: Caught exception - / by zero
+Main: Program continues
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a ball rolling down stairs until someone catches it.</p>
+                <p><strong>Real-world:</strong> Like escalating a problem to your manager, then their manager, until
+                    someone handles it.</p>
+                <p><strong>Technical:</strong> Uncaught exceptions propagate up the call stack until caught or reaching
+                    main (causing program termination). Each method can choose to catch or let it propagate.</p>
+            </div>
+        </div>
+
+        <!-- Program 11: Finally for cleanup -->
+        <div class="content-section">
+            <h2>Program 11: Using finally for Resource Cleanup</h2>
+            <p>Demonstrates using finally block to ensure resources are cleaned up.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class FinallyCleanup {
+    
+    static void processFile(boolean causeError) {
+        System.out.println("Opening file...");
+        
+        try {
+            System.out.println("Processing file...");
+            
+            if (causeError) {
+                throw new RuntimeException("Processing error!");
+            }
+            
+            System.out.println("File processed successfully");
+        } catch (RuntimeException e) {
+            System.out.println("Error during processing: " + e.getMessage());
+        } finally {
+            System.out.println("Closing file (cleanup)");
+            // This ALWAYS executes - perfect for cleanup!
+        }
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("--- Case 1: No error ---");
+        processFile(false);
+        
+        System.out.println("\n--- Case 2: With error ---");
+        processFile(true);
+    }
+}
+
+/* Output:
+--- Case 1: No error ---
+Opening file...
+Processing file...
+File processed successfully
+Closing file (cleanup)
+
+--- Case 2: With error ---
+Opening file...
+Processing file...
+Error during processing: Processing error!
+Closing file (cleanup)
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like always putting your toys back in the box when you're done playing.</p>
+                <p><strong>Real-world:</strong> Like always turning off the lights when leaving a room, whether you had
+                    a good time or not.</p>
+                <p><strong>Technical:</strong> The finally block is guaranteed to execute, making it ideal for cleanup
+                    operations like closing files, database connections, or network sockets.</p>
+            </div>
+        </div>
+
+        <!-- Program 12: RuntimeException -->
+        <div class="content-section">
+            <h2>Program 12: RuntimeException Example</h2>
+            <p>Demonstrates unchecked RuntimeException that doesn't require declaration.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">public class RuntimeExceptionDemo {
+    
+    // No throws declaration needed for RuntimeException
+    static void processArray(int[] arr, int index) {
+        if (arr == null) {
+            throw new NullPointerException("Array cannot be null");
+        }
+        
+        if (index < 0 || index >= arr.length) {
+            throw new ArrayIndexOutOfBoundsException("Invalid index: " + index);
+        }
+        
+        System.out.println("Value at index " + index + ": " + arr[index]);
+    }
+    
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        
+        try {
+            processArray(numbers, 2);   // Valid
+            processArray(numbers, 10);  // Invalid index
+        } catch (NullPointerException e) {
+            System.out.println("Null error: " + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Index error: " + e.getMessage());
+        }
+        
+        try {
+            processArray(null, 0);      // Null array
+        } catch (RuntimeException e) {
+            System.out.println("Runtime error: " + e.getMessage());
+        }
+    }
+}
+
+/* Output:
+Value at index 2: 30
+Index error: Invalid index: 10
+Runtime error: Array cannot be null
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like trying to take a toy from an empty box—it's a mistake you should avoid.
+                </p>
+                <p><strong>Real-world:</strong> Like trying to open a door that doesn't exist.</p>
+                <p><strong>Technical:</strong> RuntimeExceptions are unchecked—no need to declare with throws. They
+                    typically indicate programming errors that should be fixed rather than handled.</p>
+            </div>
+        </div>
+
+        <!-- Program 13: Checked exception (File) -->
+        <div class="content-section">
+            <h2>Program 13: Checked Exception - File Handling</h2>
+            <p>Demonstrates handling checked IOException when working with files.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.FileReader;
+import java.io.IOException;
+
+public class CheckedExceptionDemo {
+    
+    // Must declare IOException (checked exception)
+    static void readFile(String filename) throws IOException {
+        System.out.println("Attempting to read: " + filename);
+        FileReader fr = new FileReader(filename); // May throw FileNotFoundException
+        System.out.println("File opened successfully");
+        fr.close();
+    }
+    
+    public static void main(String[] args) {
+        // Caller must handle the checked exception
+        try {
+            readFile("existing.txt");
+        } catch (IOException e) {
+            System.out.println("File error: " + e.getMessage());
+            System.out.println("Exception type: " + e.getClass().getSimpleName());
+        }
+        
+        System.out.println("Program continues...");
+    }
+}
+
+/* Output (if file doesn't exist):
+Attempting to read: existing.txt
+File error: existing.txt (No such file or directory)
+Exception type: FileNotFoundException
+Program continues...
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like looking for a book that might not be on the shelf.</p>
+                <p><strong>Real-world:</strong> Like trying to open a file on your computer that might have been
+                    deleted.</p>
+                <p><strong>Technical:</strong> IOException is a checked exception—must be caught or declared. It
+                    represents recoverable I/O errors. FileNotFoundException is a subclass of IOException.</p>
+            </div>
+        </div>
+
+        <!-- Program 14: Catch order importance -->
+        <div class="content-section">
+            <h2>Program 14: Importance of Catch Block Order</h2>
+            <p>Demonstrates why catch blocks must be ordered from specific to general.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.FileNotFoundException;
+import java.io.IOException;
+
+public class CatchOrderDemo {
+    
+    static void demonstrateOrder() throws IOException {
+        // Simulating different exceptions
+        throw new FileNotFoundException("File not found!");
+    }
+    
+    public static void main(String[] args) {
+        // CORRECT ORDER: Specific to General
+        try {
+            demonstrateOrder();
+        } catch (FileNotFoundException e) {
+            // Most specific - catches FileNotFoundException
+            System.out.println("Specific: File not found - " + e.getMessage());
+        } catch (IOException e) {
+            // More general - catches other IOExceptions
+            System.out.println("General: I/O error - " + e.getMessage());
+        } catch (Exception e) {
+            // Most general - catches everything else
+            System.out.println("Very general: Some error - " + e.getMessage());
+        }
+        
+        /* WRONG ORDER (would cause compilation error):
+        try {
+            demonstrateOrder();
+        } catch (Exception e) {           // Too general first!
+            System.out.println("Caught");
+        } catch (IOException e) {          // Unreachable - compile error!
+            System.out.println("Never reached");
+        }
+        */
+    }
+}
+
+/* Output:
+Specific: File not found - File not found!
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like checking for your favorite toy first, then any toy, then anything at
+                    all.</p>
+                <p><strong>Real-world:</strong> Like a mail sorting system: first check for express mail, then regular
+                    mail, then junk mail.</p>
+                <p><strong>Technical:</strong> Java checks catch blocks in order. If a general exception is caught
+                    first, specific ones become unreachable (compilation error). Always order from most specific to most
+                    general.</p>
+            </div>
+        </div>
+
+        <!-- Program 15: Real-world bank transaction -->
+        <div class="content-section">
+            <h2>Program 15: Real-World Example - Bank Transaction with Rollback</h2>
+            <p>Demonstrates comprehensive exception handling in a banking scenario.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">class InsufficientFundsException extends Exception {
+    public InsufficientFundsException(String message) {
+        super(message);
+    }
+}
+
+class InvalidAmountException extends Exception {
+    public InvalidAmountException(String message) {
+        super(message);
+    }
+}
+
+class BankTransaction {
+    private double balance;
+    
+    public BankTransaction(double initialBalance) {
+        this.balance = initialBalance;
+    }
+    
+    public void transfer(double amount, BankTransaction recipient) 
+            throws InsufficientFundsException, InvalidAmountException {
+        
+        // Validation
+        if (amount <= 0) {
+            throw new InvalidAmountException("Amount must be positive: " + amount);
+        }
+        
+        if (amount > balance) {
+            throw new InsufficientFundsException(
+                "Insufficient funds. Balance: " + balance + ", Requested: " + amount
+            );
+        }
+        
+        // Store original state for rollback
+        double originalBalance = balance;
+        double originalRecipientBalance = recipient.balance;
+        
+        try {
+            // Perform transaction
+            balance -= amount;
+            System.out.println("Debited: " + amount);
+            
+            // Simulate potential error during credit
+            if (Math.random() > 0.7) {
+                throw new RuntimeException("Network error during credit!");
+            }
+            
+            recipient.balance += amount;
+            System.out.println("Credited: " + amount);
+            System.out.println("Transaction successful!");
+            
+        } catch (RuntimeException e) {
+            // Rollback on error
+            System.out.println("Error occurred: " + e.getMessage());
+            System.out.println("Rolling back transaction...");
+            balance = originalBalance;
+            recipient.balance = originalRecipientBalance;
+            System.out.println("Transaction rolled back!");
+            throw e; // Re-throw after rollback
+        }
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+}
+
+public class BankTransactionDemo {
+    public static void main(String[] args) {
+        BankTransaction account1 = new BankTransaction(1000);
+        BankTransaction account2 = new BankTransaction(500);
+        
+        System.out.println("Initial balances:");
+        System.out.println("Account 1: " + account1.getBalance());
+        System.out.println("Account 2: " + account2.getBalance());
+        
+        try {
+            System.out.println("\n--- Attempting transfer ---");
+            account1.transfer(200, account2);
+        } catch (InsufficientFundsException e) {
+            System.out.println("Transfer failed: " + e.getMessage());
+        } catch (InvalidAmountException e) {
+            System.out.println("Invalid amount: " + e.getMessage());
+        } catch (RuntimeException e) {
+            System.out.println("System error during transfer");
+        } finally {
+            System.out.println("\nFinal balances:");
+            System.out.println("Account 1: " + account1.getBalance());
+            System.out.println("Account 2: " + account2.getBalance());
+        }
+    }
+}
+
+/* Possible Output 1 (Success):
+Initial balances:
+Account 1: 1000.0
+Account 2: 500.0
+
+--- Attempting transfer ---
+Debited: 200.0
+Credited: 200.0
+Transaction successful!
+
+Final balances:
+Account 1: 800.0
+Account 2: 700.0
+
+Possible Output 2 (Rollback):
+Initial balances:
+Account 1: 1000.0
+Account 2: 500.0
+
+--- Attempting transfer ---
+Debited: 200.0
+Error occurred: Network error during credit!
+Rolling back transaction...
+Transaction rolled back!
+System error during transfer
+
+Final balances:
+Account 1: 1000.0
+Account 2: 500.0
+*/</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like trying to trade toys with a friend—if something goes wrong, you both get
+                    your original toys back.</p>
+                <p><strong>Real-world:</strong> Like a bank transfer that gets reversed if there's an error, ensuring
+                    money isn't lost.</p>
+                <p><strong>Technical:</strong> This demonstrates transaction rollback using exception handling. Custom
+                    exceptions for business logic, try-catch for error handling, finally for status reporting, and
+                    rollback mechanism to maintain data integrity.</p>
+            </div>
+        </div>
+
+        <!-- Next Topic -->
+        <div class="next-topic">
+            <a href="#" class="btn btn-primary" style="opacity: 0.5; cursor: not-allowed;">Next Topic Coming Soon:
+                Handling Files in Java</a>
+        </div>
+    </div>
+</body>
+
+</html>

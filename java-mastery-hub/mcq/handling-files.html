@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Handling - Quiz - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>File Handling - Quiz</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Quiz</span>
+                <span>/</span>
+                <span>File Handling</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Test Your Knowledge</h2>
+            <p>This quiz contains 30 questions covering all aspects of file handling in Java including traditional I/O,
+                NIO, streams, readers, writers, and best practices.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Take your time and read each question carefully. Pay attention to code output questions and trace
+                    through the logic step by step. Aim for at least 80% to demonstrate mastery!</p>
+            </div>
+        </div>
+
+        <div class="quiz-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-text">
+                <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
+            </div>
+        </div>
+
+        <div id="quizContainer" class="content-section"></div>
+
+        <div id="quizResults" class="content-section" style="display: none;">
+            <h2>Quiz Complete! 🎉</h2>
+            <div class="results-summary">
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="scorePercentage">0%</span>
+                    </div>
+                    <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+                </div>
+                <div id="performanceMessage" class="performance-message"></div>
+            </div>
+
+            <div class="results-actions">
+                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
+                <a href="../theory/handling-files.html" class="btn btn-secondary">📚 Review Theory</a>
+                <a href="../programs/handling-files.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+        </div>
+
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/handling-files.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../programs/handling-files.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">📚 Next Topic</div>
+                <p><strong>Coming Soon:</strong> Java JDBC in Depth</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+    <script>
+        const quizQuestions = [
+            {
+                id: 1,
+                question: "Which package contains the File class?",
+                options: ["java.io", "java.nio", "java.util", "java.lang"],
+                answerIndex: 0,
+                explanation: "The File class is part of the java.io package, which contains classes for system input and output through data streams, serialization, and the file system."
+            },
+            {
+                id: 2,
+                question: "Which class is used to read text files character by character?",
+                options: ["FileInputStream", "FileReader", "BufferedReader", "Scanner"],
+                answerIndex: 1,
+                explanation: "FileReader is used to read character files. FileInputStream is for bytes, BufferedReader is a wrapper for efficient reading, and Scanner is a utility class."
+            },
+            {
+                id: 3,
+                question: "What is the advantage of using BufferedReader over FileReader?",
+                options: ["It can read binary files", "It reads data in chunks (buffered), making it faster", "It automatically closes the file", "It can write to files"],
+                answerIndex: 1,
+                explanation: "BufferedReader reads data in chunks (buffer) instead of one character at a time, which significantly improves performance for large files."
+            },
+            {
+                id: 4,
+                question: "Which method is used to read a complete line from a text file?",
+                options: ["read()", "readLine()", "nextLine()", "getLine()"],
+                answerIndex: 1,
+                explanation: "The readLine() method in BufferedReader reads a complete line of text and returns it as a String. It returns null when the end of the file is reached."
+            },
+            {
+                id: 5,
+                question: "What does FileWriter do by default when writing to an existing file?",
+                options: ["Appends to the file", "Overwrites the file", "Throws an exception", "Creates a backup"],
+                answerIndex: 1,
+                explanation: "By default, FileWriter overwrites the existing file content. To append, you must pass 'true' as the second parameter: new FileWriter(file, true)."
+            },
+            {
+                id: 6,
+                question: "How do you enable append mode in FileWriter?",
+                options: ["new FileWriter(file, true)", "new FileWriter(file, APPEND)", "new FileWriter(file).append()", "FileWriter.setAppendMode(true)"],
+                answerIndex: 0,
+                explanation: "Pass 'true' as the second parameter to the FileWriter constructor: new FileWriter(file, true). This enables append mode."
+            },
+            {
+                id: 7,
+                question: "Which class should be used for reading binary files?",
+                options: ["FileReader", "BufferedReader", "FileInputStream", "Scanner"],
+                answerIndex: 2,
+                explanation: "FileInputStream is used for reading raw bytes from binary files (images, audio, etc.). FileReader is for text files."
+            },
+            {
+                id: 8,
+                question: "What does the read() method return when it reaches the end of a file?",
+                options: ["0", "-1", "null", "EOF"],
+                answerIndex: 1,
+                explanation: "The read() method returns -1 when it reaches the end of the file. This is the standard way to detect EOF (End Of File) in Java."
+            },
+            {
+                id: 9,
+                question: "What is the purpose of try-with-resources?",
+                options: ["To catch exceptions", "To automatically close resources", "To improve performance", "To handle multiple files"],
+                answerIndex: 1,
+                explanation: "try-with-resources automatically closes resources (like file streams) when the block exits, even if an exception occurs. This prevents resource leaks."
+            },
+            {
+                id: 10,
+                question: "Which interface must a class implement to be used in try-with-resources?",
+                options: ["Closeable or AutoCloseable", "Serializable", "Readable", "Writable"],
+                answerIndex: 0,
+                explanation: "A class must implement AutoCloseable (or its subinterface Closeable) to be used in try-with-resources. The close() method is called automatically."
+            },
+            {
+                id: 11,
+                question: "What is NIO in Java?",
+                options: ["New Input Output", "Network Input Output", "Non-blocking IO", "Native IO"],
+                answerIndex: 0,
+                explanation: "NIO stands for New Input/Output. It was introduced in Java 7 as a modern alternative to the traditional java.io package, providing better performance and more features."
+            },
+            {
+                id: 12,
+                question: "Which package contains the Files class?",
+                options: ["java.io", "java.nio", "java.nio.file", "java.util"],
+                answerIndex: 2,
+                explanation: "The Files class is in the java.nio.file package. It provides static utility methods for file operations like read, write, copy, move, delete, etc."
+            },
+            {
+                id: 13,
+                question: "What does Files.readAllLines() return?",
+                options: ["String", "String[]", "List<String>", "ArrayList<String>"],
+                answerIndex: 2,
+                explanation: "Files.readAllLines() returns a List<String> where each element is a line from the file. It reads the entire file into memory."
+            },
+            {
+                id: 14,
+                question: "What is a disadvantage of using Files.readAllLines() for very large files?",
+                options: ["It's slow", "It loads the entire file into memory", "It can't handle UTF-8", "It requires try-catch"],
+                answerIndex: 1,
+                explanation: "Files.readAllLines() loads the entire file into memory, which can cause OutOfMemoryError for very large files (GB+). Use BufferedReader for huge files."
+            },
+            {
+                id: 15,
+                question: "Which method is used to check if a file exists?",
+                options: ["file.exists()", "file.isPresent()", "file.check()", "Files.exists(path)"],
+                answerIndex: 0,
+                explanation: "Both file.exists() (java.io.File) and Files.exists(path) (java.nio.file.Files) can be used to check if a file exists."
+            },
+            {
+                id: 16,
+                question: "What is the difference between mkdir() and mkdirs()?",
+                options: ["No difference", "mkdir() creates one directory, mkdirs() creates nested directories", "mkdirs() is faster", "mkdir() is deprecated"],
+                answerIndex: 1,
+                explanation: "mkdir() creates a single directory and fails if parent doesn't exist. mkdirs() creates the directory and all necessary parent directories."
+            },
+            {
+                id: 17,
+                question: "Which exception is thrown when trying to read a file that doesn't exist?",
+                options: ["IOException", "FileNotFoundException", "NullPointerException", "IllegalArgumentException"],
+                answerIndex: 1,
+                explanation: "FileNotFoundException (a subclass of IOException) is thrown when attempting to open a file that doesn't exist for reading."
+            },
+            {
+                id: 18,
+                question: "What type of exception is IOException?",
+                options: ["Unchecked exception", "Checked exception", "Runtime exception", "Error"],
+                answerIndex: 1,
+                explanation: "IOException is a checked exception, meaning it must be either caught or declared in the method signature with 'throws'."
+            },
+            {
+                id: 19,
+                question: "What does file.length() return?",
+                options: ["Number of lines", "File size in bytes", "File size in KB", "Number of characters"],
+                answerIndex: 1,
+                explanation: "file.length() returns the size of the file in bytes. It returns 0 if the file doesn't exist or is empty."
+            },
+            {
+                id: 20,
+                question: "Which method deletes a file?",
+                options: ["file.delete()", "file.remove()", "Files.delete(path)", "Both A and C"],
+                answerIndex: 3,
+                explanation: "Both file.delete() (java.io.File) and Files.delete(path) (java.nio.file.Files) can be used to delete files. The deletion is permanent."
+            },
+            {
+                id: 21,
+                question: "What is the recommended character encoding for text files?",
+                options: ["ASCII", "UTF-8", "ISO-8859-1", "Windows-1252"],
+                answerIndex: 1,
+                explanation: "UTF-8 is the recommended character encoding as it supports all Unicode characters and is widely compatible across platforms."
+            },
+            {
+                id: 22,
+                question: "How do you specify character encoding when reading with NIO?",
+                options: ["Files.readAllLines(path, StandardCharsets.UTF_8)", "Files.readAllLines(path, 'UTF-8')", "Files.readAllLines(path).setEncoding('UTF-8')", "Not possible"],
+                answerIndex: 0,
+                explanation: "Pass StandardCharsets.UTF_8 as the second parameter: Files.readAllLines(path, StandardCharsets.UTF_8)."
+            },
+            {
+                id: 23,
+                question: "What does file.isFile() return if the file is a directory?",
+                options: ["true", "false", "null", "Throws exception"],
+                answerIndex: 1,
+                explanation: "file.isFile() returns false if the path represents a directory. Use file.isDirectory() to check if it's a directory."
+            },
+            {
+                id: 24,
+                question: "Which method copies a file using NIO?",
+                options: ["Files.copy(source, target)", "Files.copyFile(source, target)", "Path.copy(source, target)", "FileUtils.copy(source, target)"],
+                answerIndex: 0,
+                explanation: "Files.copy(source, target) is the NIO method for copying files. You can also specify options like StandardCopyOption.REPLACE_EXISTING."
+            },
+            {
+                id: 25,
+                question: "What happens if you don't close a file stream?",
+                options: ["Nothing", "Resource leak - file handle remains open", "File gets corrupted", "Exception is thrown"],
+                answerIndex: 1,
+                explanation: "Not closing file streams causes resource leaks. The file handle remains open, consuming system resources. Use try-with-resources to prevent this."
+            },
+            {
+                id: 26,
+                question: "Which is faster for large text files?",
+                options: ["FileReader", "BufferedReader", "Scanner", "Files.readAllLines()"],
+                answerIndex: 1,
+                explanation: "BufferedReader is fastest for large text files because it reads data in chunks (buffer). Files.readAllLines() loads entire file into memory."
+            },
+            {
+                id: 27,
+                question: "What does the following code do: new FileWriter('log.txt', true)?",
+                options: ["Creates a new file", "Overwrites the file", "Appends to the file", "Throws exception"],
+                answerIndex: 2,
+                explanation: "The 'true' parameter enables append mode, so new content is added to the end of the file without deleting existing content."
+            },
+            {
+                id: 28,
+                question: "Which class provides the newLine() method for platform-independent line breaks?",
+                options: ["FileWriter", "BufferedWriter", "PrintWriter", "All of the above"],
+                answerIndex: 1,
+                explanation: "BufferedWriter provides the newLine() method which writes a platform-specific line separator (\\n on Unix, \\r\\n on Windows)."
+            },
+            {
+                id: 29,
+                question: "What is the difference between FileReader and FileInputStream?",
+                options: ["No difference", "FileReader is for text (characters), FileInputStream is for binary (bytes)", "FileReader is faster", "FileInputStream is deprecated"],
+                answerIndex: 1,
+                explanation: "FileReader reads character data (text files) and handles character encoding. FileInputStream reads raw bytes (binary files like images, audio)."
+            },
+            {
+                id: 30,
+                question: "Which is the modern, recommended approach for file operations in Java?",
+                options: ["java.io package", "java.nio.file package (NIO)", "Both are equally good", "java.util package"],
+                answerIndex: 1,
+                explanation: "java.nio.file package (NIO) is the modern, recommended approach. It provides cleaner APIs, better performance, and more features than traditional java.io."
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
+            quizManager.startQuiz();
+            window.quizManager = quizManager;
+        });
+    </script>
+</body>
+
+</html>

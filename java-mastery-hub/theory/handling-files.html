@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handling Files in Java - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Content Header -->
+        <div class="content-header">
+            <h1>Handling Files in Java</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Theory</span>
+                <span>/</span>
+                <span>File Handling</span>
+            </div>
+        </div>
+
+        <!-- Section 1: Introduction to File Handling -->
+        <div class="content-section">
+            <h2>📁 Introduction to File Handling</h2>
+
+            <h3>Level 1: Beginner-Friendly Explanation (Like Explaining to a Baby)</h3>
+            <p>
+                Imagine you have a <strong>notebook</strong> where you write your favorite stories. When you close the
+                notebook, the stories stay there! You can open it later and read them again.
+            </p>
+            <p>
+                <strong>File handling</strong> in Java is like that notebook. It lets your program save information
+                (like names, numbers, or messages) to a file on your computer. Even when you turn off the computer, the
+                information stays safe in the file!
+            </p>
+
+            <h3>Level 2: Real-World Analogy</h3>
+            <p>
+                Think of your computer's file system like a <strong>filing cabinet</strong> in an office:
+            </p>
+            <ul>
+                <li><strong>Files</strong> are like documents (letters, reports, invoices)</li>
+                <li><strong>Folders/Directories</strong> are like drawers that organize documents</li>
+                <li><strong>Reading a file</strong> is like opening a document to read it</li>
+                <li><strong>Writing to a file</strong> is like writing on a document and saving it</li>
+                <li><strong>Deleting a file</strong> is like shredding a document</li>
+            </ul>
+
+            <h3>Level 3: Technical Deep-Dive</h3>
+            <p>
+                <strong>File handling</strong> refers to the process of creating, reading, updating, and deleting files
+                stored on a persistent storage medium (hard drive, SSD, etc.). Java provides comprehensive APIs for file
+                operations through two main packages:
+            </p>
+            <ul>
+                <li><strong>java.io</strong> - Traditional I/O (Input/Output) package (since Java 1.0)</li>
+                <li><strong>java.nio.file</strong> - New I/O (NIO) package (since Java 7) - more modern and efficient
+                </li>
+            </ul>
+            <p>
+                File handling is essential for:
+            </p>
+            <ul>
+                <li><strong>Data Persistence:</strong> Storing data beyond program execution</li>
+                <li><strong>Configuration:</strong> Reading settings from config files</li>
+                <li><strong>Logging:</strong> Writing application logs for debugging</li>
+                <li><strong>Data Exchange:</strong> Importing/exporting data (CSV, JSON, XML)</li>
+            </ul>
+        </div>
+
+        <!-- Section 2: Basic Classes -->
+        <div class="content-section">
+            <h2>🔧 Basic Classes for File Handling</h2>
+
+            <h3>A. java.io.File Class</h3>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A label that points to a file or folder on your computer.</p>
+                <p><strong>Real-world:</strong> Like an address that tells you where a house is located.</p>
+                <p><strong>Technical:</strong> Represents a file or directory path. Provides methods to check existence,
+                    permissions, create/delete files, list directory contents, etc. Does NOT read/write file contents.
+                </p>
+            </div>
+            <pre><code class="language-java">File file = new File("data.txt");
+if (file.exists()) {
+    System.out.println("File found!");
+}</code></pre>
+
+            <h3>B. FileInputStream & FileOutputStream</h3>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Tubes that let you pour bytes (tiny pieces of data) in or out of a file.</p>
+                <p><strong>Real-world:</strong> Like a water pipe - one brings water in, one takes water out.</p>
+                <p><strong>Technical:</strong> Used for reading/writing <strong>binary data</strong> (bytes). Good for
+                    images, videos, audio files, or any non-text data. Reads/writes one byte at a time (or byte arrays).
+                </p>
+            </div>
+
+            <h3>C. FileReader & FileWriter</h3>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Special helpers that understand letters and words, not just numbers.</p>
+                <p><strong>Real-world:</strong> Like reading a book vs looking at a barcode.</p>
+                <p><strong>Technical:</strong> Used for reading/writing <strong>character data</strong> (text). Handles
+                    character encoding automatically. Better for text files (.txt, .csv, .log). Reads/writes one
+                    character at a time.</p>
+            </div>
+
+            <h3>D. BufferedReader & BufferedWriter</h3>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like carrying many toys at once instead of one toy at a time.</p>
+                <p><strong>Real-world:</strong> Using a shopping cart instead of carrying items one by one.</p>
+                <p><strong>Technical:</strong> Wraps FileReader/FileWriter to add <strong>buffering</strong>.
+                    Reads/writes
+                    data in chunks (buffer) instead of one character at a time. <strong>Much faster</strong> for large
+                    files. BufferedReader provides <code>readLine()</code> method to read entire lines.</p>
+            </div>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p><strong>Always use BufferedReader/BufferedWriter</strong> for text files. They are significantly
+                    faster than FileReader/FileWriter for large files!</p>
+            </div>
+        </div>
+
+        <!-- Section 3: Text Files vs Binary Files -->
+        <div class="content-section">
+            <h2>📄 Text Files vs Binary Files</h2>
+
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Text Files</th>
+                        <th>Binary Files</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Content</strong></td>
+                        <td>Human-readable characters (letters, numbers, symbols)</td>
+                        <td>Raw bytes (0s and 1s)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Examples</strong></td>
+                        <td>.txt, .csv, .log, .java, .html</td>
+                        <td>.jpg, .png, .mp3, .exe, .class</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Java Classes</strong></td>
+                        <td>FileReader, FileWriter, BufferedReader, BufferedWriter</td>
+                        <td>FileInputStream, FileOutputStream</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Encoding</strong></td>
+                        <td>Uses character encoding (UTF-8, ASCII, etc.)</td>
+                        <td>No encoding, raw bytes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Viewable in Notepad?</strong></td>
+                        <td>Yes</td>
+                        <td>No (shows gibberish)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="callout note">
+                <div class="callout-title">📚 NOTE</div>
+                <p>Use <strong>Reader/Writer</strong> for text files and <strong>InputStream/OutputStream</strong> for
+                    binary files. Using the wrong one can corrupt your data!</p>
+            </div>
+        </div>
+
+        <!-- Section 4: NIO Package -->
+        <div class="content-section">
+            <h2>🚀 NIO Package (Modern File Handling)</h2>
+
+            <h3>What is NIO?</h3>
+            <p>
+                <strong>NIO (New I/O)</strong> was introduced in Java 7 as a modern alternative to the traditional
+                <code>java.io</code> package. It provides better performance, more features, and cleaner APIs.
+            </p>
+
+            <h3>Key Classes in java.nio.file</h3>
+
+            <h4>1. Path Interface</h4>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A modern, smarter way to point to files.</p>
+                <p><strong>Real-world:</strong> Like GPS coordinates instead of a street address.</p>
+                <p><strong>Technical:</strong> Represents a file or directory path. More flexible than
+                    <code>File</code>.
+                    Can be absolute or relative. Immutable and platform-independent.</p>
+            </div>
+            <pre><code class="language-java">Path path = Paths.get("data.txt");
+Path absolutePath = path.toAbsolutePath();</code></pre>
+
+            <h4>2. Files Class</h4>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> A super helper with lots of tools for working with files.</p>
+                <p><strong>Real-world:</strong> Like a Swiss Army knife with many tools.</p>
+                <p><strong>Technical:</strong> Utility class with static methods for file operations: read, write, copy,
+                    move, delete, create directories, etc. Much simpler than traditional I/O.</p>
+            </div>
+            <pre><code class="language-java">// Read all lines in one shot!
+List&lt;String&gt; lines = Files.readAllLines(Paths.get("data.txt"));
+
+// Write all lines in one shot!
+Files.write(Paths.get("output.txt"), lines);</code></pre>
+
+            <h4>3. StandardCharsets</h4>
+            <div class="code-explanation">
+                <p><strong>Technical:</strong> Provides constants for standard character encodings (UTF-8, ASCII, etc.).
+                    Ensures consistent encoding across platforms.</p>
+            </div>
+            <pre><code class="language-java">Files.readAllLines(path, StandardCharsets.UTF_8);</code></pre>
+
+            <h3>When to Use NIO?</h3>
+            <ul>
+                <li>✅ <strong>Simple file operations</strong> (read all, write all)</li>
+                <li>✅ <strong>File metadata</strong> (size, permissions, timestamps)</li>
+                <li>✅ <strong>Directory operations</strong> (list files, walk directory tree)</li>
+                <li>✅ <strong>File copying/moving</strong></li>
+                <li>✅ <strong>Modern applications</strong> (Java 7+)</li>
+            </ul>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 BEST PRACTICE</div>
+                <p>For new projects, <strong>prefer NIO (java.nio.file)</strong> over traditional I/O (java.io). It's
+                    simpler, faster, and more feature-rich!</p>
+            </div>
+        </div>
+
+        <!-- Section 5: Reading Files -->
+        <div class="content-section">
+            <h2>📖 Reading Files</h2>
+
+            <h3>A. Reading with Byte Streams (Binary Data)</h3>
+            <p>Use <code>FileInputStream</code> for binary files (images, audio, etc.):</p>
+            <pre><code class="language-java">FileInputStream fis = new FileInputStream("image.jpg");
+int byteData;
+while ((byteData = fis.read()) != -1) {
+    // Process byte
+}
+fis.close();</code></pre>
+
+            <h3>B. Reading with Character Streams (Text Data)</h3>
+            <p>Use <code>FileReader</code> for text files:</p>
+            <pre><code class="language-java">FileReader fr = new FileReader("data.txt");
+int charData;
+while ((charData = fr.read()) != -1) {
+    System.out.print((char) charData);
+}
+fr.close();</code></pre>
+
+            <h3>C. Reading with Buffering (RECOMMENDED)</h3>
+            <p>Use <code>BufferedReader</code> for efficient line-by-line reading:</p>
+            <pre><code class="language-java">BufferedReader br = new BufferedReader(new FileReader("data.txt"));
+String line;
+while ((line = br.readLine()) != null) {
+    System.out.println(line);
+}
+br.close();</code></pre>
+
+            <h3>D. Reading with NIO (MODERN)</h3>
+            <p>Use <code>Files.readAllLines()</code> for simple cases:</p>
+            <pre><code class="language-java">List&lt;String&gt; lines = Files.readAllLines(Paths.get("data.txt"));
+for (String line : lines) {
+    System.out.println(line);
+}</code></pre>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING</div>
+                <p><code>Files.readAllLines()</code> loads the <strong>entire file into memory</strong>. For very large
+                    files (GB+), use <code>BufferedReader</code> or <code>Files.lines()</code> (Stream API) instead!</p>
+            </div>
+        </div>
+
+        <!-- Section 6: Writing Files -->
+        <div class="content-section">
+            <h2>✍️ Writing Files</h2>
+
+            <h3>A. Overwrite Mode (Default)</h3>
+            <p>Creates a new file or <strong>overwrites</strong> existing content:</p>
+            <pre><code class="language-java">FileWriter fw = new FileWriter("output.txt"); // Overwrites!
+fw.write("Hello, World!");
+fw.close();</code></pre>
+
+            <h3>B. Append Mode</h3>
+            <p>Adds content to the <strong>end</strong> of an existing file:</p>
+            <pre><code class="language-java">FileWriter fw = new FileWriter("output.txt", true); // Append mode
+fw.write("New line\n");
+fw.close();</code></pre>
+
+            <h3>C. Writing with Buffering (RECOMMENDED)</h3>
+            <p>Use <code>BufferedWriter</code> for better performance:</p>
+            <pre><code class="language-java">BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"));
+bw.write("Line 1");
+bw.newLine(); // Platform-independent newline
+bw.write("Line 2");
+bw.close();</code></pre>
+
+            <h3>D. Writing with NIO (MODERN)</h3>
+            <p>Use <code>Files.write()</code> for simple cases:</p>
+            <pre><code class="language-java">List&lt;String&gt; lines = Arrays.asList("Line 1", "Line 2", "Line 3");
+Files.write(Paths.get("output.txt"), lines);
+
+// Append mode with NIO
+Files.write(Paths.get("output.txt"), lines, StandardOpenOption.APPEND);</code></pre>
+
+            <div class="callout example">
+                <div class="callout-title">📝 EXAMPLE</div>
+                <p><strong>Overwrite:</strong> Replaces entire file content (like erasing a whiteboard and writing new
+                    content).</p>
+                <p><strong>Append:</strong> Adds to the end (like adding a new page to a book).</p>
+            </div>
+        </div>
+
+        <!-- Section 7: File Permissions & Checks -->
+        <div class="content-section">
+            <h2>🔐 File Permissions & Checks</h2>
+
+            <h3>Common File Check Methods</h3>
+            <pre><code class="language-java">File file = new File("data.txt");
+
+// Existence
+boolean exists = file.exists();
+
+// Type checks
+boolean isFile = file.isFile();
+boolean isDirectory = file.isDirectory();
+
+// Permission checks
+boolean canRead = file.canRead();
+boolean canWrite = file.canWrite();
+boolean canExecute = file.canExecute();
+
+// Metadata
+long size = file.length(); // Size in bytes
+long lastModified = file.lastModified(); // Timestamp
+String name = file.getName();
+String absolutePath = file.getAbsolutePath();</code></pre>
+
+            <h3>NIO Approach</h3>
+            <pre><code class="language-java">Path path = Paths.get("data.txt");
+
+boolean exists = Files.exists(path);
+boolean isReadable = Files.isReadable(path);
+boolean isWritable = Files.isWritable(path);
+boolean isExecutable = Files.isExecutable(path);
+
+long size = Files.size(path);
+FileTime lastModified = Files.getLastModifiedTime(path);</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Always check <code>file.exists()</code> before reading to avoid <code>FileNotFoundException</code>!
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 8: try-with-resources -->
+        <div class="content-section">
+            <h2>🔒 try-with-resources (Auto Resource Close)</h2>
+
+            <h3>The Problem: Forgetting to Close Resources</h3>
+            <pre><code class="language-java">// BAD: What if an exception occurs? File never closes!
+FileReader fr = new FileReader("data.txt");
+// ... read data ...
+fr.close(); // May never execute if exception occurs!</code></pre>
+
+            <h3>Old Solution: try-catch-finally</h3>
+            <pre><code class="language-java">FileReader fr = null;
+try {
+    fr = new FileReader("data.txt");
+    // ... read data ...
+} catch (IOException e) {
+    e.printStackTrace();
+} finally {
+    if (fr != null) {
+        try {
+            fr.close(); // Ensure it closes
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <p><strong>Problem:</strong> Too verbose! Lots of boilerplate code.</p>
+
+            <h3>Modern Solution: try-with-resources (Java 7+)</h3>
+            <pre><code class="language-java">try (FileReader fr = new FileReader("data.txt")) {
+    // ... read data ...
+} catch (IOException e) {
+    e.printStackTrace();
+}
+// fr.close() is called AUTOMATICALLY!</code></pre>
+
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a toy that puts itself back in the toy box when you're done playing.</p>
+                <p><strong>Real-world:</strong> Like automatic doors that close themselves.</p>
+                <p><strong>Technical:</strong> Resources declared in the try parentheses are automatically closed when
+                    the block exits, even if an exception occurs. Works with any class implementing
+                    <code>AutoCloseable</code> or <code>Closeable</code>.
+                </p>
+            </div>
+
+            <h3>Multiple Resources</h3>
+            <pre><code class="language-java">try (FileReader fr = new FileReader("input.txt");
+     BufferedReader br = new BufferedReader(fr);
+     FileWriter fw = new FileWriter("output.txt")) {
+    
+    String line;
+    while ((line = br.readLine()) != null) {
+        fw.write(line + "\n");
+    }
+}
+// All three resources closed automatically!</code></pre>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 BEST PRACTICE</div>
+                <p><strong>Always use try-with-resources</strong> for file operations. It prevents resource leaks and
+                    makes code cleaner!</p>
+            </div>
+        </div>
+
+        <!-- Section 9: Handling File Exceptions -->
+        <div class="content-section">
+            <h2>⚠️ Handling File Exceptions</h2>
+
+            <h3>Common File Exceptions</h3>
+
+            <h4>1. FileNotFoundException</h4>
+            <div class="code-explanation">
+                <p><strong>When:</strong> Trying to open a file that doesn't exist.</p>
+                <p><strong>Solution:</strong> Check <code>file.exists()</code> before opening, or handle the exception.
+                </p>
+            </div>
+            <pre><code class="language-java">try {
+    FileReader fr = new FileReader("nonexistent.txt");
+} catch (FileNotFoundException e) {
+    System.out.println("File not found: " + e.getMessage());
+}</code></pre>
+
+            <h4>2. IOException</h4>
+            <div class="code-explanation">
+                <p><strong>When:</strong> General I/O errors (disk full, permission denied, network issues, etc.).</p>
+                <p><strong>Solution:</strong> Always catch <code>IOException</code> for file operations.</p>
+            </div>
+            <pre><code class="language-java">try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
+    String line = br.readLine();
+} catch (IOException e) {
+    System.out.println("I/O Error: " + e.getMessage());
+    e.printStackTrace();
+}</code></pre>
+
+            <h4>3. SecurityException</h4>
+            <div class="code-explanation">
+                <p><strong>When:</strong> No permission to access the file (read/write/execute).</p>
+                <p><strong>Solution:</strong> Check permissions or run with appropriate privileges.</p>
+            </div>
+
+            <h3>Relation to Exception Handling (Topic 10)</h3>
+            <p>
+                File operations are a perfect example of <strong>checked exceptions</strong> from Topic 10:
+            </p>
+            <ul>
+                <li><code>IOException</code> and its subclasses are <strong>checked exceptions</strong></li>
+                <li>You <strong>must</strong> either catch them or declare them with <code>throws</code></li>
+                <li>Use <strong>try-with-resources</strong> to ensure cleanup even when exceptions occur</li>
+                <li>Follow <strong>best practices</strong>: catch specific exceptions, log errors, provide meaningful
+                    messages</li>
+            </ul>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ WARNING</div>
+                <p>Never use empty catch blocks! Always log or handle exceptions properly:</p>
+                <pre><code class="language-java">// BAD
+try {
+    // file operation
+} catch (IOException e) {
+    // Silent failure - BAD!
+}
+
+// GOOD
+try {
+    // file operation
+} catch (IOException e) {
+    System.err.println("Error: " + e.getMessage());
+    e.printStackTrace();
+}</code></pre>
+            </div>
+        </div>
+
+        <!-- Section 10: Common Mistakes -->
+        <div class="content-section">
+            <h2>❌ Common Mistakes</h2>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ Mistake 1: Not Closing File Streams</div>
+                <pre><code class="language-java">// BAD - Resource leak!
+FileReader fr = new FileReader("data.txt");
+// ... read data ...
+// Forgot to close! File handle stays open!</code></pre>
+                <p><strong>Fix:</strong> Use try-with-resources to auto-close.</p>
+            </div>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ Mistake 2: Reading Huge Files Inefficiently</div>
+                <pre><code class="language-java">// BAD - Loads entire 10GB file into memory!
+List&lt;String&gt; lines = Files.readAllLines(Paths.get("huge.txt"));</code></pre>
+                <p><strong>Fix:</strong> Use <code>BufferedReader</code> or <code>Files.lines()</code> (Stream API) to
+                    read line by line.</p>
+            </div>
+
+            <div class="callout warning">
+                <div class="callout-title">⚠️ Mistake 3: Incorrect Character Encoding</div>
+                <pre><code class="language-java">// BAD - Uses platform default encoding (may vary!)
+FileReader fr = new FileReader("data.txt");</code></pre>
+                <p><strong>Fix:</strong> Always specify encoding explicitly:</p>
+                <pre><code class="language-java">// GOOD
+Files.readAllLines(Paths.get("data.txt"), StandardCharsets.UTF_8);</code></pre>
+            </div>
+
+            <ul>
+                <li><strong>Using FileReader/FileWriter without buffering:</strong> Very slow for large files. Always
+                    wrap with BufferedReader/BufferedWriter.</li>
+                <li><strong>Hardcoding file paths:</strong> Use <code>File.separator</code> or <code>Paths.get()</code>
+                    for cross-platform compatibility.</li>
+                <li><strong>Not checking file existence:</strong> Always check before reading to avoid exceptions.</li>
+                <li><strong>Mixing text and binary operations:</strong> Don't use FileReader for binary files or
+                    FileInputStream for text files.</li>
+            </ul>
+        </div>
+
+        <!-- Section 11: Best Practices -->
+        <div class="content-section">
+            <h2>✅ Best Practices</h2>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 Practice 1: Always Close Resources</div>
+                <p>Use <strong>try-with-resources</strong> for automatic cleanup:</p>
+                <pre><code class="language-java">try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
+    // Read data
+} // Auto-closed!</code></pre>
+            </div>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 Practice 2: Use Buffering</div>
+                <p>Always use <code>BufferedReader/BufferedWriter</code> for text files:</p>
+                <pre><code class="language-java">// GOOD - Fast!
+BufferedReader br = new BufferedReader(new FileReader("data.txt"));
+
+// BAD - Slow!
+FileReader fr = new FileReader("data.txt");</code></pre>
+            </div>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 Practice 3: Prefer NIO for Modern Applications</div>
+                <p>Use <code>java.nio.file</code> for cleaner, more powerful file operations:</p>
+                <pre><code class="language-java">// NIO - Simple and clean
+List&lt;String&gt; lines = Files.readAllLines(Paths.get("data.txt"));
+Files.write(Paths.get("output.txt"), lines);</code></pre>
+            </div>
+
+            <div class="callout tip">
+                <div class="callout-title">💡 Practice 4: Specify Character Encoding</div>
+                <p>Always specify encoding explicitly (UTF-8 is recommended):</p>
+                <pre><code class="language-java">Files.readAllLines(Paths.get("data.txt"), StandardCharsets.UTF_8);</code></pre>
+            </div>
+
+            <h3>Summary of Best Practices</h3>
+            <ul>
+                <li>✅ Use <strong>try-with-resources</strong> to auto-close streams</li>
+                <li>✅ Use <strong>BufferedReader/BufferedWriter</strong> for text files</li>
+                <li>✅ Use <strong>NIO (java.nio.file)</strong> for modern applications</li>
+                <li>✅ Always specify <strong>character encoding</strong> (UTF-8)</li>
+                <li>✅ Check <strong>file.exists()</strong> before reading</li>
+                <li>✅ Handle <strong>exceptions properly</strong> (don't use empty catch blocks)</li>
+                <li>✅ Use <strong>relative paths</strong> or configuration for file locations</li>
+                <li>✅ For large files, read <strong>line by line</strong> instead of loading all at once</li>
+            </ul>
+        </div>
+
+        <!-- Next Topic -->
+        <div class="next-topic">
+            <a href="#" class="btn btn-primary" style="opacity: 0.5; cursor: not-allowed;">Next Topic Coming Soon:
+                Java JDBC in Depth</a>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
+</html>

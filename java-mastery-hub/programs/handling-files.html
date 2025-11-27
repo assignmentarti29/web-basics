@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Handling - Programs - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>File Handling - Code Examples</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Programs</span>
+                <span>/</span>
+                <span>File Handling</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Hands-On Java Programs</h2>
+            <p>Welcome to the practical section! These 15+ programs demonstrate file handling in Java, from basic file
+                operations to advanced NIO techniques.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>File handling is crucial for real-world applications. Practice these examples and experiment with
+                    different file operations!</p>
+            </div>
+        </div>
+
+        <!-- Program 1: Checking if file exists -->
+        <div class="content-section">
+            <h2>Program 1: Checking if File Exists</h2>
+            <p>Demonstrates how to check if a file exists before performing operations.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.File;
+
+public class FileExistsCheck {
+    public static void main(String[] args) {
+        File file = new File("data.txt");
+        
+        if (file.exists()) {
+            System.out.println("File exists!");
+            System.out.println("Is file: " + file.isFile());
+            System.out.println("Is directory: " + file.isDirectory());
+            System.out.println("Size: " + file.length() + " bytes");
+        } else {
+            System.out.println("File does not exist.");
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like checking if your toy is in the toy box before playing with it.</p>
+                <p><strong>Real-world:</strong> Checking if a document exists in a filing cabinet before trying to read
+                    it.</p>
+                <p><strong>Technical:</strong> Always check file existence before reading to avoid
+                    FileNotFoundException. The File class provides metadata methods without actually opening the file.
+                </p>
+            </div>
+        </div>
+
+        <!-- Program 2: Creating a new file -->
+        <div class="content-section">
+            <h2>Program 2: Creating a New File</h2>
+            <p>Demonstrates how to create a new file programmatically.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.File;
+import java.io.IOException;
+
+public class CreateFile {
+    public static void main(String[] args) {
+        try {
+            File file = new File("newfile.txt");
+            
+            if (file.createNewFile()) {
+                System.out.println("File created: " + file.getName());
+                System.out.println("Absolute path: " + file.getAbsolutePath());
+            } else {
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like getting a new blank notebook to write in.</p>
+                <p><strong>Real-world:</strong> Creating a new document in your computer.</p>
+                <p><strong>Technical:</strong> createNewFile() returns true if file was created, false if it already
+                    exists. Throws IOException if creation fails due to permissions or disk issues.</p>
+            </div>
+        </div>
+
+        <!-- Program 3: Writing to a file using FileWriter -->
+        <div class="content-section">
+            <h2>Program 3: Writing to File using FileWriter</h2>
+            <p>Demonstrates basic file writing with FileWriter.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.FileWriter;
+import java.io.IOException;
+
+public class WriteFile {
+    public static void main(String[] args) {
+        try {
+            FileWriter writer = new FileWriter("output.txt");
+            writer.write("Hello, Java File Handling!\n");
+            writer.write("This is line 2.\n");
+            writer.write("This is line 3.");
+            writer.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like writing your name in a notebook with a pencil.</p>
+                <p><strong>Real-world:</strong> Typing text into a document and saving it.</p>
+                <p><strong>Technical:</strong> FileWriter overwrites existing content by default. Always close the
+                    writer to flush data to disk. Without closing, data may remain in buffer and not be written.</p>
+            </div>
+        </div>
+
+        <!-- Program 4: Appending text to a file -->
+        <div class="content-section">
+            <h2>Program 4: Appending Text to File</h2>
+            <p>Demonstrates how to add content to the end of an existing file.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.FileWriter;
+import java.io.IOException;
+
+public class AppendToFile {
+    public static void main(String[] args) {
+        try {
+            // Second parameter 'true' enables append mode
+            FileWriter writer = new FileWriter("output.txt", true);
+            writer.write("\nAppended line 1");
+            writer.write("\nAppended line 2");
+            writer.close();
+            System.out.println("Successfully appended to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like adding a new page to your storybook instead of erasing the old pages.
+                </p>
+                <p><strong>Real-world:</strong> Adding a new entry to a diary without deleting previous entries.</p>
+                <p><strong>Technical:</strong> The second parameter (true) in FileWriter constructor enables append
+                    mode. Without it, the file is overwritten. Useful for logs and incremental data.</p>
+            </div>
+        </div>
+
+        <!-- Program 5: Reading file using FileReader -->
+        <div class="content-section">
+            <h2>Program 5: Reading File using FileReader</h2>
+            <p>Demonstrates basic file reading character by character.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.FileReader;
+import java.io.IOException;
+
+public class ReadFile {
+    public static void main(String[] args) {
+        try {
+            FileReader reader = new FileReader("output.txt");
+            int character;
+            
+            while ((character = reader.read()) != -1) {
+                System.out.print((char) character);
+            }
+            
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like reading a book letter by letter.</p>
+                <p><strong>Real-world:</strong> Opening a text file and reading its contents.</p>
+                <p><strong>Technical:</strong> FileReader reads one character at a time. Returns -1 when end of file is
+                    reached. Inefficient for large files - use BufferedReader instead.</p>
+            </div>
+        </div>
+
+        <!-- Program 6: Reading using BufferedReader -->
+        <div class="content-section">
+            <h2>Program 6: Reading using BufferedReader (Recommended)</h2>
+            <p>Demonstrates efficient line-by-line reading with BufferedReader.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class BufferedReaderExample {
+    public static void main(String[] args) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("output.txt"));
+            String line;
+            int lineNumber = 1;
+            
+            while ((line = reader.readLine()) != null) {
+                System.out.println(lineNumber + ": " + line);
+                lineNumber++;
+            }
+            
+            reader.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like reading a book line by line instead of letter by letter.</p>
+                <p><strong>Real-world:</strong> Reading a document paragraph by paragraph.</p>
+                <p><strong>Technical:</strong> BufferedReader is much faster than FileReader for large files. It reads
+                    data in chunks (buffer) and provides readLine() method. Always prefer this for text files.</p>
+            </div>
+        </div>
+
+        <!-- Program 7: Writing binary data using FileOutputStream -->
+        <div class="content-section">
+            <h2>Program 7: Writing Binary Data using FileOutputStream</h2>
+            <p>Demonstrates writing raw bytes to a file.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class WriteBinaryFile {
+    public static void main(String[] args) {
+        try {
+            FileOutputStream fos = new FileOutputStream("binary.dat");
+            
+            // Write byte array
+            byte[] data = {65, 66, 67, 68, 69}; // ASCII: A, B, C, D, E
+            fos.write(data);
+            
+            fos.close();
+            System.out.println("Binary data written successfully.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like putting colored beads (bytes) in a jar.</p>
+                <p><strong>Real-world:</strong> Saving an image or audio file.</p>
+                <p><strong>Technical:</strong> FileOutputStream writes raw bytes. Used for binary files (images, audio,
+                    video, serialized objects). Not suitable for text files - use FileWriter instead.</p>
+            </div>
+        </div>
+
+        <!-- Program 8: Reading using FileInputStream -->
+        <div class="content-section">
+            <h2>Program 8: Reading Binary Data using FileInputStream</h2>
+            <p>Demonstrates reading raw bytes from a file.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.FileInputStream;
+import java.io.IOException;
+
+public class ReadBinaryFile {
+    public static void main(String[] args) {
+        try {
+            FileInputStream fis = new FileInputStream("binary.dat");
+            int byteData;
+            
+            System.out.print("Bytes read: ");
+            while ((byteData = fis.read()) != -1) {
+                System.out.print(byteData + " ");
+            }
+            
+            fis.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like taking beads out of a jar one by one.</p>
+                <p><strong>Real-world:</strong> Loading an image file into memory.</p>
+                <p><strong>Technical:</strong> FileInputStream reads raw bytes. Returns -1 at end of file. Use for
+                    binary files. For better performance with large files, wrap with BufferedInputStream.</p>
+            </div>
+        </div>
+
+        <!-- Program 9: Using try-with-resources -->
+        <div class="content-section">
+            <h2>Program 9: Using try-with-resources (Best Practice)</h2>
+            <p>Demonstrates automatic resource management with try-with-resources.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class TryWithResourcesExample {
+    public static void main(String[] args) {
+        // Resources are automatically closed!
+        try (BufferedReader reader = new BufferedReader(new FileReader("output.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+        // No need to call reader.close() - it's automatic!
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like a toy that puts itself back in the box when you're done.</p>
+                <p><strong>Real-world:</strong> Automatic doors that close themselves.</p>
+                <p><strong>Technical:</strong> try-with-resources (Java 7+) automatically closes resources that
+                    implement AutoCloseable. Prevents resource leaks even if exceptions occur. Always use this for file
+                    operations!</p>
+            </div>
+        </div>
+
+        <!-- Program 10: Using NIO Files.readAllLines -->
+        <div class="content-section">
+            <h2>Program 10: Using NIO Files.readAllLines (Modern Approach)</h2>
+            <p>Demonstrates reading entire file with one method call using NIO.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+import java.util.List;
+
+public class NIOReadFile {
+    public static void main(String[] args) {
+        try {
+            // Read all lines in one shot!
+            List&lt;String&gt; lines = Files.readAllLines(
+                Paths.get("output.txt"), 
+                StandardCharsets.UTF_8
+            );
+            
+            for (String line : lines) {
+                System.out.println(line);
+            }
+            
+            System.out.println("\nTotal lines: " + lines.size());
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like grabbing all your toys at once instead of one by one.</p>
+                <p><strong>Real-world:</strong> Downloading an entire document at once.</p>
+                <p><strong>Technical:</strong> NIO Files.readAllLines() reads entire file into a List. Very convenient
+                    but loads entire file into memory. Not suitable for very large files (GB+). Use BufferedReader for
+                    huge files.</p>
+            </div>
+        </div>
+
+        <!-- Program 11: Creating directories -->
+        <div class="content-section">
+            <h2>Program 11: Creating Directories</h2>
+            <p>Demonstrates how to create directories programmatically.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.File;
+
+public class CreateDirectory {
+    public static void main(String[] args) {
+        // Create single directory
+        File dir1 = new File("myFolder");
+        if (dir1.mkdir()) {
+            System.out.println("Directory created: " + dir1.getName());
+        } else {
+            System.out.println("Directory already exists or creation failed.");
+        }
+        
+        // Create nested directories
+        File dir2 = new File("parent/child/grandchild");
+        if (dir2.mkdirs()) {
+            System.out.println("Nested directories created!");
+        } else {
+            System.out.println("Directories already exist or creation failed.");
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like making a new drawer in your toy box.</p>
+                <p><strong>Real-world:</strong> Creating a new folder on your desktop.</p>
+                <p><strong>Technical:</strong> mkdir() creates a single directory. mkdirs() creates the directory and
+                    all necessary parent directories. Returns false if directory already exists or creation fails.</p>
+            </div>
+        </div>
+
+        <!-- Program 12: Copying a file using NIO -->
+        <div class="content-section">
+            <h2>Program 12: Copying a File using NIO</h2>
+            <p>Demonstrates efficient file copying with NIO.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.io.IOException;
+
+public class CopyFile {
+    public static void main(String[] args) {
+        try {
+            Files.copy(
+                Paths.get("output.txt"), 
+                Paths.get("output_copy.txt"),
+                StandardCopyOption.REPLACE_EXISTING
+            );
+            System.out.println("File copied successfully!");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like making a photocopy of your drawing.</p>
+                <p><strong>Real-world:</strong> Copying a document to create a backup.</p>
+                <p><strong>Technical:</strong> NIO Files.copy() is efficient and handles large files well.
+                    REPLACE_EXISTING overwrites destination if it exists. Much simpler than manually reading and writing
+                    bytes.</p>
+            </div>
+        </div>
+
+        <!-- Program 13: Deleting a file -->
+        <div class="content-section">
+            <h2>Program 13: Deleting a File</h2>
+            <p>Demonstrates how to delete files safely.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.File;
+
+public class DeleteFile {
+    public static void main(String[] args) {
+        File file = new File("output_copy.txt");
+        
+        if (file.exists()) {
+            if (file.delete()) {
+                System.out.println("File deleted: " + file.getName());
+            } else {
+                System.out.println("Failed to delete the file.");
+            }
+        } else {
+            System.out.println("File does not exist.");
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like throwing away a piece of paper you don't need.</p>
+                <p><strong>Real-world:</strong> Deleting an old document from your computer.</p>
+                <p><strong>Technical:</strong> delete() returns true if successful, false otherwise. Always check
+                    existence before deleting. Deletion is permanent - no recycle bin! Use with caution.</p>
+            </div>
+        </div>
+
+        <!-- Program 14: Listing files in directory -->
+        <div class="content-section">
+            <h2>Program 14: Listing Files in a Directory</h2>
+            <p>Demonstrates how to list all files and folders in a directory.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.File;
+
+public class ListFiles {
+    public static void main(String[] args) {
+        File directory = new File(".");
+        
+        if (directory.isDirectory()) {
+            String[] files = directory.list();
+            
+            System.out.println("Files and folders in current directory:");
+            for (String fileName : files) {
+                File file = new File(directory, fileName);
+                String type = file.isDirectory() ? "[DIR]" : "[FILE]";
+                System.out.println(type + " " + fileName);
+            }
+        } else {
+            System.out.println("Not a directory.");
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like looking at all the toys in your toy box.</p>
+                <p><strong>Real-world:</strong> Opening a folder to see what files are inside.</p>
+                <p><strong>Technical:</strong> list() returns array of file/directory names. listFiles() returns array
+                    of File objects (more useful). "." represents current directory. Can filter results using
+                    FilenameFilter.</p>
+            </div>
+        </div>
+
+        <!-- Program 15: Real-world example - Writing log file -->
+        <div class="content-section">
+            <h2>Program 15: Real-World Example - Writing Log File</h2>
+            <p>A practical application combining file operations for logging.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+public class LogFileWriter {
+    private static final String LOG_FILE = "application.log";
+    
+    public static void main(String[] args) {
+        log("INFO", "Application started");
+        log("DEBUG", "Processing user request");
+        log("WARNING", "Low memory detected");
+        log("ERROR", "Failed to connect to database");
+        log("INFO", "Application shutdown");
+        
+        System.out.println("Logs written to " + LOG_FILE);
+    }
+    
+    public static void log(String level, String message) {
+        try (BufferedWriter writer = new BufferedWriter(
+                new FileWriter(LOG_FILE, true))) { // Append mode
+            
+            String timestamp = LocalDateTime.now().format(
+                DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+            );
+            
+            String logEntry = String.format("[%s] [%s] %s%n", 
+                timestamp, level, message);
+            
+            writer.write(logEntry);
+            
+        } catch (IOException e) {
+            System.err.println("Failed to write log: " + e.getMessage());
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like keeping a diary of everything that happens.</p>
+                <p><strong>Real-world:</strong> Recording all events in an application for debugging and monitoring.</p>
+                <p><strong>Technical:</strong> Combines BufferedWriter (performance), append mode (incremental logs),
+                    try-with-resources (safety), and timestamps. Real applications use logging frameworks (Log4j,
+                    SLF4J), but this demonstrates the underlying concept.</p>
+            </div>
+        </div>
+
+        <!-- Program 16: Writing and Reading with NIO -->
+        <div class="content-section">
+            <h2>Program 16: Writing and Reading with NIO (Complete Example)</h2>
+            <p>Demonstrates complete NIO workflow for writing and reading files.</p>
+            <div class="code-header"><span class="code-language">☕ Java</span></div>
+            <pre><code class="language-java">import java.nio.file.*;
+import java.nio.charset.StandardCharsets;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
+public class NIOCompleteExample {
+    public static void main(String[] args) {
+        Path filePath = Paths.get("nio_example.txt");
+        
+        try {
+            // Write data
+            List&lt;String&gt; lines = Arrays.asList(
+                "Java NIO is powerful!",
+                "It simplifies file operations.",
+                "Use it for modern applications."
+            );
+            
+            Files.write(filePath, lines, StandardCharsets.UTF_8);
+            System.out.println("File written successfully!");
+            
+            // Read data
+            List&lt;String&gt; readLines = Files.readAllLines(filePath, StandardCharsets.UTF_8);
+            System.out.println("\nFile contents:");
+            readLines.forEach(System.out::println);
+            
+            // File metadata
+            System.out.println("\nFile size: " + Files.size(filePath) + " bytes");
+            System.out.println("Is readable: " + Files.isReadable(filePath));
+            System.out.println("Is writable: " + Files.isWritable(filePath));
+            
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+            <div class="code-explanation">
+                <p><strong>Baby:</strong> Like using a magic wand to write and read from your notebook instantly.</p>
+                <p><strong>Real-world:</strong> Modern document management system.</p>
+                <p><strong>Technical:</strong> NIO provides clean, concise APIs. Files.write() and Files.readAllLines()
+                    handle all the complexity. Always specify charset (UTF-8) for consistency. Perfect for small to
+                    medium files.</p>
+            </div>
+        </div>
+
+        <!-- Next Topic -->
+        <div class="next-topic">
+            <a href="#" class="btn btn-primary" style="opacity: 0.5; cursor: not-allowed;">Next Topic Coming Soon:
+                Java JDBC in Depth</a>
+        </div>
+    </div>
+</body>
+
+</html>

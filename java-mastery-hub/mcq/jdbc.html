@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDBC - Quiz - Java Mastery Hub</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">☕</span>
+                <span>Java Mastery Hub</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content-header">
+            <h1>JDBC - Quiz</h1>
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Quiz</span>
+                <span>/</span>
+                <span>JDBC</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Test Your JDBC Knowledge</h2>
+            <p>This quiz contains 30 questions covering all aspects of JDBC including connections, statements, CRUD
+                operations, transactions, SQL injection prevention, and best practices.</p>
+            <div class="callout tip">
+                <div class="callout-title">💡 TIP</div>
+                <p>Take your time and read each question carefully. Pay special attention to code output questions and
+                    security-related topics. Aim for at least 80% to demonstrate mastery!</p>
+            </div>
+        </div>
+
+        <div class="quiz-progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressBar"></div>
+            </div>
+            <div class="progress-text">
+                <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
+            </div>
+        </div>
+
+        <div id="quizContainer" class="content-section"></div>
+
+        <div id="quizResults" class="content-section" style="display: none;">
+            <h2>Quiz Complete! 🎉</h2>
+            <div class="results-summary">
+                <div class="score-display">
+                    <div class="score-circle">
+                        <span id="scorePercentage">0%</span>
+                    </div>
+                    <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+                </div>
+                <div id="performanceMessage" class="performance-message"></div>
+            </div>
+
+            <div class="results-actions">
+                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
+                <a href="../theory/jdbc.html" class="btn btn-secondary">📚 Review Theory</a>
+                <a href="../programs/jdbc.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+        </div>
+
+        <div class="content-section text-center">
+            <h3>Continue Your Learning Journey</h3>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="../theory/jdbc.html" class="btn btn-primary">📚 Back to Theory</a>
+                <a href="../programs/jdbc.html" class="btn btn-secondary">💻 View Programs</a>
+                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
+            </div>
+
+            <div class="callout note" style="margin-top: 2rem;">
+                <div class="callout-title">🎉 Final Topic Complete!</div>
+                <p><strong>Congratulations!</strong> You've completed all 12 core Java topics. Advanced topics coming
+                    soon!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+    <script>
+        const quizQuestions = [
+            {
+                id: 1,
+                question: "What does JDBC stand for?",
+                options: ["Java Database Connection", "Java Database Connectivity", "Java Data Base Control", "Java Direct Base Connection"],
+                answerIndex: 1,
+                explanation: "JDBC stands for Java Database Connectivity. It is an API that defines how a client may access a database."
+            },
+            {
+                id: 2,
+                question: "Which package contains JDBC classes and interfaces?",
+                options: ["java.jdbc", "java.sql", "java.database", "java.db"],
+                answerIndex: 1,
+                explanation: "The java.sql package contains all the JDBC classes and interfaces like Connection, Statement, ResultSet, etc."
+            },
+            {
+                id: 3,
+                question: "Which JDBC driver type is pure Java and platform-independent?",
+                options: ["Type 1", "Type 2", "Type 3", "Type 4"],
+                answerIndex: 3,
+                explanation: "Type 4 (Thin Driver) is pure Java, converts JDBC calls directly to database protocol, and is platform-independent."
+            },
+            {
+                id: 4,
+                question: "Which method is used to establish a database connection?",
+                options: ["Connection.getConnection()", "DriverManager.getConnection()", "Database.connect()", "JDBC.connect()"],
+                answerIndex: 1,
+                explanation: "DriverManager.getConnection(url, user, password) is used to establish a connection to the database."
+            },
+            {
+                id: 5,
+                question: "Which interface is used to execute SQL queries?",
+                options: ["Query", "Statement", "Executor", "SQLRunner"],
+                answerIndex: 1,
+                explanation: "The Statement interface (and its subinterfaces PreparedStatement and CallableStatement) is used to execute SQL queries."
+            },
+            {
+                id: 6,
+                question: "Which method executes a SELECT query?",
+                options: ["executeQuery()", "executeUpdate()", "execute()", "runQuery()"],
+                answerIndex: 0,
+                explanation: "executeQuery() is used for SELECT statements and returns a ResultSet. executeUpdate() is for INSERT, UPDATE, DELETE."
+            },
+            {
+                id: 7,
+                question: "Which method is used for INSERT, UPDATE, or DELETE operations?",
+                options: ["executeQuery()", "executeUpdate()", "executeDML()", "runUpdate()"],
+                answerIndex: 1,
+                explanation: "executeUpdate() is used for DML statements (INSERT, UPDATE, DELETE) and DDL statements. It returns the number of rows affected."
+            },
+            {
+                id: 8,
+                question: "What does ResultSet represent?",
+                options: ["Database connection", "SQL query", "Query results", "Database table"],
+                answerIndex: 2,
+                explanation: "ResultSet represents the result set of a database query. It contains rows returned by a SELECT statement."
+            },
+            {
+                id: 9,
+                question: "Which method moves the cursor to the next row in ResultSet?",
+                options: ["next()", "moveNext()", "forward()", "advance()"],
+                answerIndex: 0,
+                explanation: "The next() method moves the cursor forward one row and returns true if the new row is valid."
+            },
+            {
+                id: 10,
+                question: "Which statement type is recommended to prevent SQL injection?",
+                options: ["Statement", "PreparedStatement", "CallableStatement", "DynamicStatement"],
+                answerIndex: 1,
+                explanation: "PreparedStatement uses parameterized queries which prevent SQL injection by treating user input as data, not SQL code."
+            },
+            {
+                id: 11,
+                question: "What is the placeholder symbol in PreparedStatement?",
+                options: ["$", "?", "#", "@"],
+                answerIndex: 1,
+                explanation: "The question mark (?) is used as a placeholder in PreparedStatement. Values are set using setXxx() methods."
+            },
+            {
+                id: 12,
+                question: "Which statement is used to call stored procedures?",
+                options: ["Statement", "PreparedStatement", "CallableStatement", "ProcedureStatement"],
+                answerIndex: 2,
+                explanation: "CallableStatement is used to execute stored procedures in the database."
+            },
+            {
+                id: 13,
+                question: "What is the default auto-commit mode in JDBC?",
+                options: ["false", "true", "null", "depends on database"],
+                answerIndex: 1,
+                explanation: "By default, auto-commit is enabled (true). Each SQL statement is automatically committed after execution."
+            },
+            {
+                id: 14,
+                question: "Which method disables auto-commit to start a transaction?",
+                options: ["setAutoCommit(false)", "startTransaction()", "beginTransaction()", "disableCommit()"],
+                answerIndex: 0,
+                explanation: "con.setAutoCommit(false) disables auto-commit mode, allowing you to group multiple statements into a transaction."
+            },
+            {
+                id: 15,
+                question: "Which method is used to save changes in a transaction?",
+                options: ["save()", "commit()", "persist()", "saveChanges()"],
+                answerIndex: 1,
+                explanation: "commit() permanently saves all changes made since the last commit or rollback."
+            },
+            {
+                id: 16,
+                question: "Which method undoes changes in a transaction?",
+                options: ["undo()", "rollback()", "revert()", "cancel()"],
+                answerIndex: 1,
+                explanation: "rollback() undoes all changes made in the current transaction and restores the previous state."
+            },
+            {
+                id: 17,
+                question: "What does ACID stand for in database transactions?",
+                options: ["Atomicity, Consistency, Isolation, Durability", "Automatic, Consistent, Isolated, Durable", "Atomic, Complete, Independent, Definite", "All, Complete, Isolated, Definite"],
+                answerIndex: 0,
+                explanation: "ACID stands for Atomicity (all or nothing), Consistency (valid state), Isolation (no interference), and Durability (permanent changes)."
+            },
+            {
+                id: 18,
+                question: "Which method adds a statement to a batch?",
+                options: ["add()", "addBatch()", "batch()", "addStatement()"],
+                answerIndex: 1,
+                explanation: "addBatch() adds a SQL statement to the current batch. executeBatch() executes all batched statements."
+            },
+            {
+                id: 19,
+                question: "What does executeBatch() return?",
+                options: ["int", "boolean", "int[]", "ResultSet"],
+                answerIndex: 2,
+                explanation: "executeBatch() returns an int array where each element represents the update count for each statement in the batch."
+            },
+            {
+                id: 20,
+                question: "Which is the correct JDBC URL format for MySQL?",
+                options: ["jdbc:mysql:localhost:3306/mydb", "jdbc:mysql://localhost:3306/mydb", "mysql://localhost:3306/mydb", "jdbc://mysql:localhost:3306/mydb"],
+                answerIndex: 1,
+                explanation: "The correct format is jdbc:mysql://hostname:port/database. For example: jdbc:mysql://localhost:3306/mydb"
+            },
+            {
+                id: 21,
+                question: "What happens if you don't close a database connection?",
+                options: ["Nothing", "Memory leak", "Connection pool exhaustion", "Both B and C"],
+                answerIndex: 3,
+                explanation: "Not closing connections leads to memory leaks and eventually exhausts the connection pool, causing 'Too many connections' errors."
+            },
+            {
+                id: 22,
+                question: "Which is the best way to close JDBC resources?",
+                options: ["finally block", "try-with-resources", "close() method", "All are equally good"],
+                answerIndex: 1,
+                explanation: "try-with-resources (Java 7+) is the best way as it automatically closes resources even if exceptions occur."
+            },
+            {
+                id: 23,
+                question: "In what order should JDBC resources be closed?",
+                options: ["Connection → Statement → ResultSet", "ResultSet → Statement → Connection", "Statement → ResultSet → Connection", "Any order"],
+                answerIndex: 1,
+                explanation: "Resources should be closed in reverse order of creation: ResultSet → Statement → Connection."
+            },
+            {
+                id: 24,
+                question: "What is SQL injection?",
+                options: ["A database feature", "A security vulnerability", "A JDBC method", "A SQL command"],
+                answerIndex: 1,
+                explanation: "SQL injection is a security vulnerability where malicious SQL code is inserted into application queries to manipulate the database."
+            },
+            {
+                id: 25,
+                question: "Which code is vulnerable to SQL injection?",
+                options: ["PreparedStatement with ?", "Statement with string concatenation", "CallableStatement", "All of the above"],
+                answerIndex: 1,
+                explanation: "Using Statement with string concatenation (e.g., 'SELECT * FROM users WHERE name = ' + userInput) is vulnerable to SQL injection."
+            },
+            {
+                id: 26,
+                question: "What is the purpose of connection pooling?",
+                options: ["Store passwords", "Reuse database connections", "Execute queries faster", "Backup data"],
+                answerIndex: 1,
+                explanation: "Connection pooling maintains a pool of reusable database connections, improving performance by avoiding the overhead of creating new connections."
+            },
+            {
+                id: 27,
+                question: "Which library is commonly used for connection pooling?",
+                options: ["HikariCP", "Apache DBCP", "C3P0", "All of the above"],
+                answerIndex: 3,
+                explanation: "HikariCP, Apache DBCP, and C3P0 are all popular connection pooling libraries. HikariCP is known for high performance."
+            },
+            {
+                id: 28,
+                question: "What does ResultSetMetaData provide?",
+                options: ["Query results", "Information about ResultSet structure", "Database schema", "Connection details"],
+                answerIndex: 1,
+                explanation: "ResultSetMetaData provides information about the ResultSet structure like column names, types, and count."
+            },
+            {
+                id: 29,
+                question: "Which exception is thrown for database errors?",
+                options: ["DatabaseException", "SQLException", "JDBCException", "ConnectionException"],
+                answerIndex: 1,
+                explanation: "SQLException is thrown when a database access error occurs or other errors related to JDBC operations."
+            },
+            {
+                id: 30,
+                question: "What is the output of this code?\n\nPreparedStatement pstmt = con.prepareStatement(\"INSERT INTO users VALUES (?, ?)\");\npstmt.setString(1, \"Alice\");\npstmt.setInt(2, 25);\nint result = pstmt.executeUpdate();\nSystem.out.println(result);",
+                options: ["0", "1", "2", "Exception"],
+                answerIndex: 1,
+                explanation: "executeUpdate() returns the number of rows affected. Since one row is inserted, it returns 1."
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
+            quizManager.startQuiz();
+            window.quizManager = quizManager;
+        });
+    </script>
+</body>
+
+</html>
