@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakshi Deshmane - Full Stack Developer Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gradient-neon: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-cyber: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;transition:background-color .3s ease,color .3s ease}
+        .code-font{font-family:'JetBrains Mono',monospace}
+        .dark{background-color:#0f172a;color:#e2e8f0}
+        .glass{background:rgba(30,41,59,.7);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08)}
+        .neon-text{background:var(--gradient-neon);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 30px rgba(102,126,234,.5)}
+        .typing-effect{overflow:hidden;border-right:3px solid;white-space:nowrap;animation:typing 3.5s steps(40,end),blink .75s step-end infinite}
+        @keyframes typing{from{width:0}to{width:100%}}@keyframes blink{50%{border-color:transparent}}
+        .section-separator{height:2px;background:linear-gradient(to right,transparent,rgba(102,126,234,.5),transparent);margin:2rem 0}
+        .skill-badge{background:linear-gradient(135deg,rgba(102,126,234,.08),rgba(118,75,162,.06));backdrop-filter:blur(5px);border:1px solid rgba(102,126,234,.16);padding:.25rem .75rem;border-radius:9999px;font-size:.875rem}
+        .project-card{transition:all .3s ease;transform-style:preserve-3d}
+        .project-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(102,126,234,.12)}
+    </style>
+</head>
+<body class="dark">
+<nav class="fixed top-0 left-0 right-0 z-50 glass px-6 py-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <div class="text-xl font-bold neon-text">SD</div>
+        <div class="hidden md:flex space-x-8 text-sm">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="toggle-switch" id="theme-toggle"></div>
+            <button class="md:hidden" id="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </div>
+    <div class="hidden md:hidden mt-4 pb-4" id="mobile-menu">
+        <div class="flex flex-col space-y-3 text-sm">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pb-20">
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20"></div>
+    <div class="container mx-auto px-6 z-10 text-center">
+        <div class="py-32">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4"><span class="neon-text">Sakshi Bapu Deshmane</span></h1>
+            <div class="text-xl md:text-2xl mb-6 code-font typing-effect">Full Stack Developer</div>
+            <p class="max-w-2xl mx-auto mb-8 text-lg opacity-90">Motivated Java developer with hands-on experience in Spring Boot, REST APIs, Hibernate/JPA and building responsive frontends. Passionate about clean architecture, scalable systems and continuous learning.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#contact" class="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium">Get In Touch</a>
+                <a href="sandbox:/mnt/data/Sakshi_Deshmane_7057153519_Pdf.pdf" class="px-6 py-3 rounded-full glass font-medium">Download Resume</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<section id="about" class="py-20 relative">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">About Me</h2>
+        <div class="max-w-4xl mx-auto glass rounded-2xl p-8 md:p-12">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="w-44 h-44 rounded-full overflow-hidden border-4 border-purple-500/30 pulse-glow">
+                    <!-- Placeholder image - replace with your photo -->
+                    <img src="./Sakshi.jpeg" alt="Sakshi Deshmane" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 text-sm">
+                    <p class="mb-3">I am a passionate Full Stack Developer with strong knowledge of Core Java, Spring Boot, Hibernate/JPA, RESTful APIs and responsive frontend development. I have experience working on academic and personal projects involving backend logic, database design and UI integration.</p>
+                    <p class="mb-3">I enjoy solving problems, optimizing systems, and collaborating in Agile teams. I also contribute to open-source and participate in tech events to keep learning.</p>
+                    <div class="flex flex-wrap gap-4 mt-4 text-sm">
+                        <div class="flex items-center gap-2"><i class="fas fa-map-marker-alt text-purple-500"></i><span>Pune, India</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-envelope text-purple-500"></i><span>sakshideshmane29@gmail.com</span></div>
+                        <div class="flex items-center gap-2"><i class="fas fa-phone text-purple-500"></i><span>+91 7057153519</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<section id="skills" class="py-16 relative">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Skills & Expertise</h2>
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-3">Languages</h3>
+                <div class="flex flex-wrap gap-2"><span class="skill-badge">Java</span><span class="skill-badge">JavaScript</span><span class="skill-badge">SQL</span></div>
+            </div>
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-3">Frameworks & Tools</h3>
+                <div class="flex flex-wrap gap-2"><span class="skill-badge">Spring Boot</span><span class="skill-badge">Hibernate / JPA</span><span class="skill-badge">Spring MVC</span><span class="skill-badge">Bootstrap</span></div>
+            </div>
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-3">Databases & Environments</h3>
+                <div class="flex flex-wrap gap-2"><span class="skill-badge">MySQL</span><span class="skill-badge">Apache Tomcat</span><span class="skill-badge">Postman</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<section id="experience" class="py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Experience</h2>
+        <div class="max-w-4xl mx-auto space-y-6 text-sm">
+            <div class="glass rounded-xl p-6">
+                <div class="flex justify-between items-center mb-3"><h3 class="font-semibold">Software Developer Intern — Codenza Technologies LLP, Pune</h3><span class="text-purple-400">Intern</span></div>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Assisted in developing Java-based features and modules under senior developer guidance.</li>
+                    <li>Worked on Spring Boot APIs, debugging, unit testing, and code optimization.</li>
+                    <li>Performed CRUD operations using Hibernate/JPA and optimized SQL queries.</li>
+                    <li>Collaborated with the team to troubleshoot defects and improve code quality.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<section id="projects" class="py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="project-card glass rounded-xl overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Online Exam Portal</h3>
+                    <p class="mb-3 text-sm">Tech Stack: Java, Advanced Java, HTML, CSS, JavaScript, MySQL. Developed modules for Students and Admin, authentication, question management and result generation. Responsive UI with JDBC backend integration.</p>
+                </div>
+            </div>
+            <div class="project-card glass rounded-xl overflow-hidden">
+                <div class="p-6">
+                    <h3 class="text-xl font-semibold mb-2">Online Book Shop</h3>
+                    <p class="mb-3 text-sm">Tech Stack: Java, HTML, CSS, MySQL. Implemented browsing, ordering, inventory management and Cash-on-Delivery support using JDBC for backend connectivity.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<section id="education" class="py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Education</h2>
+        <div class="max-w-4xl mx-auto space-y-4 text-sm">
+            <div class="glass rounded-xl p-6 flex justify-between items-center"><div>
+                <h3 class="font-semibold">Master of Computer Science (M.Sc. CS)</h3>
+                <div>Savitribai Phule Pune University</div>
+            </div><span class="text-purple-400">2023 – 2025</span></div>
+            <div class="glass rounded-xl p-6 flex justify-between items-center"><div>
+                <h3 class="font-semibold">Bachelor of Computer Science (B.Sc. CS)</h3>
+                <div>Savitribai Phule Pune University</div>
+            </div><span class="text-purple-400">2020 – 2023</span></div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<section id="contact" class="py-16">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Get In Touch</h2>
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="glass rounded-xl p-6 text-sm">
+                <h3 class="font-semibold mb-4">Contact</h3>
+                <div class="mb-3"><i class="fas fa-envelope text-purple-500 mr-2"></i> sakshideshmane29@gmail.com</div>
+                <div class="mb-3"><i class="fas fa-phone text-purple-500 mr-2"></i> +91 7057153519</div>
+                <div class="mb-3"><i class="fas fa-map-marker-alt text-purple-500 mr-2"></i> Pune, India</div>
+                <div class="flex space-x-4 mt-4">
+                    <a href="https://linkedin.com/in/sakshi-deshmane-a157b429a" class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Sakshiideshmane" class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-4">Message Me</h3>
+                <form id="contact-form">
+                    <input class="w-full mb-3 p-3 rounded-lg form-input" placeholder="Your Name" />
+                    <input class="w-full mb-3 p-3 rounded-lg form-input" placeholder="Your Email" />
+                    <textarea class="w-full mb-3 p-3 rounded-lg form-input" rows="4" placeholder="Your Message"></textarea>
+                    <button class="w-full py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-8 glass">
+    <div class="container mx-auto px-6 text-sm">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+            <div>&copy; 2025 Sakshi Bapu Deshmane. All rights reserved.</div>
+            <div class="flex space-x-4"><a href="https://linkedin.com/in/sakshi-deshmane-a157b429a"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/Sakshiideshmane"><i class="fab fa-github"></i></a></div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    themeToggle?.addEventListener('click', () => { body.classList.toggle('dark'); body.classList.toggle('light'); });
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn?.addEventListener('click', () => mobileMenu?.classList.toggle('hidden'));
+    document.querySelectorAll('a[href^="#"]').forEach(anchor=>{anchor.addEventListener('click',function(e){e.preventDefault();document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});if(!mobileMenu.classList.contains('hidden'))mobileMenu.classList.add('hidden');})});
+    document.getElementById('contact-form')?.addEventListener('submit',(e)=>{e.preventDefault();alert('Message sent (demo)');e.target.reset();});
+</script>
+</body>
+</html>
