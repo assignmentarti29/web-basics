@@ -1,306 +1,1006 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>File Handling - Quiz - Java Mastery Hub</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet"/>
-<link href="../assets/css/style-mkdocs.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/></head>
-<body data-md-color-scheme="default"><header class="md-header">
-<nav class="md-header__inner">
-<!-- Mobile Menu Toggle -->
-<button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
-<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
-</button>
-<!-- Logo/Title -->
-<a class="md-header__title" href="../index.html">
-<span class="md-header__icon">☕</span>
-            Java Mastery Hub
-        </a>
-<!-- Search Bar (Visual) -->
-<div class="md-search">
-<div class="md-search__inner">
-<svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
-<input aria-label="Search" class="md-search__input" placeholder="Search" type="text"/>
-</div>
-</div>
-<!-- Theme Toggle -->
-<button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
-<span>🌙</span>
-</button>
-</nav>
-</header><div class="md-grid"><aside class="md-sidebar"><nav class="md-nav">
-<div class="md-nav__title">Topics</div>
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">1. Software Engineering</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/software-engineering.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/software-engineering.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/software-engineering.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">2. What is Java</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/what-is-java.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/what-is-java.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/what-is-java.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">3. Variables &amp; Data Types</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/variables-and-data-types.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/variables-and-data-types.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/variables-and-data-types.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">4. Java Keywords</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/java-keywords.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/java-keywords.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/java-keywords.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">5. Control Flow &amp; Loops</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/control-flow-loops.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/control-flow-loops.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/control-flow-loops.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">6. Classes &amp; Objects</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/classes-and-objects.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/classes-and-objects.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/classes-and-objects.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">7. Methods</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/methods.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/methods.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/methods.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">8. OOP Concepts</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/oops.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/oops.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/oops.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">9. Collections Framework</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/collections.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/collections.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/collections.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">10. Exception Handling</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/exception-handling.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/exception-handling.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/exception-handling.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">11. File Handling</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/handling-files.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/handling-files.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active" href="../mcq/handling-files.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">12. JDBC</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/jdbc.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/jdbc.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/jdbc.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">13. Multithreading</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/multithreading.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/multithreading.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/multithreading.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">14. Java 8+ Features</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/java8features.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/java8features.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/java8features.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">15. Programming Principles</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/programming-principles.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/programming-principles.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/programming-principles.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">17. Interview Questions</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/introduction.html">Introduction</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/beginner.html">Beginner (1-150)</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/intermediate.html">Intermediate (151-350)</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/advanced.html">Advanced (351-500)</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/tricky.html">Tricky Questions</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/scenario-based.html">Scenario Based</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/hr.html">HR Questions</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/complete-quiz.html">Complete Quiz</a></li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav></aside><main class="md-content"><div class="md-content__inner">
-<div class="content-header">
-<h1>File Handling - Quiz</h1>
-<ul class="md-breadcrumbs"><li><a href="../index.html">Home</a></li><li><a href="#">Quiz</a></li><li>File Handling - Quiz</li></ul>
-</div>
-<div class="content-section">
-<h2>Test Your Knowledge</h2>
-<p>This quiz contains 30 questions covering all aspects of file handling in Java including traditional I/O,
-                NIO, streams, readers, writers, and best practices.</p>
-<div class="admonition tip">
-<div class="admonition-title">💡 TIP</div>
-<div class="admonition-content"><p>Take your time and read each question carefully. Pay attention to code output questions and trace
-                    through the logic step by step. Aim for at least 80% to demonstrate mastery!</p></div></div>
-</div>
-<div class="quiz-progress">
-<div class="progress-bar">
-<div class="progress-fill" id="progressBar"></div>
-</div>
-<div class="progress-text">
-<span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>File Handling - Quiz - Java Mastery Hub</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
             </div>
-</div>
-<div class="content-section" id="quizContainer"></div>
-<div class="content-section" id="quizResults" style="display: none;">
-<h2>Quiz Complete! 🎉</h2>
-<div class="results-summary">
-<div class="score-display">
-<div class="score-circle">
-<span id="scorePercentage">0%</span>
-</div>
-<p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
-</div>
-<div class="performance-message" id="performanceMessage"></div>
-</div>
-<div class="results-actions">
-<button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake Quiz</button>
-<a class="md-button md-button--secondary" href="../theory/handling-files.html">📚 Review Theory</a>
-<a class="md-button md-button--secondary" href="../programs/handling-files.html">💻 View Programs</a>
-<a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
-</div>
-</div>
-<div class="content-section text-center">
-<h3>Continue Your Learning Journey</h3>
-<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-<a class="md-button md-button--primary" href="../theory/handling-files.html">📚 Back to Theory</a>
-<a class="md-button md-button--secondary" href="../programs/handling-files.html">💻 View Programs</a>
-<a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
-</div>
-<div class="admonition note" style="margin-top: 2rem;">
-<div class="admonition-title">📚 Next Topic</div>
-<div class="admonition-content"><p><strong>Coming Soon:</strong> Java JDBC in Depth</p></div></div>
-</div>
-</div></main></div><script src="../assets/js/docs-style.js"></script><script src="../assets/js/mcq.js"></script></body>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>File Handling - Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>File Handling - Quiz</li>
+                    </ul>
+                </div>
+                <div class="content-section">
+                    <h2>Test Your Knowledge</h2>
+                    <p>This quiz contains 30 questions covering all aspects of file handling in Java including
+                        traditional I/O,
+                        NIO, streams, readers, writers, and best practices.</p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>Take your time and read each question carefully. Pay attention to code output questions
+                                and trace
+                                through the logic step by step. Aim for at least 80% to demonstrate mastery!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressBar"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="currentQuestion">0</span> / <span id="totalQuestions">30</span> Questions
+                    </div>
+                </div>
+                <div class="content-section" id="quizContainer">
+                    <!-- Question 1 -->
+                    <div class="question" data-correct-answer="java.io" data-question-id="q1">
+                        <p class="question-text">Q1. Which package contains the majority of the Java I/O classes?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="java.util">java.util</button>
+                            <button class="option-btn" data-answer="java.io">java.io</button>
+                            <button class="option-btn" data-answer="java.net">java.net</button>
+                            <button class="option-btn" data-answer="java.nio">java.nio</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: java.io</div>
+                            <p>The `java.io` package contains nearly every class you might ever need to perform input
+                                and output (I/O) in Java.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="question" data-correct-answer="Stream" data-question-id="q2">
+                        <p class="question-text">Q2. What is the abstract representation of an input or output device in
+                            Java?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="File">File</button>
+                            <button class="option-btn" data-answer="Stream">Stream</button>
+                            <button class="option-btn" data-answer="Buffer">Buffer</button>
+                            <button class="option-btn" data-answer="Channel">Channel</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Stream</div>
+                            <p>A stream is a sequence of data. In Java, a stream is an abstract representation of an
+                                input or output device.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="question" data-correct-answer="Byte Stream" data-question-id="q3">
+                        <p class="question-text">Q3. Which type of stream is used to handle binary data?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Character Stream">Character Stream</button>
+                            <button class="option-btn" data-answer="Byte Stream">Byte Stream</button>
+                            <button class="option-btn" data-answer="String Stream">String Stream</button>
+                            <button class="option-btn" data-answer="Object Stream">Object Stream</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Byte Stream</div>
+                            <p>Byte streams are used to handle I/O of raw binary data. Classes like `FileInputStream`
+                                and `FileOutputStream` are byte streams.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="question" data-correct-answer="Character Stream" data-question-id="q4">
+                        <p class="question-text">Q4. Which type of stream is used to handle text data?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Byte Stream">Byte Stream</button>
+                            <button class="option-btn" data-answer="Character Stream">Character Stream</button>
+                            <button class="option-btn" data-answer="Binary Stream">Binary Stream</button>
+                            <button class="option-btn" data-answer="Data Stream">Data Stream</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Character Stream</div>
+                            <p>Character streams are designed for handling character data, automatically handling
+                                character encoding. Classes like `FileReader` and `FileWriter` are character streams.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 5 -->
+                    <div class="question" data-correct-answer="File" data-question-id="q5">
+                        <p class="question-text">Q5. Which class is used to represent a file or directory path name?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Path">Path</button>
+                            <button class="option-btn" data-answer="File">File</button>
+                            <button class="option-btn" data-answer="Directory">Directory</button>
+                            <button class="option-btn" data-answer="FileSystem">FileSystem</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: File</div>
+                            <p>The `java.io.File` class is an abstract representation of file and directory pathnames.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="question" data-correct-answer="InputStream" data-question-id="q6">
+                        <p class="question-text">Q6. What is the superclass of all byte input streams?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Reader">Reader</button>
+                            <button class="option-btn" data-answer="FileInputStream">FileInputStream</button>
+                            <button class="option-btn" data-answer="InputStream">InputStream</button>
+                            <button class="option-btn" data-answer="Input">Input</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: InputStream</div>
+                            <p>`InputStream` is the abstract superclass of all classes representing an input stream of
+                                bytes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="question" data-correct-answer="Reader" data-question-id="q7">
+                        <p class="question-text">Q7. What is the superclass of all character input streams?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="InputStream">InputStream</button>
+                            <button class="option-btn" data-answer="Reader">Reader</button>
+                            <button class="option-btn" data-answer="FileReader">FileReader</button>
+                            <button class="option-btn" data-answer="BufferedReader">BufferedReader</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Reader</div>
+                            <p>`Reader` is the abstract superclass for reading character streams.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="question" data-correct-answer="Serializable" data-question-id="q8">
+                        <p class="question-text">Q8. Which interface must a class implement to be serialized?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Cloneable">Cloneable</button>
+                            <button class="option-btn" data-answer="Remote">Remote</button>
+                            <button class="option-btn" data-answer="Serializable">Serializable</button>
+                            <button class="option-btn" data-answer="Externalizable">Externalizable</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Serializable</div>
+                            <p>The `Serializable` interface is a marker interface used to indicate that a class can be
+                                serialized.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="question" data-correct-answer="transient" data-question-id="q9">
+                        <p class="question-text">Q9. Which keyword prevents a field from being serialized?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="static">static</button>
+                            <button class="option-btn" data-answer="volatile">volatile</button>
+                            <button class="option-btn" data-answer="transient">transient</button>
+                            <button class="option-btn" data-answer="final">final</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: transient</div>
+                            <p>The `transient` keyword indicates that a field should not be serialized.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="question" data-correct-answer="BufferedReader" data-question-id="q10">
+                        <p class="question-text">Q10. Which class is used to read text from a character-input stream,
+                            buffering characters for efficiency?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="FileReader">FileReader</button>
+                            <button class="option-btn" data-answer="BufferedReader">BufferedReader</button>
+                            <button class="option-btn" data-answer="InputStreamReader">InputStreamReader</button>
+                            <button class="option-btn" data-answer="Scanner">Scanner</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: BufferedReader</div>
+                            <p>`BufferedReader` reads text from a character-input stream, buffering characters so as to
+                                provide for the efficient reading of characters, arrays, and lines.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="question" data-correct-answer="exists()" data-question-id="q11">
+                        <p class="question-text">Q11. Which method of the File class checks if a file exists?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="isFile()">isFile()</button>
+                            <button class="option-btn" data-answer="exists()">exists()</button>
+                            <button class="option-btn" data-answer="check()">check()</button>
+                            <button class="option-btn" data-answer="isPresent()">isPresent()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: exists()</div>
+                            <p>The `exists()` method returns true if the file or directory defined by the abstract
+                                pathname exists.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 12 -->
+                    <div class="question" data-correct-answer="mkdir()" data-question-id="q12">
+                        <p class="question-text">Q12. Which method is used to create a directory?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="create()">create()</button>
+                            <button class="option-btn" data-answer="mkDir()">mkDir()</button>
+                            <button class="option-btn" data-answer="mkdir()">mkdir()</button>
+                            <button class="option-btn" data-answer="makeDirectory()">makeDirectory()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: mkdir()</div>
+                            <p>The `mkdir()` method creates the directory named by the abstract pathname.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 13 -->
+                    <div class="question" data-correct-answer="java.nio.file" data-question-id="q13">
+                        <p class="question-text">Q13. Which package was introduced in Java 7 for improved file I/O
+                            (NIO.2)?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="java.io.nio">java.io.nio</button>
+                            <button class="option-btn" data-answer="java.nio.file">java.nio.file</button>
+                            <button class="option-btn" data-answer="java.file">java.file</button>
+                            <button class="option-btn" data-answer="java.newio">java.newio</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: java.nio.file</div>
+                            <p>The `java.nio.file` package (NIO.2) provides comprehensive support for file I/O and
+                                accessing the default file system.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 14 -->
+                    <div class="question" data-correct-answer="Path" data-question-id="q14">
+                        <p class="question-text">Q14. In NIO.2, which interface replaces the File class for representing
+                            file paths?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="FilePath">FilePath</button>
+                            <button class="option-btn" data-answer="Path">Path</button>
+                            <button class="option-btn" data-answer="DirectoryStream">DirectoryStream</button>
+                            <button class="option-btn" data-answer="FileSystem">FileSystem</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Path</div>
+                            <p>The `Path` interface is the primary entry point for working with the NIO.2 file API,
+                                representing a system-dependent file path.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 15 -->
+                    <div class="question" data-correct-answer="Files" data-question-id="q15">
+                        <p class="question-text">Q15. Which utility class in NIO.2 contains static methods for operating
+                            on files?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="FileUtil">FileUtil</button>
+                            <button class="option-btn" data-answer="FileUtils">FileUtils</button>
+                            <button class="option-btn" data-answer="Files">Files</button>
+                            <button class="option-btn" data-answer="Paths">Paths</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Files</div>
+                            <p>The `Files` class consists exclusively of static methods that operate on files,
+                                directories, or other types of files.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 16 -->
+                    <div class="question" data-correct-answer="ObjectOutputStream" data-question-id="q16">
+                        <p class="question-text">Q16. Which class is used to write objects to a stream?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="ObjectWriter">ObjectWriter</button>
+                            <button class="option-btn" data-answer="ObjectOutputStream">ObjectOutputStream</button>
+                            <button class="option-btn" data-answer="FileOutputStream">FileOutputStream</button>
+                            <button class="option-btn" data-answer="DataOutputStream">DataOutputStream</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: ObjectOutputStream</div>
+                            <p>`ObjectOutputStream` writes primitive data types and graphs of Java objects to an
+                                OutputStream.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 17 -->
+                    <div class="question" data-correct-answer="close()" data-question-id="q17">
+                        <p class="question-text">Q17. Which method should always be called to release system resources
+                            associated with a stream?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="flush()">flush()</button>
+                            <button class="option-btn" data-answer="close()">close()</button>
+                            <button class="option-btn" data-answer="release()">release()</button>
+                            <button class="option-btn" data-answer="end()">end()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: close()</div>
+                            <p>The `close()` method closes the stream and releases any system resources associated with
+                                it.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 18 -->
+                    <div class="question" data-correct-answer="flush()" data-question-id="q18">
+                        <p class="question-text">Q18. Which method forces any buffered output bytes to be written out?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="write()">write()</button>
+                            <button class="option-btn" data-answer="push()">push()</button>
+                            <button class="option-btn" data-answer="flush()">flush()</button>
+                            <button class="option-btn" data-answer="sync()">sync()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: flush()</div>
+                            <p>The `flush()` method flushes the output stream and forces any buffered output bytes to be
+                                written out.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 19 -->
+                    <div class="question" data-correct-answer="Scanner" data-question-id="q19">
+                        <p class="question-text">Q19. Which class provides methods like nextInt() and nextLine() for
+                            parsing primitive types and strings?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="BufferedReader">BufferedReader</button>
+                            <button class="option-btn" data-answer="Scanner">Scanner</button>
+                            <button class="option-btn" data-answer="StringTokenizer">StringTokenizer</button>
+                            <button class="option-btn" data-answer="DataInputStream">DataInputStream</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Scanner</div>
+                            <p>The `Scanner` class is a simple text scanner which can parse primitive types and strings
+                                using regular expressions.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 20 -->
+                    <div class="question" data-correct-answer="System.in" data-question-id="q20">
+                        <p class="question-text">Q20. Which standard stream represents the standard input (keyboard)?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="System.out">System.out</button>
+                            <button class="option-btn" data-answer="System.err">System.err</button>
+                            <button class="option-btn" data-answer="System.in">System.in</button>
+                            <button class="option-btn" data-answer="System.input">System.input</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: System.in</div>
+                            <p>`System.in` is the "standard" input stream, typically connected to keyboard input.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 21 -->
+                    <div class="question" data-correct-answer="EOFException" data-question-id="q21">
+                        <p class="question-text">Q21. What exception is thrown when the end of file or stream has been
+                            reached unexpectedly?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="IOException">IOException</button>
+                            <button class="option-btn" data-answer="EOFException">EOFException</button>
+                            <button class="option-btn"
+                                data-answer="FileNotFoundException">FileNotFoundException</button>
+                            <button class="option-btn"
+                                data-answer="StreamCorruptedException">StreamCorruptedException</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: EOFException</div>
+                            <p>`EOFException` signals that an end of file or end of stream has been reached unexpectedly
+                                during input.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 22 -->
+                    <div class="question" data-correct-answer="Console" data-question-id="q22">
+                        <p class="question-text">Q22. Which class is used to read password without echoing characters?
+                        </p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="Scanner">Scanner</button>
+                            <button class="option-btn" data-answer="BufferedReader">BufferedReader</button>
+                            <button class="option-btn" data-answer="Console">Console</button>
+                            <button class="option-btn" data-answer="System">System</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Console</div>
+                            <p>The `Console` class (obtained via `System.console()`) provides methods like
+                                `readPassword()` to read passwords securely.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 23 -->
+                    <div class="question" data-correct-answer="serialVersionUID" data-question-id="q23">
+                        <p class="question-text">Q23. What is the name of the static final long field used for version
+                            control in serialization?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="versionID">versionID</button>
+                            <button class="option-btn" data-answer="serialVersion">serialVersion</button>
+                            <button class="option-btn" data-answer="serialVersionUID">serialVersionUID</button>
+                            <button class="option-btn" data-answer="UID">UID</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: serialVersionUID</div>
+                            <p>`serialVersionUID` is a universal version identifier for a Serializable class to ensure
+                                that a loaded class corresponds exactly to a serialized object.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 24 -->
+                    <div class="question" data-correct-answer="RandomAccessFile" data-question-id="q24">
+                        <p class="question-text">Q24. Which class supports both reading and writing to a random access
+                            file?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="File">File</button>
+                            <button class="option-btn" data-answer="RandomAccessFile">RandomAccessFile</button>
+                            <button class="option-btn" data-answer="ReadWriteFile">ReadWriteFile</button>
+                            <button class="option-btn" data-answer="SeekableFile">SeekableFile</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: RandomAccessFile</div>
+                            <p>`RandomAccessFile` instances support both reading and writing to a random access file,
+                                behaving like a large array of bytes stored in the file system.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 25 -->
+                    <div class="question" data-correct-answer="Paths.get()" data-question-id="q25">
+                        <p class="question-text">Q25. How do you create a Path instance in NIO.2?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="new Path()">new Path()</button>
+                            <button class="option-btn" data-answer="Path.create()">Path.create()</button>
+                            <button class="option-btn" data-answer="Paths.get()">Paths.get()</button>
+                            <button class="option-btn" data-answer="Files.createPath()">Files.createPath()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: Paths.get()</div>
+                            <p>`Paths.get()` is a static factory method used to create a `Path` instance from a string
+                                or URI.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 26 -->
+                    <div class="question" data-correct-answer="delete()" data-question-id="q26">
+                        <p class="question-text">Q26. Which method of the File class deletes the file or directory?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="remove()">remove()</button>
+                            <button class="option-btn" data-answer="delete()">delete()</button>
+                            <button class="option-btn" data-answer="erase()">erase()</button>
+                            <button class="option-btn" data-answer="unlink()">unlink()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: delete()</div>
+                            <p>The `delete()` method deletes the file or directory denoted by the abstract pathname.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 27 -->
+                    <div class="question" data-correct-answer="list()" data-question-id="q27">
+                        <p class="question-text">Q27. Which method returns an array of strings naming the files and
+                            directories in the directory?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="getFiles()">getFiles()</button>
+                            <button class="option-btn" data-answer="list()">list()</button>
+                            <button class="option-btn" data-answer="listFiles()">listFiles()</button>
+                            <button class="option-btn" data-answer="dir()">dir()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: list()</div>
+                            <p>The `list()` method returns an array of strings naming the files and directories in the
+                                directory. `listFiles()` returns an array of `File` objects.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 28 -->
+                    <div class="question" data-correct-answer="DataInputStream" data-question-id="q28">
+                        <p class="question-text">Q28. Which class allows an application to read primitive Java data
+                            types from an underlying input stream in a machine-independent way?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="ObjectInputStream">ObjectInputStream</button>
+                            <button class="option-btn" data-answer="DataInputStream">DataInputStream</button>
+                            <button class="option-btn" data-answer="FileInputStream">FileInputStream</button>
+                            <button class="option-btn" data-answer="BufferedInputStream">BufferedInputStream</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: DataInputStream</div>
+                            <p>`DataInputStream` lets an application read primitive Java data types from an underlying
+                                input stream in a machine-independent way.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 29 -->
+                    <div class="question" data-correct-answer="canRead()" data-question-id="q29">
+                        <p class="question-text">Q29. Which method checks if the application can read the file?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="isReadable()">isReadable()</button>
+                            <button class="option-btn" data-answer="canRead()">canRead()</button>
+                            <button class="option-btn" data-answer="checkRead()">checkRead()</button>
+                            <button class="option-btn" data-answer="getReadPermission()">getReadPermission()</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: canRead()</div>
+                            <p>The `canRead()` method returns true if the application can execute a read operation on
+                                the file.</p>
+                        </div>
+                    </div>
+
+                    <!-- Question 30 -->
+                    <div class="question" data-correct-answer="PrintWriter" data-question-id="q30">
+                        <p class="question-text">Q30. Which class prints formatted representations of objects to a
+                            text-output stream?</p>
+                        <div class="options">
+                            <button class="option-btn" data-answer="FileWriter">FileWriter</button>
+                            <button class="option-btn" data-answer="PrintWriter">PrintWriter</button>
+                            <button class="option-btn" data-answer="BufferedWriter">BufferedWriter</button>
+                            <button class="option-btn" data-answer="OutputStreamWriter">OutputStreamWriter</button>
+                        </div>
+                        <div class="explanation">
+                            <div class="explanation-title">✓ Correct Answer: PrintWriter</div>
+                            <p>`PrintWriter` prints formatted representations of objects to a text-output stream. It
+                                implements all of the print methods found in `PrintStream`.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-section" id="quizResults" style="display: none;">
+                    <h2>Quiz Complete! 🎉</h2>
+                    <div class="results-summary">
+                        <div class="score-display">
+                            <div class="score-circle">
+                                <span id="scorePercentage">0%</span>
+                            </div>
+                            <p class="score-text">Your Score: <span id="scoreText">0/30</span></p>
+                        </div>
+                        <div class="performance-message" id="performanceMessage"></div>
+                    </div>
+                    <div class="results-actions">
+                        <button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake
+                            Quiz</button>
+                        <a class="md-button md-button--secondary" href="../theory/handling-files.html">📚 Review
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/handling-files.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                </div>
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/handling-files.html">📚 Back to
+                            Theory</a>
+                        <a class="md-button md-button--secondary" href="../programs/handling-files.html">💻 View
+                            Programs</a>
+                        <a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p><strong>Coming Soon:</strong> Java JDBC in Depth</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+    <script src="../assets/js/mcq.js"></script>
+</body>
+
 </html>

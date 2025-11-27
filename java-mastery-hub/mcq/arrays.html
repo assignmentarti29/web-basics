@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Java Arrays Quiz - Java Mastery Hub</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link href="../assets/css/mcq.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <!-- Topic 1 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 2 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 3 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 4 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 5 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 6 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 7 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 8 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 9 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 10 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 11 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 12 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 13 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 14 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 15 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <!-- Topic 16 -->
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--active"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+
+                    <!-- Topic 17 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+
+                    <!-- Topic 18 -->
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="md-content">
+            <div class="md-content__inner">
+                <div class="content-header">
+                    <h1>Java Arrays Quiz</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li>Arrays</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <div class="quiz-score">Score: <span id="score">0</span>/30</div>
+                        <div class="quiz-progress">Question <span id="current-question">1</span> of 30</div>
+                    </div>
+
+                    <div id="quiz-questions">
+                        <!-- Q1 -->
+                        <div class="question" data-correct-answer="Fixed size" data-question-id="q1">
+                            <p class="question-text">Q1. Which of the following is a key characteristic of Java arrays?
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Dynamic size">Dynamic size</button>
+                                <button class="option-btn" data-answer="Fixed size">Fixed size</button>
+                                <button class="option-btn" data-answer="Can hold different types">Can hold different
+                                    types</button>
+                                <button class="option-btn" data-answer="Allocated on Stack">Allocated on Stack</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Fixed size</div>
+                                <p>Once an array is created in Java, its size cannot be changed. If you need a resizable
+                                    collection, use ArrayList.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="question" data-correct-answer="int[] arr = new int[5];" data-question-id="q2">
+                            <p class="question-text">Q2. Which is the correct way to declare and initialize an array of
+                                5 integers?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="int arr = new int[5];">int arr = new
+                                    int[5];</button>
+                                <button class="option-btn" data-answer="int[] arr = new int(5);">int[] arr = new
+                                    int(5);</button>
+                                <button class="option-btn" data-answer="int[] arr = new int[5];">int[] arr = new
+                                    int[5];</button>
+                                <button class="option-btn" data-answer="int arr[] = {1, 2, 3, 4, 5};">int arr[] = {1, 2,
+                                    3, 4, 5};</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: int[] arr = new int[5];</div>
+                                <p>The correct syntax uses square brackets <code>[]</code> for declaration and
+                                    <code>new type[size]</code> for initialization.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="question" data-correct-answer="0" data-question-id="q3">
+                            <p class="question-text">Q3. What is the index of the first element in a Java array?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="1">1</button>
+                                <button class="option-btn" data-answer="0">0</button>
+                                <button class="option-btn" data-answer="-1">-1</button>
+                                <button class="option-btn" data-answer="Depends on implementation">Depends on
+                                    implementation</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: 0</div>
+                                <p>Java arrays are 0-indexed, meaning the first element is at index 0.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="question" data-correct-answer="arr.length" data-question-id="q4">
+                            <p class="question-text">Q4. How do you get the number of elements in an array named 'arr'?
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="arr.length()">arr.length()</button>
+                                <button class="option-btn" data-answer="arr.size()">arr.size()</button>
+                                <button class="option-btn" data-answer="arr.length">arr.length</button>
+                                <button class="option-btn" data-answer="arr.count">arr.count</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: arr.length</div>
+                                <p>Arrays have a <code>length</code> property (not a method) that returns the size.
+                                    Strings use <code>length()</code> method.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q5 -->
+                        <div class="question" data-correct-answer="0" data-question-id="q5">
+                            <p class="question-text">Q5. What is the default value of elements in an <code>int</code>
+                                array?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="null">null</button>
+                                <button class="option-btn" data-answer="0">0</button>
+                                <button class="option-btn" data-answer="-1">-1</button>
+                                <button class="option-btn" data-answer="Garbage value">Garbage value</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: 0</div>
+                                <p>When an array of integers is created, all elements are initialized to 0 by default.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q6 -->
+                        <div class="question" data-correct-answer="ArrayIndexOutOfBoundsException"
+                            data-question-id="q6">
+                            <p class="question-text">Q6. What exception is thrown if you access <code>arr[5]</code> in
+                                an array of size 5?</p>
+                            <div class="options">
+                                <button class="option-btn"
+                                    data-answer="NullPointerException">NullPointerException</button>
+                                <button class="option-btn" data-answer="ArrayException">ArrayException</button>
+                                <button class="option-btn"
+                                    data-answer="IndexOutOfBoundsException">IndexOutOfBoundsException</button>
+                                <button class="option-btn"
+                                    data-answer="ArrayIndexOutOfBoundsException">ArrayIndexOutOfBoundsException</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: ArrayIndexOutOfBoundsException</div>
+                                <p>Valid indices for an array of size 5 are 0 to 4. Accessing index 5 throws
+                                    <code>ArrayIndexOutOfBoundsException</code>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q7 -->
+                        <div class="question" data-correct-answer="null" data-question-id="q7">
+                            <p class="question-text">Q7. What is the default value of elements in a <code>String</code>
+                                array?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="&quot;&quot;">"" (Empty String)</button>
+                                <button class="option-btn" data-answer="null">null</button>
+                                <button class="option-btn" data-answer="0">0</button>
+                                <button class="option-btn" data-answer="Undefined">Undefined</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: null</div>
+                                <p>String is an object type, so the default value for elements in a String array is
+                                    <code>null</code>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q8 -->
+                        <div class="question" data-correct-answer="int[][] matrix = new int[3][3];"
+                            data-question-id="q8">
+                            <p class="question-text">Q8. How do you declare a 2D array?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="int[] matrix = new int[3,3];">int[] matrix = new
+                                    int[3,3];</button>
+                                <button class="option-btn" data-answer="int matrix[][] = new int[3][3];">int matrix[][]
+                                    = new int[3][3];</button>
+                                <button class="option-btn" data-answer="int[][] matrix = new int[3][3];">int[][] matrix
+                                    = new int[3][3];</button>
+                                <button class="option-btn" data-answer="Both B and C">Both B and C</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Both B and C</div>
+                                <p>Both <code>int[][] name</code> and <code>int name[][]</code> are valid declarations
+                                    in Java, though the first one is preferred.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q9 -->
+                        <div class="question" data-correct-answer="Jagged Array" data-question-id="q9">
+                            <p class="question-text">Q9. What do you call an array where rows have different lengths?
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Uneven Array">Uneven Array</button>
+                                <button class="option-btn" data-answer="Jagged Array">Jagged Array</button>
+                                <button class="option-btn" data-answer="Dynamic Array">Dynamic Array</button>
+                                <button class="option-btn" data-answer="Sparse Array">Sparse Array</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Jagged Array</div>
+                                <p>A jagged array is a multidimensional array where member arrays are of different
+                                    sizes.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q10 -->
+                        <div class="question" data-correct-answer="Arrays.toString(arr)" data-question-id="q10">
+                            <p class="question-text">Q10. How do you print the contents of an array <code>arr</code>
+                                nicely?</p>
+                            <div class="options">
+                                <button class="option-btn"
+                                    data-answer="System.out.println(arr);">System.out.println(arr);</button>
+                                <button class="option-btn" data-answer="arr.print();">arr.print();</button>
+                                <button class="option-btn" data-answer="Arrays.print(arr);">Arrays.print(arr);</button>
+                                <button class="option-btn"
+                                    data-answer="Arrays.toString(arr)">Arrays.toString(arr)</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Arrays.toString(arr)</div>
+                                <p><code>System.out.println(arr)</code> prints the memory address.
+                                    <code>Arrays.toString(arr)</code> prints the elements.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q11 -->
+                        <div class="question" data-correct-answer="O(1)" data-question-id="q11">
+                            <p class="question-text">Q11. What is the time complexity to access an element by index?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="O(1)">O(1)</button>
+                                <button class="option-btn" data-answer="O(n)">O(n)</button>
+                                <button class="option-btn" data-answer="O(log n)">O(log n)</button>
+                                <button class="option-btn" data-answer="O(n^2)">O(n^2)</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: O(1)</div>
+                                <p>Arrays use contiguous memory, so accessing an element by index is an instant
+                                    (constant time) operation.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q12 -->
+                        <div class="question" data-correct-answer="Arrays.sort(arr)" data-question-id="q12">
+                            <p class="question-text">Q12. Which method sorts an array in ascending order?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="arr.sort()">arr.sort()</button>
+                                <button class="option-btn"
+                                    data-answer="Collections.sort(arr)">Collections.sort(arr)</button>
+                                <button class="option-btn" data-answer="Arrays.sort(arr)">Arrays.sort(arr)</button>
+                                <button class="option-btn" data-answer="Sort.array(arr)">Sort.array(arr)</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Arrays.sort(arr)</div>
+                                <p><code>java.util.Arrays.sort()</code> is the standard method to sort arrays.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q13 -->
+                        <div class="question" data-correct-answer="The array must be sorted" data-question-id="q13">
+                            <p class="question-text">Q13. What is a prerequisite for using
+                                <code>Arrays.binarySearch()</code>?
+                            </p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="The array must contain integers">The array must
+                                    contain integers</button>
+                                <button class="option-btn" data-answer="The array must be sorted">The array must be
+                                    sorted</button>
+                                <button class="option-btn" data-answer="The array must not contain duplicates">The array
+                                    must not contain duplicates</button>
+                                <button class="option-btn" data-answer="No prerequisite">No prerequisite</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: The array must be sorted</div>
+                                <p>Binary search algorithm only works on sorted data. If the array is not sorted, the
+                                    result is undefined.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q14 -->
+                        <div class="question" data-correct-answer="Heap" data-question-id="q14">
+                            <p class="question-text">Q14. Where are array objects stored in memory?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Stack">Stack</button>
+                                <button class="option-btn" data-answer="Heap">Heap</button>
+                                <button class="option-btn" data-answer="Register">Register</button>
+                                <button class="option-btn" data-answer="PermGen">PermGen</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Heap</div>
+                                <p>In Java, all objects (including arrays) are stored in the Heap memory. The reference
+                                    to the array is stored in the Stack.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q15 -->
+                        <div class="question" data-correct-answer="Arrays.copyOf(arr, newLength)"
+                            data-question-id="q15">
+                            <p class="question-text">Q15. How can you create a larger copy of an existing array?</p>
+                            <div class="options">
+                                <button class="option-btn"
+                                    data-answer="arr.resize(newLength)">arr.resize(newLength)</button>
+                                <button class="option-btn"
+                                    data-answer="Arrays.resize(arr, newLength)">Arrays.resize(arr, newLength)</button>
+                                <button class="option-btn"
+                                    data-answer="Arrays.copyOf(arr, newLength)">Arrays.copyOf(arr, newLength)</button>
+                                <button class="option-btn" data-answer="You cannot resize arrays">You cannot resize
+                                    arrays</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Arrays.copyOf(arr, newLength)</div>
+                                <p><code>Arrays.copyOf()</code> creates a new array of the specified length and copies
+                                    elements from the original array.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q16 -->
+                        <div class="question" data-correct-answer="Object" data-question-id="q16">
+                            <p class="question-text">Q16. What is the direct superclass of an array type?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Array">Array</button>
+                                <button class="option-btn" data-answer="Collection">Collection</button>
+                                <button class="option-btn" data-answer="Object">Object</button>
+                                <button class="option-btn" data-answer="List">List</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Object</div>
+                                <p>Every array type in Java is a direct subclass of <code>java.lang.Object</code>.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q17 -->
+                        <div class="question" data-correct-answer="Arrays.equals(a, b)" data-question-id="q17">
+                            <p class="question-text">Q17. How do you check if two arrays contain the same elements?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="a == b">a == b</button>
+                                <button class="option-btn" data-answer="a.equals(b)">a.equals(b)</button>
+                                <button class="option-btn" data-answer="Arrays.equals(a, b)">Arrays.equals(a,
+                                    b)</button>
+                                <button class="option-btn" data-answer="Arrays.compare(a, b)">Arrays.compare(a,
+                                    b)</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Arrays.equals(a, b)</div>
+                                <p><code>a == b</code> checks reference equality. <code>Arrays.equals(a, b)</code>
+                                    checks content equality.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q18 -->
+                        <div class="question" data-correct-answer="Arrays.asList(arr)" data-question-id="q18">
+                            <p class="question-text">Q18. Which method converts an array to a List?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="arr.toList()">arr.toList()</button>
+                                <button class="option-btn" data-answer="Arrays.toList(arr)">Arrays.toList(arr)</button>
+                                <button class="option-btn" data-answer="Arrays.asList(arr)">Arrays.asList(arr)</button>
+                                <button class="option-btn"
+                                    data-answer="Collections.toList(arr)">Collections.toList(arr)</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Arrays.asList(arr)</div>
+                                <p><code>Arrays.asList()</code> returns a fixed-size list backed by the specified array.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q19 -->
+                        <div class="question" data-correct-answer="Arrays.fill(arr, 1)" data-question-id="q19">
+                            <p class="question-text">Q19. How do you fill an entire array with the value 1?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="arr.fill(1)">arr.fill(1)</button>
+                                <button class="option-btn" data-answer="Arrays.fill(arr, 1)">Arrays.fill(arr,
+                                    1)</button>
+                                <button class="option-btn" data-answer="Arrays.setAll(arr, 1)">Arrays.setAll(arr,
+                                    1)</button>
+                                <button class="option-btn" data-answer="Loop is the only way">Loop is the only
+                                    way</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Arrays.fill(arr, 1)</div>
+                                <p><code>Arrays.fill()</code> is a utility method to assign a specified value to each
+                                    element of an array.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q20 -->
+                        <div class="question" data-correct-answer="Negative number" data-question-id="q20">
+                            <p class="question-text">Q20. What does <code>Arrays.binarySearch()</code> return if the
+                                element is not found?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="0">0</button>
+                                <button class="option-btn" data-answer="-1">-1</button>
+                                <button class="option-btn" data-answer="null">null</button>
+                                <button class="option-btn" data-answer="Negative number">Negative number</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Negative number</div>
+                                <p>It returns <code>-(insertion point) - 1</code>, which is always a negative number.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q21 -->
+                        <div class="question" data-correct-answer="Yes, but it's not recommended"
+                            data-question-id="q21">
+                            <p class="question-text">Q21. Can you have an array of size 0?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="No, minimum size is 1">No, minimum size is
+                                    1</button>
+                                <button class="option-btn" data-answer="Yes, but it's not recommended">Yes, but it's not
+                                    recommended</button>
+                                <button class="option-btn" data-answer="Yes, it's valid">Yes, it's valid</button>
+                                <button class="option-btn" data-answer="Only for primitive types">Only for primitive
+                                    types</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Yes, it's valid</div>
+                                <p><code>new int[0]</code> creates a valid empty array. It is often used to return "no
+                                    results" instead of returning null.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q22 -->
+                        <div class="question" data-correct-answer="Cloneable and Serializable" data-question-id="q22">
+                            <p class="question-text">Q22. Which interfaces do arrays implement?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="List and Collection">List and
+                                    Collection</button>
+                                <button class="option-btn" data-answer="Cloneable and Serializable">Cloneable and
+                                    Serializable</button>
+                                <button class="option-btn" data-answer="Iterable and Comparable">Iterable and
+                                    Comparable</button>
+                                <button class="option-btn" data-answer="None">None</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Cloneable and Serializable</div>
+                                <p>Arrays in Java implement the <code>Cloneable</code> and
+                                    <code>java.io.Serializable</code> interfaces.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q23 -->
+                        <div class="question" data-correct-answer="Deep copy of 1D, Shallow copy of 2D"
+                            data-question-id="q23">
+                            <p class="question-text">Q23. Does <code>arr.clone()</code> perform a deep copy or shallow
+                                copy?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Deep copy always">Deep copy always</button>
+                                <button class="option-btn" data-answer="Shallow copy always">Shallow copy
+                                    always</button>
+                                <button class="option-btn" data-answer="Deep copy of 1D, Shallow copy of 2D">Deep copy
+                                    of 1D, Shallow copy of 2D</button>
+                                <button class="option-btn" data-answer="Depends on array type">Depends on array
+                                    type</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Deep copy of 1D, Shallow copy of 2D
+                                </div>
+                                <p>For 1D arrays of primitives, it's a deep copy. For arrays of objects (including 2D
+                                    arrays), it's a shallow copy (references are copied).</p>
+                            </div>
+                        </div>
+
+                        <!-- Q24 -->
+                        <div class="question" data-correct-answer="for (int x : arr)" data-question-id="q24">
+                            <p class="question-text">Q24. Which is the syntax for the enhanced for-loop?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="foreach (int x in arr)">foreach (int x in
+                                    arr)</button>
+                                <button class="option-btn" data-answer="for (int x : arr)">for (int x : arr)</button>
+                                <button class="option-btn" data-answer="for (int x in arr)">for (int x in arr)</button>
+                                <button class="option-btn" data-answer="loop (arr as x)">loop (arr as x)</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: for (int x : arr)</div>
+                                <p>The syntax is <code>for (Type var : array) { ... }</code>.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q25 -->
+                        <div class="question" data-correct-answer="int[]::new" data-question-id="q25">
+                            <p class="question-text">Q25. How do you refer to an array constructor using method
+                                reference?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="int[]::new">int[]::new</button>
+                                <button class="option-btn" data-answer="int::new[]">int::new[]</button>
+                                <button class="option-btn" data-answer="Array::new">Array::new</button>
+                                <button class="option-btn" data-answer="new int[]">new int[]</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: int[]::new</div>
+                                <p>Array constructor references are written as <code>Type[]::new</code>.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q26 -->
+                        <div class="question" data-correct-answer="Arrays.deepToString(arr)" data-question-id="q26">
+                            <p class="question-text">Q26. How do you print a multidimensional array correctly?</p>
+                            <div class="options">
+                                <button class="option-btn"
+                                    data-answer="Arrays.toString(arr)">Arrays.toString(arr)</button>
+                                <button class="option-btn"
+                                    data-answer="Arrays.deepToString(arr)">Arrays.deepToString(arr)</button>
+                                <button class="option-btn" data-answer="arr.toString()">arr.toString()</button>
+                                <button class="option-btn"
+                                    data-answer="System.out.print(arr)">System.out.print(arr)</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Arrays.deepToString(arr)</div>
+                                <p><code>Arrays.toString()</code> only works well for 1D arrays. For nested arrays, use
+                                    <code>Arrays.deepToString()</code>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q27 -->
+                        <div class="question" data-correct-answer="ArrayStoreException" data-question-id="q27">
+                            <p class="question-text">Q27. What happens if you try to store a String in an Object[] that
+                                is actually an Integer[]?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Compiler Error">Compiler Error</button>
+                                <button class="option-btn" data-answer="ClassCastException">ClassCastException</button>
+                                <button class="option-btn"
+                                    data-answer="ArrayStoreException">ArrayStoreException</button>
+                                <button class="option-btn" data-answer="It works fine">It works fine</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: ArrayStoreException</div>
+                                <p>Arrays retain their runtime type. Storing an incompatible type throws
+                                    <code>ArrayStoreException</code> at runtime.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q28 -->
+                        <div class="question" data-correct-answer="Covariant" data-question-id="q28">
+                            <p class="question-text">Q28. Are Java arrays covariant or invariant?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="Covariant">Covariant</button>
+                                <button class="option-btn" data-answer="Invariant">Invariant</button>
+                                <button class="option-btn" data-answer="Contravariant">Contravariant</button>
+                                <button class="option-btn" data-answer="None of the above">None of the above</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Covariant</div>
+                                <p>Arrays are covariant, meaning <code>Integer[]</code> is a subtype of
+                                    <code>Number[]</code>. Generics are invariant.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q29 -->
+                        <div class="question" data-correct-answer="Arrays.stream(arr)" data-question-id="q29">
+                            <p class="question-text">Q29. How do you convert an array to a Stream?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="arr.stream()">arr.stream()</button>
+                                <button class="option-btn" data-answer="Stream.of(arr)">Stream.of(arr)</button>
+                                <button class="option-btn" data-answer="Arrays.stream(arr)">Arrays.stream(arr)</button>
+                                <button class="option-btn" data-answer="Both B and C">Both B and C</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: Both B and C</div>
+                                <p><code>Arrays.stream(arr)</code> creates a stream from the array.
+                                    <code>Stream.of(arr)</code> also works (but for primitives it creates a Stream of
+                                    the array object itself, not elements).
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Q30 -->
+                        <div class="question" data-correct-answer="System.arraycopy()" data-question-id="q30">
+                            <p class="question-text">Q30. Which is the most efficient way to copy a large array?</p>
+                            <div class="options">
+                                <button class="option-btn" data-answer="For loop">For loop</button>
+                                <button class="option-btn" data-answer="System.arraycopy()">System.arraycopy()</button>
+                                <button class="option-btn" data-answer="Arrays.copyOf()">Arrays.copyOf()</button>
+                                <button class="option-btn" data-answer="Clone">Clone</button>
+                            </div>
+                            <div class="explanation">
+                                <div class="explanation-title">✓ Correct Answer: System.arraycopy()</div>
+                                <p><code>System.arraycopy()</code> is a native method and is generally the fastest way
+                                    to copy arrays.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../assets/js/mcq.js"></script>
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>

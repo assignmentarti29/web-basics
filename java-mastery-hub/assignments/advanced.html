@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Advanced Java Assignments - Java Mastery Hub</title>
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Assignments & Practice</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">⬅ Back to Home</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="overview.html">Overview</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="basic.html">Basic Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="intermediate.html">Intermediate Programs</a>
+                    </li>
+                    <li class="md-nav__item"><a class="md-nav__link md-nav__link--active" href="advanced.html">Advanced
+                            Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="tricky.html">Tricky Questions</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="real-world.html">Real World Scenarios</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <h1>🔴 Advanced Java Assignments (1-40)</h1>
+                <p>Master Collections, Generics, Multithreading, and Java 8+ Features.</p>
+
+                <hr>
+
+                <!-- Q1 -->
+                <div class="assignment">
+                    <h4>Q1. Write a program to demonstrate ArrayList.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // [Java, Python, C++]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.ArrayList;
+ArrayList<String> list = new ArrayList<>();
+list.add("Java");
+list.add("Python");
+list.add("C++");
+System.out.println(list);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Resizable array implementation of List interface.</p>
+                    </details>
+                </div>
+
+                <!-- Q2 -->
+                <div class="assignment">
+                    <h4>Q2. Write a program to demonstrate LinkedList.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // [B, A, C]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.LinkedList;
+LinkedList<String> list = new LinkedList<>();
+list.add("A");
+list.addFirst("B");
+list.addLast("C");
+System.out.println(list);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Doubly-linked list implementation.</p>
+                    </details>
+                </div>
+
+                <!-- Q3 -->
+                <div class="assignment">
+                    <h4>Q3. Write a program to demonstrate HashSet.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // [1, 2]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.HashSet;
+HashSet<Integer> set = new HashSet<>();
+set.add(1);
+set.add(2);
+set.add(1); // Duplicate ignored
+System.out.println(set);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Collection that contains no duplicate elements.</p>
+                    </details>
+                </div>
+
+                <!-- Q4 -->
+                <div class="assignment">
+                    <h4>Q4. Write a program to demonstrate TreeSet.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // [1, 3, 5]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.TreeSet;
+TreeSet<Integer> set = new TreeSet<>();
+set.add(5);
+set.add(1);
+set.add(3);
+System.out.println(set); // Sorted order
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Sorted set implementation.</p>
+                    </details>
+                </div>
+
+                <!-- Q5 -->
+                <div class="assignment">
+                    <h4>Q5. Write a program to demonstrate HashMap.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Apple
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.HashMap;
+HashMap<Integer, String> map = new HashMap<>();
+map.put(1, "Apple");
+map.put(2, "Banana");
+System.out.println(map.get(1));
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Key-value pair storage.</p>
+                    </details>
+                </div>
+
+                <!-- Q6 -->
+                <div class="assignment">
+                    <h4>Q6. Write a program to demonstrate TreeMap.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // {1=A, 2=B, 3=C}
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.TreeMap;
+TreeMap<Integer, String> map = new TreeMap<>();
+map.put(3, "C");
+map.put(1, "A");
+map.put(2, "B");
+System.out.println(map); // Sorted by keys
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Red-Black tree based NavigableMap implementation.</p>
+                    </details>
+                </div>
+
+                <!-- Q7 -->
+                <div class="assignment">
+                    <h4>Q7. Write a program to iterate over a Map.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 1 A
+                    // 2 B
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.*;
+Map<Integer, String> map = new HashMap<>();
+map.put(1, "A"); map.put(2, "B");
+for (Map.Entry<Integer, String> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + " " + entry.getValue());
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Using entrySet() to iterate.</p>
+                    </details>
+                </div>
+
+                <!-- Q8 -->
+                <div class="assignment">
+                    <h4>Q8. Write a program to sort an ArrayList using Comparator.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // [Alice, Bob]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.*;
+class Student { int id; String name; Student(int i, String n){id=i;name=n;} public String toString(){return name;} }
+ArrayList<Student> list = new ArrayList<>();
+list.add(new Student(2, "Bob"));
+list.add(new Student(1, "Alice"));
+Collections.sort(list, (s1, s2) -> s1.name.compareTo(s2.name));
+System.out.println(list);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Custom sorting logic using Lambda.</p>
+                    </details>
+                </div>
+
+                <!-- Q9 -->
+                <div class="assignment">
+                    <h4>Q9. Write a program to demonstrate Generics Class.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 10
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Box<T> {
+    T t;
+    void set(T t) { this.t = t; }
+    T get() { return t; }
+}
+public class Main {
+    public static void main(String[] args) {
+        Box<Integer> b = new Box<>();
+        b.set(10);
+        System.out.println(b.get());
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Type-safe class definition.</p>
+                    </details>
+                </div>
+
+                <!-- Q10 -->
+                <div class="assignment">
+                    <h4>Q10. Write a program to demonstrate Generic Method.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 1 2 3
+                    // A B C
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+public class Main {
+    public static <E> void printArray(E[] elements) {
+        for (E element : elements) System.out.print(element + " ");
+        System.out.println();
+    }
+    public static void main(String[] args) {
+        Integer[] intArray = {1, 2, 3};
+        String[] stringArray = {"A", "B", "C"};
+        printArray(intArray);
+        printArray(stringArray);
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Method that can accept arguments of different types.</p>
+                    </details>
+                </div>
+
+                <!-- Q11 -->
+                <div class="assignment">
+                    <h4>Q11. Write a program to demonstrate Wildcards in Generics.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // [1, 2, 3]
+                    // [one, two]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.*;
+public class Main {
+    public static void printList(List<?> list) {
+        System.out.println(list);
+    }
+    public static void main(String[] args) {
+        List<Integer> li = Arrays.asList(1, 2, 3);
+        List<String> ls = Arrays.asList("one", "two");
+        printList(li);
+        printList(ls);
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Unbounded wildcard allows any type.</p>
+                    </details>
+                </div>
+
+                <!-- Q12 -->
+                <div class="assignment">
+                    <h4>Q12. Write a program to create a Thread by extending Thread class.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Thread running
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class MyThread extends Thread {
+    public void run() { System.out.println("Thread running"); }
+}
+public class Main {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        t1.start();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Extending Thread class and overriding run method.</p>
+                    </details>
+                </div>
+
+                <!-- Q13 -->
+                <div class="assignment">
+                    <h4>Q13. Write a program to create a Thread by implementing Runnable interface.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Runnable running
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class MyRunnable implements Runnable {
+    public void run() { System.out.println("Runnable running"); }
+}
+public class Main {
+    public static void main(String[] args) {
+        Thread t1 = new Thread(new MyRunnable());
+        t1.start();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Implementing Runnable is preferred for flexibility.</p>
+                    </details>
+                </div>
+
+                <!-- Q14 -->
+                <div class="assignment">
+                    <h4>Q14. Write a program to demonstrate Thread Priority.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Thread-1
+                    // Thread-0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class MyThread extends Thread {
+    public void run() { System.out.println(Thread.currentThread().getName()); }
+}
+public class Main {
+    public static void main(String[] args) {
+        MyThread t1 = new MyThread();
+        MyThread t2 = new MyThread();
+        t1.setPriority(Thread.MIN_PRIORITY);
+        t2.setPriority(Thread.MAX_PRIORITY);
+        t1.start(); t2.start();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Setting priority hints scheduler.</p>
+                    </details>
+                </div>
+
+                <!-- Q15 -->
+                <div class="assignment">
+                    <h4>Q15. Write a program to demonstrate Thread Synchronization.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 2000
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Counter {
+    int count;
+    synchronized void increment() { count++; }
+}
+public class Main {
+    public static void main(String[] args) throws InterruptedException {
+        Counter c = new Counter();
+        Thread t1 = new Thread(() -> { for(int i=0; i<1000; i++) c.increment(); });
+        Thread t2 = new Thread(() -> { for(int i=0; i<1000; i++) c.increment(); });
+        t1.start(); t2.start();
+        t1.join(); t2.join();
+        System.out.println(c.count);
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Synchronized method prevents race conditions.</p>
+                    </details>
+                </div>
+
+                <!-- Q16 -->
+                <div class="assignment">
+                    <h4>Q16. Write a program to demonstrate Wait and Notify.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Chat sequence)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Chat {
+    boolean flag = false;
+    synchronized void Question(String msg) {
+        if (flag) { try { wait(); } catch (InterruptedException e) {} }
+        System.out.println(msg);
+        flag = true;
+        notify();
+    }
+    synchronized void Answer(String msg) {
+        if (!flag) { try { wait(); } catch (InterruptedException e) {} }
+        System.out.println(msg);
+        flag = false;
+        notify();
+    }
+}
+// Main class omitted for brevity
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Inter-thread communication.</p>
+                    </details>
+                </div>
+
+                <!-- Q17 -->
+                <div class="assignment">
+                    <h4>Q17. Write a program to demonstrate Deadlock.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Deadlock demonstration)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Concept: Two threads waiting for each other to release resources forever.
+// Code omitted to prevent freezing, but involves nested synchronized blocks with reverse order of locks.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Circular dependency of resources.</p>
+                    </details>
+                </div>
+
+                <!-- Q18 -->
+                <div class="assignment">
+                    <h4>Q18. Write a program to demonstrate Lambda Expression.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 8
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+interface MathOp { int operate(int a, int b); }
+public class Main {
+    public static void main(String[] args) {
+        MathOp add = (a, b) -> a + b;
+        System.out.println(add.operate(5, 3));
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Concise way to represent functional interface.</p>
+                    </details>
+                </div>
+
+                <!-- Q19 -->
+                <div class="assignment">
+                    <h4>Q19. Write a program to demonstrate Functional Interface.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Hello
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+@FunctionalInterface
+interface Sayable { void say(String msg); }
+public class Main {
+    public static void main(String[] args) {
+        Sayable s = (msg) -> System.out.println(msg);
+        s.say("Hello");
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Interface with exactly one abstract method.</p>
+                    </details>
+                </div>
+
+                <!-- Q20 -->
+                <div class="assignment">
+                    <h4>Q20. Write a program to demonstrate Stream API (Filter & Map).</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // [4, 16]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.*;
+import java.util.stream.Collectors;
+List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+List<Integer> squares = numbers.stream()
+                               .filter(n -> n % 2 == 0)
+                               .map(n -> n * n)
+                               .collect(Collectors.toList());
+System.out.println(squares);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Processing collections declaratively.</p>
+                    </details>
+                </div>
+
+                <!-- Q21 -->
+                <div class="assignment">
+                    <h4>Q21. Write a program to demonstrate Method References.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Alice
+                    // Bob
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        List<String> names = Arrays.asList("Alice", "Bob");
+        names.forEach(System.out::println);
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Shorthand syntax for a lambda expression.</p>
+                    </details>
+                </div>
+
+                <!-- Q22 -->
+                <div class="assignment">
+                    <h4>Q22. Write a program to demonstrate Optional Class.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Word is null
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Optional;
+public class Main {
+    public static void main(String[] args) {
+        String[] words = new String[10];
+        Optional<String> checkNull = Optional.ofNullable(words[5]);
+        if (checkNull.isPresent()) {
+            System.out.println(words[5].toLowerCase());
+        } else {
+            System.out.println("Word is null");
+        }
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Container object which may or may not contain a non-null value.
+                        </p>
+                    </details>
+                </div>
+
+                <!-- Q23 -->
+                <div class="assignment">
+                    <h4>Q23. Write a program to demonstrate Default Methods in Interface.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Default Method
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+interface MyInterface {
+    default void newMethod() { System.out.println("Default Method"); }
+}
+class MyClass implements MyInterface {}
+public class Main {
+    public static void main(String[] args) {
+        new MyClass().newMethod();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Adding new methods to interfaces without breaking existing
+                            implementation.</p>
+                    </details>
+                </div>
+
+                <!-- Q24 -->
+                <div class="assignment">
+                    <h4>Q24. Write a program to demonstrate Static Methods in Interface.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Static Method
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+interface MyInterface {
+    static void staticMethod() { System.out.println("Static Method"); }
+}
+public class Main {
+    public static void main(String[] args) {
+        MyInterface.staticMethod();
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Interface can have static helper methods.</p>
+                    </details>
+                </div>
+
+                <!-- Q25 -->
+                <div class="assignment">
+                    <h4>Q25. Write a program to demonstrate Date and Time API (LocalDate).</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Today: 2023-10-27 (Current Date)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.time.LocalDate;
+public class Main {
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();
+        System.out.println("Today: " + date);
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Modern API for date handling.</p>
+                    </details>
+                </div>
+
+                <!-- Q26 -->
+                <div class="assignment">
+                    <h4>Q26. Write a program to demonstrate Reflection API.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // show
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.lang.reflect.Method;
+class Test { void show() {} }
+public class Main {
+    public static void main(String[] args) {
+        Class c = Test.class;
+        Method[] methods = c.getDeclaredMethods();
+        for(Method m : methods) System.out.println(m.getName());
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Inspecting class structure at runtime.</p>
+                    </details>
+                </div>
+
+                <!-- Q27 -->
+                <div class="assignment">
+                    <h4>Q27. Write a program to demonstrate Singleton Pattern.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Singleton instance)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class Singleton {
+    private static Singleton instance;
+    private Singleton() {}
+    public static Singleton getInstance() {
+        if (instance == null) instance = new Singleton();
+        return instance;
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Ensures a class has only one instance.</p>
+                    </details>
+                </div>
+
+                <!-- Q28 -->
+                <div class="assignment">
+                    <h4>Q28. Write a program to demonstrate Factory Pattern.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Circle
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+interface Shape { void draw(); }
+class Circle implements Shape { public void draw() { System.out.println("Circle"); } }
+class ShapeFactory {
+    public Shape getShape(String type) {
+        if(type.equals("CIRCLE")) return new Circle();
+        return null;
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Creating objects without specifying exact class.</p>
+                    </details>
+                </div>
+
+                <!-- Q29 -->
+                <div class="assignment">
+                    <h4>Q29. Write a program to demonstrate Observer Pattern.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (News update)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.*;
+class NewsAgency extends Observable {
+    void setNews(String news) {
+        setChanged();
+        notifyObservers(news);
+    }
+}
+// Observer implementation omitted for brevity
+                        </code></pre>
+                        <p><strong>Explanation:</strong> One-to-many dependency between objects.</p>
+                    </details>
+                </div>
+
+                <!-- Q30 -->
+                <div class="assignment">
+                    <h4>Q30. Write a program to demonstrate JDBC Connection.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Connected
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.sql.*;
+public class Main {
+    public static void main(String[] args) {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/db", "root", "root");
+            System.out.println("Connected");
+            con.close();
+        } catch (Exception e) { System.out.println(e); }
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Connecting Java application to Database.</p>
+                    </details>
+                </div>
+
+                <!-- Q31 -->
+                <div class="assignment">
+                    <h4>Q31. Write a program to demonstrate Reading a File.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (File content)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.nio.file.*;
+public class Main {
+    public static void main(String[] args) throws Exception {
+        String content = new String(Files.readAllBytes(Paths.get("test.txt")));
+        System.out.println(content);
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Using NIO package to read file content.</p>
+                    </details>
+                </div>
+
+                <!-- Q32 -->
+                <div class="assignment">
+                    <h4>Q32. Write a program to demonstrate Writing to a File.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (File created with content "Hello World")
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.nio.file.*;
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Files.write(Paths.get("test.txt"), "Hello World".getBytes());
+    }
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Using NIO package to write content to file.</p>
+                    </details>
+                </div>
+
+                <!-- Q33 -->
+                <div class="assignment">
+                    <h4>Q33. Write a program to demonstrate Try-With-Resources.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Hello World
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.io.*;
+try (BufferedReader br = new BufferedReader(new FileReader("test.txt"))) {
+    System.out.println(br.readLine());
+} catch (IOException e) { e.printStackTrace(); }
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Automatic resource management.</p>
+                    </details>
+                </div>
+
+                <!-- Q34 -->
+                <div class="assignment">
+                    <h4>Q34. Write a program to demonstrate ExecutorService.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Task executed
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.concurrent.*;
+ExecutorService executor = Executors.newFixedThreadPool(5);
+executor.submit(() -> System.out.println("Task executed"));
+executor.shutdown();
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Managing a pool of threads.</p>
+                    </details>
+                </div>
+
+                <!-- Q35 -->
+                <div class="assignment">
+                    <h4>Q35. Write a program to demonstrate Callable and Future.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Result
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.concurrent.*;
+ExecutorService executor = Executors.newSingleThreadExecutor();
+Future<String> future = executor.submit(() -> "Result");
+System.out.println(future.get());
+executor.shutdown();
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Returning value from a thread.</p>
+                    </details>
+                </div>
+
+                <!-- Q36 -->
+                <div class="assignment">
+                    <h4>Q36. Write a program to demonstrate CompletableFuture.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Hello World
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.concurrent.CompletableFuture;
+CompletableFuture.supplyAsync(() -> "Hello")
+                 .thenAccept(s -> System.out.println(s + " World"));
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Asynchronous programming with functional style.</p>
+                    </details>
+                </div>
+
+                <!-- Q37 -->
+                <div class="assignment">
+                    <h4>Q37. Write a program to demonstrate Atomic Variables.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 1
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.concurrent.atomic.AtomicInteger;
+AtomicInteger count = new AtomicInteger(0);
+count.incrementAndGet();
+System.out.println(count);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Thread-safe operations on single variables.</p>
+                    </details>
+                </div>
+
+                <!-- Q38 -->
+                <div class="assignment">
+                    <h4>Q38. Write a program to demonstrate ReentrantLock.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Locked
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.concurrent.locks.ReentrantLock;
+ReentrantLock lock = new ReentrantLock();
+lock.lock();
+try {
+    System.out.println("Locked");
+} finally {
+    lock.unlock();
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Explicit locking mechanism.</p>
+                    </details>
+                </div>
+
+                <!-- Q39 -->
+                <div class="assignment">
+                    <h4>Q39. Write a program to demonstrate ConcurrentHashMap.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // {1=A}
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.concurrent.ConcurrentHashMap;
+ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
+map.put(1, "A");
+System.out.println(map);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Thread-safe HashMap implementation.</p>
+                    </details>
+                </div>
+
+                <!-- Q40 -->
+                <div class="assignment">
+                    <h4>Q40. Write a program to demonstrate CopyOnWriteArrayList.</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // [A]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.concurrent.CopyOnWriteArrayList;
+CopyOnWriteArrayList<String> list = new CopyOnWriteArrayList<>();
+list.add("A");
+System.out.println(list);
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Thread-safe List optimized for reading.</p>
+                    </details>
+                </div>
+
+                <div class="content-section text-center" style="margin-top: 3rem;">
+                    <h3>🎉 Advanced Section Completed!</h3>
+                    <p>Incredible! You have conquered 40 advanced programs. Now, test your wits with Tricky Questions.
+                    </p>
+                    <a class="md-button md-button--primary" href="tricky.html">Go to Tricky Questions ➡</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>

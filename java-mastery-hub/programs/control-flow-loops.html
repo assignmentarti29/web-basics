@@ -1,286 +1,478 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Control Flow &amp; Loops - Programs - Java Mastery Hub</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet"/>
-<link href="../assets/css/style-mkdocs.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/></head>
-<body data-md-color-scheme="default"><header class="md-header">
-<nav class="md-header__inner">
-<!-- Mobile Menu Toggle -->
-<button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
-<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
-</button>
-<!-- Logo/Title -->
-<a class="md-header__title" href="../index.html">
-<span class="md-header__icon">☕</span>
-            Java Mastery Hub
-        </a>
-<!-- Search Bar (Visual) -->
-<div class="md-search">
-<div class="md-search__inner">
-<svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
-<input aria-label="Search" class="md-search__input" placeholder="Search" type="text"/>
-</div>
-</div>
-<!-- Theme Toggle -->
-<button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
-<span>🌙</span>
-</button>
-</nav>
-</header><div class="md-grid"><aside class="md-sidebar"><nav class="md-nav">
-<div class="md-nav__title">Topics</div>
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">1. Software Engineering</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/software-engineering.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/software-engineering.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/software-engineering.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">2. What is Java</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/what-is-java.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/what-is-java.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/what-is-java.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">3. Variables &amp; Data Types</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/variables-and-data-types.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/variables-and-data-types.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/variables-and-data-types.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">4. Java Keywords</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/java-keywords.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/java-keywords.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/java-keywords.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">5. Control Flow &amp; Loops</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/control-flow-loops.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active" href="../programs/control-flow-loops.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/control-flow-loops.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">6. Classes &amp; Objects</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/classes-and-objects.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/classes-and-objects.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/classes-and-objects.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">7. Methods</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/methods.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/methods.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/methods.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">8. OOP Concepts</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/oops.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/oops.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/oops.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">9. Collections Framework</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/collections.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/collections.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/collections.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">10. Exception Handling</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/exception-handling.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/exception-handling.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/exception-handling.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">11. File Handling</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/handling-files.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/handling-files.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/handling-files.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">12. JDBC</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/jdbc.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/jdbc.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/jdbc.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">13. Multithreading</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/multithreading.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/multithreading.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/multithreading.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">14. Java 8+ Features</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/java8features.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/java8features.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/java8features.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">15. Programming Principles</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/programming-principles.html">Theory</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/programming-principles.html">Programs</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/programming-principles.html">Quiz</a></li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<button class="md-nav__link md-nav__toggle">
-<span class="md-nav__text">17. Interview Questions</span>
-<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
-</button>
-<nav class="md-nav__group">
-<ul class="md-nav__list">
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/introduction.html">Introduction</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/beginner.html">Beginner (1-150)</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/intermediate.html">Intermediate (151-350)</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/advanced.html">Advanced (351-500)</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/tricky.html">Tricky Questions</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/scenario-based.html">Scenario Based</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/hr.html">HR Questions</a></li>
-<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/complete-quiz.html">Complete Quiz</a></li>
-</ul>
-</nav>
-</li>
-</ul>
-</nav></aside><main class="md-content"><div class="md-content__inner">
-<!-- Content Header -->
-<div class="content-header">
-<h1>Control Flow &amp; Loops - Code Examples</h1>
-<ul class="md-breadcrumbs"><li><a href="../index.html">Home</a></li><li><a href="#">Programs</a></li><li>Control Flow &amp; Loops</li></ul>
-</div>
-<!-- Introduction -->
-<div class="content-section">
-<h2>Hands-On Java Programs</h2>
-<p>
-                Welcome to the practical section! These 12+ programs demonstrate every control flow statement and loop
-                type.
-                Each program is heavily commented to explain not just WHAT the code does, but WHY and HOW each statement
-                works.
-            </p>
-<div class="admonition tip">
-<div class="admonition-title">💡 TIP</div>
-<div class="admonition-content"><p>
-                    Try running these programs yourself! Modify the conditions, change loop counters, and observe how
-                    the flow changes.
-                    Understanding control flow is essential for writing any non-trivial program!
-                </p></div></div>
-</div>
-<!-- Program 1: Simple if Statement -->
-<div class="content-section">
-<h2>Program 1: Simple if Statement</h2>
-<p>Demonstrates basic if statement for conditional execution.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Control Flow &amp; Loops - Programs - Java Mastery Hub</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <!-- Mobile Menu Toggle -->
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <!-- Logo/Title -->
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <!-- Search Bar (Visual) -->
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <!-- Theme Toggle -->
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Topics</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">1. Software Engineering</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/software-engineering.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/software-engineering.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/software-engineering.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">2. What is Java</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/what-is-java.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/what-is-java.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/what-is-java.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">3. Variables &amp; Data Types</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/variables-and-data-types.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/variables-and-data-types.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/variables-and-data-types.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">4. Java Keywords</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java-keywords.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java-keywords.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java-keywords.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">5. Control Flow &amp; Loops</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/control-flow-loops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active"
+                                        href="../programs/control-flow-loops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/control-flow-loops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">6. Classes &amp; Objects</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/classes-and-objects.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/classes-and-objects.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/classes-and-objects.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">7. Methods</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/methods.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/methods.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/methods.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">8. OOP Concepts</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/oops.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/oops.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/oops.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">9. Collections Framework</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/collections.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/collections.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/collections.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">10. Exception Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/exception-handling.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/exception-handling.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/exception-handling.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">11. File Handling</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/handling-files.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/handling-files.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/handling-files.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">12. JDBC</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/jdbc.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/jdbc.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/jdbc.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">13. Multithreading</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/multithreading.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/multithreading.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/multithreading.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">14. Java 8+ Features</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/java8features.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/java8features.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/java8features.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">15. Programming Principles</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/programming-principles.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/programming-principles.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/programming-principles.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">16. Miscellaneous Topics → Arrays</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/arrays.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/arrays.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/arrays.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">17. Miscellaneous Topics → Strings</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../theory/strings.html">Theory</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../programs/strings.html">Programs</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../mcq/strings.html">Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                    <li class="md-nav__item md-nav__item--nested">
+                        <button class="md-nav__link md-nav__toggle">
+                            <span class="md-nav__text">18. Java Interview Questions</span>
+                            <svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <nav class="md-nav__group">
+                            <ul class="md-nav__list">
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/introduction.html">Introduction</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/beginner.html">Beginner (1-150)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/advanced.html">Advanced (351-500)</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/tricky.html">Tricky Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/scenario-based.html">Scenario Based</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/hr.html">HR Questions</a></li>
+                                <li class="md-nav__item"><a class="md-nav__link md-nav__link--sub"
+                                        href="../interview/complete-quiz.html">Complete Quiz</a></li>
+                            </ul>
+                        </nav>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <!-- Content Header -->
+                <div class="content-header">
+                    <h1>Control Flow &amp; Loops - Code Examples</h1>
+                    <ul class="md-breadcrumbs">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="#">Programs</a></li>
+                        <li>Control Flow &amp; Loops</li>
+                    </ul>
+                </div>
+                <!-- Introduction -->
+                <div class="content-section">
+                    <h2>Hands-On Java Programs</h2>
+                    <p>
+                        Welcome to the practical section! These 12+ programs demonstrate every control flow statement
+                        and loop
+                        type.
+                        Each program is heavily commented to explain not just WHAT the code does, but WHY and HOW each
+                        statement
+                        works.
+                    </p>
+                    <div class="admonition tip">
+                        <div class="admonition-title">💡 TIP</div>
+                        <div class="admonition-content">
+                            <p>
+                                Try running these programs yourself! Modify the conditions, change loop counters, and
+                                observe how
+                                the flow changes.
+                                Understanding control flow is essential for writing any non-trivial program!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Program 1: Simple if Statement -->
+                <div class="content-section">
+                    <h2>Program 1: Simple if Statement</h2>
+                    <p>Demonstrates basic if statement for conditional execution.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * SimpleIfDemo - Understanding basic if statement
  * 
  * Baby-level: "If it's raining, take an umbrella"
@@ -320,21 +512,24 @@ public class SimpleIfDemo {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> The <code>if</code> statement checks a boolean condition. If true, the
-                code block executes; if false, it's skipped entirely. Use <code>&amp;&amp;</code> for AND (both must be true)
-                and <code>||</code> for OR (at least one must be true). Always use <code>==</code> for comparison, not
-                <code>=</code> (assignment).
-            </div>
-</div>
-<!-- Program 2: if-else Statement -->
-<div class="content-section">
-<h2>Program 2: if-else Statement</h2>
-<p>Demonstrates if-else for binary decisions.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> The <code>if</code> statement checks a boolean condition. If true,
+                        the
+                        code block executes; if false, it's skipped entirely. Use <code>&amp;&amp;</code> for AND (both
+                        must be true)
+                        and <code>||</code> for OR (at least one must be true). Always use <code>==</code> for
+                        comparison, not
+                        <code>=</code> (assignment).
+                    </div>
+                </div>
+                <!-- Program 2: if-else Statement -->
+                <div class="content-section">
+                    <h2>Program 2: if-else Statement</h2>
+                    <p>Demonstrates if-else for binary decisions.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * IfElseDemo - Understanding if-else decisions
  * 
  * Baby-level: "If it's sunny, go to park. Otherwise, stay home"
@@ -381,20 +576,22 @@ public class IfElseDemo {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> <code>if-else</code> provides two paths: one for true, one for false.
-                Exactly ONE block executes - never both, never neither. Use for binary decisions like pass/fail, yes/no,
-                valid/invalid. The else block is optional but recommended for clarity.
-            </div>
-</div>
-<!-- Program 3: if-else-if Ladder -->
-<div class="content-section">
-<h2>Program 3: if-else-if Ladder (Grade Calculator)</h2>
-<p>Demonstrates multiple condition checking with if-else-if ladder.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> <code>if-else</code> provides two paths: one for true, one for
+                        false.
+                        Exactly ONE block executes - never both, never neither. Use for binary decisions like pass/fail,
+                        yes/no,
+                        valid/invalid. The else block is optional but recommended for clarity.
+                    </div>
+                </div>
+                <!-- Program 3: if-else-if Ladder -->
+                <div class="content-section">
+                    <h2>Program 3: if-else-if Ladder (Grade Calculator)</h2>
+                    <p>Demonstrates multiple condition checking with if-else-if ladder.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * GradeCalculator - if-else-if ladder demonstration
  * 
  * Baby-level: "If score is 90+, grade A. If 80+, grade B. If 70+, grade C..."
@@ -453,21 +650,24 @@ public class GradeCalculator {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> The if-else-if ladder checks multiple conditions sequentially. The FIRST
-                true condition executes, and all subsequent conditions are skipped. Order matters - always check from
-                most specific to least specific. Use for range-based decisions like grading, categorization, or tiered
-                pricing.
-            </div>
-</div>
-<!-- Program 4: switch-case with break -->
-<div class="content-section">
-<h2>Program 4: switch-case Statement (with break)</h2>
-<p>Demonstrates switch-case for multiple constant value checks.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> The if-else-if ladder checks multiple conditions sequentially. The
+                        FIRST
+                        true condition executes, and all subsequent conditions are skipped. Order matters - always check
+                        from
+                        most specific to least specific. Use for range-based decisions like grading, categorization, or
+                        tiered
+                        pricing.
+                    </div>
+                </div>
+                <!-- Program 4: switch-case with break -->
+                <div class="content-section">
+                    <h2>Program 4: switch-case Statement (with break)</h2>
+                    <p>Demonstrates switch-case for multiple constant value checks.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * SwitchCaseDemo - Understanding switch-case with break
  * 
  * Baby-level: "Pick a number 1-7, I'll tell you the day of the week"
@@ -554,21 +754,24 @@ public class SwitchCaseDemo {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> <code>switch-case</code> is efficient for checking a variable against
-                multiple constant values. Each <code>case</code> represents a specific value. The <code>break</code>
-                statement exits the switch; without it, execution "falls through" to the next case. <code>default</code>
-                handles values that don't match any case.
-            </div>
-</div>
-<!-- Program 5: switch-case Fall-through -->
-<div class="content-section">
-<h2>Program 5: switch-case Fall-through (Without break)</h2>
-<p>Demonstrates intentional fall-through behavior in switch-case.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> <code>switch-case</code> is efficient for checking a variable
+                        against
+                        multiple constant values. Each <code>case</code> represents a specific value. The
+                        <code>break</code>
+                        statement exits the switch; without it, execution "falls through" to the next case.
+                        <code>default</code>
+                        handles values that don't match any case.
+                    </div>
+                </div>
+                <!-- Program 5: switch-case Fall-through -->
+                <div class="content-section">
+                    <h2>Program 5: switch-case Fall-through (Without break)</h2>
+                    <p>Demonstrates intentional fall-through behavior in switch-case.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * SwitchFallThroughDemo - Understanding fall-through behavior
  * 
  * Baby-level: "Without break, it keeps going to the next case!"
@@ -651,21 +854,22 @@ public class SwitchFallThroughDemo {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> Without <code>break</code>, execution continues to the next case
-                (fall-through). This is useful for grouping cases with the same logic but is usually a bug if
-                unintentional. Always use <code>break</code> unless you specifically want fall-through behavior. Comment
-                your code if fall-through is intentional.
-            </div>
-</div>
-<!-- Program 6: Standard for Loop -->
-<div class="content-section">
-<h2>Program 6: Standard for Loop</h2>
-<p>Demonstrates the classic for loop with initialization, condition, and update.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> Without <code>break</code>, execution continues to the next case
+                        (fall-through). This is useful for grouping cases with the same logic but is usually a bug if
+                        unintentional. Always use <code>break</code> unless you specifically want fall-through behavior.
+                        Comment
+                        your code if fall-through is intentional.
+                    </div>
+                </div>
+                <!-- Program 6: Standard for Loop -->
+                <div class="content-section">
+                    <h2>Program 6: Standard for Loop</h2>
+                    <p>Demonstrates the classic for loop with initialization, condition, and update.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * ForLoopDemo - Understanding for loops
  * 
  * Baby-level: "Count from 1 to 10" - you know exactly how many times
@@ -731,21 +935,24 @@ public class ForLoopDemo {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> The <code>for</code> loop is perfect when you know the exact number of
-                iterations. It has three parts: initialization (runs once), condition (checked before each iteration),
-                and update (runs after each iteration). Use for counting, iterating arrays, and repeating actions a
-                fixed number of times.
-            </div>
-</div>
-<!-- Program 7: while Loop -->
-<div class="content-section">
-<h2>Program 7: while Loop</h2>
-<p>Demonstrates while loop for condition-based iteration.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> The <code>for</code> loop is perfect when you know the exact
+                        number of
+                        iterations. It has three parts: initialization (runs once), condition (checked before each
+                        iteration),
+                        and update (runs after each iteration). Use for counting, iterating arrays, and repeating
+                        actions a
+                        fixed number of times.
+                    </div>
+                </div>
+                <!-- Program 7: while Loop -->
+                <div class="content-section">
+                    <h2>Program 7: while Loop</h2>
+                    <p>Demonstrates while loop for condition-based iteration.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * WhileLoopDemo - Understanding while loops
  * 
  * Baby-level: "Keep doing something WHILE a condition is true"
@@ -824,21 +1031,24 @@ public class WhileLoopDemo {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> <code>while</code> loops check the condition BEFORE each iteration. If
-                initially false, the loop never executes. Best for unknown iteration counts like user input validation,
-                file reading, or searching. ALWAYS update the condition variable inside the loop to avoid infinite
-                loops.
-            </div>
-</div>
-<!-- Program 8: do-while Loop -->
-<div class="content-section">
-<h2>Program 8: do-while Loop</h2>
-<p>Demonstrates do-while loop that guarantees at least one execution.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> <code>while</code> loops check the condition BEFORE each
+                        iteration. If
+                        initially false, the loop never executes. Best for unknown iteration counts like user input
+                        validation,
+                        file reading, or searching. ALWAYS update the condition variable inside the loop to avoid
+                        infinite
+                        loops.
+                    </div>
+                </div>
+                <!-- Program 8: do-while Loop -->
+                <div class="content-section">
+                    <h2>Program 8: do-while Loop</h2>
+                    <p>Demonstrates do-while loop that guarantees at least one execution.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * DoWhileLoopDemo - Understanding do-while loops
  * 
  * Baby-level: "Do something first, THEN check if you should do it again"
@@ -933,21 +1143,23 @@ public class DoWhileLoopDemo {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> <code>do-while</code> executes the body FIRST, then checks the condition.
-                This guarantees AT LEAST ONE execution, even if the condition is initially false. Perfect for menus,
-                input validation, and any scenario where you must execute at least once. The semicolon after
-                <code>while(condition)</code> is required.
-            </div>
-</div>
-<!-- Program 9: Enhanced for Loop -->
-<div class="content-section">
-<h2>Program 9: Enhanced for Loop (for-each)</h2>
-<p>Demonstrates the simplified for-each loop for arrays and collections.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> <code>do-while</code> executes the body FIRST, then checks the
+                        condition.
+                        This guarantees AT LEAST ONE execution, even if the condition is initially false. Perfect for
+                        menus,
+                        input validation, and any scenario where you must execute at least once. The semicolon after
+                        <code>while(condition)</code> is required.
+                    </div>
+                </div>
+                <!-- Program 9: Enhanced for Loop -->
+                <div class="content-section">
+                    <h2>Program 9: Enhanced for Loop (for-each)</h2>
+                    <p>Demonstrates the simplified for-each loop for arrays and collections.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * EnhancedForLoopDemo - Understanding for-each loops
  * 
  * Baby-level: "For EACH item in the box, do something"
@@ -1045,21 +1257,24 @@ public class EnhancedForLoopDemo {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> The enhanced for loop (for-each) simplifies iteration over arrays and
-                collections. It automatically handles indexing and is more readable. However, you cannot access the
-                index, modify array elements, or iterate in reverse. Use when you need to process every element without
-                modification.
-            </div>
-</div>
-<!-- Program 10: break Statement -->
-<div class="content-section">
-<h2>Program 10: break Statement in Loops</h2>
-<p>Demonstrates using break to exit loops early.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> The enhanced for loop (for-each) simplifies iteration over arrays
+                        and
+                        collections. It automatically handles indexing and is more readable. However, you cannot access
+                        the
+                        index, modify array elements, or iterate in reverse. Use when you need to process every element
+                        without
+                        modification.
+                    </div>
+                </div>
+                <!-- Program 10: break Statement -->
+                <div class="content-section">
+                    <h2>Program 10: break Statement in Loops</h2>
+                    <p>Demonstrates using break to exit loops early.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * BreakStatementDemo - Understanding break in loops
  * 
  * Baby-level: "Stop the loop immediately and get out!"
@@ -1151,20 +1366,23 @@ public class BreakStatementDemo {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> <code>break</code> immediately exits the current loop. In nested loops, it
-                only exits the innermost loop unless you use a labeled break. Use break for early termination when a
-                condition is met, like finding a value or detecting an error. Execution continues after the loop.
-            </div>
-</div>
-<!-- Program 11: continue Statement -->
-<div class="content-section">
-<h2>Program 11: continue Statement in Loops</h2>
-<p>Demonstrates using continue to skip iterations.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> <code>break</code> immediately exits the current loop. In nested
+                        loops, it
+                        only exits the innermost loop unless you use a labeled break. Use break for early termination
+                        when a
+                        condition is met, like finding a value or detecting an error. Execution continues after the
+                        loop.
+                    </div>
+                </div>
+                <!-- Program 11: continue Statement -->
+                <div class="content-section">
+                    <h2>Program 11: continue Statement in Loops</h2>
+                    <p>Demonstrates using continue to skip iterations.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * ContinueStatementDemo - Understanding continue in loops
  * 
  * Baby-level: "Skip this one and move to the next!"
@@ -1264,21 +1482,24 @@ public class ContinueStatementDemo {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> <code>continue</code> skips the rest of the current iteration and moves to
-                the next one. The loop continues running, unlike <code>break</code> which exits entirely. Use continue
-                for filtering, skipping invalid data, or conditional processing. It's like saying "skip this one, but
-                keep going."
-            </div>
-</div>
-<!-- Program 12: Real-World Example - ATM System -->
-<div class="content-section">
-<h2>Program 12: Real-World Example - ATM System</h2>
-<p>Comprehensive example combining all control flow concepts.</p>
-<div class="code-header">
-<span class="code-language">☕ Java</span>
-</div>
-<pre><code class="language-java">/**
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> <code>continue</code> skips the rest of the current iteration and
+                        moves to
+                        the next one. The loop continues running, unlike <code>break</code> which exits entirely. Use
+                        continue
+                        for filtering, skipping invalid data, or conditional processing. It's like saying "skip this
+                        one, but
+                        keep going."
+                    </div>
+                </div>
+                <!-- Program 12: Real-World Example - ATM System -->
+                <div class="content-section">
+                    <h2>Program 12: Real-World Example - ATM System</h2>
+                    <p>Comprehensive example combining all control flow concepts.</p>
+                    <div class="code-header">
+                        <span class="code-language">☕ Java</span>
+                    </div>
+                    <pre><code class="language-java">/**
  * ATMSystem - Real-world example using all control flow statements
  * 
  * Demonstrates: if-else, switch-case, while, do-while, break, continue
@@ -1424,36 +1645,49 @@ public class ATMSystem {
     }
 }
 </code></pre>
-<div class="code-explanation">
-<strong>Explanation:</strong> This ATM system demonstrates real-world usage of all control flow
-                statements. It uses <code>while</code> for PIN verification with limited attempts, <code>do-while</code>
-                for the menu (must show at least once), <code>switch-case</code> for menu processing,
-                <code>if-else</code> for validation, <code>break</code> for early exit, and <code>return</code> to
-                terminate on authentication failure. This is how professional applications combine control flow for
-                robust functionality.
+                    <div class="code-explanation">
+                        <strong>Explanation:</strong> This ATM system demonstrates real-world usage of all control flow
+                        statements. It uses <code>while</code> for PIN verification with limited attempts,
+                        <code>do-while</code>
+                        for the menu (must show at least once), <code>switch-case</code> for menu processing,
+                        <code>if-else</code> for validation, <code>break</code> for early exit, and <code>return</code>
+                        to
+                        terminate on authentication failure. This is how professional applications combine control flow
+                        for
+                        robust functionality.
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <div class="content-section text-center">
+                    <h3>Continue Your Learning Journey</h3>
+                    <div
+                        style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+                        <a class="md-button md-button--primary" href="../theory/control-flow-loops.html">
+                            📚 Back to Theory
+                        </a>
+                        <a class="md-button md-button--primary" href="../mcq/control-flow-loops.html">
+                            ✅ Test Your Knowledge
+                        </a>
+                        <a class="md-button md-button--secondary" href="../index.html">
+                            🏠 Back to Home
+                        </a>
+                    </div>
+                    <div class="admonition note" style="margin-top: 2rem;">
+                        <div class="admonition-title">📚 Next Topic</div>
+                        <div class="admonition-content">
+                            <p>
+                                <strong>Coming Soon:</strong> Classes and Objects
+                                <br />Learn object-oriented programming fundamentals, creating classes, objects,
+                                constructors, and
+                                methods.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-</div>
-<!-- Navigation -->
-<div class="content-section text-center">
-<h3>Continue Your Learning Journey</h3>
-<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-<a class="md-button md-button--primary" href="../theory/control-flow-loops.html">
-                    📚 Back to Theory
-                </a>
-<a class="md-button md-button--primary" href="../mcq/control-flow-loops.html">
-                    ✅ Test Your Knowledge
-                </a>
-<a class="md-button md-button--secondary" href="../index.html">
-                    🏠 Back to Home
-                </a>
-</div>
-<div class="admonition note" style="margin-top: 2rem;">
-<div class="admonition-title">📚 Next Topic</div>
-<div class="admonition-content"><p>
-<strong>Coming Soon:</strong> Classes and Objects
-                    <br/>Learn object-oriented programming fundamentals, creating classes, objects, constructors, and
-                    methods.
-                </p></div></div>
-</div>
-</div></main></div><script src="../assets/js/docs-style.js"></script></body>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
 </html>

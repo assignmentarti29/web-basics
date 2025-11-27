@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tricky Java Questions - Java Mastery Hub</title>
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Assignments & Practice</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">⬅ Back to Home</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="overview.html">Overview</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="basic.html">Basic Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="intermediate.html">Intermediate Programs</a>
+                    </li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="advanced.html">Advanced Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link md-nav__link--active" href="tricky.html">Tricky
+                            Questions</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="real-world.html">Real World Scenarios</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <h1>🧠 Tricky Java Questions (1-30)</h1>
+                <p>Test your deep understanding with these brain-teasers and interview favorites.</p>
+
+                <hr>
+
+                <!-- Q1 -->
+                <div class="assignment">
+                    <h4>Q1. What is the output of `System.out.println(10 + 20 + "Java");` vs `System.out.println("Java"
+                        + 10 + 20);`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 30Java
+                    // Java1020
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+System.out.println(10 + 20 + "Java"); // 30Java
+System.out.println("Java" + 10 + 20); // Java1020
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Left-to-right associativity. First case adds numbers then
+                            concatenates. Second case concatenates string with number, then result with next number.</p>
+                    </details>
+                </div>
+
+                <!-- Q2 -->
+                <div class="assignment">
+                    <h4>Q2. Can we execute a program without `main` method?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Error: Main method not found in class ...
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Before JDK 7, static block could execute without main.
+// JDK 7+: No, main method is mandatory for execution.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> JVM looks for public static void main(String[] args) as the
+                            entry point.</p>
+                    </details>
+                </div>
+
+                <!-- Q3 -->
+                <div class="assignment">
+                    <h4>Q3. What happens if we put `return` in `try` or `catch` block? Will `finally` execute?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Finally executes
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+try {
+    return;
+} finally {
+    System.out.println("Finally executes");
+}
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Yes, `finally` block always executes unless System.exit() is
+                            called.</p>
+                    </details>
+                </div>
+
+                <!-- Q4 -->
+                <div class="assignment">
+                    <h4>Q4. What is the output of `Math.min(Double.MIN_VALUE, 0.0d)`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 0.0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+System.out.println(Math.min(Double.MIN_VALUE, 0.0d)); // 0.0
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Double.MIN_VALUE is the smallest positive non-zero value, not
+                            negative infinity. So 0.0 is smaller.</p>
+                    </details>
+                </div>
+
+                <!-- Q5 -->
+                <div class="assignment">
+                    <h4>Q5. Can we override a static method?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Parent (Method Hiding)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// No, static methods are hidden, not overridden.
+class Parent { static void show() { System.out.println("Parent"); } }
+class Child extends Parent { static void show() { System.out.println("Child"); } }
+// Parent p = new Child(); p.show(); // Prints Parent
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Method resolution happens at compile time based on reference
+                            type (Method Hiding).</p>
+                    </details>
+                </div>
+
+                <!-- Q6 -->
+                <div class="assignment">
+                    <h4>Q6. What is the output of `System.out.println(1.0/0.0)`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Infinity
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+System.out.println(1.0/0.0); // Infinity
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Floating point division by zero results in Infinity, not
+                            ArithmeticException.</p>
+                    </details>
+                </div>
+
+                <!-- Q7 -->
+                <div class="assignment">
+                    <h4>Q7. Does Java support multiple inheritance?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Compilation Error for Classes)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// No, Java does not support multiple inheritance with classes to avoid Diamond Problem.
+// Yes, it supports multiple inheritance with Interfaces.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Ambiguity arises if two parent classes have same method.</p>
+                    </details>
+                </div>
+
+                <!-- Q8 -->
+                <div class="assignment">
+                    <h4>Q8. Why is String immutable in Java?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Security, Synchronization, Caching (String Pool), HashCode caching.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Once created, its value cannot be changed.</p>
+                    </details>
+                </div>
+
+                <!-- Q9 -->
+                <div class="assignment">
+                    <h4>Q9. What is the difference between `==` and `.equals()`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // false
+                    // true
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+String s1 = new String("A");
+String s2 = new String("A");
+System.out.println(s1 == s2); // false (Reference check)
+System.out.println(s1.equals(s2)); // true (Content check)
+                        </code></pre>
+                        <p><strong>Explanation:</strong> `==` compares memory addresses, `.equals()` compares content
+                            (if overridden).</p>
+                    </details>
+                </div>
+
+                <!-- Q10 -->
+                <div class="assignment">
+                    <h4>Q10. Can we declare a constructor as `final` or `static`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Compilation Error)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// No. Constructors cannot be inherited, so final is meaningless.
+// Static is for class level, constructor is for object creation.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Compilation error.</p>
+                    </details>
+                </div>
+
+                <!-- Q11 -->
+                <div class="assignment">
+                    <h4>Q11. What is the output of `System.out.println('j' + 'a' + 'v' + 'a');`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 418
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+System.out.println('j' + 'a' + 'v' + 'a'); // 418
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Adds ASCII values of characters (106 + 97 + 118 + 97).</p>
+                    </details>
+                </div>
+
+                <!-- Q12 -->
+                <div class="assignment">
+                    <h4>Q12. Can we overload `main` method?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Main
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+public static void main(String[] args) { System.out.println("Main"); }
+public static void main(String args) { System.out.println("Overloaded"); }
+// Yes, but JVM calls the one with String[] args.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> It's just a static method, so overloading is possible.</p>
+                    </details>
+                </div>
+
+                <!-- Q13 -->
+                <div class="assignment">
+                    <h4>Q13. What is a Marker Interface?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Interface with no methods. E.g., Serializable, Cloneable.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Used to signal JVM to perform some operation.</p>
+                    </details>
+                </div>
+
+                <!-- Q14 -->
+                <div class="assignment">
+                    <h4>Q14. Can `this` keyword be used in static context?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Compilation Error)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// No. `this` refers to current object instance. Static context has no instance.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Compilation error.</p>
+                    </details>
+                </div>
+
+                <!-- Q15 -->
+                <div class="assignment">
+                    <h4>Q15. Is Java Pass-by-Value or Pass-by-Reference?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Java is strictly Pass-by-Value.
+// For objects, the value of the reference is passed.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Changing object reference in method doesn't affect original
+                            reference.</p>
+                    </details>
+                </div>
+
+                <!-- Q16 -->
+                <div class="assignment">
+                    <h4>Q16. What is the difference between `ArrayList` and `Vector`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Vector is synchronized (thread-safe) and slow.
+// ArrayList is not synchronized and fast.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Vector is legacy class.</p>
+                    </details>
+                </div>
+
+                <!-- Q17 -->
+                <div class="assignment">
+                    <h4>Q17. What is the difference between `HashMap` and `Hashtable`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Hashtable is synchronized, does not allow null key/value.
+// HashMap is not synchronized, allows one null key and multiple null values.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Hashtable is legacy class.</p>
+                    </details>
+                </div>
+
+                <!-- Q18 -->
+                <div class="assignment">
+                    <h4>Q18. Can we create an instance of an Abstract Class?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Compilation Error)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// No. Abstract classes cannot be instantiated directly.
+// But we can create an instance of a subclass or anonymous inner class.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> It is incomplete class.</p>
+                    </details>
+                </div>
+
+                <!-- Q19 -->
+                <div class="assignment">
+                    <h4>Q19. What is the use of `transient` keyword?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // null (after deserialization)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Prevents a variable from being serialized.
+class User implements Serializable { transient String password; }
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Value will be null/default after deserialization.</p>
+                    </details>
+                </div>
+
+                <!-- Q20 -->
+                <div class="assignment">
+                    <h4>Q20. What is the use of `volatile` keyword?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Ensures visibility of changes to variables across threads.
+// Reads/writes go directly to main memory, not CPU cache.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Solves visibility problem in multithreading.</p>
+                    </details>
+                </div>
+
+                <!-- Q21 -->
+                <div class="assignment">
+                    <h4>Q21. Can we have a try block without catch?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Try
+                    // Finally
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Yes, but it must have a finally block.
+try { System.out.println("Try"); } finally { System.out.println("Finally"); }
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Either catch or finally is required.</p>
+                    </details>
+                </div>
+
+                <!-- Q22 -->
+                <div class="assignment">
+                    <h4>Q22. What happens if main method is not static?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Error: Main method is not static
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Program compiles but throws Runtime Error: Main method is not static in class...
+                        </code></pre>
+                        <p><strong>Explanation:</strong> JVM needs to call main without creating an object.</p>
+                    </details>
+                </div>
+
+                <!-- Q23 -->
+                <div class="assignment">
+                    <h4>Q23. What is the difference between `throw` and `throws`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// throw: used to explicitly throw an exception.
+// throws: used in method signature to declare exceptions.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> throw is an action, throws is a declaration.</p>
+                    </details>
+                </div>
+
+                <!-- Q24 -->
+                <div class="assignment">
+                    <h4>Q24. Can we make an abstract class `final`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Compilation Error)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// No. Abstract means it must be extended. Final means it cannot be extended.
+// Contradictory concepts.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Compilation error.</p>
+                    </details>
+                </div>
+
+                <!-- Q25 -->
+                <div class="assignment">
+                    <h4>Q25. What is the default value of local variables?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Compilation Error if used without initialization)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Local variables do not have default values. They must be initialized before use.
+// int x; System.out.println(x); // Compile Error
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Only instance/static variables have default values.</p>
+                    </details>
+                </div>
+
+                <!-- Q26 -->
+                <div class="assignment">
+                    <h4>Q26. What is the size of `int` in Java?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// 4 bytes (32 bits).
+// It is platform independent in Java.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Unlike C/C++, Java data types have fixed sizes.</p>
+                    </details>
+                </div>
+
+                <!-- Q27 -->
+                <div class="assignment">
+                    <h4>Q27. Can we import same package/class twice?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Error)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Yes, compiler ignores redundant imports.
+import java.util.*;
+import java.util.*; // No error
+                        </code></pre>
+                        <p><strong>Explanation:</strong> No impact on code execution.</p>
+                    </details>
+                </div>
+
+                <!-- Q28 -->
+                <div class="assignment">
+                    <h4>Q28. What is `System.out`?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// 'System' is a class. 'out' is a static final PrintStream variable in System class.
+                        </code></pre>
+                        <p><strong>Explanation:</strong> It represents standard output stream.</p>
+                    </details>
+                </div>
+
+                <!-- Q29 -->
+                <div class="assignment">
+                    <h4>Q29. Can we change the return type of overridden method?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Yes, if the new return type is a subclass of original return type (Covariant Return Type).
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Allowed since Java 5.</p>
+                    </details>
+                </div>
+
+                <!-- Q30 -->
+                <div class="assignment">
+                    <h4>Q30. What is the superclass of all classes in Java?</h4>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (No Output - Conceptual)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// java.lang.Object
+                        </code></pre>
+                        <p><strong>Explanation:</strong> Every class directly or indirectly extends Object.</p>
+                    </details>
+                </div>
+
+                <div class="content-section text-center" style="margin-top: 3rem;">
+                    <h3>🎉 Tricky Section Completed!</h3>
+                    <p>Wow! You handled those tricky questions well. Now, apply your skills in Real World Scenarios.</p>
+                    <a class="md-button md-button--primary" href="real-world.html">Go to Real World Scenarios ➡</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>

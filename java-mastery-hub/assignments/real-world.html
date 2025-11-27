@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Real World Java Scenarios - Java Mastery Hub</title>
+    <link href="../assets/css/style-mkdocs.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+        rel="stylesheet" />
+</head>
+
+<body data-md-color-scheme="default">
+    <header class="md-header">
+        <nav class="md-header__inner">
+            <button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                    stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="3" x2="21" y1="12" y2="12"></line>
+                    <line x1="3" x2="21" y1="6" y2="6"></line>
+                    <line x1="3" x2="21" y1="18" y2="18"></line>
+                </svg>
+            </button>
+            <a class="md-header__title" href="../index.html">
+                <span class="md-header__icon">☕</span>
+                Java Mastery Hub
+            </a>
+            <div class="md-search">
+                <div class="md-search__inner">
+                    <svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round"
+                        stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+                    </svg>
+                    <input aria-label="Search" class="md-search__input" placeholder="Search" type="text" />
+                </div>
+            </div>
+            <button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+                <span>🌙</span>
+            </button>
+        </nav>
+    </header>
+    <div class="md-grid">
+        <aside class="md-sidebar">
+            <nav class="md-nav">
+                <div class="md-nav__title">Assignments & Practice</div>
+                <ul class="md-nav__list">
+                    <li class="md-nav__item"><a class="md-nav__link" href="../index.html">⬅ Back to Home</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="overview.html">Overview</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="basic.html">Basic Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="intermediate.html">Intermediate Programs</a>
+                    </li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="advanced.html">Advanced Programs</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link" href="tricky.html">Tricky Questions</a></li>
+                    <li class="md-nav__item"><a class="md-nav__link md-nav__link--active" href="real-world.html">Real
+                            World Scenarios</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="md-content">
+            <div class="md-content__inner">
+                <h1>🌍 Real World Java Scenarios (1-20)</h1>
+                <p>Apply your Java skills to solve practical problems and build mini-applications.</p>
+
+                <hr>
+
+                <!-- Q1 -->
+                <div class="assignment">
+                    <h4>Q1. Build a Simple Calculator (Console Based).</h4>
+                    <p>Create a program that takes two numbers and an operator (+, -, *, /) from user and performs the
+                        calculation.</p>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 10 20
+                    // +
+                    // Sample Output:
+                    // Result: 30.0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Scanner;
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter two numbers: ");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        System.out.print("Enter operator (+, -, *, /): ");
+        char op = sc.next().charAt(0);
+        double result = 0;
+        switch(op) {
+            case '+': result = a + b; break;
+            case '-': result = a - b; break;
+            case '*': result = a * b; break;
+            case '/': result = a / b; break;
+            default: System.out.println("Invalid operator"); return;
+        }
+        System.out.println("Result: " + result);
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q2 -->
+                <div class="assignment">
+                    <h4>Q2. Create a Student Grade Tracker.</h4>
+                    <p>Input marks for 5 subjects, calculate total, percentage, and assign a grade (A, B, C, D, F).</p>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 85 90 78 92 88
+                    // Sample Output:
+                    // Total: 433, Percentage: 86.6%, Grade: B
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Scanner;
+public class GradeTracker {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int total = 0;
+        for(int i=1; i<=5; i++) {
+            System.out.print("Enter marks for subject " + i + ": ");
+            total += sc.nextInt();
+        }
+        double percentage = total / 5.0;
+        char grade = (percentage >= 90) ? 'A' : (percentage >= 80) ? 'B' : (percentage >= 70) ? 'C' : (percentage >= 60) ? 'D' : 'F';
+        System.out.println("Total: " + total + ", Percentage: " + percentage + "%, Grade: " + grade);
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q3 -->
+                <div class="assignment">
+                    <h4>Q3. Implement a Bank Account System.</h4>
+                    <p>Create a class `BankAccount` with methods to deposit, withdraw, and check balance. Ensure balance
+                        doesn't go negative.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Deposited: 1000.0
+                    // Withdrawn: 500.0
+                    // Balance: 500.0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+class BankAccount {
+    private double balance;
+    public void deposit(double amount) { balance += amount; System.out.println("Deposited: " + amount); }
+    public void withdraw(double amount) {
+        if(balance >= amount) { balance -= amount; System.out.println("Withdrawn: " + amount); }
+        else System.out.println("Insufficient funds");
+    }
+    public double getBalance() { return balance; }
+}
+public class Main {
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount();
+        acc.deposit(1000);
+        acc.withdraw(500);
+        System.out.println("Balance: " + acc.getBalance());
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q4 -->
+                <div class="assignment">
+                    <h4>Q4. Develop a Number Guessing Game.</h4>
+                    <p>Computer picks a random number between 1-100. User tries to guess it. Hints: "Too High" or "Too
+                        Low".</p>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 50
+                    // Sample Output:
+                    // Too High
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Scanner;
+import java.util.Random;
+public class GuessGame {
+    public static void main(String[] args) {
+        int number = new Random().nextInt(100) + 1;
+        Scanner sc = new Scanner(System.in);
+        int guess;
+        do {
+            System.out.print("Guess the number (1-100): ");
+            guess = sc.nextInt();
+            if (guess < number) System.out.println("Too Low");
+            else if (guess > number) System.out.println("Too High");
+        } while (guess != number);
+        System.out.println("Correct! You guessed it.");
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q5 -->
+                <div class="assignment">
+                    <h4>Q5. Create an Employee Payroll System.</h4>
+                    <p>Calculate Gross Salary = Basic + HRA (20%) + DA (50%). Deduct PF (12%). Print Net Salary.</p>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 50000
+                    // Sample Output:
+                    // Gross Salary: 85000.0
+                    // Net Salary: 79000.0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Scanner;
+public class Payroll {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter Basic Salary: ");
+        double basic = sc.nextDouble();
+        double hra = 0.20 * basic;
+        double da = 0.50 * basic;
+        double pf = 0.12 * basic;
+        double gross = basic + hra + da;
+        double net = gross - pf;
+        System.out.println("Gross Salary: " + gross);
+        System.out.println("Net Salary: " + net);
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q6 -->
+                <div class="assignment">
+                    <h4>Q6. Implement a Library Book Management System.</h4>
+                    <p>Class `Book` with title, author, isbn. Store books in an ArrayList. Add, remove, and display
+                        books.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Java Basics by John Doe
+                    // Advanced Java by Jane Doe
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.*;
+class Book {
+    String title, author;
+    Book(String t, String a) { title = t; author = a; }
+    public String toString() { return title + " by " + author; }
+}
+public class Library {
+    public static void main(String[] args) {
+        ArrayList<Book> books = new ArrayList<>();
+        books.add(new Book("Java Basics", "John Doe"));
+        books.add(new Book("Advanced Java", "Jane Doe"));
+        books.forEach(System.out::println);
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q7 -->
+                <div class="assignment">
+                    <h4>Q7. Create a Currency Converter.</h4>
+                    <p>Convert amount from USD to EUR, GBP, INR, etc. based on fixed exchange rates.</p>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 100
+                    // Sample Output:
+                    // EUR: 85.0
+                    // INR: 7450.0
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Scanner;
+public class Converter {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter amount in USD: ");
+        double usd = sc.nextDouble();
+        System.out.println("EUR: " + (usd * 0.85));
+        System.out.println("INR: " + (usd * 74.5)); // Example rate
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q8 -->
+                <div class="assignment">
+                    <h4>Q8. Simulate a Dice Rolling Game.</h4>
+                    <p>Roll two dice 10 times. Count how many times doubles (same number on both) appear.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Rolled: 3, 4
+                    // ...
+                    // Doubles count: 2
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Random;
+public class DiceGame {
+    public static void main(String[] args) {
+        Random rand = new Random();
+        int doubles = 0;
+        for(int i=0; i<10; i++) {
+            int d1 = rand.nextInt(6) + 1;
+            int d2 = rand.nextInt(6) + 1;
+            System.out.println("Rolled: " + d1 + ", " + d2);
+            if(d1 == d2) doubles++;
+        }
+        System.out.println("Doubles count: " + doubles);
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q9 -->
+                <div class="assignment">
+                    <h4>Q9. Check for Palindrome Sentence.</h4>
+                    <p>Check if a sentence is a palindrome, ignoring spaces and case. E.g., "Was it a car or a cat I
+                        saw".</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Is Palindrome: true
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+public class Palindrome {
+    public static void main(String[] args) {
+        String s = "Was it a car or a cat I saw";
+        String clean = s.replaceAll("\\s+", "").toLowerCase();
+        String rev = new StringBuilder(clean).reverse().toString();
+        System.out.println("Is Palindrome: " + clean.equals(rev));
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q10 -->
+                <div class="assignment">
+                    <h4>Q10. Generate a Random Password.</h4>
+                    <p>Generate a secure password of length 8 containing uppercase, lowercase, digits, and special
+                        chars.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Password: aB3$eR9!
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Random;
+public class PasswordGen {
+    public static void main(String[] args) {
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
+        Random rand = new Random();
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<8; i++) {
+            sb.append(chars.charAt(rand.nextInt(chars.length())));
+        }
+        System.out.println("Password: " + sb);
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q11 -->
+                <div class="assignment">
+                    <h4>Q11. Create a Simple To-Do List (Console).</h4>
+                    <p>Menu driven program to Add, Remove, and View tasks.</p>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // 1
+                    // Buy Milk
+                    // 3
+                    // Sample Output:
+                    // [Buy Milk]
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.*;
+public class Todo {
+    public static void main(String[] args) {
+        ArrayList<String> tasks = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        while(true) {
+            System.out.println("1. Add 2. Remove 3. View 4. Exit");
+            int ch = sc.nextInt(); sc.nextLine();
+            if(ch==1) tasks.add(sc.nextLine());
+            else if(ch==2) tasks.remove(sc.nextInt());
+            else if(ch==3) System.out.println(tasks);
+            else break;
+        }
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q12 -->
+                <div class="assignment">
+                    <h4>Q12. Implement a Rock-Paper-Scissors Game.</h4>
+                    <p>User vs Computer. Randomly generate computer's choice and determine winner.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // Computer chose: Rock
+                    // (Game Result)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.*;
+public class RPS {
+    public static void main(String[] args) {
+        String[] moves = {"Rock", "Paper", "Scissors"};
+        String comp = moves[new Random().nextInt(3)];
+        System.out.println("Computer chose: " + comp);
+        // Logic to compare user input vs comp omitted for brevity
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q13 -->
+                <div class="assignment">
+                    <h4>Q13. Calculate Age from Date of Birth.</h4>
+                    <p>Input DOB (YYYY-MM-DD) and calculate exact age in years, months, and days.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 23 years 9 months
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.time.*;
+public class AgeCalc {
+    public static void main(String[] args) {
+        LocalDate dob = LocalDate.of(2000, 1, 1);
+        LocalDate now = LocalDate.now();
+        Period p = Period.between(dob, now);
+        System.out.println(p.getYears() + " years " + p.getMonths() + " months");
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q14 -->
+                <div class="assignment">
+                    <h4>Q14. Create a Stopwatch.</h4>
+                    <p>Start and Stop functionality. Display elapsed time in seconds.</p>
+                    <pre><code class="language-java">
+                    // Sample Input:
+                    // (Enter)
+                    // (Enter)
+                    // Sample Output:
+                    // Elapsed: 5.2 sec
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.Scanner;
+public class Stopwatch {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Press Enter to Start...");
+        sc.nextLine();
+        long start = System.currentTimeMillis();
+        System.out.println("Press Enter to Stop...");
+        sc.nextLine();
+        long end = System.currentTimeMillis();
+        System.out.println("Elapsed: " + (end - start)/1000.0 + " sec");
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q15 -->
+                <div class="assignment">
+                    <h4>Q15. Generate Fibonacci Series up to N terms.</h4>
+                    <p>Standard algorithm but formatted as a comma-separated string.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+public class Fibo {
+    public static void main(String[] args) {
+        int n = 10, a = 0, b = 1;
+        System.out.print(a + ", " + b);
+        for(int i=2; i<n; i++) {
+            int c = a + b;
+            System.out.print(", " + c);
+            a = b; b = c;
+        }
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q16 -->
+                <div class="assignment">
+                    <h4>Q16. Count Word Frequency in a Text File.</h4>
+                    <p>Read a file and count occurrences of each word using HashMap.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // {Java=5, is=3, fun=1}
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+import java.util.*;
+import java.nio.file.*;
+public class WordCount {
+    public static void main(String[] args) throws Exception {
+        String content = new String(Files.readAllBytes(Paths.get("test.txt")));
+        Map<String, Integer> map = new HashMap<>();
+        for(String w : content.split("\\s+")) {
+            map.put(w, map.getOrDefault(w, 0) + 1);
+        }
+        System.out.println(map);
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q17 -->
+                <div class="assignment">
+                    <h4>Q17. Validate Email Address using Regex.</h4>
+                    <p>Check if a string is a valid email format.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // true
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+public class EmailVal {
+    public static void main(String[] args) {
+        String email = "test@example.com";
+        System.out.println(email.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$"));
+    }
+}
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q18 -->
+                <div class="assignment">
+                    <h4>Q18. Convert Number to Words.</h4>
+                    <p>Convert 123 to "One Hundred Twenty Three". (Simplified version).</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // One Hundred Twenty Three
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Requires array of strings for units, tens, etc.
+// Logic involves breaking number into chunks.
+// Code omitted for brevity.
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q19 -->
+                <div class="assignment">
+                    <h4>Q19. ATM Simulation.</h4>
+                    <p>Pin validation, Balance Check, Withdraw, Deposit menu.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (ATM Menu Interface)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Similar to Bank Account but with PIN check loop.
+                        </code></pre>
+                    </details>
+                </div>
+
+                <!-- Q20 -->
+                <div class="assignment">
+                    <h4>Q20. Tic-Tac-Toe Game (2 Player).</h4>
+                    <p>3x3 Grid, check for win condition after every move.</p>
+                    <pre><code class="language-java">
+                    // Sample Output:
+                    // (Game Board Display)
+                    </code></pre>
+
+                    <details>
+                        <summary>💡 Show Answer</summary>
+                        <pre><code class="language-java">
+// Requires 2D array char board[3][3].
+// Loop until win or draw.
+                        </code></pre>
+                    </details>
+                </div>
+
+                <div class="content-section text-center" style="margin-top: 3rem;">
+                    <h3>🎉 All Assignments Completed!</h3>
+                    <p>You have successfully explored all levels of Java assignments. Keep practicing!</p>
+                    <a class="md-button md-button--primary" href="../index.html">Back to Home 🏠</a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+    <script src="../assets/js/docs-style.js"></script>
+</body>
+
+</html>
