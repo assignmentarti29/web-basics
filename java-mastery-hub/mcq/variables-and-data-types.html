@@ -1,568 +1,329 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Variables and Data Types - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Variables and Data Types - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>Variables and Data Types</span>
-            </div>
-        </div>
-
-        <!-- Quiz Introduction -->
-        <div class="content-section">
-            <h2>Test Your Knowledge</h2>
-            <p>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Variables and Data Types - Quiz - Java Mastery Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/style-mkdocs.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/></head>
+<body data-md-color-scheme="default"><header class="md-header">
+<nav class="md-header__inner">
+<!-- Mobile Menu Toggle -->
+<button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
+</button>
+<!-- Logo/Title -->
+<a class="md-header__title" href="../index.html">
+<span class="md-header__icon">☕</span>
+            Java Mastery Hub
+        </a>
+<!-- Search Bar (Visual) -->
+<div class="md-search">
+<div class="md-search__inner">
+<svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input aria-label="Search" class="md-search__input" placeholder="Search" type="text"/>
+</div>
+</div>
+<!-- Theme Toggle -->
+<button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+<span>🌙</span>
+</button>
+</nav>
+</header><div class="md-grid"><aside class="md-sidebar"><nav class="md-nav">
+<div class="md-nav__title">Topics</div>
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">1. Software Engineering</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/software-engineering.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/software-engineering.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/software-engineering.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">2. What is Java</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/what-is-java.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/what-is-java.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/what-is-java.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">3. Variables &amp; Data Types</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/variables-and-data-types.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/variables-and-data-types.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active" href="../mcq/variables-and-data-types.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">4. Java Keywords</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/java-keywords.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/java-keywords.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/java-keywords.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">5. Control Flow &amp; Loops</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/control-flow-loops.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/control-flow-loops.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/control-flow-loops.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">6. Classes &amp; Objects</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/classes-and-objects.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/classes-and-objects.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/classes-and-objects.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">7. Methods</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/methods.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/methods.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/methods.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">8. OOP Concepts</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/oops.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/oops.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/oops.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">9. Collections Framework</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/collections.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/collections.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/collections.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">10. Exception Handling</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/exception-handling.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/exception-handling.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/exception-handling.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">11. File Handling</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/handling-files.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/handling-files.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/handling-files.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">12. JDBC</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/jdbc.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/jdbc.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/jdbc.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">13. Multithreading</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/multithreading.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/multithreading.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/multithreading.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">14. Java 8+ Features</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/java8features.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/java8features.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/java8features.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">15. Programming Principles</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/programming-principles.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/programming-principles.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/programming-principles.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">17. Interview Questions</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/introduction.html">Introduction</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/beginner.html">Beginner (1-150)</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/advanced.html">Advanced (351-500)</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/tricky.html">Tricky Questions</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/scenario-based.html">Scenario Based</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/hr.html">HR Questions</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/complete-quiz.html">Complete Quiz</a></li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav></aside><main class="md-content"><div class="md-content__inner">
+<!-- Content Header -->
+<div class="content-header">
+<h1>Variables and Data Types - Quiz</h1>
+<ul class="md-breadcrumbs"><li><a href="../index.html">Home</a></li><li><a href="#">Quiz</a></li><li>Variables and Data Types - Quiz</li></ul>
+</div>
+<!-- Quiz Introduction -->
+<div class="content-section">
+<h2>Test Your Knowledge</h2>
+<p>
                 This quiz contains 35 questions covering all aspects of variables and data types in Java.
                 Each question is based directly on the theory content you've learned.
             </p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>
+<div class="admonition tip">
+<div class="admonition-title">💡 TIP</div>
+<div class="admonition-content"><p>
                     Take your time and read each question carefully. After answering, you'll receive detailed
                     explanations
                     to reinforce your understanding. Aim for at least 80% to demonstrate mastery!
-                </p>
+                </p></div></div>
+</div>
+<!-- Quiz Progress -->
+<div class="quiz-progress">
+<div class="progress-bar">
+<div class="progress-fill" id="progressBar"></div>
+</div>
+<div class="progress-text">
+<span id="currentQuestion">0</span> / <span id="totalQuestions">35</span> Questions
             </div>
-        </div>
-
-        <!-- Quiz Progress -->
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">35</span> Questions
-            </div>
-        </div>
-
-        <!-- Quiz Container -->
-        <div id="quizContainer" class="content-section">
-            <!-- Questions will be dynamically loaded here -->
-        </div>
-
-        <!-- Quiz Results -->
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/35</span></p>
-                </div>
-                <div id="performanceMessage" class="performance-message"></div>
-            </div>
-
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/variables-and-data-types.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/variables-and-data-types.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/variables-and-data-types.html" class="btn btn-primary">
+</div>
+<!-- Quiz Container -->
+<div class="content-section" id="quizContainer">
+<!-- Questions will be dynamically loaded here -->
+</div>
+<!-- Quiz Results -->
+<div class="content-section" id="quizResults" style="display: none;">
+<h2>Quiz Complete! 🎉</h2>
+<div class="results-summary">
+<div class="score-display">
+<div class="score-circle">
+<span id="scorePercentage">0%</span>
+</div>
+<p class="score-text">Your Score: <span id="scoreText">0/35</span></p>
+</div>
+<div class="performance-message" id="performanceMessage"></div>
+</div>
+<div class="results-actions">
+<button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake Quiz</button>
+<a class="md-button md-button--secondary" href="../theory/variables-and-data-types.html">📚 Review Theory</a>
+<a class="md-button md-button--secondary" href="../programs/variables-and-data-types.html">💻 View Programs</a>
+<a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+</div>
+</div>
+<!-- Navigation -->
+<div class="content-section text-center">
+<h3>Continue Your Learning Journey</h3>
+<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+<a class="md-button md-button--primary" href="../theory/variables-and-data-types.html">
                     📚 Back to Theory
                 </a>
-                <a href="../programs/variables-and-data-types.html" class="btn btn-secondary">
+<a class="md-button md-button--secondary" href="../programs/variables-and-data-types.html">
                     💻 View Programs
                 </a>
-                <a href="../index.html" class="btn btn-success">
+<a class="md-button md-button--primary" href="../index.html">
                     🏠 Back to Home
                 </a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> Java Keywords
-                    <br>Learn all reserved keywords in Java and their specific purposes in program structure and
+</div>
+<div class="admonition note" style="margin-top: 2rem;">
+<div class="admonition-title">📚 Next Topic</div>
+<div class="admonition-content"><p>
+<strong>Coming Soon:</strong> Java Keywords
+                    <br/>Learn all reserved keywords in Java and their specific purposes in program structure and
                     control.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <script src="../assets/js/mcq.js"></script>
-    <script>
-        // Quiz questions for Variables and Data Types
-        const quizQuestions = [
-            // Section 1: Variables Basics (Questions 1-5)
-            {
-                id: 1,
-                question: "What is a variable in Java?",
-                options: [
-                    "A container that stores data values",
-                    "A method that performs operations",
-                    "A class that defines objects",
-                    "A keyword reserved by Java"
-                ],
-                answerIndex: 0,
-                explanation: "A variable is a container (like a labeled box) that stores data values in memory. It has a name, type, and value."
-            },
-            {
-                id: 2,
-                question: "Which of the following is a valid variable name in Java?",
-                options: [
-                    "2ndValue",
-                    "my-variable",
-                    "_count",
-                    "class"
-                ],
-                answerIndex: 2,
-                explanation: "Variable names can start with letters, $, or _. They cannot start with digits, contain hyphens, or be Java keywords. '_count' is valid."
-            },
-            {
-                id: 3,
-                question: "What happens if you use a local variable without initializing it?",
-                options: [
-                    "It gets a default value of 0",
-                    "It gets a default value of null",
-                    "Compilation error occurs",
-                    "Runtime exception is thrown"
-                ],
-                answerIndex: 2,
-                explanation: "Local variables must be initialized before use. Using an uninitialized local variable causes a compilation error: 'variable might not have been initialized'."
-            },
-            {
-                id: 4,
-                question: "Which naming convention is recommended for variables in Java?",
-                options: [
-                    "UPPER_SNAKE_CASE",
-                    "camelCase",
-                    "PascalCase",
-                    "kebab-case"
-                ],
-                answerIndex: 1,
-                explanation: "Java convention uses camelCase for variables (e.g., myVariable, studentAge). UPPER_SNAKE_CASE is for constants, PascalCase for classes."
-            },
-            {
-                id: 5,
-                question: "What is the scope of a variable declared inside a method?",
-                options: [
-                    "Entire class",
-                    "Entire package",
-                    "Only within that method",
-                    "Entire program"
-                ],
-                answerIndex: 2,
-                explanation: "Variables declared inside a method are local variables with method scope. They exist only within that method and are destroyed when the method completes."
-            },
-
-            // Section 2: Stack vs Heap (Questions 6-10)
-            {
-                id: 6,
-                question: "Where are primitive data type values stored in memory?",
-                options: [
-                    "Heap memory",
-                    "Stack memory",
-                    "Permanent generation",
-                    "Method area"
-                ],
-                answerIndex: 1,
-                explanation: "Primitive data type values are stored directly on the stack memory. Stack is fast, organized, and used for method execution and local variables."
-            },
-            {
-                id: 7,
-                question: "Where are objects stored in Java?",
-                options: [
-                    "Stack memory",
-                    "Heap memory",
-                    "CPU cache",
-                    "Hard disk"
-                ],
-                answerIndex: 1,
-                explanation: "Objects are stored in heap memory. The stack holds the reference (memory address) to the object, but the actual object data is in the heap."
-            },
-            {
-                id: 8,
-                question: "Which memory is faster to access?",
-                options: [
-                    "Heap memory",
-                    "Stack memory",
-                    "Both are equally fast",
-                    "Depends on the JVM"
-                ],
-                answerIndex: 1,
-                explanation: "Stack memory is faster because it follows LIFO (Last In First Out) structure and is organized. Heap is larger but slower due to dynamic allocation."
-            },
-            {
-                id: 9,
-                question: "What happens to stack memory when a method completes execution?",
-                options: [
-                    "It remains until program ends",
-                    "It is automatically cleared",
-                    "It causes memory leak",
-                    "It moves to heap"
-                ],
-                answerIndex: 1,
-                explanation: "Stack memory is automatically cleared when a method completes. All local variables are destroyed, making stack memory very efficient."
-            },
-            {
-                id: 10,
-                question: "How is heap memory cleaned up in Java?",
-                options: [
-                    "Manually by programmer",
-                    "Automatically when method ends",
-                    "By garbage collector",
-                    "Never cleaned up"
-                ],
-                answerIndex: 2,
-                explanation: "Heap memory is managed by Java's garbage collector, which automatically removes objects that are no longer referenced, preventing memory leaks."
-            },
-
-            // Section 3: Primitive Data Types (Questions 11-20)
-            {
-                id: 11,
-                question: "How many primitive data types are there in Java?",
-                options: [
-                    "6",
-                    "7",
-                    "8",
-                    "9"
-                ],
-                answerIndex: 2,
-                explanation: "Java has 8 primitive data types: byte, short, int, long, float, double, char, and boolean."
-            },
-            {
-                id: 12,
-                question: "What is the size of an int in Java?",
-                options: [
-                    "2 bytes",
-                    "4 bytes",
-                    "8 bytes",
-                    "Depends on platform"
-                ],
-                answerIndex: 1,
-                explanation: "int is always 4 bytes (32 bits) in Java, regardless of platform. This ensures platform independence."
-            },
-            {
-                id: 13,
-                question: "Which data type would you use for storing very large whole numbers?",
-                options: [
-                    "int",
-                    "float",
-                    "long",
-                    "double"
-                ],
-                answerIndex: 2,
-                explanation: "long is 8 bytes (64 bits) and can store very large whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807."
-            },
-            {
-                id: 14,
-                question: "What is the default value of a boolean instance variable?",
-                options: [
-                    "true",
-                    "false",
-                    "0",
-                    "null"
-                ],
-                answerIndex: 1,
-                explanation: "The default value of a boolean instance variable is false. Numeric types default to 0, and reference types default to null."
-            },
-            {
-                id: 15,
-                question: "Which suffix is required for long literals?",
-                options: [
-                    "f or F",
-                    "d or D",
-                    "l or L",
-                    "No suffix needed"
-                ],
-                answerIndex: 2,
-                explanation: "Long literals require 'L' or 'l' suffix (e.g., 1000000L). Uppercase 'L' is preferred to avoid confusion with digit '1'."
-            },
-            {
-                id: 16,
-                question: "What is the range of a byte in Java?",
-                options: [
-                    "-127 to 127",
-                    "-128 to 127",
-                    "0 to 255",
-                    "-256 to 255"
-                ],
-                answerIndex: 1,
-                explanation: "byte is 8 bits and signed, ranging from -128 to 127. It's useful for memory optimization and file I/O operations."
-            },
-            {
-                id: 17,
-                question: "Which data type provides the most precision for decimal numbers?",
-                options: [
-                    "float",
-                    "double",
-                    "int",
-                    "long"
-                ],
-                answerIndex: 1,
-                explanation: "double provides ~15-16 decimal digits of precision (64 bits), while float provides only ~6-7 digits (32 bits). Use double for most decimal calculations."
-            },
-            {
-                id: 18,
-                question: "What is the size of a char in Java?",
-                options: [
-                    "1 byte",
-                    "2 bytes",
-                    "4 bytes",
-                    "Varies by character"
-                ],
-                answerIndex: 1,
-                explanation: "char is always 2 bytes (16 bits) in Java because it uses Unicode encoding, which supports international characters."
-            },
-            {
-                id: 19,
-                question: "Which primitive type is used for true/false values?",
-                options: [
-                    "bit",
-                    "bool",
-                    "boolean",
-                    "flag"
-                ],
-                answerIndex: 2,
-                explanation: "boolean is the primitive type for true/false values. It's used for conditions, flags, and decision-making in programs."
-            },
-            {
-                id: 20,
-                question: "What happens when you exceed the maximum value of an int?",
-                options: [
-                    "Compilation error",
-                    "Runtime exception",
-                    "Value wraps to minimum",
-                    "Value becomes 0"
-                ],
-                answerIndex: 2,
-                explanation: "Integer overflow causes the value to wrap around to the minimum value. For int, MAX_VALUE + 1 = MIN_VALUE. This is a silent error!"
-            },
-
-            // Section 4: Non-Primitive Types (Questions 21-25)
-            {
-                id: 21,
-                question: "What is the main difference between primitive and non-primitive types?",
-                options: [
-                    "Size in memory",
-                    "Primitives store values, non-primitives store references",
-                    "Speed of access",
-                    "Naming convention"
-                ],
-                answerIndex: 1,
-                explanation: "Primitives store actual values on the stack. Non-primitives (objects) store references on the stack that point to data on the heap."
-            },
-            {
-                id: 22,
-                question: "Which of the following is a non-primitive type?",
-                options: [
-                    "int",
-                    "double",
-                    "String",
-                    "boolean"
-                ],
-                answerIndex: 2,
-                explanation: "String is a non-primitive type (class). int, double, and boolean are primitive types."
-            },
-            {
-                id: 23,
-                question: "Can non-primitive types have null values?",
-                options: [
-                    "Yes",
-                    "No",
-                    "Only String can",
-                    "Only arrays can"
-                ],
-                answerIndex: 0,
-                explanation: "Non-primitive types (objects, arrays, Strings) can be null, representing no reference. Primitives cannot be null."
-            },
-            {
-                id: 24,
-                question: "What does the 'new' keyword do?",
-                options: [
-                    "Creates a primitive variable",
-                    "Creates an object in heap memory",
-                    "Deletes old objects",
-                    "Converts types"
-                ],
-                answerIndex: 1,
-                explanation: "The 'new' keyword creates an object in heap memory and returns a reference to it. It's used for object instantiation."
-            },
-            {
-                id: 25,
-                question: "How should you compare two String objects for equality?",
-                options: [
-                    "Using ==",
-                    "Using = operator",
-                    "Using .equals() method",
-                    "Using compareTo()"
-                ],
-                answerIndex: 2,
-                explanation: "Use .equals() to compare String content. The == operator compares references (memory addresses), not content."
-            },
-
-            // Section 5: Type Casting (Questions 26-30)
-            {
-                id: 26,
-                question: "What is implicit type casting?",
-                options: [
-                    "Converting larger type to smaller",
-                    "Converting smaller type to larger automatically",
-                    "Converting with (type) syntax",
-                    "Converting objects to primitives"
-                ],
-                answerIndex: 1,
-                explanation: "Implicit (widening) casting automatically converts smaller types to larger types (e.g., int to long). It's safe with no data loss."
-            },
-            {
-                id: 27,
-                question: "Which conversion requires explicit casting?",
-                options: [
-                    "int to long",
-                    "float to double",
-                    "double to int",
-                    "byte to int"
-                ],
-                answerIndex: 2,
-                explanation: "double to int requires explicit casting: (int) doubleValue. This is narrowing conversion that may lose the decimal part."
-            },
-            {
-                id: 28,
-                question: "What is lost when casting double to int?",
-                options: [
-                    "Nothing",
-                    "The decimal part",
-                    "The sign",
-                    "Half the value"
-                ],
-                answerIndex: 1,
-                explanation: "Casting double to int truncates (removes) the decimal part. For example, (int) 19.99 becomes 19, losing 0.99."
-            },
-            {
-                id: 29,
-                question: "What is the correct syntax for explicit casting?",
-                options: [
-                    "int x = double y;",
-                    "int x = (int) y;",
-                    "int x = convert(y);",
-                    "int x = y.toInt();"
-                ],
-                answerIndex: 1,
-                explanation: "Explicit casting syntax is: targetType variable = (targetType) sourceVariable. For example: int x = (int) doubleValue;"
-            },
-            {
-                id: 30,
-                question: "In mixed-type arithmetic, what type is the result?",
-                options: [
-                    "Always int",
-                    "Always double",
-                    "The larger type",
-                    "The first operand's type"
-                ],
-                answerIndex: 2,
-                explanation: "In mixed-type arithmetic, the result is promoted to the larger type. For example, int + double = double."
-            },
-
-            // Section 6: Wrapper Classes (Questions 31-35)
-            {
-                id: 31,
-                question: "What is the wrapper class for int?",
-                options: [
-                    "Int",
-                    "INTEGER",
-                    "Integer",
-                    "IntWrapper"
-                ],
-                answerIndex: 2,
-                explanation: "The wrapper class for int is Integer. Other wrappers: Byte, Short, Long, Float, Double, Character, Boolean."
-            },
-            {
-                id: 32,
-                question: "What is autoboxing?",
-                options: [
-                    "Automatic conversion of primitive to wrapper",
-                    "Automatic conversion of wrapper to primitive",
-                    "Creating boxes for storage",
-                    "Packaging objects"
-                ],
-                answerIndex: 0,
-                explanation: "Autoboxing is automatic conversion of primitive to wrapper (e.g., int to Integer). Unboxing is the reverse (Integer to int)."
-            },
-            {
-                id: 33,
-                question: "Why can't we use primitives in ArrayList?",
-                options: [
-                    "Primitives are too small",
-                    "Collections only accept objects",
-                    "Primitives are too fast",
-                    "It's a design choice"
-                ],
-                answerIndex: 1,
-                explanation: "Java collections (ArrayList, HashMap, etc.) only accept objects, not primitives. We use wrappers: ArrayList<Integer>, not ArrayList<int>."
-            },
-            {
-                id: 34,
-                question: "What happens when you unbox a null wrapper?",
-                options: [
-                    "Returns 0",
-                    "Returns null",
-                    "NullPointerException",
-                    "Compilation error"
-                ],
-                answerIndex: 2,
-                explanation: "Unboxing a null wrapper causes NullPointerException at runtime. Always check for null before unboxing: if (wrapper != null)."
-            },
-            {
-                id: 35,
-                question: "Which method converts a String to int?",
-                options: [
-                    "Integer.parseInt()",
-                    "Integer.toInt()",
-                    "String.toInteger()",
-                    "convert.toInt()"
-                ],
-                answerIndex: 0,
-                explanation: "Integer.parseInt(String) converts String to int. For example: int num = Integer.parseInt(\"123\"); returns 123."
-            }
-        ];
-
-        // Initialize the quiz when page loads
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-
-            // Make quizManager globally accessible for retake button
-            window.quizManager = quizManager;
-        });
-    </script>
-</body>
-
+                </p></div></div>
+</div>
+</div></main></div><script src="../assets/js/docs-style.js"></script><script src="../assets/js/mcq.js"></script></body>
 </html>

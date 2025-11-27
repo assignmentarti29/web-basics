@@ -1,477 +1,328 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control Flow & Loops - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Content Header -->
-        <div class="content-header">
-            <h1>Control Flow & Loops - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>Control Flow & Loops</span>
-            </div>
-        </div>
-
-        <!-- Quiz Introduction -->
-        <div class="content-section">
-            <h2>Test Your Knowledge</h2>
-            <p>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Control Flow &amp; Loops - Quiz - Java Mastery Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/style-mkdocs.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/></head>
+<body data-md-color-scheme="default"><header class="md-header">
+<nav class="md-header__inner">
+<!-- Mobile Menu Toggle -->
+<button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
+</button>
+<!-- Logo/Title -->
+<a class="md-header__title" href="../index.html">
+<span class="md-header__icon">☕</span>
+            Java Mastery Hub
+        </a>
+<!-- Search Bar (Visual) -->
+<div class="md-search">
+<div class="md-search__inner">
+<svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input aria-label="Search" class="md-search__input" placeholder="Search" type="text"/>
+</div>
+</div>
+<!-- Theme Toggle -->
+<button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+<span>🌙</span>
+</button>
+</nav>
+</header><div class="md-grid"><aside class="md-sidebar"><nav class="md-nav">
+<div class="md-nav__title">Topics</div>
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">1. Software Engineering</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/software-engineering.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/software-engineering.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/software-engineering.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">2. What is Java</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/what-is-java.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/what-is-java.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/what-is-java.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">3. Variables &amp; Data Types</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/variables-and-data-types.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/variables-and-data-types.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/variables-and-data-types.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">4. Java Keywords</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/java-keywords.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/java-keywords.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/java-keywords.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">5. Control Flow &amp; Loops</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/control-flow-loops.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/control-flow-loops.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active" href="../mcq/control-flow-loops.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">6. Classes &amp; Objects</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/classes-and-objects.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/classes-and-objects.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/classes-and-objects.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">7. Methods</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/methods.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/methods.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/methods.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">8. OOP Concepts</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/oops.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/oops.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/oops.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">9. Collections Framework</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/collections.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/collections.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/collections.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">10. Exception Handling</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/exception-handling.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/exception-handling.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/exception-handling.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">11. File Handling</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/handling-files.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/handling-files.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/handling-files.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">12. JDBC</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/jdbc.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/jdbc.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/jdbc.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">13. Multithreading</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/multithreading.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/multithreading.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/multithreading.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">14. Java 8+ Features</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/java8features.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/java8features.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/java8features.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">15. Programming Principles</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/programming-principles.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/programming-principles.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/programming-principles.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">17. Interview Questions</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/introduction.html">Introduction</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/beginner.html">Beginner (1-150)</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/advanced.html">Advanced (351-500)</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/tricky.html">Tricky Questions</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/scenario-based.html">Scenario Based</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/hr.html">HR Questions</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/complete-quiz.html">Complete Quiz</a></li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav></aside><main class="md-content"><div class="md-content__inner">
+<!-- Content Header -->
+<div class="content-header">
+<h1>Control Flow &amp; Loops - Quiz</h1>
+<ul class="md-breadcrumbs"><li><a href="../index.html">Home</a></li><li><a href="#">Quiz</a></li><li>Control Flow &amp; Loops - Quiz</li></ul>
+</div>
+<!-- Quiz Introduction -->
+<div class="content-section">
+<h2>Test Your Knowledge</h2>
+<p>
                 This quiz contains 27 questions covering all aspects of control flow statements and loops including
                 if-else, switch-case, for, while, do-while, break, continue, and best practices.
             </p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>
+<div class="admonition tip">
+<div class="admonition-title">💡 TIP</div>
+<div class="admonition-content"><p>
                     Take your time and read each question carefully. Pay attention to code output questions and
                     trace through the logic step by step. Aim for at least 80% to demonstrate mastery!
-                </p>
+                </p></div></div>
+</div>
+<!-- Quiz Progress -->
+<div class="quiz-progress">
+<div class="progress-bar">
+<div class="progress-fill" id="progressBar"></div>
+</div>
+<div class="progress-text">
+<span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
             </div>
-        </div>
-
-        <!-- Quiz Progress -->
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
-            </div>
-        </div>
-
-        <!-- Quiz Container -->
-        <div id="quizContainer" class="content-section">
-            <!-- Questions will be dynamically loaded here -->
-        </div>
-
-        <!-- Quiz Results -->
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
-                </div>
-                <div id="performanceMessage" class="performance-message"></div>
-            </div>
-
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/control-flow-loops.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/control-flow-loops.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
-
-        <!-- Navigation -->
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/control-flow-loops.html" class="btn btn-primary">
+</div>
+<!-- Quiz Container -->
+<div class="content-section" id="quizContainer">
+<!-- Questions will be dynamically loaded here -->
+</div>
+<!-- Quiz Results -->
+<div class="content-section" id="quizResults" style="display: none;">
+<h2>Quiz Complete! 🎉</h2>
+<div class="results-summary">
+<div class="score-display">
+<div class="score-circle">
+<span id="scorePercentage">0%</span>
+</div>
+<p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
+</div>
+<div class="performance-message" id="performanceMessage"></div>
+</div>
+<div class="results-actions">
+<button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake Quiz</button>
+<a class="md-button md-button--secondary" href="../theory/control-flow-loops.html">📚 Review Theory</a>
+<a class="md-button md-button--secondary" href="../programs/control-flow-loops.html">💻 View Programs</a>
+<a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+</div>
+</div>
+<!-- Navigation -->
+<div class="content-section text-center">
+<h3>Continue Your Learning Journey</h3>
+<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+<a class="md-button md-button--primary" href="../theory/control-flow-loops.html">
                     📚 Back to Theory
                 </a>
-                <a href="../programs/control-flow-loops.html" class="btn btn-secondary">
+<a class="md-button md-button--secondary" href="../programs/control-flow-loops.html">
                     💻 View Programs
                 </a>
-                <a href="../index.html" class="btn btn-success">
+<a class="md-button md-button--primary" href="../index.html">
                     🏠 Back to Home
                 </a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p>
-                    <strong>Coming Soon:</strong> Classes and Objects
-                    <br>Learn object-oriented programming fundamentals, creating classes, objects, constructors, and
+</div>
+<div class="admonition note" style="margin-top: 2rem;">
+<div class="admonition-title">📚 Next Topic</div>
+<div class="admonition-content"><p>
+<strong>Coming Soon:</strong> Classes and Objects
+                    <br/>Learn object-oriented programming fundamentals, creating classes, objects, constructors, and
                     methods.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <script src="../assets/js/mcq.js"></script>
-    <script>
-        // Quiz questions for Control Flow & Loops
-        const quizQuestions = [
-            // Section 1: if Statement (Questions 1-3)
-            {
-                id: 1,
-                question: "What is the purpose of an if statement in Java?",
-                options: [
-                    "To repeat code multiple times",
-                    "To execute code only when a condition is true",
-                    "To define a method",
-                    "To declare variables"
-                ],
-                answerIndex: 1,
-                explanation: "The if statement executes a block of code only when the specified boolean condition evaluates to true. It's used for conditional execution based on runtime conditions."
-            },
-            {
-                id: 2,
-                question: "What will be printed? int x = 10; if (x > 5) System.out.println('A'); System.out.println('B');",
-                options: [
-                    "A",
-                    "B",
-                    "A B",
-                    "Nothing"
-                ],
-                answerIndex: 2,
-                explanation: "Both 'A' and 'B' will print. The if statement executes 'A' because x > 5 is true. Then 'B' prints because it's outside the if block and always executes."
-            },
-            {
-                id: 3,
-                question: "Which operator should be used to compare two values in an if condition?",
-                options: [
-                    "= (single equals)",
-                    "== (double equals)",
-                    ":= (colon equals)",
-                    "=> (arrow)"
-                ],
-                answerIndex: 1,
-                explanation: "Use == (double equals) for comparison. Single equals (=) is for assignment, not comparison. Using = in an if condition will assign the value instead of comparing it, which is usually a bug."
-            },
-
-            // Section 2: if-else (Questions 4-6)
-            {
-                id: 4,
-                question: "What is the difference between if and if-else?",
-                options: [
-                    "if-else is faster",
-                    "if-else provides an alternative path when condition is false",
-                    "if-else can only be used with numbers",
-                    "There is no difference"
-                ],
-                answerIndex: 1,
-                explanation: "if-else provides two execution paths: one when the condition is true, another when it's false. With just if, nothing happens when the condition is false. if-else ensures exactly one block executes."
-            },
-            {
-                id: 5,
-                question: "What will be printed? int age = 15; if (age >= 18) { System.out.println('Adult'); } else { System.out.println('Minor'); }",
-                options: [
-                    "Adult",
-                    "Minor",
-                    "Both Adult and Minor",
-                    "Nothing"
-                ],
-                answerIndex: 1,
-                explanation: "Minor will be printed because age (15) is not >= 18, so the condition is false. When the if condition is false, the else block executes."
-            },
-            {
-                id: 6,
-                question: "Can you have an if statement without an else?",
-                options: [
-                    "No, else is mandatory",
-                    "Yes, else is optional",
-                    "Only in methods",
-                    "Only with boolean variables"
-                ],
-                answerIndex: 1,
-                explanation: "The else block is optional. You can have just an if statement. If the condition is false and there's no else, the program simply skips the if block and continues."
-            },
-
-            // Section 3: if-else-if Ladder (Questions 7-9)
-            {
-                id: 7,
-                question: "In an if-else-if ladder, what happens after the first true condition is found?",
-                options: [
-                    "All remaining conditions are still checked",
-                    "Execution stops and remaining conditions are skipped",
-                    "Only the next condition is checked",
-                    "The program terminates"
-                ],
-                answerIndex: 1,
-                explanation: "Once a condition evaluates to true in an if-else-if ladder, its block executes and all remaining conditions are skipped. This is why order matters - put most specific conditions first."
-            },
-            {
-                id: 8,
-                question: "What will be printed? int score = 85; if (score >= 60) { System.out.println('D'); } else if (score >= 90) { System.out.println('A'); }",
-                options: [
-                    "D",
-                    "A",
-                    "Both D and A",
-                    "Nothing"
-                ],
-                answerIndex: 0,
-                explanation: "Only 'D' will print. Even though score >= 90 would be false, the first condition (score >= 60) is true, so 'D' prints and the else-if is never checked. This shows why order matters!"
-            },
-            {
-                id: 9,
-                question: "What is the best practice for ordering conditions in an if-else-if ladder?",
-                options: [
-                    "Random order doesn't matter",
-                    "Most specific to least specific",
-                    "Least specific to most specific",
-                    "Alphabetical order"
-                ],
-                answerIndex: 1,
-                explanation: "Order from most specific to least specific. For example, check >= 90 before >= 60. If you check >= 60 first, a score of 95 would match that condition and never reach the >= 90 check."
-            },
-
-            // Section 4: switch-case (Questions 10-13)
-            {
-                id: 10,
-                question: "What is the purpose of the break statement in a switch-case?",
-                options: [
-                    "To start the switch",
-                    "To exit the switch and prevent fall-through",
-                    "To check the next case",
-                    "To declare variables"
-                ],
-                answerIndex: 1,
-                explanation: "break exits the switch statement immediately, preventing fall-through to the next case. Without break, execution continues to the next case even if it doesn't match, which is usually unintended."
-            },
-            {
-                id: 11,
-                question: "What will be printed? int day = 1; switch(day) { case 1: System.out.print('Mon'); case 2: System.out.print('Tue'); break; }",
-                options: [
-                    "Mon",
-                    "Tue",
-                    "MonTue",
-                    "Nothing"
-                ],
-                answerIndex: 2,
-                explanation: "MonTue will print due to fall-through. case 1 matches and prints 'Mon', but there's no break, so execution falls through to case 2, printing 'Tue', then breaks. This demonstrates why break is important!"
-            },
-            {
-                id: 12,
-                question: "When should you use switch-case instead of if-else?",
-                options: [
-                    "For range checks like age > 18",
-                    "For checking exact constant values",
-                    "For complex boolean conditions",
-                    "switch and if-else are always interchangeable"
-                ],
-                answerIndex: 1,
-                explanation: "Use switch-case for checking a variable against multiple exact constant values (like 1, 2, 3 or 'A', 'B', 'C'). Use if-else for range checks, boolean conditions, or complex logic. switch is more efficient and readable for constant value checks."
-            },
-            {
-                id: 13,
-                question: "What is the purpose of the default case in a switch statement?",
-                options: [
-                    "It must be the first case",
-                    "It handles values that don't match any case",
-                    "It's mandatory in every switch",
-                    "It repeats all cases"
-                ],
-                answerIndex: 1,
-                explanation: "The default case handles values that don't match any other case. It's like the 'else' in if-else. While optional, it's good practice to include default for handling unexpected values."
-            },
-
-            // Section 5: for Loop (Questions 14-16)
-            {
-                id: 14,
-                question: "What are the three parts of a for loop?",
-                options: [
-                    "start, stop, step",
-                    "initialization, condition, update",
-                    "begin, middle, end",
-                    "declare, check, increment"
-                ],
-                answerIndex: 1,
-                explanation: "A for loop has three parts: initialization (runs once at start), condition (checked before each iteration), and update (runs after each iteration). Example: for (int i = 0; i < 10; i++)"
-            },
-            {
-                id: 15,
-                question: "How many times will this loop execute? for (int i = 1; i <= 5; i++)",
-                options: [
-                    "4 times",
-                    "5 times",
-                    "6 times",
-                    "Infinite times"
-                ],
-                answerIndex: 1,
-                explanation: "The loop executes 5 times (i = 1, 2, 3, 4, 5). It starts at 1, continues while i <= 5, and increments by 1 each time. When i becomes 6, the condition i <= 5 is false, so the loop stops."
-            },
-            {
-                id: 16,
-                question: "What will be printed? for (int i = 0; i < 3; i++) { System.out.print(i + ' '); }",
-                options: [
-                    "0 1 2",
-                    "1 2 3",
-                    "0 1 2 3",
-                    "1 2"
-                ],
-                answerIndex: 0,
-                explanation: "0 1 2 will be printed. The loop starts at 0, continues while i < 3 (so 0, 1, 2), and prints each value. When i becomes 3, the condition i < 3 is false, so the loop stops."
-            },
-
-            // Section 6: while Loop (Questions 17-19)
-            {
-                id: 17,
-                question: "What is the key difference between for and while loops?",
-                options: [
-                    "for is faster than while",
-                    "for is used when iteration count is known, while for unknown count",
-                    "while cannot use break",
-                    "for can only count up"
-                ],
-                answerIndex: 1,
-                explanation: "Use for when you know exactly how many iterations (like looping through an array). Use while when the iteration count depends on a condition (like reading user input until they enter 'quit'). Both can achieve the same results, but one is more natural for each scenario."
-            },
-            {
-                id: 18,
-                question: "What is the most common mistake with while loops?",
-                options: [
-                    "Using the wrong condition",
-                    "Forgetting to update the loop variable, causing infinite loop",
-                    "Using break",
-                    "Declaring variables inside the loop"
-                ],
-                answerIndex: 1,
-                explanation: "The most common mistake is forgetting to update the loop variable inside the loop body. This causes an infinite loop because the condition never becomes false. Example: int i = 0; while (i < 5) { print(i); } // forgot i++!"
-            },
-            {
-                id: 19,
-                question: "When does a while loop check its condition?",
-                options: [
-                    "After each iteration",
-                    "Before each iteration",
-                    "Only at the start",
-                    "Only at the end"
-                ],
-                answerIndex: 1,
-                explanation: "A while loop checks the condition BEFORE each iteration. If the condition is initially false, the loop body never executes (0 times). This is different from do-while, which checks after."
-            },
-
-            // Section 7: do-while Loop (Questions 20-22)
-            {
-                id: 20,
-                question: "Which loop guarantees at least one execution?",
-                options: [
-                    "for loop",
-                    "while loop",
-                    "do-while loop",
-                    "All loops execute at least once"
-                ],
-                answerIndex: 2,
-                explanation: "do-while guarantees at least one execution because it checks the condition AFTER the loop body. Even if the condition is initially false, the body executes once. for and while check before, so they may execute 0 times."
-            },
-            {
-                id: 21,
-                question: "What will be printed? int x = 10; do { System.out.print(x + ' '); x++; } while (x < 5);",
-                options: [
-                    "Nothing",
-                    "10",
-                    "10 11 12 13 14",
-                    "Infinite loop"
-                ],
-                answerIndex: 1,
-                explanation: "10 will be printed. The do-while executes the body first (prints 10, x becomes 11), then checks the condition (11 < 5 is false), so it stops. This demonstrates that do-while always executes at least once."
-            },
-            {
-                id: 22,
-                question: "What is a common use case for do-while loops?",
-                options: [
-                    "Counting from 1 to 100",
-                    "Menu systems that must display at least once",
-                    "Iterating through arrays",
-                    "Mathematical calculations"
-                ],
-                answerIndex: 1,
-                explanation: "do-while is perfect for menus and input validation where you must execute at least once. For example, showing a menu to the user at least once, or asking for input and validating it (must ask at least once)."
-            },
-
-            // Section 8: Enhanced for Loop (Questions 23-24)
-            {
-                id: 23,
-                question: "What is the enhanced for loop (for-each) best used for?",
-                options: [
-                    "Modifying array elements",
-                    "Reading all elements without needing the index",
-                    "Iterating in reverse",
-                    "Counting iterations"
-                ],
-                answerIndex: 1,
-                explanation: "Enhanced for loop is best for reading all elements when you don't need the index. It's cleaner and less error-prone. However, you cannot modify array elements, access the index, or iterate in reverse with for-each."
-            },
-            {
-                id: 24,
-                question: "What will be printed? int[] nums = {1, 2, 3}; for (int n : nums) { n = n * 2; } System.out.print(nums[0]);",
-                options: [
-                    "1",
-                    "2",
-                    "3",
-                    "6"
-                ],
-                answerIndex: 0,
-                explanation: "1 will be printed. The enhanced for loop creates a COPY of each element in variable n. Modifying n doesn't change the array. To modify array elements, use a regular for loop with index: nums[i] = nums[i] * 2;"
-            },
-
-            // Section 9: break and continue (Questions 25-27)
-            {
-                id: 25,
-                question: "What does the break statement do in a loop?",
-                options: [
-                    "Skips the current iteration",
-                    "Exits the loop immediately",
-                    "Pauses the loop",
-                    "Restarts the loop"
-                ],
-                answerIndex: 1,
-                explanation: "break exits the loop immediately and execution continues after the loop. It's used for early termination when a condition is met, like finding a value in a search or detecting an error."
-            },
-            {
-                id: 26,
-                question: "What does the continue statement do in a loop?",
-                options: [
-                    "Exits the loop",
-                    "Skips the rest of current iteration and moves to next",
-                    "Repeats the current iteration",
-                    "Stops the program"
-                ],
-                answerIndex: 1,
-                explanation: "continue skips the rest of the current iteration and moves to the next iteration. The loop continues running. It's used for filtering or skipping certain values, like skipping negative numbers or invalid data."
-            },
-            {
-                id: 27,
-                question: "What will be printed? for (int i = 1; i <= 5; i++) { if (i == 3) continue; System.out.print(i + ' '); }",
-                options: [
-                    "1 2 3 4 5",
-                    "1 2 4 5",
-                    "1 2",
-                    "3"
-                ],
-                answerIndex: 1,
-                explanation: "1 2 4 5 will be printed. When i equals 3, continue skips the print statement and moves to the next iteration (i = 4). So 3 is never printed, but the loop continues for 4 and 5."
-            }
-        ];
-
-        // Initialize the quiz when page loads
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-
-            // Make quizManager globally accessible for retake button
-            window.quizManager = quizManager;
-        });
-    </script>
-</body>
-
+                </p></div></div>
+</div>
+</div></main></div><script src="../assets/js/docs-style.js"></script><script src="../assets/js/mcq.js"></script></body>
 </html>

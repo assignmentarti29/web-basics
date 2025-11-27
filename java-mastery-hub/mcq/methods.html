@@ -1,433 +1,307 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Methods - Quiz - Java Mastery Hub</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
-        rel="stylesheet">
-</head>
-
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo">
-                <span class="logo-icon">☕</span>
-                <span>Java Mastery Hub</span>
-            </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="content-header">
-            <h1>Methods - Quiz</h1>
-            <div class="breadcrumb">
-                <a href="../index.html">Home</a>
-                <span>/</span>
-                <span>Quiz</span>
-                <span>/</span>
-                <span>Methods</span>
-            </div>
-        </div>
-
-        <div class="content-section">
-            <h2>Test Your Knowledge</h2>
-            <p>This quiz contains 27 questions covering all aspects of methods including method structure, types,
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Methods - Quiz - Java Mastery Hub</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fira+Code:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/style-mkdocs.css" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&amp;family=Roboto:wght@300;400;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/></head>
+<body data-md-color-scheme="default"><header class="md-header">
+<nav class="md-header__inner">
+<!-- Mobile Menu Toggle -->
+<button aria-label="Menu" class="md-nav-toggle" id="nav-toggle">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
+</button>
+<!-- Logo/Title -->
+<a class="md-header__title" href="../index.html">
+<span class="md-header__icon">☕</span>
+            Java Mastery Hub
+        </a>
+<!-- Search Bar (Visual) -->
+<div class="md-search">
+<div class="md-search__inner">
+<svg class="md-search__icon" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"></circle><line x1="21" x2="16.65" y1="21" y2="16.65"></line></svg>
+<input aria-label="Search" class="md-search__input" placeholder="Search" type="text"/>
+</div>
+</div>
+<!-- Theme Toggle -->
+<button class="md-header__option" id="theme-toggle" title="Switch to dark mode">
+<span>🌙</span>
+</button>
+</nav>
+</header><div class="md-grid"><aside class="md-sidebar"><nav class="md-nav">
+<div class="md-nav__title">Topics</div>
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link" href="../index.html">Home</a></li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">1. Software Engineering</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/software-engineering.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/software-engineering.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/software-engineering.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">2. What is Java</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/what-is-java.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/what-is-java.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/what-is-java.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">3. Variables &amp; Data Types</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/variables-and-data-types.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/variables-and-data-types.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/variables-and-data-types.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">4. Java Keywords</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/java-keywords.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/java-keywords.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/java-keywords.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">5. Control Flow &amp; Loops</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/control-flow-loops.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/control-flow-loops.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/control-flow-loops.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">6. Classes &amp; Objects</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/classes-and-objects.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/classes-and-objects.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/classes-and-objects.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested md-nav__item--expanded">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">7. Methods</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/methods.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/methods.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub md-nav__link--active" href="../mcq/methods.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">8. OOP Concepts</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/oops.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/oops.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/oops.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">9. Collections Framework</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/collections.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/collections.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/collections.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">10. Exception Handling</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/exception-handling.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/exception-handling.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/exception-handling.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">11. File Handling</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/handling-files.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/handling-files.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/handling-files.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">12. JDBC</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/jdbc.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/jdbc.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/jdbc.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">13. Multithreading</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/multithreading.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/multithreading.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/multithreading.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">14. Java 8+ Features</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/java8features.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/java8features.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/java8features.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">15. Programming Principles</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../theory/programming-principles.html">Theory</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../programs/programming-principles.html">Programs</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../mcq/programming-principles.html">Quiz</a></li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<button class="md-nav__link md-nav__toggle">
+<span class="md-nav__text">17. Interview Questions</span>
+<svg class="md-nav__icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</button>
+<nav class="md-nav__group">
+<ul class="md-nav__list">
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/introduction.html">Introduction</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/beginner.html">Beginner (1-150)</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/intermediate.html">Intermediate (151-350)</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/advanced.html">Advanced (351-500)</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/tricky.html">Tricky Questions</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/scenario-based.html">Scenario Based</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/hr.html">HR Questions</a></li>
+<li class="md-nav__item"><a class="md-nav__link md-nav__link--sub" href="../interview/complete-quiz.html">Complete Quiz</a></li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav></aside><main class="md-content"><div class="md-content__inner">
+<div class="content-header">
+<h1>Methods - Quiz</h1>
+<ul class="md-breadcrumbs"><li><a href="../index.html">Home</a></li><li><a href="#">Quiz</a></li><li>Methods - Quiz</li></ul>
+</div>
+<div class="content-section">
+<h2>Test Your Knowledge</h2>
+<p>This quiz contains 27 questions covering all aspects of methods including method structure, types,
                 overloading, recursion, pass-by-value, and best practices.</p>
-            <div class="callout tip">
-                <div class="callout-title">💡 TIP</div>
-                <p>Take your time and read each question carefully. Pay attention to code output questions and trace
-                    through the logic step by step. Aim for at least 80% to demonstrate mastery!</p>
+<div class="admonition tip">
+<div class="admonition-title">💡 TIP</div>
+<div class="admonition-content"><p>Take your time and read each question carefully. Pay attention to code output questions and trace
+                    through the logic step by step. Aim for at least 80% to demonstrate mastery!</p></div></div>
+</div>
+<div class="quiz-progress">
+<div class="progress-bar">
+<div class="progress-fill" id="progressBar"></div>
+</div>
+<div class="progress-text">
+<span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
             </div>
-        </div>
-
-        <div class="quiz-progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressBar"></div>
-            </div>
-            <div class="progress-text">
-                <span id="currentQuestion">0</span> / <span id="totalQuestions">27</span> Questions
-            </div>
-        </div>
-
-        <div id="quizContainer" class="content-section"></div>
-
-        <div id="quizResults" class="content-section" style="display: none;">
-            <h2>Quiz Complete! 🎉</h2>
-            <div class="results-summary">
-                <div class="score-display">
-                    <div class="score-circle">
-                        <span id="scorePercentage">0%</span>
-                    </div>
-                    <p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
-                </div>
-                <div id="performanceMessage" class="performance-message"></div>
-            </div>
-
-            <div class="results-actions">
-                <button onclick="quizManager.retakeQuiz()" class="btn btn-primary">🔄 Retake Quiz</button>
-                <a href="../theory/methods.html" class="btn btn-secondary">📚 Review Theory</a>
-                <a href="../programs/methods.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-        </div>
-
-        <div class="content-section text-center">
-            <h3>Continue Your Learning Journey</h3>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="../theory/methods.html" class="btn btn-primary">📚 Back to Theory</a>
-                <a href="../programs/methods.html" class="btn btn-secondary">💻 View Programs</a>
-                <a href="../index.html" class="btn btn-success">🏠 Back to Home</a>
-            </div>
-
-            <div class="callout note" style="margin-top: 2rem;">
-                <div class="callout-title">📚 Next Topic</div>
-                <p><strong>Coming Soon:</strong> OOPs Concepts in Depth<br>Deep dive into inheritance, polymorphism,
-                    encapsulation, abstraction, and interfaces.</p>
-            </div>
-        </div>
-    </div>
-
-    <script src="../assets/js/mcq.js"></script>
-    <script>
-        const quizQuestions = [
-            {
-                id: 1,
-                question: "What is a method in Java?",
-                options: [
-                    "A variable that stores data",
-                    "A block of code that performs a specific task",
-                    "A type of loop",
-                    "A class definition"
-                ],
-                answerIndex: 1,
-                explanation: "A method is a block of code that performs a specific task and can be called/invoked from other parts of the program. Methods are fundamental to code reusability and modularity."
-            },
-            {
-                id: 2,
-                question: "Which method type does 'void display(int x)' represent?",
-                options: [
-                    "Return type + input",
-                    "No return + no input",
-                    "Return type + no input",
-                    "No return + with input"
-                ],
-                answerIndex: 3,
-                explanation: "void = no return type, and it has one parameter (int x), so it's a method with no return but with input. It performs an action based on the parameter but doesn't return a value."
-            },
-            {
-                id: 3,
-                question: "What will be printed? int add(int a, int b) { return a + b; } System.out.println(add(5, 10));",
-                options: [
-                    "5",
-                    "10",
-                    "15",
-                    "Compilation error"
-                ],
-                answerIndex: 2,
-                explanation: "The method add(5, 10) returns 5 + 10 = 15. The return value is then printed by System.out.println()."
-            },
-            {
-                id: 4,
-                question: "What is the difference between static and instance methods?",
-                options: [
-                    "Static methods are faster",
-                    "Static methods belong to the class, instance methods belong to objects",
-                    "Instance methods can't have parameters",
-                    "There is no difference"
-                ],
-                answerIndex: 1,
-                explanation: "Static methods belong to the class itself and can be called without creating an object. Instance methods belong to objects and require an object to be called. Static methods can't access instance variables directly."
-            },
-            {
-                id: 5,
-                question: "How do you call a static method named 'calculate' from class 'MathUtils'?",
-                options: [
-                    "new MathUtils().calculate()",
-                    "MathUtils.calculate()",
-                    "calculate.MathUtils()",
-                    "static.calculate()"
-                ],
-                answerIndex: 1,
-                explanation: "Static methods are called using ClassName.methodName(). No object creation is needed. Example: MathUtils.calculate() or Math.sqrt()."
-            },
-            {
-                id: 6,
-                question: "What is method overloading?",
-                options: [
-                    "Having too many methods in a class",
-                    "Multiple methods with same name but different parameters",
-                    "A method that calls itself",
-                    "A method with too many lines of code"
-                ],
-                answerIndex: 1,
-                explanation: "Method overloading allows multiple methods with the same name but different parameter lists (number, type, or order). Java determines which method to call based on the arguments at compile-time."
-            },
-            {
-                id: 7,
-                question: "Can you overload methods by changing only the return type?",
-                options: [
-                    "Yes, always",
-                    "No, parameters must differ",
-                    "Only for static methods",
-                    "Only for void methods"
-                ],
-                answerIndex: 1,
-                explanation: "No! You cannot overload methods by changing only the return type. The parameter list (number, type, or order) must differ. Return type alone is not sufficient for overloading."
-            },
-            {
-                id: 8,
-                question: "What is a recursive method?",
-                options: [
-                    "A method that returns a value",
-                    "A method that calls itself",
-                    "A method with multiple parameters",
-                    "A method that never ends"
-                ],
-                answerIndex: 1,
-                explanation: "A recursive method is one that calls itself to solve a problem by breaking it into smaller sub-problems. It must have a base case to prevent infinite recursion."
-            },
-            {
-                id: 9,
-                question: "What will happen if a recursive method has no base case?",
-                options: [
-                    "It will work normally",
-                    "StackOverflowError",
-                    "Compilation error",
-                    "Returns null"
-                ],
-                answerIndex: 1,
-                explanation: "Without a base case, the recursive method calls itself infinitely, eventually causing a StackOverflowError when the call stack runs out of memory."
-            },
-            {
-                id: 10,
-                question: "What will factorial(5) return? int factorial(int n) { if (n <= 1) return 1; return n * factorial(n-1); }",
-                options: [
-                    "15",
-                    "25",
-                    "120",
-                    "Infinite loop"
-                ],
-                answerIndex: 2,
-                explanation: "factorial(5) = 5 * 4 * 3 * 2 * 1 = 120. The recursion stops when n <= 1 (base case), then calculates back up: 1, then 2*1=2, then 3*2=6, then 4*6=24, then 5*24=120."
-            },
-            {
-                id: 11,
-                question: "What is the purpose of getter and setter methods?",
-                options: [
-                    "To make code longer",
-                    "To provide controlled access to private fields",
-                    "To overload methods",
-                    "To create static methods"
-                ],
-                answerIndex: 1,
-                explanation: "Getters and setters provide controlled access to private fields, implementing encapsulation. Setters can validate data before updating, and getters can compute values or log access."
-            },
-            {
-                id: 12,
-                question: "What is the naming convention for a getter method for field 'name'?",
-                options: [
-                    "get_name()",
-                    "getName()",
-                    "name()",
-                    "fetchName()"
-                ],
-                answerIndex: 1,
-                explanation: "Getter methods follow the convention getFieldName() using camelCase. For boolean fields, use isFieldName(). Example: getName(), getAge(), isActive()."
-            },
-            {
-                id: 13,
-                question: "Is Java pass-by-value or pass-by-reference?",
-                options: [
-                    "Pass-by-reference",
-                    "Pass-by-value",
-                    "Both, depending on the type",
-                    "Neither"
-                ],
-                answerIndex: 1,
-                explanation: "Java is strictly pass-by-value. For primitives, a copy of the value is passed. For objects, a copy of the reference (memory address) is passed, not the object itself."
-            },
-            {
-                id: 14,
-                question: "What will be printed? void modify(int x) { x = 100; } int num = 50; modify(num); System.out.println(num);",
-                options: [
-                    "50",
-                    "100",
-                    "150",
-                    "Compilation error"
-                ],
-                answerIndex: 0,
-                explanation: "50 will be printed. Java passes a copy of the value (pass-by-value). Modifying x inside the method doesn't affect the original num variable."
-            },
-            {
-                id: 15,
-                question: "Can a method have both return type and parameters?",
-                options: [
-                    "No, only one is allowed",
-                    "Yes, this is very common",
-                    "Only for static methods",
-                    "Only for instance methods"
-                ],
-                answerIndex: 1,
-                explanation: "Yes! Methods can have both return type and parameters. This is the most common and useful method type. Example: int add(int a, int b) { return a + b; }"
-            },
-            {
-                id: 16,
-                question: "What is the return type of a method that doesn't return anything?",
-                options: [
-                    "null",
-                    "void",
-                    "empty",
-                    "none"
-                ],
-                answerIndex: 1,
-                explanation: "void is the return type for methods that don't return any value. They perform actions but don't give back a result."
-            },
-            {
-                id: 17,
-                question: "Can a void method use the return statement?",
-                options: [
-                    "No, never",
-                    "Yes, but only 'return;' to exit early",
-                    "Yes, with any value",
-                    "Only in static methods"
-                ],
-                answerIndex: 1,
-                explanation: "Yes! void methods can use 'return;' (without a value) to exit the method early. But they cannot return a value like 'return 5;'."
-            },
-            {
-                id: 18,
-                question: "Which is a valid method overloading? Given: void print(int x)",
-                options: [
-                    "int print(int x)",
-                    "void print(double x)",
-                    "private void print(int x)",
-                    "All of the above"
-                ],
-                answerIndex: 1,
-                explanation: "void print(double x) is valid overloading - different parameter type. Option 1 (only return type differs) and option 3 (only access modifier differs) are NOT valid overloading."
-            },
-            {
-                id: 19,
-                question: "What is the maximum recommended number of parameters for a method?",
-                options: [
-                    "1-2",
-                    "3-4",
-                    "10+",
-                    "No limit"
-                ],
-                answerIndex: 1,
-                explanation: "Best practice recommends 3-4 parameters maximum. More than 5 parameters makes methods hard to use and understand. Consider creating a parameter object instead."
-            },
-            {
-                id: 20,
-                question: "What will be printed? int add(int a, int b) { a + b; } System.out.println(add(5, 10));",
-                options: [
-                    "15",
-                    "0",
-                    "null",
-                    "Compilation error"
-                ],
-                answerIndex: 3,
-                explanation: "Compilation error! The method declares return type 'int' but doesn't have a return statement. It should be 'return a + b;' not just 'a + b;'."
-            },
-            {
-                id: 21,
-                question: "Can an instance method call a static method?",
-                options: [
-                    "No, never",
-                    "Yes, directly",
-                    "Only with an object",
-                    "Only in main method"
-                ],
-                answerIndex: 1,
-                explanation: "Yes! Instance methods can call static methods directly. Static methods belong to the class, so they're accessible from anywhere in the class."
-            },
-            {
-                id: 22,
-                question: "Can a static method call an instance method directly?",
-                options: [
-                    "Yes, always",
-                    "No, must create an object first",
-                    "Only in main method",
-                    "Only with this keyword"
-                ],
-                answerIndex: 1,
-                explanation: "No! Static methods cannot call instance methods directly because instance methods need an object. You must create an object first, then call the instance method on that object."
-            },
-            {
-                id: 23,
-                question: "What is the purpose of the 'this' keyword in methods?",
-                options: [
-                    "To call static methods",
-                    "To refer to the current object",
-                    "To create new objects",
-                    "To return values"
-                ],
-                answerIndex: 1,
-                explanation: "'this' refers to the current object. It's used to distinguish instance variables from parameters, call other constructors, or pass the current object as a parameter."
-            },
-            {
-                id: 24,
-                question: "Which method combination is best for a calculator's add operation?",
-                options: [
-                    "void add() - no params, no return",
-                    "void add(int a, int b) - params, no return",
-                    "int add() - no params, with return",
-                    "int add(int a, int b) - params, with return"
-                ],
-                answerIndex: 3,
-                explanation: "int add(int a, int b) is best - it takes input numbers and returns the result. This allows the caller to use the sum value for further operations."
-            },
-            {
-                id: 25,
-                question: "What is a helper/utility method?",
-                options: [
-                    "A method that helps the user",
-                    "A private method that breaks down complex logic",
-                    "A method with many parameters",
-                    "A static method only"
-                ],
-                answerIndex: 1,
-                explanation: "Helper methods are typically private methods that break down complex logic into smaller, reusable pieces. They improve code organization and readability."
-            },
-            {
-                id: 26,
-                question: "What will be printed? void test() { return 5; }",
-                options: [
-                    "5",
-                    "null",
-                    "void",
-                    "Compilation error"
-                ],
-                answerIndex: 3,
-                explanation: "Compilation error! void methods cannot return a value. The method should either be 'void test() { return; }' or 'int test() { return 5; }'."
-            },
-            {
-                id: 27,
-                question: "What is the best practice for method names?",
-                options: [
-                    "Use nouns like 'data' or 'value'",
-                    "Use verbs like 'calculate' or 'display'",
-                    "Use single letters like 'a' or 'b'",
-                    "Use numbers like 'method1' or 'method2'"
-                ],
-                answerIndex: 1,
-                explanation: "Method names should be verbs or verb phrases that describe what the method does. Use camelCase and be descriptive: calculateTotal(), displayMenu(), isValid()."
-            }
-        ];
-
-        document.addEventListener('DOMContentLoaded', function () {
-            const quizManager = new QuizManager('quizContainer', 'quizResults', quizQuestions);
-            quizManager.startQuiz();
-            window.quizManager = quizManager;
-        });
-    </script>
-</body>
-
+</div>
+<div class="content-section" id="quizContainer"></div>
+<div class="content-section" id="quizResults" style="display: none;">
+<h2>Quiz Complete! 🎉</h2>
+<div class="results-summary">
+<div class="score-display">
+<div class="score-circle">
+<span id="scorePercentage">0%</span>
+</div>
+<p class="score-text">Your Score: <span id="scoreText">0/27</span></p>
+</div>
+<div class="performance-message" id="performanceMessage"></div>
+</div>
+<div class="results-actions">
+<button class="md-button md-button--primary" onclick="quizManager.retakeQuiz()">🔄 Retake Quiz</button>
+<a class="md-button md-button--secondary" href="../theory/methods.html">📚 Review Theory</a>
+<a class="md-button md-button--secondary" href="../programs/methods.html">💻 View Programs</a>
+<a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+</div>
+</div>
+<div class="content-section text-center">
+<h3>Continue Your Learning Journey</h3>
+<div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem;">
+<a class="md-button md-button--primary" href="../theory/methods.html">📚 Back to Theory</a>
+<a class="md-button md-button--secondary" href="../programs/methods.html">💻 View Programs</a>
+<a class="md-button md-button--primary" href="../index.html">🏠 Back to Home</a>
+</div>
+<div class="admonition note" style="margin-top: 2rem;">
+<div class="admonition-title">📚 Next Topic</div>
+<div class="admonition-content"><p><strong>Coming Soon:</strong> OOPs Concepts in Depth<br/>Deep dive into inheritance, polymorphism,
+                    encapsulation, abstraction, and interfaces.</p></div></div>
+</div>
+</div></main></div><script src="../assets/js/docs-style.js"></script><script src="../assets/js/mcq.js"></script></body>
 </html>
