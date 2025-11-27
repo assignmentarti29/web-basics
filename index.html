@@ -1,263 +1,245 @@
-j<!DOCTYPE html>
+j
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Student Portfolio Showcase - Explore talented students and their projects"
-    />
-    <meta
-      name="keywords"
-      content="student portfolio, showcase, projects, web development"
-    />
+    <meta name="description" content="Student Portfolio Showcase - Explore talented students and their projects" />
+    <meta name="keywords" content="student portfolio, showcase, projects, web development" />
     <title>Student Portfolio Showcase</title>
 
     <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
 
     <style>
-      * {
-        font-family: "Poppins", sans-serif;
-      }
+        * {
+            font-family: "Poppins", sans-serif;
+        }
 
-      body {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        min-height: 100vh;
-        padding: 40px 0;
-      }
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 0;
+        }
 
-      .container {
-        max-width: 1400px;
-      }
+        .container {
+            max-width: 1400px;
+        }
 
-      .page-header {
-        text-align: center;
-        margin-bottom: 50px;
-        color: white;
-      }
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
 
-      .page-header h1 {
-        font-weight: 700;
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      .page-header p {
-        font-size: 1.1rem;
-        font-weight: 300;
-        opacity: 0.95;
-      }
-
-      .student-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-      }
-
-      .student-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-      }
-
-      .card-image-wrapper {
-        position: relative;
-        width: 180px;
-        min-width: 180px;
-        overflow: hidden;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      }
-
-      .card-image-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        transition: transform 0.3s ease;
-      }
-
-      .student-card:hover .card-image-wrapper img {
-        transform: scale(1.05);
-      }
-
-      .card-body {
-        padding: 20px;
-        flex-grow: 1;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-      }
-
-      .student-name {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 8px;
-      }
-
-      .student-title {
-        font-size: 0.95rem;
-        color: #667eea;
-        font-weight: 600;
-        margin-bottom: 15px;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 12px;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-      }
-
-      .social-link {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #f0f0f0;
-        color: #667eea;
-        text-decoration: none;
-        transition: all 0.3s ease;
-        font-size: 1.1rem;
-      }
-
-      .social-link:hover {
-        background: #667eea;
-        color: white;
-        transform: scale(1.15);
-      }
-
-      .social-link.github:hover {
-        background: #333;
-      }
-
-      .social-link.linkedin:hover {
-        background: #0077b5;
-      }
-
-      .social-link.twitter:hover {
-        background: #1da1f2;
-      }
-
-      .social-link.portfolio:hover {
-        background: #764ba2;
-      }
-
-      .btn-view-portfolio {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border: none;
-        color: white;
-        font-weight: 600;
-        padding: 10px 20px;
-        border-radius: 8px;
-        transition: all 0.3s ease;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
-        margin-top: auto;
-      }
-
-      .btn-view-portfolio:hover {
-        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-        color: white;
-        text-decoration: none;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-      }
-
-      .section-title {
-        color: white;
-        font-weight: 700;
-        font-size: 2rem;
-        margin-top: 60px;
-        margin-bottom: 40px;
-        text-align: center;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-      }
-
-      @media (max-width: 768px) {
         .page-header h1 {
-          font-size: 2rem;
+            font-weight: 700;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .page-header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            opacity: 0.95;
         }
 
         .student-card {
-          margin-bottom: 20px;
-          flex-direction: column;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .student-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
         .card-image-wrapper {
-          width: 100%;
-          height: 200px;
+            position: relative;
+            width: 180px;
+            min-width: 180px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-      }
 
-      .search-container {
-        margin-bottom: 40px;
-        text-align: center;
-      }
+        .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.3s ease;
+        }
 
-      .search-container input {
-        max-width: 400px;
-        padding: 12px 20px;
-        border-radius: 25px;
-        border: none;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      }
+        .student-card:hover .card-image-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        .student-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .student-title {
+            font-size: 0.95rem;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            color: #667eea;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .social-link:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.15);
+        }
+
+        .social-link.github:hover {
+            background: #333;
+        }
+
+        .social-link.linkedin:hover {
+            background: #0077b5;
+        }
+
+        .social-link.twitter:hover {
+            background: #1da1f2;
+        }
+
+        .social-link.portfolio:hover {
+            background: #764ba2;
+        }
+
+        .btn-view-portfolio {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .btn-view-portfolio:hover {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .section-title {
+            color: white;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .student-card {
+                margin-bottom: 20px;
+                flex-direction: column;
+            }
+
+            .card-image-wrapper {
+                width: 100%;
+                height: 200px;
+            }
+        }
+
+        .search-container {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .search-container input {
+            max-width: 400px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
     </style>
-  </head>
+</head>
 
-  <body>
+<body>
     <!-- Header -->
     <div class="container">
-      <div class="page-header">
-        <h1>🎓 Portfolio Showcase</h1>
-        <p>Discover talented students and their amazing projects</p>
-      </div>
+        <div class="page-header">
+            <h1>🎓 Portfolio Showcase</h1>
+            <p>Discover talented students and their amazing projects</p>
+        </div>
 
-      <!-- Search Bar -->
-      <div class="search-container">
-        <input
-          type="text"
-          id="searchInput"
-          class="form-control"
-          placeholder="Search students by name..."
-        />
-      </div>
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search students by name..." />
+        </div>
     </div>
 
     <!-- Student Cards Grid -->
     <div class="container">
-      <div class="row g-4" id="studentCardsContainer">
-        <!-- Student cards will be generated here by JavaScript -->
-      </div>
+        <div class="row g-4" id="studentCardsContainer">
+            <!-- Student cards will be generated here by JavaScript -->
+        </div>
     </div>
 
     <!-- Footer -->
     <footer class="text-center text-white mt-5 pb-4">
-      <p>&copy; 2025 Student Portfolio Showcase. All rights reserved.</p>
+        <p>&copy; 2025 Student Portfolio Showcase. All rights reserved.</p>
     </footer>
 
     <!-- Bootstrap JS -->
@@ -266,7 +248,7 @@ j<!DOCTYPE html>
     <script>
         // Student Data
         const students = [
-           {
+            {
                 id: 0,
                 name: "Java Session Notes",
                 title: "Step Up and Learn",
@@ -276,7 +258,7 @@ j<!DOCTYPE html>
                 twitter: "",
                 portfolio: "java-mastery-hub"
             },
-            
+
             {
                 id: 1,
                 name: "Vijay Chopade",
@@ -304,7 +286,7 @@ j<!DOCTYPE html>
                 github: "https://github.com/YashBorekar",
                 linkedin: "https://www.linkedin.com/in/yash-borekar-8b7783230/",
                 twitter: "",
-                portfolio: ""
+                portfolio: "yashborekar"
             },
             {
                 id: 4,
@@ -690,63 +672,59 @@ j<!DOCTYPE html>
                             <p class="student-title">${student.title}</p>
                             
                             <div class="social-links">
-                                <a href="${
-                                  student.github
-                                }" target="_blank" rel="noopener noreferrer" class="social-link github" title="GitHub">
+                                <a href="${student.github
+                }" target="_blank" rel="noopener noreferrer" class="social-link github" title="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="${
-                                  student.linkedin
-                                }" target="_blank" rel="noopener noreferrer" class="social-link linkedin" title="LinkedIn">
+                                <a href="${student.linkedin
+                }" target="_blank" rel="noopener noreferrer" class="social-link linkedin" title="LinkedIn">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="${
-                                  student.twitter
-                                }" target="_blank" rel="noopener noreferrer" class="social-link twitter" title="Twitter">
+                                <a href="${student.twitter
+                }" target="_blank" rel="noopener noreferrer" class="social-link twitter" title="Twitter">
                                     <i class="fab fa-twitter"></i>
                                 </a>
                             </div>
                             
-                            <a href="${
-                              student.portfolio
-                            }/" class="btn-view-portfolio">
+                            <a href="${student.portfolio
+                }/" class="btn-view-portfolio">
                                 View Portfolio
                             </a>
                         </div>
                     </div>
                 </div>
             `;
-      }
+        }
 
-      // Function to render all students
-      function renderStudents(studentsToRender = students) {
-        const container = document.getElementById("studentCardsContainer");
-        container.innerHTML = studentsToRender
-          .map((student) => createStudentCard(student))
-          .join("");
-      }
+        // Function to render all students
+        function renderStudents(studentsToRender = students) {
+            const container = document.getElementById("studentCardsContainer");
+            container.innerHTML = studentsToRender
+                .map((student) => createStudentCard(student))
+                .join("");
+        }
 
-      // Search functionality
-      document
-        .getElementById("searchInput")
-        .addEventListener("input", function () {
-          const searchTerm = this.value.toLowerCase();
-          const items = document.querySelectorAll(".student-item");
+        // Search functionality
+        document
+            .getElementById("searchInput")
+            .addEventListener("input", function () {
+                const searchTerm = this.value.toLowerCase();
+                const items = document.querySelectorAll(".student-item");
 
-          items.forEach((item) => {
-            const studentName = item.getAttribute("data-name");
-            if (studentName.includes(searchTerm)) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
+                items.forEach((item) => {
+                    const studentName = item.getAttribute("data-name");
+                    if (studentName.includes(searchTerm)) {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            });
+
+        // Initialize the page
+        document.addEventListener("DOMContentLoaded", function () {
+            renderStudents();
         });
-
-      // Initialize the page
-      document.addEventListener("DOMContentLoaded", function () {
-        renderStudents();
-      });
     </script>
 </body>
 
