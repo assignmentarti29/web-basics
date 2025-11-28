@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+	<head>
+		<meta charset="utf-8" />
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tejashree Suryawanshi — Software Developer</title>
+		<meta name="description" content="Tejashree Suryawanshi — Software Developer. Clean, modern portfolio highlighting software dev, AI & web projects." />
+		<!-- Using system serif: Times New Roman as requested (removed Poppins) -->
+		<style>
+			:root{
+				/* White + Blue theme */
+				--page-bg: #e4eeed; /* page background */
+				--card-bg: #f2f6ff; /* very light blue card */
+				--heading: #0056d6; /* professional blue */
+				--divider: #007bff; /* section dividers */
+				--btn-bg: #007bff; /* button primary */
+				--btn-hover: #0056d6;
+				--text: #1a1a1a; /* body text */
+				--muted: #5f6b7a; /* subdued text */
+				--glass-border: rgba(0,123,255,0.08);
+				--soft-glow: 0 8px 30px rgba(0,123,255,0.06);
+				color-scheme: light;
+			}
+
+			*{box-sizing:border-box}
+			/* prevent accidental horizontal scroll on small devices */
+			html,body{height:100%;overflow-x:hidden}
+			body{
+				font-size:25px; /* requested: make base font-size 25px */
+				margin:0;
+				font-family: 'Times New Roman', Times, serif; /* exact Times New Roman */
+				background: var(--page-bg);
+				color: var(--text);
+				-webkit-font-smoothing:antialiased;
+				-moz-osx-font-smoothing:grayscale;
+				line-height:1.45;
+				padding:40px 32px;
+			}
+
+			/* Layout */
+			.container{max-width:1200px;margin:0 auto}
+			header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:36px}
+
+			.brand{display:flex;align-items:center;gap:12px}
+			.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--btn-bg),var(--heading));display:grid;place-items:center;font-weight:700;color:white;box-shadow:var(--soft-glow)}
+			.brand h1{font-size:30px;margin:0;font-weight:700;letter-spacing:0.2px;color:var(--heading)}
+			.brand p{margin:0;font-size:18px;color:var(--muted)}
+
+			nav{display:flex;gap:12px;align-items:center}
+			nav a{color:var(--text);text-decoration:none;font-size:25px;padding:8px 12px;border-radius:10px;transition:all .25s}
+			nav a:hover{color:var(--btn-bg);text-decoration:underline}
+
+			/* Hero */
+			.hero{display:grid;grid-template-columns:320px 1fr;gap:30px;align-items:center;padding:20px 12px;border-radius:18px;background:transparent;border:none;box-shadow:none}
+
+			.profile-card{display:flex;flex-direction:column;align-items:center;padding:28px;border-radius:14px;background:var(--card-bg);border:1px solid var(--glass-border);min-height:360px}
+			.avatar{width:240px;height:240px;border-radius:26px;overflow:hidden;border:2px solid rgba(0,0,0,0.06);box-shadow:0 10px 40px rgba(2,6,8,0.06);display:inline-block}
+			.avatar img{width:100%;height:100%;object-fit:cover;display:block}
+			.title{margin-top:18px;text-align:center}
+			.title h2{margin:0;font-size:36px;color:var(--heading)}
+			.title p{margin:4px 0 0;color:var(--text);font-size:25px}
+			.profile-links{display:flex;gap:12px;margin-top:16px}
+			.chip{padding:10px 12px;border-radius:999px;font-weight:600;font-size:18px;background:transparent;border:1px solid rgba(0,0,0,0.06);color:var(--muted)}
+
+			.hero-body{padding:8px 6px}
+			.hero h3{font-size:32px;margin:0 0 8px;color:var(--heading)}
+			.hero .about{color:var(--muted);font-size:25px;white-space:pre-line}
+			.cta{display:flex;gap:12px;margin-top:18px}
+			.btn{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:12px;border:none;text-decoration:none;color:white;background:var(--btn-bg);box-shadow:var(--soft-glow);transform:translateY(0);transition:transform .12s ease,box-shadow .12s,background .12s}
+			.btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(0,0,0,0.06)}
+			.btn:hover{background:var(--btn-hover)}
+
+			/* Compact certificate buttons - small variant */
+			.btn.small{padding:6px 10px;font-size:14px;border-radius:8px;min-width:0;line-height:1;box-shadow:0 6px 16px rgba(0,123,255,0.08);transition:transform .12s ease,box-shadow .12s,background .12s}
+			.btn.small:hover{background:var(--btn-hover);box-shadow:0 10px 22px rgba(0,123,255,0.12);transform:translateY(-1px)}
+
+			/* Fixed-size variant for certificates & resume */
+			/* Medium-sized fixed action buttons used for certificates & resume */
+			.btn.fixed{
+				width:170px;min-width:170px;max-width:170px;
+				height:46px; /* consistent height */
+				padding:0 14px; /* center text via flex */
+				font-size:15px; /* medium */
+				border-radius:10px; /* rounded corners */
+				display:inline-flex;justify-content:center;align-items:center;
+				box-shadow:0 8px 20px rgba(0,123,255,0.08);
+				transition:transform .12s ease,box-shadow .12s,background .12s;
+			}
+			.btn.fixed:hover{background:var(--btn-hover);transform:scale(1.03);box-shadow:0 12px 30px rgba(0,123,255,0.12)}
+
+			/* ----------------------------------------------------------------------
+			   Button micro-interactions (only for the five action buttons)
+			   Targets: .cta .btn (Explore Projects, Get in touch) and .btn.fixed
+			   Requirements: slight scale-up on hover (1.04), soft glow, 0.25s
+			   transition, press-down on active (0.97), stronger shadow on active.
+			   DO NOT change width/height/padding/font-size. Only add interactivity.
+			   -------------------------------------------------------------------- */
+
+			/* apply only to the two hero CTAs and the medium fixed buttons */
+			.cta .btn,
+			.btn.fixed{
+				/* keep sizes exactly as written elsewhere — only change interaction */
+				transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+				will-change: transform, box-shadow;
+				cursor: pointer;
+			}
+
+			/* Shared modern button: primary-button
+			   - Applied to all five action buttons (Explore Projects, Get in Touch,
+			     View Certificate x2, View Resume)
+			   - Preserves existing sizing/padding/font-size/width/height
+			   - Adds slight elevation, smooth hover (1.03), subtle press feedback
+			*/
+			.primary-button{
+				/* Do not set width/height/padding/font-size here — keep existing values */
+				color: #fff !important; /* ensure white, bold text */
+				font-weight:700 !important;
+				border: none !important; /* modern look — no visible border */
+				border-radius: 11px; /* slightly rounded corners (10-12px) */
+				box-shadow: 0 6px 18px rgba(2,6,8,0.08); /* soft drop-shadow */
+				transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+				will-change: transform, box-shadow;
+				cursor: pointer;
+			}
+
+			/* Hover & active micro-interactions (keeps scale and shadow limits non-flashy) */
+			.primary-button:hover{
+				transform: scale(1.03) !important; /* subtle scale-up */
+				box-shadow: 0 18px 40px rgba(2,6,8,0.12), 0 0 22px rgba(0,123,255,0.06);
+			}
+
+			.primary-button:active{
+				transform: scale(0.97) !important; /* press-down */
+				box-shadow: 0 22px 56px rgba(2,6,8,0.20), 0 0 28px rgba(0,123,255,0.10);
+				transition: transform 0.08s ease, box-shadow 0.08s ease;
+			}
+
+			/* — Optional visual variants (examples). Not required for the five buttons
+			   but included in case you want different visual themes elsewhere. */
+			/* dark variant */
+			.primary-button--dark{background:#0b1220;color:#cac5c5;box-shadow:0 10px 26px rgba(2,6,8,0.28)}
+
+			/* neon glow (use sparingly) */
+			.primary-button--neon{background:linear-gradient(90deg,#00f5ff,#6a00ff);box-shadow:0 6px 30px rgba(106,0,255,0.12),0 0 18px rgba(0,245,255,0.12)}
+
+			/* ultra-minimal flat */
+			.primary-button--flat{background:transparent;color:var(--btn-bg);box-shadow:none;border:1px solid rgba(0,0,0,0.06)}
+
+			/* subtle gradient */
+			.primary-button--gradient{background:linear-gradient(90deg,var(--btn-bg),var(--btn-hover));color:#fff}
+
+			/* hover: subtle scale and soft shadow glow */
+			.cta .btn:hover,
+			.btn.fixed:hover{
+				transform: scale(1.04);
+				/* soft neutral shadow with a small color glow for polish */
+				box-shadow: 0px 4px 15px rgba(0,0,0,0.12), 0 0 18px rgba(0,123,255,0.06);
+			}
+
+			/* active (mouse-down) — slight press down + stronger shadow */
+			.cta .btn:active,
+			.btn.fixed:active{
+				transform: scale(0.97);
+				box-shadow: 0px 14px 42px rgba(0,0,0,0.18), 0 0 28px rgba(0,123,255,0.10);
+				transition: transform 0.08s ease, box-shadow 0.08s ease;
+			}
+
+			/* Responsive: allow buttons to be full width on very small screens to avoid overflow */
+			/* remove fixed button auto-fullwidth on tiny screens so action buttons keep their
+			   consistent medium size (they will remain centered and still be usable on small
+			   devices). This prevents changing the core sizes requested earlier. */
+						/* Additional responsive improvements for a clean mobile layout */
+						@media (max-width:900px){
+							/* projects -> 2 columns on medium screens */
+							.card-grid.projects{grid-template-columns:repeat(2,1fr);gap:20px}
+							/* skills: keep 2 columns but slightly tighter */
+							.skills .skill-cats{grid-template-columns:repeat(2,1fr);column-gap:18px;row-gap:22px}
+						}
+
+						@media (max-width:720px){
+							/* stack hero vertically, keep spacing balanced */
+							.hero{grid-template-columns:1fr;gap:18px;padding:18px}
+							.profile-card{flex-direction:column;align-items:center;min-height:auto}
+							.avatar{width:160px;height:160px;border-radius:18px}
+							.title{margin-top:14px;text-align:center}
+							/* center hero CTAs on narrow screens */
+							.cta{justify-content:center}
+							/* projects single column */
+							.card-grid.projects{grid-template-columns:1fr;gap:18px}
+							/* skills collapse to single column on narrow devices */
+							.skills .skill-cats{grid-template-columns:1fr;gap:18px}
+							.skills .skill-cats > .skill-card:nth-child(5){width:100%;justify-self:stretch}
+							/* ensure resume / cert action buttons stay centered */
+							.resume-card, .certs{display:block}
+							.resume-card > div:last-child, .cert-item > div:last-child{display:flex;justify-content:center}
+						}
+
+						@media (max-width:420px){
+							/* small phones: reduce body padding slightly and scale fonts down a touch */
+							body{padding:18px 14px;font-size:16px}
+							.brand h1{font-size:24px}
+							.hero h3{font-size:22px}
+							.title h2{font-size:24px}
+							/* Make sure CTAs remain centered and visible */
+							.cta{flex-wrap:wrap;justify-content:center;gap:10px}
+							/* Keep fixed buttons medium-sized and centered (no width change) */
+							.btn.fixed{margin:0 auto}
+							/* prevent any accidental overflow */
+							html,body{overflow-x:hidden}
+						}
+			.btn:active{transform:translateY(1px)}
+
+			/* Sections */
+			/* Make sections spaced out and balanced */
+			section{margin:50px 0}
+			.section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+			.section-title .stripe{width:46px;height:8px;border-radius:8px;background:linear-gradient(90deg,var(--divider),var(--btn-hover));box-shadow:var(--soft-glow)}
+			.section-title h4{margin:0;font-weight:700;color:var(--heading)}
+
+			.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+			.card{padding:22px;border-radius:14px;background:var(--card-bg);border:1px solid var(--glass-border);transition:transform .18s cubic-bezier(.2,.9,.3,1),box-shadow .18s}
+			.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(0,123,255,0.06);border:1px solid rgba(0,123,255,0.12)}
+
+			.edu-card{display:flex;flex-direction:column;gap:12px;background:transparent;padding:0}
+			.edu-entry{padding:24px;border-radius:12px;background:var(--card-bg);border:1px solid rgba(0,0,0,0.04);display:flex;flex-direction:column;gap:10px}
+			.edu-entry .degree{font-weight:700;font-size:22px;color:var(--heading)}
+			.edu-entry .sub{font-size:18px;color:var(--text);margin-top:4px}
+			.edu-entry .meta-row{display:flex;gap:18px;flex-wrap:wrap;color:var(--text);font-size:18px;margin-top:8px}
+			.edu-entry .meta-row strong{color:var(--text)}
+
+			/* Skills: use a clean grid, bigger text, padding and spacing */
+			/* Skills: 2 columns, compact spacing, rectangular cards */
+			.skills .skill-cats{display:grid;grid-template-columns:repeat(2,1fr);column-gap:30px;row-gap:32px;align-items:stretch}
+			.skill-card{padding:25px;border-radius:12px;background:var(--card-bg);box-shadow:0 8px 20px rgba(0,123,255,0.04);border:1px solid rgba(0,0,0,0.04);display:flex;flex-direction:column;gap:12px;width:100%;min-height:150px}
+			.skill-card h5{margin:0 0 8px;font-size:22px;color:var(--heading);font-weight:700}
+			.skill-list{display:flex;flex-direction:column;gap:8px;font-size:18px;color:var(--text);line-height:1.5;margin:0;padding:0}
+
+			/* Center the last (single) card and make it 70% width */
+			.skills .skill-cats > .skill-card:nth-child(5){grid-column:1 / -1;justify-self:center;width:60%;max-width:600px;margin:0 auto}
+
+			/* Projects: neat grid (2 in first row), gap 25px, equal heights */
+			/* Projects: 3-up on large screens, equal height cards */
+			.card-grid.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;align-items:stretch;grid-auto-rows:1fr}
+			.card-grid.projects .project-card{display:flex;flex-direction:column;gap:12px;height:100%;min-height:260px}
+			.project-card h5{margin:0;font-size:22px;color:var(--heading)}
+			.project-card p{margin:0;color:var(--text);font-size:18px}
+			.tags{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+			.tag{padding:8px 10px;border-radius:10px;background:rgba(0,123,255,0.06);font-size:14px;color:var(--text);}
+			/* Center the 3rd project so it sits centered in the second row */
+			/* remove special nth-of-type styling — keep cards symmetrical */
+			.card-grid.projects .project-card:nth-of-type(3){grid-column:auto;width:auto;justify-self:stretch}
+
+			.certs .cert-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+			.cert-item{display:flex;justify-content:space-between;align-items:center;padding:16px;border-radius:12px;border:1px solid rgba(0,0,0,0.04);background:var(--card-bg)}
+			.cert-item button{padding:8px 10px;border-radius:9px;border: none;background:linear-gradient(90deg,var(--btn-bg),var(--btn-hover));color:#001;font-weight:700}
+
+			.resume-card{padding:24px;border-radius:14px;background:var(--card-bg);border:1px solid rgba(0,0,0,0.04);display:flex;align-items:center;justify-content:space-between;gap:12px}
+
+			/* Contact: simple vertical list, left aligned, no boxes */
+			.contact-grid{display:flex;flex-direction:column;gap:15px;align-items:flex-start;padding:0}
+			.contact-item{display:flex;align-items:center;gap:12px;padding:0;border-radius:0;background:transparent;border:none;color:var(--text)}
+			.contact-item i{width:26px;height:26px;display:inline-grid;place-items:center;font-size:20px;color:var(--divider);}
+			.contact-item .title{font-weight:700;color:var(--heading);margin-right:8px}
+			/* contact links should be full-width clickable and keep the same layout */
+			.contact-item a{color:var(--text);text-decoration:none}
+			.contact-item > .contact-link{display:flex;align-items:center;gap:12px;width:100%;color:var(--text);text-decoration:none}
+
+			/* Make contact links clearly appear as real hyperlinks (contact section only) */
+			.contact-item a{
+				color: #0066cc; /* professional link blue */
+				text-decoration: none;
+				font-weight: 500;
+				transition: color 0.2s ease, text-decoration 0.2s ease;
+				cursor: pointer;
+			}
+
+			.contact-item a:hover{
+				text-decoration: underline;
+				color: #004c99;
+			}
+
+			/* keep the small icon color unchanged so icons/emojis remain visually exact */
+			.contact-item a > i{ color: var(--divider); }
+
+			footer{margin-top:36px;color:var(--muted);text-align:center;padding:18px}
+
+			/* Responsive */
+			@media (max-width:1080px){
+				/* medium screens: scale down a touch */
+				body{font-size:22px}
+				.card-grid{grid-template-columns:repeat(2,1fr)}
+				.hero{grid-template-columns:280px 1fr}
+				.contact-grid{grid-template-columns:repeat(2,1fr)}
+			}
+			@media (max-width:720px){
+				body{padding:24px; font-size:18px}
+				header{flex-direction:column;align-items:flex-start}
+				.hero{grid-template-columns:1fr;gap:18px;padding:20px}
+				.profile-card{flex-direction:row;align-items:center;min-height:auto}
+				.avatar{width:160px;height:160px;border-radius:16px}
+				.title{margin-left:12px;text-align:left}
+				.card-grid{grid-template-columns:1fr}
+				.skills .skill-cats{grid-template-columns:1fr;gap:18px}
+				.skills .skill-cats > .skill-card:nth-child(5){width:100%;justify-self:stretch}
+				.card-grid.projects{grid-template-columns:1fr;gap:18px}
+				/* on small screens use one-column projects and let 3rd project flow normally */
+				.card-grid.projects{grid-template-columns:1fr;gap:18px}
+				.card-grid.projects .project-card:nth-of-type(3){grid-column:auto;width:auto;justify-self:stretch}
+				.certs .cert-list{grid-template-columns:1fr}
+				.contact-grid{grid-template-columns:1fr}
+			}
+
+			/* Small helper animations */
+			.fade-up{opacity:0;transform:translateY(8px);animation:fadeUp .6s ease forwards;animation-delay:0.12s}
+			@keyframes fadeUp{to{opacity:1;transform:none}}
+		</style>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="brand">
+					<div class="logo">TS</div>
+					<div>
+						<h1>Tejashree Suryawanshi</h1>
+						<p>Software Developer</p>
+					</div>
+				</div>
+
+				<nav aria-label="Main navigation">
+					<a href="#about">About</a>
+					<a href="#education">Education</a>
+					<a href="#skills">Skills</a>
+					<a href="#projects">Projects</a>
+					<a href="#certificates">Certificates</a>
+					<a href="#contact" class="secondary">Contact</a>
+				</nav>
+			</header>
+
+			<!-- HERO -->
+			<main>
+				<section class="hero fade-up" id="about" aria-labelledby="about-heading">
+					<div class="profile-card" role="region" aria-label="Profile card">
+						<div class="avatar" aria-hidden="false">
+							<img src="images/Tejashree_Profile.jpg" alt="Tejashree Suryawanshi — Profile photo">
+						</div>
+						<header class="hero-nav">
+    <nav class="nav">
+        <!--<div class="nav-left">
+            <span class="logo">TS</span>
+            <span class="name">Tejashree Suryawanshi</span>
+        </div>-->
+
+        
+        
+    </nav>
+</header>
+
+						<div class="title">
+							<h2>Tejashree Suryawanshi</h2>
+							<p>Software Developer</p>
+				            			<div class="profile-links">
+								<span class="chip">Open to work</span>
+								<span class="chip">2025 Graduate</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="hero-body">
+						<h3 id="about-heading">About Me</h3>
+						<p class="about">“I am a passionate and detail-driven Software Developer who recently completed my Bachelors of Engineering in Computer Engineering. I love transforming ideas into clean, functional, and visually appealing digital experiences.
+
+My strengths are problem-solving, creativity, and writing code that not only works — but works beautifully. I enjoy learning new technologies, improving my craft every day, and building meaningful projects that create real impact.
+
+I believe in consistency, collaboration, and staying curious. With a strong foundation in software development and a mindset focused on growth, I aim to contribute to innovative teams and build solutions that make a difference.”</p>
+
+						<div class="cta">
+							<a class="btn primary-button" href="#projects">Explore Projects</a>
+							<!-- Make Get in touch match the certificate/resume buttons visually -->
+							<a class="btn primary-button" href="#contact">Get in touch</a>
+						</div>
+					</div>
+				</section>
+
+				<!-- Education -->
+				<section id="education" class="fade-up" aria-labelledby="education-heading">
+					<div class="section-title">
+						<div class="stripe"></div>
+						<h4 id="education-heading">Education</h4>
+					</div>
+					<div class="card-grid">
+						<article class="card edu-card" aria-label="Education">
+							<div class="edu-entry">
+								<div class="degree">Bachelor of Engineering (BE)</div>
+								<div class="sub">Specialization: Computer Engineering</div>
+								<div class="meta-row">
+									<div>University: <strong>Savitribai Phule Pune University</strong></div>
+								</div>
+								<div class="meta-row">
+									<div>CGPA: <strong>8.48</strong></div>
+								</div>
+								<div class="meta-row">
+									<div>Passing Year: <strong>2025</strong></div>
+								</div>
+							</div>
+						</article>
+
+						<!-- Additional Courses card (Diploma) -->
+						<article class="card edu-card" aria-label="Diploma in Computer Engineering">
+							<div class="edu-entry">
+								<div class="degree">Diploma in Computer Engineering</div>
+								<div class="sub">Specialization: Computer Engineering</div>
+								<div class="meta-row">
+									<div>Board: <strong>Maharashtra State Board of Technical Education (MSBTE)</strong></div>
+								</div>
+								<div class="meta-row">
+									<div>Percentage: <strong>84.69%</strong></div>
+								</div>
+								<div class="meta-row">
+									<div>Passing Year: <strong>2022</strong></div>
+								</div>
+							</div>
+						</article>
+
+						<!-- Awards & honours removed per request -->
+					</div>
+				</section>
+
+				<!-- Skills -->
+				<section id="skills" class="fade-up" aria-labelledby="skills-heading">
+					<div class="section-title">
+						<div class="stripe"></div>
+						<h4 id="skills-heading">Skills</h4>
+					</div>
+
+					<div class="skills card" style="padding:20px">
+						<div class="skill-cats">
+							<div class="skill-card">
+								<h5>Programming & Development</h5>
+								<div class="skill-list">
+									<div>Java, Python</div>
+									<div>HTML, CSS</div>
+									<div>REST API Integration, JSON Handling</div>
+									<div>Java Servlets, MySQL</div>
+									<div>Git & GitHub, Debugging</div>
+								</div>
+							</div>
+
+							<div class="skill-card">
+								<h5>AI / LLM Integration</h5>
+								<div class="skill-list">
+									<div>Gemini API</div>
+									<div>HuggingFace Transformers</div>
+									<div>Ollama, Prompt Engineering</div>
+									<div>GitHub Copilot, Cursor IDE</div>
+									<div>Postman</div>
+								</div>
+							</div>
+
+							<div class="skill-card">
+								<h5>AI / ML</h5>
+								<div class="skill-list">
+									<div>Whisper ASR</div>
+									<div>Text-to-Speech / TTS models</div>
+									<div>Video Processing: FFmpeg / MoviePy</div>
+									<div>NLP Preprocessing, ML Algorithms</div>
+								</div>
+							</div>
+
+							<div class="skill-card">
+								<h5>Web Development</h5>
+								<div class="skill-list">
+									<div>HTML, CSS</div>
+									<div>Basic JavaScript</div>
+									<div>DBMS Concepts, API Consumption</div>
+									<div>GitHub Pages / Netlify</div>
+								</div>
+							</div>
+
+							<!-- 'Additional' skills removed per request -->
+
+							<div class="skill-card">
+								<h5>Soft Skills</h5>
+								<div class="skill-list">
+									<div>Communication, Time Management</div>
+									<div>Team Collaboration</div>
+									<div>Consistency & Continuous Learning</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Projects -->
+				<section id="projects" class="fade-up" aria-labelledby="projects-heading">
+					<div class="section-title">
+						<div class="stripe"></div>
+						<h4 id="projects-heading">My Projects</h4>
+					</div>
+					<div class="card-grid projects">
+						<article class="card project-card" aria-label="AI Dubbing Software">
+							<h5>AI Dubbing Software</h5>
+							<p>Python • Whisper • HuggingFace • TTS • FFmpeg • MoviePy • MySQL</p>
+							<p class="meta">End-to-end AI system automating multilingual video dubbing (speech-to-text, translation, voice generation, merge).</p>
+							<div class="tags">
+								<span class="tag">Video Upload</span>
+								<span class="tag">Speech Recognition</span>
+								<span class="tag">Translation</span>
+								<span class="tag">TTS</span>
+							</div>
+						</article>
+
+						<article class="card project-card" aria-label="AI Interview Question Generator">
+							<h5>AI Interview Question Generator</h5>
+							<p>Java • Gemini API • REST • JSON • HTML/CSS/JS</p>
+							<p class="meta">Generates role-based interview questions with levels and detailed answers – includes interactive clarification chat mode.</p>
+							<div class="tags">
+								<span class="tag">Role-based</span>
+								<span class="tag">Difficulty Levels</span>
+								<span class="tag">Interactive Chat</span>
+							</div>
+						</article>
+
+						<article class="card project-card" aria-label="Agriculture Webpoint">
+							<h5>Agriculture Webpoint</h5>
+							<p>HTML • CSS • JS • Google Forms</p>
+							<p class="meta">Frontend service portal for farmers with login UI, service pages and Google Form + UPI payment support.</p>
+							<div class="tags">
+								<span class="tag">Service Categories</span>
+								<span class="tag">Payment Integration</span>
+								<span class="tag">Responsive UI</span>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<!-- Certificates -->
+				<section id="certificates" class="fade-up" aria-labelledby="certs-heading">
+					<div class="section-title">
+						<div class="stripe"></div>
+						<h4 id="certs-heading">Certificates</h4>
+					</div>
+					<div class="card certs" style="padding:18px">
+						<div class="cert-list">
+							<div class="cert-item">
+								<div>
+									<strong>Java Full Stack Certification – Symbiosis</strong>
+								</div>
+								<div><a class="btn fixed primary-button" href="https://drive.google.com/file/d/1EBOiDWYjxzkMcfIPCM7ddFnwDh4XQi06/view?usp=sharing" target="_blank" rel="noopener">View Certificate</a></div>
+							</div>
+
+							<div class="cert-item">
+								<div>
+									<strong>GTT Life Skills Program Certificate</strong>
+								</div>
+								<div><a class="btn fixed primary-button" href="https://drive.google.com/file/d/1NXtS_AA2z-9ZWQ3TNFfDizzG24lbRm9n/view?usp=sharing" target="_blank" rel="noopener">View Certificate</a></div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- Resume -->
+				<section id="resume" class="fade-up" aria-labelledby="resume-heading">
+					<div class="section-title">
+						<div class="stripe"></div>
+						<h4 id="resume-heading">Resume</h4>
+					</div>
+					<div class="resume-card">
+						<div style="display:flex;flex-direction:column">
+							<strong>Resume</strong>
+							<div style="color:var(--muted);font-size:20px;margin-top:6px">Click below to view my resume</div>
+						</div>
+						<div style="display:flex;gap:10px;align-items:center">
+							<a class="btn fixed primary-button" href="https://drive.google.com/file/d/1eOA1xcfO700DWNDNSIxerjPK_t20NDJj/view?usp=sharing" target="_blank" rel="noopener">View Resume</a>
+						</div>
+					</div>
+				</section>
+
+				<!-- Contact -->
+
+				<section id="contact" class="fade-up" aria-labelledby="contact-heading">
+					<div class="section-title">
+						<div class="stripe"></div>
+						<h4 id="contact-heading">Contact</h4>
+					</div>
+
+					<div style="padding:0">
+						<div class="contact-grid" aria-label="Contact details">
+							<div class="contact-item">
+								<a href="mailto:tejashreesuryawanshi81447@gmail.com" class="contact-link">
+									<i aria-hidden="true">@</i>
+									<div><span class="title">Email</span><span> ✉️ Send Mail</span></div>
+								</a>
+							</div>
+
+							<div class="contact-item">
+								<a href="https://www.linkedin.com/in/tejashree-suryawanshi-a6717a265/" target="_blank" rel="noopener" class="contact-link">
+									<i aria-hidden="true">in</i>
+									<div><span class="title">LinkedIn</span><span> 🔗 LinkedIn </span></div>
+								</a>
+							</div>
+
+							<div class="contact-item">
+								<a href="https://github.com/Tejashreesuryawanshi01" target="_blank" rel="noopener" class="contact-link">
+									<i aria-hidden="true">GH</i>
+									<div><span class="title">GitHub</span><span> 💻 GitHub</span></div>
+								</a>
+							</div>
+
+							<div class="contact-item">
+								<i aria-hidden="true">📍</i>
+								<div><span class="title">Location</span><span style="color:var"> (Pune, Maharashtra)</span></div>
+							</div>
+							<div class="contact-item">
+								<i aria-hidden="true">📞</i>
+								<div><span class="title"></span><span style="color:var"> +91 9359142845</span></div>
+						</div>
+					</div>
+                    </div>
+                </section>
+
+
+				<footer>
+					<div>© <strong>Tejashree Suryawanshi</strong> </div>
+				</footer>
+			</main>
+		</div>
+
+		<script>
+			// Reveal animation on scroll (very small, self-contained)
+			(function(){
+				const els = document.querySelectorAll('.fade-up');
+				const obs = new IntersectionObserver((entries)=>{
+					for(const e of entries){ if(e.isIntersecting){ e.target.style.animationPlayState='running'; e.target.classList.remove('fade-up'); }}
+				},{threshold:0.08});
+				els.forEach(el=>{ el.style.animationPlayState='paused'; obs.observe(el); });
+			})();
+		</script>
+	</body>
+</html>
