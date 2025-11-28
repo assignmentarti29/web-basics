@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arati Sonawane - Back-End Developer Portfolio</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --gradient-neon: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-cyber: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+        }
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:'Inter',sans-serif;transition:background-color .3s,color .3s}
+        .code-font{font-family:'JetBrains Mono',monospace}
+        .dark{background:#0f172a;color:#e2e8f0}
+        .glass{background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.04)}
+        .neon-text{background:var(--gradient-neon);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:0 0 30px rgba(102,126,234,.45)}
+        .typing-effect{overflow:hidden;border-right:3px solid;white-space:nowrap;animation:typing 3.5s steps(40,end),blink .75s step-end infinite}
+        @keyframes typing{from{width:0}to{width:100%}}@keyframes blink{50%{border-color:transparent}}
+        .skill-badge{background:linear-gradient(135deg,rgba(102,126,234,.06),rgba(118,75,162,.04));padding:.35rem .75rem;border-radius:9999px;border:1px solid rgba(102,126,234,.12);font-size:.9rem}
+        .project-card{transition:all .25s ease;border-radius:12px;padding:1rem;background:linear-gradient(180deg,rgba(255,255,255,.02),transparent);border:1px solid rgba(255,255,255,.03)}
+        .section-separator{height:2px;background:linear-gradient(to right,transparent,rgba(102,126,234,.4),transparent);margin:2rem 0}
+        .timeline-dot::before{content:'';position:absolute;width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#667eea,#764ba2);left:-9px;top:6px}
+        .container{max-width:1100px;margin:0 auto;padding:0 1rem}
+        footer{opacity:.9}
+    </style>
+</head>
+<body class="dark">
+<!-- Navigation -->
+<nav class="fixed top-4 left-0 right-0 z-50 px-6">
+    <div class="container flex items-center justify-between glass p-3 rounded-lg">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center neon-text font-bold">AS</div>
+            <div class="font-semibold">Arati Sonawane</div>
+        </div>
+        <div class="hidden md:flex items-center gap-6 text-sm opacity-90">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="flex items-center gap-3">
+            <a href="#contact" class="px-3 py-2 rounded-md glass text-sm">Hire Me</a>
+            <a href="#resume" class="px-3 py-2 rounded-md bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm">Resume</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="min-h-screen flex items-center">
+    <div class="container flex flex-col-reverse md:flex-row items-center gap-8">
+        <div class="flex-1">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 neon-text">Arati Sonawane</h1>
+            <div class="text-lg md:text-xl mb-6 code-font typing-effect">Back-End Developer</div>
+            <p class="max-w-2xl mb-6">Motivated and enthusiastic Back-End Developer with strong knowledge of Core Java, Advanced Java, Spring Boot, MVC, and Microservices. Experienced in building RESTful services, debugging Java code, and collaborating in Agile teams.</p>
+            <div class="flex gap-3">
+                <a href="#contact" class="px-5 py-3 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium">Get In Touch</a>
+                <a href="#resume" class="px-5 py-3 rounded-full glass font-medium">Download Resume</a>
+            </div>
+        </div>
+        <div class="w-64 h-50 rounded-full overflow-hidden border-4 border-purple-500/30 pulse-glow">
+            <!-- Placeholder avatar - replace with your image -->
+            <img src="/AratiSonawane/Arati.png" alt="Arati" class="w-full h-full object-cover">
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- About -->
+<section id="about" class="py-12">
+    <div class="container glass rounded-2xl p-8">
+        <h2 class="text-3xl font-bold mb-6 gradient-text">About Me</h2>
+        <p class="mb-4">I am a motivated and enthusiastic Back-End Developer with hands-on experience in Core Java, Spring Boot, MVC and Microservices. I have a solid understanding of OOP concepts, collections, exception handling and use Git/GitHub for version control. I enjoy working in collaborative Agile teams and delivering high-quality, production-ready backend systems.</p>
+        <div class="flex flex-wrap gap-6 mt-6">
+            <div class="flex items-center gap-3">
+                <i class="fas fa-map-marker-alt text-purple-400"></i>
+                <span>Pune, India</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <i class="fas fa-envelope text-purple-400"></i>
+                <span>artisonawane1920@gmail.com</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <i class="fas fa-phone text-purple-400"></i>
+                <span>+91 8999296580</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- Skills -->
+<section id="skills" class="py-12">
+    <div class="container">
+        <h2 class="text-3xl font-bold mb-6 gradient-text">Skills & Expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-3">Programming</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-badge">Java</span>
+                    <span class="skill-badge">Core Java</span>
+                    <span class="skill-badge">Advanced Java</span>
+                    <span class="skill-badge">OOP</span>
+                </div>
+            </div>
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-3">Frameworks & Tools</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-badge">Spring Boot</span>
+                    <span class="skill-badge">Spring MVC</span>
+                    <span class="skill-badge">Hibernate</span>
+                    <span class="skill-badge">Maven</span>
+                </div>
+            </div>
+            <div class="glass rounded-xl p-6">
+                <h3 class="font-semibold mb-3">Databases & Others</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-badge">MySQL</span>
+                    <span class="skill-badge">MongoDB</span>
+                    <span class="skill-badge">SQL</span>
+                    <span class="skill-badge">Git & GitHub</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- Projects -->
+<section id="projects" class="py-12">
+    <div class="container">
+        <h2 class="text-3xl font-bold mb-6 gradient-text">Selected Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="project-card">
+                <h3 class="font-semibold">Vehicle Compliance Hub</h3>
+                <p class="text-sm opacity-90 mt-2">A backend system to certify vehicles and components against regulatory test cases before market launch. Implemented REST APIs and the controller-service-repository structure using Spring Boot. Responsible for debugging and maintaining application data integrity.</p>
+                <div class="mt-3 flex gap-2 text-xs">
+                    <span class="skill-badge">Spring Boot</span>
+                    <span class="skill-badge">REST API</span>
+                    <span class="skill-badge">Java</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3 class="font-semibold">Insurance Management System</h3>
+                <p class="text-sm opacity-90 mt-2">Full-stack solution for managing insurance policies (health, life, auto, home). Implemented secure authentication, premium calculations, and role-based access. Followed Agile process and used Git for version control.</p>
+                <div class="mt-3 flex gap-2 text-xs">
+                    <span class="skill-badge">Spring Boot</span>
+                    <span class="skill-badge">Angular</span>
+                    <span class="skill-badge">MySQL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- Education & Certifications -->
+<section id="education" class="py-12">
+    <div class="container grid md:grid-cols-2 gap-6">
+        <div class="glass rounded-xl p-6">
+            <h3 class="font-semibold mb-3">Education</h3>
+            <p>Bachelor of Engineering (Computer) — Savitribai Phule Pune University, May 2022</p>
+        </div>
+        <div class="glass rounded-xl p-6">
+            <h3 class="font-semibold mb-3">Certifications</h3>
+            <p>Full Stack Development Certification — Explored Java tools and programming</p>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- Contact -->
+<section id="contact" class="py-12">
+    <div class="container glass rounded-2xl p-8">
+        <h2 class="text-2xl font-bold mb-4">Contact</h2>
+        <p class="mb-4">Feel free to reach out for collaborations, freelancing or full-time opportunities.</p>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div>
+                <h4 class="font-semibold">Email</h4>
+                <p class="text-sm">artisonawane1920@gmail.com</p>
+            </div>
+            <div>
+                <h4 class="font-semibold">Phone</h4>
+                <p class="text-sm">+91 8999296580</p>
+            </div>
+            <div>
+                <h4 class="font-semibold">Location</h4>
+                <p class="text-sm">Pune, India</p>
+            </div>
+        </div>
+
+        <div class="mt-6">
+            <form onsubmit="event.preventDefault(); alert('Message sent (demo)');" class="grid md:grid-cols-2 gap-4">
+                <input required class="form-input p-3 rounded-md" placeholder="Your name" />
+                <input required class="form-input p-3 rounded-md" placeholder="Your email" />
+                <input class="form-input p-3 rounded-md" placeholder="Subject" />
+                <textarea required class="form-input p-3 rounded-md" placeholder="Message" rows="4"></textarea>
+                <button class="md:col-span-2 px-4 py-3 rounded-md bg-gradient-to-r from-purple-600 to-blue-600 text-white">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div class="section-separator"></div>
+
+<!-- Resume / PDF Section -->
+<section id="resume" class="py-12">
+    <div class="container glass rounded-2xl p-8 text-center">
+        <h2 class="text-2xl font-bold mb-4">Resume</h2>
+        <p class="mb-4">Download the PDF version of the resume (please replace the link with your hosted resume if needed).</p>
+        <a href="/mnt/data/Artiiii%20Sonawane_Resume.pdf" download class="px-6 py-3 rounded-md bg-gradient-to-r from-purple-600 to-blue-600 text-white">Download Resume (PDF)</a>
+    </div>
+</section>
+
+<footer class="py-8 text-center">
+    <div class="container">
+        <p class="text-sm">© "Arati Sonawane" — Built with care • Backend Developer</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if(mobileBtn){
+        mobileBtn.addEventListener('click', ()=>{
+            if(mobileMenu.classList.contains('hidden')) mobileMenu.classList.remove('hidden');
+            else mobileMenu.classList.add('hidden');
+        })
+    }
+</script>
+</body>
+</html>
